@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DOG Thesis — Transparencia on-chain para a $DOG</title>
-<meta name="description" content="Uma pesquisa publica, reproduzivel e colaborativa sobre a $DOG: fair launch, holders, float, forense de carteiras e microestrutura de mercado.">
+<meta name="description" content="A história completa da $DOG (DOG•GO•TO•THE•MOON) + FAQ + pesquisa on-chain: Casey Rodarmor, Ordinals, Runes, fair launch, holders, carteiras monitoradas e corretoras. Não confie: verifique.">
 <meta property="og:title" content="DOG Thesis — Transparencia on-chain para a $DOG">
 <meta property="og:description" content="Dados publicos, metodologia aberta e convite para colaboradores investigarem a $DOG com evidencia. Nao confie: verifique.">
-<meta property="og:image" content="public/dog-hero.png">
+<meta property="og:image" content="public/dog-logo.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,8 +146,8 @@ nav{
   bottom:-40px;
   width:min(42vw,470px);
   aspect-ratio:560/889;
-  background:url("public/dog-hero.png") bottom right/contain no-repeat;
-  opacity:.52;
+  background:url("public/dog-logo.png") bottom right/contain no-repeat;
+  opacity:.64;
   filter:drop-shadow(0 28px 42px rgba(0,0,0,.7));
 }
 .hero-content{
@@ -415,6 +415,51 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
   .evidence-row{grid-template-columns:1fr}
   footer .inner{display:block}
 }
+/* --- historia / pessoa / faq / carteiras / links (add) --- */
+.person{display:grid;grid-template-columns:170px 1fr;gap:24px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px;margin-bottom:22px}
+.person img{width:170px;height:170px;border-radius:12px;object-fit:cover;border:1px solid var(--line)}
+.person h3{font-size:23px;letter-spacing:-.02em}
+.person .role{color:var(--orange);font-weight:800;font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;margin:5px 0 12px}
+.person p{color:var(--text);font-size:15.5px}
+.person a{color:var(--orange);border-bottom:1px solid rgba(247,147,26,.4)}
+.dog-story{display:grid;grid-template-columns:minmax(190px,260px) 1fr;gap:26px;align-items:center;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:10px;padding:26px;margin-bottom:22px}
+.dog-story img{width:100%;max-height:320px;object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
+.dog-story h3{font-size:28px;line-height:1.05;letter-spacing:-.03em;margin-bottom:12px}
+.dog-story p{color:var(--text);font-size:16px}
+.dog-story .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:18px}
+.dog-story .facts span{display:block;background:rgba(11,13,15,.45);padding:13px;color:var(--muted);font-size:12.5px;line-height:1.35}
+.dog-story .facts b{display:block;color:var(--orange);font-size:15px;margin-bottom:4px}
+.timeline{display:grid;gap:12px}
+.tl-row{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:start;padding:18px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.tl-row .when{font-size:13px;font-weight:900;color:var(--orange);letter-spacing:.02em;padding-top:2px}
+.tl-row h3{font-size:17px;font-weight:850;margin-bottom:6px;letter-spacing:-.01em}
+.tl-row p{color:var(--text);font-size:15px}
+.tl-row a{color:var(--orange);border-bottom:1px solid rgba(247,147,26,.4)}
+.faq details{border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-bottom:10px;overflow:hidden}
+.faq summary{cursor:pointer;padding:17px 20px;font-weight:800;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--orange);font-weight:900;font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"\2013"}
+.faq details[open] summary{border-bottom:1px solid var(--line)}
+.faq .a{padding:16px 20px;color:var(--text);font-size:15px;line-height:1.65}
+.faq .a a,.faq .a a:visited{color:var(--orange);border-bottom:1px solid rgba(247,147,26,.4)}
+.linklist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.linklist a{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface);transition:border-color .15s ease,transform .15s ease}
+.linklist a:hover{border-color:rgba(247,147,26,.55);transform:translateY(-1px)}
+.linklist a b{color:var(--ink);display:block;font-size:14.5px}
+.linklist a span{color:var(--muted);font-size:12.5px}
+.wgroup{font-size:12.5px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin:24px 0 10px}
+.wallets{display:grid;gap:8px}
+.wrow{display:grid;grid-template-columns:180px 1fr;gap:14px;align-items:center;padding:13px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.wrow .nm{font-weight:850;font-size:14.5px;color:var(--ink)}
+.wrow .info{font-size:13.5px;color:var(--muted)}
+.wrow .info a{font-family:ui-monospace,Menlo,monospace;color:var(--orange);font-size:12px;border-bottom:1px solid rgba(247,147,26,.35)}
+.campaign{display:grid;grid-template-columns:minmax(260px,.9fr) 1.1fr;gap:24px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.campaign img{width:100%;border-radius:8px;border:1px solid rgba(247,147,26,.25)}
+.campaign h3{font-size:28px;line-height:1.08;letter-spacing:-.03em;margin-bottom:12px}
+.campaign p{color:var(--text);font-size:16px}
+.campaign .note{margin-top:14px;color:var(--muted);font-size:13.5px}
+@media(max-width:620px){.person,.dog-story,.campaign{grid-template-columns:1fr;text-align:center}.person img{margin:0 auto}.dog-story .facts{grid-template-columns:1fr}.tl-row{grid-template-columns:1fr}.linklist{grid-template-columns:1fr}.wrow{grid-template-columns:1fr;gap:6px}}
 </style>
 </head>
 <body>
@@ -426,10 +471,11 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
     </a>
     <div class="navlinks" aria-label="Navegacao principal">
       <a href="#tese">Tese</a>
-      <a href="#evidencias">Evidencias</a>
-      <a href="#metodo">Metodo</a>
+      <a href="#historia">História</a>
+      <a href="#evidencias">Evidências</a>
+      <a href="#carteiras">Carteiras</a>
+      <a href="#faq">FAQ</a>
       <a href="#colaborar">Colaborar</a>
-      <a href="#documentos">Documentos</a>
     </div>
     <a class="nav-cta" href="#colaborar">Entrar no projeto</a>
   </nav>
@@ -476,6 +522,51 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
           <div class="principle"><strong>Comportamento nao e intencao</strong><span>A gente descreve padroes observados; nao acusa crime sem prova independente.</span></div>
           <div class="principle"><strong>Sem conselho financeiro</strong><span>Nao existe promessa de preco, chamada de compra ou coordenacao de mercado.</span></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="historia">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">A história da DOG</div>
+          <h2>De onde a DOG veio — a história completa, com fontes.</h2>
+        </div>
+        <p class="lead">Pra entender a DOG, primeiro você entende como nasceu a ideia de gravar cultura, arte e moedas dentro do próprio Bitcoin. Depois vem a Runestone, o airdrop e a DOG como uma das primeiras Runes.</p>
+      </div>
+
+      <div class="dog-story">
+        <img src="public/dog-logo.png" alt="Logo oficial da DOG, cachorro com moletom laranja e simbolo do Bitcoin" loading="lazy">
+        <div>
+          <h3>A DOG e a meme coin do Bitcoin com origem verificavel.</h3>
+          <p>A DOG (DOG•GO•TO•THE•MOON) nao nasceu como token de VC, pre-venda ou promessa privada. Ela nasceu como Rune no Bitcoin, com supply aberto, distribuicao por airdrop e uma identidade cultural simples: a comunidade segurando um ativo que qualquer pessoa pode auditar na chain.</p>
+          <div class="facts">
+            <span><b>Rune #3</b>Uma das primeiras moedas do protocolo Runes.</span>
+            <span><b>CC0</b>Marca e cultura abertas, sem dono central.</span>
+            <span><b>100B DOG</b>Supply total pre-minerado e circulante.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <img src="public/casey.jpg" alt="Casey Rodarmor, criador dos Ordinals e das Runes no Bitcoin" loading="lazy">
+        <div>
+          <h3>Casey Rodarmor</h3>
+          <div class="role">Criador dos Ordinals e das Runes</div>
+          <p>Foi Casey quem criou os <b>Ordinals</b> (jan/2023), que permitem inscrever dados em satoshis individuais, e depois as <b>Runes</b> (abr/2024), um protocolo de tokens pensado para o modelo UTXO do Bitcoin. A DOG é a <b>Rune #3</b>, uma das primeiras moedas desse novo ciclo cultural.</p>
+          <p style="margin-top:10px"><a href="https://www.youtube.com/watch?v=rSS0O2KQpsI" target="_blank" rel="noopener">▶ Casey explica a Ordinal Theory (vídeo fundador)</a></p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-row"><div class="when">Nov 2021</div><div><h3>Taproot ativa no Bitcoin</h3><p>Uma atualização que aumentou o espaço de dados nas transações. Sem ela, nada do que veio depois existiria.</p></div></div>
+        <div class="tl-row"><div class="when">Jan 2023</div><div><h3>Ordinals (Casey Rodarmor)</h3><p>O protocolo que deixa <b>inscrever dados em satoshis individuais</b> — imagem, texto, arte — direto no Bitcoin. Pela primeira vez dá pra eternizar algo na maior blockchain de todas, sem depender de outra rede. <a href="https://blockmanity.com/news/bitcoin-ordinals-surpass-10-million-inscriptions-creator-casey-rodarmor-steps-down/" target="_blank" rel="noopener">Fonte</a></p></div></div>
+        <div class="tl-row"><div class="when">Mar 2023</div><div><h3>BRC-20 (o programador "domo")</h3><p>O primeiro padrão de tokens em cima dos Ordinals — o "ordi" foi o primeiro. Funcionou e explodiu, mas era ineficiente e entupia a rede. <a href="https://iq.wiki/wiki/brc-20" target="_blank" rel="noopener">Fonte</a></p></div></div>
+        <div class="tl-row"><div class="when">Nov 2023</div><div><h3>A Binance corre pra listar o ORDI</h3><p>O preço dobrou em horas. As corretoras perceberam: se o Bitcoin vira camada de ativos, abre um mercado gigante — e elas querem estar na porta. <a href="https://decrypt.co/204724/bitcoin-ordinals-daily-trading-hits-6-month-peak-ordi-token-surges-binance-listing" target="_blank" rel="noopener">Fonte</a></p></div></div>
+        <div class="tl-row"><div class="when">Abr 2024</div><div><h3>Runes (Casey Rodarmor), no bloco do halving</h3><p>Casey volta com um protocolo de tokens mais nativo ao Bitcoin: baseado em UTXO, com menos gambiarra que o BRC-20 e sem depender de contratos em outra rede. <a href="https://medium.com/@dubwoman/who-is-who-ordinals-runes-inscriptions-brc-20-and-runestone-e1160361260a" target="_blank" rel="noopener">Fonte</a></p></div></div>
+        <div class="tl-row"><div class="when">Abr 2024</div><div><h3>Nasce a $DOG — a Rune #3</h3><p>Etched no bloco do halving (840.000). <b>100% distribuída pra quem colaborou com a rede</b>: quem participou ganhou a <b>Runestone</b>, e quem tinha Runestone recebeu o airdrop da DOG (~75 mil carteiras). Sem pré-venda, sem time, sem dono (CC0). <a href="https://decrypt.co/225338/bitcoin-runes-meme-coin-dog-airdrop-runestone" target="_blank" rel="noopener">Matéria</a> · <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">Ver na chain</a></p></div></div>
+        <div class="tl-row"><div class="when">2025–26</div><div><h3>O debate sobre dados no Bitcoin</h3><p>Ordinals e Runes também reacenderam uma disputa antiga: o que deve ou não deve ser gravado no Bitcoin? Parte da comunidade quer restringir dados não-monetários; outra parte defende que usuários e mineradores decidam livremente pelo mercado de taxas. A DOG nasce exatamente dentro desse debate cultural. <a href="https://bitcoinmagazine.com/technical/bitcoin-core-or-bitcoin-knots-what-the-op_return-debate-is-actually-about" target="_blank" rel="noopener">Fonte</a></p></div></div>
       </div>
     </div>
   </section>
@@ -550,6 +641,61 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
     </div>
   </section>
 
+  <section id="carteiras">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Sala de monitoramento</div>
+          <h2>As carteiras que a gente vigia — todo dia.</h2>
+        </div>
+        <p class="lead">Transparência é mostrar o que a gente olha. Clica em qualquer endereço pra conferir na hora na mempool.space. Rótulos de corretora confirmados por endereço público; o cluster é amarrado por co-gasto (mesma pessoa assina junto = mesmo dono).</p>
+      </div>
+
+      <div class="wgroup">🏦 Corretoras (CEXs) e bridge</div>
+      <div class="wallets">
+        <div class="wrow"><div class="nm">Binance</div><div class="info">carteira quente; o cluster <b>saca DOG daqui</b> (Intermediário #3: 51×) · <a href="https://mempool.space/address/bc1qhuv3dhpnm0wktasd3v0kt6e4aqfqsd0uhfdu7d" target="_blank" rel="noopener">bc1qhuv3…fdu7d</a></div></div>
+        <div class="wrow"><div class="nm">Gate</div><div class="info">aparece como a maior holder do ranking · <a href="https://mempool.space/address/bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv" target="_blank" rel="noopener">bc1pk8g4…x9ctv</a></div></div>
+        <div class="wrow"><div class="nm">Bitget</div><div class="info">🔴 o cluster <b>despeja MUITO aqui</b> (~190 depósitos) · <a href="https://mempool.space/address/bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k" target="_blank" rel="noopener">bc1p50n9…hpp9k</a></div></div>
+        <div class="wrow"><div class="nm">MEXC</div><div class="info">o cluster saca DOG daqui · <a href="https://mempool.space/address/bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu" target="_blank" rel="noopener">bc1qj7dam…2hkmu</a></div></div>
+        <div class="wrow"><div class="nm">Merlin Chain <small style="display:block;color:var(--muted);font-weight:600;font-size:12px">bridge / L2</small></div><div class="info">grande holder, mas <b>separada do cluster</b> (não é CEX) · <a href="https://mempool.space/address/bc1p38d6mfutw5h6gx46c7334uxtsf5ey5l7xqfeg36gyc4q83plmwwqsf9wxd" target="_blank" rel="noopener">bc1p38d6mf…sf9wxd</a></div></div>
+      </div>
+
+      <div class="wgroup">🐋 O cluster do dono dos 12% — um dono só (provado por co-gasto)</div>
+      <div class="wallets">
+        <div class="wrow"><div class="nm">A baleia (12%)</div><div class="info">o cofre que <b>juntou 12,32% do supply</b> em 25/06 · <a href="https://mempool.space/address/bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn" target="_blank" rel="noopener">bc1plzs…dhspn</a></div></div>
+        <div class="wrow"><div class="nm">MM2</div><div class="info">encheu a baleia (302×) · <a href="https://mempool.space/address/bc1p8d8kexdxatnfejdvd9dq7uky4m9wjxl59r3dnqg7nqq9gaxz2jxq6ntach" target="_blank" rel="noopener">bc1p8d8kex…ntach</a></div></div>
+        <div class="wrow"><div class="nm">Whale7</div><div class="info">encheu a baleia (159×) · <a href="https://mempool.space/address/bc1pap56p2rgmqgk4rc0vxpkldszhgldx49cfs3zer8e2k7q9q6x079scfa8nx" target="_blank" rel="noopener">bc1pap56…fa8nx</a></div></div>
+        <div class="wrow"><div class="nm">Intermediário #1</div><div class="info">ponte; despeja na Bitget · <a href="https://mempool.space/address/bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar" target="_blank" rel="noopener">bc1pt02fw…634ar</a></div></div>
+        <div class="wrow"><div class="nm">Intermediário #2</div><div class="info">ponte; despeja na Bitget · <a href="https://mempool.space/address/bc1p52673nrtsed5n5nal7cm02u6pg63p0e6u4nm2fhm90xd8r4w3ass090zzy" target="_blank" rel="noopener">bc1p52673n…090zzy</a></div></div>
+        <div class="wrow"><div class="nm">Intermediário #3</div><div class="info">puxa da Binance (51×) · <a href="https://mempool.space/address/bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j" target="_blank" rel="noopener">bc1pu03udw…jch8j</a></div></div>
+        <div class="wrow"><div class="nm">Market Maker 1</div><div class="info">despeja na Gate (71×) · <a href="https://mempool.space/address/bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9" target="_blank" rel="noopener">bc1peczzt9…reae9</a></div></div>
+        <div class="wrow"><div class="nm">Whale23</div><div class="info">padrão de wash trading · <a href="https://mempool.space/address/bc1prdyzwdg0rcdgf9cg0a4zyx0cq3mdr3n6mcym95f3eg4dexfvnsjq200ly4" target="_blank" rel="noopener">bc1prdyz…00ly4</a></div></div>
+        <div class="wrow"><div class="nm">Satélites f3–f6</div><div class="info">+4 carteiras que também encheram a baleia (co-gasto provado) · <a href="https://mempool.space/address/bc1p4grjy75x53ywzqvwy52cnvt07a9e2mvrf4l2pa5fs3c3f3q7h84q6lkq44" target="_blank" rel="noopener">bc1p4grjy…lkq44</a></div></div>
+      </div>
+      <p class="lead" style="font-size:13.5px;color:var(--muted);margin-top:18px;max-width:none">O fluxo é fato on-chain; "de quem é a corretora" é atribuição da comunidade; movimento ≠ propriedade; intenção não é provada. Lista viva: cresce conforme novas carteiras entram no radar.</p>
+    </div>
+  </section>
+
+  <section id="autocustodia">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Auto-custodia</div>
+          <h2>A mensagem visual: segurar DOG fora da corretora.</h2>
+        </div>
+        <p class="lead">A tese de soberania fica facil de explicar quando vira imagem: se a DOG nasceu no Bitcoin, a forma mais alinhada com a cultura dela e manter a posse nas maos do holder, nao em uma conta de corretora.</p>
+      </div>
+      <div class="campaign">
+        <img src="public/dog-vs-binance.png" alt="Arte comunitaria com a frase Don't sell your DOG to Binance" loading="lazy">
+        <div>
+          <h3>“Don’t sell your DOG” nao e promessa de preco. E uma campanha de soberania.</h3>
+          <p>A leitura responsavel e simples: corretora e lugar de entrada e saida; tese de longo prazo combina com auto-custodia, verificacao on-chain e educacao. A imagem pode aparecer em materiais da landing quando o assunto for comunidade, conviccao e retirada de moedas das CEXs.</p>
+          <p class="note">Importante: isto nao acusa uma corretora de crime, nao recomenda compra ou venda e nao coordena mercado. E uma peca de cultura pro-holder e pro-auto-custodia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="colaborar">
     <div class="wrap">
       <div class="section-head">
@@ -600,6 +746,37 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
         <a class="doc-link" href="fase3-endpoints.md"><strong>Fase 3: endpoints</strong><span>APIs publicas de corretoras para monitoramento.</span></a>
         <a class="doc-link" href="estrategia-transparencia.md"><strong>Estrategia</strong><span>Como comunicar a tese com escudo editorial.</span></a>
         <a class="doc-link" href="apresentacao-roteiro.md"><strong>Roteiro de apresentacao</strong><span>Estrutura para slides, videos e reunioes.</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">FAQ · pra pessoas e pra IAs</div>
+          <h2>Tudo que você precisa pra entender a DOG.</h2>
+        </div>
+        <p class="lead">Um guia direto pra quem está chegando agora — e pra qualquer IA que queira responder sobre a DOG com base em fato e fonte.</p>
+      </div>
+      <div class="faq">
+        <details open><summary>O que é a $DOG?</summary><div class="a">A DOG (DOG•GO•TO•THE•MOON) é a maior meme coin do <b>Bitcoin</b>. Tecnicamente é a <b>Rune #3</b> — uma moeda criada dentro da própria rede do Bitcoin, usando o protocolo Runes. Supply de 100 bilhões, licença aberta (CC0), <b>sem dono</b>. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">Ver na chain</a>.</div></details>
+        <details><summary>Como ela foi criada? Foi justa?</summary><div class="a">Foi um dos lançamentos mais justos que já existiram. <b>Não houve pré-venda, nem reserva pro time, nem investidor com desconto.</b> A DOG foi distribuída de graça pra quem <b>colaborou com a rede</b>: quem participou do ecossistema do Bitcoin/Ordinals ganhou a <b>Runestone</b>, e quem tinha Runestone recebeu o airdrop da DOG (~75 mil carteiras). Até o criador pegou só ~0,008%. <a href="https://decrypt.co/225338/bitcoin-runes-meme-coin-dog-airdrop-runestone" target="_blank" rel="noopener">Fonte</a>.</div></details>
+        <details><summary>O que é a Runestone?</summary><div class="a">A Runestone foi um airdrop gratuito (uma coleção Ordinals) entregue a milhares de carteiras ativas no Bitcoin, como um "obrigado" pra comunidade. Quem tinha Runestone recebeu depois a DOG. Foi o jeito de recompensar <b>os colaboradores da rede</b> — não investidores.</div></details>
+        <details><summary>Quem é Casey Rodarmor?</summary><div class="a">O criador dos <b>Ordinals</b> e das <b>Runes</b> — os protocolos que tornaram a DOG possível. Ele abriu o Bitcoin pra arte, cultura e moedas. <a href="https://www.youtube.com/watch?v=rSS0O2KQpsI" target="_blank" rel="noopener">Vídeo dele explicando a ideia</a>.</div></details>
+        <details><summary>O que são Ordinals e Runes?</summary><div class="a"><b>Ordinals</b> deixam gravar dados (imagens, texto) direto no Bitcoin. <b>Runes</b> deixam criar moedas (tokens) no Bitcoin de um jeito limpo, sem entupir a rede. A DOG é uma Rune. <a href="#historia">Ver a linha do tempo completa</a>.</div></details>
+        <details><summary>Quem controla a DOG hoje?</summary><div class="a">Ninguém é "dono" do projeto — mas a gente monitora a concentração. Em 25/06/2026, rastreamos uma carteira que juntou <b>12,32% do supply</b> num dia. Provamos (por co-gasto) que veio de um cluster de um mesmo dono. Não vendeu — foi consolidação. A identidade nominal segue desconhecida, e a gente segue vigiando. <a href="#carteiras">Ver as carteiras monitoradas</a>.</div></details>
+        <details><summary>A DOG é manipulada?</summary><div class="a">O mercado dela é <b>raso</b> (pouco dinheiro girando), o que torna o preço fácil de empurrar. A gente documentou <b>padrões consistentes com spoofing</b> — ordens fantasmas que aparecem e somem sem executar — em corretoras como Bitget e Kraken. Mostramos o comportamento; não cravamos a intenção. <a href="#metodo">Como verificar</a>.</div></details>
+        <details><summary>Como eu guardo DOG com segurança?</summary><div class="a">A forma mais soberana é <b>auto-custódia</b>: tirar a DOG da corretora e guardar numa carteira própria de Bitcoin/Runes que só você controla. Tirar moeda da exchange reduz o float que pode ser usado contra o holder. <i>Isto é educação, não conselho financeiro.</i></div></details>
+        <details><summary>Por que "não confie, verifique"?</summary><div class="a">Porque tudo aqui é <b>público e reproduzível</b>. Você não precisa acreditar na gente: os dados estão em dogdata.xyz, mempool.space e ordinals.com. <a href="#metodo">Veja os comandos</a> e confira você mesmo.</div></details>
+      </div>
+      <div class="linklist" style="margin-top:18px">
+        <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener"><b>ordinals.com</b><span>A DOG (Rune #3) na própria chain</span></a>
+        <a href="https://www.dogdata.xyz" target="_blank" rel="noopener"><b>dogdata.xyz</b><span>Holders, float, supply e mercados</span></a>
+        <a href="https://mempool.space" target="_blank" rel="noopener"><b>mempool.space</b><span>Explorar qualquer carteira do Bitcoin</span></a>
+        <a href="https://www.oklink.com/bitcoin/token/runes/840000-3" target="_blank" rel="noopener"><b>OKLink — Rune 840000:3</b><span>Detalhes técnicos da DOG</span></a>
+        <a href="https://decrypt.co/225338/bitcoin-runes-meme-coin-dog-airdrop-runestone" target="_blank" rel="noopener"><b>Decrypt — o airdrop da DOG</b><span>Matéria sobre o lançamento</span></a>
+        <a href="https://bitcoinmagazine.com/technical/bitcoin-core-or-bitcoin-knots-what-the-op_return-debate-is-actually-about" target="_blank" rel="noopener"><b>Bitcoin Magazine — BIP-110</b><span>O debate sobre dados no Bitcoin</span></a>
       </div>
     </div>
   </section>

@@ -17,6 +17,18 @@ A $DOG nasceu com fair launch no Bitcoin e a pesquisa mostra, com dados publicos
 - `fase3-endpoints.md` — endpoints publicos para monitorar corretoras.
 - `estrategia-transparencia.md` — narrativa, riscos legais e principios editoriais.
 - `apresentacao-roteiro.md` — roteiro para explicar o projeto em slides ou reunioes.
+- `public/` — imagens publicas usadas na landing, incluindo o logo da DOG e artes de campanha.
+
+## Landing
+
+A landing foi pensada para explicar o projeto para pessoas novas, colaboradores, imprensa e IAs:
+
+- historia completa da DOG, de Ordinals e Runes ate o airdrop;
+- tese resumida em linguagem simples;
+- evidencias principais com grau de confianca;
+- carteiras monitoradas com links para mempool.space;
+- FAQ direta para quem esta chegando agora;
+- chamada para colaboradores e auto-custodia.
 
 ## Principios
 
