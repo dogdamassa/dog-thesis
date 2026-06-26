@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$DOG — Transparência On-Chain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#F7931A; --mint:#3fb985; --amber:#c98a14; --red:#d8503a;
+    /* dark default */
+    --bg:#0e0e0e; --ink:#f4efe4; --muted:#8c8678; --panel:#191919; --line:#2a2a2a; --track:#222;
+  }
+  .light{ --bg:#f4f1ea; --ink:#171309; --muted:#7a7263; --panel:#ffffff; --line:#e4ded0; --track:#e9e3d5; }
+  .accent{ --bg:#F7931A; --ink:#1c1305; --muted:#6b4a14; --panel:rgba(255,255,255,.16); --line:rgba(0,0,0,.16); }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:#0e0e0e;color:#fff;font-family:"Inter",-apple-system,system-ui,sans-serif;overflow:hidden;-webkit-font-smoothing:antialiased}
+  #deck{height:100vh;width:100vw;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+    padding:9vh 8vw 8vh;background:var(--bg);color:var(--ink)}
+  .slide.active{display:flex;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .shead{position:absolute;top:4.2vh;left:8vw;right:8vw;display:flex;justify-content:space-between;
+    font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700;
+    padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .shead .o{color:var(--orange)}
+  h1{font-size:clamp(54px,10vw,150px);font-weight:900;line-height:.92;letter-spacing:-.035em}
+  h2{font-size:clamp(30px,4.6vw,72px);font-weight:800;line-height:1.0;letter-spacing:-.025em;margin-bottom:.45em}
+  .o{color:var(--orange)}
+  .lead{font-size:clamp(22px,2.7vw,40px);line-height:1.25;font-weight:600;max-width:20ch;letter-spacing:-.01em}
+  .sub{font-size:clamp(15px,1.6vw,22px);color:var(--muted);line-height:1.5;margin-top:1.1em;max-width:48ch}
+  .kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);font-weight:800;margin-bottom:1.1em}
+  .huge{font-size:clamp(80px,17vw,230px);font-weight:900;color:var(--orange);line-height:.82;letter-spacing:-.04em}
+  .row{display:flex;gap:16px;flex-wrap:wrap;margin-top:1.5em}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;flex:1;min-width:165px}
+  .card.hi{border-color:var(--orange);box-shadow:inset 0 0 0 1px var(--orange)}
+  .card .n{font-size:clamp(24px,3vw,40px);font-weight:900;color:var(--orange);letter-spacing:-.02em}
+  .card .l{color:var(--muted);font-size:14.5px;margin-top:7px;line-height:1.45;font-weight:500}
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:1.6em}
+  .colu .h{font-weight:800;font-size:clamp(16px,1.8vw,21px);padding-bottom:9px;border-bottom:2px solid var(--orange);display:inline-block;margin-bottom:11px}
+  .colu p{color:var(--muted);font-size:14.5px;line-height:1.5}
+  ul{list-style:none;margin-top:1.2em;display:flex;flex-direction:column;gap:14px}
+  li{font-size:clamp(16px,1.9vw,26px);line-height:1.4;position:relative;padding-left:42px;font-weight:500}
+  .tag{position:absolute;left:0;top:4px;font-weight:800;font-size:14px;padding:3px 9px;border-radius:7px}
+  .ok{background:rgba(63,185,133,.16);color:var(--mint)}
+  .hyp{background:rgba(201,138,20,.18);color:var(--amber)}
+  .no{background:rgba(216,80,58,.16);color:var(--red)}
+  .pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:1.5em}
+  .pill{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:12px 22px;font-size:clamp(14px,1.5vw,19px);font-weight:600;color:var(--ink)}
+  .pill.o{border-color:var(--orange);color:var(--orange)}
+  .note{margin-top:1.4em;font-size:14.5px;color:var(--muted);border-left:3px solid var(--orange);padding-left:16px;line-height:1.55;max-width:64ch;font-weight:500}
+  .src{margin-top:1em;font-size:12px;color:var(--muted);opacity:.8;letter-spacing:.02em}
+  .badge{display:inline-block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 16px;margin-top:2.2em;width:fit-content;font-weight:700}
+  .author{margin-top:2.2em;color:var(--muted);font-size:16px;font-weight:500} .author b{color:var(--ink);font-weight:700}
+  /* bar */
+  .bar{display:flex;height:84px;border-radius:12px;overflow:hidden;margin-top:1.3em;border:1px solid var(--line)}
+  .seg{display:flex;flex-direction:column;justify-content:center;align-items:center;color:#0e0e0e;font-weight:800}
+  .seg.sth{background:var(--mint);flex:17.59} .seg.lth{background:var(--orange);flex:82.41}
+  .seg .p{font-size:clamp(20px,2.6vw,34px);font-weight:900} .seg .t{font-size:12.5px;opacity:.85;font-weight:700}
+  .waves{margin-top:1.1em;display:flex;flex-direction:column;gap:8px}
+  .wrow{display:flex;align-items:center;gap:13px;font-size:clamp(12px,1.4vw,16px);font-weight:600}
+  .wlab{width:92px;flex:none;color:var(--muted);text-align:right}
+  .wbar{flex:1;background:var(--track);border-radius:6px;overflow:hidden;height:20px}
+  .wbar i{display:block;height:100%;background:linear-gradient(90deg,rgba(247,147,26,.35),var(--orange));border-radius:6px}
+  .wval{width:54px;flex:none;font-weight:800;color:var(--ink)}
+  /* donut */
+  .mvrv{display:flex;align-items:center;gap:46px;flex-wrap:wrap;margin-top:1em}
+  .donut{width:230px;height:230px;border-radius:50%;flex:none;display:grid;place-items:center;background:conic-gradient(var(--red) 0 77.5%,var(--mint) 77.5% 100%)}
+  .donut .hole{width:148px;height:148px;border-radius:50%;background:var(--bg);display:grid;place-items:center;text-align:center}
+  .donut .hv{font-size:36px;font-weight:900;color:var(--red)} .donut .hl{font-size:12px;color:var(--muted);font-weight:600}
+  .leg{display:flex;flex-direction:column;gap:15px;font-size:clamp(16px,1.8vw,23px);font-weight:600}
+  .leg .k{display:flex;gap:11px;align-items:center} .sw{width:15px;height:15px;border-radius:4px;flex:none}
+  /* graph */
+  .graph .node{fill:var(--panel);stroke-width:2} .nA{stroke:var(--amber)} .nO{stroke:var(--orange)}
+  .graph text{fill:var(--ink);font-family:inherit;font-weight:700} .tmut{fill:var(--muted);font-weight:500}
+  .edash{stroke:var(--line);stroke-width:2;stroke-dasharray:6 5} .esolid{stroke:var(--mint);stroke-width:3} .tmint{fill:var(--mint)}
+  /* ghost wall */
+  .book{margin-top:1.2em;display:flex;align-items:flex-end;gap:7px;height:150px;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .ord{flex:1;background:var(--track);border-radius:4px 4px 0 0}
+  .light .ord{background:#d8d1c1}
+  .ord.ghost{background:linear-gradient(180deg,var(--red),#7a2418);animation:flick 2.6s infinite}
+  @keyframes flick{0%,18%{opacity:.95;height:92%}22%,40%{opacity:0;height:92%}44%,62%{opacity:.95;height:92%}66%,100%{opacity:0;height:92%}}
+  .booklab{display:flex;justify-content:space-between;margin-top:9px;font-size:13px;color:var(--muted);font-weight:600}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:1.3em}
+  .col{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px}
+  .col h3{font-size:clamp(18px,2vw,26px);margin-bottom:.5em} .col.good h3{color:var(--mint)} .col.bad h3{color:var(--amber)}
+  .col p{color:var(--muted);font-size:16px;line-height:1.5;font-weight:500}
+  /* casey split */
+  .split{display:grid;grid-template-columns:0.9fr 1.1fr;gap:46px;align-items:center;margin-top:.4em}
+  .photo{border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .vlink{display:inline-flex;gap:9px;align-items:center;margin-top:1.1em;font-size:15px;font-weight:700;color:var(--orange);text-decoration:none;border:1px solid var(--orange);border-radius:999px;padding:9px 16px;width:fit-content}
+  /* numbered */
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:1.4em}
+  .nx .b{font-size:clamp(34px,4vw,56px);font-weight:900;color:var(--orange);line-height:1}
+  .nx p{margin-top:10px;color:var(--ink);font-size:clamp(15px,1.6vw,20px);line-height:1.4;font-weight:500}
+  @media(max-width:820px){.cols,.nums{grid-template-columns:1fr;gap:18px}.twocol{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:20px}.mvrv{gap:22px}#legend{display:none}}
+  /* chrome */
+  #prog{position:fixed;top:0;left:0;height:3px;background:var(--orange);z-index:30;transition:width .3s}
+  #nav{position:fixed;bottom:20px;right:26px;display:flex;gap:10px;z-index:30}
+  .nbtn{background:rgba(128,128,128,.18);backdrop-filter:blur(8px);border:1px solid rgba(128,128,128,.3);color:#fff;width:42px;height:42px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  #counter{position:fixed;bottom:28px;left:26px;color:rgba(140,140,140,.9);font-size:13px;z-index:30;font-variant-numeric:tabular-nums;font-weight:600}
+  #legend{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:15px;font-size:11.5px;color:rgba(140,140,140,.9);z-index:30;font-weight:600}
+  #legend span{display:flex;gap:6px;align-items:center} .dot{width:9px;height:9px;border-radius:50%}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<div id="deck">
+
+  <section class="slide dark active">
+    <div class="shead"><span><span class="o">$DOG</span> · TRANSPARÊNCIA ON-CHAIN</span><span>CAPA</span></div>
+    <div class="kicker">Estudo de Transparência On-Chain · 2026</div>
+    <h1>$DOG<span class="o">.</span></h1>
+    <div class="lead" style="margin-top:.35em">Float, estrutura de holders e microestrutura de mercado.</div>
+    <div class="author">Por <b>@dogdamassa</b> · Junho 2026</div>
+    <div class="badge">Pesquisa reproduzível · não é conselho financeiro</div>
+  </section>
+
+  <section class="slide light">
+    <div class="shead"><span><span class="o">$DOG</span> · TRANSPARÊNCIA ON-CHAIN</span><span>A TESE</span></div>
+    <h2>A $DOG é <span class="o">o que o crypto deveria ser</span> — e os dados provam.</h2>
+    <div class="sub">Sem dono. Sem VC. 100% airdrop. A convicção está on-chain; os jogos estão nas corretoras.</div>
+  </section>
+
+  <section class="slide dark">
+    <div class="shead"><span>A FUNDAÇÃO · ✅ PROVADO</span><span>O QUE É</span></div>
+    <h2>O que é a $DOG</h2>
+    <div class="row">
+      <div class="card hi"><div class="n">Rune #3</div><div class="l">etched no bloco do halving</div></div>
+      <div class="card"><div class="n">100%</div><div class="l">airdrop · ~75.000 holders</div></div>
+      <div class="card"><div class="n">CC0</div><div class="l">sem dono · sem pré-venda · sem insider</div></div>
+      <div class="card"><div class="n">0,008%</div><div class="l">parte do fundador</div></div>
+    </div>
+    <div class="note">Um ativo verdadeiramente sem dono, fiel ao ideal original do Bitcoin. A base de credibilidade.</div>
+  </section>
+
+  <section class="slide light">
+    <div class="shead"><span>O PROBLEMA</span><span>POR QUE</span></div>
+    <h2>Por que este estudo</h2>
+    <div class="lead">A comunidade é convicta. Então por que o mercado parece manipulado?</div>
+    <div class="twocol">
+      <div class="col good"><h3>On-chain ✅</h3><p>Honesto e transparente. Holders convictos, mãos fortes, fair launch. Não mente.</p></div>
+      <div class="col bad"><h3>Off-chain ⚠️</h3><p>Os order books das CEX. É aqui que moram os jogos: wash trading, spoofing, oráculo.</p></div>
+    </div>
+  </section>
+
+  <section class="slide dark">
+    <div class="shead"><span>O ESCUDO</span><span>MÉTODO</span></div>
+    <h2>Metodologia &amp; princípio</h2>
+    <div class="cols">
+      <div class="colu"><span class="h">Reprodutível</span><p>Dados 100% públicos. Qualquer um refaz e chega no mesmo lugar.</p></div>
+      <div class="colu"><span class="h">Comportamento ≠ intenção</span><p>Padrão Chainalysis. Mostramos padrões, não crime provado.</p></div>
+      <div class="colu"><span class="h">Sem hype</span><p>Sem teoria conspiratória, sem previsão de preço, sem acusação sem prova.</p></div>
+    </div>
+    <div class="note">Plateia séria confia em quem mostra o método antes do resultado. Não confie — verifique.</div>
+  </section>
+
+  <section class="slide light">
+    <div class="shead"><span>ACHADO 01 · ✅ PROVADO</span><span>FLOAT</span></div>
+    <h2>Float fino, mãos fortes</h2>
+    <div class="bar">
+      <div class="seg sth"><div class="p">17,6%</div><div class="t">STH &lt;155d</div></div>
+      <div class="seg lth"><div class="p">82,4%</div><div class="t">LTH ≥155 dias</div></div>
+    </div>
+    <div class="waves">
+      <div class="wrow"><span class="wlab">&gt; 1 ano</span><span class="wbar"><i style="width:100%"></i></span><span class="wval">59,5%</span></div>
+      <div class="wrow"><span class="wlab">180–365d</span><span class="wbar"><i style="width:33.8%"></i></span><span class="wval">20,1%</span></div>
+      <div class="wrow"><span class="wlab">90–180d</span><span class="wbar"><i style="width:15.2%"></i></span><span class="wval">9,0%</span></div>
+      <div class="wrow"><span class="wlab">30–90d</span><span class="wbar"><i style="width:11.3%"></i></span><span class="wval">6,7%</span></div>
+      <div class="wrow"><span class="wlab">&lt; 30d</span><span class="wbar"><i style="width:7.7%"></i></span><span class="wval">4,6%</span></div>
+    </div>
+    <div class="src">HODL waves · % do supply por idade de UTXO · fonte: dogdata.xyz/api/metrics/utxo-age</div>
+  </section>
+
+  <section class="slide dark">
+    <div class="shead"><span>ACHADO 02 · ✅ O CORAÇÃO</span><span>CONVICÇÃO</span></div>
+    <h2>Convicção provada por dado</h2>
+    <div class="mvrv">
+      <div class="donut"><div class="hole"><div><div class="hv">77,5%</div><div class="hl">em prejuízo</div></div></div></div>
+      <div class="leg">
+        <div class="k"><span class="sw" style="background:var(--red)"></span> 77,5% do supply <b>no vermelho</b></div>
+        <div class="k"><span class="sw" style="background:var(--mint)"></span> 22,5% no lucro</div>
+        <div class="k"><span class="o" style="font-weight:900">MVRV 0,22</span> — e mesmo assim <b>82% é LTH</b></div>
+      </div>
+    </div>
+    <div class="note"><b>Apanha e não vende.</b> Gente no -70% e segurando há mais de um ano. Convicção, em número — a comunidade mais fiel do crypto.</div>
+  </section>
+
+  <section class="slide light">
+    <div class="shead"><span>ACHADO 03 · FORENSE</span><span>CLUSTER</span></div>
+    <h2>Quem move o quê</h2>
+    <svg class="graph" viewBox="0 0 720 180" width="100%" height="170">
+      <line x1="122" y1="90" x2="294" y2="90" class="edash"/>
+      <line x1="386" y1="90" x2="554" y2="90" class="esolid"/>
+      <text x="430" y="78" class="tmint" font-size="13" text-anchor="middle">co-gasto ×8</text>
+      <text x="208" y="78" class="tmut" font-size="13" text-anchor="middle">só saques →</text>
+      <circle cx="80" cy="90" r="42" class="node nA"/><text x="80" y="86" font-size="13" text-anchor="middle">Binance</text><text x="80" y="104" class="tmut" font-size="11" text-anchor="middle">saldo ~0</text>
+      <circle cx="340" cy="90" r="46" class="node nO"/><text x="340" y="86" font-size="14" text-anchor="middle">MM2</text><text x="340" y="105" class="tmut" font-size="11" text-anchor="middle">2,05B</text>
+      <circle cx="600" cy="90" r="46" class="node nO"/><text x="600" y="86" font-size="14" text-anchor="middle">Whale7</text><text x="600" y="105" class="tmut" font-size="11" text-anchor="middle">1,15B</text>
+    </svg>
+    <ul>
+      <li><span class="tag ok">✅</span> MM2 + Whale7 = <b>mesmo dono</b> (co-gasto, ~3,2% do supply).</li>
+      <li><span class="tag no">❌</span> "Binance controla 13%": <b>não se sustenta</b> — saldo ~0, é custódia/pass-through.</li>
+    </ul>
+  </section>
+
+  <section class="slide dark">
+    <div class="shead"><span>ACHADO 04 · 🟡 MICROESTRUTURA</span><span>SPOOFING</span></div>
+    <h2>Spoofing nos order books</h2>
+    <div class="book">
+      <div class="ord" style="height:30%"></div><div class="ord" style="height:22%"></div>
+      <div class="ord ghost" style="flex:2"></div>
+      <div class="ord" style="height:18%"></div><div class="ord" style="height:26%"></div>
+      <div class="ord" style="height:15%"></div><div class="ord" style="height:20%"></div>
+    </div>
+    <div class="booklab"><span>order book (Bitget) — ao vivo</span><span class="o">a parede fantasma aparece e some ⤴</span></div>
+    <ul>
+      <li><span class="tag hyp">🟡</span> <b>Bitget:</b> ordem de ~$2.715 (≈90% do book), <b>flicker 33× e nunca executou</b>.</li>
+      <li><span class="tag ok">✅</span> Reframe: está na <b>Bitget/Kraken</b> (que listam DOG), <b>não na Binance</b>.</li>
+    </ul>
+  </section>
+
+  <section class="slide light">
+    <div class="shead"><span>A SAGA · ✅ A VERSÃO REAL</span><span>BINANCE</span></div>
+    <h2>Valores vs. <span class="o">pay-to-play</span></h2>
+    <div class="twocol">
+      <div class="col"><h3>Set/2024</h3><p>O projeto pediu listagem na Binance <b style="color:var(--ink)">recusando pagar taxa ou dar market makers</b>. Não foi listado.</p></div>
+      <div class="col"><h3>10/10/2025</h3><p>A Binance <b style="color:var(--ink)">admitiu</b> a falha de oráculo, pagou ~$283M e <b style="color:var(--ink)">mudou a metodologia</b> — admissão tácita.</p></div>
+    </div>
+    <div class="note">A história forte é verdadeira e simpática — não precisa de vilão invisível.</div>
+  </section>
+
+  <section class="slide dark">
+    <div class="shead"><span>A INSPIRAÇÃO</span><span>GAMESTOP</span></div>
+    <h2>GameStop: a alma, não a fórmula</h2>
+    <ul>
+      <li><span class="tag ok">✅</span> O <b>espírito mapeia 100%:</b> varejo convicto + transparência + comunidade leal virando o jogo contra instituições opacas.</li>
+      <li><span class="tag ok">🔑</span> A ferramenta real: <b>auto-custódia = o "DRS do crypto"</b> — tira o float do controle das CEX.</li>
+    </ul>
+    <div class="note">A mecânica de squeeze de <i>ações</i> não existe igual no spot. A força vem de <b>soberania + verdade</b> — e ninguém reverte nem processa.</div>
+  </section>
+
+  <section class="slide light">
+    <div class="shead"><span>QUEM ABRIU A PORTA</span><span>CASEY</span></div>
+    <div class="split">
+      <div class="photo"><img src="img/casey.jpeg" alt="Casey Rodarmor"></div>
+      <div>
+        <h2 style="margin-bottom:.3em">Casey Rodarmor mudou o jogo <span class="o">pra sempre</span></h2>
+        <ul style="margin-top:.7em">
+          <li><span class="tag ok">✅</span> Criou os <b>Ordinals (2023)</b> e as <b>Runes (2024)</b> — eternizar e tokenizar <b>direto na L1 do Bitcoin</b>. A $DOG (Rune #3) nasceu disso.</li>
+          <li><span class="tag ok">✅</span> <b>Trouxe gente real</b> — artistas, criadores, pessoas menos técnicas — pra dentro do Bitcoin.</li>
+        </ul>
+        <a class="vlink" href="https://www.youtube.com/watch?v=rSS0O2KQpsI" target="_blank">▶ Casey explica a Ordinal Theory</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide dark">
+    <div class="shead"><span>A AMEAÇA · ⚖️ DEBATE ABERTO</span><span>BIP-110</span></div>
+    <h2>BIP-110: querem <span class="o">permissão</span> pro que foi feito pra <span class="o">libertar</span></h2>
+    <ul>
+      <li><span class="tag hyp">⚖️</span> <b>O que é:</b> proposta (Luke Dashjr / Bitcoin Knots) pra <b>limitar dados não-monetários</b> — mira Ordinals e Runes.</li>
+      <li><span class="tag ok">✅</span> <b>Os fatos:</b> mineradores são <b>contra</b> (perdem taxa); Adam Back nega ser censura; sinalização longe do limiar.</li>
+    </ul>
+    <div class="note">💭 <b>A crítica:</b> o Bitcoin foi feito pra ser <b>sem permissão</b>. Os velhos maximalistas querem instalar um <b>porteiro</b> num sistema desenhado pra não ter porteiro — censurar o que pessoas livres escolhem eternizar é trair o DNA do Bitcoin.</div>
+  </section>
+
+  <section class="slide light">
+    <div class="shead"><span>A RESPOSTA</span><span>ESTRATÉGIA</span></div>
+    <h2>Estratégia: <span class="o">Transparência Radical</span></h2>
+    <div class="row">
+      <div class="card"><div class="n">🔬</div><div class="l"><b>Verdade</b><br>forense reproduzível</div></div>
+      <div class="card"><div class="n">🛠️</div><div class="l"><b>Ferramentas</b><br>detector open-source</div></div>
+      <div class="card"><div class="n">📖</div><div class="l"><b>Narrativa</b><br>a história real</div></div>
+      <div class="card hi"><div class="n">🔑</div><div class="l"><b>Auto-custódia</b><br>o DRS do crypto</div></div>
+      <div class="card"><div class="n">⚖️</div><div class="l"><b>Accountability</b><br>cobrar com evidência</div></div>
+    </div>
+  </section>
+
+  <section class="slide dark">
+    <div class="shead"><span>O ESCUDO · ⚖️</span><span>ÉTICA</span></div>
+    <h2>Ética &amp; limites</h2>
+    <ul>
+      <li><span class="tag ok">✅</span> Publicar <b>fato reproduzível</b>, nunca acusação de intenção.</li>
+      <li><span class="tag hyp">⚖️</span> Comportamento ≠ intenção provada.</li>
+      <li><span class="tag no">🇧🇷</span> Lei brasileira difere — <b>consultar advogado</b> antes de acusação nominal.</li>
+      <li><span class="tag no">🚫</span> Nada de coordenar preço. Isso é manipulação — vira o que se combate.</li>
+    </ul>
+  </section>
+
+  <section class="slide accent">
+    <div class="shead"><span style="color:rgba(0,0,0,.6)">$DOG · DOG ARMY</span><span style="color:rgba(0,0,0,.6)">JUNTE-SE</span></div>
+    <div class="nums" style="margin-bottom:auto;margin-top:0">
+      <div class="nx"><div class="b" style="color:#1c1305">1</div><p style="color:#1c1305"><b>Vire investigador</b> — vigie a chain com a ferramenta open-source.</p></div>
+      <div class="nx"><div class="b" style="color:#1c1305">2</div><p style="color:#1c1305"><b>Auto-custódia</b> — traga seu DOG da exchange pra sua carteira.</p></div>
+      <div class="nx"><div class="b" style="color:#1c1305">3</div><p style="color:#1c1305"><b>Accountability</b> — cobre com o recibo na mão.</p></div>
+    </div>
+    <h1 style="color:#1c1305;margin-top:.2em">Dog Army.</h1>
+    <div class="lead" style="color:#2a1d08;max-width:30ch;margin-top:.3em">Verdade + soberania ninguém reverte, nem processa.</div>
+  </section>
+
+  <section class="slide light">
+    <div class="shead"><span>NÃO CONFIE — VERIFIQUE</span><span>FONTES</span></div>
+    <h2>Reprodutibilidade</h2>
+    <div class="cols">
+      <div class="colu"><span class="h">Float &amp; holders</span><p>dogdata.xyz/api/metrics/utxo-age</p></div>
+      <div class="colu"><span class="h">Carteiras</span><p>mempool.space/api/address/… (co-gasto)</p></div>
+      <div class="colu"><span class="h">Order books</span><p>endpoints públicos de 8 CEX (Gate, Kraken, Bitget, MEXC…)</p></div>
+    </div>
+    <div class="note">Todos os dados são públicos. Qualquer pessoa refaz e chega no mesmo lugar. 🐶🟠</div>
+  </section>
+
+</div>
+
+<div id="counter">01 / 16</div>
+<div id="legend">
+  <span><span class="dot" style="background:var(--mint)"></span>✅ provado</span>
+  <span><span class="dot" style="background:var(--amber)"></span>🟡/⚖️ hipótese</span>
+  <span><span class="dot" style="background:var(--red)"></span>❌ não afirmamos</span>
+</div>
+<div id="nav"><button class="nbtn" id="prev">‹</button><button class="nbtn" id="next">›</button></div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0; const prog=document.getElementById('prog'),counter=document.getElementById('counter');
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    prog.style.width=((i+1)/slides.length*100)+'%';
+    counter.textContent=String(i+1).padStart(2,'0')+' / '+slides.length;
+  }
+  document.getElementById('next').onclick=()=>show(i+1);
+  document.getElementById('prev').onclick=()=>show(i-1);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')show(i+1);
+    if(e.key==='ArrowLeft'||e.key==='PageUp')show(i-1);
+    if(e.key==='Home')show(0); if(e.key==='End')show(slides.length-1);
+  });
+  let x0=null;
+  document.addEventListener('touchstart',e=>x0=e.touches[0].clientX);
+  document.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)show(i+(dx<0?1:-1));x0=null;});
+  show(0);
+</script>
+</body>
+</html>
