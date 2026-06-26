@@ -369,6 +369,9 @@ h2{
 .source-card h3{font-size:20px;line-height:1.1;margin-bottom:8px}
 .source-card p{color:var(--muted);font-size:14.5px;line-height:1.55}
 .source-card a{display:inline-flex;margin-top:12px;color:var(--orange);font-size:13px;font-weight:850;border-bottom:1px solid rgba(247,147,26,.38)}
+.collab-cta{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-top:18px;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:8px;padding:22px}
+.collab-cta h3{font-size:22px;line-height:1.12;margin-bottom:8px}
+.collab-cta p{color:var(--muted);font-size:15px;line-height:1.55;max-width:720px}
 .verify{
   background:linear-gradient(180deg,#f6a13a,var(--orange));
   color:#1b1104;
@@ -421,6 +424,8 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
   .evidence-row{grid-template-columns:1fr}
   .source-card{grid-template-columns:1fr;text-align:left}
   .source-card img{max-height:96px}
+  .collab-cta{display:block}
+  .collab-cta .btn{margin-top:16px}
   footer .inner{display:block}
 }
 /* --- historia / pessoa / faq / carteiras / links (add) --- */
@@ -717,14 +722,14 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
           <div class="kicker">Colaboradores</div>
           <h2>O projeto precisa de olhos diferentes.</h2>
         </div>
-        <p class="lead">A pesquisa cresce com fontes públicas e analistas independentes. DOG DATA organiza métricas essenciais da DOG, e Vincent, conhecido como Cryptolution, começou análises na cadeia que ajudaram a abrir o mapa de carteiras.</p>
+        <p class="lead">A pesquisa cresce com fontes públicas, analistas independentes e mais pessoas da comunidade DOG verificando os mesmos dados. DOG DATA fornece dados dos Ordinals, em especial da DOG, e Vincent, conhecido como Cryptolution, ajudou a abrir o mapa forense das carteiras.</p>
       </div>
       <div class="source-grid">
         <article class="source-card">
           <img src="public/dog-data-logo.png" alt="Logo DOG DATA">
           <div>
             <h3>DOG DATA</h3>
-            <p>Base pública para holders, mercados, float, idade de UTXO e concentração. É uma das referências centrais para verificar a tese com números.</p>
+            <p>Fonte de dados dos Ordinals, com foco especial na DOG. Organiza holders, mercados, float, idade de UTXO e concentração para que a tese seja verificada com números.</p>
             <a href="https://www.dogdata.xyz" target="_blank" rel="noopener">Abrir DOG DATA</a>
           </div>
         </article>
@@ -732,10 +737,17 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
           <img src="public/cryptolution-x.png" alt="Perfil de Vincent, Cryptolution, no X">
           <div>
             <h3>Vincent, Cryptolution</h3>
-            <p>Analista que iniciou parte das leituras públicas de carteiras e clusters da DOG no X. A tese usa esses sinais como ponto de partida e revisa tudo com método reproduzível.</p>
+            <p>Analista forense na cadeia, com mais de 720 vídeos sobre DOG. Suas leituras públicas de carteiras e clusters ajudaram a iniciar uma investigação que agora pode ser revisada por qualquer pessoa.</p>
             <a href="https://x.com/Cryptolution" target="_blank" rel="noopener">Ver @Cryptolution no X</a>
           </div>
         </article>
+      </div>
+      <div class="collab-cta">
+        <div>
+          <h3>Convite aberto para a comunidade DOG</h3>
+          <p>Precisamos de mais DOGs investigando junto: revisando carteiras, conferindo dados, traduzindo achados e cobrando transparência com evidência. Quanto mais olhos independentes, mais forte fica a tese.</p>
+        </div>
+        <a class="btn primary" href="https://github.com/dogdamassa/dog-thesis" target="_blank" rel="noopener">Investigar no GitHub</a>
       </div>
       <div class="grid grid-4">
         <article class="card collab-card">
