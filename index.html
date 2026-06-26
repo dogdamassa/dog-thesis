@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DOG Thesis · Transparência na cadeia para a $DOG</title>
-<meta name="description" content="A história completa da $DOG (DOG•GO•TO•THE•MOON) com FAQ, pesquisa na cadeia, Casey Rodarmor, Ordinals, Runes, fair launch, holders, carteiras monitoradas e corretoras. Não confie: verifique.">
+<meta name="description" content="A história completa da $DOG (DOG•GO•TO•THE•MOON) com FAQ, pesquisa na cadeia, Casey Rodarmor, Ordinals, Runes, fair launch, holders, carteiras vigiadas e corretoras. Não confie: verifique.">
 <meta property="og:title" content="DOG Thesis · Transparência na cadeia para a $DOG">
 <meta property="og:description" content="Dados públicos, metodologia aberta e convite para colaboradores investigarem a $DOG com evidência. Não confie: verifique.">
 <meta property="og:image" content="public/dog-logo.png">
@@ -243,38 +243,42 @@ h2{
 .grid-3{grid-template-columns:repeat(3,1fr)}
 .grid-4{grid-template-columns:repeat(4,1fr)}
 .card{
-  background:linear-gradient(180deg,var(--surface-2),var(--surface));
+  position:relative;
+  background:linear-gradient(180deg,#111820,var(--surface));
   border:1px solid var(--line);
   border-radius:8px;
-  padding:22px;
+  padding:26px;
+  overflow:hidden;
+  box-shadow:0 18px 50px rgba(0,0,0,.18);
 }
+.card::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,rgba(247,147,26,.95),rgba(67,197,158,.55),transparent)}
 .card h3{
-  font-size:17px;
-  line-height:1.2;
-  font-weight:850;
-  letter-spacing:-.015em;
-  margin-bottom:10px;
+  font-size:21px;
+  line-height:1.08;
+  font-weight:900;
+  letter-spacing:-.025em;
+  margin:12px 0 14px;
 }
 .card p,.card li{
   color:var(--muted);
   font-size:14.5px;
-  line-height:1.55;
+  line-height:1.62;
 }
 .tag{
   display:inline-flex;
   color:var(--blue);
-  border:1px solid rgba(114,167,255,.25);
-  background:rgba(114,167,255,.08);
-  padding:5px 9px;
-  border-radius:999px;
+  border:0;
+  background:transparent;
+  padding:0;
+  border-radius:0;
   font-size:11px;
-  font-weight:850;
-  letter-spacing:.04em;
+  font-weight:900;
+  letter-spacing:.14em;
   text-transform:uppercase;
-  margin-bottom:14px;
+  margin-bottom:6px;
 }
-.tag.proved{color:var(--mint);border-color:rgba(67,197,158,.25);background:rgba(67,197,158,.08)}
-.tag.watch{color:var(--warn);border-color:rgba(229,182,75,.28);background:rgba(229,182,75,.09)}
+.tag.proved{color:var(--mint)}
+.tag.watch{color:var(--warn)}
 .thesis{
   display:grid;
   grid-template-columns:1.05fr .95fr;
@@ -577,30 +581,30 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
       <div class="section-head">
         <div>
           <div class="kicker">Evidências principais</div>
-          <h2>O que já está forte, o que está em monitoramento.</h2>
+          <h2>Cadeia sustenta. Pesquisa vigia.</h2>
         </div>
         <p class="lead">A pesquisa foi organizada por grau de confiança. Isso deixa a conversa mais profissional: bom para comunidade, imprensa, investidores curiosos e devs que queiram auditar os dados.</p>
       </div>
       <div class="grid grid-3">
         <article class="card">
-          <span class="tag proved">Provado</span>
+          <span class="tag proved">Confirmado</span>
           <h3>Fair launch real</h3>
           <p>Rune #3, 100B de supply, mint fechado, airdrop para holders de Runestone, sem venda antecipada e sem alocação privilegiada de time.</p>
         </article>
         <article class="card">
-          <span class="tag proved">Provado</span>
+          <span class="tag proved">Confirmado</span>
           <h3>Float majoritariamente parado</h3>
           <p>Em 26/06, a DogData média 75,48% do supply como LTH e 59,5% parado há mais de um ano. O método correto é por UTXO.</p>
         </article>
         <article class="card">
-          <span class="tag watch">Monitorar</span>
+          <span class="tag watch">Em observação</span>
           <h3>Baleia de 12,32%</h3>
           <p>Uma carteira nova recebeu cerca de 12,32% do supply em 25/06. A origem aponta para um cluster já rastreado; a identidade nominal segue desconhecida.</p>
         </article>
         <article class="card">
-          <span class="tag watch">Hipótese forte</span>
+          <span class="tag watch">Sinal forte</span>
           <h3>Cluster coordenado</h3>
-          <p>Carteiras como MM2 e Whale7 assinam inputs juntas, um sinal forte de dono único. Há padrões consistentes com wash trading no cluster.</p>
+          <p>Carteiras como MM2 e Whale7 assinam inputs juntas, sinal técnico de controle comum. Há padrões consistentes com wash trading no cluster.</p>
         </article>
         <article class="card">
           <span class="tag watch">Reproduzível</span>
@@ -610,7 +614,7 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
         <article class="card">
           <span class="tag">Limite</span>
           <h3>O que não afirmamos</h3>
-          <p>Não afirmamos que a Binance controla 13%, que existe crime provado ou que há uma previsão de preço. A pesquisa corta esse excesso.</p>
+          <p>Não afirmamos autoria nominal, intenção, crime ou previsão de preço. A pesquisa separa dado público de narrativa.</p>
         </article>
       </div>
     </div>
@@ -636,7 +640,7 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
         </div>
         <div class="evidence-row">
           <div class="num">03</div>
-          <div><p><strong>Monitorar livros de ofertas.</strong> Capturar snapshots em série para diferenciar liquidez real de paredes que aparecem e somem sem execução.</p><small>Fonte: endpoints públicos listados no documento da Fase 3.</small></div>
+          <div><p><strong>Vigiar livros de ofertas.</strong> Capturar snapshots em série para diferenciar liquidez real de paredes que aparecem e somem sem execução.</p><small>Fonte: endpoints públicos listados no documento da Fase 3.</small></div>
         </div>
       </div>
     </div>
@@ -646,7 +650,7 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="kicker">Sala de monitoramento</div>
+          <div class="kicker">Sala de vigilância</div>
           <h2>As carteiras que a gente vigia, todo dia.</h2>
         </div>
         <p class="lead">Transparência é mostrar o que a gente olha. Clique em qualquer endereço para conferir na mempool.space. Rótulos de corretora confirmados por endereço público; o cluster é amarrado por gasto conjunto (a mesma pessoa assina junto = mesmo dono).</p>
@@ -661,7 +665,7 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
         <div class="wrow"><div class="nm">Merlin Chain <small style="display:block;color:var(--muted);font-weight:600;font-size:12px">bridge / L2</small></div><div class="info">grande holder, mas <b>separada do cluster</b> (não é CEX) · <a href="https://mempool.space/address/bc1p38d6mfutw5h6gx46c7334uxtsf5ey5l7xqfeg36gyc4q83plmwwqsf9wxd" target="_blank" rel="noopener">bc1p38d6mf…sf9wxd</a></div></div>
       </div>
 
-      <div class="wgroup">O cluster do dono dos 12%: um dono só (provado por gasto conjunto)</div>
+      <div class="wgroup">O cluster do dono dos 12%: um dono só, sustentado por gasto conjunto</div>
       <div class="wallets">
         <div class="wrow"><div class="nm">A baleia (12%)</div><div class="info">o cofre que <b>juntou 12,32% do supply</b> em 25/06 · <a href="https://mempool.space/address/bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn" target="_blank" rel="noopener">bc1plzs…dhspn</a></div></div>
         <div class="wrow"><div class="nm">MM2</div><div class="info">encheu a baleia (302×) · <a href="https://mempool.space/address/bc1p8d8kexdxatnfejdvd9dq7uky4m9wjxl59r3dnqg7nqq9gaxz2jxq6ntach" target="_blank" rel="noopener">bc1p8d8kex…ntach</a></div></div>
@@ -671,9 +675,9 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
         <div class="wrow"><div class="nm">Intermediário #3</div><div class="info">puxa da Binance (51×) · <a href="https://mempool.space/address/bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j" target="_blank" rel="noopener">bc1pu03udw…jch8j</a></div></div>
         <div class="wrow"><div class="nm">Market Maker 1</div><div class="info">despeja na Gate (71×) · <a href="https://mempool.space/address/bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9" target="_blank" rel="noopener">bc1peczzt9…reae9</a></div></div>
         <div class="wrow"><div class="nm">Whale23</div><div class="info">padrão de wash trading · <a href="https://mempool.space/address/bc1prdyzwdg0rcdgf9cg0a4zyx0cq3mdr3n6mcym95f3eg4dexfvnsjq200ly4" target="_blank" rel="noopener">bc1prdyz…00ly4</a></div></div>
-        <div class="wrow"><div class="nm">Satélites f3 a f6</div><div class="info">+4 carteiras que também encheram a baleia (gasto conjunto provado) · <a href="https://mempool.space/address/bc1p4grjy75x53ywzqvwy52cnvt07a9e2mvrf4l2pa5fs3c3f3q7h84q6lkq44" target="_blank" rel="noopener">bc1p4grjy…lkq44</a></div></div>
+        <div class="wrow"><div class="nm">Satélites f3 a f6</div><div class="info">+4 carteiras que também encheram a baleia (gasto conjunto confirmado) · <a href="https://mempool.space/address/bc1p4grjy75x53ywzqvwy52cnvt07a9e2mvrf4l2pa5fs3c3f3q7h84q6lkq44" target="_blank" rel="noopener">bc1p4grjy…lkq44</a></div></div>
       </div>
-      <p class="lead" style="font-size:13.5px;color:var(--muted);margin-top:18px;max-width:none">O fluxo é fato da cadeia; "de quem é a corretora" é atribuição da comunidade; movimento ≠ propriedade; intenção não é provada. Lista viva: cresce conforme novas carteiras entram no radar.</p>
+      <p class="lead" style="font-size:13.5px;color:var(--muted);margin-top:18px;max-width:none">O fluxo é fato da cadeia; "de quem é a corretora" é atribuição da comunidade; movimento ≠ propriedade; intenção não é confirmada. Lista viva: cresce conforme novas carteiras entram no radar.</p>
     </div>
   </section>
 
@@ -769,7 +773,7 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
         <a class="doc-link" href="RELATORIO-DOG-transparencia.md"><strong>Relatório consolidado</strong><span>Resumo executivo, achados e limites de confiança.</span></a>
         <a class="doc-link" href="fase1-pesquisa-dog.md"><strong>Fase 1: pesquisa</strong><span>Origem, tokenomics, fair launch e fatos confirmados.</span></a>
         <a class="doc-link" href="fase2-forensics.md"><strong>Fase 2: forense</strong><span>Carteiras, clusters, gastos conjuntos e evento da baleia.</span></a>
-        <a class="doc-link" href="fase3-endpoints.md"><strong>Fase 3: endpoints</strong><span>APIs públicas de corretoras para monitoramento.</span></a>
+        <a class="doc-link" href="fase3-endpoints.md"><strong>Fase 3: endpoints</strong><span>APIs públicas de corretoras para vigilância.</span></a>
         <a class="doc-link" href="estrategia-transparencia.md"><strong>Estratégia</strong><span>Como comunicar a tese com escudo editorial.</span></a>
         <a class="doc-link" href="apresentacao-roteiro.md"><strong>Roteiro de apresentação</strong><span>Estrutura para slides, vídeos e reuniões.</span></a>
       </div>
@@ -791,7 +795,7 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
         <details><summary>O que é a Runestone?</summary><div class="a">A Runestone foi um airdrop gratuito (uma coleção Ordinals) entregue a milhares de carteiras ativas no Bitcoin, como um "obrigado" para a comunidade. Quem tinha Runestone recebeu depois a DOG. Foi o jeito de recompensar <b>os colaboradores da rede</b>, não investidores.</div></details>
         <details><summary>Quem é Casey Rodarmor?</summary><div class="a">O criador dos <b>Ordinals</b> e das <b>Runes</b>, os protocolos que tornaram a DOG possível. Ele abriu o Bitcoin para arte, cultura e moedas. <a href="https://www.youtube.com/watch?v=rSS0O2KQpsI" target="_blank" rel="noopener">Vídeo dele explicando a ideia</a>.</div></details>
         <details><summary>O que são Ordinals e Runes?</summary><div class="a"><b>Ordinals</b> deixam gravar dados (imagens, texto) direto no Bitcoin. <b>Runes</b> deixam criar moedas (tokens) no Bitcoin de um jeito limpo, sem entupir a rede. A DOG é uma Rune. <a href="#historia">Ver a linha do tempo completa</a>.</div></details>
-        <details><summary>Quem controla a DOG hoje?</summary><div class="a">Ninguém é "dono" do projeto, mas a gente monitora a concentração. Em 25/06/2026, rastreamos uma carteira que juntou <b>12,32% do supply</b> num dia. Provamos por gasto conjunto que veio de um cluster de um mesmo dono. Não vendeu, foi consolidação. A identidade nominal segue desconhecida, e a gente segue vigiando. <a href="#carteiras">Ver as carteiras monitoradas</a>.</div></details>
+        <details><summary>Quem controla a DOG hoje?</summary><div class="a">Ninguém é "dono" do projeto, mas a gente vigia a concentração. Em 25/06/2026, rastreamos uma carteira que juntou <b>12,32% do supply</b> num dia. O gasto conjunto sustenta a leitura de um cluster de mesmo controle. Não vendeu, foi consolidação. A identidade nominal segue desconhecida, e a gente segue vigiando. <a href="#carteiras">Ver as carteiras vigiadas</a>.</div></details>
         <details><summary>A DOG é manipulada?</summary><div class="a">O mercado dela é <b>raso</b> (pouco dinheiro girando), o que torna o preço fácil de empurrar. A gente documentou <b>padrões consistentes com spoofing</b> (ordens fantasmas que aparecem e somem sem executar) em corretoras como Bitget e Kraken. Mostramos o comportamento; não cravamos a intenção. <a href="#metodo">Como verificar</a>.</div></details>
         <details><summary>Como eu guardo DOG com segurança?</summary><div class="a">A forma mais soberana é <b>autocustódia</b>: tirar a DOG da corretora e guardar numa carteira própria de Bitcoin/Runes que só você controla. Tirar moeda da exchange reduz o float que pode ser usado contra o holder. <i>Isto é educação, não conselho financeiro.</i></div></details>
         <details><summary>Por que "não confie, verifique"?</summary><div class="a">Porque tudo aqui é <b>público e reproduzível</b>. Você não precisa acreditar na gente: os dados estão em dogdata.xyz, mempool.space e ordinals.com. <a href="#metodo">Veja as fontes</a> e confira você mesmo.</div></details>
