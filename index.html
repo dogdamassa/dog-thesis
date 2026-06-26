@@ -154,9 +154,9 @@ nav{
   position:relative;
   z-index:2;
   width:100%;
-  padding-block:76px 56px;
+  padding-block:70px 56px;
 }
-.hero-copy{max-width:780px}
+.hero-copy{max-width:850px}
 h1{
   margin-top:22px;
   font-size:clamp(38px,6.2vw,76px);
@@ -194,13 +194,20 @@ h1 span{color:var(--orange)}
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:1px;
-  margin-top:42px;
+  margin-top:22px;
   border:1px solid var(--line);
   background:var(--line);
   border-radius:10px;
   overflow:hidden;
-  max-width:920px;
+  max-width:1040px;
 }
+.daily-proof{max-width:1040px;margin-top:32px;background:rgba(16,20,25,.92);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.34)}
+.daily-proof-head{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+.daily-proof-head strong{font-size:15px;letter-spacing:.02em}
+.daily-proof-head span{color:var(--muted);font-size:13px}
+.daily-proof img{display:block;width:100%;height:auto}
+.daily-proof-caption{display:flex;justify-content:space-between;gap:16px;padding:13px 18px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+.daily-proof-caption a{color:var(--orange);border-bottom:1px solid rgba(247,147,26,.35);font-weight:800}
 .metric{
   background:rgba(16,20,25,.9);
   padding:18px;
@@ -224,6 +231,8 @@ h1 span{color:var(--orange)}
   .hero{min-height:auto}
   .hero::after{width:58vw;opacity:.28}
   .hero-strip{grid-template-columns:repeat(2,1fr)}
+  .daily-proof-head,.daily-proof-caption{display:block}
+  .daily-proof-head span,.daily-proof-caption span{display:block;margin-top:5px}
 }
 @media(max-width:540px){
   .wrap{padding:0 18px}
@@ -498,18 +507,29 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-content">
       <div class="hero-copy">
-        <span class="eyebrow">Pesquisa pública · 26 jun 2026</span>
-        <h1 id="hero-title">A tese da <span>$DOG</span>, explicada com dados que qualquer pessoa pode verificar.</h1>
-        <p class="sub">DOG Thesis organiza a pesquisa sobre fair launch, holders, float, carteiras e corretoras em uma linguagem simples, com método aberto e espaço para colaboradores.</p>
+        <span class="eyebrow">Dados vivos · atualização diária</span>
+        <h1 id="hero-title">A tese da <span>$DOG</span> começa pelo que a cadeia mostra.</h1>
+        <p class="sub">Todos os dias acompanhamos holders de curto prazo, holders de longo prazo, carteiras relevantes e livros de ofertas. A história fica simples quando o dado aparece antes da opinião.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#tese">Entender em 2 minutos</a>
-          <a class="btn secondary" href="#documentos">Ver o dossiê completo</a>
+          <a class="btn primary" href="#dado-diario">Ver dado diário</a>
+          <a class="btn secondary" href="#tese">Entender a tese</a>
           <a class="btn secondary" href="#colaborar">Colaborar</a>
+        </div>
+        <div class="daily-proof" id="dado-diario">
+          <div class="daily-proof-head">
+            <strong>DOG DATA · LTH e STH</strong>
+            <span>Snapshot de 26/06/2026 · atualizado diariamente</span>
+          </div>
+          <img src="public/dogdata-lth-sth.png" alt="DOG DATA mostrando distribuição de supply entre holders de curto prazo e holders de longo prazo">
+          <div class="daily-proof-caption">
+            <span>Fonte: dogdata.xyz · 243.009 UTXOs rastreados · 100% do supply</span>
+            <a href="https://www.dogdata.xyz" target="_blank" rel="noopener">Abrir DOG DATA</a>
+          </div>
         </div>
         <div class="hero-strip" aria-label="Números principais da pesquisa">
           <div class="metric"><strong>Rune #3</strong><span>Criada no Bitcoin, no ciclo do halving, com distribuição aberta.</span></div>
-          <div class="metric"><strong>75,48%</strong><span>do supply medido como LTH em 26/06, por idade de UTXO.</span></div>
-          <div class="metric"><strong>78,0%</strong><span>do supply em prejuízo estimado, enquanto a maior parte segue parada.</span></div>
+          <div class="metric"><strong>73,58%</strong><span>do supply em holders de longo prazo segundo DOG DATA.</span></div>
+          <div class="metric"><strong>26,42%</strong><span>do supply em holders de curto prazo no snapshot diário.</span></div>
           <div class="metric"><strong>12,32%</strong><span>consolidado em uma baleia rastreada no evento de 25/06.</span></div>
         </div>
       </div>
