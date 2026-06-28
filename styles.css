@@ -439,3 +439,11 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
 .campaign p{color:var(--text);font-size:16px}
 .campaign .note{margin-top:14px;color:var(--muted);font-size:13.5px}
 @media(max-width:620px){.person,.dog-story,.campaign{grid-template-columns:1fr;text-align:center}.person img{margin:0 auto}.dog-story .facts{grid-template-columns:1fr}.tl-row{grid-template-columns:1fr}.linklist{grid-template-columns:1fr}.wrow{grid-template-columns:1fr;gap:6px}}
+/* --- language switcher --- */
+.nav-right{display:flex;align-items:center;gap:12px}
+.langsw{display:flex;align-items:center;gap:1px;border:1px solid var(--line);border-radius:8px;padding:3px;background:rgba(255,255,255,.03)}
+.langsw .globe{font-size:12px;padding:0 3px 0 5px;opacity:.7}
+.langsw button{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;font-size:12px;font-weight:800;cursor:pointer;padding:5px 7px;border-radius:6px;line-height:1;transition:color .15s ease,background .15s ease}
+.langsw button:hover{color:var(--ink)}
+.langsw button.active{color:#160e03;background:var(--orange)}
+@media(max-width:540px){.nav-cta{display:none}.langsw button{padding:5px 6px}}
