@@ -4,3 +4,5 @@ dist/
 .env
 .env.*
 *.log
+.vercel
+scripts/monitor-state.json
