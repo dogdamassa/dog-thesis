@@ -5,6 +5,24 @@
 
 ---
 
+## Atualização 28/06 — o salto STH 17,58% → 26,41% (o post do Cryptolution)
+
+Dado vivo (dogdata `/api/metrics/utxo-age`, 28/06): **LTH 73,61% · STH 26,39%** (era ~82%/18% antes de 25/06). Confere com o post. Nosso monitor: a baleia hoje está em **12,32%** (Δ -69,7M DOG, redistribuindo pros relays → Bitget; **0 depósitos em exchange**).
+
+**O que o post ACERTA (e nós confirmamos pelo dado):**
+- O salto de STH é **artefato de contabilidade de UTXO**, não venda. A consolidação de 25/06 *gastou* UTXOs antigos e criou novos com idade zero → reclassificados como STH automaticamente. No nosso utxo-age, o bucket **"1-7 dias" = 15,8% do supply** — do tamanho do evento. **Sem vendedor novo.**
+- "Cold storage = custódia, não venda": bate com o monitor. Em 28/06 a baleia **não depositou em corretora**; só moveu pros relays. O sinal de venda seria depósito numa hot wallet de exchange — não houve.
+
+**O que o post AFIRMA além do que a chain prova (cuidado):**
+- Crava que a carteira **É da Binance** ("Binance swept 14,9%… Binance cold storage"). **A nossa própria forense diz que isso NÃO está provado on-chain:** a hot wallet da Binance *manda* DOG pros relays mas **nunca co-gasta com o cluster** — sem co-gasto, não há prova de dono comum (Partes 1-3 abaixo). É *suspeito e sustentado*, não *provado como Binance*. Cravar "é a Binance" como fato é a linha que expõe a difamação (Lei 6.385).
+- Os **14,9%** = ~12,37% (a nossa baleia, hoje **12,32%**) **+** ~2,53% de uma 2ª carteira ("Rank #4"/Wh6, ligada a fluxos Gate/Bitget). Duas atribuições, ambas não confirmadas como Binance-empresa.
+- "True Free Float 4,21%" e "STH orgânico 11,51%" são **decomposição do Cryptolution**, não número que nós reproduzimos. O que medimos de forma independente é a **liquidez minúscula nas CEX** (~$585k/dia, books de centenas de dólares) — consistente com float fino, mas não cravamos os 4,21%.
+- "Operation $DOG Domination Phase 3 mirando o float" é **linguagem de coordenação/pump** — fora do escopo (transparência ≠ orquestrar mercado).
+
+**Resumo honesto:** o post acerta a *mecânica* (STH subiu por reset de idade, não venda) e a leitura de *custódia* (sem depósito em exchange). Mas **superdimensiona a atribuição** ("é a Binance", "14,9%") além do que o on-chain prova — e nós não copiamos isso. Mantemos: **padrão suspeito e documentado, atribuição não provada.**
+
+---
+
 ## A pergunta
 Existe **uma entidade** que controla **12,41% de todo o supply** da DOG (~$7,06M), consolidado num único endereço em 25/06 (`bc1plzs…swdhspn`). A pergunta: **a Binance tem a ver com isso?**
 

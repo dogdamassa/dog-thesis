@@ -1,30 +1,30 @@
 # Fase 3 — Endpoints públicos das CEX (detector de wash trading / spoofing)
 
-**Endpoints testados:** 25/06/2026 · **Volumes atualizados AO VIVO:** 26/06/2026 (preço $0,0005717 = DOG-Runes confirmada). Sem API key.
-**Volume 24h total: ~$896k (todas as venues) · ~$874k em CEX spot** — minúsculo p/ mcap $57,2M (≈1,5% de giro/dia = liquidez fina). **Caiu de ~$1,2M (25/06) → a liquidez está secando, reforçando a tese de book fino.**
+**Endpoints testados:** 25/06/2026 · **Volumes atualizados AO VIVO:** 28/06/2026 (preço $0,0005789 = DOG-Runes confirmada). Sem API key.
+**Volume 24h total: ~$599k (todas as venues) · ~$585k em CEX spot** — minúsculo p/ mcap $57,9M (≈1,0% de giro/dia = liquidez fina). **Tendência: ~$1,2M (25/06) → ~$896k (26/06) → ~$599k (28/06). A liquidez segue secando, reforçando a tese de book fino.**
 
-## Ranking por volume DOG (24h, fonte dogdata /api/markets · 26/06/2026)
+## Ranking por volume DOG (24h, fonte dogdata /api/markets · 28/06/2026)
 
 | # | Exchange | Par | Vol 24h | Spread | Nota |
 |---|---|---|---|---|---|
 | 1 | WEEX | DOG/USDT | $129k | **2,32%** | spread alto + maior vol = 🚩 |
-| 2 | Gate | DOG/USDT | $98k | 0,43% | |
-| 3 | Kraken | DOG/USD | $98k | 0,68% | + tem perp |
-| 4 | BigONE | DOG/USDT | $83k | **3,45%** | 🚩 |
-| 5 | MEXC | DOG/USDT | $73k | **2,05%** | 🚩 |
-| 6 | BingX | DOG/USDT | $59k | 0,63% | |
-| 7 | CoinW | DOG(RUNE)/USDT | $56k | 1,24% | |
-| 8 | AscendEX | DOG/USDT | $55k | 0,75% | |
-| 9 | DigiFinex | DOG/USDT | $48k | 0,34% | |
-| 10 | Bitget | DOG/USDT | $47k | 0,22% | maior cold holder (#1 on-chain); vol caiu $114k→$47k |
-| 11 | XT.COM | DOG/USDT | $39k | 0,53% | |
-| 12 | CoinEx | DOG/USDT | $28k | 0,70% | |
-| 13 | Bitrue | DOG/USDT | $25k | **3–5%** | spread instável = 🚩 |
-| 14 | Ourbit | DOG/USDT | $17k | 0,34% | |
-| 15 | BitKan | DOG/USDT | $8k | 0,36% | |
+| 2 | MEXC | DOG/USDT | $60k | 0,74% | |
+| 3 | CoinW | DOG(RUNE)/USDT | $57k | 1,24% | |
+| 4 | BingX | DOG/USDT | $56k | 0,28% | |
+| 5 | AscendEX | DOG/USDT | $55k | 0,75% | |
+| 6 | BigONE | DOG/USDT | $54k | **3,45%** | 🚩 |
+| 7 | Kraken | DOG/USD | $31k | 0,52% | + tem perp; vol caiu $98k→$31k |
+| 8 | Gate | DOG/USDT | $31k | 0,28% | vol caiu $98k→$31k |
+| 9 | Bitget | DOG/USDT | $24k | 0,28% | maior cold holder (#1 on-chain); vol caiu $47k→$24k |
+| 10 | Bitrue | DOG/USDT | $23k | **3,72%** | spread instável = 🚩 |
+| 11 | Ourbit | DOG/USDT | $22k | 0,34% | |
+| 12 | CoinEx | DOG/USDT | $14k | 0,24% | |
+| 13 | DigiFinex | DOG/USDT | $13k | 0,34% | |
+| 14 | XT.COM | DOG/USDT | $13k | 0,48% | |
+| 15 | BitKan | DOG/USDT | $2,8k | 0,28% | |
 
-**Venues BR:** NovaDAX DOG/BRL ~$6k · Mercado Bitcoin DOG/BRL ~$0,7k · Kraken DOG/EUR ~$2,3k.
-**DEX (Solana, DOG bridgeada — instrumento diferente):** Raydium ~$21k · Meteora ~$1,7k · Orca ~$0,1k. **DEX nativo (Bitcoin):** Bitflow DOG/sBTC ~$19.
+**Venues BR:** NovaDAX DOG/BRL ~$5,9k (spread 1,15%) · Mercado Bitcoin DOG/BRL ~$0,3k (spread 3,19% 🚩) · Kraken DOG/EUR ~$1,5k (spread 2,14%).
+**DEX (Solana, DOG bridgeada — instrumento diferente):** Raydium ~$5,7k · Meteora ~$0,2k · Orca ~$19. **DEX nativo (Bitcoin):** Bitflow DOG/sBTC ~$19.
 
 ## Endpoints verificados (order book ✅ testado; trades/ticker = padrão da exchange)
 
@@ -116,3 +116,25 @@
 **Honestidade (padrão Chainalysis):** isso mostra **comportamento** (ordens repostas, puxadas, sem execução), não intenção provada — então: **"padrões consistentes com spoofing/layering"**. Amostra modesta (4 min); valor absoluto pequeno (~$2,7k) MAS dominante num book de ~$3k. Reproduzível por qualquer um nos endpoints públicos.
 
 **Reframe honesto de alvo:** o spoofing documentável está na **Bitget e Kraken** (que listam DOG) — **NÃO na Binance** (que não lista DOG spot). A evidência aponta pra onde aponta.
+
+## SNAPSHOT 28/06 (live — `python3 scripts/books.py`, books quase simultâneos)
+
+| EX | spread% | bid $<2% | ask $<2% | imbalance | maior bid único |
+|---|---|---|---|---|---|
+| Gate | 0,62 | $1.344 | $1.067 | 1,26 | $557 |
+| Kraken | 0,52 | $11.874 | $10.019 | 1,19 | $6.641 |
+| Bitget | 0,36 | $5.176 | $3.393 | 1,53 | **$2.711** |
+| MEXC | 1,02 | $551 | $2.254 | 0,24 | $289 |
+| BingX | 0,97 | $391 | $79 | 4,95 | $223 |
+| XT | 0,83 | $33 | $37 | 0,88 | $12 |
+| CoinEx | 0,24 | $888 | $135 | 6,56 | $427 |
+| Bitrue | **4,15** | **$0** | **$0** | ∞ | $0 |
+
+**Confirma a tese, 3 dias depois:**
+- **Books seguem minúsculos.** Dentro de 2% do mid, a maioria tem centenas a poucos milhares de dólares. XT: $33/$37. Poucos milhares de dólares movem o preço — trivialmente manipulável. Reforça float fino.
+- **🚩 Bitrue — wash confirmado de novo:** book de **$0 bid / $0 ask** dentro de 2% (spread 4,15%) e mesmo assim reporta **~$23k/dia** de volume. Esse volume NÃO sai desse book = volume interno/fake.
+- **🚩 Bitget — parede persistente:** maior ordem bid única **~$2.711** (≈52% de toda a profundidade bid do book), mesma assinatura da parede de ~$2.715 documentada em 25/06. Suporte comprador que reaparece há dias.
+- **CoinEx imbalance 6,56** (lado comprador empilhado) — consistente com 6,08 de 25/06.
+- **Kraken mais fundo nesta janela** ($11,9k bid / $10k ask) — único book com liquidez de dois lados na casa dos milhares; ainda assim raso pra um ativo de ~$58M de mcap.
+
+> Caveat honesto (padrão Chainalysis): 1 snapshot mostra **estado**, não intenção. Spoofing/layering exige **time-series** (a parede aparece e some sem executar) — ver o monitor de 36 frames acima.
