@@ -277,6 +277,15 @@ h2{
 .app-card h3{margin:6px 0 10px}
 .app-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--orange)}
 .app-card .go{display:inline-flex;margin-top:14px;color:var(--orange);font-size:13px;font-weight:850;border-bottom:1px solid rgba(247,147,26,.38);padding-bottom:1px}
+/* Events */
+.event-feature{display:block;text-decoration:none;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:10px;padding:30px;margin-bottom:8px;background:linear-gradient(135deg,rgba(247,147,26,.16),rgba(67,197,158,.06) 55%,var(--surface));transition:transform .15s ease,border-color .15s ease}
+.event-feature:hover{transform:translateY(-2px);border-color:rgba(247,147,26,.55)}
+.event-feature-tag{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.event-feature h3{font-size:30px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:12px}
+.event-feature p{color:var(--muted);font-size:15.5px;line-height:1.6;max-width:680px}
+.event-feature .go{display:inline-flex;margin-top:16px;color:var(--orange);font-size:13px;font-weight:850;border-bottom:1px solid rgba(247,147,26,.38);padding-bottom:1px}
+.event-card .ev-place{display:inline-block;font-size:12.5px;font-weight:800;color:var(--orange)}
+.event-card h3{margin:6px 0 8px}
 .tag{
   display:inline-flex;
   color:var(--blue);

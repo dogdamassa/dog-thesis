@@ -58,4 +58,4 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
-Sitemap: https://dogofbitcoin.army/sitemap.xml
+Sitemap: https://dogarmy.space/sitemap.xml
