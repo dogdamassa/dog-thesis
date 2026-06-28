@@ -447,3 +447,13 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
 .langsw button:hover{color:var(--ink)}
 .langsw button.active{color:#160e03;background:var(--orange)}
 @media(max-width:540px){.nav-cta{display:none}.langsw button{padding:5px 6px}}
+/* --- live alert bar --- */
+.alertbar{background:linear-gradient(90deg,rgba(255,87,87,.16),rgba(255,87,87,.05));border-bottom:1px solid rgba(255,87,87,.4)}
+.alertbar .wrap{display:flex;align-items:center;gap:12px;padding:10px 24px;flex-wrap:wrap;font-size:13.5px}
+.alertbar .pulse{display:inline-flex;align-items:center;gap:7px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#ff7676;white-space:nowrap;font-size:12px}
+.alertbar .pulse::before{content:"";width:8px;height:8px;border-radius:50%;background:#ff5757;animation:dotpulse 1.8s infinite}
+@keyframes dotpulse{0%{box-shadow:0 0 0 0 rgba(255,87,87,.55)}70%{box-shadow:0 0 0 8px rgba(255,87,87,0)}100%{box-shadow:0 0 0 0 rgba(255,87,87,0)}}
+.alertbar .msg{color:var(--text);min-width:0;flex:1}
+.alertbar .msg b{color:var(--ink)}
+.alertbar a.verify{color:#ff9b9b;font-weight:800;white-space:nowrap;border-bottom:1px solid rgba(255,155,155,.45)}
+@media(max-width:600px){.alertbar .wrap{padding:9px 18px;gap:7px}.alertbar .msg{flex:1 1 100%}}

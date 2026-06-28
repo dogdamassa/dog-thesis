@@ -13,6 +13,10 @@ window.DOG_I18N = {
     "nav.contribute": "Colaborar",
     "nav.cta": "Entrar no projeto",
 
+    "alert.label": "Acontecendo agora",
+    "alert.msg": "A <b>Gate delistou o perp de DOG</b> (a própria API confirma) · A <b>MEXC travou os saques de DOG</b> — zero DOG saindo desde 26/06, com depósitos ainda entrando.",
+    "alert.link": "Verifique on-chain →",
+
     "hero.eyebrow": "Dados vivos · atualização diária",
     "hero.title": "A tese da <span>$DOG</span> começa pelo que a cadeia mostra.",
     "hero.sub": "Todos os dias acompanhamos holders de curto prazo, holders de longo prazo, carteiras relevantes e livros de ofertas. A história fica simples quando o dado aparece antes da opinião.",
