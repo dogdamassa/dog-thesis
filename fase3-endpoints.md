@@ -138,3 +138,20 @@
 - **Kraken mais fundo nesta janela** ($11,9k bid / $10k ask) — único book com liquidez de dois lados na casa dos milhares; ainda assim raso pra um ativo de ~$58M de mcap.
 
 > Caveat honesto (padrão Chainalysis): 1 snapshot mostra **estado**, não intenção. Spoofing/layering exige **time-series** (a parede aparece e some sem executar) — ver o monitor de 36 frames acima.
+
+## PROOF OF RESERVES — Gate (28/06) · achado @Cryptolution, verificado on-chain
+
+Vincent (@Cryptolution) levantou em 28/06 ([tweet](https://x.com/Cryptolution/status/2071355695979778240)) um gap de reservas da Gate na DOG. **Nós verificamos o lado on-chain de forma independente — bate.**
+
+| | DOG | Fonte |
+|---|---|---|
+| **Off-chain (reportado pela Gate)** | **~12,5B** | PoR / saldos de usuário (Cryptolution) |
+| **On-chain (carteira pública da Gate)** | **3,378B** (rank #2) | nós, via `dogdata.xyz/api/address/bitcoin/bc1pk8g4…x9ctv` |
+| **Gap** | **~9,1B DOG** | lastro on-chain ≈ **27%** |
+
+- O número on-chain **bate com os "3,3B" do Vincent** (medimos 3,378B, rank #2) — reprodutível por qualquer um.
+- A Gate **reporta/deve ~12,5B**, mas só ~3,3B aparecem na carteira on-chain que conhecemos → **~73% sem cobertura visível.**
+
+**Por que importa:** uma venue que **acabou de delistar o perp de DOG** (`in_delisting:true`) mostrando um buraco de reservas é sinal forte pra vigiar. E é o argumento de autocustódia em estado puro: **se você não consegue verificar que a corretora tem o seu DOG, segure você mesmo.**
+
+**Caveat honesto (padrão do estudo):** o gap é **fato** (12,5B reportado vs 3,378B on-chain medido). O que ele *significa* ainda não está cravado — pode ser (a) reserva fracionária, (b) DOG da Gate em **outras carteiras ainda não mapeadas**, ou (c) parte dos 12,5B ser **passivo de derivativo/IOU**, não DOG spot 1:1. **Próximo passo:** mapear outras carteiras da Gate (co-gasto/clustering) e fixar a fonte exata dos 12,5B (página de PoR). **Padrão documentado, não fraude provada.**

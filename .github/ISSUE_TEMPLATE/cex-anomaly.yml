@@ -1,0 +1,52 @@
+name: 📊 Report a CEX anomaly
+description: Delisting, frozen withdrawals, spoof walls, fake volume — with a reproducible source.
+title: "[CEX] "
+labels: ["cex", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: "Exchange behavior is fair game when it's **reproducible**. Show the source."
+  - type: input
+    id: exchange
+    attributes:
+      label: Exchange
+      placeholder: "Gate, MEXC, Bitget..."
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type of anomaly
+      options:
+        - "Delisting (spot or perp)"
+        - "Frozen deposits/withdrawals"
+        - "Spoofing / layering (ghost walls)"
+        - "Wash trading / fake volume"
+        - "Spread / depth anomaly"
+        - "Proof-of-reserves gap"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Numbers, dates, and what the chain or API shows.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproducible source
+      description: "API endpoint, on-chain address, or command anyone can run."
+      placeholder: |
+        curl "https://api.gateio.ws/api/v4/futures/usdt/contracts/DOG_USDT" | grep in_delisting
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Ground rule
+      options:
+        - label: I'm describing observable behavior, not asserting intent/crime without proof.
+          required: true

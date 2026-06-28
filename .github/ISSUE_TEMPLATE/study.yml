@@ -1,0 +1,57 @@
+name: 📚 Submit a study
+description: Share your $DOG research. We turn it into a study file in /studies and credit you.
+title: "[Study] "
+labels: ["study", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for bringing receipts. Studies live in **`/studies`** and are linked from **dogarmy.space**.
+        Lead with the finding, show a **public source**, and mark your confidence. We show **behavior, not intent** — no naming people/companies as criminals without proof, no price calls. You can write in **English or Português**.
+  - type: input
+    id: handle
+    attributes:
+      label: Your name / handle (for credit)
+      placeholder: "@Cryptolution"
+    validations:
+      required: true
+  - type: input
+    id: finding
+    attributes:
+      label: One-sentence finding
+      placeholder: "Gate reports 12.5B DOG but holds only 3.3B on-chain."
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: The study
+      description: What you observed — numbers, dates, addresses, exchanges.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Sources & how to reproduce
+      description: Links + the exact commands/steps so anyone can re-check your numbers.
+    validations:
+      required: true
+  - type: dropdown
+    id: confidence
+    attributes:
+      label: Confidence
+      options:
+        - "✅ Confirmed (reproducible)"
+        - "🟡 Strong signal / watching"
+        - "⚖️ Hypothesis / not proven"
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Ground rules
+      options:
+        - label: I describe behavior/data, not an unproven accusation of a person or company.
+          required: true
+        - label: No price predictions or buy/sell calls.
+          required: true

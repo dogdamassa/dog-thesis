@@ -1,0 +1,27 @@
+name: 🌍 Translation
+description: Help translate the site into your language.
+title: "[i18n] "
+labels: ["translation", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The site uses a simple dictionary in **`i18n.js`** — English lives in the HTML, each language is a `key → text` map. Adding a language = filling one map. Português is already done as the reference.
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options:
+        - "Español"
+        - "Italiano"
+        - "中文 (Simplified)"
+        - "Other (say which)"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: "Are you doing the whole site, or specific sections? Native speaker?"
+    validations:
+      required: false

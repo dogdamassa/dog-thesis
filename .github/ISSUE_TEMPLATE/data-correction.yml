@@ -1,0 +1,29 @@
+name: ⚖️ Data correction / dispute
+description: Think a number or claim is wrong or outdated? Show us with evidence.
+title: "[Fix] "
+labels: ["correction", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: "We'd rather be corrected than wrong. Bring the better source."
+  - type: input
+    id: where
+    attributes:
+      label: Where is it?
+      description: File, section, or URL.
+      placeholder: "fase3-endpoints.md → 'Proof of Reserves' / dogarmy.space evidence card"
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What's wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: The correct value + source
+      description: The right number/claim and a public source for it.
+    validations:
+      required: true

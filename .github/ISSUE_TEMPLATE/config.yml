@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 🌐 dogarmy.space (live site)
+    url: https://dogarmy.space
+    about: See the research live (English / Português).
+  - name: 📚 Community studies
+    url: https://github.com/dogdamassa/dog-thesis/tree/main/studies
+    about: Read the studies — or add your own.
+  - name: 💬 Discussions
+    url: https://github.com/dogdamassa/dog-thesis/discussions
+    about: Ask a question, share an idea, say hi (EN or PT).
+  - name: 📖 Contributing guide
+    url: https://github.com/dogdamassa/dog-thesis/blob/main/CONTRIBUTING.md
+    about: How to contribute responsibly — evidence first.

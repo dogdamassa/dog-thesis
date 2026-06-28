@@ -1,0 +1,48 @@
+name: 🔍 Report a wallet to watch
+description: Flag a Bitcoin/Runes address worth watching, with evidence.
+title: "[Wallet] "
+labels: ["wallet", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: "Help the community watch the chain. Bring **evidence**, not just a hunch."
+  - type: input
+    id: address
+    attributes:
+      label: Bitcoin address
+      placeholder: "bc1p..."
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it worth watching?
+      description: "Large holder? Co-spend? Exchange flow? Wash pattern?"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / how to reproduce
+      description: "Links (mempool.space, dogdata) and the steps so anyone can re-check."
+      placeholder: |
+        https://mempool.space/address/bc1p...
+        Co-spends with bc1q... in tx <txid>.
+    validations:
+      required: true
+  - type: dropdown
+    id: confidence
+    attributes:
+      label: Confidence
+      options:
+        - "🟡 Hypothesis / needs review"
+        - "✅ Reproducible (I checked it)"
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Ground rule
+      options:
+        - label: I'm reporting on-chain **behavior**, not accusing a named person/company of a crime.
+          required: true
