@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T14:50:24.190456+00:00",
+  "updated_at": "2026-06-29T23:57:04.850801+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "whale",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12345455342.30546,
+      "balance_dog": 12343981694.32207,
       "rank": 1,
-      "pct": 12.35,
+      "pct": 12.34,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,9 +19,9 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3369015381.97065,
+      "balance_dog": 3360017735.62391,
       "rank": 2,
-      "pct": 3.37,
+      "pct": 3.36,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
     },
     {
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2986423723.49664,
+      "balance_dog": 2978157022.04898,
       "rank": 3,
-      "pct": 2.99,
+      "pct": 2.98,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -138,19 +138,19 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "int1",
+      "from_label": "Vault #1",
+      "to_label": "Intermediary Wallet #1",
+      "dog": 263265943,
+      "count": 12
+    },
+    {
+      "from": "cofre",
       "to": "int2",
       "from_label": "Vault #1",
       "to_label": "Intermediary Wallet #2",
       "dog": 191052992,
       "count": 18
-    },
-    {
-      "from": "cofre",
-      "to": "int1",
-      "from_label": "Vault #1",
-      "to_label": "Intermediary Wallet #1",
-      "dog": 60370704,
-      "count": 10
     },
     {
       "from": "cofre",
@@ -197,8 +197,8 @@
       "to": "h3",
       "from_label": "Intermediary Wallet #1",
       "to_label": "Top #3",
-      "dog": 243080445,
-      "count": 41
+      "dog": 246498233,
+      "count": 42
     },
     {
       "from": "h2",
