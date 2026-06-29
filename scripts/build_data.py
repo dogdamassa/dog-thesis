@@ -26,8 +26,7 @@ API = "https://www.dogdata.xyz/api/address/bitcoin/"
 SUPPLY = 100_000_000_000          # supply total do DOG (100B)
 MIN_DOG = 1_000_000               # ignora poeira < 1M DOG no feed/grafo
 FEED_MAX = 60                     # cards guardados no feed
-SEEN_MAX = 800                    # txids lembrados no estado
-FIRST_RUN_EVENTS = 12             # na 1a execucao, nao floodar: so os N mais recentes
+FIRST_RUN_EVENTS = 12             # 1a execucao/migracao: nao floodar, so os N mais recentes
 
 # --- carteiras vigiadas. confirmed=label do PROPRIO dogdata; community=palpite da comunidade
 NODES = [
@@ -38,13 +37,13 @@ NODES = [
     {"id": "h3", "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k",
      "label": "Top #3", "kind": "holder", "community": "Bitget", "feed": False},
     {"id": "mexc", "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu",
-     "label": "Carteira MEXC?", "kind": "holder", "community": "MEXC", "feed": False},
+     "label": "MEXC Wallet", "kind": "holder", "community": "MEXC", "feed": False},
     {"id": "int1", "addr": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar",
-     "label": "Intermediario #1", "kind": "relay", "community": "ponte -> Bitget", "feed": True},
+     "label": "Intermediario #1", "kind": "relay", "community": "ponte para Bitget", "feed": True},
     {"id": "int2", "addr": "bc1p52673nrtsed5n5nal7cm02u6pg63p0e6u4nm2fhm90xd8r4w3ass090zzy",
-     "label": "Intermediario #2", "kind": "relay", "community": "ponte -> Bitget", "feed": True},
+     "label": "Intermediario #2", "kind": "relay", "community": "ponte para Bitget", "feed": True},
     {"id": "int3", "addr": "bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j",
-     "label": "Intermediario #3", "kind": "relay", "community": "Gate -> Bitget", "feed": True},
+     "label": "Intermediario #3", "kind": "relay", "community": "Gate para Bitget", "feed": True},
 ]
 BY_ADDR = {n["addr"]: n for n in NODES}
 
@@ -65,7 +64,7 @@ def label_for(addr):
     n = BY_ADDR.get(addr)
     if n:
         return n["label"], n["id"], n["kind"], n["community"]
-    short = (addr[:8] + "..." + addr[-4:]) if addr else "?"
+    short = (addr[:8] + "..." + addr[-4:]) if addr else "carteira nao mapeada"
     return short, None, "unknown", None
 
 
@@ -86,8 +85,9 @@ def save_json(name, obj):
 
 def run():
     state = load_json("state.json", {})
-    seen = set(state.get("seen_txids", []))
-    first_run = not seen and not os.path.exists(os.path.join(DATA, "feed.json"))
+    watermark = state.get("watermark", {})   # {node_id: ts do tx mais novo ja visto}
+    new_wm = dict(watermark)
+    cap_events = not watermark               # 1a vez/migracao: nao floodar o feed
     now = datetime.datetime.now(datetime.timezone.utc)
     today = now.date().isoformat()
 
@@ -129,37 +129,35 @@ def run():
     for n in NODES:
         d = fetched[n["id"]]
         txs = d.get("transactions") or []
+        last = watermark.get(n["id"], "")    # so e "novo" o que vier depois disso
+        newest = last
         for t in txs:
+            ts = t.get("timestamp") or ""
+            if ts > newest:
+                newest = ts
             amt = t.get("amount_dog") or 0
             if amt < MIN_DOG:
                 continue
-            txid = t.get("txid")
             direction = t.get("direction")
             cp = t.get("counterparty") or ""
-            ts = t.get("timestamp") or ""
-            # arestas do grafo (so a partir do cofre e dos intermediarios, p/ nao duplicar).
+            # arestas do grafo (estado ATUAL; so cofre/intermediarios p/ nao duplicar).
             # cp vazio = consolidacao do mesmo dono (troco) -> nao e aresta real.
             if cp and n["kind"] in ("whale", "relay"):
                 if direction == "out":
                     add_edge(n["addr"], cp, amt)
                 else:
                     add_edge(cp, n["addr"], amt)
-            # feed: so de carteiras marcadas feed=True e txid novo
-            if not n.get("feed") or not txid or txid in seen:
+            # feed: so carteiras feed=True e so o que e mais novo que a marca d'agua
+            if not n.get("feed") or not ts or ts <= last:
                 continue
-            ev = classify(n, direction, cp, amt, ts, txid)
+            ev = classify(n, direction, cp, amt, ts, t.get("txid"))
             if ev:
                 new_events.append(ev)
-            seen.add(txid)
-
-    # marcar como visto tudo que veio (mesmo o que nao virou card), p/ nao reprocessar
-    for n in NODES:
-        for t in (fetched[n["id"]].get("transactions") or []):
-            if t.get("txid"):
-                seen.add(t["txid"])
+        if newest:
+            new_wm[n["id"]] = newest
 
     new_events.sort(key=lambda e: e["ts"], reverse=True)
-    if first_run:
+    if cap_events:
         new_events = new_events[:FIRST_RUN_EVENTS]
 
     # evento de variacao diaria do cofre / holders (1 por dia)
@@ -170,7 +168,14 @@ def run():
             "from_label": "Cofre #1", "to_label": "", "from_id": "cofre", "to_id": "",
             "sign": "+" if delta >= 0 else "-", "txid": None})
 
-    feed = (new_events + feed)[:FEED_MAX]
+    # junta com o feed antigo e remove repetidos por id (o mais novo vence)
+    merged, seen_ids = [], set()
+    for e in new_events + feed:
+        if e["id"] in seen_ids:
+            continue
+        seen_ids.add(e["id"])
+        merged.append(e)
+    feed = merged[:FEED_MAX]
     save_json("feed.json", {"updated_at": now.isoformat(), "events": feed})
 
     # 3) grafo — CURADO p/ ficar legivel: cofre + nos vigiados + os 5 maiores destinos novos.
@@ -203,8 +208,8 @@ def run():
     save_json("graph.json", {"updated_at": now.isoformat(), "center": "cofre",
                              "nodes": nodes_out, "edges": edges_out})
 
-    # 4) daily + leitura honesta
-    today_events = [e for e in new_events if e["ts"][:10] == today]
+    # 4) daily + leitura honesta — pelo que aconteceu HOJE no feed (estavel entre re-execucoes)
+    today_events = [e for e in feed if e["ts"][:10] == today]
     has_exch_out = any(e["type"] == "cofre_out_exchange" for e in today_events)
     has_big_out = any(e["type"] == "cofre_out_new" for e in today_events)
     has_relay = any(e["type"] == "relay_flow" for e in today_events)
@@ -239,7 +244,8 @@ def run():
     # 5) estado
     state["cofre_total_dog"] = cofre_total or prev_total
     state["holders_total"] = holders_total or prev_holders
-    state["seen_txids"] = list(seen)[-SEEN_MAX:]
+    state["watermark"] = new_wm
+    state.pop("seen_txids", None)            # limpa o controle antigo (migracao)
     state["last_run"] = now.isoformat()
     save_json("state.json", state)
 
