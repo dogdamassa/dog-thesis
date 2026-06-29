@@ -54,7 +54,7 @@ Existem 2 caminhos. Resumo honesto do trade-off:
 
 Reescrever em inglês pensando em **qualquer pessoa do mundo, leiga**, na seguinte ordem:
 
-1. **What is $DOG** — meme coin do Bitcoin (Runes), fair launch, sem dono. Em 2 frases.
+1. **What is $DOG** — token de comunidade do Bitcoin (Runes), fair launch, sem dono. Em 2 frases.
 2. **What we monitor & why** — holders (LTH/STH), a baleia, os books das CEX. "Dado antes de opinião."
 3. **The live data** — LTH/STH, baleia %, volume/liquidez das CEX (o dado vivo, atualizado).
 4. **What's happening right now** — a leitura do dia (ex.: o salto STH = reset de UTXO, não venda; fluxo Binance→cluster; books finos). **Mostrar os fatos, forte.**

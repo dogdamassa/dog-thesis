@@ -23,7 +23,7 @@
 
 ✅ **Runes (Casey Rodarmor, abr/2024, no bloco do halving 840.000).** Casey voltou e resolveu a sujeira: as Runes usam o **modelo UTXO + o opcode OP_RETURN** pra criar tokens **sem gerar UTXOs-lixo** — a fonte do bloat do BRC-20. Tokenização dentro do Bitcoin, do jeito limpo. ([fonte](https://medium.com/@dubwoman/who-is-who-ordinals-runes-inscriptions-brc-20-and-runestone-e1160361260a))
 
-✅ **$DOG = Rune #3.** Etched no bloco do halving, 100% airdrop, CC0, sem dono. A maior meme coin do Bitcoin nasceu do protocolo mais limpo, no momento mais simbólico.
+✅ **$DOG = Rune #3.** Etched no bloco do halving, 100% airdrop, CC0, sem dono. A maior token de comunidade do Bitcoin nasceu do protocolo mais limpo, no momento mais simbólico.
 
 ## PARTE II — O que Casey mudou (a cultura)
 

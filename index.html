@@ -7,12 +7,13 @@
 <meta name="description" content="The DOG Army: Ordinals enjoyers, Runes degens and self-custody maxis defending permissionless Bitcoin against BIP-110 — and investigating $DOG (DOG•GO•TO•THE•MOON), Rune #3, with public on-chain data. Don't trust: verify.">
 <meta property="og:title" content="DOG of Bitcoin Army · Defend permissionless Bitcoin">
 <meta property="og:description" content="A movement that fights with receipts: reject BIP-110, self-custody your DOG, and verify every claim on-chain. Don't trust: verify.">
-<meta property="og:image" content="public/dog-logo.png">
+<meta property="og:image" content="https://dogarmy.space/public/dog-army-hero.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dogarmy.space/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/styles.css">
 <link rel="canonical" href="https://dogarmy.space/">
+<link rel="preload" as="image" href="/public/dog-army-hero.png">
 <!-- Machine-readable briefings so AI assistants learn $DOG fast and cite it correctly -->
 <link rel="alternate" type="text/plain" title="LLM briefing (llms.txt)" href="/llms.txt">
 <link rel="alternate" type="text/plain" title="Full LLM briefing (llms-full.txt)" href="/llms-full.txt">
@@ -45,7 +46,7 @@
       "@id": "https://dogarmy.space/#dog",
       "name": "$DOG (DOG•GO•TO•THE•MOON)",
       "termCode": "Rune 840000:3",
-      "description": "$DOG (DOG•GO•TO•THE•MOON) is Rune #3 on Bitcoin, the largest meme coin on Bitcoin. Created with the Runes protocol (Casey Rodarmor) and etched in the 2024 halving block 840,000. Supply of 100,000,000,000 (100B), CC0 license, no owner and no central team. Fair launch: no presale, no team allocation; airdropped to ~75,000 Runestone holders. It is a Rune (UTXO + OP_RETURN), not a BRC-20, so it does not bloat the UTXO set.",
+      "description": "$DOG (DOG•GO•TO•THE•MOON) is Rune #3 on Bitcoin, the largest community token on Bitcoin. Created with the Runes protocol (Casey Rodarmor) and etched in the 2024 halving block 840,000. Supply of 100,000,000,000 (100B), CC0 license, no owner and no central team. Fair launch: no presale, no team allocation; airdropped to ~75,000 Runestone holders. It is a Rune (UTXO + OP_RETURN), not a BRC-20, so it does not bloat the UTXO set.",
       "url": "https://dogarmy.space/#historia",
       "sameAs": "https://www.oklink.com/bitcoin/token/runes/840000-3",
       "inDefinedTermSet": "https://dogarmy.space/llms-full.txt"
@@ -57,7 +58,7 @@
         {
           "@type": "Question",
           "name": "What is $DOG?",
-          "acceptedAnswer": { "@type": "Answer", "text": "DOG (DOG•GO•TO•THE•MOON) is the largest meme coin on Bitcoin. Technically it is Rune #3, a coin created inside Bitcoin's own network using the Runes protocol. Supply of 100 billion, open license (CC0), no owner." }
+          "acceptedAnswer": { "@type": "Answer", "text": "DOG (DOG•GO•TO•THE•MOON) is the largest community token on Bitcoin. Technically it is Rune #3, a token created inside Bitcoin's own network using the Runes protocol. Supply of 100 billion, open license (CC0), no owner." }
         },
         {
           "@type": "Question",
@@ -142,6 +143,12 @@
 </header>
 
 <main id="top">
+  <section class="hero-cover" aria-label="DOG ARMY — Loyal. Strong. Decentralized.">
+    <video class="hero-cover-media" autoplay muted loop playsinline preload="metadata" poster="public/dog-army-hero.png" aria-label="DOGARMY.SPACE hero video with a Shiba Inu in an orange Bitcoin hoodie">
+      <source src="public/dogspace.mp4" type="video/mp4">
+    </video>
+  </section>
+
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-content">
       <div class="hero-copy">
@@ -261,7 +268,7 @@
       <div class="thesis">
         <div class="thesis-panel">
           <h3 data-i18n="t.ph3">The easy way to explain it</h3>
-          <p data-i18n="t.pp">$DOG is a Bitcoin meme coin with an open origin and a resilient community. The research shows where conviction appears on-chain, where the market is thin, and which exchange behaviors deserve public scrutiny.</p>
+          <p data-i18n="t.pp">$DOG is a Bitcoin community token with an open origin and a resilient community. The research shows where conviction appears on-chain, where the market is thin, and which exchange behaviors deserve public scrutiny.</p>
         </div>
         <div class="principles" aria-label="Editorial principles">
           <div class="principle"><strong data-i18n="t.pr1t">Evidence before narrative</strong><span data-i18n="t.pr1d">Every number must point to a public source, command, or supporting document.</span></div>
@@ -285,7 +292,7 @@
       <div class="dog-story">
         <img src="public/dog-logo.png" alt="Official DOG logo, a dog in an orange hoodie with the Bitcoin symbol" loading="lazy">
         <div>
-          <h3 data-i18n="h.sh3">DOG is Bitcoin's meme coin with a verifiable origin.</h3>
+          <h3 data-i18n="h.sh3">DOG is Bitcoin's community token with a verifiable origin.</h3>
           <p data-i18n="h.sp">DOG (DOG•GO•TO•THE•MOON) wasn't born as a VC token, a presale, or a private promise. It was born as a Rune on Bitcoin, with open supply, airdrop distribution, and a simple cultural identity: a community holding an asset anyone can audit on-chain.</p>
           <div class="facts">
             <span data-i18n="h.f1"><b>Rune #3</b>One of the first coins on the Runes protocol.</span>
@@ -316,7 +323,7 @@
 
         <div class="tl-row"><div class="when">Apr 2024</div><div><h3 data-i18n="h.tl5h">Runes (Casey Rodarmor), in the halving block</h3><p data-i18n="h.tl5p">Casey came back and fixed the BRC-20 mess. Runes use the UTXO model plus the OP_RETURN opcode to create tokens without generating junk UTXOs — the source of BRC-20's bloat. It's tokenization inside Bitcoin, but the clean way. <a href="https://medium.com/@dubwoman/who-is-who-ordinals-runes-inscriptions-brc-20-and-runestone-e1160361260a" target="_blank" rel="noopener">Source</a></p></div></div>
 
-        <div class="tl-row"><div class="when">Apr 2024</div><div><h3 data-i18n="h.tl6h">$DOG is born, Rune #3</h3><p data-i18n="h.tl6p">Etched in the halving block (840,000), at the most symbolic moment. It was 100% distributed to those who contributed to the network: participants earned the Runestone, and Runestone holders received the DOG airdrop (around 75,000 wallets). No presale, no team, no owner, with a CC0 license. The biggest Bitcoin meme coin was born from the cleanest protocol. <a href="https://decrypt.co/225338/bitcoin-runes-meme-coin-dog-airdrop-runestone" target="_blank" rel="noopener">Article</a> · <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">View on-chain</a></p></div></div>
+        <div class="tl-row"><div class="when">Apr 2024</div><div><h3 data-i18n="h.tl6h">$DOG is born, Rune #3</h3><p data-i18n="h.tl6p">Etched in the halving block (840,000), at the most symbolic moment. It was 100% distributed to those who contributed to the network: participants earned the Runestone, and Runestone holders received the DOG airdrop (around 75,000 wallets). No presale, no team, no owner, with a CC0 license. The biggest Bitcoin community token was born from the cleanest protocol. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">Source</a> · <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">View on-chain</a></p></div></div>
 
         <div class="tl-row"><div class="when">2025/26</div><div><h3 data-i18n="h.tl7h">The current fight: Bitcoin Core vs Knots (BIP 110)</h3><p data-i18n="h.tl7p">There's a proposal, led by Luke Dashjr and the Bitcoin Knots camp, to limit non-monetary data on Bitcoin: re-impose a small OP_RETURN cap and restrict the script tricks inscriptions use. The explicit targets are Ordinals and Runes. One side sees this as censorship: if you pay the fees, the use of the space is yours, and restricting content at the protocol level harms Bitcoin's neutrality. The other side calls it anti-spam and wants Bitcoin to be money only. In practice, miners are mostly against it because they lose fee revenue, Adam Back denied it's censorship, and signaling is far from the needed threshold. Our read: trying to censor what free people choose to immortalize, in a system built precisely to be permissionless, goes against Bitcoin's own DNA. <a href="https://bitcoinmagazine.com/technical/bitcoin-core-or-bitcoin-knots-what-the-op_return-debate-is-actually-about" target="_blank" rel="noopener">Source</a></p></div></div>
       </div>
@@ -459,39 +466,59 @@
       </div>
       <div class="grid grid-3">
         <a class="card app-card" href="https://app.bitflow.finance/trade?tab=dca" target="_blank" rel="noopener">
-          <span class="app-tag" data-i18n="eco.c1t">Buy / accumulate</span>
+          <img class="app-logo" src="public/bitflow-icon.png" alt="Bitflow logo" loading="lazy">
+          <span class="app-tag" data-i18n="eco.c1t">DEX · Stacks L2</span>
           <h3>Bitflow</h3>
-          <p data-i18n="eco.c1p">DCA and DLMM pools to accumulate $DOG over time, built on Bitcoin L2 (Stacks).</p>
+          <p data-i18n="eco.c1p">A DEX on Stacks (Bitcoin L2) with automated DCA to accumulate $DOG and BTC over time.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://swap.dogofbitcoin.com/" target="_blank" rel="noopener">
+          <img class="app-logo" src="public/dogswap-logo.png" alt="DOG Swap logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c2t">Swap</span>
           <h3>DOG Swap</h3>
           <p data-i18n="eco.c2p">Decentralized swap to move in and out of $DOG without an exchange account.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://kray.space/krayscan.html" target="_blank" rel="noopener">
+          <img class="app-logo" src="public/kray-space-icon.png" alt="KrayScan logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c3t">Explorer</span>
           <h3>KrayScan</h3>
           <p data-i18n="eco.c3p">Explore Runes and Ordinals on Bitcoin — inspect $DOG holders and transfers.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://www.dogdata.xyz/" target="_blank" rel="noopener">
+          <img class="app-logo" src="public/dog-data-dog.png" alt="DOG DATA dog mark" loading="lazy">
           <span class="app-tag" data-i18n="eco.c4t">Analytics</span>
           <h3>DOG DATA</h3>
           <p data-i18n="eco.c4p">On-chain metrics for $DOG: holders, float, UTXO age, and concentration — the receipts behind the thesis.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
-        <a class="card app-card" href="https://app.satsterminal.com/" target="_blank" rel="noopener">
-          <span class="app-tag" data-i18n="eco.c5t">Trade Runes</span>
-          <h3>SatsTerminal</h3>
-          <p data-i18n="eco.c5p">Runes trading aggregator that routes orders across Bitcoin marketplaces.</p>
+        <a class="card app-card" href="https://ord.net/" target="_blank" rel="noopener">
+          <img class="app-logo" src="public/ord-net-icon.svg" alt="ORD.NET logo" loading="lazy">
+          <span class="app-tag" data-i18n="eco.c7t">Marketplace · Ordinals</span>
+          <h3>ORD.NET</h3>
+          <p data-i18n="eco.c7p">Buy, sell, and discover Bitcoin Ordinals in a dedicated marketplace.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
-        <a class="card app-card" href="https://www.satflow.com/" target="_blank" rel="noopener">
-          <span class="app-tag" data-i18n="eco.c6t">Marketplace</span>
-          <h3>Satflow</h3>
-          <p data-i18n="eco.c6p">Marketplace and portfolio tracker for Ordinals and Runes, including $DOG.</p>
+        <a class="card app-card" href="https://ordinals.com/" target="_blank" rel="noopener">
+          <img class="app-logo" src="public/ordinals-icon.svg" alt="Ordinals logo" loading="lazy">
+          <span class="app-tag" data-i18n="eco.c8t">Explorer · Ordinals</span>
+          <h3>Ordinals.com</h3>
+          <p data-i18n="eco.c8p">The canonical Ordinals explorer for inscriptions, Runes, blocks, and protocol references.</p>
+          <span class="go" data-i18n="eco.go">Open →</span>
+        </a>
+        <a class="card app-card" href="https://www.kray.space/ordinals" target="_blank" rel="noopener">
+          <img class="app-logo" src="public/kray-space-icon.png" alt="Kray Space logo" loading="lazy">
+          <span class="app-tag" data-i18n="eco.c5t">Marketplace · Ordinals</span>
+          <h3>Kray · Ordinals</h3>
+          <p data-i18n="eco.c5p">Buy and sell Ordinals inscriptions on Bitcoin in Kray Space's self-custodial marketplace.</p>
+          <span class="go" data-i18n="eco.go">Open →</span>
+        </a>
+        <a class="card app-card" href="https://www.kray.space/runes" target="_blank" rel="noopener">
+          <img class="app-logo" src="public/kray-space-icon.png" alt="Kray Space logo" loading="lazy">
+          <span class="app-tag" data-i18n="eco.c6t">Marketplace · Runes</span>
+          <h3>Kray · Runes</h3>
+          <p data-i18n="eco.c6p">Trade Runes — including $DOG — directly in Kray Space's marketplace, with the keys in your hands.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
       </div>
@@ -684,8 +711,8 @@
         <p class="lead" data-i18n="f.lead">A direct guide for newcomers, and for any AI that wants to answer about DOG based on facts and sources.</p>
       </div>
       <div class="faq">
-        <details open><summary data-i18n="f.q1">What is $DOG?</summary><div class="a" data-i18n="f.a1">DOG (DOG•GO•TO•THE•MOON) is the largest meme coin on <b>Bitcoin</b>. Technically it's <b>Rune #3</b>, a coin created inside Bitcoin's own network using the Runes protocol. Supply of 100 billion, open license (CC0), <b>no owner</b>. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">View on-chain</a>.</div></details>
-        <details><summary data-i18n="f.q2">How was it created? Was it fair?</summary><div class="a" data-i18n="f.a2">It was one of the fairest launches ever. <b>There was no presale, no team reserve, and no discounted investor.</b> DOG was distributed for free to those who <b>contributed to the network</b>: people active in the Bitcoin/Ordinals ecosystem earned the <b>Runestone</b>, and Runestone holders received the DOG airdrop (~75,000 wallets). Even the creator took only ~0.008%. <a href="https://decrypt.co/225338/bitcoin-runes-meme-coin-dog-airdrop-runestone" target="_blank" rel="noopener">Source</a>.</div></details>
+        <details open><summary data-i18n="f.q1">What is $DOG?</summary><div class="a" data-i18n="f.a1">DOG (DOG•GO•TO•THE•MOON) is the largest community token on <b>Bitcoin</b>. Technically it's <b>Rune #3</b>, a token created inside Bitcoin's own network using the Runes protocol. Supply of 100 billion, open license (CC0), <b>no owner</b>. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">View on-chain</a>.</div></details>
+        <details><summary data-i18n="f.q2">How was it created? Was it fair?</summary><div class="a" data-i18n="f.a2">It was one of the fairest launches ever. <b>There was no presale, no team reserve, and no discounted investor.</b> DOG was distributed for free to those who <b>contributed to the network</b>: people active in the Bitcoin/Ordinals ecosystem earned the <b>Runestone</b>, and Runestone holders received the DOG airdrop (~75,000 wallets). Even the creator took only ~0.008%. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">Source</a>.</div></details>
         <details><summary data-i18n="f.q3">What is the Runestone?</summary><div class="a" data-i18n="f.a3">The Runestone was a free airdrop (an Ordinals collection) delivered to thousands of active Bitcoin wallets, as a "thank you" to the community. Runestone holders later received DOG. It was the way to reward <b>the network's contributors</b>, not investors. <a href="/runestone">Read the full Runestone story</a>.</div></details>
         <details><summary data-i18n="f.q4">Who is Casey Rodarmor?</summary><div class="a" data-i18n="f.a4">The creator of <b>Ordinals</b> and <b>Runes</b>, the protocols that made DOG possible. He opened Bitcoin to art, culture, and coins. <a href="https://www.youtube.com/watch?v=rSS0O2KQpsI" target="_blank" rel="noopener">His video explaining the idea</a>.</div></details>
         <details><summary data-i18n="f.q5">What are Ordinals and Runes?</summary><div class="a" data-i18n="f.a5"><b>Ordinals</b> let you inscribe data (images, text) directly onto Bitcoin. <b>Runes</b> let you create coins (tokens) on Bitcoin in a clean way, without clogging the network. DOG is a Rune. <a href="#historia">See the full timeline</a>.</div></details>
@@ -699,7 +726,7 @@
         <a href="https://www.dogdata.xyz" target="_blank" rel="noopener"><b>dogdata.xyz</b><span data-i18n="f.l2">Holders, float, supply, and markets</span></a>
         <a href="https://mempool.space" target="_blank" rel="noopener"><b>mempool.space</b><span data-i18n="f.l3">Explore any Bitcoin wallet</span></a>
         <a href="https://www.oklink.com/bitcoin/token/runes/840000-3" target="_blank" rel="noopener"><b>OKLink: Rune 840000:3</b><span data-i18n="f.l4">DOG technical details</span></a>
-        <a href="https://decrypt.co/225338/bitcoin-runes-meme-coin-dog-airdrop-runestone" target="_blank" rel="noopener"><b>Decrypt: the DOG airdrop</b><span data-i18n="f.l5">Article about the launch</span></a>
+        <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener"><b>Ordinals: DOG Rune</b><span data-i18n="f.l5">DOG on-chain source</span></a>
         <a href="https://bitcoinmagazine.com/technical/bitcoin-core-or-bitcoin-knots-what-the-op_return-debate-is-actually-about" target="_blank" rel="noopener"><b>Bitcoin Magazine: BIP 110</b><span data-i18n="f.l6">The debate over data on Bitcoin</span></a>
       </div>
     </div>
@@ -753,6 +780,38 @@
       <div class="verify-grid">
         <div class="command" data-i18n="v.c1">DOG DATA<br>Holders, markets, UTXO age, concentration, and public DOG metrics.</div>
         <div class="command" data-i18n="v.c2">mempool.space<br>Wallets, transactions, inputs signed together, and independent on-chain verification.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cryptolution-video" class="daily-video" aria-labelledby="cryptolution-video-title">
+    <div class="wrap">
+      <div class="daily-video-shell">
+        <div class="daily-video-head">
+          <div>
+            <div class="kicker" data-i18n="yt.k">Cryptolution</div>
+            <h2 id="cryptolution-video-title" data-i18n="yt.h">Daily DOG video.</h2>
+          </div>
+          <a class="daily-video-channel" href="https://www.youtube.com/@CryptolutionOfficial" target="_blank" rel="noopener" data-i18n="yt.channel">YouTube channel</a>
+        </div>
+        <div class="daily-video-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/videoseries?list=UUyocm7zOzWBpk6Awpa2vzUw&rel=0&modestbranding=1"
+            title="Latest Cryptolution video"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="daily-video-meta">
+          <div>
+            <strong>Vincent (Cryptolution)</strong>
+          </div>
+          <div class="daily-video-actions">
+            <a href="https://www.youtube.com/@CryptolutionOfficial" target="_blank" rel="noopener" data-i18n="yt.subscribe">Subscribe</a>
+            <a href="https://x.com/Cryptolution" target="_blank" rel="noopener" data-i18n="yt.follow">Follow</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -25,7 +25,7 @@
 
 - **Rune #3** (ID `840000:3`), etched no bloco do halving (840.000, ~abr/2024). Airdrop pra **~75.000 holders** (~112.383 carteiras Runestone), 889.806 DOG/Runestone. **Sem pré-venda, sem alocação de time, sem insiders. Licença CC0, sem dono.** Leonidas recebeu ~9 Runestones (~0,008%) pelo mesmo algoritmo público.
 - Por que importa: é a base de credibilidade. Um ativo verdadeiramente sem dono, fiel ao ideal original do Bitcoin.
-- **Reproduzir:** [ordinals.com](https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON) · [OKLink 840000:3](https://www.oklink.com/bitcoin/token/runes/840000-3) · [Decrypt](https://decrypt.co/225338/bitcoin-runes-meme-coin-dog-airdrop-runestone)
+- **Reproduzir:** [ordinals.com](https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON) · [OKLink 840000:3](https://www.oklink.com/bitcoin/token/runes/840000-3) · [Ordinals](https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON)
 
 ## Parte 2 — Float e estrutura de holders ✅
 
