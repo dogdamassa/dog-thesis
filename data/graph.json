@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T10:39:19.812579+00:00",
+  "updated_at": "2026-06-29T14:50:24.190456+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,7 +8,7 @@
       "kind": "whale",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12349778037.99258,
+      "balance_dog": 12345455342.30546,
       "rank": 1,
       "pct": 12.35,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2163951921.33479,
+      "balance_dog": 2164508053.08479,
       "rank": 6,
       "pct": 2.16,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -50,7 +50,7 @@
       "id": "int1",
       "label": "Intermediary Wallet #1",
       "kind": "relay",
-      "community": "ponte para Bitget",
+      "community": "bridge to Bitget",
       "confirmed": false,
       "balance_dog": 0,
       "rank": null,
@@ -61,7 +61,7 @@
       "id": "int2",
       "label": "Intermediary Wallet #2",
       "kind": "relay",
-      "community": "ponte para Bitget",
+      "community": "bridge to Bitget",
       "confirmed": false,
       "balance_dog": 0,
       "rank": null,
@@ -72,7 +72,7 @@
       "id": "int3",
       "label": "Intermediary Wallet #3",
       "kind": "relay",
-      "community": "Gate para Bitget",
+      "community": "Gate to Bitget",
       "confirmed": false,
       "balance_dog": 0,
       "rank": null,
