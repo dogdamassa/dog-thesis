@@ -1,14 +1,17 @@
-# 🐕 DOG of Bitcoin Army
+# 🐕 DOG ARMY
 
 [![License: CC0 1.0](https://img.shields.io/badge/License-CC0_1.0-f7931a.svg)](LICENSE) [![Live site](https://img.shields.io/badge/live-dogarmy.space-f7931a.svg)](https://dogarmy.space) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-43c59e.svg)](CONTRIBUTING.md) [![Languages](https://img.shields.io/badge/lang-EN%20%C2%B7%20PT-72a7ff.svg)](#) [![Community studies](https://img.shields.io/badge/community-studies-e5b64b.svg)](studies/) [![Don't trust, verify](https://img.shields.io/badge/don't%20trust-verify-orange.svg)](#verify-it-yourself)
 
-**A movement that fights with receipts.** Public, reproducible, community research on $DOG (DOG•GO•TO•THE•MOON), Bitcoin's Rune #3 — and a defense of permissionless blockspace against BIP-110.
+**DOG ARMY fights with receipts.** A public, reproducible, builder-run community around $DOG (DOG•GO•TO•THE•MOON), Bitcoin's Rune #3 — and a defense of permissionless blockspace against BIP-110.
 
 > **Don't trust. Verify.** Every claim here points to a public source you can re-run yourself. We rally hard, but we never assert what the data doesn't prove — the receipts are the weapon.
 
 🌐 **Live site:** https://dogarmy.space · 🪨 [The Runestone story](https://dogarmy.space/runestone)
 🗣️ Available in **English** and **Português** (switch top-right) — Español · Italiano · 中文 coming.
 📄 License: **[CC0 1.0](LICENSE)** — public domain, no owner, in the spirit of $DOG.
+
+> ### 🛠️ This is open turf — come build with us.
+> No owner. No gatekeepers. CC0. Just receipts and people who ship. Build a dashboard, a wallet-tracker bot, an on-chain alert, a study, a chart, art, a translation — **bring it and ship it.** See [**how to join**](CONTRIBUTING.md) ↓
 
 ---
 
@@ -64,13 +67,16 @@ python3 scripts/books.py                                   # live CEX order-book
 4. No financial advice, price promises, or market coordination.
 5. **Caveats are part of the credibility.**
 
-## How to contribute — we need different eyes 👀
+## 🛠️ Join the DOG ARMY — come build
 
-| Lane | What you'd do |
+No gatekeepers, no owner — just receipts and people who ship. Pick a lane (or invent one) and build something on top of open $DOG data:
+
+| Lane | What you'd build |
 |---|---|
+| 🔧 **Tools & bots** | Dashboards, wallet-trackers, on-chain alerts, visualizations on public $DOG data. |
 | 🔍 **On-chain analysis** | Bitcoin/Runes, UTXOs, co-spends, wallet labeling (with caveats). |
 | 📊 **Market data** | Order books, trades, spreads; reported volume vs on-chain flow. |
-| ✍️ **Communication** | Charts, threads, plain-language explainers, design. |
+| ✍️ **Communication** | Charts, threads, plain-language explainers, memes, design. |
 | ⚖️ **Legal / editorial** | Keep every claim responsible, sourced, reproducible. |
 | 🌍 **Translation** | Help bring the site to Español, Italiano, 中文, and more. |
 
@@ -86,13 +92,3 @@ python3 scripts/books.py                                   # live CEX order-book
 ## Disclaimer
 
 This repository is informational and educational. Nothing here is investment advice, a legal accusation, or a guarantee of any result. Do your own research and verify the sources.
-
----
-
-## 🇧🇷 Português
-
-**Pesquisa pública, reproduzível e colaborativa sobre a $DOG (DOG•GO•TO•THE•MOON), a Rune #3 do Bitcoin.** Não confie: verifique — toda afirmação aponta pra uma fonte pública que você mesmo refaz.
-
-A pesquisa separa **fato provado**, **hipótese em observação** e **o que não se sustenta**. Não é conselho financeiro, previsão de preço ou coordenação de mercado.
-
-**Quer ajudar?** Abra uma [issue](../../issues/new/choose) (reportar carteira, anomalia de corretora, correção de dado ou tradução) ou mande um PR pequeno com fonte clara. Pode escrever em **português ou inglês**. Regra de ouro: **mostre o fato com força, mas nunca afirme autoria, intenção ou crime que o dado não prova.** Detalhes em [CONTRIBUTING.md](CONTRIBUTING.md).
