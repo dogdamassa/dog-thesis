@@ -4,7 +4,7 @@
   "nodes": [
     {
       "id": "cofre",
-      "label": "Cofre #1",
+      "label": "Vault #1",
       "kind": "whale",
       "community": null,
       "confirmed": true,
@@ -48,7 +48,7 @@
     },
     {
       "id": "int1",
-      "label": "Intermediario #1",
+      "label": "Intermediary Wallet #1",
       "kind": "relay",
       "community": "ponte para Bitget",
       "confirmed": false,
@@ -59,7 +59,7 @@
     },
     {
       "id": "int2",
-      "label": "Intermediario #2",
+      "label": "Intermediary Wallet #2",
       "kind": "relay",
       "community": "ponte para Bitget",
       "confirmed": false,
@@ -70,7 +70,7 @@
     },
     {
       "id": "int3",
-      "label": "Intermediario #3",
+      "label": "Intermediary Wallet #3",
       "kind": "relay",
       "community": "Gate para Bitget",
       "confirmed": false,
@@ -139,23 +139,23 @@
     {
       "from": "cofre",
       "to": "int2",
-      "from_label": "Cofre #1",
-      "to_label": "Intermediario #2",
+      "from_label": "Vault #1",
+      "to_label": "Intermediary Wallet #2",
       "dog": 191052992,
       "count": 18
     },
     {
       "from": "cofre",
       "to": "int1",
-      "from_label": "Cofre #1",
-      "to_label": "Intermediario #1",
+      "from_label": "Vault #1",
+      "to_label": "Intermediary Wallet #1",
       "dog": 60370704,
       "count": 10
     },
     {
       "from": "cofre",
       "to": "bc1pcjqedhnxmjhl00ht6l0r0y9e79lhme3qeza5n4rd3a7f3yyqhqzqeeagwm",
-      "from_label": "Cofre #1",
+      "from_label": "Vault #1",
       "to_label": "bc1pcjqe...agwm",
       "dog": 608302630,
       "count": 3
@@ -163,7 +163,7 @@
     {
       "from": "cofre",
       "to": "bc1p5plggmj0pqfkpf9ssuf7nxw8ym4yycumyq3aqvguu23a3fdvgufs2t34tt",
-      "from_label": "Cofre #1",
+      "from_label": "Vault #1",
       "to_label": "bc1p5plg...34tt",
       "dog": 524223060,
       "count": 4
@@ -171,7 +171,7 @@
     {
       "from": "cofre",
       "to": "bc1pdgfqda27g3c25gyzyf4cl2p9etymdpfpha399km3nnt9tws62zssaavuvz",
-      "from_label": "Cofre #1",
+      "from_label": "Vault #1",
       "to_label": "bc1pdgfq...vuvz",
       "dog": 426540370,
       "count": 2
@@ -179,7 +179,7 @@
     {
       "from": "cofre",
       "to": "bc1pj6saqczxygqug88e742z6u0302etmgtw6ntevp204qz3jl5u6yasgw3ku9",
-      "from_label": "Cofre #1",
+      "from_label": "Vault #1",
       "to_label": "bc1pj6sa...3ku9",
       "dog": 418334200,
       "count": 3
@@ -187,7 +187,7 @@
     {
       "from": "cofre",
       "to": "bc1p6mcp5r5h20hmyekk7z48qnxhy4th6c8xs7nqqgndmseln2yfk74q0ga2u7",
-      "from_label": "Cofre #1",
+      "from_label": "Vault #1",
       "to_label": "bc1p6mcp...a2u7",
       "dog": 569372333,
       "count": 3
@@ -195,7 +195,7 @@
     {
       "from": "int1",
       "to": "h3",
-      "from_label": "Intermediario #1",
+      "from_label": "Intermediary Wallet #1",
       "to_label": "Top #3",
       "dog": 243080445,
       "count": 41
@@ -204,14 +204,14 @@
       "from": "h2",
       "to": "int1",
       "from_label": "Top #2",
-      "to_label": "Intermediario #1",
+      "to_label": "Intermediary Wallet #1",
       "dog": 9794738,
       "count": 2
     },
     {
       "from": "int2",
       "to": "h3",
-      "from_label": "Intermediario #2",
+      "from_label": "Intermediary Wallet #2",
       "to_label": "Top #3",
       "dog": 414000835,
       "count": 68
@@ -220,14 +220,14 @@
       "from": "h2",
       "to": "int2",
       "from_label": "Top #2",
-      "to_label": "Intermediario #2",
+      "to_label": "Intermediary Wallet #2",
       "dog": 43718019,
       "count": 6
     },
     {
       "from": "int3",
       "to": "h3",
-      "from_label": "Intermediario #3",
+      "from_label": "Intermediary Wallet #3",
       "to_label": "Top #3",
       "dog": 19307299,
       "count": 1
@@ -236,7 +236,7 @@
       "from": "h2",
       "to": "int3",
       "from_label": "Top #2",
-      "to_label": "Intermediario #3",
+      "to_label": "Intermediary Wallet #3",
       "dog": 19008774,
       "count": 1
     }

@@ -38,11 +38,11 @@ NODES = [
     {"id": "mexc", "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu",
      "label": "MEXC Wallet", "kind": "holder", "community": "MEXC", "feed": False},
     {"id": "int1", "addr": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar",
-     "label": "Intermediary #1", "kind": "relay", "community": "bridge to Bitget", "feed": True},
+     "label": "Intermediary Wallet #1", "kind": "relay", "community": "bridge to Bitget", "feed": True},
     {"id": "int2", "addr": "bc1p52673nrtsed5n5nal7cm02u6pg63p0e6u4nm2fhm90xd8r4w3ass090zzy",
-     "label": "Intermediary #2", "kind": "relay", "community": "bridge to Bitget", "feed": True},
+     "label": "Intermediary Wallet #2", "kind": "relay", "community": "bridge to Bitget", "feed": True},
     {"id": "int3", "addr": "bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j",
-     "label": "Intermediary #3", "kind": "relay", "community": "Gate to Bitget", "feed": True},
+     "label": "Intermediary Wallet #3", "kind": "relay", "community": "Gate to Bitget", "feed": True},
 ]
 BY_ADDR = {n["addr"]: n for n in NODES}
 

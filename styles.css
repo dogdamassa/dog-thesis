@@ -91,6 +91,12 @@ nav{
   gap:22px;
   padding:12px 24px;
 }
+.brand-col{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:5px;
+}
 .brand{
   display:flex;
   align-items:center;
@@ -798,7 +804,7 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
   .market-ticker a{padding:7px 8px}
   .market-ticker strong{font-size:11px}
 }
-@media(max-width:620px){.person,.dog-story,.campaign{grid-template-columns:1fr;text-align:center}.person img{margin:0 auto}.dog-story .facts{grid-template-columns:1fr}.tl-row{grid-template-columns:1fr}.linklist{grid-template-columns:1fr}.wrow{grid-template-columns:1fr;gap:6px;padding:16px 18px}.sponsor-brand,.sponsor-copy{padding:26px}.sponsor-features{grid-template-columns:1fr}.sponsor-label{letter-spacing:.2em;gap:12px}.footer-sponsor{align-items:flex-start}.market-ticker{display:none}}
+@media(max-width:620px){.person,.dog-story,.campaign{grid-template-columns:1fr;text-align:center}.person img{margin:0 auto}.dog-story .facts{grid-template-columns:1fr}.tl-row{grid-template-columns:1fr}.linklist{grid-template-columns:1fr}.wrow{grid-template-columns:1fr;gap:6px;padding:16px 18px}.sponsor-brand,.sponsor-copy{padding:26px}.sponsor-features{grid-template-columns:1fr}.sponsor-label{letter-spacing:.2em;gap:12px}.footer-sponsor{align-items:flex-start}}
 @media(max-width:420px){.brand-logo{width:76px;height:62px}}
 /* --- language switcher --- */
 .nav-right{display:flex;align-items:center;gap:10px}
@@ -838,19 +844,8 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
   font-variant-numeric:tabular-nums;
 }
 .market-ticker.is-stale strong{color:rgba(255,247,239,.54)}
-/* live market-prices strip — its own thin bar below the nav (moved out of the nav to avoid crowding) */
-.market-strip{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:6px 24px;
-  background:linear-gradient(180deg,rgba(12,9,7,.94),rgba(8,8,8,.94));
-  border-bottom:1px solid var(--line);
-}
-.market-strip .market-ticker{border:0;background:transparent;box-shadow:none;padding:0;gap:4px}
-.market-strip .market-ticker a{padding:5px 12px}
-/* hide the whole strip (and its ticker) on small screens — keeps the mobile top clean */
-@media(max-width:620px){.market-strip,.market-ticker{display:none}}
+/* price pill sits directly under the DOG ARMY logo, in the brand column */
+.brand-col .market-ticker{align-self:flex-start}
 .langsw{
   display:flex;
   align-items:center;
