@@ -126,9 +126,19 @@
 </aside>
 <header>
   <nav>
-    <a class="brand" href="#top" aria-label="Back to top">
-      <span class="brand-logo"><img src="public/dog-army-logo.png" alt="DOG ARMY"></span>
-    </a>
+    <div class="brand-col">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand-logo"><img src="public/dog-army-logo.png" alt="DOG ARMY"></span>
+      </a>
+      <div class="market-ticker" id="marketTicker" aria-label="Market prices from CoinGecko">
+        <a href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener" aria-label="Bitcoin price on CoinGecko">
+          <span>BTC</span><strong id="btcPrice">...</strong>
+        </a>
+        <a href="https://www.coingecko.com/en/coins/dog-go-to-the-moon-rune" target="_blank" rel="noopener" aria-label="DOG price on CoinGecko">
+          <span>DOG</span><strong id="dogPrice">...</strong>
+        </a>
+      </div>
+    </div>
     <div class="navlinks" aria-label="Main navigation">
       <a href="#historia" data-i18n="nav.history">Story</a>
       <a href="#runestone" data-i18n="nav.runestone">Runestone</a>
@@ -159,16 +169,6 @@
     </div>
   </nav>
 </header>
-<div class="market-strip" aria-label="Live market prices">
-  <div class="market-ticker" id="marketTicker" aria-label="Market prices from CoinGecko">
-    <a href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener" aria-label="Bitcoin price on CoinGecko">
-      <span>BTC</span><strong id="btcPrice">...</strong>
-    </a>
-    <a href="https://www.coingecko.com/en/coins/dog-go-to-the-moon-rune" target="_blank" rel="noopener" aria-label="DOG price on CoinGecko">
-      <span>DOG</span><strong id="dogPrice">...</strong>
-    </a>
-  </div>
-</div>
 <div class="navscrim" id="navscrim" hidden></div>
 <aside class="navdrawer" id="navdrawer" aria-label="Menu" aria-hidden="true">
   <nav class="navdrawer-inner">
@@ -256,8 +256,8 @@
       <div class="timeline">
         <div class="tl-row"><div class="when">Nov 2021</div><div><h3 data-i18n="h.tl1h">Taproot activates on Bitcoin</h3><p data-i18n="h.tl1p">A soft fork expanded the witness data space and created the groundwork for everything that followed.</p></div></div>
         <div class="tl-row"><div class="when">Jan 2023</div><div><h3 data-i18n="h.tl2h">Ordinals (Casey Rodarmor)</h3><p data-i18n="h.tl2p">Casey's protocol lets people inscribe images, text and art onto individual sats, directly on Bitcoin. <a href="https://blockmanity.com/news/bitcoin-ordinals-surpass-10-million-inscriptions-creator-casey-rodarmor-steps-down/" target="_blank" rel="noopener">Source</a></p></div></div>
-        <div class="tl-row"><div class="when">Mar 2023</div><div><h3 data-i18n="h.tl3h">BRC 20, the developer "domo"</h3><p data-i18n="h.tl3p">The first token standard on inscriptions (ordi). Powerful, but it bloats the UTXO set with unspendable junk. <a href="https://iq.wiki/wiki/brc-20" target="_blank" rel="noopener">Source</a></p></div></div>
-        <div class="tl-row"><div class="when">Nov 2023</div><div><h3 data-i18n="h.tl4h">Binance rushes to list ORDI</h3><p data-i18n="h.tl4p">Listed with no fee; the price doubled within hours. Exchanges saw Bitcoin becoming an asset layer. <a href="https://decrypt.co/204724/bitcoin-ordinals-daily-trading-hits-6-month-peak-ordi-token-surges-binance-listing" target="_blank" rel="noopener">Source</a></p></div></div>
+        <div class="tl-row"><div class="when">Mar 2023</div><div><h3 data-i18n="h.tl3h">BRC 20, the developer "domo"</h3><p data-i18n="h.tl3p">Domo creates BRC 20 using Ordinals inscriptions as a way to deploy, mint and transfer tokens on Bitcoin. Powerful, but it bloats the UTXO set with unspendable junk. <a href="https://iq.wiki/wiki/brc-20" target="_blank" rel="noopener">Source</a></p></div></div>
+        <div class="tl-row"><div class="when">Nov 2023</div><div><h3 data-i18n="h.tl4h">Binance rushes to list ORDI</h3><p data-i18n="h.tl4p">The price doubled within hours. Exchanges saw Bitcoin becoming an asset layer. <a href="https://decrypt.co/204724/bitcoin-ordinals-daily-trading-hits-6-month-peak-ordi-token-surges-binance-listing" target="_blank" rel="noopener">Source</a></p></div></div>
         <div class="tl-row"><div class="when">Dec 2023</div><div><h3 data-i18n="h.tlRh">The Runestone (Leonidas)</h3><p data-i18n="h.tlRp">Conceived by <a href="https://x.com/LeonidasNFT" target="_blank" rel="noopener">Leonidas</a> with art by Leo Caillard. It became the largest airdrop in Bitcoin history, with 112,383 inscriptions and a 3.97 MB parent inscription sealed in an address attributed to Satoshi. DOG was later airdropped to its holders. <a href="/runestone.html">Full story</a></p></div></div>
         <div class="tl-row"><div class="when">Apr 2024</div><div><h3 data-i18n="h.tl5h">Runes (Casey Rodarmor), in the halving block</h3><p data-i18n="h.tl5p">Casey fixes the bloat: Runes use the UTXO model plus OP RETURN, with no junk UTXOs. $DOG secures Rune #3. <a href="https://medium.com/@dubwoman/who-is-who-ordinals-runes-inscriptions-brc-20-and-runestone-e1160361260a" target="_blank" rel="noopener">Source</a></p></div></div>
         <div class="tl-row"><div class="when">25 Apr 2024</div><div><h3 data-i18n="h.tl6h">$DOG is born, Rune #3</h3><p data-i18n="h.tl6p">Airdropped 100% to Runestone holders with no presale, no team, no owner and CC0. The biggest community token on Bitcoin. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">View on chain</a></p></div></div>
@@ -388,36 +388,31 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="kicker" data-i18n="fight.k">The fight</div>
-          <h2 data-i18n="fight.h">Defend permissionless blockspace. Reject BIP 110.</h2>
+          <div class="kicker" data-i18n="fight.k">We are the new maxis</div>
+          <h2 data-i18n="fight.h">Defend permissionless blockspace. Reject BIP-110.</h2>
         </div>
-        <p class="lead" data-i18n="fight.lead">A camp around Bitcoin Knots wants to restrict the data we put on Bitcoin. aimed squarely at Ordinals and Runes. We don't fight it with slogans. We fight it with the argument itself: steelmanned, then answered. That's how the DOG Army wins. with receipts.</p>
+        <p class="lead" data-i18n="fight.lead">The Bitcoin Knots camp (BIP-110) wants to censor what you're allowed to put on Bitcoin — aimed straight at Ordinals and Runes. We don't apologize for using the chain we love. Casey opened Bitcoin to the whole world; the new maxis are the ones defending it.</p>
       </div>
       <div class="grid grid-3">
         <article class="card">
-          <span class="tag watch" data-i18n="fight.t1tag">Their strongest point</span>
-          <h3 data-i18n="fight.t1h">“Inscriptions get a subsidy.”</h3>
-          <p data-i18n="fight.t1p"><b>Fair:</b> SegWit weighs witness bytes 1 vs 4, so inscription data rides a built in ~4x discount. <b>Our answer:</b> that discount is a consensus rule for <i>everyone's</i> witness. multisig, Lightning, every Taproot spend. Singling out art is content discrimination, not fee reform.</p>
+          <span class="tag watch" data-i18n="fight.t1tag">The new maxis</span>
+          <h3 data-i18n="fight.t1h">We hold, we self-custody, we actually use the chain.</h3>
+          <p data-i18n="fight.t1p">Old gatekeeping said Bitcoin is <i>only</i> money and everything else is spam. We say Bitcoin is sovereign money <b>and</b> a permanent, censorship-proof ledger for culture. We run our own nodes, hold our own keys, and pay our own fees. Loving Bitcoin was never about deciding who's allowed to use it.</p>
         </article>
         <article class="card">
-          <span class="tag watch" data-i18n="fight.t2tag">The real concern</span>
-          <h3 data-i18n="fight.t2h">“Data junks up the UTXO set.”</h3>
-          <p data-i18n="fight.t2p"><b>True for BRC 20</b>, which leaves unspendable UTXOs every node keeps forever. <b>But Runes. what $DOG is. use OP RETURN precisely to avoid junk UTXOs.</b> The clean design already answers the cleanest objection.</p>
+          <span class="tag watch" data-i18n="fight.t2tag">Casey opened Bitcoin</span>
+          <h3 data-i18n="fight.t2h">He brought the world in — and made it learn how Bitcoin really works.</h3>
+          <p data-i18n="fight.t2p">Ordinals and Runes (Casey Rodarmor) pulled artists, builders and normal people <b>into</b> Bitcoin — and forced them to actually learn it: UTXOs, fees, the mempool, self-custody. That's not spam, it's the biggest onboarding Bitcoin ever had. <b>$DOG</b> is what came out of it: Rune #3, fair-launched, 100% on the base layer.</p>
         </article>
         <article class="card">
-          <span class="tag" data-i18n="fight.t3tag">The line</span>
-          <h3 data-i18n="fight.t3h">Relay policy ≠ a network fork</h3>
-          <p data-i18n="fight.t3p">Recapping OP RETURN is node <b>relay policy</b>, not consensus. it changes what nodes relay by default. Restricting which <i>paid</i> transactions are allowed, on a chain whose whole value is censorship resistance, is the part that betrays Bitcoin's DNA.</p>
+          <span class="tag" data-i18n="fight.t3tag">Reject BIP-110</span>
+          <h3 data-i18n="fight.t3h">BIP-110 is censorship. Full stop.</h3>
+          <p data-i18n="fight.t3p">The Knots camp wants nodes to pick which <i>paid</i> transactions Bitcoin will relay — banning Ordinals and Runes by default. On a chain whose only job is to be unstoppable, calling someone else's paid transaction “spam” <b>is</b> censorship. If you pay the fee, the blockspace is yours. BIP-110 betrays Bitcoin's DNA and slams the door on everyone Casey just brought in.</p>
         </article>
-      </div>
-      <div class="fight-grades">
-        <div class="g-fact"><b data-i18n="fight.g1t">✅ Fact</b><span data-i18n="fight.g1p">Miners mostly oppose it (they lose fee revenue), Adam Back denied it's censorship, and signaling is far from the threshold.</span></div>
-        <div class="g-debate"><b data-i18n="fight.g2t">⚖️ Debate</b><span data-i18n="fight.g2p">“Censorship” vs “anti spam” is the honest disagreement. We argue censorship. and we label that as our opinion, not fact.</span></div>
-        <div class="g-no"><b data-i18n="fight.g3t">❌ We don't claim</b><span data-i18n="fight.g3p">That one viral stat proves intent, or that the other side are “feds.” We bring the argument, not an enemy.</span></div>
       </div>
       <div class="fight-cta">
-        <div class="slogan" data-i18n="fight.slogan">“Defend permissionless blockspace. Reject BIP 110.”</div>
-        <p data-i18n="fight.ctap">Paid blockspace belongs to whoever pays for it. that's the whole point of Bitcoin. This is advocacy on protocol policy: not financial advice, and not market coordination.</p>
+        <div class="slogan" data-i18n="fight.slogan">“Defend permissionless blockspace. Reject BIP-110.”</div>
+        <p data-i18n="fight.ctap">If you paid the fee, the blockspace is yours — that's the whole point of Bitcoin. This is advocacy on protocol policy: our opinion on Bitcoin's direction, not financial advice or market coordination.</p>
         <a class="btn primary" href="https://bitcoinmagazine.com/technical/bitcoin-core-or-bitcoin-knots-what-the-op_return-debate-is-actually-about" target="_blank" rel="noopener" data-i18n="fight.ctab1">Read the full debate</a>
         <a class="btn secondary" href="#historia" data-i18n="fight.ctab2">How we got here</a>
       </div>
@@ -431,7 +426,7 @@
           <div class="kicker" data-i18n="br.k">Daily briefing · what's happening</div>
           <h2 data-i18n="br.h">Is Binance feeding the 12% whale?</h2>
         </div>
-        <p class="lead" data-i18n="br.lead">Daily open case. Binance is a sustained one way source for the 12% cluster; suspicious, documented, not proof of company control.</p>
+        <p class="lead" data-i18n="br.lead">Daily open case. A wallet the community flags as Binance — not yet confirmed — is a sustained one way source for the 12% cluster; suspicious and documented, not proof of company control.</p>
       </div>
 
       <div class="briefing-meta">
@@ -441,9 +436,9 @@
 
       <div class="briefing-stats">
         <div class="briefing-stat"><b data-i18n="br.s1n">12.32%</b><span data-i18n="br.s1l">of all supply in one entity, one address (Jun 25)</span></div>
-        <div class="briefing-stat"><b data-i18n="br.s2n">~22 mo</b><span data-i18n="br.s2l">Binance → cluster, one direction (Aug 2024 to Jun 2026)</span></div>
-        <div class="briefing-stat"><b>51×</b><span data-i18n="br.s3l">withdrawals from the Binance hot wallet via Relay #3</span></div>
-        <div class="briefing-stat"><b>0</b><span data-i18n="br.s4l">deposits ever sent back to Binance</span></div>
+        <div class="briefing-stat"><b data-i18n="br.s2n">~22 mo</b><span data-i18n="br.s2l">possible Binance → cluster, one direction (Aug 2024 to Jun 2026)</span></div>
+        <div class="briefing-stat"><b>51×</b><span data-i18n="br.s3l">withdrawals from the suspected Binance hot wallet via Relay #3</span></div>
+        <div class="briefing-stat"><b>0</b><span data-i18n="br.s4l">deposits ever sent back to that wallet</span></div>
       </div>
 
       <span id="evidencias" aria-hidden="true"></span>
@@ -462,8 +457,8 @@
         </article>
       </div>
       <div class="fight-grades">
-        <div class="g-fact"><b data-i18n="br.g1t">✅ On chain fact</b><span data-i18n="br.g1p">Relay #3 pulled DOG from Binance <b>51×</b> across ~22 months and sent <b>nothing back</b>. One way source, on chain.</span></div>
-        <div class="g-debate"><b data-i18n="br.g2t">⚖️ Why it's suspicious</b><span data-i18n="br.g2p">Binance does not list DOG spot, yet DOG keeps leaving Binance custody toward the same entity. Unusual flow, not proof of ownership.</span></div>
+        <div class="g-fact"><b data-i18n="br.g1t">✅ On chain fact</b><span data-i18n="br.g1p">Relay #3 pulled DOG from a single wallet — community tagged as Binance, unconfirmed — <b>51×</b> across ~22 months and sent <b>nothing back</b>. One way source, on chain.</span></div>
+        <div class="g-debate"><b data-i18n="br.g2t">⚖️ Why it's suspicious</b><span data-i18n="br.g2p">Binance does not list DOG spot, yet DOG keeps leaving that wallet toward the same entity. Unusual flow, not proof the wallet is Binance.</span></div>
         <div class="g-no"><b data-i18n="br.g3t">❌ What we don't claim</b><span data-i18n="br.g3p">We do not claim Binance controls the whale. No co spend with the hot wallet; suspicious and documented is not proven.</span></div>
       </div>
 
@@ -474,7 +469,7 @@
 
       <div class="briefing-actions">
         <a class="btn primary" href="investigacao-binance.md" data-i18n="br.b1">Read the full investigation</a>
-        <a class="btn secondary" href="https://mempool.space/address/bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j" target="_blank" rel="noopener" data-i18n="br.b2">Verify Relay #3 and Binance on chain</a>
+        <a class="btn secondary" href="https://mempool.space/address/bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j" target="_blank" rel="noopener" data-i18n="br.b2">Verify Relay #3 and the suspected Binance wallet on chain</a>
         <a class="btn secondary" href="#carteiras" data-i18n="br.b3">See all watched wallets</a>
       </div>
     </div>
@@ -499,7 +494,7 @@
             <div class="rd-legend">
               <span><i class="rd-l rd-l-cofre"></i><span data-i18n="rd.lg1">Vault #1</span></span>
               <span><i class="rd-l rd-l-holder"></i><span data-i18n="rd.lg2">Exchange wallet</span></span>
-              <span><i class="rd-l rd-l-relay"></i><span data-i18n="rd.lg3">Intermediary</span></span>
+              <span><i class="rd-l rd-l-relay"></i><span data-i18n="rd.lg3">Intermediary Wallet</span></span>
               <span><i class="rd-l rd-l-fresh"></i><span data-i18n="rd.lg4">Fresh wallet</span></span>
             </div>
           </div>
@@ -535,7 +530,7 @@
 
       <div class="wgroup" data-i18n="w.g1">Exchanges (CEXs) and bridge</div>
       <div class="wallets">
-        <div class="wrow"><div class="nm">Binance</div><div class="info" data-i18n="w.i1">hot wallet; the cluster <b>withdraws DOG from here</b> (Relay #3: 51×) · <a href="https://mempool.space/address/bc1qhuv3dhpnm0wktasd3v0kt6e4aqfqsd0uhfdu7d" target="_blank" rel="noopener">bc1qhuv3…fdu7d</a></div></div>
+        <div class="wrow"><div class="nm">Binance?</div><div class="info" data-i18n="w.i1">wallet tagged Binance (unconfirmed); the cluster <b>withdraws DOG from here</b> (Relay #3: 51×) · <a href="https://mempool.space/address/bc1qhuv3dhpnm0wktasd3v0kt6e4aqfqsd0uhfdu7d" target="_blank" rel="noopener">bc1qhuv3…fdu7d</a></div></div>
         <div class="wrow"><div class="nm">Gate</div><div class="info" data-i18n="w.i2">shows up as the top holder in the ranking · <a href="https://mempool.space/address/bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv" target="_blank" rel="noopener">bc1pk8g4…x9ctv</a></div></div>
         <div class="wrow"><div class="nm">Bitget</div><div class="info" data-i18n="w.i3">the cluster <b>dumps heavily here</b> (~190 deposits) · <a href="https://mempool.space/address/bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k" target="_blank" rel="noopener">bc1p50n9…hpp9k</a></div></div>
         <div class="wrow"><div class="nm">MEXC</div><div class="info" data-i18n="w.i4">the cluster withdraws DOG from here · <a href="https://mempool.space/address/bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu" target="_blank" rel="noopener">bc1qj7dam…2hkmu</a></div></div>
@@ -549,7 +544,7 @@
         <div class="wrow"><div class="nm">Whale7</div><div class="info" data-i18n="w.j3">filled the whale (159×) · <a href="https://mempool.space/address/bc1pap56p2rgmqgk4rc0vxpkldszhgldx49cfs3zer8e2k7q9q6x079scfa8nx" target="_blank" rel="noopener">bc1pap56…fa8nx</a></div></div>
         <div class="wrow"><div class="nm" data-i18n="w.j4n">Relay #1</div><div class="info" data-i18n="w.j4">bridge; dumps to Bitget · <a href="https://mempool.space/address/bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar" target="_blank" rel="noopener">bc1pt02fw…634ar</a></div></div>
         <div class="wrow"><div class="nm" data-i18n="w.j5n">Relay #2</div><div class="info" data-i18n="w.j5">bridge; dumps to Bitget · <a href="https://mempool.space/address/bc1p52673nrtsed5n5nal7cm02u6pg63p0e6u4nm2fhm90xd8r4w3ass090zzy" target="_blank" rel="noopener">bc1p52673n…090zzy</a></div></div>
-        <div class="wrow"><div class="nm" data-i18n="w.j6n">Relay #3</div><div class="info" data-i18n="w.j6">pulls from Binance (51×) · <a href="https://mempool.space/address/bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j" target="_blank" rel="noopener">bc1pu03udw…jch8j</a></div></div>
+        <div class="wrow"><div class="nm" data-i18n="w.j6n">Relay #3</div><div class="info" data-i18n="w.j6">pulls from the suspected Binance wallet (51×) · <a href="https://mempool.space/address/bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j" target="_blank" rel="noopener">bc1pu03udw…jch8j</a></div></div>
         <div class="wrow"><div class="nm">Market Maker 1</div><div class="info" data-i18n="w.j7">dumps to Gate (71×) · <a href="https://mempool.space/address/bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9" target="_blank" rel="noopener">bc1peczzt9…reae9</a></div></div>
         <div class="wrow"><div class="nm">Whale23</div><div class="info" data-i18n="w.j8">wash trading pattern · <a href="https://mempool.space/address/bc1prdyzwdg0rcdgf9cg0a4zyx0cq3mdr3n6mcym95f3eg4dexfvnsjq200ly4" target="_blank" rel="noopener">bc1prdyz…00ly4</a></div></div>
         <div class="wrow"><div class="nm" data-i18n="w.j9n">Satellites f3 to f6</div><div class="info" data-i18n="w.j9">+4 wallets that also filled the whale (co spend confirmed) · <a href="https://mempool.space/address/bc1p4grjy75x53ywzqvwy52cnvt07a9e2mvrf4l2pa5fs3c3f3q7h84q6lkq44" target="_blank" rel="noopener">bc1p4grjy…lkq44</a></div></div>
