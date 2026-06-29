@@ -3,46 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Runestone · A pedra fundamental da $DOG | DOG Thesis</title>
+<title>Runestone · A pedra fundamental da DOG | DOG ARMY</title>
 <meta name="description" content="A história da Runestone: o maior airdrop da história do Bitcoin, a inscrição-pai de 3,97 MB enviada a um endereço atribuído a Satoshi, 112.383 inscrições distribuídas — e como ela deu origem ao $DOG (DOG•GO•TO•THE•MOON), a Rune #3 do Bitcoin.">
 <meta property="og:title" content="Runestone · A pedra fundamental da $DOG">
 <meta property="og:description" content="Quando o Bitcoin passou a carregar história, não só valor. A origem on-chain do $DOG, contada com os fatos.">
 <meta property="og:image" content="public/dog-logo.png">
 <meta property="og:type" content="article">
+<link rel="preload" href="/public/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 <style>
 /* ajustes específicos da página Runestone */
 .rune-hero{min-height:auto;padding-block:0}
-.rune-hero .hero-content{padding-block:80px 56px}
-.statline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
-.statbox{background:linear-gradient(180deg,#111820,var(--surface));border:1px solid var(--line);border-radius:8px;padding:22px;position:relative;overflow:hidden}
-.statbox::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,rgba(247,147,26,.95),rgba(67,197,158,.55),transparent)}
-.statbox b{display:block;font-size:30px;font-weight:900;letter-spacing:-.03em;color:var(--ink);line-height:1}
-.statbox span{display:block;color:var(--muted);font-size:13px;margin-top:8px;line-height:1.4}
-.seal{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:10px;padding:26px;margin-top:6px}
-.seal h3{font-size:22px;letter-spacing:-.025em;margin-bottom:10px}
+.rune-hero .hero-content{display:block;padding-block:80px 56px}
+.rune-hero .hero-copy{max-width:780px}
+.statline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:8px;max-width:780px}
+.statbox{background:#101010;border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:22px;position:relative;overflow:hidden;box-shadow:0 22px 56px rgba(0,0,0,.3)}
+.statbox:nth-child(2){background:linear-gradient(135deg,#ff9345,#ff5c00 58%,#ff3d00)}
+.statbox:nth-child(3){background:#f6f1eb;color:#080808}
+.statbox::before{content:"";position:absolute;inset:0;background:repeating-radial-gradient(circle at 100% 0%,rgba(255,255,255,.18) 0 1px,transparent 2px 12px);opacity:.24}
+.statbox b{display:block;position:relative;font-size:26px;font-weight:760;letter-spacing:0;color:inherit;line-height:1;overflow-wrap:anywhere}
+.statbox:nth-child(4) b{font-size:22px;white-space:nowrap}
+.statbox span{display:block;position:relative;color:inherit;opacity:.7;font-size:13px;margin-top:8px;line-height:1.4}
+.seal{background:#101010;border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:30px;margin-top:6px;box-shadow:0 22px 56px rgba(0,0,0,.3)}
+.seal h3{font-size:28px;letter-spacing:0;font-weight:760;margin-bottom:10px}
 .seal p{color:var(--text);font-size:16px;line-height:1.6}
 .seal .mono{font-family:ui-monospace,Menlo,monospace;color:var(--orange);font-size:13px;border-bottom:1px solid rgba(247,147,26,.35)}
 .prose p{color:var(--text);font-size:16px;line-height:1.65;max-width:760px;margin-bottom:16px}
 .prose strong{color:var(--ink)}
-@media(max-width:820px){.statline{grid-template-columns:1fr 1fr}}
-@media(max-width:540px){.statline{grid-template-columns:1fr}}
+.prose a{color:var(--ink);border-bottom:1px solid rgba(247,147,26,.5);font-weight:760}
+.origin-stack{margin-top:18px;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 28px 70px rgba(0,0,0,.34)}
+.origin-card{min-height:136px;display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:24px;align-items:center;padding:28px 32px;text-decoration:none;position:relative;isolation:isolate}
+.origin-card::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.72;background:linear-gradient(180deg,rgba(255,255,255,.07),transparent 48%)}
+.origin-card+.origin-card{border-top:1px solid rgba(255,255,255,.1)}
+.origin-card.dark{background:linear-gradient(180deg,#242424,#111)}
+.origin-card.orange{background:linear-gradient(135deg,#ff9138,#ff5c00)}
+.origin-card.light{background:#f4f0e9;color:#08090a}
+.origin-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:24px;max-width:620px}
+.origin-meta span{display:block;color:rgba(255,255,255,.58);font-size:12px;line-height:1.2}
+.origin-meta b{display:block;color:#fff;font-size:16px;font-weight:560;letter-spacing:-.02em;line-height:1.15;margin-top:3px}
+.origin-card.light .origin-meta span{color:rgba(0,0,0,.5)}
+.origin-card.light .origin-meta b{color:#08090a}
+.origin-card h3{font-size:54px;line-height:.96;letter-spacing:0;font-weight:760;max-width:520px}
+.origin-card p{margin-top:12px;color:rgba(255,255,255,.68);font-size:15px;line-height:1.45;max-width:640px}
+.origin-card.orange p{color:rgba(255,255,255,.78)}
+.origin-card.light p{color:rgba(0,0,0,.62)}
+.origin-arrow{width:62px;height:62px;border-radius:999px;display:grid;place-items:center;justify-self:end;font-size:24px;background:linear-gradient(135deg,#ffb171,#ff5c00);color:#fff;box-shadow:0 18px 34px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.28);transition:transform .16s ease}
+.origin-card.light .origin-arrow{background:#fff;color:#111;box-shadow:0 14px 28px rgba(0,0,0,.14)}
+.origin-card:hover .origin-arrow{transform:translateX(3px)}
+@media(max-width:820px){.statline{grid-template-columns:1fr 1fr}.origin-card{grid-template-columns:1fr;min-height:auto}.origin-arrow{justify-self:start}.origin-meta{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.statline{grid-template-columns:1fr}.origin-stack{border-radius:22px}.origin-card{padding:26px 24px}.origin-meta{grid-template-columns:1fr}.origin-card h3{font-size:36px}.origin-arrow{width:54px;height:54px}}
 </style>
 </head>
 <body>
 <header>
   <nav>
     <a class="brand" href="/" aria-label="Voltar ao início">
-      <span class="brand-mark">D</span>
-      <span>DOG Thesis</span>
+      <span class="brand-logo"><img src="/public/dog-army-logo.png" alt="DOG ARMY"></span>
     </a>
     <div class="navlinks" aria-label="Navegação principal">
+      <a href="/#briefing">Briefing</a>
+      <a href="/#luta">A Luta</a>
       <a href="/#tese">Tese</a>
-      <a href="/#historia">História</a>
-      <a href="/runestone" class="active">Runestone</a>
+      <a href="/runestone.html" class="active">Runestone</a>
       <a href="/#carteiras">Carteiras</a>
+      <a href="/#ecossistema">Ecossistema</a>
       <a href="/#faq">FAQ</a>
-      <a href="/#colaborar">Colaborar</a>
     </div>
     <a class="nav-cta" href="/#colaborar">Entrar na comunidade</a>
   </nav>
@@ -79,13 +104,36 @@
         <p class="lead">A Runestone não foi apenas um projeto. Foi um marco na história do Bitcoin — a prova de que a rede podia carregar mais do que valor financeiro.</p>
       </div>
       <div class="prose">
-        <p>Idealizada por <strong>Leonidas</strong> e criada pelo artista <strong>Leo Caillard</strong>, a Runestone nasceu no coração do movimento <strong>Ordinals</strong> para provar algo que muitos duvidavam: o Bitcoin podia carregar <strong>cultura</strong>, <strong>identidade</strong> e <strong>memória permanente</strong>.</p>
+        <p>Idealizada por <a href="https://x.com/LeonidasNFT" target="_blank" rel="noopener"><strong>Leonidas</strong></a> e criada pelo artista <a href="https://x.com/leocaillard" target="_blank" rel="noopener"><strong>Leo Caillard</strong></a>, a Runestone nasceu no coração do movimento <strong>Ordinals</strong> para provar algo que muitos duvidavam: o Bitcoin podia carregar <strong>cultura</strong>, <strong>identidade</strong> e <strong>memória permanente</strong>.</p>
         <p>Foram <strong>3,97 MB</strong> inscritos diretamente na blockchain do Bitcoin. Sem servidores. Sem dependência externa. Sem intermediários. <strong>Imutável. Permanente. Bitcoin.</strong></p>
       </div>
-      <div class="grid grid-3" style="margin-top:8px">
-        <article class="card"><span class="tag proved">Idealizador</span><h3>Leonidas</h3><p>Conceituou a Runestone dentro do movimento Ordinals e conduziu o ato simbólico de selar a criação.</p></article>
-        <article class="card"><span class="tag proved">Artista</span><h3>Leo Caillard</h3><p>Assinou a arte da Runestone — a peça que transformou dados on-chain em cultura visível.</p></article>
-        <article class="card"><span class="tag watch">Movimento</span><h3>Ordinals</h3><p>A onda que trouxe inscrições para o Bitcoin. A Runestone foi um reconhecimento de quem construía ali quando ainda era impopular.</p></article>
+      <div class="origin-stack" aria-label="Criadores e contexto da Runestone">
+        <a class="origin-card dark" href="https://x.com/LeonidasNFT" target="_blank" rel="noopener">
+          <div>
+            <div class="origin-meta">
+              <div><span>Papel</span><b>Idealizador</b></div>
+              <div><span>Projeto</span><b>Runestone</b></div>
+              <div><span>Canal</span><b>X</b></div>
+            </div>
+            <h3>Leonidas</h3>
+            <p>Conceituou a Runestone dentro do movimento Ordinals e conduziu o gesto simbólico de selar a criação.</p>
+          </div>
+          <span class="origin-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="origin-card orange" href="https://x.com/leocaillard" target="_blank" rel="noopener">
+          <div>
+            <h3>Leo Caillard</h3>
+            <p>Assinou a arte da Runestone, transformando dados on-chain em cultura visual permanente.</p>
+          </div>
+          <span class="origin-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="origin-card light" href="https://ordinals.com/" target="_blank" rel="noopener">
+          <div>
+            <h3>Ordinals</h3>
+            <p>O movimento que abriu espaço para inscrições, arte e identidade diretamente no Bitcoin.</p>
+          </div>
+          <span class="origin-arrow" aria-hidden="true">→</span>
+        </a>
       </div>
     </div>
   </section>
@@ -213,7 +261,7 @@
 <footer>
   <div class="wrap">
     <div class="inner">
-      <p><strong>DOG Thesis</strong><br>Pesquisa independente sobre DOG•GO•TO•THE•MOON, Rune #3 do Bitcoin.</p>
+      <p><strong>DOG ARMY</strong><br>Pesquisa independente sobre DOG•GO•TO•THE•MOON, Rune #3 do Bitcoin.</p>
       <p><a href="/">Voltar para a home</a><br><a href="https://github.com/dogdamassa/dog-thesis" target="_blank" rel="noopener">Repositório público no GitHub</a></p>
     </div>
     <div class="disclaimer">

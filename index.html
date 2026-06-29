@@ -7,12 +7,22 @@
 <meta name="description" content="The DOG Army: Ordinals enjoyers, Runes degens and self-custody maxis defending permissionless Bitcoin against BIP-110 — and investigating $DOG (DOG•GO•TO•THE•MOON), Rune #3, with public on-chain data. Don't trust: verify.">
 <meta property="og:title" content="DOG of Bitcoin Army · Defend permissionless Bitcoin">
 <meta property="og:description" content="A movement that fights with receipts: reject BIP-110, self-custody your DOG, and verify every claim on-chain. Don't trust: verify.">
-<meta property="og:image" content="https://dogarmy.space/public/dog-army-hero.png">
+<meta property="og:image" content="https://dogarmy.space/public/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Join the DOG ARMY — Don't trust. Verify. Defend permissionless Bitcoin.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dogarmy.space/">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dogarmy.space/public/og-card.png">
+<!-- Favicon (DOG ARMY badge, transparent) -->
+<link rel="icon" href="/public/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
 <link rel="stylesheet" href="/styles.css">
 <link rel="canonical" href="https://dogarmy.space/">
+<link rel="preload" as="font" href="/public/fonts/geist-sans.woff2" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="/public/dog-army-hero.png">
 <!-- Machine-readable briefings so AI assistants learn $DOG fast and cite it correctly -->
 <link rel="alternate" type="text/plain" title="LLM briefing (llms.txt)" href="/llms.txt">
@@ -107,35 +117,28 @@
 </script>
 </head>
 <body>
-<aside class="alertbar" aria-label="Live alert">
-  <div class="wrap">
-    <span class="pulse" data-i18n="alert.label">Happening now</span>
-    <span class="msg" data-i18n="alert.msg"><b>Gate delisted the DOG perpetual</b> (flagged in its own API) · <b>MEXC froze DOG withdrawals</b> — zero DOG out since Jun 26, deposits still flowing in.</span>
-    <a class="verify" href="#carteiras" data-i18n="alert.link">Verify on-chain →</a>
+<aside class="alertbar" aria-label="Exchange watch">
+  <div class="wrap alertbar-inner">
+    <span class="pulse" data-i18n="alert.label">Exchange watch</span>
+    <span class="msg" data-i18n="alert.msg"><b>Gate removed DOG perps. MEXC withdrawals remain frozen.</b> Track the wallet evidence before trusting any market narrative.</span>
+    <a class="verify" href="#carteiras" data-i18n="alert.link">Verify wallets →</a>
   </div>
 </aside>
 <header>
   <nav>
     <a class="brand" href="#top" aria-label="Back to top">
-      <span class="brand-mark">D</span>
-      <span>DOG ARMY</span>
+      <span class="brand-logo"><img src="public/dog-army-logo.png" alt="DOG ARMY"></span>
     </a>
     <div class="navlinks" aria-label="Main navigation">
       <a href="#briefing" data-i18n="nav.briefing">Briefing</a>
       <a href="#luta" data-i18n="nav.fight">The Fight</a>
       <a href="#tese" data-i18n="nav.thesis">Thesis</a>
-      <a href="#historia" data-i18n="nav.history">History</a>
-      <a href="/runestone" data-i18n="nav.runestone">Runestone</a>
-      <a href="#evidencias" data-i18n="nav.evidence">Evidence</a>
+      <a href="/runestone.html" data-i18n="nav.runestone">Runestone</a>
       <a href="#carteiras" data-i18n="nav.wallets">Wallets</a>
       <a href="#ecossistema" data-i18n="nav.ecosystem">Ecosystem</a>
-      <a href="#eventos" data-i18n="nav.events">Events</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
-      <a href="#ai" data-i18n="nav.ai">For AIs</a>
-      <a href="#colaborar" data-i18n="nav.contribute">Enlist</a>
     </div>
     <div class="nav-right">
-      <a class="sponsor-pill" href="#patrocinadores" data-i18n="nav.sponsor">SPONSORS</a>
       <div class="langsw" id="langsw" aria-label="Language"></div>
       <a class="nav-cta" href="#colaborar" data-i18n="nav.cta">Join the army</a>
     </div>
@@ -153,23 +156,23 @@
     <div class="wrap hero-content">
       <div class="hero-copy">
         <span class="eyebrow" data-i18n="hero.eyebrow">DOG of Bitcoin Army · Rune #3</span>
-        <h1 id="hero-title" data-i18n="hero.title">Defend permissionless Bitcoin. <span>Bring receipts.</span></h1>
-        <p class="sub" data-i18n="hero.sub">We're the <b>DOG Army</b> — Ordinals enjoyers, Runes degens, and self-custody maxis who actually use Bitcoin L1. We fight BIP-110, and we watch $DOG on-chain the same way: with public data anyone can re-run. Don't trust — verify.</p>
+        <h1 id="hero-title" data-i18n="hero.title">Defend Bitcoin. <span>Verify DOG.</span></h1>
+        <p class="sub" data-i18n="hero.sub">DOG Army defends permissionless blockspace and tracks DOG with public on-chain evidence. No rumors. Receipts only.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#luta" data-i18n="hero.b1">Join the fight</a>
-          <a class="btn secondary" href="#dado-diario" data-i18n="hero.b2">See today's data</a>
-          <a class="btn secondary" href="#colaborar" data-i18n="hero.b3">Enlist</a>
+          <a class="btn primary" href="#briefing" data-i18n="hero.b1">Verify the case</a>
+          <a class="btn secondary" href="#carteiras" data-i18n="hero.b2">See wallets</a>
+          <a class="btn secondary" href="#colaborar" data-i18n="hero.b3">Join research</a>
         </div>
-        <div class="daily-proof" id="dado-diario">
-          <div class="daily-proof-head">
-            <strong data-i18n="hero.ph">DOG DATA · LTH and STH</strong>
-            <span data-i18n="hero.pd">Snapshot from Jun 26, 2026 · updated daily</span>
-          </div>
-          <img src="public/dogdata-lth-sth.png" alt="DOG DATA showing supply split between short-term and long-term holders">
-          <div class="daily-proof-caption">
-            <span data-i18n="hero.pc">Source: dogdata.xyz · 243,009 UTXOs tracked · 100% of supply</span>
-            <a href="https://www.dogdata.xyz" target="_blank" rel="noopener" data-i18n="hero.pl">Open DOG DATA</a>
-          </div>
+      </div>
+      <div class="daily-proof" id="dado-diario">
+        <div class="daily-proof-head">
+          <strong data-i18n="hero.ph">DOG DATA · LTH and STH</strong>
+          <span data-i18n="hero.pd">Snapshot from Jun 26, 2026 · updated daily</span>
+        </div>
+        <img src="public/dogdata-lth-sth.png" alt="DOG DATA showing supply split between short-term and long-term holders">
+        <div class="daily-proof-caption">
+          <span data-i18n="hero.pc">Source: dogdata.xyz · 243,009 UTXOs tracked · 100% of supply</span>
+          <a href="https://www.dogdata.xyz" target="_blank" rel="noopener" data-i18n="hero.pl">Open DOG DATA</a>
         </div>
       </div>
     </div>
@@ -469,56 +472,56 @@
           <img class="app-logo" src="public/bitflow-icon.png" alt="Bitflow logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c1t">DEX · Stacks L2</span>
           <h3>Bitflow</h3>
-          <p data-i18n="eco.c1p">A DEX on Stacks (Bitcoin L2) with automated DCA to accumulate $DOG and BTC over time.</p>
+          <p data-i18n="eco.c1p">Swap and DCA through Stacks, with Bitcoin-native settlement paths.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://swap.dogofbitcoin.com/" target="_blank" rel="noopener">
           <img class="app-logo" src="public/dogswap-logo.png" alt="DOG Swap logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c2t">Swap</span>
           <h3>DOG Swap</h3>
-          <p data-i18n="eco.c2p">Decentralized swap to move in and out of $DOG without an exchange account.</p>
+          <p data-i18n="eco.c2p">Move between DOG pairs without a centralized exchange account.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://kray.space/krayscan.html" target="_blank" rel="noopener">
           <img class="app-logo" src="public/kray-space-icon.png" alt="KrayScan logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c3t">Explorer</span>
           <h3>KrayScan</h3>
-          <p data-i18n="eco.c3p">Explore Runes and Ordinals on Bitcoin — inspect $DOG holders and transfers.</p>
+          <p data-i18n="eco.c3p">Inspect Runes, Ordinals, DOG holders, and transfers.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://www.dogdata.xyz/" target="_blank" rel="noopener">
           <img class="app-logo" src="public/dog-data-dog.png" alt="DOG DATA dog mark" loading="lazy">
           <span class="app-tag" data-i18n="eco.c4t">Analytics</span>
           <h3>DOG DATA</h3>
-          <p data-i18n="eco.c4p">On-chain metrics for $DOG: holders, float, UTXO age, and concentration — the receipts behind the thesis.</p>
+          <p data-i18n="eco.c4p">Holders, float, UTXO age, and concentration in one place.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://ord.net/" target="_blank" rel="noopener">
           <img class="app-logo" src="public/ord-net-icon.svg" alt="ORD.NET logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c7t">Marketplace · Ordinals</span>
           <h3>ORD.NET</h3>
-          <p data-i18n="eco.c7p">Buy, sell, and discover Bitcoin Ordinals in a dedicated marketplace.</p>
+          <p data-i18n="eco.c7p">Buy, sell, and discover Bitcoin Ordinals.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://ordinals.com/" target="_blank" rel="noopener">
           <img class="app-logo" src="public/ordinals-icon.svg" alt="Ordinals logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c8t">Explorer · Ordinals</span>
           <h3>Ordinals.com</h3>
-          <p data-i18n="eco.c8p">The canonical Ordinals explorer for inscriptions, Runes, blocks, and protocol references.</p>
+          <p data-i18n="eco.c8p">Canonical explorer for inscriptions, Runes, and blocks.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://www.kray.space/ordinals" target="_blank" rel="noopener">
           <img class="app-logo" src="public/kray-space-icon.png" alt="Kray Space logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c5t">Marketplace · Ordinals</span>
           <h3>Kray · Ordinals</h3>
-          <p data-i18n="eco.c5p">Buy and sell Ordinals inscriptions on Bitcoin in Kray Space's self-custodial marketplace.</p>
+          <p data-i18n="eco.c5p">Self-custodial Ordinals marketplace inside Kray Space.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://www.kray.space/runes" target="_blank" rel="noopener">
           <img class="app-logo" src="public/kray-space-icon.png" alt="Kray Space logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c6t">Marketplace · Runes</span>
           <h3>Kray · Runes</h3>
-          <p data-i18n="eco.c6p">Trade Runes — including $DOG — directly in Kray Space's marketplace, with the keys in your hands.</p>
+          <p data-i18n="eco.c6p">Trade Runes with the keys in your hands.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
       </div>
@@ -655,7 +658,7 @@
         </div>
         <a class="btn primary" href="https://github.com/dogdamassa/dog-thesis" target="_blank" rel="noopener" data-i18n="c.ctab">Investigate on GitHub</a>
       </div>
-      <div class="grid grid-4">
+      <div class="grid grid-3">
         <article class="card collab-card">
           <h3 data-i18n="c.k1h">On-chain analysis</h3>
           <p data-i18n="c.k1p">Map clusters, review co-spends, and improve the method for separating exchange, market maker, and sovereign holder.</p>
@@ -670,11 +673,6 @@
           <h3 data-i18n="c.k3h">Communication</h3>
           <p data-i18n="c.k3p">Turn technical findings into threads, slides, charts, and institutional copy without losing precision.</p>
           <ul data-i18n="c.k3l"><li>Design</li><li>Writing</li><li>Education</li></ul>
-        </article>
-        <article class="card collab-card">
-          <h3 data-i18n="c.k4h">Legal review</h3>
-          <p data-i18n="c.k4p">Help hold the community to a responsible standard: reproducible facts, no accusation without proof, and no price coordination.</p>
-          <ul data-i18n="c.k4l"><li>Brazil</li><li>Markets</li><li>Editorial risk</li></ul>
         </article>
       </div>
     </div>
@@ -713,7 +711,7 @@
       <div class="faq">
         <details open><summary data-i18n="f.q1">What is $DOG?</summary><div class="a" data-i18n="f.a1">DOG (DOG•GO•TO•THE•MOON) is the largest community token on <b>Bitcoin</b>. Technically it's <b>Rune #3</b>, a token created inside Bitcoin's own network using the Runes protocol. Supply of 100 billion, open license (CC0), <b>no owner</b>. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">View on-chain</a>.</div></details>
         <details><summary data-i18n="f.q2">How was it created? Was it fair?</summary><div class="a" data-i18n="f.a2">It was one of the fairest launches ever. <b>There was no presale, no team reserve, and no discounted investor.</b> DOG was distributed for free to those who <b>contributed to the network</b>: people active in the Bitcoin/Ordinals ecosystem earned the <b>Runestone</b>, and Runestone holders received the DOG airdrop (~75,000 wallets). Even the creator took only ~0.008%. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">Source</a>.</div></details>
-        <details><summary data-i18n="f.q3">What is the Runestone?</summary><div class="a" data-i18n="f.a3">The Runestone was a free airdrop (an Ordinals collection) delivered to thousands of active Bitcoin wallets, as a "thank you" to the community. Runestone holders later received DOG. It was the way to reward <b>the network's contributors</b>, not investors. <a href="/runestone">Read the full Runestone story</a>.</div></details>
+        <details><summary data-i18n="f.q3">What is the Runestone?</summary><div class="a" data-i18n="f.a3">The Runestone was a free airdrop (an Ordinals collection) delivered to thousands of active Bitcoin wallets, as a "thank you" to the community. Runestone holders later received DOG. It was the way to reward <b>the network's contributors</b>, not investors. <a href="/runestone.html">Read the full Runestone story</a>.</div></details>
         <details><summary data-i18n="f.q4">Who is Casey Rodarmor?</summary><div class="a" data-i18n="f.a4">The creator of <b>Ordinals</b> and <b>Runes</b>, the protocols that made DOG possible. He opened Bitcoin to art, culture, and coins. <a href="https://www.youtube.com/watch?v=rSS0O2KQpsI" target="_blank" rel="noopener">His video explaining the idea</a>.</div></details>
         <details><summary data-i18n="f.q5">What are Ordinals and Runes?</summary><div class="a" data-i18n="f.a5"><b>Ordinals</b> let you inscribe data (images, text) directly onto Bitcoin. <b>Runes</b> let you create coins (tokens) on Bitcoin in a clean way, without clogging the network. DOG is a Rune. <a href="#historia">See the full timeline</a>.</div></details>
         <details><summary data-i18n="f.q6">Who controls DOG today?</summary><div class="a" data-i18n="f.a6">No one is the "owner" of $DOG, but we watch concentration. On Jun 25, 2026, we traced a wallet that gathered <b>12.32% of supply</b> in one day. The co-spending supports the read of a single-control cluster. It didn't sell — it was a consolidation. The nominal identity remains unknown, and we keep watching. <a href="#carteiras">See the watched wallets</a>.</div></details>
