@@ -1,0 +1,53 @@
+name: Radar diário do $DOG
+
+# Todo dia: roda o motor, comita os dados novos e publica na Vercel.
+# Precisa de 1 segredo no GitHub Actions: VERCEL_TOKEN (token da sua conta Vercel).
+# Os IDs abaixo NAO sao secretos (ja vivem em .vercel/project.json).
+
+on:
+  schedule:
+    - cron: "0 11 * * *"    # todo dia 11:00 UTC (08:00 no horário de Brasília)
+  workflow_dispatch: {}      # botão "Run workflow" pra rodar na hora
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-daily
+  cancel-in-progress: false
+
+env:
+  VERCEL_ORG_ID: team_S8Ff4aa8B1ETfQSLsYR6blnW
+  VERCEL_PROJECT_ID: prj_HSzoyjbCfC6dkPuSmzWqK4LVhGIE
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Gerar os dados do dia
+        run: python3 scripts/build_data.py
+
+      - name: Comitar se mudou
+        run: |
+          git config user.name  "dog-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Sem mudanças nos dados hoje — nada a publicar."
+          else
+            git commit -m "radar: dados on-chain de $(date -u +%Y-%m-%d)"
+            git push
+            echo "changed=1" >> "$GITHUB_ENV"
+          fi
+
+      - name: Publicar na Vercel (só se mudou)
+        if: env.changed == '1'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: npx --yes vercel@latest deploy --prod --yes --token "$VERCEL_TOKEN"
