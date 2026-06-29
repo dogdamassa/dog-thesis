@@ -86,13 +86,3 @@ python3 scripts/books.py                                   # live CEX order-book
 ## Disclaimer
 
 This repository is informational and educational. Nothing here is investment advice, a legal accusation, or a guarantee of any result. Do your own research and verify the sources.
-
----
-
-## 🇧🇷 Português
-
-**Pesquisa pública, reproduzível e colaborativa sobre a $DOG (DOG•GO•TO•THE•MOON), a Rune #3 do Bitcoin.** Não confie: verifique — toda afirmação aponta pra uma fonte pública que você mesmo refaz.
-
-A pesquisa separa **fato provado**, **hipótese em observação** e **o que não se sustenta**. Não é conselho financeiro, previsão de preço ou coordenação de mercado.
-
-**Quer ajudar?** Abra uma [issue](../../issues/new/choose) (reportar carteira, anomalia de corretora, correção de dado ou tradução) ou mande um PR pequeno com fonte clara. Pode escrever em **português ou inglês**. Regra de ouro: **mostre o fato com força, mas nunca afirme autoria, intenção ou crime que o dado não prova.** Detalhes em [CONTRIBUTING.md](CONTRIBUTING.md).
