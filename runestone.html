@@ -1,28 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Runestone · A pedra fundamental da DOG | DOG ARMY</title>
-<meta name="description" content="A história da Runestone: o maior airdrop da história do Bitcoin, a inscrição-pai de 3,97 MB enviada a um endereço atribuído a Satoshi, 112.383 inscrições distribuídas — e como ela deu origem ao $DOG (DOG•GO•TO•THE•MOON), a Rune #3 do Bitcoin.">
-<meta property="og:title" content="Runestone · A pedra fundamental da $DOG">
-<meta property="og:description" content="Quando o Bitcoin passou a carregar história, não só valor. A origem on-chain do $DOG, contada com os fatos.">
-<meta property="og:image" content="public/dog-logo.png">
+<title>Runestone · The cornerstone of $DOG | DOG ARMY</title>
+<meta name="description" content="The story of the Runestone: the biggest airdrop in Bitcoin's history, the 3.97 MB parent inscription sent to an address attributed to Satoshi, 112,383 inscriptions distributed, and how it gave birth to $DOG (DOG•GO•TO•THE•MOON), Bitcoin's Rune #3.">
+<meta property="og:title" content="Runestone · The cornerstone of $DOG">
+<meta property="og:description" content="When Bitcoin started carrying history, not just value. The on chain origin of $DOG, told with the facts.">
+<meta property="og:image" content="/public/runestone-01-hero.jpeg">
 <meta property="og:type" content="article">
+<link rel="icon" href="/public/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
 <link rel="preload" href="/public/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
+<link rel="canonical" href="https://dogarmy.space/runestone">
 <style>
 /* ajustes específicos da página Runestone */
 .rune-hero{min-height:auto;padding-block:0}
 .rune-hero .hero-content{display:block;padding-block:80px 56px}
 .rune-hero .hero-copy{max-width:780px}
+.runestone-visuals{padding-top:34px}
+.compact-head{align-items:end}
+.runestone-gallery{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px}
+.runestone-shot{margin:0;border-radius:26px;overflow:hidden;background:#101010;border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 60px rgba(0,0,0,.32)}
+.runestone-shot.wide{grid-column:1 / -1}
+.runestone-shot img{display:block;width:100%;height:320px;object-fit:cover}
+.runestone-shot.wide img{height:auto;aspect-ratio:1500/500;object-fit:cover}
+.runestone-shot figcaption{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:16px 18px;color:#fff7ef;font-size:14px;line-height:1.35}
+.runestone-shot figcaption b{color:#ff5c00;font-weight:760}
+.runestone-shot:nth-child(2){background:#ff5c00}
+.runestone-shot:nth-child(2) figcaption b{color:#080808}
+.runestone-shot:nth-child(4){background:#f6f1eb}
+.runestone-shot:nth-child(4) figcaption{color:#080808}
+.runestone-shot:nth-child(4) figcaption b{color:#ff5c00}
 .statline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:8px;max-width:780px}
 .statbox{background:#101010;border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:22px;position:relative;overflow:hidden;box-shadow:0 22px 56px rgba(0,0,0,.3)}
-.statbox:nth-child(2){background:linear-gradient(135deg,#ff9345,#ff5c00 58%,#ff3d00)}
+.statbox:nth-child(2){background:#ff5c00}
 .statbox:nth-child(3){background:#f6f1eb;color:#080808}
-.statbox::before{content:"";position:absolute;inset:0;background:repeating-radial-gradient(circle at 100% 0%,rgba(255,255,255,.18) 0 1px,transparent 2px 12px);opacity:.24}
+.statbox::before{content:"";position:absolute;inset:0;background:repeating-radial-gradient(circle at 100% 0%,rgba(255,255,255,.16) 0 1px,transparent 2px 12px);opacity:.18}
 .statbox b{display:block;position:relative;font-size:26px;font-weight:760;letter-spacing:0;color:inherit;line-height:1;overflow-wrap:anywhere}
-.statbox:nth-child(4) b{font-size:22px;white-space:nowrap}
+.statbox:nth-child(4) b{font-size:22px;overflow-wrap:anywhere}
 .statbox span{display:block;position:relative;color:inherit;opacity:.7;font-size:13px;margin-top:8px;line-height:1.4}
 .seal{background:#101010;border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:30px;margin-top:6px;box-shadow:0 22px 56px rgba(0,0,0,.3)}
 .seal h3{font-size:28px;letter-spacing:0;font-weight:760;margin-bottom:10px}
@@ -35,8 +54,8 @@
 .origin-card{min-height:136px;display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:24px;align-items:center;padding:28px 32px;text-decoration:none;position:relative;isolation:isolate}
 .origin-card::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.72;background:linear-gradient(180deg,rgba(255,255,255,.07),transparent 48%)}
 .origin-card+.origin-card{border-top:1px solid rgba(255,255,255,.1)}
-.origin-card.dark{background:linear-gradient(180deg,#242424,#111)}
-.origin-card.orange{background:linear-gradient(135deg,#ff9138,#ff5c00)}
+.origin-card.dark{background:#111}
+.origin-card.orange{background:#ff5c00}
 .origin-card.light{background:#f4f0e9;color:#08090a}
 .origin-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:24px;max-width:620px}
 .origin-meta span{display:block;color:rgba(255,255,255,.58);font-size:12px;line-height:1.2}
@@ -47,49 +66,136 @@
 .origin-card p{margin-top:12px;color:rgba(255,255,255,.68);font-size:15px;line-height:1.45;max-width:640px}
 .origin-card.orange p{color:rgba(255,255,255,.78)}
 .origin-card.light p{color:rgba(0,0,0,.62)}
-.origin-arrow{width:62px;height:62px;border-radius:999px;display:grid;place-items:center;justify-self:end;font-size:24px;background:linear-gradient(135deg,#ffb171,#ff5c00);color:#fff;box-shadow:0 18px 34px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.28);transition:transform .16s ease}
+.origin-arrow{width:62px;height:62px;border-radius:999px;display:grid;place-items:center;justify-self:end;font-size:24px;background:#ff5c00;color:#080808;box-shadow:0 18px 34px rgba(0,0,0,.22);transition:transform .16s ease}
 .origin-card.light .origin-arrow{background:#fff;color:#111;box-shadow:0 14px 28px rgba(0,0,0,.14)}
 .origin-card:hover .origin-arrow{transform:translateX(3px)}
+.origin-people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.origin-person{min-height:560px;display:flex;flex-direction:column;overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.12);background:#101010;color:#fff7ef;box-shadow:0 28px 70px rgba(0,0,0,.34);text-decoration:none;position:relative}
+.origin-person::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-radial-gradient(circle at 100% 0%,rgba(255,255,255,.14) 0 1px,transparent 2px 13px);opacity:.16}
+.origin-person.orange{background:#ff5c00}
+.origin-person.light{background:#f6f1eb;color:#080808}
+.origin-photo{width:100%;height:300px;object-fit:cover;display:block;position:relative;z-index:1;filter:saturate(.96) contrast(1.04)}
+.origin-person.dark .origin-photo{opacity:.9}
+.origin-person.orange .origin-photo{opacity:.9}
+.origin-person.light .origin-photo{filter:saturate(.9) contrast(1)}
+.origin-person-body{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;padding:28px}
+.origin-role{font-size:12px;font-weight:760;text-transform:uppercase;letter-spacing:.12em;opacity:.62;margin-bottom:18px}
+.origin-person h3{font-size:clamp(36px,4vw,54px);line-height:.96;letter-spacing:0;font-weight:760;margin-bottom:14px}
+.origin-person p{font-size:15px;line-height:1.48;color:inherit;opacity:.72}
+.origin-person .origin-arrow{margin-top:auto;align-self:flex-end}
 @media(max-width:820px){.statline{grid-template-columns:1fr 1fr}.origin-card{grid-template-columns:1fr;min-height:auto}.origin-arrow{justify-self:start}.origin-meta{grid-template-columns:1fr 1fr}}
-@media(max-width:540px){.statline{grid-template-columns:1fr}.origin-stack{border-radius:22px}.origin-card{padding:26px 24px}.origin-meta{grid-template-columns:1fr}.origin-card h3{font-size:36px}.origin-arrow{width:54px;height:54px}}
+@media(max-width:960px){.origin-people{grid-template-columns:1fr}.origin-person{min-height:auto}.origin-photo{height:280px}}
+@media(max-width:900px){.runestone-gallery{grid-template-columns:1fr}.runestone-shot img{height:auto}.compact-head{align-items:start}}
+@media(max-width:540px){.statline{grid-template-columns:1fr}.origin-stack{border-radius:22px}.origin-card{padding:26px 24px}.origin-meta{grid-template-columns:1fr}.origin-card h3{font-size:36px}.origin-arrow{width:54px;height:54px}.origin-person{border-radius:22px}.origin-person-body{padding:24px}.origin-photo{height:240px}.runestone-shot{border-radius:22px}}
 </style>
 </head>
 <body>
 <header>
   <nav>
-    <a class="brand" href="/" aria-label="Voltar ao início">
+    <a class="brand" href="/" aria-label="Back to home">
       <span class="brand-logo"><img src="/public/dog-army-logo.png" alt="DOG ARMY"></span>
     </a>
-    <div class="navlinks" aria-label="Navegação principal">
-      <a href="/#briefing">Briefing</a>
-      <a href="/#luta">A Luta</a>
-      <a href="/#tese">Tese</a>
-      <a href="/runestone.html" class="active">Runestone</a>
-      <a href="/#carteiras">Carteiras</a>
-      <a href="/#ecossistema">Ecossistema</a>
-      <a href="/#faq">FAQ</a>
+    <div class="navlinks" aria-label="Main navigation">
+      <a href="/#historia" data-i18n="nav.history">Story</a>
+      <a href="/runestone.html" class="active" data-i18n="nav.runestone">Runestone</a>
+      <div class="navgroup">
+        <button type="button" class="navgroup-trigger" aria-expanded="false"><span data-i18n="nav.gwhat">What is DOG</span><span class="caret" aria-hidden="true">▾</span></button>
+        <div class="navgroup-menu" role="menu">
+          <a href="/#ecossistema" data-i18n="nav.ecosystem">Ecosystem</a>
+          <a href="/#autocustodia" data-i18n="nav.selfcustody">Self custody</a>
+        </div>
+      </div>
+      <a href="/#luta" data-i18n="nav.fight">The Fight</a>
+      <div class="navgroup">
+        <button type="button" class="navgroup-trigger" aria-expanded="false"><span data-i18n="nav.gverify">Verify</span><span class="caret" aria-hidden="true">▾</span></button>
+        <div class="navgroup-menu" role="menu">
+          <a href="/#briefing" data-i18n="nav.today">Today</a>
+          <a href="/#radar" data-i18n="nav.radar">Radar</a>
+          <a href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
+          <a href="/#verificar" data-i18n="nav.sources">Sources</a>
+        </div>
+      </div>
+      <a href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
+      <a href="/#faq" data-i18n="nav.faq">FAQ</a>
     </div>
-    <a class="nav-cta" href="/#colaborar">Entrar na comunidade</a>
+    <div class="nav-right">
+      <div class="langsw" id="langsw" aria-label="Language"></div>
+      <a class="nav-cta" href="/#colaborar" data-i18n="nav.cta">Join the army</a>
+      <button type="button" class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="navdrawer"><span></span><span></span><span></span></button>
+    </div>
   </nav>
 </header>
+<div class="navscrim" id="navscrim" hidden></div>
+<aside class="navdrawer" id="navdrawer" aria-label="Menu" aria-hidden="true">
+  <nav class="navdrawer-inner">
+    <a class="navdrawer-link" href="/#historia" data-i18n="nav.history">Story</a>
+    <a class="navdrawer-link active" href="/runestone.html" data-i18n="nav.runestone">Runestone</a>
+    <details class="navdrawer-group">
+      <summary data-i18n="nav.gwhat">What is DOG</summary>
+      <a class="navdrawer-link" href="/#ecossistema" data-i18n="nav.ecosystem">Ecosystem</a>
+      <a class="navdrawer-link" href="/#autocustodia" data-i18n="nav.selfcustody">Self custody</a>
+    </details>
+    <a class="navdrawer-link" href="/#luta" data-i18n="nav.fight">The Fight</a>
+    <details class="navdrawer-group">
+      <summary data-i18n="nav.gverify">Verify</summary>
+      <a class="navdrawer-link" href="/#briefing" data-i18n="nav.today">Today</a>
+      <a class="navdrawer-link" href="/#radar" data-i18n="nav.radar">Radar</a>
+      <a class="navdrawer-link" href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
+      <a class="navdrawer-link" href="/#verificar" data-i18n="nav.sources">Sources</a>
+    </details>
+    <a class="navdrawer-link" href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
+    <a class="navdrawer-link" href="/#faq" data-i18n="nav.faq">FAQ</a>
+    <a class="navdrawer-cta" href="/#colaborar" data-i18n="nav.cta">Join the army</a>
+  </nav>
+</aside>
 
 <main id="top">
   <section class="hero rune-hero" aria-labelledby="rune-title">
     <div class="wrap hero-content">
       <div class="hero-copy">
-        <span class="eyebrow">História · Ordinals · Bitcoin</span>
-        <h1 id="rune-title">Runestone: quando o Bitcoin passou a carregar <span>história</span>, não só valor.</h1>
-        <p class="sub">O maior airdrop da história do Bitcoin — e a pedra fundamental do $DOG. Antes da moeda existir, existiu a Runestone.</p>
+        <span class="eyebrow" data-i18n="rn.heroEyebrow">History · Ordinals · Bitcoin</span>
+        <h1 id="rune-title" data-i18n="rn.heroH1">Runestone: when Bitcoin started carrying <span>history</span>, not just value.</h1>
+        <p class="sub" data-i18n="rn.heroSub">The cultural stone that came before DOG: a broad airdrop, a permanent inscription, and the on chain origin of Rune #3.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#origem">Ver a história</a>
-          <a class="btn secondary" href="/#tese">Entender a tese</a>
+          <a class="btn primary" href="#origem" data-i18n="rn.btnHistory">See the history</a>
+          <a class="btn secondary" href="/#historia" data-i18n="rn.btnThesis">Understand the thesis</a>
         </div>
         <div class="statline">
-          <div class="statbox"><b>3,97 MB</b><span>inscritos direto na blockchain do Bitcoin</span></div>
-          <div class="statbox"><b>112.383</b><span>inscrições Ordinals distribuídas no airdrop</span></div>
-          <div class="statbox"><b>Rune #3</b><span>DOG•GO•TO•THE•MOON</span></div>
-          <div class="statbox"><b>#63140674</b><span>registro on-chain da inscrição-pai</span></div>
+          <div class="statbox"><b data-i18n="rn.stat1value">3.97 MB</b><span data-i18n="rn.stat1label">inscribed straight onto the Bitcoin blockchain</span></div>
+          <div class="statbox"><b data-i18n="rn.stat2value">112,383</b><span data-i18n="rn.stat2label">Ordinals inscriptions distributed in the airdrop</span></div>
+          <div class="statbox"><b data-i18n="rn.stat3value">Rune #3</b><span data-i18n="rn.stat3label">DOG•GO•TO•THE•MOON</span></div>
+          <div class="statbox"><b><a href="https://ordinals.com/inscription/fdb2df5d2b16db1ebcbf09e2d23b3f4e417db44b58e712c99b61f26b52c7cbb5i0" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(247,147,26,.5)" data-i18n="rn.stat4value">#63026232</a></b><span data-i18n="rn.stat4label">on chain record of the parent inscription</span></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="runestone-visuals" class="runestone-visuals" aria-labelledby="runestone-visual-title">
+    <div class="wrap">
+      <div class="section-head compact-head">
+        <div>
+          <div class="kicker" data-i18n="rn.visualsK">Visual archive</div>
+          <h2 id="runestone-visual-title" data-i18n="rn.visualsH">Runestone, in order.</h2>
+        </div>
+        <p class="lead" data-i18n="rn.visualsLead">From the base art to the airdrop, from Rune #3 to the distribution map.</p>
+      </div>
+      <div class="runestone-gallery">
+        <figure class="runestone-shot wide">
+          <img src="/public/runestone-01-hero.jpeg" alt="Arte visual da Runestone no espaço" loading="eager">
+          <figcaption><b data-i18n="rn.fig1num">01</b><span data-i18n="rn.fig1cap">The base art of the Runestone.</span></figcaption>
+        </figure>
+        <figure class="runestone-shot">
+          <img src="/public/runestone-02-airdrop.jpg" alt="Runestone caindo como um meteorito" loading="lazy">
+          <figcaption><b data-i18n="rn.fig2num">02</b><span data-i18n="rn.fig2cap">The airdrop that marked the early adopters.</span></figcaption>
+        </figure>
+        <figure class="runestone-shot">
+          <img src="/public/runestone-03-rune-number.jpg" alt="DOG como Rune Number 3" loading="lazy">
+          <figcaption><b data-i18n="rn.fig3num">03</b><span data-i18n="rn.fig3cap">DOG secures Rune #3.</span></figcaption>
+        </figure>
+        <figure class="runestone-shot">
+          <img src="/public/runestone-04-distribution.jpg" alt="Mapa visual de distribuição da Runestone" loading="lazy">
+          <figcaption><b data-i18n="rn.fig4num">04</b><span data-i18n="rn.fig4cap">Broad distribution, no early concentration.</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -98,41 +204,42 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="kicker">A origem</div>
-          <h2>O que foi a Runestone, de fato.</h2>
+          <div class="kicker" data-i18n="rn.originK">The origin</div>
+          <h2 data-i18n="rn.originH">What the Runestone actually was.</h2>
         </div>
-        <p class="lead">A Runestone não foi apenas um projeto. Foi um marco na história do Bitcoin — a prova de que a rede podia carregar mais do que valor financeiro.</p>
+        <p class="lead" data-i18n="rn.originLead">A cultural milestone for Bitcoin: art, identity, and memory etched directly onto the base layer.</p>
       </div>
       <div class="prose">
-        <p>Idealizada por <a href="https://x.com/LeonidasNFT" target="_blank" rel="noopener"><strong>Leonidas</strong></a> e criada pelo artista <a href="https://x.com/leocaillard" target="_blank" rel="noopener"><strong>Leo Caillard</strong></a>, a Runestone nasceu no coração do movimento <strong>Ordinals</strong> para provar algo que muitos duvidavam: o Bitcoin podia carregar <strong>cultura</strong>, <strong>identidade</strong> e <strong>memória permanente</strong>.</p>
-        <p>Foram <strong>3,97 MB</strong> inscritos diretamente na blockchain do Bitcoin. Sem servidores. Sem dependência externa. Sem intermediários. <strong>Imutável. Permanente. Bitcoin.</strong></p>
+        <p data-i18n="rn.originP1">Conceived by <a href="https://x.com/LeonidasNFT" target="_blank" rel="noopener"><strong>Leonidas</strong></a> and created by <a href="https://x.com/cl_art_studio" target="_blank" rel="noopener"><strong>Leo Caillard</strong></a>, the Runestone proved Bitcoin could also hold <strong>culture</strong>, <strong>identity</strong>, and <strong>permanent memory</strong>.</p>
+        <p data-i18n="rn.originP2"><strong>3.97 MB</strong> inscribed straight onto Bitcoin. No server. No middleman. Permanent.</p>
       </div>
-      <div class="origin-stack" aria-label="Criadores e contexto da Runestone">
-        <a class="origin-card dark" href="https://x.com/LeonidasNFT" target="_blank" rel="noopener">
-          <div>
-            <div class="origin-meta">
-              <div><span>Papel</span><b>Idealizador</b></div>
-              <div><span>Projeto</span><b>Runestone</b></div>
-              <div><span>Canal</span><b>X</b></div>
-            </div>
-            <h3>Leonidas</h3>
-            <p>Conceituou a Runestone dentro do movimento Ordinals e conduziu o gesto simbólico de selar a criação.</p>
+      <div class="origin-people" aria-label="Criadores e contexto da Runestone">
+        <a class="origin-person dark" href="https://x.com/LeonidasNFT" target="_blank" rel="noopener">
+          <img class="origin-photo" src="/public/leonidas.jpg" alt="Leonidas profile image" loading="lazy">
+          <div class="origin-person-body">
+            <div class="origin-role" data-i18n="rn.person1role">Originator · Runestone</div>
+            <h3 data-i18n="rn.person1name">Leonidas</h3>
+            <p data-i18n="rn.person1p">Conceived the Runestone within the Ordinals movement and led the symbolic act of sealing the creation.</p>
+            <span class="origin-arrow" aria-hidden="true">→</span>
           </div>
-          <span class="origin-arrow" aria-hidden="true">→</span>
         </a>
-        <a class="origin-card orange" href="https://x.com/leocaillard" target="_blank" rel="noopener">
-          <div>
-            <h3>Leo Caillard</h3>
-            <p>Assinou a arte da Runestone, transformando dados on-chain em cultura visual permanente.</p>
+        <a class="origin-person orange" href="https://x.com/cl_art_studio/status/1765052114533826770?s=46" target="_blank" rel="noopener">
+          <img class="origin-photo" src="/public/runestone-caillard-post.jpg" alt="Leo Caillard working on sculpture" loading="lazy">
+          <div class="origin-person-body">
+            <div class="origin-role" data-i18n="rn.person2role">Artist · CL Art Studio</div>
+            <h3 data-i18n="rn.person2name">Leo Caillard</h3>
+            <p data-i18n="rn.person2p">Authored the Runestone's art, turning on chain data into permanent visual culture.</p>
+            <span class="origin-arrow" aria-hidden="true">→</span>
           </div>
-          <span class="origin-arrow" aria-hidden="true">→</span>
         </a>
-        <a class="origin-card light" href="https://ordinals.com/" target="_blank" rel="noopener">
-          <div>
-            <h3>Ordinals</h3>
-            <p>O movimento que abriu espaço para inscrições, arte e identidade diretamente no Bitcoin.</p>
+        <a class="origin-person light" href="https://x.com/rodarmor" target="_blank" rel="noopener">
+          <img class="origin-photo" src="/public/casey-rodarmor.jpg" alt="Casey Rodarmor profile image" loading="lazy">
+          <div class="origin-person-body">
+            <div class="origin-role" data-i18n="rn.person3role">Creator · Ordinals and Runes</div>
+            <h3 data-i18n="rn.person3name">Casey Rodarmor</h3>
+            <p data-i18n="rn.person3p">Opened the technical path for inscriptions and Runes on Bitcoin, the cultural and protocol foundation that made DOG possible.</p>
+            <span class="origin-arrow" aria-hidden="true">→</span>
           </div>
-          <span class="origin-arrow" aria-hidden="true">→</span>
         </a>
       </div>
     </div>
@@ -142,16 +249,16 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="kicker">O ato simbólico</div>
-          <h2>A inscrição-pai e o gesto para Satoshi.</h2>
+          <div class="kicker" data-i18n="rn.sealK">The symbolic act</div>
+          <h2 data-i18n="rn.sealH">The parent inscription and the gesture to Satoshi.</h2>
         </div>
-        <p class="lead">No centro da Runestone estava a <strong>inscrição-pai</strong>: uma das maiores já registradas na rede até então. Um ponto de virada.</p>
+        <p class="lead" data-i18n="rn.sealLead">The parent inscription sealed the original piece in a place where no one can move it.</p>
       </div>
       <div class="seal">
-        <h3>Selada para sempre, fora do alcance de qualquer um.</h3>
-        <p>Essa inscrição foi enviada para um endereço <strong>amplamente atribuído a Satoshi Nakamoto</strong> — um endereço inacessível. O gesto foi intencional: ao mandar a peça original para um lugar de onde ninguém pode movê-la, Leonidas <strong>selou a criação de forma definitiva</strong>.</p>
-        <p>Nenhuma alteração futura. Nenhum controle central. Nenhuma manipulação. A Runestone nasceu imutável — um ato de respeito à própria natureza do Bitcoin.</p>
-        <p style="margin-top:6px"><span class="mono">Registro on-chain · #63140674</span></p>
+        <h3 data-i18n="rn.sealCardH">Sealed forever, beyond anyone's reach.</h3>
+        <p data-i18n="rn.sealP1">The inscription was sent to an address <strong>widely attributed to Satoshi Nakamoto</strong>. The gesture was simple and powerful: put the original piece beyond any future control.</p>
+        <p data-i18n="rn.sealP2">No changes. No central control. The Runestone became immutable, the way Bitcoin demands.</p>
+        <p style="margin-top:6px"><a class="mono" href="https://ordinals.com/inscription/fdb2df5d2b16db1ebcbf09e2d23b3f4e417db44b58e712c99b61f26b52c7cbb5i0" target="_blank" rel="noopener" style="color:var(--orange);border-bottom:1px solid rgba(247,147,26,.4)" data-i18n="rn.sealLink">On chain record · #63026232 </a></p>
       </div>
     </div>
   </section>
@@ -160,14 +267,14 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="kicker">O airdrop</div>
-          <h2>O maior airdrop da história do Bitcoin.</h2>
+          <div class="kicker" data-i18n="rn.airdropK">The airdrop</div>
+          <h2 data-i18n="rn.airdropH">The biggest airdrop in Bitcoin's history.</h2>
         </div>
-        <p class="lead">Para financiar a distribuição, a <strong>primeira Runestone foi leiloada</strong>. O próprio mercado custeou a operação. Sem VC. Sem pré-venda. Sem insiders.</p>
+        <p class="lead" data-i18n="rn.airdropLead">The first Runestone was auctioned and the community itself funded the distribution. No VC. No presale.</p>
       </div>
       <div class="prose">
-        <p>Exatamente <strong>112.383 inscrições</strong> foram distribuídas para carteiras que possuíam pelo menos <strong>três inscrições Ordinals</strong> — mais de 112 mil early adopters reconhecidos de uma vez só.</p>
-        <p>Não foi apenas um airdrop. Foi um <strong>selo de pertencimento</strong>: um reconhecimento de quem já estava construindo cultura na camada-base (L1) quando ainda era impopular. Durante a distribuição, a mempool do Bitcoin registrou <strong>112 mil inscrições simultâneas</strong>.</p>
+        <p data-i18n="rn.airdropP1"><strong>112,383 inscriptions</strong> were distributed to wallets holding at least <strong>three Ordinals</strong>. A badge of belonging for those already building culture on L1.</p>
+        <p data-i18n="rn.airdropP2">The mempool registered <strong>112,000 simultaneous inscriptions</strong>. The history went on chain.</p>
       </div>
     </div>
   </section>
@@ -176,31 +283,31 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="kicker">Linha do tempo</div>
-          <h2>Da Runestone ao $DOG.</h2>
+          <div class="kicker" data-i18n="rn.tlK">Timeline</div>
+          <h2 data-i18n="rn.tlH">From Runestone to $DOG.</h2>
         </div>
-        <p class="lead">Três momentos transformaram uma inscrição numa moeda soberana do Bitcoin.</p>
+        <p class="lead" data-i18n="rn.tlLead">Three moments turned an inscription into a sovereign Bitcoin coin.</p>
       </div>
       <div class="timeline">
         <div class="tl-row">
-          <div class="when">2023</div>
+          <div class="when" data-i18n="rn.tl1when">2023</div>
           <div>
-            <h3>A Runestone é inscrita e distribuída</h3>
-            <p>A inscrição-pai (3,97 MB) é selada num endereço atribuído a Satoshi. 112.383 Runestones são distribuídas a holders de 3+ Ordinals. Sem VC, sem pré-venda.</p>
+            <h3 data-i18n="rn.tl1h">The Runestone is inscribed and distributed</h3>
+            <p data-i18n="rn.tl1p">The parent inscription (3.97 MB) is sealed in an address attributed to Satoshi. 112,383 Runestones are distributed to holders of 3+ Ordinals. No VC, no presale.</p>
           </div>
         </div>
         <div class="tl-row">
-          <div class="when">Abr 2024</div>
+          <div class="when" data-i18n="rn.tl2when">Apr 2024</div>
           <div>
-            <h3>Halving do Bitcoin + protocolo Runes</h3>
-            <p>No halving mais simbólico do ciclo, o protocolo <strong>Runes</strong> é lançado. O $DOG garante a <strong>Rune #3</strong> da rede — pagando mais de <strong>US$ 100 mil em taxas</strong> para assegurar a posição histórica.</p>
+            <h3 data-i18n="rn.tl2h">Bitcoin halving + Runes protocol</h3>
+            <p data-i18n="rn.tl2p">At the cycle's most symbolic halving, the <strong>Runes</strong> protocol launches. $DOG secures the network's <strong>Rune #3</strong>, paying over <strong>US$ 100K in fees</strong> to lock in its historic position.</p>
           </div>
         </div>
         <div class="tl-row">
-          <div class="when">25 Abr 2024</div>
+          <div class="when" data-i18n="rn.tl3when">Apr 25, 2024</div>
           <div>
-            <h3>O nascimento do $DOG</h3>
-            <p>Cada Runestone dá direito a <strong>889.806 $DOG</strong>. Os <strong>100 bilhões</strong> de supply são distribuídos integralmente aos holders. <strong>100% na rua, livre e justo.</strong></p>
+            <h3 data-i18n="rn.tl3h">The birth of $DOG</h3>
+            <p data-i18n="rn.tl3p">Each Runestone is worth <strong>889,806 $DOG</strong>. The full <strong>100 billion</strong> supply is distributed entirely to holders. <strong>100% in the wild, free and fair.</strong></p>
           </div>
         </div>
       </div>
@@ -211,16 +318,16 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="kicker">25 de abril</div>
-          <h2>O nascimento do $DOG.</h2>
+          <div class="kicker" data-i18n="rn.dogK">April 25</div>
+          <h2 data-i18n="rn.dogH">The birth of $DOG.</h2>
         </div>
-        <p class="lead">Meses depois da Runestone, a história ganhou um novo capítulo: todos os detentores de Runestone receberam o $DOG.</p>
+        <p class="lead" data-i18n="rn.dogLead">Months after the Runestone, the story gained a new chapter: every Runestone holder received $DOG.</p>
       </div>
       <div class="grid grid-4">
-        <article class="card"><h3>889.806</h3><p>unidades de $DOG por Runestone.</p></article>
-        <article class="card"><h3>100 bilhões</h3><p>de supply total, distribuído integralmente aos holders.</p></article>
-        <article class="card"><h3>100% na rua</h3><p>sem pré-venda, sem alocação de time, sem investidores ocultos.</p></article>
-        <article class="card"><h3>Livre e justo</h3><p>$DOG nasceu como experimento social nativo do Bitcoin.</p></article>
+        <article class="card"><h3 data-i18n="rn.dogCard1h">889,806</h3><p data-i18n="rn.dogCard1p">$DOG units per Runestone.</p></article>
+        <article class="card"><h3 data-i18n="rn.dogCard2h">100 billion</h3><p data-i18n="rn.dogCard2p">of total supply, distributed entirely to holders.</p></article>
+        <article class="card"><h3 data-i18n="rn.dogCard3h">100% in the wild</h3><p data-i18n="rn.dogCard3p">no presale, no team allocation, no hidden investors.</p></article>
+        <article class="card"><h3 data-i18n="rn.dogCard4h">Free and fair</h3><p data-i18n="rn.dogCard4p">$DOG was born as a social experiment native to Bitcoin.</p></article>
       </div>
     </div>
   </section>
@@ -229,14 +336,14 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="kicker">Rune #3</div>
-          <h2>Gravada no halving mais simbólico do Bitcoin.</h2>
+          <div class="kicker" data-i18n="rn.rune3K">Rune #3</div>
+          <h2 data-i18n="rn.rune3H">Etched at Bitcoin's most symbolic halving.</h2>
         </div>
-        <p class="lead">Quando o protocolo Runes foi lançado no halving, o $DOG assegurou a <strong>terceira Rune</strong> da rede.</p>
+        <p class="lead" data-i18n="rn.rune3Lead">When the Runes protocol launched at the halving, $DOG secured the network's <strong>third Rune</strong>.</p>
       </div>
       <div class="prose">
-        <p>A inscrição não foi para "criar 100 bilhões" — foi para <strong>assegurar a posição histórica</strong> como a terceira Rune da rede. Para garantir esse lugar, foram pagas <strong>taxas superiores a US$ 100 mil</strong>.</p>
-        <p>Não foi marketing. Foi <strong>compromisso com a L1</strong>. Foi gravado no momento mais simbólico do ciclo do Bitcoin.</p>
+        <p data-i18n="rn.rune3P1">The inscription wasn't about "creating 100 billion." It was about <strong>securing the historic position</strong> as the network's third Rune. To lock in that spot, <strong>fees of over US$ 100K</strong> were paid.</p>
+        <p data-i18n="rn.rune3P2">It wasn't marketing. It was <strong>commitment to L1</strong>. It was etched at the most symbolic moment of the Bitcoin cycle.</p>
       </div>
     </div>
   </section>
@@ -245,13 +352,13 @@
     <div class="wrap">
       <div class="final-inner">
         <div>
-          <div class="kicker">Quando o Bitcoin passou a carregar história</div>
-          <h2>O Bitcoin não carrega apenas valor. Carrega história.</h2>
-          <p>Runestone mostrou que o Bitcoin pode registrar arte e cultura. $DOG mostrou que comunidades podem nascer soberanas na L1. Juntos, são um ponto de virada — não dependem de fundações, empresas ou plataformas. Vivem na blockchain mais segura do mundo. <strong>E essa história está escrita on-chain.</strong></p>
+          <div class="kicker" data-i18n="rn.finalK">When Bitcoin started carrying history</div>
+          <h2 data-i18n="rn.finalH">Bitcoin doesn't carry only value. It carries history.</h2>
+          <p data-i18n="rn.finalP">Runestone showed that Bitcoin can record art and culture. $DOG showed that communities can be born sovereign on L1. Together, they mark a turning point. They depend on no foundations, no companies, no platforms. They live on the most secure blockchain in the world. <strong>And this history is written on chain.</strong></p>
         </div>
         <div style="display:flex;flex-direction:column;gap:12px;min-width:220px">
-          <a class="btn primary" href="/#tese">Conhecer a tese da $DOG</a>
-          <a class="btn secondary" href="/">Voltar para a home</a>
+          <a class="btn primary" href="/#historia" data-i18n="rn.finalBtn1">Explore the $DOG thesis</a>
+          <a class="btn secondary" href="/" data-i18n="rn.finalBtn2">Back to home</a>
         </div>
       </div>
     </div>
@@ -261,13 +368,14 @@
 <footer>
   <div class="wrap">
     <div class="inner">
-      <p><strong>DOG ARMY</strong><br>Pesquisa independente sobre DOG•GO•TO•THE•MOON, Rune #3 do Bitcoin.</p>
-      <p><a href="/">Voltar para a home</a><br><a href="https://github.com/dogdamassa/dog-thesis" target="_blank" rel="noopener">Repositório público no GitHub</a></p>
+      <p data-i18n="rn.footP1"><strong>DOG ARMY</strong><br>Independent research on DOG•GO•TO•THE•MOON, Bitcoin's Rune #3.</p>
+      <p data-i18n="rn.footP2"><a href="/">Back to home</a><br><a href="https://github.com/dogdamassa/dog-thesis" target="_blank" rel="noopener">Public repository on GitHub</a></p>
     </div>
-    <div class="disclaimer">
-      Página histórica e educacional sobre a origem on-chain do $DOG. Não é conselho financeiro, recomendação de compra ou venda, nem promessa de preço. Os fatos descritos são públicos e verificáveis na blockchain do Bitcoin.
+    <div class="disclaimer" data-i18n="rn.disc">
+      A historical and educational page about the on chain origin of $DOG. Not financial advice, not a buy or sell recommendation, and not a price promise. The facts described are public and verifiable on the Bitcoin blockchain.
     </div>
   </div>
 </footer>
+<script src="/i18n.js"></script>
 </body>
 </html>

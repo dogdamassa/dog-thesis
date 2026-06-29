@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="mempool.space">
+  <rect width="64" height="64" rx="14" fill="#11161d"/>
+  <rect x="12" y="37" width="9" height="14" rx="2.4" fill="#3aa7d6"/>
+  <rect x="27.5" y="28" width="9" height="23" rx="2.4" fill="#46c6c9"/>
+  <rect x="43" y="18" width="9" height="33" rx="2.4" fill="#5fe3c0"/>
+</svg>

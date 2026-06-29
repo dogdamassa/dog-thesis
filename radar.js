@@ -1,23 +1,9 @@
-/* DOG ARMY — Radar on-chain (feed estilo Arkham + grafo do cofre).
-   Le /data/{daily,feed,graph}.json (gerados por scripts/build_data.py) e desenha:
-   KPIs do dia, feed de noticias on-chain e o grafo do Cofre #1 em <canvas>.
-   Bilingue: respeita o idioma do site (sessionStorage.dogLang / html[lang]) e
-   re-renderiza quando o usuario troca PT/EN. Sem dependencia externa (CSP-safe). */
+/* DOG ARMY Radar. Reads /data/{daily,feed,graph}.json and renders the
+   daily KPIs, the event feed, and the Vault #1 graph in English. */
 (function () {
   "use strict";
   var BASE = "/data/";
   var data = { daily: null, feed: null, graph: null };
-
-  /* ---------- idioma ---------- */
-  function lang() {
-    try {
-      var s = sessionStorage.getItem("dogLang");
-      if (s) return s === "pt" ? "pt" : "en";
-    } catch (e) {}
-    var h = (document.documentElement.getAttribute("lang") || "en").toLowerCase();
-    return h.indexOf("pt") === 0 ? "pt" : "en";
-  }
-  function t(pt, en) { return lang() === "pt" ? pt : en; }
 
   /* ---------- formatos ---------- */
   function fmtDog(n) {
@@ -31,10 +17,10 @@
     if (!iso) return "";
     var then = new Date(iso).getTime();
     var diff = Math.max(0, (new Date().getTime() - then) / 1000);
-    if (diff < 90) return t("agora", "now");
-    if (diff < 3600) return Math.round(diff / 60) + (lang() === "pt" ? "min atrás" : "min ago");
-    if (diff < 86400) return Math.round(diff / 3600) + (lang() === "pt" ? "h atrás" : "h ago");
-    return Math.round(diff / 86400) + (lang() === "pt" ? "d atrás" : "d ago");
+    if (diff < 90) return "now";
+    if (diff < 3600) return Math.round(diff / 60) + "min ago";
+    if (diff < 86400) return Math.round(diff / 3600) + "h ago";
+    return Math.round(diff / 86400) + "d ago";
   }
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
@@ -42,28 +28,24 @@
     });
   }
 
-  /* ---------- frases bilingues do feed ---------- */
+  /* ---------- feed copy ---------- */
   function sentence(e) {
     var a = "<b>" + fmtDog(e.amount_dog) + " DOG</b>";
     var to = esc(e.to_label) + (e.community ? ' <span class="rd-tag">' +
-      t("rótulo comunidade", "community label") + "</span>" : "");
+      "mapped label</span>" : "");
     switch (e.type) {
       case "cofre_out_exchange":
-        return t("Cofre #1 enviou " + a + " para " + to + " — possível venda/distribuição.",
-                 "Vault #1 sent " + a + " to " + to + " — possible sale/distribution.");
+        return "Vault #1 sent " + a + " to " + to + ". Possible sale or distribution flow.";
       case "cofre_out_new":
-        return t("Cofre #1 moveu " + a + " para uma carteira nova (destino ainda sem rótulo).",
-                 "Vault #1 moved " + a + " to a fresh wallet (destination still unlabeled).");
+        return "Vault #1 moved " + a + " to a fresh wallet. Destination still unlabeled.";
       case "cofre_in":
-        return t("Cofre #1 recebeu " + a + ".", "Vault #1 received " + a + ".");
+        return "Vault #1 received " + a + ".";
       case "relay_flow":
-        return t(esc(e.from_label) + " → " + to + ": " + a + " (movimento dentro do cluster).",
-                 esc(e.from_label) + " → " + to + ": " + a + " (movement inside the cluster).");
+        return esc(e.from_label) + " to " + to + ": " + a + ". Movement inside the cluster.";
       case "balance_change":
-        return t("Saldo do Cofre #1 variou <b>" + (e.sign || "") + fmtDog(e.amount_dog) + " DOG</b> no dia.",
-                 "Vault #1 balance moved <b>" + (e.sign || "") + fmtDog(e.amount_dog) + " DOG</b> today.");
+        return "Vault #1 balance moved <b>" + (e.sign || "") + fmtDog(e.amount_dog) + " DOG</b> today.";
       default:
-        return esc(e.from_label) + " → " + to + ": " + a;
+        return esc(e.from_label) + " to " + to + ": " + a;
     }
   }
 
@@ -71,23 +53,22 @@
   function renderKpis() {
     var d = data.daily, el = document.getElementById("rd-kpis");
     if (!el) return;
-    if (!d) { el.innerHTML = card("—", t("dados indisponíveis", "data unavailable"), ""); return; }
+    if (!d) { el.innerHTML = card("—", "data unavailable", ""); return; }
     var top4 = (d.cofre && d.cofre.pct || 0);
     (d.exchanges || []).forEach(function (x) { top4 += (x.balance_dog || 0) / 1e11 * 100; });
-    var lvl = { alert: t("🔴 Movimento suspeito", "🔴 Suspicious move"),
-                watch: t("🟠 Em observação", "🟠 Watching"),
-                stable: t("🟢 Cofre estável", "🟢 Vault stable") }[d.level] ||
-                t("🟢 Estável", "🟢 Stable");
-    var loc = lang() === "pt" ? "pt-BR" : "en-US";
+    var lvl = { alert: "Red alert",
+                watch: "Watching",
+                stable: "Vault stable" }[d.level] || "Stable";
+    var loc = "en-US";
     var hd = d.holders_delta ? " (" + (d.holders_delta > 0 ? "+" : "") + d.holders_delta + ")" : "";
     el.innerHTML =
       card((d.cofre && d.cofre.pct != null ? d.cofre.pct + "%" : "—"),
-           t("Cofre #1 do supply", "Vault #1 of supply"), "rd-c-orange") +
+           "Vault #1 of supply", "rd-c-orange") +
       card((d.holders_total ? d.holders_total.toLocaleString(loc) : "—") + hd,
-           t("Carteiras com DOG", "Wallets holding DOG"), "") +
+           "Wallets holding DOG", "") +
       card(top4 ? top4.toFixed(1) + "%" : "—",
-           t("Top 4 carteiras juntas", "Top 4 wallets combined"), "") +
-      card(lvl, t("Leitura do dia", "Reading of the day"), "rd-c-wide");
+           "Top 4 wallets combined", "") +
+      card(lvl, "Reading of the day", "rd-c-wide");
   }
   function card(big, label, cls) {
     return '<div class="rd-kpi ' + cls + '"><div class="rd-kpi-v">' + big +
@@ -100,8 +81,7 @@
     if (!el) return;
     var evs = (data.feed && data.feed.events) || [];
     if (!evs.length) {
-      el.innerHTML = '<div class="rd-empty">' +
-        t("Sem movimentos novos. O radar segue ligado.", "No new moves. The radar stays on.") + "</div>";
+      el.innerHTML = '<div class="rd-empty">No new moves. The radar stays on.</div>';
       return;
     }
     el.innerHTML = evs.map(function (e) {
@@ -122,9 +102,9 @@
   function edgeColor(e) {
     var to = nById(e.to);
     if (!to) return "#3a4654";
-    if (to.kind === "holder") return COL.edgeExch;     // supply indo p/ corretora
-    if (to.kind === "fresh") return COL.edgeFresh;      // saindo p/ carteira nova
-    if (to.kind === "cofre") return COL.edgeIn;         // acumulando
+    if (to.kind === "holder") return COL.edgeExch;
+    if (to.kind === "fresh") return COL.edgeFresh;
+    if (to.kind === "cofre") return COL.edgeIn;
     return COL.edgeRelay;
   }
   function nById(id) { for (var i = 0; i < nodes.length; i++) if (nodes[i].id === id) return nodes[i]; return null; }
@@ -137,7 +117,7 @@
     edges = g.edges.slice();
     var center = nById(g.center) || nodes[0];
     var others = nodes.filter(function (n) { return n !== center; });
-    // ordem: holders, relays, fresh — agrupados em arco
+    // Group holders, relays, and fresh wallets around the vault.
     var order = { holder: 0, relay: 1, fresh: 2 };
     others.sort(function (a, b) { return (order[a.kind] || 9) - (order[b.kind] || 9); });
     center.x = cx; center.y = cy; center.r = 30;
@@ -183,7 +163,7 @@
       ctx.fillStyle = isC ? "#0b0d0f" : "#f5f1e8";
       ctx.font = (isC ? "700 12px " : "600 11px ") + "ui-sans-serif,system-ui,sans-serif";
       ctx.textAlign = "center"; ctx.textBaseline = "middle";
-      if (isC) { ctx.fillText("Cofre #1", n.x, n.y); }
+      if (isC) { ctx.fillText("Vault #1", n.x, n.y); }
       else {
         ctx.fillStyle = "#cdd6df";
         var ly = n.y + n.r + 11;
@@ -212,11 +192,10 @@
   function tipHtml(n) {
     var L = [];
     L.push("<b>" + esc(n.label) + "</b>");
-    if (n.community) L.push('<span class="rd-tag">' + t("comunidade aponta: ", "community says: ") +
-      esc(n.community) + " · " + t("não confirmado", "unconfirmed") + "</span>");
-    if (n.rank) L.push(t("rank #", "rank #") + n.rank + " · " + (n.pct || 0) + "% " + t("do supply", "of supply"));
+    if (n.community) L.push('<span class="rd-tag">' + esc(n.community) + "</span>");
+    if (n.rank) L.push("rank #" + n.rank + " · " + (n.pct || 0) + "% of supply");
     if (n.balance_dog) L.push(fmtDog(n.balance_dog) + " DOG");
-    if (n.kind === "fresh") L.push(t("carteira nova — sem rótulo", "fresh wallet — unlabeled"));
+    if (n.kind === "fresh") L.push("fresh wallet. unlabeled");
     if (n.addr) L.push('<span class="rd-mono">' + esc(n.addr.slice(0, 10) + "…" + n.addr.slice(-6)) + "</span>");
     return L.join("<br>");
   }
@@ -250,14 +229,14 @@
   function stamp() {
     var el = document.getElementById("rd-updated");
     if (el && data.daily) {
-      el.textContent = t("Atualizado ", "Updated ") + new Date(data.daily.updated_at)
-        .toLocaleString(lang() === "pt" ? "pt-BR" : "en-US", { dateStyle: "medium", timeStyle: "short" });
+      el.textContent = "Updated " + new Date(data.daily.updated_at)
+        .toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" });
     }
   }
   function renderAll() { renderKpis(); renderFeed(); stamp(); }
 
   function load(name) {
-    return fetch(BASE + name + ".json", { cache: "no-store" })
+    return fetch(BASE + name + ".json?v=" + Date.now(), { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
   }
   function init() {
