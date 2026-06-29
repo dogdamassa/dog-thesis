@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T10:17:07.836760+00:00",
+  "updated_at": "2026-06-29T10:39:19.812579+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2977348954.99664,
+      "balance_dog": 2986423723.49664,
       "rank": 3,
-      "pct": 2.98,
+      "pct": 2.99,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2162947340.42379,
+      "balance_dog": 2163951921.33479,
       "rank": 6,
       "pct": 2.16,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -62,10 +62,10 @@
       "label": "Intermediario #2",
       "kind": "relay",
       "community": "ponte para Bitget",
-      "confirmed": true,
-      "balance_dog": 9074768.5,
-      "rank": 927,
-      "pct": 0.01,
+      "confirmed": false,
+      "balance_dog": 0,
+      "rank": null,
+      "pct": 0,
       "addr": "bc1p52673nrtsed5n5nal7cm02u6pg63p0e6u4nm2fhm90xd8r4w3ass090zzy"
     },
     {
