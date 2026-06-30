@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-06-30T17:26:43.191561+00:00",
+  "updated_at": "2026-06-30T20:51:18.256843+00:00",
   "events": [
+    {
+      "id": "99c1cca52b0b1b165740c7454417253682108b8b738c66cad64a27b3fcd4edcb",
+      "ts": "2026-06-30T19:53:59+00:00",
+      "type": "relay_flow",
+      "amount_dog": 1907788.1,
+      "level": "watch",
+      "from_label": "Intermediary Wallet #1",
+      "to_label": "Top #3",
+      "from_id": "int1",
+      "to_id": "h3",
+      "community": null,
+      "txid": "99c1cca52b0b1b165740c7454417253682108b8b738c66cad64a27b3fcd4edcb"
+    },
+    {
+      "id": "1bf964082c5daf05896ee3441cc444f77b9787bfb5efc87f786bf28bbfbc34ef",
+      "ts": "2026-06-30T19:53:59+00:00",
+      "type": "relay_flow",
+      "amount_dog": 2133556.1,
+      "level": "watch",
+      "from_label": "Intermediary Wallet #2",
+      "to_label": "Top #3",
+      "from_id": "int2",
+      "to_id": "h3",
+      "community": null,
+      "txid": "1bf964082c5daf05896ee3441cc444f77b9787bfb5efc87f786bf28bbfbc34ef"
+    },
+    {
+      "id": "e9856f7f93f4a5a1cf88fd42189a4a68d5c5735ab64e89fa10939fc7435f8999",
+      "ts": "2026-06-30T19:25:04+00:00",
+      "type": "relay_flow",
+      "amount_dog": 1907788.1,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Intermediary Wallet #1",
+      "from_id": "cofre",
+      "to_id": "int1",
+      "community": null,
+      "txid": "e9856f7f93f4a5a1cf88fd42189a4a68d5c5735ab64e89fa10939fc7435f8999"
+    },
+    {
+      "id": "39c22f3c3ab158a3da43c0d318fa58f695223a773f4be1d2f682443107ba9a30",
+      "ts": "2026-06-30T19:25:04+00:00",
+      "type": "relay_flow",
+      "amount_dog": 2133556.1,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Intermediary Wallet #2",
+      "from_id": "cofre",
+      "to_id": "int2",
+      "community": null,
+      "txid": "39c22f3c3ab158a3da43c0d318fa58f695223a773f4be1d2f682443107ba9a30"
+    },
     {
       "id": "bal-2026-06-30",
       "ts": "2026-06-30T17:26:43.191561+00:00",
