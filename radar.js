@@ -3,7 +3,7 @@
 (function () {
   "use strict";
   var BASE = "/data/";
-  var data = { daily: null, feed: null, graph: null };
+  var data = { daily: null, feed: null, graph: null, flows: null };
 
   /* ---------- formatos ---------- */
   function fmtDog(n) {
@@ -233,7 +233,41 @@
         .toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" });
     }
   }
-  function renderAll() { renderKpis(); renderFeed(); stamp(); }
+  /* ---------- exchange flow (CEX buys/sells) ---------- */
+  function renderFlows() {
+    var fl = data.flows;
+    var exEl = document.getElementById("rd-flows-ex");
+    var listEl = document.getElementById("rd-flows-list");
+    var upd = document.getElementById("rd-flows-updated");
+    if (!exEl || !listEl) return;
+    if (!fl) { listEl.innerHTML = '<div class="rd-empty">flow data unavailable</div>'; return; }
+    exEl.innerHTML = (fl.exchanges || []).filter(function (x) { return x.ok; }).map(function (x) {
+      var ch = (x.change24h == null) ? "" :
+        '<i class="' + (x.change24h >= 0 ? "rd-up" : "rd-down") + '">' +
+        (x.change24h >= 0 ? "+" : "") + x.change24h.toFixed(1) + "%</i>";
+      return '<a class="rd-exchip" href="' + esc(x.link) + '" target="_blank" rel="noopener">' +
+        "<b>" + esc(x.name) + "</b><span>" + fmtDog(x.vol24h_dog) + " DOG / 24h</span>" + ch + "</a>";
+    }).join("");
+    var n = fl.notable || [];
+    if (!n.length) {
+      listEl.innerHTML = '<div class="rd-empty">No big orders in the recent window.</div>';
+    } else {
+      listEl.innerHTML = n.map(function (e) {
+        var buy = e.side === "buy";
+        return '<a class="rd-flow rd-' + (buy ? "buy" : "sell") + '" href="' + esc(e.link) +
+          '" target="_blank" rel="noopener"><span class="rd-flow-side">' + (buy ? "BUY" : "SELL") +
+          '</span><div class="rd-flow-body"><p><b>' + fmtDog(e.dog) + " DOG</b> on " + esc(e.exchange) +
+          ' <span class="rd-flow-usd">≈ $' + Number(e.usd).toLocaleString("en-US") +
+          "</span></p><time>" + esc(relTime(e.ts)) + "</time></div></a>";
+      }).join("");
+    }
+    if (upd && fl.updated_at) {
+      upd.textContent = "Updated " + new Date(fl.updated_at)
+        .toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" });
+    }
+  }
+
+  function renderAll() { renderKpis(); renderFeed(); renderFlows(); stamp(); }
 
   function load(name) {
     return fetch(BASE + name + ".json?v=" + Date.now(), { cache: "no-store" })
@@ -241,8 +275,8 @@
   }
   function init() {
     if (!document.getElementById("radar")) return;
-    Promise.all([load("daily"), load("feed"), load("graph")]).then(function (r) {
-      data.daily = r[0]; data.feed = r[1]; data.graph = r[2];
+    Promise.all([load("daily"), load("feed"), load("graph"), load("flows")]).then(function (r) {
+      data.daily = r[0]; data.feed = r[1]; data.graph = r[2]; data.flows = r[3];
       renderAll();
       if (data.graph) bindGraph();
     });

@@ -1830,6 +1830,30 @@ html{overflow-x:hidden}
   color:var(--warn);border:1px solid rgba(229,182,75,.4);border-radius:5px;padding:0 5px;margin-left:3px}
 .rd-empty{padding:22px;text-align:center;color:var(--muted);font-size:13px}
 .rd-src{margin:20px 2px 0;font-size:12px;color:var(--muted);line-height:1.55}
+.rd-flows{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.rd-flows-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.rd-flows-head h3{font-size:15px;margin:0;color:var(--ink)}
+.rd-flows-ex{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}
+.rd-exchip{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:10px;
+  background:var(--surface-2);border:1px solid var(--line);font-size:12px;transition:border-color .15s}
+.rd-exchip:hover{border-color:#3a4654}
+.rd-exchip b{color:var(--ink);font-size:12.5px}
+.rd-exchip span{color:var(--muted);font-family:var(--font-mono)}
+.rd-exchip i{font-style:normal;font-weight:600;font-family:var(--font-mono)}
+.rd-up{color:var(--mint)}.rd-down{color:#e5484d}
+.rd-flows-list{display:flex;flex-direction:column;gap:7px}
+.rd-flow{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:10px;
+  background:var(--surface-2);border:1px solid var(--line);transition:border-color .15s,background .15s}
+.rd-flow:hover{border-color:#3a4654;background:var(--surface-3)}
+.rd-flow-side{flex:0 0 auto;width:46px;text-align:center;font:700 10px/1 var(--font-mono);
+  letter-spacing:.06em;padding:5px 0;border-radius:6px}
+.rd-buy .rd-flow-side{color:#0b0d0f;background:var(--mint)}
+.rd-sell .rd-flow-side{color:#fff;background:#e5484d}
+.rd-flow-body{min-width:0}
+.rd-flow-body p{margin:0;font-size:13px;color:var(--text)}
+.rd-flow-body b{color:var(--ink)}
+.rd-flow-usd{color:var(--muted);font-size:12px;font-family:var(--font-mono)}
+.rd-flow-body time{display:block;margin-top:2px;font-size:11px;color:var(--muted);font-family:var(--font-mono)}
 @media (max-width:860px){
   .rd-kpis{grid-template-columns:repeat(2,1fr)}
   .rd-grid{grid-template-columns:1fr}

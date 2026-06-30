@@ -32,7 +32,9 @@ jobs:
           python-version: "3.12"
 
       - name: Gerar os dados do dia
-        run: python3 scripts/build_data.py
+        run: |
+          python3 scripts/build_data.py
+          python3 scripts/flows.py
 
       - name: Comitar se mudou
         run: |
