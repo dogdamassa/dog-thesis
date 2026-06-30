@@ -1854,6 +1854,11 @@ html{overflow-x:hidden}
 .rd-flow-body b{color:var(--ink)}
 .rd-flow-usd{color:var(--muted);font-size:12px;font-family:var(--font-mono)}
 .rd-flow-body time{display:block;margin-top:2px;font-size:11px;color:var(--muted);font-family:var(--font-mono)}
+.rd-flows-more{display:flex;flex-direction:column;gap:7px}
+.rd-flows-toggle{margin-top:8px;width:100%;padding:9px 12px;border-radius:10px;cursor:pointer;
+  background:var(--surface-2);border:1px solid var(--line);color:var(--muted);
+  font:600 12.5px/1 var(--font-mono);letter-spacing:.02em;transition:border-color .15s,background .15s,color .15s}
+.rd-flows-toggle:hover{border-color:#3a4654;background:var(--surface-3);color:var(--ink)}
 @media (max-width:860px){
   .rd-kpis{grid-template-columns:repeat(2,1fr)}
   .rd-grid{grid-template-columns:1fr}

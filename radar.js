@@ -234,6 +234,32 @@
     }
   }
   /* ---------- exchange flow (CEX buys/sells) ---------- */
+  var FLOWS_SHOWN = 3;   // big orders visible before the "show more" toggle
+  function curLang() {
+    var l = (document.documentElement.lang || "en").toLowerCase();
+    if (l.indexOf("pt") === 0) return "pt";
+    if (l.indexOf("es") === 0) return "es";
+    if (l.indexOf("it") === 0) return "it";
+    if (l.indexOf("zh") === 0) return "zh";
+    return "en";
+  }
+  var MORE_LBL = {
+    en: function (n) { return "Show " + n + " more ▾"; },
+    pt: function (n) { return "Ver mais " + n + " " + (n === 1 ? "ordem" : "ordens") + " ▾"; },
+    es: function (n) { return "Ver " + n + " más ▾"; },
+    it: function (n) { return "Mostra altre " + n + " ▾"; },
+    zh: function (n) { return "显示另外 " + n + " 条 ▾"; }
+  };
+  var LESS_LBL = { en: "Show less ▴", pt: "Ver menos ▴", es: "Ver menos ▴",
+                   it: "Mostra meno ▴", zh: "收起 ▴" };
+  function flowItem(e) {
+    var buy = e.side === "buy";
+    return '<a class="rd-flow rd-' + (buy ? "buy" : "sell") + '" href="' + esc(e.link) +
+      '" target="_blank" rel="noopener"><span class="rd-flow-side">' + (buy ? "BUY" : "SELL") +
+      '</span><div class="rd-flow-body"><p><b>' + fmtDog(e.dog) + " DOG</b> on " + esc(e.exchange) +
+      ' <span class="rd-flow-usd">≈ $' + Number(e.usd).toLocaleString("en-US") +
+      "</span></p><time>" + esc(relTime(e.ts)) + "</time></div></a>";
+  }
   function renderFlows() {
     var fl = data.flows;
     var exEl = document.getElementById("rd-flows-ex");
@@ -251,15 +277,31 @@
     var n = fl.notable || [];
     if (!n.length) {
       listEl.innerHTML = '<div class="rd-empty">No big orders in the recent window.</div>';
+    } else if (n.length <= FLOWS_SHOWN) {
+      listEl.innerHTML = n.map(flowItem).join("");
     } else {
-      listEl.innerHTML = n.map(function (e) {
-        var buy = e.side === "buy";
-        return '<a class="rd-flow rd-' + (buy ? "buy" : "sell") + '" href="' + esc(e.link) +
-          '" target="_blank" rel="noopener"><span class="rd-flow-side">' + (buy ? "BUY" : "SELL") +
-          '</span><div class="rd-flow-body"><p><b>' + fmtDog(e.dog) + " DOG</b> on " + esc(e.exchange) +
-          ' <span class="rd-flow-usd">≈ $' + Number(e.usd).toLocaleString("en-US") +
-          "</span></p><time>" + esc(relTime(e.ts)) + "</time></div></a>";
-      }).join("");
+      // first 3 always visible; the rest collapse behind a localized toggle
+      var lang = curLang();
+      var hidden = n.length - FLOWS_SHOWN;
+      listEl.innerHTML =
+        n.slice(0, FLOWS_SHOWN).map(flowItem).join("") +
+        '<div class="rd-flows-more" hidden>' + n.slice(FLOWS_SHOWN).map(flowItem).join("") + "</div>" +
+        '<button type="button" class="rd-flows-toggle" aria-expanded="false">' +
+        (MORE_LBL[lang] || MORE_LBL.en)(hidden) + "</button>";
+      var btn = listEl.querySelector(".rd-flows-toggle");
+      var more = listEl.querySelector(".rd-flows-more");
+      btn.addEventListener("click", function () {
+        var open = more.hasAttribute("hidden");
+        if (open) {
+          more.removeAttribute("hidden");
+          btn.textContent = LESS_LBL[lang] || LESS_LBL.en;
+          btn.setAttribute("aria-expanded", "true");
+        } else {
+          more.setAttribute("hidden", "");
+          btn.textContent = (MORE_LBL[lang] || MORE_LBL.en)(hidden);
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
     }
     if (upd && fl.updated_at) {
       upd.textContent = "Updated " + new Date(fl.updated_at)
