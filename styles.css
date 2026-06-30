@@ -1767,6 +1767,18 @@ html{overflow-x:hidden}
 }
 #verificar .vf-subhead:first-of-type{margin-top:8px}
 #verificar .vf-archive-head{color:rgba(255,247,239,.5)}
+
+/* ---- #luta: live signal card (Cryptolution / BIP-110) ---- */
+.fight-signal{display:block;margin-top:22px;padding:18px 20px;border:1px solid var(--line);
+  border-left:3px solid var(--mint);border-radius:14px;background:var(--surface);
+  transition:border-color .15s,background .15s}
+.fight-signal:hover{border-color:#3a4654;background:var(--surface-2)}
+.fight-signal-top{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  flex-wrap:wrap;margin-bottom:11px}
+.fight-signal-src{font:600 12px var(--font-mono);color:var(--muted)}
+.fight-signal-q{margin:0 0 11px;font-size:15px;line-height:1.6;color:var(--text);font-style:normal}
+.fight-signal-q b{color:var(--ink);font-family:var(--font-mono);font-size:14px}
+.fight-signal .go{color:var(--mint);font-weight:600;font-size:13.5px}
 #verificar .vf-note{margin-bottom:4px}
 
 /* ===== Radar on-chain (feed + grafo) ===== */

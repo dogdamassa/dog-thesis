@@ -33,17 +33,17 @@ window.DOG_I18N = {
     "nav.briefing": "Briefing",
     "nav.today": "Hoje",
     "nav.radar": "Radar",
-    "rd.k": "On chain radar · updates every day",
-    "rd.h": "The radar: what the chain shows about $DOG today",
-    "rd.lead": "An automatic daily read of public on chain data. The map below centers on Vault&nbsp;#1, the wallet that gathered about 12% of the supply on June 25, 2026. Gate, Bitget and MEXC are mapped to their watched DOG wallets.",
-    "rd.gh": "Vault&nbsp;#1 cluster map",
+    "rd.k": "Radar on-chain · atualiza todo dia",
+    "rd.h": "O radar: o que a cadeia mostra sobre a $DOG hoje",
+    "rd.lead": "Uma leitura automática e diária dos dados públicos on-chain. O mapa abaixo gira em torno do Vault&nbsp;#1, a carteira que reuniu cerca de 12% do supply em 25 de junho de 2026. Gate, Bitget e MEXC estão mapeadas às suas carteiras DOG monitoradas.",
+    "rd.gh": "Mapa do cluster do Vault&nbsp;#1",
     "rd.lg1": "Vault #1",
-    "rd.lg2": "Exchange wallet",
-    "rd.lg3": "Intermediary Wallet",
-    "rd.lg4": "Fresh wallet",
-    "rd.note": "Hover a node to inspect it; click to open it on mempool.space. Gate, Bitget and MEXC are mapped to their watched DOG wallets. Red edges show supply heading to an exchange wallet; orange shows movement to a fresh wallet.",
-    "rd.fh": "On chain news",
-    "rd.src": "Source: dogdata.xyz. Click any item to verify it on mempool.space. Nothing here is an accusation; this is the public chain pattern with caveats.",
+    "rd.lg2": "Carteira de corretora",
+    "rd.lg3": "Carteira intermediária",
+    "rd.lg4": "Carteira nova",
+    "rd.note": "Passe o mouse sobre um nó para inspecioná-lo; clique para abri-lo no mempool.space. Gate, Bitget e MEXC estão mapeadas às suas carteiras DOG monitoradas. Arestas vermelhas mostram supply indo para uma carteira de corretora; laranja mostra movimento para uma carteira nova.",
+    "rd.fh": "Notícias on-chain",
+    "rd.src": "Fonte: dogdata.xyz. Clique em qualquer item para verificá-lo no mempool.space. Nada aqui é acusação; é o padrão público da cadeia, com ressalvas.",
     "nav.gverify": "Verificar",
     "nav.method": "Método",
     "nav.sources": "Fontes",
@@ -122,6 +122,9 @@ window.DOG_I18N = {
     "fight.ctap": "Se você pagou a taxa, o blockspace é seu — esse é o ponto inteiro do Bitcoin. Isto é defesa de política de protocolo: nossa opinião sobre o rumo do Bitcoin, não conselho financeiro nem coordenação de mercado.",
     "fight.ctab1": "Ler o debate completo",
     "fight.ctab2": "Como chegamos aqui",
+    "fight.sigtag": "Sinal ao vivo · o dado está do nosso lado",
+    "fight.sigq": "Depois de 15 períodos de sinalização, o BIP-110 segue sem conseguir apoio dos mineradores — período atual <b>2 / 376</b> blocos (0,5%), histórico <b>40 / 28.600</b> blocos (0,1%). A esmagadora maioria dos mineradores, incluindo os maiores pools, não está sinalizando a favor.",
+    "fight.sigl": "Ver o dado no X →",
 
     "t.k": "A tese",
     "t.h": "Uma comunidade aberta para separar sinal, hype e acusação.",
@@ -498,6 +501,18 @@ window.DOG_I18N = {
     "ft.disc": "Este material é informativo e educacional. Não é conselho financeiro, recomendação de compra ou venda, promessa de preço, acusação jurídica ou coordenação de mercado. A pesquisa descreve dados públicos e padrões observáveis, sempre com caveats."
   },
   es: {
+    "nav.radar": "Radar",
+    "rd.k": "Radar on-chain · se actualiza cada día",
+    "rd.h": "El radar: lo que la cadena muestra sobre $DOG hoy",
+    "rd.lead": "Una lectura automática y diaria de los datos públicos on-chain. El mapa de abajo gira en torno al Vault&nbsp;#1, la cartera que reunió cerca del 12% del supply el 25 de junio de 2026. Gate, Bitget y MEXC están mapeadas a sus carteras DOG vigiladas.",
+    "rd.gh": "Mapa del clúster del Vault&nbsp;#1",
+    "rd.lg1": "Vault #1",
+    "rd.lg2": "Cartera de exchange",
+    "rd.lg3": "Cartera intermediaria",
+    "rd.lg4": "Cartera nueva",
+    "rd.note": "Pasa el cursor sobre un nodo para inspeccionarlo; haz clic para abrirlo en mempool.space. Gate, Bitget y MEXC están mapeadas a sus carteras DOG vigiladas. Las aristas rojas muestran supply yendo hacia una cartera de exchange; el naranja muestra movimiento hacia una cartera nueva.",
+    "rd.fh": "Noticias on-chain",
+    "rd.src": "Fuente: dogdata.xyz. Haz clic en cualquier elemento para verificarlo en mempool.space. Nada aquí es una acusación; es el patrón público de la cadena, con matices.",
     "vf.view": "Ver ↗",
     "vf.download": "Descargar ↓",
     "vf.archiveNote": "Lee cualquier documento directo en el navegador — o descárgalo, si prefieres. Sin registro, nada que instalar.",
@@ -600,6 +615,9 @@ window.DOG_I18N = {
     "fight.ctap": "Si pagaste la comisión, el blockspace es tuyo — ese es el punto entero de Bitcoin. Esto es defensa de política de protocolo: nuestra opinión sobre el rumbo de Bitcoin, no consejo financiero ni coordinación de mercado.",
     "fight.ctab1": "Leer el debate completo",
     "fight.ctab2": "Cómo llegamos hasta aquí",
+    "fight.sigtag": "Señal en vivo · los datos están de nuestro lado",
+    "fight.sigq": "Tras 15 períodos de señalización, BIP-110 sigue sin lograr apoyo de los mineros — período actual <b>2 / 376</b> bloques (0,5%), histórico <b>40 / 28.600</b> bloques (0,1%). La abrumadora mayoría de los mineros, incluidos los mayores pools, no está señalizando a favor.",
+    "fight.sigl": "Ver el dato en X →",
     "t.k": "La tesis",
     "t.h": "Una comunidad abierta para separar señal, hype y acusación.",
     "t.lead": "El $DOG tiene una narrativa fuerte porque nació de una forma poco común: sin venta anticipada, sin asignación para el equipo y sin dueño. Nuestra tarea es probar lo que sea probable, marcar lo que aún es hipótesis y abandonar lo que no se sostiene.",
@@ -1054,4 +1072,23 @@ window.DOG_I18N = {
       if (e.key === "Escape" || e.key === "Esc") setOpen(false);
     });
   });
+})();
+
+/* Hero video: mount the source and play only after the page finishes loading,
+   so the heavy .mp4 stays off the critical path (the poster paints instantly).
+   Graceful: with JS disabled the poster simply stays. CSP-safe (script-src 'self'). */
+(function () {
+  function mount() {
+    var v = document.querySelector("video[data-hero-video]");
+    if (!v) return;
+    var s = v.querySelector("source[data-src]");
+    if (s && !s.getAttribute("src")) {
+      s.setAttribute("src", s.getAttribute("data-src"));
+      v.load();
+    }
+    var p = v.play();
+    if (p && typeof p.catch === "function") p.catch(function () {});
+  }
+  if (document.readyState === "complete") mount();
+  else window.addEventListener("load", mount);
 })();
