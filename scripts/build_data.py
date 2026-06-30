@@ -30,7 +30,7 @@ FIRST_RUN_EVENTS = 12
 # Watched wallets.
 NODES = [
     {"id": "cofre", "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn",
-     "label": "Vault #1", "kind": "whale", "community": None, "feed": True},
+     "label": "Vault #1", "kind": "cofre", "community": None, "feed": True},
     {"id": "h2", "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv",
      "label": "Top #2", "kind": "holder", "community": "Gate", "feed": False},
     {"id": "h3", "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k",

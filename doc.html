@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documento · DOG ARMY</title>
+<meta name="description" content="Visualizador de documentos de transparência da DOG ARMY — leia qualquer relatório on-chain do $DOG direto no navegador.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/public/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+<link rel="preload" href="/public/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<style>
+.doc-top{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 24px;background:linear-gradient(90deg,rgba(124,43,10,.96),rgba(191,77,24,.94) 42%,rgba(236,121,35,.9) 100%);border-bottom:1px solid rgba(255,199,130,.28);box-shadow:0 14px 34px rgba(0,0,0,.26)}
+.doc-top .brand-logo img{display:block;height:48px;width:auto}
+.doc-top-actions{display:flex;gap:10px;align-items:center}
+.doc-top-actions .btn{min-height:40px;padding:9px 16px;font-size:13px}
+.doc-wrap{max-width:840px;margin:0 auto;padding:46px 24px 110px}
+.doc-meta{display:block;color:var(--muted);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:760;margin-bottom:18px}
+.doc-prose{color:var(--text);font-size:16px;line-height:1.72}
+.doc-prose h1{font-size:clamp(28px,4.4vw,42px);line-height:1.08;letter-spacing:-.025em;font-weight:860;margin:0 0 16px;color:var(--ink)}
+.doc-prose h2{font-size:24px;font-weight:820;letter-spacing:-.01em;margin:38px 0 12px;padding-top:26px;border-top:1px solid var(--line)}
+.doc-prose h3{font-size:18px;font-weight:780;margin:26px 0 8px;color:var(--ink)}
+.doc-prose h4,.doc-prose h5,.doc-prose h6{font-size:15px;font-weight:780;margin:20px 0 6px;color:var(--ink)}
+.doc-prose p{margin:0 0 14px}
+.doc-prose ul,.doc-prose ol{margin:0 0 16px;padding-left:24px}
+.doc-prose li{margin:5px 0}
+.doc-prose li::marker{color:var(--orange)}
+.doc-prose a{color:var(--orange);border-bottom:1px solid rgba(247,147,26,.4);font-weight:600}
+.doc-prose a:hover{border-bottom-color:var(--orange)}
+.doc-prose strong{color:var(--ink);font-weight:780}
+.doc-prose em{color:var(--text)}
+.doc-prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);padding:1px 6px;border-radius:6px;overflow-wrap:anywhere}
+.doc-prose pre{background:#0c0f13;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;margin:0 0 16px}
+.doc-prose pre code{background:none;border:0;padding:0;font-size:13.5px}
+.doc-prose blockquote{margin:0 0 16px;padding:10px 16px;border-left:3px solid var(--orange);background:rgba(255,92,0,.07);border-radius:0 10px 10px 0}
+.doc-prose hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+.doc-prose table{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:14.5px;display:block;overflow-x:auto}
+.doc-prose th,.doc-prose td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+.doc-prose th{background:rgba(255,255,255,.05);font-weight:780;color:var(--ink);white-space:nowrap}
+.doc-status{color:var(--muted);padding:50px 0;font-size:15px}
+.doc-status a{color:var(--orange);border-bottom:1px solid rgba(247,147,26,.4)}
+@media(max-width:600px){.doc-wrap{padding:30px 18px 80px}.doc-top{padding:10px 16px}.doc-top .brand-logo img{height:40px}}
+</style>
+</head>
+<body>
+<header class="doc-top">
+  <a class="brand" href="/" aria-label="DOG ARMY — início"><span class="brand-logo"><img src="/public/dog-army-logo.png" alt="DOG ARMY"></span></a>
+  <div class="doc-top-actions">
+    <a class="btn secondary" id="dlBtn" href="#" download>Baixar ↓</a>
+    <a class="btn secondary" href="/#verificar">← Voltar</a>
+  </div>
+</header>
+<main class="doc-wrap">
+  <span class="doc-meta" id="docMeta">DOG ARMY · documento de transparência</span>
+  <article id="doc" class="doc-prose"><p class="doc-status">Carregando documento…</p></article>
+</main>
+<script src="/doc.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

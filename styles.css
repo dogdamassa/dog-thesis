@@ -93,9 +93,9 @@ nav{
 }
 .brand-col{
   display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:5px;
+  flex-direction:row;
+  align-items:center;
+  gap:16px;
 }
 .brand{
   display:flex;
@@ -844,8 +844,16 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
   font-variant-numeric:tabular-nums;
 }
 .market-ticker.is-stale strong{color:rgba(255,247,239,.54)}
-/* price pill sits directly under the DOG ARMY logo, in the brand column */
-.brand-col .market-ticker{align-self:flex-start}
+/* price pill lives on the right of the nav, next to the language flags + CTA */
+.market-ticker{flex:0 0 auto}
+/* on phones: logo + flags/menu on the top row; the price pill on its own tidy,
+   centered row below (hugging its content, never a stretched empty bar). */
+@media(max-width:600px){
+  nav{flex-wrap:wrap;row-gap:12px}
+  .brand-col{order:1}
+  .nav-right{order:2}
+  .market-ticker{order:3;flex:0 1 auto;flex-basis:100%;justify-content:center}
+}
 .langsw{
   display:flex;
   align-items:center;
@@ -1941,3 +1949,50 @@ html{overflow-x:hidden}
 .doc-actions{display:flex;gap:8px;margin-top:12px}
 .doc-actions a{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:800;padding:6px 13px;border-radius:999px;border:1px solid currentColor;color:inherit;opacity:.78;text-decoration:none;transition:opacity .15s ease,background .15s ease}
 .doc-actions a:hover{opacity:1;background:rgba(127,127,127,.14)}
+
+/* === i18n nav fit ===
+   PT/ES nav labels run longer than English, so the sticky header row overflowed
+   at laptop widths (the "Join the army" CTA got clipped). Tighten the nav only
+   for the heavier languages, and hand off to the hamburger/drawer earlier for
+   them. */
+/* All languages: full links + CTA overflowed between ~900 and 1180px (the CTA
+   was re-shown by a later min-width:901 rule). Compact the links and drop the
+   nav CTA in that band — the hero and footer keep their own CTAs. */
+@media (min-width:901px) and (max-width:1180px){
+  .navlinks{gap:16px}
+  .navlinks a{font-size:13px}
+  nav .nav-cta{display:none}
+}
+/* Below 1024px even the short English labels don't fit beside the brand + price
+   ticker — hand every language off to the hamburger/drawer. */
+@media (min-width:901px) and (max-width:1024px){
+  .navlinks{display:none}
+  nav .nav-cta{display:none}
+  .navtoggle{display:inline-flex}
+  .navdrawer{display:block}
+  .navscrim:not([hidden]){display:block}
+}
+html[lang="pt-BR"] .navlinks,
+html[lang="es"]    .navlinks{gap:15px}
+html[lang="pt-BR"] .navlinks a,
+html[lang="es"]    .navlinks a{font-size:13px}
+html[lang="pt-BR"] nav,
+html[lang="es"]    nav{gap:14px}
+/* Mid widths: keep the inline links (compact) but drop the CTA so nothing clips. */
+@media (min-width:1181px) and (max-width:1366px){
+  html[lang="pt-BR"] .nav-cta,
+  html[lang="es"]    .nav-cta{display:none}
+}
+/* Narrow desktop: the longer labels can't fit inline at all → use the drawer. */
+@media (min-width:901px) and (max-width:1180px){
+  html[lang="pt-BR"] .navlinks,
+  html[lang="es"]    .navlinks{display:none}
+  html[lang="pt-BR"] .nav-cta,
+  html[lang="es"]    .nav-cta{display:none}
+  html[lang="pt-BR"] .navtoggle,
+  html[lang="es"]    .navtoggle{display:inline-flex}
+  html[lang="pt-BR"] .navdrawer,
+  html[lang="es"]    .navdrawer{display:block}
+  html[lang="pt-BR"] .navscrim:not([hidden]),
+  html[lang="es"]    .navscrim:not([hidden]){display:block}
+}

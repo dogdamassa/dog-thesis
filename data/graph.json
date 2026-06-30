@@ -5,7 +5,7 @@
     {
       "id": "cofre",
       "label": "Vault #1",
-      "kind": "whale",
+      "kind": "cofre",
       "community": null,
       "confirmed": true,
       "balance_dog": 12343981694.32207,

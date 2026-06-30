@@ -136,14 +136,6 @@
       <a class="brand" href="#top" aria-label="Back to top">
         <span class="brand-logo"><img src="public/dog-army-logo.png" alt="DOG ARMY"></span>
       </a>
-      <div class="market-ticker" id="marketTicker" aria-label="Market prices from CoinGecko">
-        <a href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener" aria-label="Bitcoin price on CoinGecko">
-          <span>BTC</span><strong id="btcPrice">...</strong>
-        </a>
-        <a href="https://www.coingecko.com/en/coins/dog-go-to-the-moon-rune" target="_blank" rel="noopener" aria-label="DOG price on CoinGecko">
-          <span>DOG</span><strong id="dogPrice">...</strong>
-        </a>
-      </div>
     </div>
     <div class="navlinks" aria-label="Main navigation">
       <a href="#historia" data-i18n="nav.history">Story</a>
@@ -167,6 +159,14 @@
       </div>
       <a href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </div>
+    <div class="market-ticker" id="marketTicker" aria-label="Market prices from CoinGecko">
+      <a href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener" aria-label="Bitcoin price on CoinGecko">
+        <span>BTC</span><strong id="btcPrice">...</strong>
+      </a>
+      <a href="https://www.coingecko.com/en/coins/dog-go-to-the-moon-rune" target="_blank" rel="noopener" aria-label="DOG price on CoinGecko">
+        <span>DOG</span><strong id="dogPrice">...</strong>
+      </a>
     </div>
     <div class="nav-right">
       <div class="langsw" id="langsw" aria-label="Language"></div>
@@ -864,5 +864,6 @@ var observer=new IntersectionObserver(function(entries){
 },{rootMargin:'-42% 0px -54% 0px',threshold:.01});
 sections.forEach(function(section){observer.observe(section);});
 </script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
