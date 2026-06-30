@@ -6,8 +6,7 @@ name: Radar diário do $DOG
 
 on:
   schedule:
-    - cron: "0 11 * * *"    # 08:00 no horário de Brasília (11:00 UTC)
-    - cron: "0 23 * * *"    # 20:00 no horário de Brasília (23:00 UTC)
+    - cron: "0 * * * *"     # de hora em hora (minuto 0, UTC) — atualiza o fluxo das CEX
   workflow_dispatch: {}      # botão "Run workflow" pra rodar na hora
 
 permissions:
