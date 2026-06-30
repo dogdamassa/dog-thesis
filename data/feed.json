@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-06-30T22:09:10.255199+00:00",
+  "updated_at": "2026-06-30T23:58:31.157368+00:00",
   "events": [
+    {
+      "id": "bal-2026-06-30",
+      "ts": "2026-06-30T23:58:31.157368+00:00",
+      "type": "balance_change",
+      "amount_dog": 11710283.740261078,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
+    {
+      "id": "292314bb8eb85eee4bdf3e5b60b1b581967395d285776ef2c8d518f98a3c569b",
+      "ts": "2026-06-30T23:13:03+00:00",
+      "type": "relay_flow",
+      "amount_dog": 8126421.68,
+      "level": "watch",
+      "from_label": "unmapped wallet",
+      "to_label": "Intermediary Wallet #2",
+      "from_id": null,
+      "to_id": "int2",
+      "community": null,
+      "txid": "292314bb8eb85eee4bdf3e5b60b1b581967395d285776ef2c8d518f98a3c569b"
+    },
     {
       "id": "99c1cca52b0b1b165740c7454417253682108b8b738c66cad64a27b3fcd4edcb",
       "ts": "2026-06-30T19:53:59+00:00",
@@ -52,19 +78,6 @@
       "to_id": "int2",
       "community": null,
       "txid": "39c22f3c3ab158a3da43c0d318fa58f695223a773f4be1d2f682443107ba9a30"
-    },
-    {
-      "id": "bal-2026-06-30",
-      "ts": "2026-06-30T17:26:43.191561+00:00",
-      "type": "balance_change",
-      "amount_dog": 7275707.2528915405,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     },
     {
       "id": "0d6ef4648ead349e5c851b00ff57f3b069ead0ed82d89b824de047c3a4f2a609",
