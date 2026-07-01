@@ -1845,6 +1845,9 @@ html{overflow-x:hidden}
 .rd-exchip-bot{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .rd-exchip-bot span{color:var(--muted);font-family:var(--font-mono);font-size:11px}
 .rd-exchip-bot em{font-style:normal;font-weight:600;font-family:var(--font-mono);font-size:11px}
+.rd-flows-ex .rd-exchip.rd-hidden{display:none}
+.rd-flows-ex.rd-ex-open .rd-exchip.rd-hidden{display:flex}
+.rd-extoggle{flex:1 1 100%;max-width:none;margin-top:2px}
 .rd-up{color:var(--mint)}.rd-down{color:#e5484d}
 .rd-flows-list{display:flex;flex-direction:column;gap:7px}
 .rd-flow{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:10px;

@@ -252,6 +252,24 @@
   };
   var LESS_LBL = { en: "Show less ▴", pt: "Ver menos ▴", es: "Ver menos ▴",
                    it: "Mostra meno ▴", zh: "收起 ▴" };
+  var MORE_GEN = { en: "Show more ▾", pt: "Ver mais ▾", es: "Ver más ▾",
+                   it: "Mostra altre ▾", zh: "显示更多 ▾" };
+  function exchipHtml(x) {
+    var ch = (x.change24h == null) ? "" :
+      '<i class="' + (x.change24h >= 0 ? "rd-up" : "rd-down") + '">' +
+      (x.change24h >= 0 ? "▲" : "▼") + Math.abs(x.change24h).toFixed(1) + "%</i>";
+    var buy = x.buy_dog || 0, sell = x.sell_dog || 0, tot = buy + sell;
+    var buyPct = tot ? Math.round(buy / tot * 100) : 50;
+    var net = x.net_dog || 0;
+    var netStr = (net >= 0 ? "+" : "−") + fmtDog(Math.abs(net));
+    var bar = tot ? '<div class="rd-exbar" title="buy ' + buyPct + "% · sell " +
+      (100 - buyPct) + '%"><span class="rd-exbar-buy" style="width:' + buyPct + '%"></span></div>' : "";
+    return '<a class="rd-exchip" href="' + esc(x.link) + '" target="_blank" rel="noopener">' +
+      '<div class="rd-exchip-top"><b>' + esc(x.name) + "</b>" + ch + "</div>" + bar +
+      '<div class="rd-exchip-bot"><span>' + fmtDog(x.vol24h_dog) + " / 24h</span>" +
+      (tot ? '<em class="' + (net >= 0 ? "rd-up" : "rd-down") + '">net ' + netStr + "</em>" : "") +
+      "</div></a>";
+  }
   function flowItem(e) {
     var buy = e.side === "buy";
     return '<a class="rd-flow rd-' + (buy ? "buy" : "sell") + '" href="' + esc(e.link) +
@@ -267,22 +285,28 @@
     var upd = document.getElementById("rd-flows-updated");
     if (!exEl || !listEl) return;
     if (!fl) { listEl.innerHTML = '<div class="rd-empty">flow data unavailable</div>'; return; }
-    exEl.innerHTML = (fl.exchanges || []).filter(function (x) { return x.ok; }).map(function (x) {
-      var ch = (x.change24h == null) ? "" :
-        '<i class="' + (x.change24h >= 0 ? "rd-up" : "rd-down") + '">' +
-        (x.change24h >= 0 ? "▲" : "▼") + Math.abs(x.change24h).toFixed(1) + "%</i>";
-      var buy = x.buy_dog || 0, sell = x.sell_dog || 0, tot = buy + sell;
-      var buyPct = tot ? Math.round(buy / tot * 100) : 50;
-      var net = x.net_dog || 0;
-      var netStr = (net >= 0 ? "+" : "−") + fmtDog(Math.abs(net));
-      var bar = tot ? '<div class="rd-exbar" title="buy ' + buyPct + "% · sell " +
-        (100 - buyPct) + '%"><span class="rd-exbar-buy" style="width:' + buyPct + '%"></span></div>' : "";
-      return '<a class="rd-exchip" href="' + esc(x.link) + '" target="_blank" rel="noopener">' +
-        '<div class="rd-exchip-top"><b>' + esc(x.name) + "</b>" + ch + "</div>" + bar +
-        '<div class="rd-exchip-bot"><span>' + fmtDog(x.vol24h_dog) + " / 24h</span>" +
-        (tot ? '<em class="' + (net >= 0 ? "rd-up" : "rd-down") + '">net ' + netStr + "</em>" : "") +
-        "</div></a>";
-    }).join("");
+    // exchanges: most active first, cap at FLOWS_SHOWN, rest behind a toggle
+    var chips = (fl.exchanges || []).filter(function (x) { return x.ok; })
+      .sort(function (a, b) { return (b.vol24h_dog || 0) - (a.vol24h_dog || 0); })
+      .map(exchipHtml);
+    if (chips.length <= FLOWS_SHOWN) {
+      exEl.classList.remove("rd-ex-open");
+      exEl.innerHTML = chips.join("");
+    } else {
+      var elang = curLang();
+      exEl.classList.remove("rd-ex-open");
+      exEl.innerHTML = chips.map(function (c, i) {
+        return i < FLOWS_SHOWN ? c : c.replace("rd-exchip", "rd-exchip rd-hidden");
+      }).join("") +
+        '<button type="button" class="rd-flows-toggle rd-extoggle" aria-expanded="false">' +
+        (MORE_GEN[elang] || MORE_GEN.en) + "</button>";
+      var ebtn = exEl.querySelector(".rd-extoggle");
+      ebtn.addEventListener("click", function () {
+        var open = exEl.classList.toggle("rd-ex-open");
+        ebtn.textContent = open ? (LESS_LBL[elang] || LESS_LBL.en) : (MORE_GEN[elang] || MORE_GEN.en);
+        ebtn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    }
     var n = fl.notable || [];
     if (!n.length) {
       listEl.innerHTML = '<div class="rd-empty">No big orders in the recent window.</div>';
