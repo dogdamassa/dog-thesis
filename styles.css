@@ -1834,12 +1834,17 @@ html{overflow-x:hidden}
 .rd-flows-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
 .rd-flows-head h3{font-size:15px;margin:0;color:var(--ink)}
 .rd-flows-ex{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}
-.rd-exchip{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:10px;
+.rd-exchip{display:flex;flex-direction:column;gap:6px;padding:9px 12px;border-radius:10px;min-width:138px;flex:1 1 138px;max-width:200px;
   background:var(--surface-2);border:1px solid var(--line);font-size:12px;transition:border-color .15s}
 .rd-exchip:hover{border-color:#3a4654}
+.rd-exchip-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .rd-exchip b{color:var(--ink);font-size:12.5px}
-.rd-exchip span{color:var(--muted);font-family:var(--font-mono)}
-.rd-exchip i{font-style:normal;font-weight:600;font-family:var(--font-mono)}
+.rd-exchip i{font-style:normal;font-weight:600;font-family:var(--font-mono);font-size:11.5px}
+.rd-exbar{height:5px;border-radius:3px;background:#e5484d;overflow:hidden}
+.rd-exbar-buy{display:block;height:100%;background:var(--mint)}
+.rd-exchip-bot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.rd-exchip-bot span{color:var(--muted);font-family:var(--font-mono);font-size:11px}
+.rd-exchip-bot em{font-style:normal;font-weight:600;font-family:var(--font-mono);font-size:11px}
 .rd-up{color:var(--mint)}.rd-down{color:#e5484d}
 .rd-flows-list{display:flex;flex-direction:column;gap:7px}
 .rd-flow{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:10px;

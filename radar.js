@@ -270,9 +270,18 @@
     exEl.innerHTML = (fl.exchanges || []).filter(function (x) { return x.ok; }).map(function (x) {
       var ch = (x.change24h == null) ? "" :
         '<i class="' + (x.change24h >= 0 ? "rd-up" : "rd-down") + '">' +
-        (x.change24h >= 0 ? "+" : "") + x.change24h.toFixed(1) + "%</i>";
+        (x.change24h >= 0 ? "▲" : "▼") + Math.abs(x.change24h).toFixed(1) + "%</i>";
+      var buy = x.buy_dog || 0, sell = x.sell_dog || 0, tot = buy + sell;
+      var buyPct = tot ? Math.round(buy / tot * 100) : 50;
+      var net = x.net_dog || 0;
+      var netStr = (net >= 0 ? "+" : "−") + fmtDog(Math.abs(net));
+      var bar = tot ? '<div class="rd-exbar" title="buy ' + buyPct + "% · sell " +
+        (100 - buyPct) + '%"><span class="rd-exbar-buy" style="width:' + buyPct + '%"></span></div>' : "";
       return '<a class="rd-exchip" href="' + esc(x.link) + '" target="_blank" rel="noopener">' +
-        "<b>" + esc(x.name) + "</b><span>" + fmtDog(x.vol24h_dog) + " DOG / 24h</span>" + ch + "</a>";
+        '<div class="rd-exchip-top"><b>' + esc(x.name) + "</b>" + ch + "</div>" + bar +
+        '<div class="rd-exchip-bot"><span>' + fmtDog(x.vol24h_dog) + " / 24h</span>" +
+        (tot ? '<em class="' + (net >= 0 ? "rd-up" : "rd-down") + '">net ' + netStr + "</em>" : "") +
+        "</div></a>";
     }).join("");
     var n = fl.notable || [];
     if (!n.length) {
