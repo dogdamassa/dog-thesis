@@ -1,18 +1,57 @@
 {
-  "updated_at": "2026-07-03T17:13:29.194321+00:00",
+  "updated_at": "2026-07-03T19:01:54.582103+00:00",
   "events": [
     {
       "id": "bal-2026-07-03",
-      "ts": "2026-07-03T13:42:37.712929+00:00",
+      "ts": "2026-07-03T19:01:54.582103+00:00",
       "type": "balance_change",
-      "amount_dog": 260972738.47299957,
+      "amount_dog": 31745754.244680405,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "-",
+      "sign": "+",
       "txid": null
+    },
+    {
+      "id": "31a771bb6c5efbb22421eb652be83508a709db227121ef80e9766cc97a71dad4",
+      "ts": "2026-07-03T18:50:18+00:00",
+      "type": "relay_flow",
+      "amount_dog": 2630361.5,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Intermediary Wallet #1",
+      "from_id": "cofre",
+      "to_id": "int1",
+      "community": null,
+      "txid": "31a771bb6c5efbb22421eb652be83508a709db227121ef80e9766cc97a71dad4"
+    },
+    {
+      "id": "d5944cfe131ff2caeaf55f3b64a6c4cacca1e708e1232feab96dc3b020a7c48b",
+      "ts": "2026-07-03T18:46:36+00:00",
+      "type": "relay_flow",
+      "amount_dog": 3327077.66,
+      "level": "watch",
+      "from_label": "Intermediary Wallet #1",
+      "to_label": "Top #3",
+      "from_id": "int1",
+      "to_id": "h3",
+      "community": null,
+      "txid": "d5944cfe131ff2caeaf55f3b64a6c4cacca1e708e1232feab96dc3b020a7c48b"
+    },
+    {
+      "id": "d98d3cbd2f96401b19a7eede7c8e62ed4ea6fbc381e0c1919d6e97abc0a7bd7f",
+      "ts": "2026-07-03T18:36:24+00:00",
+      "type": "relay_flow",
+      "amount_dog": 3327077.66,
+      "level": "watch",
+      "from_label": "unmapped wallet",
+      "to_label": "Intermediary Wallet #1",
+      "from_id": null,
+      "to_id": "int1",
+      "community": null,
+      "txid": "d98d3cbd2f96401b19a7eede7c8e62ed4ea6fbc381e0c1919d6e97abc0a7bd7f"
     },
     {
       "id": "bal-2026-07-02",

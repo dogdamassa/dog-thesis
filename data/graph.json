@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03T17:13:29.194321+00:00",
+  "updated_at": "2026-07-03T19:01:54.582103+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12106513585.99539,
+      "balance_dog": 12138259340.24007,
       "rank": 1,
-      "pct": 12.11,
+      "pct": 12.14,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -82,20 +82,20 @@
   ],
   "edges": [
     {
-      "from": "int1",
-      "to": "h3",
-      "from_label": "Intermediary Wallet #1",
-      "to_label": "Top #3",
-      "dog": 248406021,
-      "count": 43
-    },
-    {
       "from": "cofre",
       "to": "int1",
       "from_label": "Vault #1",
       "to_label": "Intermediary Wallet #1",
-      "dog": 18863422,
-      "count": 7
+      "dog": 21493784,
+      "count": 8
+    },
+    {
+      "from": "int1",
+      "to": "h3",
+      "from_label": "Intermediary Wallet #1",
+      "to_label": "Top #3",
+      "dog": 251733099,
+      "count": 44
     },
     {
       "from": "h2",
