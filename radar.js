@@ -42,6 +42,10 @@
         return "Vault #1 received " + a + ".";
       case "relay_flow":
         return esc(e.from_label) + " to " + to + ": " + a + ". Movement inside the cluster.";
+      case "exchange_in":
+        return esc(e.from_label) + " sent " + a + " to " + to + ". More DOG parked at an exchange wallet.";
+      case "exchange_out":
+        return esc(e.from_label) + " sent " + a + " to " + to + ". DOG left the exchange wallet.";
       case "balance_change":
         return "Vault #1 balance moved <b>" + (e.sign || "") + fmtDog(e.amount_dog) + " DOG</b> today.";
       default:

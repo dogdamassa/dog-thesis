@@ -127,7 +127,6 @@
   <div class="wrap alertbar-inner">
     <span class="pulse" data-i18n="alert.label">Exchange watch</span>
     <span class="msg" data-i18n="alert.msg"><b>Gate removed DOG perps. MEXC reopened DOG withdrawals — working again.</b> Track the wallet evidence, not market narratives.</span>
-    <a class="verify" href="#carteiras" data-i18n="alert.link">Verify wallets →</a>
   </div>
 </aside>
 <header>
@@ -170,7 +169,11 @@
     </div>
     <div class="nav-right">
       <div class="langsw" id="langsw" aria-label="Language"></div>
-      <a class="nav-cta" href="#colaborar" data-i18n="nav.cta">Join the army</a>
+      <button type="button" class="nav-wallet" id="walletBtn" aria-haspopup="dialog">
+        <span class="nav-wallet-dot" aria-hidden="true"></span>
+        <span id="walletBtnText" data-i18n="wl.btn">Connect Wallet</span>
+        <span class="nav-wallet-addr" id="walletBtnAddr" hidden></span>
+      </button>
       <button type="button" class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="navdrawer"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -196,8 +199,45 @@
     <a class="navdrawer-link" href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
     <a class="navdrawer-link" href="#faq" data-i18n="nav.faq">FAQ</a>
     <a class="navdrawer-cta" href="#colaborar" data-i18n="nav.cta">Join the army</a>
+    <button type="button" class="navdrawer-wallet" id="walletBtnDrawer">
+      <span class="nav-wallet-dot" aria-hidden="true"></span>
+      <span data-i18n="wl.btn">Connect Wallet</span>
+    </button>
   </nav>
 </aside>
+
+<div class="wscrim" id="walletScrim" hidden></div>
+<div class="wmodal" id="walletModal" role="dialog" aria-modal="true" aria-labelledby="walletTitle" hidden>
+  <button type="button" class="wmodal-close" id="walletClose" aria-label="Close">×</button>
+  <h3 id="walletTitle" data-i18n="wl.title">Connect your wallet</h3>
+  <p class="wmodal-sub" data-i18n="wl.sub">See your own $DOG, straight from the Bitcoin chain. Read-only: this site can never touch or move your coins.</p>
+
+  <div class="wmodal-state" id="walletNone" hidden>
+    <p data-i18n="wl.none">KRAY Wallet was not found in this browser. It is a self-custody wallet made for Bitcoin, Ordinals and Runes — like $DOG.</p>
+    <a class="wmodal-btn" href="https://kray.space/install-extension" target="_blank" rel="noopener" data-i18n="wl.install">Install KRAY Wallet ↗</a>
+    <p class="wmodal-note" data-i18n="wl.noneNote">Already installed? Reload this page with the extension enabled.</p>
+  </div>
+
+  <div class="wmodal-state" id="walletReady" hidden>
+    <button type="button" class="wmodal-btn" id="walletConnect" data-i18n="wl.connect">Connect KRAY Wallet</button>
+    <p class="wmodal-note" data-i18n="wl.readyNote">KRAY will ask for your permission. The site only reads your address and balance — nothing else.</p>
+  </div>
+
+  <div class="wmodal-state" id="walletBusy" hidden>
+    <p data-i18n="wl.busy">Waiting for KRAY Wallet… check the extension popup.</p>
+  </div>
+
+  <div class="wmodal-state" id="walletInfo" hidden>
+    <div class="wmodal-row"><span data-i18n="wl.addr">Address</span><code id="walletAddr">—</code></div>
+    <div class="wmodal-row"><span>$DOG</span><strong id="walletDog">—</strong></div>
+    <div class="wmodal-row"><span>Bitcoin</span><strong id="walletBtc">—</strong></div>
+    <p class="wmodal-note" data-i18n="wl.selfNote">These coins are in your self-custody. No exchange can freeze them.</p>
+    <button type="button" class="wmodal-ghost" id="walletDisconnect" data-i18n="wl.disconnect">Disconnect</button>
+  </div>
+
+  <p class="wmodal-err" id="walletErr" hidden data-i18n="wl.err">The wallet did not respond or the connection was refused. Try again.</p>
+  <p class="wmodal-err" id="walletLocked" hidden data-i18n="wl.locked">Your KRAY Wallet is locked. Click the KRAY icon in your browser toolbar to unlock it, then try again.</p>
+</div>
 
 <main id="top">
 
@@ -820,6 +860,7 @@
 
 <script src="/i18n.js"></script>
 <script src="/radar.js" defer></script>
+<script src="/wallet.js" defer></script>
 <script>
 (function(){
   var ticker = document.getElementById('marketTicker');

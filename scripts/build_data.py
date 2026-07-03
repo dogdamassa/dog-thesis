@@ -24,6 +24,9 @@ os.makedirs(DATA, exist_ok=True)
 API = "https://www.dogdata.xyz/api/address/bitcoin/"
 SUPPLY = 100_000_000_000          # supply total do DOG (100B)
 MIN_DOG = 1_000_000               # ignora poeira < 1M DOG no feed/grafo
+EXCHANGE_MIN_DOG = 5_000_000      # carteiras de corretora giram muito; so vira
+                                  # noticia >= 5M DOG (mesmo corte de "ordem
+                                  # grande" do flows.py)
 FEED_MAX = 60
 FIRST_RUN_EVENTS = 12
 
@@ -32,11 +35,11 @@ NODES = [
     {"id": "cofre", "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn",
      "label": "Vault #1", "kind": "cofre", "community": None, "feed": True},
     {"id": "h2", "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv",
-     "label": "Top #2", "kind": "holder", "community": "Gate", "feed": False},
+     "label": "Top #2", "kind": "holder", "community": "Gate", "feed": True},
     {"id": "h3", "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k",
-     "label": "Top #3", "kind": "holder", "community": "Bitget", "feed": False},
+     "label": "Top #3", "kind": "holder", "community": "Bitget", "feed": True},
     {"id": "mexc", "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu",
-     "label": "MEXC Wallet", "kind": "holder", "community": "MEXC", "feed": False},
+     "label": "MEXC Wallet", "kind": "holder", "community": "MEXC", "feed": True},
     {"id": "int1", "addr": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar",
      "label": "Intermediary Wallet #1", "kind": "relay", "community": "bridge to Bitget", "feed": True},
     {"id": "int2", "addr": "bc1p52673nrtsed5n5nal7cm02u6pg63p0e6u4nm2fhm90xd8r4w3ass090zzy",
@@ -115,8 +118,14 @@ def run():
     feed = load_json("feed.json", {"events": []}).get("events", [])
     new_events = []
     edge_acc = {}  # (from_id|addr, to_id|addr) -> {dog, count}
+    seen_edge_tx = set()  # (txid, from, to): 2 nos vigiados veem a MESMA tx
 
-    def add_edge(frm_addr, to_addr, dog):
+    def add_edge(frm_addr, to_addr, dog, txid=None):
+        if txid:
+            k = (txid, frm_addr, to_addr)
+            if k in seen_edge_tx:
+                return
+            seen_edge_tx.add(k)
         fl, fid, _, _ = label_for(frm_addr)
         tl, tid, _, _ = label_for(to_addr)
         key = (fid or frm_addr, tid or to_addr)
@@ -139,13 +148,14 @@ def run():
                 continue
             direction = t.get("direction")
             cp = t.get("counterparty") or ""
-            # arestas do grafo (estado ATUAL; so cofre/intermediarios p/ nao duplicar).
+            # arestas do grafo (estado ATUAL). dedup por txid: quando os dois
+            # lados sao vigiados, cada um reporta a mesma tx.
             # cp vazio = consolidacao do mesmo dono (troco) -> nao e aresta real.
-            if cp and n["kind"] in ("whale", "relay"):
+            if cp and n["kind"] in ("cofre", "relay", "holder"):
                 if direction == "out":
-                    add_edge(n["addr"], cp, amt)
+                    add_edge(n["addr"], cp, amt, t.get("txid"))
                 else:
-                    add_edge(cp, n["addr"], amt)
+                    add_edge(cp, n["addr"], amt, t.get("txid"))
             # Only emit watched feed nodes newer than the watermark.
             if not n.get("feed") or not ts or ts <= last:
                 continue
@@ -255,7 +265,7 @@ def run():
 def classify(node, direction, cp, amt, ts, txid):
     """Transforma uma transacao numa noticia estruturada (bilingue no front)."""
     cp_node = BY_ADDR.get(cp)
-    if node["kind"] == "whale":
+    if node["kind"] == "cofre":
         if direction == "out":
             if cp_node and cp_node["kind"] == "holder":
                 return mk("cofre_out_exchange", amt, ts, txid, "alert",
@@ -270,6 +280,18 @@ def classify(node, direction, cp, amt, ts, txid):
         if direction == "out":
             return mk("relay_flow", amt, ts, txid, "watch", node["label"], lbl, node["id"], lid, None)
         return mk("relay_flow", amt, ts, txid, "watch", lbl, node["label"], lid, node["id"], None)
+    if node["kind"] == "holder":
+        # Carteira de corretora gira o dia todo; so noticia >= EXCHANGE_MIN_DOG.
+        if amt < EXCHANGE_MIN_DOG:
+            return None
+        lbl, lid, _, _ = label_for(cp)
+        # community marca o lado DESTINO no front ("mapped label"); so faz
+        # sentido quando a corretora e quem recebe.
+        if direction == "out":
+            return mk("exchange_out", amt, ts, txid, "info",
+                      node["label"], lbl, node["id"], lid or cp, None)
+        return mk("exchange_in", amt, ts, txid, "watch",
+                  lbl, node["label"], lid or cp, node["id"], node["community"])
     return None
 
 

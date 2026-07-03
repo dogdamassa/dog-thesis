@@ -500,7 +500,21 @@ window.DOG_I18N = {
     "rn.tl3when": "25 Abr 2024",
     "rn.dogCard1h": "889.806",
     "rn.dogCard2h": "100 bilhões",
-    "ft.disc": "Este material é informativo e educacional. Não é conselho financeiro, recomendação de compra ou venda, promessa de preço, acusação jurídica ou coordenação de mercado. A pesquisa descreve dados públicos e padrões observáveis, sempre com caveats."
+    "ft.disc": "Este material é informativo e educacional. Não é conselho financeiro, recomendação de compra ou venda, promessa de preço, acusação jurídica ou coordenação de mercado. A pesquisa descreve dados públicos e padrões observáveis, sempre com caveats.",
+    "wl.btn": "Conectar carteira",
+    "wl.title": "Conecte sua carteira",
+    "wl.sub": "Veja a sua $DOG direto da blockchain do Bitcoin. Somente leitura: o site não consegue tocar nem mover suas moedas.",
+    "wl.none": "Não encontramos a KRAY Wallet neste navegador. Ela é uma carteira de autocustódia feita para Bitcoin, Ordinals e Runes — como a $DOG.",
+    "wl.install": "Instalar a KRAY Wallet ↗",
+    "wl.noneNote": "Já instalou? Recarregue esta página com a extensão ativada.",
+    "wl.connect": "Conectar com a KRAY",
+    "wl.readyNote": "A KRAY vai pedir a sua permissão. O site lê apenas seu endereço e saldo — nada além disso.",
+    "wl.busy": "Esperando a KRAY Wallet… confira o popup da extensão.",
+    "wl.addr": "Endereço",
+    "wl.selfNote": "Essas moedas estão na sua autocustódia. Nenhuma corretora consegue congelá-las.",
+    "wl.disconnect": "Desconectar",
+    "wl.err": "A carteira não respondeu ou a conexão foi recusada. Tente de novo.",
+    "wl.locked": "Sua KRAY Wallet está bloqueada. Clique no ícone da KRAY na barra do navegador para desbloquear e tente de novo."
   },
   es: {
     "nav.radar": "Radar",
@@ -975,6 +989,20 @@ window.DOG_I18N = {
     "rn.dogCard1h": "889.806",
     "rn.dogCard2h": "100 mil millones",
     "ft.disc": "Este material es informativo y educativo. No es consejo financiero, recomendación de compra o venta, promesa de precio, acusación jurídica ni coordinación de mercado. La investigación describe datos públicos y patrones observables, siempre con caveats.",
+    "wl.btn": "Conectar cartera",
+    "wl.title": "Conecta tu cartera",
+    "wl.sub": "Mira tus $DOG directo desde la blockchain de Bitcoin. Solo lectura: el sitio no puede tocar ni mover tus monedas.",
+    "wl.none": "No encontramos la KRAY Wallet en este navegador. Es una cartera de autocustodia hecha para Bitcoin, Ordinals y Runes — como $DOG.",
+    "wl.install": "Instalar KRAY Wallet ↗",
+    "wl.noneNote": "¿Ya la instalaste? Recarga esta página con la extensión activada.",
+    "wl.connect": "Conectar con KRAY",
+    "wl.readyNote": "KRAY te pedirá permiso. El sitio solo lee tu dirección y saldo — nada más.",
+    "wl.busy": "Esperando a KRAY Wallet… revisa el popup de la extensión.",
+    "wl.addr": "Dirección",
+    "wl.selfNote": "Esas monedas están en tu autocustodia. Ninguna casa de cambio puede congelarlas.",
+    "wl.disconnect": "Desconectar",
+    "wl.err": "La cartera no respondió o la conexión fue rechazada. Inténtalo de nuevo.",
+    "wl.locked": "Tu KRAY Wallet está bloqueada. Haz clic en el icono de KRAY en la barra del navegador para desbloquearla e inténtalo de nuevo."
   }
 };
 
