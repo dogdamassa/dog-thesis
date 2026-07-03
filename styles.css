@@ -2111,6 +2111,17 @@ html[lang="es"]    nav{gap:14px}
 }
 .wmodal-btn:hover{filter:brightness(1.06)}
 .wmodal-note{color:var(--muted);font-size:12.5px;margin-top:12px;margin-bottom:0}
+.wmodal-link{
+  display:block;
+  text-align:center;
+  margin-top:12px;
+  color:var(--warn);
+  font-size:13px;
+  font-weight:660;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.wmodal-link:hover{color:#fff}
 .wmodal-row{
   display:flex;align-items:center;justify-content:space-between;gap:12px;
   padding:11px 14px;

@@ -209,18 +209,20 @@
 <div class="wscrim" id="walletScrim" hidden></div>
 <div class="wmodal" id="walletModal" role="dialog" aria-modal="true" aria-labelledby="walletTitle" hidden>
   <button type="button" class="wmodal-close" id="walletClose" aria-label="Close">×</button>
-  <h3 id="walletTitle" data-i18n="wl.title">Connect your wallet</h3>
-  <p class="wmodal-sub" data-i18n="wl.sub">See your own $DOG, straight from the Bitcoin chain. Read-only: this site can never touch or move your coins.</p>
+  <h3 id="walletTitle" data-i18n="wl.title">Your keys. Your $DOG.</h3>
+  <p class="wmodal-sub" data-i18n="wl.sub"><b>KRAY Wallet</b> is a self-custody wallet for Bitcoin, Ordinals and Runes — built for holding $DOG the way the army preaches: your coins with you, not parked at an exchange that can freeze them.</p>
 
   <div class="wmodal-state" id="walletNone" hidden>
-    <p data-i18n="wl.none">KRAY Wallet was not found in this browser. It is a self-custody wallet made for Bitcoin, Ordinals and Runes — like $DOG.</p>
-    <a class="wmodal-btn" href="https://kray.space/install-extension" target="_blank" rel="noopener" data-i18n="wl.install">Install KRAY Wallet ↗</a>
-    <p class="wmodal-note" data-i18n="wl.noneNote">Already installed? Reload this page with the extension enabled.</p>
+    <p data-i18n="wl.none">You don't have KRAY in this browser yet. It's free and takes a minute:</p>
+    <a class="wmodal-btn" href="https://kray.space/install-extension" target="_blank" rel="noopener" data-i18n="wl.install">Get KRAY Wallet ↗</a>
+    <a class="wmodal-link" href="https://kray.space" target="_blank" rel="noopener" data-i18n="wl.meet">New to KRAY? Meet it first at kray.space ↗</a>
+    <p class="wmodal-note" data-i18n="wl.noneNote">Installed? Reload this page and hit Connect Wallet again.</p>
   </div>
 
   <div class="wmodal-state" id="walletReady" hidden>
-    <button type="button" class="wmodal-btn" id="walletConnect" data-i18n="wl.connect">Connect KRAY Wallet</button>
-    <p class="wmodal-note" data-i18n="wl.readyNote">KRAY will ask for your permission. The site only reads your address and balance — nothing else.</p>
+    <p data-i18n="wl.ready">KRAY found in this browser. Connect and see your address, your BTC and your $DOG — live from the chain.</p>
+    <button type="button" class="wmodal-btn" id="walletConnect" data-i18n="wl.connect">Connect</button>
+    <p class="wmodal-note" data-i18n="wl.readyNote">Read-only: this site can never touch or move your coins. KRAY asks your permission first.</p>
   </div>
 
   <div class="wmodal-state" id="walletBusy" hidden>
