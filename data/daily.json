@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-04T00:34:43.528731+00:00",
+  "updated_at": "2026-07-04T01:55:59.010669+00:00",
   "date": "2026-07-04",
   "source": "dogdata.xyz",
   "cofre": {
@@ -9,8 +9,8 @@
     "delta_dog": 0.0,
     "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
   },
-  "holders_total": 86318,
-  "holders_delta": 0,
+  "holders_total": 86319,
+  "holders_delta": 1,
   "exchanges": [
     {
       "id": "h2",
@@ -23,7 +23,7 @@
       "id": "h3",
       "label": "Top #3",
       "community": "Bitget",
-      "balance_dog": 2987311782.66062,
+      "balance_dog": 2982619723.2486,
       "rank": 3
     },
     {
