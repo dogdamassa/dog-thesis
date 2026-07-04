@@ -171,6 +171,7 @@
       <div class="langsw" id="langsw" aria-label="Language"></div>
       <button type="button" class="nav-wallet" id="walletBtn" aria-haspopup="dialog">
         <span class="nav-wallet-dot" aria-hidden="true"></span>
+        <img class="nav-wallet-pfp" id="walletBtnPfp" alt="Dog Social Club" hidden>
         <span id="walletBtnText" data-i18n="wl.btn">Connect Wallet</span>
         <span class="nav-wallet-addr" id="walletBtnAddr" hidden></span>
       </button>
@@ -201,6 +202,7 @@
     <a class="navdrawer-cta" href="#colaborar" data-i18n="nav.cta">Join the army</a>
     <button type="button" class="navdrawer-wallet" id="walletBtnDrawer">
       <span class="nav-wallet-dot" aria-hidden="true"></span>
+      <img class="nav-wallet-pfp" id="walletBtnPfpDrawer" alt="Dog Social Club" hidden>
       <span data-i18n="wl.btn">Connect Wallet</span>
     </button>
   </nav>
@@ -230,6 +232,10 @@
   </div>
 
   <div class="wmodal-state" id="walletInfo" hidden>
+    <div class="wmodal-row wmodal-dsc" id="walletDscRow" hidden>
+      <span>Dog&nbsp;Social&nbsp;Club</span>
+      <a href="https://www.kray.space/ordinals?collection=dog-social-club" target="_blank" rel="noopener" title="DOG•SOCIAL•CLUB on KRAY ↗"><img id="walletDscImg" alt="Dog Social Club"><strong>✓</strong></a>
+    </div>
     <div class="wmodal-row"><span data-i18n="wl.addr">Address</span><code id="walletAddr">—</code></div>
     <div class="wmodal-row"><span>$DOG</span><strong id="walletDog">—</strong></div>
     <div class="wmodal-row"><span>Bitcoin</span><strong id="walletBtc">—</strong></div>

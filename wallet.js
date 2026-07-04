@@ -6,6 +6,9 @@
    without touching the inline-script CSP hashes. */
 (function () {
   var LSKEY = 'dogArmyKrayConnected';
+  var DSCKEY = 'dogArmyDsc';
+  var DSC_TTL = 6 * 60 * 60 * 1000;
+  var KRAY_THUMB = 'https://www.kray.space/api/rune-thumbnail/';
 
   function $(id) { return document.getElementById(id); }
   function kray() { return typeof window.krayWallet !== 'undefined' ? window.krayWallet : null; }
@@ -90,6 +93,9 @@
     var lockedEl = $('walletLocked');
     var states = { none: $('walletNone'), ready: $('walletReady'), busy: $('walletBusy'), info: $('walletInfo') };
     var out = { addr: $('walletAddr'), dog: $('walletDog'), btc: $('walletBtc') };
+    var pfps = [$('walletBtnPfp'), $('walletBtnPfpDrawer')];
+    var dscRow = $('walletDscRow');
+    var dscImg = $('walletDscImg');
     var connected = false;
     var address = '';
 
@@ -120,6 +126,46 @@
         btnAddr.hidden = !connected;
         btnAddr.textContent = short(address);
       }
+    }
+
+    /* DOG SOCIAL CLUB pfp — kray.space shows a holder's DSC as their avatar;
+       we do the same. The lookup runs through our own /api/dsc proxy because
+       KRAY's API only answers same-origin browsers. */
+    function applyDsc(id) {
+      var url = id ? KRAY_THUMB + encodeURIComponent(id) : '';
+      for (var i = 0; i < pfps.length; i++) {
+        if (!pfps[i]) continue;
+        pfps[i].hidden = !id;
+        if (id) pfps[i].src = url;
+        else pfps[i].removeAttribute('src');
+      }
+      btn.classList.toggle('has-pfp', !!id);
+      if (drawerBtn) drawerBtn.classList.toggle('has-pfp', !!id);
+      if (dscRow) dscRow.hidden = !id;
+      if (dscImg) {
+        if (id) dscImg.src = url;
+        else dscImg.removeAttribute('src');
+      }
+    }
+
+    function checkDsc() {
+      if (!connected || !address) return;
+      var addr = address;
+      try {
+        var cached = JSON.parse(localStorage.getItem(DSCKEY) || 'null');
+        if (cached && cached.a === addr && (Date.now() - cached.t) < DSC_TTL) {
+          applyDsc(cached.id || null);
+          return;
+        }
+      } catch (e) {}
+      fetch('/api/dsc?address=' + encodeURIComponent(addr)).then(function (r) {
+        return r.ok ? r.json() : null;
+      }).then(function (data) {
+        if (!data || !data.success || addr !== address) return;
+        var id = data.dsc && data.dsc.id ? data.dsc.id : null;
+        try { localStorage.setItem(DSCKEY, JSON.stringify({ a: addr, id: id, t: Date.now() })); } catch (e) {}
+        if (connected) applyDsc(id);
+      }).catch(function () {});
     }
 
     function refreshData() {
@@ -165,6 +211,7 @@
         renderButton();
         showState('info');
         refreshData();
+        checkDsc();
       }).catch(function () {
         if (silent) return;
         showState('ready');
@@ -175,8 +222,9 @@
     function disconnect() {
       connected = false;
       address = '';
-      try { localStorage.removeItem(LSKEY); } catch (e) {}
+      try { localStorage.removeItem(LSKEY); localStorage.removeItem(DSCKEY); } catch (e) {}
       renderButton();
+      applyDsc(null);
       showState(kray() ? 'ready' : 'none');
     }
 
@@ -193,6 +241,12 @@
     });
     if (connectBtn) connectBtn.addEventListener('click', function () { connect(false); });
     if (disconnectBtn) disconnectBtn.addEventListener('click', disconnect);
+
+    /* If KRAY's thumbnail ever fails to load, fall back to the plain dot. */
+    var pfpEls = pfps.concat([dscImg]);
+    for (var pi = 0; pi < pfpEls.length; pi++) {
+      if (pfpEls[pi]) pfpEls[pi].addEventListener('error', function () { applyDsc(null); });
+    }
 
     /* Returning visitor: reconnect silently (no popup) if they connected before.
        The extension injects window.krayWallet asynchronously, so poll briefly. */
