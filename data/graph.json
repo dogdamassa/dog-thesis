@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-05T13:07:59.458807+00:00",
+  "updated_at": "2026-07-05T13:47:32.527039+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2064359696.02469,
+      "balance_dog": 2049770321.33469,
       "rank": 6,
-      "pct": 2.06,
+      "pct": 2.05,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -138,19 +138,19 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "int1",
+      "from_label": "Vault #1",
+      "to_label": "Intermediary Wallet #1",
+      "dog": 284657908,
+      "count": 12
+    },
+    {
+      "from": "cofre",
       "to": "int2",
       "from_label": "Vault #1",
       "to_label": "Intermediary Wallet #2",
       "dog": 169561083,
       "count": 13
-    },
-    {
-      "from": "cofre",
-      "to": "int1",
-      "from_label": "Vault #1",
-      "to_label": "Intermediary Wallet #1",
-      "dog": 272651924,
-      "count": 10
     },
     {
       "from": "cofre",
