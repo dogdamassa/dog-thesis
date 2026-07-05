@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-05T20:46:59.847957+00:00",
+  "updated_at": "2026-07-05T21:51:49.467286+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3371392841.15574,
+      "balance_dog": 3371392950.34522,
       "rank": 2,
       "pct": 3.37,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -162,19 +162,19 @@
     },
     {
       "from": "cofre",
-      "to": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq",
-      "from_label": "Vault #1",
-      "to_label": "bc1p8lkq...7fgq",
-      "dog": 604688001,
-      "count": 4
-    },
-    {
-      "from": "cofre",
       "to": "bc1pzsx4xvghxmc0prv4mys0xdly9dh9js3e88e4m24k5gxzkeskx30s4qzjud",
       "from_label": "Vault #1",
       "to_label": "bc1pzsx4...zjud",
       "dog": 1109423800,
       "count": 3
+    },
+    {
+      "from": "cofre",
+      "to": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq",
+      "from_label": "Vault #1",
+      "to_label": "bc1p8lkq...7fgq",
+      "dog": 604688001,
+      "count": 4
     },
     {
       "from": "cofre",
