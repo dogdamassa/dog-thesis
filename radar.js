@@ -1,5 +1,5 @@
 /* DOG ARMY Radar. Reads /data/{daily,feed,graph,flows,liqmap}.json and renders
-   the daily KPIs, the event feed, the Vault #1 graph and the liquidity map. */
+   the daily KPIs, the event feed, the wallet-flow graph and the liquidity map. */
 (function () {
   "use strict";
   var BASE = "/data/";
@@ -28,51 +28,159 @@
     });
   }
 
+  var FLOW_LBL = {
+    en: {
+      mapped: "mapped label", large: "12% watched wallet",
+      unknownSrc: "unmapped source", unknownDst: "unmapped destination",
+      fresh: "fresh wallet", relay: "relay wallet",
+      moves: "wallet moves today", moved: "DOG moved today",
+      freshKpi: "fresh or unmapped destinations", exout: "DOG leaving watched exchanges",
+      none: "No wallet moves found for today. The radar stays on.",
+      source: "source", dest: "destination", both: "through wallet",
+      sentExchange: " sent {a} to {to}. Possible sale or distribution route.",
+      sentFresh: " moved {a} to {to}. Destination still unlabeled.",
+      received: "{from} moved {a} into the watched 12% wallet.",
+      relayFlow: "{from} to {to}: {a}. Movement inside the tracked route.",
+      exchangeIn: "{from} sent {a} to {to}. More DOG parked at an exchange wallet.",
+      exchangeOut: "{from} sent {a} to {to}. DOG left a watched exchange wallet.",
+      defaultMove: "{from} to {to}: {a}"
+    },
+    pt: {
+      mapped: "rótulo mapeado", large: "carteira 12% monitorada",
+      unknownSrc: "origem não mapeada", unknownDst: "destino não mapeado",
+      fresh: "carteira nova", relay: "carteira ponte",
+      moves: "movimentos de carteira hoje", moved: "DOG movimentadas hoje",
+      freshKpi: "destinos novos ou não mapeados", exout: "DOG saindo de corretoras vigiadas",
+      none: "Nenhum movimento de carteira encontrado hoje. O radar segue ligado.",
+      source: "origem", dest: "destino", both: "carteira de passagem",
+      sentExchange: " enviou {a} para {to}. Possível rota de venda ou distribuição.",
+      sentFresh: " moveu {a} para {to}. Destino ainda sem rótulo.",
+      received: "{from} moveu {a} para dentro da carteira 12% monitorada.",
+      relayFlow: "{from} para {to}: {a}. Movimento dentro da rota rastreada.",
+      exchangeIn: "{from} enviou {a} para {to}. Mais DOG parada numa carteira de corretora.",
+      exchangeOut: "{from} enviou {a} para {to}. DOG saiu de uma corretora vigiada.",
+      defaultMove: "{from} para {to}: {a}"
+    },
+    es: {
+      mapped: "etiqueta mapeada", large: "cartera 12% vigilada",
+      unknownSrc: "origen no mapeado", unknownDst: "destino no mapeado",
+      fresh: "cartera nueva", relay: "cartera puente",
+      moves: "movimientos de cartera hoy", moved: "DOG movidas hoy",
+      freshKpi: "destinos nuevos o no mapeados", exout: "DOG saliendo de exchanges vigilados",
+      none: "No se encontraron movimientos de cartera hoy. El radar sigue encendido.",
+      source: "origen", dest: "destino", both: "cartera de paso",
+      sentExchange: " envió {a} a {to}. Posible ruta de venta o distribución.",
+      sentFresh: " movió {a} a {to}. El destino sigue sin etiqueta.",
+      received: "{from} movió {a} hacia la cartera 12% vigilada.",
+      relayFlow: "{from} a {to}: {a}. Movimiento dentro de la ruta rastreada.",
+      exchangeIn: "{from} envió {a} a {to}. Más DOG en una cartera de exchange.",
+      exchangeOut: "{from} envió {a} a {to}. DOG salió de un exchange vigilado.",
+      defaultMove: "{from} a {to}: {a}"
+    }
+  };
+  function flowLbl() { return FLOW_LBL[curLang()] || FLOW_LBL.en; }
+  function shortAddr(s) {
+    s = String(s || "");
+    return s.length > 15 ? s.slice(0, 8) + "..." + s.slice(-4) : s;
+  }
+  function isBtcAddr(s) { return /^(bc1|[13])[a-zA-Z0-9]{20,}$/i.test(String(s || "")); }
+  function knownNodes() {
+    var out = {};
+    ((data.graph && data.graph.nodes) || []).forEach(function (n) {
+      out[n.id] = n;
+      if (n.addr) out[n.addr] = n;
+    });
+    return out;
+  }
+  function currentDay() {
+    if (data.daily && data.daily.date) return data.daily.date;
+    if (data.feed && data.feed.updated_at) return String(data.feed.updated_at).slice(0, 10);
+    return new Date().toISOString().slice(0, 10);
+  }
+  function flowEvents() {
+    var evs = ((data.feed && data.feed.events) || []).filter(function (e) {
+      return e && e.type !== "balance_change" && (e.amount_dog || 0) > 0;
+    });
+    var day = currentDay();
+    var daily = evs.filter(function (e) { return String(e.ts || "").slice(0, 10) === day; });
+    return (daily.length ? daily : evs).slice(0, 32);
+  }
+  function cleanLabel(label, id, fallback) {
+    var L = flowLbl();
+    label = String(label || "");
+    id = String(id || "");
+    if (id === "cofre" || /vault\s*#?\s*1/i.test(label)) return L.large;
+    if (id === "h2" || /top\s*#?\s*2/i.test(label)) return "Gate watched wallet";
+    if (id === "h3" || /top\s*#?\s*3/i.test(label)) return "Bitget watched wallet";
+    if (id === "mexc" || /mexc/i.test(label)) return "MEXC wallet";
+    if (/fresh wallet/i.test(label)) return L.fresh;
+    if (/unmapped wallet/i.test(label)) return fallback || L.unknownDst;
+    if (/intermediary wallet/i.test(label)) return label.replace(/Intermediary Wallet/i, L.relay);
+    if (isBtcAddr(id)) return shortAddr(id);
+    return label || fallback || id;
+  }
+  function nodeKind(id, label, type, side) {
+    id = String(id || "");
+    label = String(label || "");
+    if (id === "h2" || id === "h3" || id === "mexc" || /gate|bitget|mexc|exchange|top\s*#?/i.test(label)) {
+      return "exchange";
+    }
+    if (/^int/i.test(id) || /intermediary|relay|bridge|ponte/i.test(label)) return "relay";
+    if (id === "cofre") return "source";
+    if (/fresh|unmapped/i.test(label) || isBtcAddr(id)) return "fresh";
+    if (type === "cofre_in" && side === "to") return "source";
+    return side === "from" ? "source" : "fresh";
+  }
+  function tpl(s, vals) {
+    return String(s).replace(/\{(\w+)\}/g, function (_, k) { return vals[k] || ""; });
+  }
+
   /* ---------- feed copy ---------- */
   function sentence(e) {
+    var L = flowLbl();
     var a = "<b>" + fmtDog(e.amount_dog) + " DOG</b>";
-    var to = esc(e.to_label) + (e.community ? ' <span class="rd-tag">' +
-      "mapped label</span>" : "");
+    var from = esc(cleanLabel(e.from_label, e.from_id, L.unknownSrc));
+    var to = esc(cleanLabel(e.to_label, e.to_id, L.unknownDst)) + (e.community ? ' <span class="rd-tag">' +
+      esc(L.mapped) + "</span>" : "");
     switch (e.type) {
       case "cofre_out_exchange":
-        return "Vault #1 sent " + a + " to " + to + ". Possible sale or distribution flow.";
+        return from + tpl(L.sentExchange, { a: a, to: to });
       case "cofre_out_new":
-        return "Vault #1 moved " + a + " to a fresh wallet. Destination still unlabeled.";
+        return from + tpl(L.sentFresh, { a: a, to: to });
       case "cofre_in":
-        return "Vault #1 received " + a + ".";
+        return tpl(L.received, { from: from, a: a, to: to });
       case "relay_flow":
-        return esc(e.from_label) + " to " + to + ": " + a + ". Movement inside the cluster.";
+        return tpl(L.relayFlow, { from: from, to: to, a: a });
       case "exchange_in":
-        return esc(e.from_label) + " sent " + a + " to " + to + ". More DOG parked at an exchange wallet.";
+        return tpl(L.exchangeIn, { from: from, to: to, a: a });
       case "exchange_out":
-        return esc(e.from_label) + " sent " + a + " to " + to + ". DOG left the exchange wallet.";
-      case "balance_change":
-        return "Vault #1 balance moved <b>" + (e.sign || "") + fmtDog(e.amount_dog) + " DOG</b> today.";
+        return tpl(L.exchangeOut, { from: from, to: to, a: a });
       default:
-        return esc(e.from_label) + " to " + to + ": " + a;
+        return tpl(L.defaultMove, { from: from, to: to, a: a });
     }
   }
 
   /* ---------- KPIs ---------- */
   function renderKpis() {
-    var d = data.daily, el = document.getElementById("rd-kpis");
+    var el = document.getElementById("rd-kpis"), L = flowLbl();
     if (!el) return;
-    if (!d) { el.innerHTML = card("—", "data unavailable", ""); return; }
-    var top4 = (d.cofre && d.cofre.pct || 0);
-    (d.exchanges || []).forEach(function (x) { top4 += (x.balance_dog || 0) / 1e11 * 100; });
-    var lvl = { alert: "Red alert",
-                watch: "Watching",
-                stable: "Vault stable" }[d.level] || "Stable";
-    var loc = "en-US";
-    var hd = d.holders_delta ? " (" + (d.holders_delta > 0 ? "+" : "") + d.holders_delta + ")" : "";
+    var evs = flowEvents();
+    if (!data.daily && !evs.length) { el.innerHTML = card("—", "data unavailable", ""); return; }
+    var moved = 0, exOut = 0, fresh = {}, links = {};
+    evs.forEach(function (e, i) {
+      var amt = e.amount_dog || 0;
+      var toId = e.to_id || ("dst-" + (e.txid || e.id || i));
+      var toKind = nodeKind(toId, e.to_label, e.type, "to");
+      moved += amt;
+      links[(e.from_id || "src-" + (e.txid || e.id || i)) + ">" + toId] = 1;
+      if (toKind === "fresh") fresh[toId] = 1;
+      if (e.type === "exchange_out") exOut += amt;
+    });
     el.innerHTML =
-      card((d.cofre && d.cofre.pct != null ? d.cofre.pct + "%" : "—"),
-           "Vault #1 of supply", "rd-c-orange") +
-      card((d.holders_total ? d.holders_total.toLocaleString(loc) : "—") + hd,
-           "Wallets holding DOG", "") +
-      card(top4 ? top4.toFixed(1) + "%" : "—",
-           "Top 4 wallets combined", "") +
-      card(lvl, "Reading of the day", "rd-c-wide");
+      card(String(Object.keys(links).length || evs.length || "—"), L.moves, "") +
+      card(evs.length ? fmtDog(moved) + " DOG" : "—", L.moved, "rd-c-orange") +
+      card(String(Object.keys(fresh).length || "—"), L.freshKpi, "") +
+      card(exOut ? fmtDog(exOut) + " DOG" : "—", L.exout, "rd-c-wide");
   }
   function card(big, label, cls) {
     return '<div class="rd-kpi ' + cls + '"><div class="rd-kpi-v">' + big +
@@ -83,9 +191,9 @@
   function renderFeed() {
     var el = document.getElementById("rd-feed");
     if (!el) return;
-    var evs = (data.feed && data.feed.events) || [];
+    var evs = flowEvents(), L = flowLbl();
     if (!evs.length) {
-      el.innerHTML = '<div class="rd-empty">No new moves. The radar stays on.</div>';
+      el.innerHTML = '<div class="rd-empty">' + esc(L.none) + "</div>";
       return;
     }
     el.innerHTML = evs.map(function (e) {
@@ -96,83 +204,194 @@
     }).join("");
   }
 
-  /* ---------- grafo (canvas, layout radial) ---------- */
-  var canvas, ctx, nodes = [], edges = [], hover = null, raf = 0;
+  /* ---------- grafo (canvas, daily wallet flow) ---------- */
+  var canvas, ctx, nodes = [], edges = [], hover = null, hoverEdge = null, raf = 0;
   var COL = {
-    cofre: "#ff7300", holder: "#e5484d", relay: "#f7b733", fresh: "#9a8e7a",
+    source: "#ff7300", exchange: "#e5484d", relay: "#f7b733", fresh: "#9a8e7a",
     edgeExch: "#e5484d", edgeFresh: "#ff7300", edgeRelay: "#f7b733", edgeIn: "#43c59e"
   };
   function nodeColor(k) { return COL[k] || "#93a0ad"; }
   function edgeColor(e) {
-    var to = nById(e.to);
+    var to = nById(e.to), from = nById(e.from);
     if (!to) return "#3a4654";
-    if (to.kind === "holder") return COL.edgeExch;
+    if (e.type === "cofre_in" || to.id === "cofre") return COL.edgeIn;
+    if ((from && from.kind === "exchange") || to.kind === "exchange" || /exchange/i.test(e.type || "")) return COL.edgeExch;
     if (to.kind === "fresh") return COL.edgeFresh;
-    if (to.kind === "cofre") return COL.edgeIn;
     return COL.edgeRelay;
   }
   function nById(id) { for (var i = 0; i < nodes.length; i++) if (nodes[i].id === id) return nodes[i]; return null; }
+  function endpoint(e, side, i, known) {
+    var raw = e[side + "_id"];
+    var id = raw ? String(raw) : (side === "from" ? "src-" : "dst-") + (e.txid || e.id || i);
+    var kn = known[id] || {};
+    var fallback = side === "from" ? flowLbl().unknownSrc : flowLbl().unknownDst;
+    var label = cleanLabel(e[side + "_label"] || kn.label, id, fallback);
+    return {
+      id: id, label: label,
+      kind: nodeKind(id, e[side + "_label"] || label, e.type, side),
+      addr: kn.addr || (isBtcAddr(id) ? id : ""),
+      community: kn.community || null
+    };
+  }
+  function buildFlowGraph() {
+    var evs = flowEvents(), known = knownNodes(), nmap = {}, emap = {};
+    function addNode(x) {
+      if (!nmap[x.id]) {
+        nmap[x.id] = {
+          id: x.id, label: x.label, kind: x.kind, addr: x.addr,
+          community: x.community, inDog: 0, outDog: 0, moves: 0
+        };
+      } else {
+        nmap[x.id].label = nmap[x.id].label || x.label;
+        nmap[x.id].addr = nmap[x.id].addr || x.addr;
+        nmap[x.id].community = nmap[x.id].community || x.community;
+      }
+      return nmap[x.id];
+    }
+    evs.forEach(function (e, i) {
+      var from = endpoint(e, "from", i, known);
+      var to = endpoint(e, "to", i, known);
+      var a = addNode(from), b = addNode(to);
+      var dog = e.amount_dog || 0;
+      a.outDog += dog; b.inDog += dog; a.moves += 1; b.moves += 1;
+      var key = from.id + ">" + to.id;
+      if (!emap[key]) {
+        emap[key] = {
+          from: from.id, to: to.id, fromLabel: from.label, toLabel: to.label,
+          dog: 0, count: 0, txids: [], type: e.type, ts: e.ts, level: e.level
+        };
+      }
+      emap[key].dog += dog;
+      emap[key].count += 1;
+      if (e.txid) emap[key].txids.push(e.txid);
+      if (String(e.ts || "") > String(emap[key].ts || "")) emap[key].ts = e.ts;
+      if (e.level === "alert" || emap[key].level !== "alert") emap[key].level = e.level;
+    });
+    var allEdges = Object.keys(emap).map(function (k) { return emap[k]; })
+      .sort(function (a, b) { return (b.dog || 0) - (a.dog || 0); }).slice(0, 28);
+    var keep = {};
+    allEdges.forEach(function (e) { keep[e.from] = 1; keep[e.to] = 1; });
+    return {
+      nodes: Object.keys(nmap).map(function (k) { return nmap[k]; }).filter(function (n) { return keep[n.id]; }),
+      edges: allEdges
+    };
+  }
 
   function layout() {
-    var g = data.graph; if (!g) return;
+    if (!canvas) return;
+    var g = buildFlowGraph();
     var W = canvas.clientWidth, H = canvas.clientHeight;
-    var cx = W / 2, cy = H / 2, R = Math.min(W, H) / 2 - 56;
-    nodes = g.nodes.map(function (n) { return Object.assign({}, n); });
-    edges = g.edges.slice();
-    var center = nById(g.center) || nodes[0];
-    var others = nodes.filter(function (n) { return n !== center; });
-    // Group holders, relays, and fresh wallets around the vault.
-    var order = { holder: 0, relay: 1, fresh: 2 };
-    others.sort(function (a, b) { return (order[a.kind] || 9) - (order[b.kind] || 9); });
-    center.x = cx; center.y = cy; center.r = 30;
-    var maxBal = Math.max.apply(null, nodes.map(function (n) { return n.balance_dog || 0; })) || 1;
-    others.forEach(function (n, i) {
-      var ang = -Math.PI / 2 + (i / others.length) * Math.PI * 2;
-      n.x = cx + Math.cos(ang) * R;
-      n.y = cy + Math.sin(ang) * R;
-      n.r = n.kind === "fresh" ? 7 : 11 + 16 * Math.sqrt((n.balance_dog || 0) / maxBal);
+    nodes = g.nodes; edges = g.edges;
+    var maxDog = Math.max.apply(null, nodes.map(function (n) { return (n.inDog || 0) + (n.outDog || 0); })) || 1;
+    var groups = { source: [], relay: [], dest: [] };
+    nodes.forEach(function (n) {
+      n.totalDog = (n.inDog || 0) + (n.outDog || 0);
+      n.role = n.inDog && n.outDog ? "relay" : (n.outDog ? "source" : "dest");
+      if (n.kind === "relay" || n.role === "relay") groups.relay.push(n);
+      else if (n.role === "source") groups.source.push(n);
+      else groups.dest.push(n);
+      n.r = 8 + 18 * Math.sqrt(n.totalDog / maxDog);
+    });
+    if (!groups.relay.length && groups.source.length > 1 && groups.dest.length > 1) {
+      groups.relay = groups.source.filter(function (n) { return n.kind === "exchange"; });
+      groups.source = groups.source.filter(function (n) { return n.kind !== "exchange"; });
+    }
+    [
+      { arr: groups.source, x: 0.18, col: "left" },
+      { arr: groups.relay, x: 0.50, col: "mid" },
+      { arr: groups.dest, x: 0.82, col: "right" }
+    ].forEach(function (gcol) {
+      gcol.arr.sort(function (a, b) { return (b.totalDog || 0) - (a.totalDog || 0); });
+      var top = 44, span = Math.max(60, H - 88);
+      gcol.arr.forEach(function (n, i) {
+        n.x = Math.round(W * gcol.x);
+        n.y = Math.round(gcol.arr.length === 1 ? H / 2 : top + span * (i + 1) / (gcol.arr.length + 1));
+        n.col = gcol.col;
+      });
     });
   }
 
+  function bezier(e, t) {
+    var a = nById(e.from), b = nById(e.to);
+    if (!a || !b) return { x: 0, y: 0 };
+    var dx = Math.max(40, Math.abs(b.x - a.x) * 0.45);
+    var c1 = { x: a.x + (b.x >= a.x ? dx : -dx), y: a.y };
+    var c2 = { x: b.x - (b.x >= a.x ? dx : -dx), y: b.y };
+    var mt = 1 - t;
+    return {
+      x: mt * mt * mt * a.x + 3 * mt * mt * t * c1.x + 3 * mt * t * t * c2.x + t * t * t * b.x,
+      y: mt * mt * mt * a.y + 3 * mt * mt * t * c1.y + 3 * mt * t * t * c2.y + t * t * t * b.y
+    };
+  }
+  function drawArrow(e, color) {
+    var p = bezier(e, 0.94), q = bezier(e, 0.985);
+    var ang = Math.atan2(q.y - p.y, q.x - p.x);
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(q.x, q.y);
+    ctx.lineTo(q.x - 8 * Math.cos(ang - 0.45), q.y - 8 * Math.sin(ang - 0.45));
+    ctx.lineTo(q.x - 8 * Math.cos(ang + 0.45), q.y - 8 * Math.sin(ang + 0.45));
+    ctx.closePath(); ctx.fill();
+  }
+  function labelNode(n) {
+    var text = n.label;
+    var x = n.x, y = n.y, max = 116;
+    ctx.font = "600 11px ui-sans-serif,system-ui,sans-serif";
+    ctx.fillStyle = "#cdd6df";
+    ctx.textBaseline = "middle";
+    if (n.col === "left") {
+      ctx.textAlign = "left"; x = n.x + n.r + 8;
+    } else if (n.col === "right") {
+      ctx.textAlign = "right"; x = n.x - n.r - 8;
+    } else {
+      ctx.textAlign = "center"; y = n.y + n.r + 12; max = 100;
+    }
+    ctx.fillText(text, x, y, max);
+  }
+
   function draw(ts) {
-    if (!ctx || !data.graph) return;
+    if (!ctx) return;
     var W = canvas.clientWidth, H = canvas.clientHeight;
     ctx.clearRect(0, 0, W, H);
+    if (!edges.length) {
+      ctx.fillStyle = "#8b939c";
+      ctx.font = "600 13px ui-sans-serif,system-ui,sans-serif";
+      ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      ctx.fillText(flowLbl().none, W / 2, H / 2, Math.max(220, W - 60));
+      raf = requestAnimationFrame(draw);
+      return;
+    }
     var maxDog = Math.max.apply(null, edges.map(function (e) { return e.dog || 0; })) || 1;
-    // arestas + ponto que flui (vivo, estilo Arkham)
+    // Edges + moving point keep the graph readable as a daily flow map.
     edges.forEach(function (e) {
       var a = nById(e.from), b = nById(e.to); if (!a || !b) return;
       var w = 1 + 4 * Math.sqrt((e.dog || 0) / maxDog);
-      ctx.strokeStyle = edgeColor(e); ctx.globalAlpha = 0.45; ctx.lineWidth = w;
-      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-      // bolinha viajando A->B
+      var color = edgeColor(e);
+      ctx.strokeStyle = color; ctx.globalAlpha = e === hoverEdge ? 0.9 : 0.42; ctx.lineWidth = e === hoverEdge ? w + 1.5 : w;
+      var dx = Math.max(40, Math.abs(b.x - a.x) * 0.45);
+      ctx.beginPath(); ctx.moveTo(a.x, a.y);
+      ctx.bezierCurveTo(a.x + (b.x >= a.x ? dx : -dx), a.y,
+        b.x - (b.x >= a.x ? dx : -dx), b.y, b.x, b.y);
+      ctx.stroke();
+      ctx.globalAlpha = e === hoverEdge ? 0.95 : 0.65;
+      drawArrow(e, color);
       var p = ((ts || 0) / 1700 + (a.x + b.y)) % 1;
-      ctx.globalAlpha = 0.9; ctx.fillStyle = edgeColor(e);
+      var dot = bezier(e, p);
+      ctx.globalAlpha = 0.9; ctx.fillStyle = color;
       ctx.beginPath();
-      ctx.arc(a.x + (b.x - a.x) * p, a.y + (b.y - a.y) * p, Math.min(2.6, w), 0, 7);
+      ctx.arc(dot.x, dot.y, Math.min(2.8, w + 0.4), 0, 7);
       ctx.fill();
     });
     ctx.globalAlpha = 1;
-    // nos
     nodes.forEach(function (n) {
-      var isC = n.kind === "cofre";
-      if (isC || n === hover) {
-        ctx.shadowColor = nodeColor(n.kind); ctx.shadowBlur = isC ? 26 : 16;
+      if (n === hover) {
+        ctx.shadowColor = nodeColor(n.kind); ctx.shadowBlur = 16;
       }
       ctx.fillStyle = nodeColor(n.kind);
       ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 7); ctx.fill();
       ctx.shadowBlur = 0;
       if (n === hover) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke(); }
-      // rotulo
-      ctx.fillStyle = isC ? "#0b0d0f" : "#f5f1e8";
-      ctx.font = (isC ? "700 12px " : "600 11px ") + "ui-sans-serif,system-ui,sans-serif";
-      ctx.textAlign = "center"; ctx.textBaseline = "middle";
-      if (isC) { ctx.fillText("Vault #1", n.x, n.y); }
-      else {
-        ctx.fillStyle = "#cdd6df";
-        var ly = n.y + n.r + 11;
-        ctx.fillText(n.kind === "fresh" ? "•" : n.label, n.x, ly);
-      }
+      labelNode(n);
     });
     raf = requestAnimationFrame(draw);
   }
@@ -193,15 +412,43 @@
     }
     return null;
   }
+  function distSeg(px, py, ax, ay, bx, by) {
+    var dx = bx - ax, dy = by - ay;
+    if (!dx && !dy) return Math.hypot(px - ax, py - ay);
+    var t = Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy)));
+    return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+  }
+  function pickEdge(mx, my) {
+    var maxDog = Math.max.apply(null, edges.map(function (e) { return e.dog || 0; })) || 1;
+    for (var i = 0; i < edges.length; i++) {
+      var e = edges[i], w = 6 + 4 * Math.sqrt((e.dog || 0) / maxDog), prev = bezier(e, 0);
+      for (var s = 1; s <= 14; s++) {
+        var cur = bezier(e, s / 14);
+        if (distSeg(mx, my, prev.x, prev.y, cur.x, cur.y) <= w) return e;
+        prev = cur;
+      }
+    }
+    return null;
+  }
   function tipHtml(n) {
-    var L = [];
-    L.push("<b>" + esc(n.label) + "</b>");
-    if (n.community) L.push('<span class="rd-tag">' + esc(n.community) + "</span>");
-    if (n.rank) L.push("rank #" + n.rank + " · " + (n.pct || 0) + "% of supply");
-    if (n.balance_dog) L.push(fmtDog(n.balance_dog) + " DOG");
-    if (n.kind === "fresh") L.push("fresh wallet. unlabeled");
-    if (n.addr) L.push('<span class="rd-mono">' + esc(n.addr.slice(0, 10) + "…" + n.addr.slice(-6)) + "</span>");
-    return L.join("<br>");
+    var out = [], L = flowLbl();
+    out.push("<b>" + esc(n.label) + "</b>");
+    if (n.community) out.push('<span class="rd-tag">' + esc(n.community) + "</span>");
+    out.push(esc(n.role === "source" ? L.source : (n.role === "dest" ? L.dest : L.both)));
+    if (n.outDog) out.push("out: " + fmtDog(n.outDog) + " DOG");
+    if (n.inDog) out.push("in: " + fmtDog(n.inDog) + " DOG");
+    out.push((n.moves || 0) + " tx");
+    if (n.addr) out.push('<span class="rd-mono">' + esc(n.addr.slice(0, 10) + "..." + n.addr.slice(-6)) + "</span>");
+    return out.join("<br>");
+  }
+  function edgeTipHtml(e) {
+    var out = [];
+    out.push("<b>" + esc(e.fromLabel) + " -> " + esc(e.toLabel) + "</b>");
+    out.push(fmtDog(e.dog) + " DOG");
+    out.push((e.count || 0) + " tx");
+    if (e.ts) out.push(esc(relTime(e.ts)));
+    if (e.txids && e.txids.length) out.push('<span class="rd-mono">' + esc(shortAddr(e.txids[0])) + "</span>");
+    return out.join("<br>");
   }
   function bindGraph() {
     canvas = document.getElementById("rd-canvas");
@@ -213,17 +460,27 @@
       var rect = canvas.getBoundingClientRect();
       var mx = ev.clientX - rect.left, my = ev.clientY - rect.top;
       var n = pickNode(mx, my);
-      hover = n;
-      canvas.style.cursor = n ? "pointer" : "default";
+      var ed = n ? null : pickEdge(mx, my);
+      hover = n; hoverEdge = ed;
+      canvas.style.cursor = n || ed ? "pointer" : "default";
       if (n && tip) {
         tip.innerHTML = tipHtml(n); tip.style.display = "block";
         tip.style.left = Math.min(mx + 14, canvas.clientWidth - 180) + "px";
         tip.style.top = (my + 14) + "px";
+      } else if (ed && tip) {
+        tip.innerHTML = edgeTipHtml(ed); tip.style.display = "block";
+        tip.style.left = Math.min(mx + 14, canvas.clientWidth - 190) + "px";
+        tip.style.top = (my + 14) + "px";
       } else if (tip) { tip.style.display = "none"; }
     });
-    canvas.addEventListener("mouseleave", function () { hover = null; if (tip) tip.style.display = "none"; });
+    canvas.addEventListener("mouseleave", function () {
+      hover = null; hoverEdge = null; if (tip) tip.style.display = "none";
+    });
     canvas.addEventListener("click", function () {
       if (hover && hover.addr) window.open("https://mempool.space/address/" + hover.addr, "_blank", "noopener");
+      else if (hoverEdge && hoverEdge.txids && hoverEdge.txids[0]) {
+        window.open("https://mempool.space/tx/" + hoverEdge.txids[0], "_blank", "noopener");
+      }
     });
     cancelAnimationFrame(raf);
     raf = requestAnimationFrame(draw);
@@ -258,6 +515,12 @@
                    it: "Mostra meno ▴", zh: "收起 ▴" };
   var MORE_GEN = { en: "Show more ▾", pt: "Ver mais ▾", es: "Ver más ▾",
                    it: "Mostra altre ▾", zh: "显示更多 ▾" };
+  var EX_LOGOS = { kraken: 1, gate: 1, bitget: 1, mexc: 1, coinex: 1, bingx: 1, bitrue: 1, xt: 1 };
+  function exLogo(name, cls) {
+    var k = String(name || "").toLowerCase().split(/[ .\-]/)[0];
+    return EX_LOGOS[k] ? '<img class="' + cls + '" src="public/exchanges/' + k +
+      '.png" alt="" width="20" height="20" loading="lazy">' : "";
+  }
   function exchipHtml(x) {
     var ch = (x.change24h == null) ? "" :
       '<i class="' + (x.change24h >= 0 ? "rd-up" : "rd-down") + '">' +
@@ -269,7 +532,8 @@
     var bar = tot ? '<div class="rd-exbar" title="buy ' + buyPct + "% · sell " +
       (100 - buyPct) + '%"><span class="rd-exbar-buy" style="width:' + buyPct + '%"></span></div>' : "";
     return '<a class="rd-exchip" href="' + esc(x.link) + '" target="_blank" rel="noopener">' +
-      '<div class="rd-exchip-top"><b>' + esc(x.name) + "</b>" + ch + "</div>" + bar +
+      '<div class="rd-exchip-top"><span class="rd-exchip-id">' + exLogo(x.name, "rd-exlogo") +
+      "<b>" + esc(x.name) + "</b></span>" + ch + "</div>" + bar +
       '<div class="rd-exchip-bot"><span>' + fmtDog(x.vol24h_dog) + " / 24h</span>" +
       (tot ? '<em class="' + (net >= 0 ? "rd-up" : "rd-down") + '">net ' + netStr + "</em>" : "") +
       "</div></a>";
@@ -278,7 +542,8 @@
     var buy = e.side === "buy";
     return '<a class="rd-flow rd-' + (buy ? "buy" : "sell") + '" href="' + esc(e.link) +
       '" target="_blank" rel="noopener"><span class="rd-flow-side">' + (buy ? "BUY" : "SELL") +
-      '</span><div class="rd-flow-body"><p><b>' + fmtDog(e.dog) + " DOG</b> on " + esc(e.exchange) +
+      "</span>" + exLogo(e.exchange, "rd-exlogo rd-flow-logo") +
+      '<div class="rd-flow-body"><p><b>' + fmtDog(e.dog) + " DOG</b> on " + esc(e.exchange) +
       ' <span class="rd-flow-usd">≈ $' + Number(e.usd).toLocaleString("en-US") +
       "</span></p><time>" + esc(relTime(e.ts)) + "</time></div></a>";
   }
@@ -347,12 +612,14 @@
   }
 
   /* ---------- liquidity map (aggregated order-book heatmap) ---------- */
-  var LIQ_BID = "#43c59e", LIQ_ASK = "#e5484d";
+  var LIQ_BID = "#ff9a3d", LIQ_ASK = "#e5484d";
   var LIQ_INK = "#f4efe8", LIQ_MUT = "#8b939c";
-  // sequential ramp, one hue, validated for the #101010 surface (dark mode)
+  // "fire" ramp (Coinglass-like): near-black -> ember red -> orange -> gold.
+  // Big walls land on the bright gold end so they pop against the field.
   var LIQ_RAMP = [
-    [0.00, [23, 14, 7]], [0.18, [122, 56, 14]], [0.45, [168, 73, 12]],
-    [0.70, [224, 87, 14]], [0.88, [255, 140, 77]], [1.00, [255, 201, 163]]
+    [0.00, [24, 13, 8]], [0.12, [78, 26, 10]], [0.30, [146, 44, 12]],
+    [0.50, [212, 71, 12]], [0.68, [255, 120, 12]], [0.84, [255, 178, 66]],
+    [1.00, [255, 238, 196]]
   ];
   var LIQ_EX_URL = {
     Kraken: "https://pro.kraken.com/app/trade/DOG-USD",
@@ -365,6 +632,34 @@
     Bitrue: "https://www.bitrue.com/trade/dog_usdt",
     "CoinEx-P": "https://www.coinex.com/en/futures/dog-usdt",
     "Kraken-P": "https://futures.kraken.com/trade"
+  };
+  // rótulos do mapa de liquidez (o resto do texto da seção vive no i18n.js;
+  // estes são gerados por JS, então precisam do próprio dicionário)
+  var LIQ_LBL = {
+    en: { near: "waiting near the price (±2%)", buy: "to buy", sell: "to sell",
+          deepB: "more money on the buy side (±12%)", deepA: "more money on the sell side (±12%)",
+          book: "whole visible book", venues: "venues", near2: "resting within 2% of the price",
+          below: "below", above: "above", buyw: "BUY", sellw: "SELL",
+          rest: "resting on the book", now: "right now",
+          bids: "buy orders", asks: "sell orders",
+          noperp: function (n) { return "no DOG perp on " + n + " other venues"; },
+          checked: "checked", updated: "Updated" },
+    pt: { near: "esperando perto do preço (±2%)", buy: "pra comprar", sell: "pra vender",
+          deepB: "mais dinheiro do lado comprador (±12%)", deepA: "mais dinheiro do lado vendedor (±12%)",
+          book: "book visível inteiro", venues: "corretoras", near2: "parado a até 2% do preço",
+          below: "abaixo", above: "acima", buyw: "COMPRA", sellw: "VENDA",
+          rest: "parado no book", now: "agora",
+          bids: "ordens de compra", asks: "ordens de venda",
+          noperp: function (n) { return "sem perp de DOG em " + n + " outras corretoras"; },
+          checked: "checado", updated: "Atualizado" },
+    es: { near: "esperando cerca del precio (±2%)", buy: "para comprar", sell: "para vender",
+          deepB: "más dinero del lado comprador (±12%)", deepA: "más dinero del lado vendedor (±12%)",
+          book: "book visible entero", venues: "exchanges", near2: "en reposo a ±2% del precio",
+          below: "por debajo", above: "por encima", buyw: "COMPRA", sellw: "VENTA",
+          rest: "en reposo en el book", now: "ahora",
+          bids: "órdenes de compra", asks: "órdenes de venta",
+          noperp: function (n) { return "sin perp de DOG en " + n + " otros exchanges"; },
+          checked: "revisado", updated: "Actualizado" }
   };
   function fmtUsd(n) {
     n = n || 0;
@@ -395,28 +690,38 @@
     var kEl = document.getElementById("rd-liq-kpis");
     var wEl = document.getElementById("rd-liq-walls");
     var pEl = document.getElementById("rd-liq-perp");
+    var sEl = document.getElementById("rd-liq-srcs");
     var upd = document.getElementById("rd-liq-updated");
+    var bEl = document.getElementById("rd-liq-build");
     if (!kEl || !wEl) return;
     if (!d) { wEl.innerHTML = '<div class="rd-empty">liquidity data unavailable</div>'; return; }
+    var L = LIQ_LBL[curLang()] || LIQ_LBL.en;
     var agg = d.agg || {};
-    var srcOk = (d.sources || []).filter(function (s) { return s.ok; }).length;
+    var srcs = (d.sources || []).filter(function (s) { return s.ok; });
     var ratio = agg.ask_usd ? agg.bid_usd / agg.ask_usd : 0;
+    var b2 = agg.bid2_usd || 0, a2 = agg.ask2_usd || 0;
+    var bPct = (b2 + a2) ? Math.round(b2 / (b2 + a2) * 100) : 50;
     kEl.innerHTML =
-      liqKpi(fmtUsd(agg.bid2_usd), "bids within 2% of price", "rd-lq-bid") +
-      liqKpi(fmtUsd(agg.ask2_usd), "asks within 2% of price", "rd-lq-ask") +
+      '<div class="rd-liq-kpi rd-liq-balkpi"><span>' + L.near + "</span>" +
+      '<div class="rd-balbar" aria-hidden="true"><i style="width:' + bPct + '%"></i></div>' +
+      '<div class="rd-balrow"><b class="rd-balbuy">' + fmtUsd(b2) + " " + L.buy + "</b>" +
+      '<b class="rd-balsell">' + fmtUsd(a2) + " " + L.sell + "</b></div></div>" +
       liqKpi(ratio ? ratio.toFixed(2) + "×" : "—",
-        "bid vs ask depth (±12%)", ratio >= 1 ? "rd-lq-bid" : "rd-lq-ask") +
-      liqKpi(fmtUsd(agg.bid_usd + agg.ask_usd),
-        "whole visible book · " + srcOk + " venues", "");
+        ratio >= 1 ? L.deepB : L.deepA, ratio >= 1 ? "rd-lq-bid" : "rd-lq-ask") +
+      liqKpi(fmtUsd((agg.bid_usd || 0) + (agg.ask_usd || 0)),
+        L.book + " · " + srcs.length + " " + L.venues, "");
+    if (bEl) bEl.hidden = ((d.history || []).length >= 72);
     var walls = d.walls || [];
     var rows = walls.map(function (w) {
       var buy = w.side === "bid";
       return '<a class="rd-wall rd-' + (buy ? "buy" : "sell") + '" href="' +
         esc(LIQ_EX_URL[w.ex] || "#") + '" target="_blank" rel="noopener">' +
-        '<span class="rd-wall-side">' + (buy ? "BID" : "ASK") + "</span><b>" +
-        fmtUsd(w.usd) + "</b><small>" + fmtPrice(w.price) + " · " +
-        (w.pct > 0 ? "+" : "") + w.pct + '%</small><span class="rd-wall-ex">' +
-        esc(w.ex) + "</span></a>";
+        '<span class="rd-wall-side">' + (buy ? L.buyw : L.sellw) + "</span>" +
+        '<span class="rd-wall-body"><b>' + fmtUsd(w.usd) + "</b><small>" +
+        fmtPrice(w.price) + " · " + Math.abs(w.pct).toFixed(1) + "% " +
+        (w.pct < 0 ? L.below : L.above) + "</small></span>" +
+        '<span class="rd-wall-ex" title="' + esc(w.ex) + '">' +
+        (exLogo(w.ex, "rd-exlogo rd-wall-logo") || esc(w.ex)) + "</span></a>";
     });
     var WALLS_SHOWN = 6;
     if (!rows.length) {
@@ -438,26 +743,47 @@
         wbtn.setAttribute("aria-expanded", open ? "true" : "false");
       });
     }
+    if (sEl) {
+      sEl.innerHTML = srcs.slice()
+        .sort(function (a, b) {
+          return ((b.bid2_usd || 0) + (b.ask2_usd || 0)) - ((a.bid2_usd || 0) + (a.ask2_usd || 0));
+        })
+        .map(function (s) {
+          var perp = /-P$/.test(s.name);
+          var nm = s.name.replace(/-P$/, "");
+          var near = (s.bid2_usd || 0) + (s.ask2_usd || 0);
+          return '<a class="rd-liq-src" href="' + esc(LIQ_EX_URL[s.name] || "#") +
+            '" target="_blank" rel="noopener" title="' + esc(nm) + (perp ? " perp" : "") +
+            " · " + L.near2 + '">' + exLogo(nm, "rd-exlogo rd-src-logo") +
+            "<b>" + esc(nm) + "</b>" + (perp ? "<i>perp</i>" : "") +
+            "<span>" + fmtUsd(near) + "</span></a>";
+        }).join("");
+    }
     var pp = d.perp || {}, cx = pp.coinex || {}, kr = pp.kraken || {}, gt = pp.gate || {};
     var pills = [];
     if (cx.ok) {
-      pills.push("<b>CoinEx</b> OI " + fmtUsd(cx.oi_usd) + (cx.funding != null ?
+      pills.push(exLogo("CoinEx", "rd-exlogo rd-pill-logo") +
+        "<b>CoinEx</b> OI " + fmtUsd(cx.oi_usd) + (cx.funding != null ?
         " · funding " + (cx.funding >= 0 ? "+" : "") + (cx.funding * 100).toFixed(3) + "%" : ""));
     }
-    if (kr.ok) pills.push("<b>Kraken Futures</b> OI " + fmtUsd(kr.oi_usd));
+    if (kr.ok) {
+      pills.push(exLogo("Kraken", "rd-exlogo rd-pill-logo") +
+        "<b>Kraken Futures</b> OI " + fmtUsd(kr.oi_usd));
+    }
     if (gt.ok && gt.in_delisting) {
-      pills.push("<b>Gate</b> delisting · OI " + fmtUsd(gt.oi_usd || 0));
+      pills.push(exLogo("Gate", "rd-exlogo rd-pill-logo") +
+        "<b>Gate</b> delisting · OI " + fmtUsd(gt.oi_usd || 0));
     }
     if (pp.none && pp.none.length) {
-      pills.push('<span title="' + esc(pp.none.join(" · ")) + '">no DOG perp on ' +
-        pp.none.length + " other venues" +
-        (pp.checked ? " · checked " + esc(pp.checked) : "") + "</span>");
+      pills.push('<span title="' + esc(pp.none.join(" · ")) + '">' +
+        L.noperp(pp.none.length) +
+        (pp.checked ? " · " + L.checked + " " + esc(pp.checked) : "") + "</span>");
     }
     if (pEl) pEl.innerHTML = pills.map(function (p) {
       return '<span class="rd-liq-pill">' + p + "</span>";
     }).join("");
     if (upd && d.updated_at) {
-      upd.textContent = "Updated " + new Date(d.updated_at)
+      upd.textContent = L.updated + " " + new Date(d.updated_at)
         .toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" });
     }
   }
@@ -477,26 +803,43 @@
     if (!liqCtx || !d || !(d.history || []).length) return;
     var hist = d.history;
     var W = liqCv.clientWidth, H = liqCv.clientHeight;
-    var padL = 8, padR = 74, padT = 10, padB = 22, axW = 52;
-    var plotW = W - padL - padR - axW, plotH = H - padT - padB;
+    var padL = 0, padR = 62, padT = 8, padB = 22;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
     liqCtx.clearRect(0, 0, W, H);
 
-    // janela fixa de 7 dias: colunas de 1h entram no lugar certo do tempo e o
-    // mapa preenche conforme o bot roda; a linha de preço (CoinGecko) cobre
-    // a janela toda desde o primeiro dia
-    var winS = 168 * 3600;
-    var tEnd = hist[hist.length - 1].t, tStart = tEnd - winS;
-    var xT = function (t) { return padL + (t - tStart) / winS * plotW; };
-    var colW = Math.max(2, plotW / 168);
+    // eixo X não-linear por snapshot (como gráfico de candles): toda coluna
+    // tem a mesma largura, então buraco no histórico não vira vazio no mapa.
+    // bounds[i]..bounds[i+1] é o intervalo de tempo coberto pela coluna i
+    var steps = [];
+    for (var si = 1; si < hist.length; si++) steps.push(hist[si].t - hist[si - 1].t);
+    steps.sort(function (a, b) { return a - b; });
+    var step = steps.length ? steps[Math.floor(steps.length / 2)] : 3600;
+    var tStart = hist[0].t, tEnd = hist[hist.length - 1].t + step;
+    var winS = Math.max(1, tEnd - tStart);
+    var bounds = hist.map(function (h) { return h.t; });
+    bounds.push(tEnd);
+    var colW = plotW / hist.length;
+    var xT = function (t) {
+      if (t <= bounds[0]) return padL;
+      for (var bi = 0; bi < hist.length; bi++) {
+        if (t < bounds[bi + 1]) {
+          return padL + (bi + (t - bounds[bi]) /
+            Math.max(1, bounds[bi + 1] - bounds[bi])) * colW;
+        }
+      }
+      return padL + plotW;
+    };
 
-    // domínio de preço: bins dos snapshots + linha de preço 7d
-    var minP = Infinity, maxP = -Infinity, maxUsd = 1;
+    // domínio de preço: bins dos snapshots + linha de preço, com folga de 2%;
+    // pos[] junta os valores para ancorar a escala de cor nos percentis
+    var minP = Infinity, maxP = -Infinity, maxUsd = 1, pos = [];
     hist.forEach(function (h) {
       var half = h.m * (d.grid.bin_pct / 100) / 2;
       h.b.concat(h.a).forEach(function (r) {
         if (r[0] - half < minP) minP = r[0] - half;
         if (r[0] + half > maxP) maxP = r[0] + half;
         if (r[1] > maxUsd) maxUsd = r[1];
+        if (r[1] > 0) pos.push(r[1]);
       });
     });
     var cg = (mkt.cache[7] || []).filter(function (r) {
@@ -507,94 +850,132 @@
       if (r[1] > maxP) maxP = r[1];
     });
     if (!isFinite(minP)) return;
+    var padP = (maxP - minP) * 0.02;
+    minP -= padP; maxP += padP;
     var y = function (p) { return padT + (maxP - p) / (maxP - minP) * plotH; };
 
-    var logMax = Math.log1p(maxUsd);
+    // base = cor de liquidez zero, para o campo inteiro pertencer ao mapa
+    liqCtx.fillStyle = liqRamp(0);
+    liqCtx.fillRect(padL, padT, plotW, plotH);
+
+    // escala de cor: log do p10 ao máximo — o book típico fica em brasa
+    // escura e as paredes estouram no dourado (sem isso tudo satura laranja)
+    pos.sort(function (a, b) { return a - b; });
+    var vLo = pos.length ? Math.max(1, pos[Math.floor(pos.length * 0.10)]) : 1;
+    var loL = Math.log(vLo), hiL = Math.log(Math.max(vLo * 2, maxUsd));
+    var tOf = function (v) {
+      if (v <= 0) return 0;
+      return Math.max(0, Math.min(1, (Math.log(v) - loL) / (hiL - loL)));
+    };
     var cells = [];
     hist.forEach(function (h, i) {
+      var x0 = Math.round(padL + i * colW);
+      var x1 = Math.round(padL + (i + 1) * colW);
       var half = h.m * (d.grid.bin_pct / 100) / 2;
-      var x = xT(h.t) - colW;
-      if (x + colW < padL) return;
       [["b", h.b], ["a", h.a]].forEach(function (side) {
         side[1].forEach(function (r) {
-          var yTop = y(r[0] + half), hPx = Math.max(1, y(r[0] - half) - yTop);
-          // gamma sobre a escala log: separa parede de ruído sem apagar o fundo
-          liqCtx.fillStyle = liqRamp(Math.pow(Math.log1p(r[1]) / logMax, 2.1));
-          liqCtx.fillRect(x, yTop, Math.ceil(colW), hPx);
-          cells.push({ i: i, x: x, y: yTop, w: colW, h: hPx,
+          var yTop = Math.round(y(r[0] + half));
+          var hPx = Math.max(1, Math.round(y(r[0] - half)) - yTop);
+          liqCtx.fillStyle = liqRamp(Math.pow(tOf(r[1]), 1.15));
+          liqCtx.fillRect(x0, yTop, x1 - x0, hPx);
+          cells.push({ i: i, x: x0, y: yTop, w: x1 - x0, h: hPx,
                        p: r[0], usd: r[1], side: side[0], t: h.t });
         });
       });
     });
 
-    // recessive grid + price labels (right of the depth gutter)
+    // recessive grid + price labels on the right axis
     liqCtx.font = "600 10px " + "ui-monospace,Menlo,monospace";
     liqCtx.textBaseline = "middle";
-    for (var g = 0; g <= 4; g++) {
-      var pv = maxP - (maxP - minP) * g / 4, gy = y(pv);
-      liqCtx.strokeStyle = "rgba(244,239,232,.06)";
+    for (var g = 0; g <= 5; g++) {
+      var pv = maxP - (maxP - minP) * g / 5, gy = y(pv);
+      liqCtx.strokeStyle = "rgba(244,239,232,.07)";
       liqCtx.beginPath(); liqCtx.moveTo(padL, gy);
-      liqCtx.lineTo(padL + plotW + padR, gy); liqCtx.stroke();
+      liqCtx.lineTo(padL + plotW, gy); liqCtx.stroke();
       liqCtx.fillStyle = LIQ_MUT; liqCtx.textAlign = "left";
-      liqCtx.fillText(pv.toFixed(7), padL + plotW + padR + 4, gy);
+      liqCtx.fillText(pv.toFixed(7), padL + plotW + 6, gy);
     }
-    // time ticks: 4 marcas fixas na janela de 7 dias
+    // time ticks nas bordas das colunas (o eixo é não-linear por snapshot,
+    // então cada rótulo é o horário real daquele snapshot); com janela curta
+    // a data se repetiria, então inclui a hora até a janela passar de 4 dias
     liqCtx.textAlign = "center";
-    for (var ti = 0; ti < 4; ti++) {
-      var tv = tStart + winS * ti / 3;
-      var tx = Math.max(padL + 26, Math.min(xT(tv), padL + plotW - 26));
+    var tickOpts = winS <= 4 * 86400
+      ? { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }
+      : { month: "short", day: "numeric" };
+    var nTicks = Math.max(2, Math.min(5, Math.floor(plotW / 150)));
+    for (var ti = 0; ti < nTicks; ti++) {
+      var bj = Math.round(ti * hist.length / (nTicks - 1));
+      var tx = Math.max(padL + 44, Math.min(padL + bj * colW, padL + plotW - 44));
       liqCtx.fillStyle = LIQ_MUT;
-      liqCtx.fillText(new Date(tv * 1000).toLocaleDateString("en-US",
-        { month: "short", day: "numeric" }), tx, H - padB / 2);
+      liqCtx.fillText(new Date(bounds[bj] * 1000).toLocaleString("en-US", tickOpts),
+        tx, H - padB / 2);
     }
-    if (hist.length < 100) {
-      liqCtx.fillStyle = LIQ_MUT; liqCtx.textAlign = "left";
-      liqCtx.font = "600 11px ui-sans-serif,system-ui,sans-serif";
-      liqCtx.fillText("depth history builds hourly →", padL + 6, padT + 12);
-      liqCtx.font = "600 10px ui-monospace,Menlo,monospace";
-    }
-
-    // linha de preço: CoinGecko 7d cobre a janela; fallback = mids dos snapshots
+    // linha de preço: CoinGecko 7d cobre a janela; fallback = mids dos
+    // snapshots. Sombra escura para a linha ler por cima das células claras.
     var last = hist[hist.length - 1];
-    liqCtx.strokeStyle = LIQ_INK; liqCtx.lineWidth = 1.6; liqCtx.globalAlpha = 0.92;
+    var curP = cg.length ? cg[cg.length - 1][1] : last.m;
+    liqCtx.save();
+    liqCtx.beginPath(); liqCtx.rect(padL, padT, plotW, plotH); liqCtx.clip();
+    liqCtx.lineJoin = "round"; liqCtx.lineCap = "round";
+    var tracePath = function () {
+      liqCtx.beginPath();
+      if (cg.length > 1) {
+        cg.forEach(function (r, i) {
+          var px = xT(r[0] / 1000), py = y(r[1]);
+          i ? liqCtx.lineTo(px, py) : liqCtx.moveTo(px, py);
+        });
+      } else {
+        hist.forEach(function (h, i) {
+          var px = padL + (i + 0.5) * colW, py = y(h.m);
+          i ? liqCtx.lineTo(px, py) : liqCtx.moveTo(px, py);
+        });
+      }
+      liqCtx.lineTo(padL + plotW, y(curP));
+    };
+    // halo escuro por baixo para a linha ler sobre as células claras
+    tracePath();
+    liqCtx.strokeStyle = "rgba(0,0,0,.55)"; liqCtx.lineWidth = 4.5;
+    liqCtx.shadowColor = "rgba(0,0,0,.9)"; liqCtx.shadowBlur = 6; liqCtx.stroke();
+    // linha branca por cima
+    tracePath();
+    liqCtx.strokeStyle = LIQ_INK; liqCtx.lineWidth = 2.2;
+    liqCtx.shadowColor = "rgba(0,0,0,0)"; liqCtx.shadowBlur = 0; liqCtx.stroke();
+    liqCtx.restore();
+
+    // preço atual: tracejado no plot + etiqueta no eixo (estilo Coinglass)
+    var cpy = y(curP);
+    liqCtx.strokeStyle = "rgba(255,122,26,.75)"; liqCtx.lineWidth = 1;
+    liqCtx.setLineDash([4, 4]);
+    liqCtx.beginPath(); liqCtx.moveTo(padL, cpy); liqCtx.lineTo(padL + plotW, cpy); liqCtx.stroke();
+    liqCtx.setLineDash([]);
+    liqCtx.save();
+    liqCtx.shadowColor = "rgba(255,122,26,.9)"; liqCtx.shadowBlur = 8;
+    liqCtx.fillStyle = "#ff7a1a";
+    liqCtx.beginPath(); liqCtx.arc(padL + plotW - 2, cpy, 3.2, 0, 7); liqCtx.fill();
+    liqCtx.shadowBlur = 0; liqCtx.fillStyle = LIQ_INK;
+    liqCtx.beginPath(); liqCtx.arc(padL + plotW - 2, cpy, 1.5, 0, 7); liqCtx.fill();
+    liqCtx.restore();
+    var tagH = 16, tagY = Math.max(padT, Math.min(cpy - tagH / 2, padT + plotH - tagH));
+    liqCtx.fillStyle = "#ff5c00";
     liqCtx.beginPath();
-    if (cg.length > 1) {
-      cg.forEach(function (r, i) {
-        var px = xT(r[0] / 1000), py = y(r[1]);
-        i ? liqCtx.lineTo(px, py) : liqCtx.moveTo(px, py);
-      });
-    } else {
-      hist.forEach(function (h, i) {
-        var px = xT(h.t) - colW / 2, py = y(h.m);
-        i ? liqCtx.lineTo(px, py) : liqCtx.moveTo(px, py);
-      });
-    }
-    liqCtx.stroke(); liqCtx.globalAlpha = 1;
-    liqCtx.fillStyle = LIQ_INK;
-    liqCtx.beginPath(); liqCtx.arc(xT(last.t) - colW / 2, y(last.m), 3, 0, 7); liqCtx.fill();
+    if (liqCtx.roundRect) liqCtx.roundRect(padL + plotW + 2, tagY, padR - 4, tagH, 3);
+    else liqCtx.rect(padL + plotW + 2, tagY, padR - 4, tagH);
+    liqCtx.fill();
+    liqCtx.fillStyle = "#1a0d02"; liqCtx.textAlign = "left";
+    liqCtx.font = "700 10px " + "ui-monospace,Menlo,monospace";
+    liqCtx.fillText(curP.toFixed(7), padL + plotW + 6, tagY + tagH / 2);
 
-    // current depth profile in the right gutter
-    var gx = padL + plotW + 2, gw = padR - 6, maxLast = 1;
-    last.b.concat(last.a).forEach(function (r) { if (r[1] > maxLast) maxLast = r[1]; });
-    liqCtx.strokeStyle = "rgba(244,239,232,.12)";
-    liqCtx.beginPath(); liqCtx.moveTo(gx, padT); liqCtx.lineTo(gx, padT + plotH); liqCtx.stroke();
-    var halfL = last.m * (d.grid.bin_pct / 100) / 2;
-    [["b", last.b, LIQ_BID], ["a", last.a, LIQ_ASK]].forEach(function (side) {
-      side[1].forEach(function (r) {
-        var yTop = y(r[0] + halfL), hPx = Math.max(1, y(r[0] - halfL) - yTop - 1);
-        liqCtx.fillStyle = side[2]; liqCtx.globalAlpha = 0.85;
-        liqCtx.fillRect(gx + 2, yTop, (r[1] / maxLast) * gw, hPx);
-        cells.push({ i: hist.length - 1, x: gx + 2, y: yTop, w: gw, h: hPx,
-                     p: r[0], usd: r[1], side: side[0], t: last.t, now: true });
-      });
-    });
-    liqCtx.globalAlpha = 1;
-
-    // hovered cell highlight
+    // crosshair + hovered cell highlight
     if (liqHover) {
-      liqCtx.strokeStyle = LIQ_INK; liqCtx.lineWidth = 1;
+      var hx = liqHover.x + liqHover.w / 2, hy = liqHover.y + liqHover.h / 2;
+      liqCtx.strokeStyle = "rgba(244,239,232,.35)"; liqCtx.lineWidth = 1;
+      liqCtx.setLineDash([3, 3]);
+      liqCtx.beginPath(); liqCtx.moveTo(hx, padT); liqCtx.lineTo(hx, padT + plotH); liqCtx.stroke();
+      liqCtx.beginPath(); liqCtx.moveTo(padL, hy); liqCtx.lineTo(padL + plotW, hy); liqCtx.stroke();
+      liqCtx.setLineDash([]);
+      liqCtx.strokeStyle = LIQ_INK;
       liqCtx.strokeRect(liqHover.x + 0.5, liqHover.y + 0.5,
-        Math.ceil(liqHover.w) - 1, liqHover.h - 1);
+        Math.max(1, liqHover.w - 1), Math.max(1, liqHover.h - 1));
     }
     liqGeo = { cells: cells };
   }
@@ -623,11 +1004,12 @@
       }
       if (hit !== liqHover) { liqHover = hit; drawLiq(); }
       if (hit && tip) {
+        var TL = LIQ_LBL[curLang()] || LIQ_LBL.en;
         tip.innerHTML = "<b>" + fmtPrice(hit.p) + "</b> · " +
-          (hit.side === "b" ? '<span style="color:#43c59e">bids</span>' :
-                              '<span style="color:#e5484d">asks</span>') +
-          "<br>" + fmtUsd(hit.usd) + " resting on the books<br>" +
-          '<span class="rd-mono">' + (hit.now ? "right now" :
+          (hit.side === "b" ? '<span style="color:' + LIQ_BID + '">' + TL.bids + "</span>" :
+                              '<span style="color:' + LIQ_ASK + '">' + TL.asks + "</span>") +
+          "<br>" + fmtUsd(hit.usd) + " " + TL.rest + "<br>" +
+          '<span class="rd-mono">' + (hit.now ? TL.now :
             new Date(hit.t * 1000).toLocaleString("en-US",
               { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false })) +
           "</span>";
@@ -803,7 +1185,10 @@
     loadMktChart(1);
   }
 
-  function renderAll() { renderKpis(); renderFeed(); renderFlows(); renderLiqPanels(); renderMktTiles(); stamp(); }
+  function renderAll() {
+    renderKpis(); renderFeed(); renderFlows(); renderLiqPanels(); renderMktTiles(); stamp();
+    if (canvas) layout();
+  }
 
   function load(name) {
     return fetch(BASE + name + ".json?v=" + Date.now(), { cache: "no-store" })
@@ -814,7 +1199,7 @@
     Promise.all([load("daily"), load("feed"), load("graph"), load("flows"), load("liqmap")]).then(function (r) {
       data.daily = r[0]; data.feed = r[1]; data.graph = r[2]; data.flows = r[3]; data.liq = r[4];
       renderAll();
-      if (data.graph) bindGraph();
+      if (data.feed) bindGraph();
       if (data.liq) bindLiq();
       bindMkt();
     });
@@ -823,7 +1208,7 @@
       document.documentElement, { attributes: true, attributeFilter: ["lang"] });
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) cancelAnimationFrame(raf);
-      else if (data.graph) raf = requestAnimationFrame(draw);
+      else if (data.feed) raf = requestAnimationFrame(draw);
     });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

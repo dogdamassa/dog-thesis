@@ -30,8 +30,12 @@ module.exports = async function handler(req, res) {
       return i && i.id && String(i.content_type || i.contentType || '').indexOf('image') === 0;
     }).slice(0, MAX_CHECK);
 
-    var found = null;
-    for (var i = 0; i < images.length && !found; i += BATCH) {
+    /* ?all=1 → scan the whole wallet and return every DSC item
+       (krayscan members' gallery); default keeps the early-exit
+       first-match behavior used by the wallet-modal PFP. */
+    var wantAll = String((req.query && req.query.all) || '') === '1';
+    var found = [];
+    for (var i = 0; i < images.length && (wantAll || !found.length); i += BATCH) {
       var ids = images.slice(i, i + BATCH).map(function (x) { return x.id; });
       var batch = await getJson(KRAY + '/api/ordinals/properties/batch', {
         method: 'POST',
@@ -42,14 +46,14 @@ module.exports = async function handler(req, res) {
       for (var j = 0; j < ids.length; j++) {
         var p = props[ids[j]];
         if (p && Array.isArray(p.parents) && p.parents.indexOf(DSC_PARENT) !== -1) {
-          found = { id: ids[j], number: p.number };
-          break;
+          found.push({ id: ids[j], number: p.number });
+          if (!wantAll) break;
         }
       }
     }
     /* Ownership can change on-chain; 5 min fresh + 1 h stale is plenty. */
     res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=3600');
-    res.status(200).json({ success: true, dsc: found });
+    res.status(200).json({ success: true, dsc: found[0] || null, items: found });
   } catch (e) {
     res.status(502).json({ success: false, error: 'upstream' });
   }

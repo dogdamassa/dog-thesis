@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOG ARMY Social · The $DOG Army's town square, recorded on Bitcoin</title>
+<meta name="description" content="The KRAY Social feed aggregated by the DOG Army: posts owned as inscriptions, wallet-signed likes and comments, and repost pools that pay KRAY — read it all here, post on kray.space.">
+<meta property="og:site_name" content="DOG ARMY">
+<meta property="og:title" content="DOG ARMY Social">
+<meta property="og:description" content="The $DOG Army's town square, recorded on Bitcoin.">
+<meta property="og:image" content="https://dogarmy.space/public/og-card.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dogarmy.space/social">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DOG ARMY Social">
+<meta name="twitter:description" content="The $DOG Army's town square, recorded on Bitcoin.">
+<meta name="twitter:image" content="https://dogarmy.space/public/og-card.png">
+<link rel="icon" href="/public/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+<link rel="preload" as="font" href="/public/fonts/geist-sans.woff2" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<link rel="canonical" href="https://dogarmy.space/social">
+</head>
+<body>
+<header>
+  <nav>
+    <a class="brand" href="/" aria-label="Back to home"><span class="brand-logo"><img src="/public/dog-army-logo.png" alt="DOG ARMY"></span></a>
+    <div class="navlinks" aria-label="Main navigation">
+      <a href="/" data-i18n="nav.history">Home</a>
+      <a href="/#luta" data-i18n="nav.fight">The Fight</a>
+      <a href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
+      <a href="/web3" data-i18n="nav.web3">Social Space</a>
+      <a href="/social" class="active" data-i18n="nav.social">Feed</a>
+      <a href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
+      <a href="/#faq" data-i18n="nav.faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <div class="langsw" id="langsw" aria-label="Language"></div>
+      <button type="button" class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="navdrawer"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+<aside class="navdrawer" id="navdrawer" aria-label="Menu" aria-hidden="true">
+  <nav class="navdrawer-inner">
+    <a class="navdrawer-link" href="/" data-i18n="nav.history">Home</a>
+    <a class="navdrawer-link" href="/#luta" data-i18n="nav.fight">The Fight</a>
+    <a class="navdrawer-link" href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
+    <a class="navdrawer-link" href="/web3" data-i18n="nav.web3">Social Space</a>
+    <a class="navdrawer-link active" href="/social" data-i18n="nav.social">Feed</a>
+    <a class="navdrawer-link" href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
+    <a class="navdrawer-link" href="/#faq" data-i18n="nav.faq">FAQ</a>
+  </nav>
+</aside>
+<div class="navscrim" id="navscrim" hidden></div>
+
+<main>
+  <section class="sp-hero">
+    <div class="wrap">
+      <div class="kicker" data-i18n="socialPage.k">KRAY Social</div>
+      <h1 data-i18n="socialPage.h">The $DOG Army's town square. <span>Recorded on Bitcoin.</span></h1>
+      <p class="lead" data-i18n="socialPage.lead">A social network recorded on Bitcoin: posts, likes and $DOG rewards, all signed by your wallet. This is what the $DOG Army is saying right now.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="https://www.kray.space/social" target="_blank" rel="noopener" data-i18n="socialPage.b1">Post on KRAY ↗</a>
+        <a class="btn secondary" href="#feed" data-i18n="socialPage.b2">Read the feed ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sp-how">
+    <div class="wrap">
+      <div class="grid grid-3">
+        <article class="card">
+          <span class="tag" data-i18n="socialPage.c1t">Identity</span>
+          <h3 data-i18n="socialPage.c1h">Your profile is an inscription.</h3>
+          <p data-i18n="socialPage.c1p">You post as an Ordinals inscription, or an L2 NFT, that you own on Bitcoin. No account to create, no profile to be taken away: if you hold the keys, you hold the voice.</p>
+        </article>
+        <article class="card">
+          <span class="tag" data-i18n="socialPage.c2t">Engagement</span>
+          <h3 data-i18n="socialPage.c2h">Likes and comments are signed.</h3>
+          <p data-i18n="socialPage.c2p">Every like, comment and follow is a message signed by your KrayWallet. No password, no tracking: a Schnorr signature proves it is you, and nothing else about you.</p>
+        </article>
+        <article class="card">
+          <span class="tag" data-i18n="socialPage.c3t">$DOG rewards</span>
+          <h3 data-i18n="socialPage.c3h">Reposting can pay you.</h3>
+          <p data-i18n="socialPage.c3p">Posts can carry a reward pool in escrow. Repost one with open slots and the Origin Layer pays you $DOG (and KRAY) automatically. Look for the reward badge in the feed.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="feed" class="sp-feed">
+    <div class="wrap">
+      <div class="sp-feed-head">
+        <div>
+          <div class="kicker" data-i18n="socialPage.fk">The feed · live from kray.space</div>
+          <h2 data-i18n="socialPage.fh">What the $DOG Army is saying.</h2>
+        </div>
+        <div class="social-strip-filters">
+          <button type="button" class="soc-chip active" data-feed="trending">🔥 <span data-i18n="soc.trending">Trending</span></button>
+          <button type="button" class="soc-chip" data-feed="recent">🕐 <span data-i18n="soc.recent">Recent</span></button>
+        </div>
+      </div>
+      <div class="sp-timeline" id="spTimeline">
+        <p class="sp-msg" data-i18n="soc.loading">Loading posts…</p>
+      </div>
+      <div class="sp-join">
+        <div>
+          <h3 data-i18n="socialPage.jh">Want to talk back?</h3>
+          <p data-i18n="socialPage.jp">Install KrayWallet, pick an inscription as your profile and join the conversation: likes, comments and paid reposts, all signed on Bitcoin. Your rank at the Social Space works with the same wallet.</p>
+        </div>
+        <div class="sp-join-actions">
+          <a class="btn primary" href="https://www.kray.space/social" target="_blank" rel="noopener" data-i18n="socialPage.jb1">Open KRAY Social ↗</a>
+          <a class="btn secondary" href="/web3" data-i18n="socialPage.jb2">Set up your wallet at the HQ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><div class="inner"><p><strong>DOG ARMY</strong><br><span data-i18n="socialPage.ftLine">Social — the KRAY Social feed, aggregated and verified on Bitcoin.</span></p><p><a href="https://www.kray.space/social" target="_blank" rel="noopener">KRAY Social ↗</a><br><a href="/" data-i18n="w3.ftBack">Back to DOG ARMY</a></p></div><div class="disclaimer" data-i18n="socialPage.ftDisc">Posts are user-generated content published on KRAY Social, shown here read-only for the community. No financial advice. Rewards run on KRAY's L2 under KRAY's protocol rules.</div></div>
+</footer>
+
+<script src="/i18n.js"></script>
+<script src="/social.js" defer></script>
+</body>
+</html>

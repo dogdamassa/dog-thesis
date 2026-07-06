@@ -18,6 +18,12 @@ module.exports = async function handler(req, res) {
     return;
   }
   try {
+    /* L2 KRAY balance rides along for the profile header (best-effort:
+       a dead L2 must never break the badge read) */
+    var l2p = kray.getJson(kray.KRAY + '/l2/account/' + address + '/balance')
+      .then(function (a) { return a && a.balance_kray != null ? String(a.balance_kray) : null; })
+      .catch(function () { return null; });
+
     var wallet = await kray.getJson(kray.KRAY + '/api/wallet/' + address + '/inscriptions');
     var items = (wallet.inscriptions || []).filter(function (i) {
       return i && kray.isInscriptionId(i.id);
@@ -44,7 +50,12 @@ module.exports = async function handler(req, res) {
       }
     }
     res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=3600');
-    res.status(200).json({ success: true, badges: badges, checked: items.length });
+    res.status(200).json({
+      success: true,
+      badges: badges,
+      checked: items.length,
+      kray_balance: await l2p
+    });
   } catch (e) {
     res.status(502).json({ success: false, error: 'upstream' });
   }

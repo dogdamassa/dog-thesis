@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DOG ARMY Web3 HQ · Your Rank, On Chain</title>
+<title>DOG ARMY Social Space · Your Rank, On Chain</title>
 <meta name="description" content="Connect your KRAY Wallet, prove what you hold on Bitcoin — DOG, Runestone, Dog Social Club — earn your army rank, sign the oath and claim missions on the Origin Layer.">
 <meta property="og:site_name" content="DOG ARMY">
-<meta property="og:title" content="DOG ARMY Web3 HQ">
+<meta property="og:title" content="DOG ARMY Social Space">
 <meta property="og:description" content="Your rank lives on Bitcoin. Connect, verify, enlist.">
 <meta property="og:image" content="https://dogarmy.space/public/og-card.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dogarmy.space/web3">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DOG ARMY Web3 HQ">
+<meta name="twitter:title" content="DOG ARMY Social Space">
 <meta name="twitter:description" content="Your rank lives on Bitcoin. Connect, verify, enlist.">
 <meta name="twitter:image" content="https://dogarmy.space/public/og-card.png">
 <link rel="icon" href="/public/favicon.ico" sizes="any">
@@ -28,10 +28,11 @@
   <nav>
     <a class="brand" href="/" aria-label="Back to home"><span class="brand-logo"><img src="/public/dog-army-logo.png" alt="DOG ARMY"></span></a>
     <div class="navlinks" aria-label="Main navigation">
-      <a href="/#historia" data-i18n="nav.history">Story</a>
+      <a href="/" data-i18n="nav.history">Home</a>
       <a href="/#luta" data-i18n="nav.fight">The Fight</a>
       <a href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
-      <a href="/web3" class="active" data-i18n="nav.web3">Web3 HQ</a>
+      <a href="/web3" class="active" data-i18n="nav.web3">Social Space</a>
+      <a href="/social" data-i18n="nav.social">Feed</a>
       <a href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
       <a href="/#faq" data-i18n="nav.faq">FAQ</a>
     </div>
@@ -44,10 +45,11 @@
 <div class="navscrim" id="navscrim" hidden></div>
 <aside class="navdrawer" id="navdrawer" aria-label="Menu" aria-hidden="true">
   <nav class="navdrawer-inner">
-    <a class="navdrawer-link" href="/#historia" data-i18n="nav.history">Story</a>
+    <a class="navdrawer-link" href="/" data-i18n="nav.history">Home</a>
     <a class="navdrawer-link" href="/#luta" data-i18n="nav.fight">The Fight</a>
     <a class="navdrawer-link" href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
-    <a class="navdrawer-link active" href="/web3" data-i18n="nav.web3">Web3 HQ</a>
+    <a class="navdrawer-link active" href="/web3" data-i18n="nav.web3">Social Space</a>
+    <a class="navdrawer-link" href="/social" data-i18n="nav.social">Feed</a>
     <a class="navdrawer-link" href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
     <a class="navdrawer-link" href="/#faq" data-i18n="nav.faq">FAQ</a>
   </nav>
@@ -59,11 +61,18 @@
   <section class="hero rune-hero" aria-labelledby="page-title">
     <div class="wrap hero-content">
       <div class="hero-copy">
-        <span class="eyebrow" data-i18n="w3.eyebrow">Web3 HQ · Origin Layer</span>
+        <span class="eyebrow" data-i18n="w3.eyebrow">Social Space · Origin Layer</span>
         <h1 id="page-title" data-i18n="w3.h1">Your rank lives <span>on Bitcoin.</span></h1>
         <p class="sub" data-i18n="w3.sub">No sign-ups, no email, no password. Connect your KRAY Wallet and this page reads the chain: your $DOG, your Runestone, your Dog Social Club. What you hold is what you are.</p>
-        <div class="hero-actions">
-          <button type="button" class="btn primary" id="w3Connect" data-i18n="w3.connect">Connect KRAY Wallet</button>
+        <div class="hero-actions w3-connect-row">
+          <button type="button" class="w3-connect-big" id="w3Connect">
+            <img src="/public/kray-space-icon.png" alt="" width="30" height="30">
+            <span id="w3ConnectLbl" data-i18n="w3.connect">Connect KRAY Wallet</span>
+          </button>
+          <button type="button" class="w3-connect-soon" disabled aria-disabled="true" title="Xverse support is coming">
+            <img src="/public/xverse-icon.png" alt="" width="26" height="26">
+            <b>Xverse</b><em data-i18n="w3.soon">soon</em>
+          </button>
           <a class="btn secondary" href="https://kray.space/install-extension" target="_blank" rel="noopener" id="w3Install" hidden data-i18n="wl.install">Get KRAY Wallet ↗</a>
         </div>
         <p class="w3-status" id="w3Status" data-i18n="w3.stDisconnected">Wallet not connected. Everything here is read-only until you sign — and this site can never move your coins.</p>
@@ -82,97 +91,156 @@
         <p class="lead" data-i18n="w3.rkLead">Ranks are not sold and not given — they are read from the Bitcoin blockchain. Hold $DOG, hold the Runestone, hold a Dog Social Club: each one is verified on chain, live, when you connect.</p>
       </div>
 
-      <div class="w3-rank">
-        <div class="w3-badges">
-          <div class="w3-badge" id="w3BadgeDog">
-            <b>$DOG</b>
-            <span id="w3BadgeDogVal" data-i18n="w3.bWait">awaiting wallet…</span>
+      <div class="w3-prof-empty" id="w3ProfEmpty">
+        <p data-i18n="w3.pfEmpty">Your on-chain profile opens right here when you connect the KRAY Wallet above — sats, inscriptions, runes, KRAY and your rank, read live from the chain. Read-only: this page can never move your coins.</p>
+      </div>
+
+      <div class="w3-profile" id="w3Profile" hidden>
+        <div class="w3-prof-head">
+          <img class="w3-prof-pfp" id="w3ProfPfp" src="/public/dog-army-mark.png" alt="Profile avatar" width="96" height="96">
+          <div class="w3-prof-id">
+            <div class="w3-prof-addrrow">
+              <code id="w3ProfAddr">—</code>
+              <button type="button" class="w3-chipbtn" id="w3Copy">⧉ <span data-i18n="w3.pfCopy">Copy</span></button>
+              <button type="button" class="w3-chipbtn" id="w3Refresh">⟳ <span data-i18n="w3.pfRefresh">Refresh</span></button>
+            </div>
+            <div class="w3-prof-chips">
+              <span class="w3-chip">∇ KrayWallet</span>
+              <span class="w3-chip w3-chip-ro" data-i18n="w3.pfRead">read-only</span>
+            </div>
+            <div class="w3-prof-stats">
+              <div class="w3-pstat w3-pstat-sats"><b id="w3StSats">—</b><i id="w3StUsd"></i><span>satoshis</span></div>
+              <div class="w3-pstat"><b id="w3StIns">—</b><span data-i18n="w3.pfIns">inscriptions</span></div>
+              <div class="w3-pstat"><b id="w3StRunes">—</b><span data-i18n="w3.pfRunes">runes</span></div>
+              <div class="w3-pstat w3-pstat-kray"><b id="w3StKray">—</b><span>KRAY ∇</span></div>
+            </div>
           </div>
-          <div class="w3-badge" id="w3BadgeRunestone">
-            <b>RUNESTONE</b>
-            <span id="w3BadgeRunestoneVal" data-i18n="w3.bWait">awaiting wallet…</span>
-          </div>
-          <div class="w3-badge" id="w3BadgeDsc">
-            <b>DOG•SOCIAL•CLUB</b>
-            <span id="w3BadgeDscVal" data-i18n="w3.bWait">awaiting wallet…</span>
+          <div class="w3-prof-rank" id="w3ProfRank" hidden><i aria-hidden="true">★</i><b id="w3ProfRankName">—</b></div>
+        </div>
+
+        <div class="w3-prof-tabs" role="tablist" aria-label="Profile sections">
+          <button type="button" class="w3-ptab is-on" id="w3TabBtnAssets"><span aria-hidden="true">▦</span> <span data-i18n="w3.tbAssets">L1 Assets</span></button>
+          <button type="button" class="w3-ptab" id="w3TabBtnRank"><span aria-hidden="true">🏆</span> <span data-i18n="w3.tbRank">Rank &amp; Badges</span></button>
+          <button type="button" class="w3-ptab" id="w3TabBtnDao"><span aria-hidden="true">💬</span> <span data-i18n="w3.tbDao">DAO Room</span></button>
+          <button type="button" class="w3-ptab" id="w3TabBtnFeed"><span aria-hidden="true">📰</span> <span data-i18n="w3.tbFeed">Feed</span></button>
+        </div>
+
+        <div id="w3PanelAssets">
+          <h3 class="w3-prof-h"><span data-i18n="w3.pfInsH">Inscriptions</span> <em id="w3InsCount">0</em></h3>
+          <div class="w3-ins-grid" id="w3InsGrid"></div>
+          <h3 class="w3-prof-h"><span data-i18n="w3.pfRunesH">Runes</span> <em id="w3RunesCount">0</em></h3>
+          <div class="w3-runes-grid" id="w3RunesGrid"></div>
+        </div>
+
+        <div id="w3PanelRank" hidden>
+          <div class="w3-rank">
+            <div class="w3-badges">
+              <div class="w3-badge" id="w3BadgeDog">
+                <b>$DOG</b>
+                <span id="w3BadgeDogVal" data-i18n="w3.bWait">awaiting wallet…</span>
+              </div>
+              <div class="w3-badge" id="w3BadgeRunestone">
+                <b>RUNESTONE</b>
+                <span id="w3BadgeRunestoneVal" data-i18n="w3.bWait">awaiting wallet…</span>
+              </div>
+              <div class="w3-badge" id="w3BadgeDsc">
+                <b>DOG•SOCIAL•CLUB</b>
+                <span id="w3BadgeDscVal" data-i18n="w3.bWait">awaiting wallet…</span>
+              </div>
+            </div>
+
+            <div class="w3-rank-result" id="w3RankBox" hidden>
+              <div class="w3-rank-title"><span data-i18n="w3.rkYour">Your rank:</span> <strong id="w3RankName">—</strong></div>
+              <p class="w3-rank-note" id="w3RankNote"></p>
+              <div class="hero-actions">
+                <button type="button" class="btn primary" id="w3Oath" data-i18n="w3.oathBtn">Sign the Soldier's Oath</button>
+                <button type="button" class="btn secondary" id="w3CardDownload" hidden data-i18n="w3.cardDl">Download rank card</button>
+                <a class="btn secondary" id="w3CardShare" target="_blank" rel="noopener" hidden data-i18n="w3.cardShare">Recruit on X ↗</a>
+              </div>
+              <p class="w3-note" data-i18n="w3.oathNote">The oath is a free Schnorr signature (BIP-340) — the same cryptography that secures Bitcoin. It proves the wallet is yours. It moves nothing.</p>
+              <canvas id="w3Canvas" width="1200" height="630" hidden></canvas>
+              <img id="w3CardImg" class="w3-card-img" alt="DOG ARMY rank card" hidden>
+            </div>
           </div>
         </div>
 
-        <div class="w3-rank-result" id="w3RankBox" hidden>
-          <div class="w3-rank-title"><span data-i18n="w3.rkYour">Your rank:</span> <strong id="w3RankName">—</strong></div>
-          <p class="w3-rank-note" id="w3RankNote"></p>
-          <div class="hero-actions">
-            <button type="button" class="btn primary" id="w3Oath" data-i18n="w3.oathBtn">Sign the Soldier's Oath</button>
-            <button type="button" class="btn secondary" id="w3CardDownload" hidden data-i18n="w3.cardDl">Download rank card</button>
-            <a class="btn secondary" id="w3CardShare" target="_blank" rel="noopener" hidden data-i18n="w3.cardShare">Recruit on X ↗</a>
+        <div id="w3PanelDao" hidden>
+          <div class="w3-dao-top">
+            <h3 class="w3-prof-h"><span>DOG•GO•TO•THE•MOON</span> <em id="w3DaoOnline">—</em></h3>
+            <a class="w3-dao-open" href="https://www.kray.space/dao-room?rune=DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener" data-i18n="w3.daoOpen">Full room on KRAY ↗</a>
           </div>
-          <p class="w3-note" data-i18n="w3.oathNote">The oath is a free Schnorr signature (BIP-340) — the same cryptography that secures Bitcoin. It proves the wallet is yours. It moves nothing.</p>
-          <canvas id="w3Canvas" width="1200" height="630" hidden></canvas>
-          <img id="w3CardImg" class="w3-card-img" alt="DOG ARMY rank card" hidden>
+          <div class="w3-dao-you" id="w3DaoYou" hidden></div>
+          <div class="w3-dao-main">
+            <h4 class="w3-dao-h" data-i18n="w3.daoChatH">💬 Live chat</h4>
+            <div class="w3-dao-chat" id="w3DaoChat"><div class="w3-dao-empty">…</div></div>
+            <div class="w3-dao-compose" id="w3DaoCompose" hidden>
+              <textarea id="w3DaoInput" rows="2" maxlength="280" placeholder="Say something to the DOG room…"></textarea>
+              <div class="w3-dao-compose-bar">
+                <span class="w3-dao-compose-note" id="w3DaoStatus"></span>
+                <button type="button" class="w3-chipbtn" id="w3DaoSend" data-i18n="w3.daoSend">Post · sign in wallet</button>
+              </div>
+            </div>
+            <div class="w3-dao-gate" id="w3DaoGate" hidden data-i18n="w3.daoGate">Connect a wallet that holds $DOG to post in the room.</div>
+          </div>
+          <details class="w3-dao-props-wrap">
+            <summary><span data-i18n="w3.daoPropsH">🏛 Proposals</span> <em data-i18n="w3.daoPropsSoon">— treasury &amp; voting land here next</em></summary>
+            <div class="w3-dao-props" id="w3DaoProps"><div class="w3-dao-empty">…</div></div>
+          </details>
+          <p class="w3-note" data-i18n="w3.daoNote">The official DOG DAO Room, live inside the HQ — post straight from here. Your KrayWallet signs to prove you hold $DOG, and each voice is weighted by its share of the DOG supply. Proposals and treasury land here next.</p>
+        </div>
+
+        <div id="w3PanelFeed" hidden>
+          <div class="w3-dao-top">
+            <h3 class="w3-prof-h"><span aria-hidden="true">📰</span> <span data-i18n="w3.fdH">Your Feed</span></h3>
+            <a class="w3-dao-open" href="https://www.kray.space/profile/feed" target="_blank" rel="noopener" data-i18n="w3.fdOpen">Full feed on KRAY ↗</a>
+          </div>
+          <div class="w3-feed-stats" id="w3FeedStats" hidden>
+            <div class="w3-fstat"><b id="w3FeedFollowing">0</b><span data-i18n="w3.fdFollowing">Following</span></div>
+            <div class="w3-fstat"><b id="w3FeedLikes">0</b><span data-i18n="w3.fdLikes">Likes given</span></div>
+            <div class="w3-fstat w3-fstat-kray"><b id="w3FeedEarned">0</b><span data-i18n="w3.fdEarned">KRAY ▽ earned</span></div>
+          </div>
+          <p class="w3-note w3-ops-note" data-i18n="w3.fdLead">The Army's feed on the Origin Layer: posts from the inscriptions and L2 NFTs you follow on KRAY, each carrying its live KRAY reward. Follow nobody yet? You still see what the whole Army is posting right now.</p>
+          <p class="w3-feed-mode" id="w3FeedMode" hidden></p>
+          <div class="w3-feed" id="w3FeedList" aria-live="polite">
+            <div class="w3-feed-empty" data-i18n="w3.fdBoot">Open this tab to load the feed.</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ACT 3 · MISSIONS -->
-  <section id="missoes">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="kicker" data-i18n="w3.msKicker">Missions · Dev Scroll</div>
-          <h2 data-i18n="w3.msH">Complete the mission. The escrow pays you.</h2>
-        </div>
-        <p class="lead" data-i18n="w3.msLead">Army missions are backed by a public reward pool locked in escrow on KRAY's Origin Layer. When you claim, the escrow releases the reward straight to your wallet — no promises, no middleman, verifiable by anyone.</p>
+  <!-- ACT 3 · SOCIAL: the space freed by the missions/supply sections -->
+  <div class="social-strip" id="krSocial" aria-label="KRAY Social feed">
+    <div class="wrap social-strip-head">
+      <div class="social-strip-pitch">
+        <span class="social-strip-label"><span class="social-dot" aria-hidden="true"></span><span data-i18n="soc.label">KRAY Social · the $DOG Army live</span></span>
+        <p class="social-strip-hook" data-i18n="soc.hook">A social network recorded on Bitcoin. Posts, likes and KRAY rewards. This is what the $DOG Army is saying right now.</p>
       </div>
-
-      <div class="w3-mission" id="w3MissionBox">
-        <div class="w3-mission-arming" id="w3MsArming">
-          <span class="tag watch" data-i18n="w3.msArmingTag">Arming</span>
-          <h3 data-i18n="w3.msArmingH">First mission under preparation.</h3>
-          <p data-i18n="w3.msArmingP">The reward pool is being loaded into escrow. When it goes live you will see the pool, the reward per soldier and the claim button right here. Follow the army on X to catch it.</p>
+      <div class="social-strip-actions">
+        <div class="social-strip-filters">
+          <button type="button" class="soc-chip active" data-feed="trending">🔥 <span data-i18n="soc.trending">Trending</span></button>
+          <button type="button" class="soc-chip" data-feed="recent">🕐 <span data-i18n="soc.recent">Recent</span></button>
         </div>
-        <div class="w3-mission-live" id="w3MsLive" hidden>
-          <div class="w3-pool">
-            <div class="w3-pool-row"><span data-i18n="w3.msTitle">Mission</span><strong id="w3MsTitle">—</strong></div>
-            <div class="w3-pool-row"><span data-i18n="w3.msReward">Reward per soldier</span><strong id="w3MsReward">—</strong></div>
-            <div class="w3-pool-row"><span data-i18n="w3.msLeft">Claims remaining</span><strong id="w3MsLeft">—</strong></div>
-            <div class="w3-pool-bar"><i id="w3MsBar"></i></div>
-            <div class="w3-pool-row w3-pool-sub"><span data-i18n="w3.msPool">Pool in escrow</span><span id="w3MsPool">—</span></div>
-          </div>
-          <button type="button" class="btn primary" id="w3Claim" data-i18n="w3.msClaim">Claim reward</button>
-          <p class="w3-note" id="w3MsStatus" data-i18n="w3.msConnect">Connect your wallet above to claim.</p>
-        </div>
+        <a class="btn primary social-strip-btn" href="/social" data-i18n="soc.cta">Explore the Social →</a>
       </div>
     </div>
-  </section>
-
-  <!-- ACT 4 · SUPPLY THE HQ -->
-  <section id="municiar">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="kicker" data-i18n="w3.tpKicker">Supply lines</div>
-          <h2 data-i18n="w3.tpH">Supply the HQ.</h2>
-        </div>
-        <p class="lead" data-i18n="w3.tpLead">The investigation, the radar and this site are kept by the community. If the work is useful, you can supply the HQ with KRAY on the Origin Layer — signed by you, recorded on L2, anchored to Bitcoin.</p>
+    <div class="social-strip-viewport">
+      <div class="social-strip-track" id="krSocialTrack">
+        <span class="social-strip-msg" data-i18n="soc.loading">Loading posts…</span>
       </div>
+    </div>
+  </div>
 
-      <div class="w3-tip" id="w3TipBox">
-        <div id="w3TipArming">
-          <span class="tag watch" data-i18n="w3.tpArmingTag">Soon</span>
-          <p data-i18n="w3.tpArmingP">The HQ supply address is being set up. Check back soon.</p>
-        </div>
-        <div id="w3TipLive" hidden>
-          <div class="w3-tip-amounts" role="group" aria-label="Tip amount">
-            <button type="button" class="w3-amt" data-amt="10">10 KRAY</button>
-            <button type="button" class="w3-amt is-sel" data-amt="50">50 KRAY</button>
-            <button type="button" class="w3-amt" data-amt="100">100 KRAY</button>
-            <button type="button" class="w3-amt" data-amt="500">500 KRAY</button>
-          </div>
-          <button type="button" class="btn primary" id="w3Tip" data-i18n="w3.tpBtn">Send supplies</button>
-          <p class="w3-note" id="w3TipStatus"></p>
-          <p class="w3-note" data-i18n="w3.tpNote">Your KrayWallet shows exactly what you sign: amount, destination, nonce. 1 KRAY of network gas goes to the Origin Layer treasury.</p>
-        </div>
+  <!-- ACT 5.5 · KRAYSCAN -->
+  <section id="krayscan-embed">
+    <div class="wrap">
+      <div class="ks-embed">
+        <div class="ks-embed-title">🔍 KrayScan</div>
+        <p class="ks-embed-sub">Explore Bitcoin transactions, addresses, inscriptions, runes and KRAY L2 activity</p>
+        <form class="ks-embed-form" action="/krayscan" method="get">
+          <input type="text" class="ks-embed-input" name="q" placeholder="Enter TXID (64 hex chars) or Address (bc1...)" autocomplete="off" spellcheck="false" required>
+          <button type="submit" class="ks-embed-btn">Search</button>
+        </form>
       </div>
     </div>
   </section>
@@ -191,7 +259,7 @@
 </main>
 
 <footer>
-  <div class="wrap"><div class="inner"><p><strong>DOG ARMY</strong><br><span data-i18n="w3.ftLine">Web3 HQ — powered by the KRAY Origin Layer, verified on Bitcoin.</span></p><p><a href="https://www.kray.space/developers" target="_blank" rel="noopener">KRAY Developers ↗</a><br><a href="/" data-i18n="w3.ftBack">Back to DOG ARMY</a></p></div><div class="disclaimer" data-i18n="w3.ftDisc">Educational material only. No financial advice. Ranks are symbolic and read from public on-chain data. Rewards and tips run on KRAY's L2 under KRAY's protocol rules.</div></div>
+  <div class="wrap"><div class="inner"><p><strong>DOG ARMY</strong><br><span data-i18n="w3.ftLine">Social Space — powered by the KRAY Origin Layer, verified on Bitcoin.</span></p><p><a href="https://www.kray.space/developers" target="_blank" rel="noopener">KRAY Developers ↗</a><br><a href="/" data-i18n="w3.ftBack">Back to DOG ARMY</a></p></div><div class="disclaimer" data-i18n="w3.ftDisc">Educational material only. No financial advice. Ranks are symbolic and read from public on-chain data. Rewards and tips run on KRAY's L2 under KRAY's protocol rules.</div></div>
 </footer>
 <script src="/i18n.js"></script>
 <script src="/web3.js" defer></script>
