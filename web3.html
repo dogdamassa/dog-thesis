@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOG ARMY Web3 HQ · Your Rank, On Chain</title>
+<meta name="description" content="Connect your KRAY Wallet, prove what you hold on Bitcoin — DOG, Runestone, Dog Social Club — earn your army rank, sign the oath and claim missions on the Origin Layer.">
+<meta property="og:site_name" content="DOG ARMY">
+<meta property="og:title" content="DOG ARMY Web3 HQ">
+<meta property="og:description" content="Your rank lives on Bitcoin. Connect, verify, enlist.">
+<meta property="og:image" content="https://dogarmy.space/public/og-card.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dogarmy.space/web3">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DOG ARMY Web3 HQ">
+<meta name="twitter:description" content="Your rank lives on Bitcoin. Connect, verify, enlist.">
+<meta name="twitter:image" content="https://dogarmy.space/public/og-card.png">
+<link rel="icon" href="/public/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+<link rel="preload" as="font" href="/public/fonts/geist-sans.woff2" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<link rel="canonical" href="https://dogarmy.space/web3">
+</head>
+<body>
+<header>
+  <nav>
+    <a class="brand" href="/" aria-label="Back to home"><span class="brand-logo"><img src="/public/dog-army-logo.png" alt="DOG ARMY"></span></a>
+    <div class="navlinks" aria-label="Main navigation">
+      <a href="/#historia" data-i18n="nav.history">Story</a>
+      <a href="/#luta" data-i18n="nav.fight">The Fight</a>
+      <a href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
+      <a href="/web3" class="active" data-i18n="nav.web3">Web3 HQ</a>
+      <a href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
+      <a href="/#faq" data-i18n="nav.faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <div class="langsw" id="langsw" aria-label="Language"></div>
+      <button type="button" class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="navdrawer"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+<div class="navscrim" id="navscrim" hidden></div>
+<aside class="navdrawer" id="navdrawer" aria-label="Menu" aria-hidden="true">
+  <nav class="navdrawer-inner">
+    <a class="navdrawer-link" href="/#historia" data-i18n="nav.history">Story</a>
+    <a class="navdrawer-link" href="/#luta" data-i18n="nav.fight">The Fight</a>
+    <a class="navdrawer-link" href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
+    <a class="navdrawer-link active" href="/web3" data-i18n="nav.web3">Web3 HQ</a>
+    <a class="navdrawer-link" href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
+    <a class="navdrawer-link" href="/#faq" data-i18n="nav.faq">FAQ</a>
+  </nav>
+</aside>
+
+<main id="top">
+
+  <!-- ACT 1 · CONNECT -->
+  <section class="hero rune-hero" aria-labelledby="page-title">
+    <div class="wrap hero-content">
+      <div class="hero-copy">
+        <span class="eyebrow" data-i18n="w3.eyebrow">Web3 HQ · Origin Layer</span>
+        <h1 id="page-title" data-i18n="w3.h1">Your rank lives <span>on Bitcoin.</span></h1>
+        <p class="sub" data-i18n="w3.sub">No sign-ups, no email, no password. Connect your KRAY Wallet and this page reads the chain: your $DOG, your Runestone, your Dog Social Club. What you hold is what you are.</p>
+        <div class="hero-actions">
+          <button type="button" class="btn primary" id="w3Connect" data-i18n="w3.connect">Connect KRAY Wallet</button>
+          <a class="btn secondary" href="https://kray.space/install-extension" target="_blank" rel="noopener" id="w3Install" hidden data-i18n="wl.install">Get KRAY Wallet ↗</a>
+        </div>
+        <p class="w3-status" id="w3Status" data-i18n="w3.stDisconnected">Wallet not connected. Everything here is read-only until you sign — and this site can never move your coins.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 2 · RANK -->
+  <section id="patente">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker" data-i18n="w3.rkKicker">Proof of Dog</div>
+          <h2 data-i18n="w3.rkH">What is your rank, soldier?</h2>
+        </div>
+        <p class="lead" data-i18n="w3.rkLead">Ranks are not sold and not given — they are read from the Bitcoin blockchain. Hold $DOG, hold the Runestone, hold a Dog Social Club: each one is verified on chain, live, when you connect.</p>
+      </div>
+
+      <div class="w3-rank">
+        <div class="w3-badges">
+          <div class="w3-badge" id="w3BadgeDog">
+            <b>$DOG</b>
+            <span id="w3BadgeDogVal" data-i18n="w3.bWait">awaiting wallet…</span>
+          </div>
+          <div class="w3-badge" id="w3BadgeRunestone">
+            <b>RUNESTONE</b>
+            <span id="w3BadgeRunestoneVal" data-i18n="w3.bWait">awaiting wallet…</span>
+          </div>
+          <div class="w3-badge" id="w3BadgeDsc">
+            <b>DOG•SOCIAL•CLUB</b>
+            <span id="w3BadgeDscVal" data-i18n="w3.bWait">awaiting wallet…</span>
+          </div>
+        </div>
+
+        <div class="w3-rank-result" id="w3RankBox" hidden>
+          <div class="w3-rank-title"><span data-i18n="w3.rkYour">Your rank:</span> <strong id="w3RankName">—</strong></div>
+          <p class="w3-rank-note" id="w3RankNote"></p>
+          <div class="hero-actions">
+            <button type="button" class="btn primary" id="w3Oath" data-i18n="w3.oathBtn">Sign the Soldier's Oath</button>
+            <button type="button" class="btn secondary" id="w3CardDownload" hidden data-i18n="w3.cardDl">Download rank card</button>
+            <a class="btn secondary" id="w3CardShare" target="_blank" rel="noopener" hidden data-i18n="w3.cardShare">Recruit on X ↗</a>
+          </div>
+          <p class="w3-note" data-i18n="w3.oathNote">The oath is a free Schnorr signature (BIP-340) — the same cryptography that secures Bitcoin. It proves the wallet is yours. It moves nothing.</p>
+          <canvas id="w3Canvas" width="1200" height="630" hidden></canvas>
+          <img id="w3CardImg" class="w3-card-img" alt="DOG ARMY rank card" hidden>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 3 · MISSIONS -->
+  <section id="missoes">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker" data-i18n="w3.msKicker">Missions · Dev Scroll</div>
+          <h2 data-i18n="w3.msH">Complete the mission. The escrow pays you.</h2>
+        </div>
+        <p class="lead" data-i18n="w3.msLead">Army missions are backed by a public reward pool locked in escrow on KRAY's Origin Layer. When you claim, the escrow releases the reward straight to your wallet — no promises, no middleman, verifiable by anyone.</p>
+      </div>
+
+      <div class="w3-mission" id="w3MissionBox">
+        <div class="w3-mission-arming" id="w3MsArming">
+          <span class="tag watch" data-i18n="w3.msArmingTag">Arming</span>
+          <h3 data-i18n="w3.msArmingH">First mission under preparation.</h3>
+          <p data-i18n="w3.msArmingP">The reward pool is being loaded into escrow. When it goes live you will see the pool, the reward per soldier and the claim button right here. Follow the army on X to catch it.</p>
+        </div>
+        <div class="w3-mission-live" id="w3MsLive" hidden>
+          <div class="w3-pool">
+            <div class="w3-pool-row"><span data-i18n="w3.msTitle">Mission</span><strong id="w3MsTitle">—</strong></div>
+            <div class="w3-pool-row"><span data-i18n="w3.msReward">Reward per soldier</span><strong id="w3MsReward">—</strong></div>
+            <div class="w3-pool-row"><span data-i18n="w3.msLeft">Claims remaining</span><strong id="w3MsLeft">—</strong></div>
+            <div class="w3-pool-bar"><i id="w3MsBar"></i></div>
+            <div class="w3-pool-row w3-pool-sub"><span data-i18n="w3.msPool">Pool in escrow</span><span id="w3MsPool">—</span></div>
+          </div>
+          <button type="button" class="btn primary" id="w3Claim" data-i18n="w3.msClaim">Claim reward</button>
+          <p class="w3-note" id="w3MsStatus" data-i18n="w3.msConnect">Connect your wallet above to claim.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 4 · SUPPLY THE HQ -->
+  <section id="municiar">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker" data-i18n="w3.tpKicker">Supply lines</div>
+          <h2 data-i18n="w3.tpH">Supply the HQ.</h2>
+        </div>
+        <p class="lead" data-i18n="w3.tpLead">The investigation, the radar and this site are kept by the community. If the work is useful, you can supply the HQ with KRAY on the Origin Layer — signed by you, recorded on L2, anchored to Bitcoin.</p>
+      </div>
+
+      <div class="w3-tip" id="w3TipBox">
+        <div id="w3TipArming">
+          <span class="tag watch" data-i18n="w3.tpArmingTag">Soon</span>
+          <p data-i18n="w3.tpArmingP">The HQ supply address is being set up. Check back soon.</p>
+        </div>
+        <div id="w3TipLive" hidden>
+          <div class="w3-tip-amounts" role="group" aria-label="Tip amount">
+            <button type="button" class="w3-amt" data-amt="10">10 KRAY</button>
+            <button type="button" class="w3-amt is-sel" data-amt="50">50 KRAY</button>
+            <button type="button" class="w3-amt" data-amt="100">100 KRAY</button>
+            <button type="button" class="w3-amt" data-amt="500">500 KRAY</button>
+          </div>
+          <button type="button" class="btn primary" id="w3Tip" data-i18n="w3.tpBtn">Send supplies</button>
+          <p class="w3-note" id="w3TipStatus"></p>
+          <p class="w3-note" data-i18n="w3.tpNote">Your KrayWallet shows exactly what you sign: amount, destination, nonce. 1 KRAY of network gas goes to the Origin Layer treasury.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 6 · HONESTY -->
+  <section id="doutrina-web3">
+    <div class="wrap">
+      <div class="grid grid-3">
+        <article class="card"><span class="tag proved" data-i18n="w3.dx1t">On chain</span><h3 data-i18n="w3.dx1h">Ranks are read, never granted</h3><p data-i18n="w3.dx1p">DOG, Runestone and Dog Social Club are verified by their on-chain provenance (parent inscriptions). This site cannot fake your rank — and neither can anyone else.</p></article>
+        <article class="card"><span class="tag proved" data-i18n="w3.dx2t">Your keys</span><h3 data-i18n="w3.dx2h">Signatures, not custody</h3><p data-i18n="w3.dx2p">Everything here works by Schnorr signature from your own wallet. The site never sees your seed, never holds your coins, and value-moving actions always open the wallet's confirmation popup.</p></article>
+        <article class="card"><span class="tag watch" data-i18n="w3.dx3t">Honest limit</span><h3 data-i18n="w3.dx3h">L2 is KRAY's system</h3><p data-i18n="w3.dx3p">The Origin Layer is built and operated by KRAY SPACE, an army sponsor. Its blocks are anchored to Bitcoin and exits to L1 are part of the protocol — but it is not Bitcoin L1. We say this out loud because that's the army's doctrine.</p></article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap"><div class="inner"><p><strong>DOG ARMY</strong><br><span data-i18n="w3.ftLine">Web3 HQ — powered by the KRAY Origin Layer, verified on Bitcoin.</span></p><p><a href="https://www.kray.space/developers" target="_blank" rel="noopener">KRAY Developers ↗</a><br><a href="/" data-i18n="w3.ftBack">Back to DOG ARMY</a></p></div><div class="disclaimer" data-i18n="w3.ftDisc">Educational material only. No financial advice. Ranks are symbolic and read from public on-chain data. Rewards and tips run on KRAY's L2 under KRAY's protocol rules.</div></div>
+</footer>
+<script src="/i18n.js"></script>
+<script src="/web3.js" defer></script>
+</body>
+</html>
