@@ -1,22 +1,22 @@
 {
-  "updated_at": "2026-07-06T18:04:46.472939+00:00",
+  "updated_at": "2026-07-06T18:33:56.650487+00:00",
   "date": "2026-07-06",
   "source": "dogdata.xyz",
   "cofre": {
     "rank": 1,
     "pct": 12.15,
     "total_dog": 12145094405.02146,
-    "delta_dog": -6729581.078001022,
+    "delta_dog": 0.0,
     "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
   },
-  "holders_total": 86310,
-  "holders_delta": 5,
+  "holders_total": 86312,
+  "holders_delta": 2,
   "exchanges": [
     {
       "id": "h2",
       "label": "Top #2",
       "community": "Gate",
-      "balance_dog": 3326598461.32051,
+      "balance_dog": 3418123065.70242,
       "rank": 2
     },
     {
