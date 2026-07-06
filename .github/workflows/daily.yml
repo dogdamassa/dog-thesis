@@ -34,6 +34,7 @@ jobs:
         run: |
           python3 scripts/build_data.py
           python3 scripts/flows.py
+          python3 scripts/liqmap.py
 
       - name: Comitar se mudou
         run: |

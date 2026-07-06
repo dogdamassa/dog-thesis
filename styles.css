@@ -2165,3 +2165,148 @@ html[lang="es"]    nav{gap:14px}
 .wmodal-ghost:hover{color:#fff;border-color:var(--pumpkin)}
 .wmodal-err{color:var(--warn);font-size:13px;margin-top:12px}
 body.wallet-open{overflow:hidden}
+
+/* WEB3 HQ (/web3) — Origin Layer page */
+.w3-status{
+  margin-top:16px;
+  font-size:13.5px;color:var(--muted);
+  font-family:var(--font-mono);
+}
+.w3-status.is-ok{color:var(--mint)}
+.w3-status.is-err{color:var(--warn)}
+.w3-note{color:var(--muted);font-size:12.5px;margin-top:12px}
+.w3-note.is-ok{color:var(--mint)}
+.w3-note.is-err{color:var(--warn)}
+
+.w3-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:760px){.w3-badges{grid-template-columns:1fr}}
+.w3-badge{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px 18px;
+  display:flex;flex-direction:column;gap:6px;
+  transition:border-color .2s ease;
+}
+.w3-badge b{font-size:14px;letter-spacing:.04em;color:var(--ink)}
+.w3-badge span{font-size:12.5px;color:var(--muted)}
+.w3-badge.is-ok{border-color:rgba(67,197,158,.55)}
+.w3-badge.is-ok span{color:var(--mint)}
+.w3-badge.is-no{opacity:.75}
+
+.w3-rank-result{
+  margin-top:18px;
+  background:var(--surface);
+  border:1px solid rgba(255,199,130,.34);
+  border-radius:16px;
+  padding:22px 22px 20px;
+}
+.w3-rank-title{font-size:15px;color:var(--muted)}
+.w3-rank-title strong{
+  display:block;
+  font-size:44px;line-height:1.1;
+  letter-spacing:-.01em;
+  color:var(--ink);
+  text-transform:uppercase;
+}
+.w3-rank-note{color:var(--text);font-size:14px;margin-top:8px;margin-bottom:14px}
+.w3-card-img{
+  display:block;max-width:100%;
+  margin-top:16px;
+  border-radius:12px;
+  border:1px solid var(--line);
+}
+
+.w3-mission,.w3-tip{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:22px;
+}
+.w3-pool{margin-bottom:16px}
+.w3-pool-row{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:8px 0;
+  font-size:13.5px;
+}
+.w3-pool-row span{color:var(--muted)}
+.w3-pool-row strong{font-family:var(--font-mono);color:var(--ink)}
+.w3-pool-sub{font-size:12px}
+.w3-pool-bar{
+  height:8px;border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--line);
+  overflow:hidden;
+  margin:6px 0;
+}
+.w3-pool-bar i{
+  display:block;height:100%;width:0;
+  background:linear-gradient(90deg,var(--pumpkin),var(--pumpkin-2));
+  transition:width .5s ease;
+}
+.w3-tip-amounts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.w3-amt{
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--line);
+  color:var(--muted);
+  padding:10px 18px;border-radius:999px;
+  font-family:var(--font-mono);font-size:13px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease;
+}
+.w3-amt:hover{border-color:var(--pumpkin);color:var(--ink)}
+.w3-amt.is-sel{
+  border-color:var(--pumpkin);
+  color:var(--ink);
+  background:rgba(255,115,0,.12);
+}
+.w3-mission button.btn,.w3-tip button.btn{border:0}
+.w3-mission button.btn:disabled,.w3-tip button.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* Author display rules (e.g. .btn{display:inline-flex}) would otherwise beat
+   the UA's [hidden] style — hidden must always win. */
+[hidden]{display:none!important}
+
+/* ===== Radar · liquidity map (aggregated order-book heatmap) ===== */
+.rd-liq{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.rd-liq-kpis{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}
+.rd-liq-kpi{flex:1 1 150px;min-width:150px;background:var(--surface-3);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.rd-liq-kpi b{display:block;font:700 16px/1.25 var(--font-mono);color:var(--ink)}
+.rd-liq-kpi span{font-size:11.5px;color:var(--muted)}
+.rd-liq-kpi.rd-lq-bid b{color:#43c59e}
+.rd-liq-kpi.rd-lq-ask b{color:#e5484d}
+.rd-liq-grid{display:grid;grid-template-columns:minmax(0,1fr) 272px;gap:16px;align-items:start}
+.rd-liq-canvasbox{position:relative;height:380px;border-radius:12px;background:#101010;border:1px solid var(--line);overflow:hidden}
+.rd-liq-canvasbox canvas{display:block;width:100%;height:100%}
+.rd-liq-legend{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:11px;color:var(--muted)}
+.rd-liq-grad{flex:0 0 140px;height:8px;border-radius:4px;background:linear-gradient(90deg,#170e07,#7a380e,#a8490c,#e0570e,#ff8c4d,#ffc9a3)}
+.rd-liq-side h4{margin:0 0 10px;font-size:13px;color:var(--ink)}
+.rd-liq-walls{display:flex;flex-direction:column;gap:6px}
+.rd-wall{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:9px;background:var(--surface-3);border:1px solid var(--line);text-decoration:none;transition:border-color .15s}
+.rd-wall:hover{border-color:#3a4654}
+.rd-wall-side{flex:0 0 auto;width:36px;text-align:center;font:700 9.5px/1 var(--font-mono);padding:4px 0;border-radius:5px}
+.rd-wall.rd-buy .rd-wall-side{color:#43c59e;background:rgba(67,197,158,.12)}
+.rd-wall.rd-sell .rd-wall-side{color:#e5484d;background:rgba(229,72,77,.12)}
+.rd-wall b{font:700 12.5px var(--font-mono);color:var(--ink);white-space:nowrap}
+.rd-wall small{color:var(--muted);font:600 10.5px var(--font-mono);white-space:nowrap}
+.rd-wall-ex{margin-left:auto;font-size:10.5px;color:var(--muted);white-space:nowrap}
+.rd-liq-walls-more{display:flex;flex-direction:column;gap:6px}
+.rd-liq-perp{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.rd-liq-pill{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:999px;background:var(--surface-3);border:1px solid var(--line);font-size:11.5px;color:var(--muted);line-height:1.35}
+.rd-liq-pill b{color:var(--ink);font-weight:600}
+@media (max-width:900px){
+  .rd-liq-grid{grid-template-columns:1fr}
+  .rd-liq-canvasbox{height:320px}
+}
+
+/* ===== Radar · market dashboard (price, futures, liquidations) ===== */
+.rd-mkt{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.rd-mkt-chartwrap{position:relative}
+.rd-mkt-ranges{display:flex;gap:6px;margin-bottom:10px}
+.rd-mkt-ranges button{padding:5px 12px;border-radius:8px;cursor:pointer;background:var(--surface-3);border:1px solid var(--line);color:var(--muted);font:600 11.5px/1 var(--font-mono);letter-spacing:.02em;transition:border-color .15s,color .15s,background .15s}
+.rd-mkt-ranges button:hover{border-color:#3a4654;color:var(--ink)}
+.rd-mkt-ranges button.on{background:rgba(255,92,0,.14);border-color:rgba(255,92,0,.45);color:var(--ink)}
+.rd-mkt-canvasbox{position:relative;height:260px;border-radius:12px;background:#101010;border:1px solid var(--line);overflow:hidden}
+.rd-mkt-canvasbox canvas{display:block;width:100%;height:100%}
+.rd-liq-kpi em{font-style:normal;font-weight:600;font-family:var(--font-mono);font-size:11px}
+@media (max-width:900px){.rd-mkt-canvasbox{height:220px}}

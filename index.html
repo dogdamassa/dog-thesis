@@ -156,6 +156,7 @@
           <a href="#verificar" data-i18n="nav.sources">Sources</a>
         </div>
       </div>
+      <a href="/web3" data-i18n="nav.web3">Web3 HQ</a>
       <a href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
     </div>
@@ -197,6 +198,7 @@
       <a class="navdrawer-link" href="#carteiras" data-i18n="nav.wallets">Wallets</a>
       <a class="navdrawer-link" href="#verificar" data-i18n="nav.sources">Sources</a>
     </details>
+    <a class="navdrawer-link" href="/web3" data-i18n="nav.web3">Web3 HQ</a>
     <a class="navdrawer-link" href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
     <a class="navdrawer-link" href="#faq" data-i18n="nav.faq">FAQ</a>
     <a class="navdrawer-cta" href="#colaborar" data-i18n="nav.cta">Join the army</a>
@@ -586,6 +588,50 @@
         <div id="rd-flows-ex" class="rd-flows-ex"></div>
         <div id="rd-flows-list" class="rd-flows-list"><div class="rd-empty">Loading…</div></div>
         <p class="rd-note" data-i18n="rd.flnote">Public CEX APIs (Kraken · Gate · Bitget · MEXC · CoinEx). Each bar shows buy (green) vs sell (red) pressure in a recent trades window; "net" = buys minus sells. "Big orders" = buys/sells ≥ 5M DOG from that window — a snapshot, not the full day. Click an exchange to verify.</p>
+      </div>
+
+      <div class="rd-mkt">
+        <div class="rd-flows-head">
+          <h3 data-i18n="rd.mkh">📊 DOG markets · price, futures and liquidations</h3>
+          <span id="rd-mkt-updated" class="rd-updated"></span>
+        </div>
+        <div id="rd-mkt-tiles" class="rd-liq-kpis"></div>
+        <div class="rd-mkt-chartwrap">
+          <div id="rd-mkt-ranges" class="rd-mkt-ranges" role="group" aria-label="Chart range">
+            <button type="button" data-days="1" class="on">24H</button>
+            <button type="button" data-days="7">7D</button>
+            <button type="button" data-days="30">30D</button>
+            <button type="button" data-days="365">1Y</button>
+          </div>
+          <div class="rd-mkt-canvasbox">
+            <canvas id="rd-mkt-canvas" role="img" aria-label="DOG price chart in US dollars"></canvas>
+            <div id="rd-mkt-tip" class="rd-tip"></div>
+          </div>
+        </div>
+        <p class="rd-note" data-i18n="rd.mknote">Price and market cap: CoinGecko. Futures: only what has a verifiable public API — CoinEx plus the small Kraken Futures perp (Gate's is being delisted with zero open interest). Liquidations: CoinEx public feed. Aggregators show similar totals by adding venues with no public API; here, if it can't be verified, it doesn't go in.</p>
+      </div>
+
+      <div class="rd-liq">
+        <div class="rd-flows-head">
+          <h3 data-i18n="rd.lqh">🌊 Liquidity map · where real order-book money sits</h3>
+          <span id="rd-liq-updated" class="rd-updated"></span>
+        </div>
+        <div id="rd-liq-kpis" class="rd-liq-kpis"></div>
+        <div class="rd-liq-grid">
+          <div class="rd-liq-main">
+            <div class="rd-liq-canvasbox">
+              <canvas id="rd-liq-canvas" role="img" aria-label="DOG aggregated order book liquidity heatmap: price by time, color intensity shows dollars resting on the books"></canvas>
+              <div id="rd-liq-tip" class="rd-tip"></div>
+            </div>
+            <div class="rd-liq-legend"><span data-i18n="rd.lqlg">resting book liquidity ($)</span><i class="rd-liq-grad" aria-hidden="true"></i><span data-i18n="rd.lqlog">more → · log scale</span></div>
+          </div>
+          <aside class="rd-liq-side">
+            <h4 data-i18n="rd.lqw">Biggest walls right now</h4>
+            <div id="rd-liq-walls"><div class="rd-empty">Loading…</div></div>
+          </aside>
+        </div>
+        <div id="rd-liq-perp" class="rd-liq-perp"></div>
+        <p class="rd-note" data-i18n="rd.lqnote">Aggregated public order books: Kraken · Gate · Bitget · MEXC · BingX · CoinEx · Bitrue, plus the CoinEx and Kraken Futures perp books — the only two DOG perps still alive. Each column is an hourly snapshot; color = dollars resting on the book at that price; the pale line is the price. A book order is stated intent, not a trade: big walls can vanish at zero cost (spoofing) — which is exactly why the time axis matters. And no, this is not a "liquidation map": with DOG's perp market down to two small venues, those liquidation clusters don't exist to be mapped — this is the real, verifiable liquidity instead.</p>
       </div>
 
       <p class="rd-src" data-i18n="rd.src">Source: dogdata.xyz. click any item to verify on mempool.space. Nothing here is an accusation: it is the pattern the public chain shows, with caveats.</p>

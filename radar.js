@@ -1,9 +1,9 @@
-/* DOG ARMY Radar. Reads /data/{daily,feed,graph}.json and renders the
-   daily KPIs, the event feed, and the Vault #1 graph in English. */
+/* DOG ARMY Radar. Reads /data/{daily,feed,graph,flows,liqmap}.json and renders
+   the daily KPIs, the event feed, the Vault #1 graph and the liquidity map. */
 (function () {
   "use strict";
   var BASE = "/data/";
-  var data = { daily: null, feed: null, graph: null, flows: null };
+  var data = { daily: null, feed: null, graph: null, flows: null, liq: null };
 
   /* ---------- formatos ---------- */
   function fmtDog(n) {
@@ -346,7 +346,464 @@
     }
   }
 
-  function renderAll() { renderKpis(); renderFeed(); renderFlows(); stamp(); }
+  /* ---------- liquidity map (aggregated order-book heatmap) ---------- */
+  var LIQ_BID = "#43c59e", LIQ_ASK = "#e5484d";
+  var LIQ_INK = "#f4efe8", LIQ_MUT = "#8b939c";
+  // sequential ramp, one hue, validated for the #101010 surface (dark mode)
+  var LIQ_RAMP = [
+    [0.00, [23, 14, 7]], [0.18, [122, 56, 14]], [0.45, [168, 73, 12]],
+    [0.70, [224, 87, 14]], [0.88, [255, 140, 77]], [1.00, [255, 201, 163]]
+  ];
+  var LIQ_EX_URL = {
+    Kraken: "https://pro.kraken.com/app/trade/DOG-USD",
+    Gate: "https://www.gate.io/trade/DOG_USDT",
+    Bitget: "https://www.bitget.com/spot/DOGUSDT",
+    MEXC: "https://www.mexc.com/exchange/DOG_USDT",
+    BingX: "https://bingx.com/en/spot/DOGUSDT/",
+    XT: "https://www.xt.com/en/trade/dog_usdt",
+    CoinEx: "https://www.coinex.com/en/exchange/dog-usdt",
+    Bitrue: "https://www.bitrue.com/trade/dog_usdt",
+    "CoinEx-P": "https://www.coinex.com/en/futures/dog-usdt",
+    "Kraken-P": "https://futures.kraken.com/trade"
+  };
+  function fmtUsd(n) {
+    n = n || 0;
+    if (n >= 1e6) return "$" + (n / 1e6).toFixed(2) + "M";
+    if (n >= 1e3) return "$" + (n / 1e3).toFixed(1) + "k";
+    return "$" + Math.round(n);
+  }
+  function fmtPrice(p) { return "$" + Number(p).toFixed(7).replace(/0+$/, "").replace(/\.$/, ""); }
+  function liqRamp(t) {
+    t = Math.max(0, Math.min(1, t));
+    for (var i = 1; i < LIQ_RAMP.length; i++) {
+      if (t <= LIQ_RAMP[i][0]) {
+        var a = LIQ_RAMP[i - 1], b = LIQ_RAMP[i];
+        var f = (t - a[0]) / (b[0] - a[0] || 1);
+        return "rgb(" + Math.round(a[1][0] + (b[1][0] - a[1][0]) * f) + "," +
+          Math.round(a[1][1] + (b[1][1] - a[1][1]) * f) + "," +
+          Math.round(a[1][2] + (b[1][2] - a[1][2]) * f) + ")";
+      }
+    }
+    return "rgb(255,201,163)";
+  }
+  function liqKpi(v, label, cls) {
+    return '<div class="rd-liq-kpi ' + (cls || "") + '"><b>' + v + "</b><span>" +
+      label + "</span></div>";
+  }
+  function renderLiqPanels() {
+    var d = data.liq;
+    var kEl = document.getElementById("rd-liq-kpis");
+    var wEl = document.getElementById("rd-liq-walls");
+    var pEl = document.getElementById("rd-liq-perp");
+    var upd = document.getElementById("rd-liq-updated");
+    if (!kEl || !wEl) return;
+    if (!d) { wEl.innerHTML = '<div class="rd-empty">liquidity data unavailable</div>'; return; }
+    var agg = d.agg || {};
+    var srcOk = (d.sources || []).filter(function (s) { return s.ok; }).length;
+    var ratio = agg.ask_usd ? agg.bid_usd / agg.ask_usd : 0;
+    kEl.innerHTML =
+      liqKpi(fmtUsd(agg.bid2_usd), "bids within 2% of price", "rd-lq-bid") +
+      liqKpi(fmtUsd(agg.ask2_usd), "asks within 2% of price", "rd-lq-ask") +
+      liqKpi(ratio ? ratio.toFixed(2) + "×" : "—",
+        "bid vs ask depth (±12%)", ratio >= 1 ? "rd-lq-bid" : "rd-lq-ask") +
+      liqKpi(fmtUsd(agg.bid_usd + agg.ask_usd),
+        "whole visible book · " + srcOk + " venues", "");
+    var walls = d.walls || [];
+    var rows = walls.map(function (w) {
+      var buy = w.side === "bid";
+      return '<a class="rd-wall rd-' + (buy ? "buy" : "sell") + '" href="' +
+        esc(LIQ_EX_URL[w.ex] || "#") + '" target="_blank" rel="noopener">' +
+        '<span class="rd-wall-side">' + (buy ? "BID" : "ASK") + "</span><b>" +
+        fmtUsd(w.usd) + "</b><small>" + fmtPrice(w.price) + " · " +
+        (w.pct > 0 ? "+" : "") + w.pct + '%</small><span class="rd-wall-ex">' +
+        esc(w.ex) + "</span></a>";
+    });
+    var WALLS_SHOWN = 6;
+    if (!rows.length) {
+      wEl.innerHTML = '<div class="rd-empty">no walls in range</div>';
+    } else if (rows.length <= WALLS_SHOWN) {
+      wEl.innerHTML = rows.join("");
+    } else {
+      var wlang = curLang();
+      wEl.innerHTML = rows.slice(0, WALLS_SHOWN).join("") +
+        '<div class="rd-liq-walls-more" hidden>' + rows.slice(WALLS_SHOWN).join("") + "</div>" +
+        '<button type="button" class="rd-flows-toggle" aria-expanded="false">' +
+        (MORE_GEN[wlang] || MORE_GEN.en) + "</button>";
+      var wbtn = wEl.querySelector(".rd-flows-toggle");
+      var wmore = wEl.querySelector(".rd-liq-walls-more");
+      wbtn.addEventListener("click", function () {
+        var open = wmore.hasAttribute("hidden");
+        if (open) { wmore.removeAttribute("hidden"); wbtn.textContent = LESS_LBL[wlang] || LESS_LBL.en; }
+        else { wmore.setAttribute("hidden", ""); wbtn.textContent = MORE_GEN[wlang] || MORE_GEN.en; }
+        wbtn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    }
+    var pp = d.perp || {}, cx = pp.coinex || {}, kr = pp.kraken || {}, gt = pp.gate || {};
+    var pills = [];
+    if (cx.ok) {
+      pills.push("<b>CoinEx</b> OI " + fmtUsd(cx.oi_usd) + (cx.funding != null ?
+        " · funding " + (cx.funding >= 0 ? "+" : "") + (cx.funding * 100).toFixed(3) + "%" : ""));
+    }
+    if (kr.ok) pills.push("<b>Kraken Futures</b> OI " + fmtUsd(kr.oi_usd));
+    if (gt.ok && gt.in_delisting) {
+      pills.push("<b>Gate</b> delisting · OI " + fmtUsd(gt.oi_usd || 0));
+    }
+    if (pp.none && pp.none.length) {
+      pills.push('<span title="' + esc(pp.none.join(" · ")) + '">no DOG perp on ' +
+        pp.none.length + " other venues" +
+        (pp.checked ? " · checked " + esc(pp.checked) : "") + "</span>");
+    }
+    if (pEl) pEl.innerHTML = pills.map(function (p) {
+      return '<span class="rd-liq-pill">' + p + "</span>";
+    }).join("");
+    if (upd && d.updated_at) {
+      upd.textContent = "Updated " + new Date(d.updated_at)
+        .toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" });
+    }
+  }
+
+  var liqCv, liqCtx, liqGeo = null, liqHover = null;
+  function liqFit() {
+    if (!liqCv) return;
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    liqCv.width = liqCv.clientWidth * dpr;
+    liqCv.height = liqCv.clientHeight * dpr;
+    liqCtx = liqCv.getContext("2d");
+    liqCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drawLiq();
+  }
+  function drawLiq() {
+    var d = data.liq;
+    if (!liqCtx || !d || !(d.history || []).length) return;
+    var hist = d.history;
+    var W = liqCv.clientWidth, H = liqCv.clientHeight;
+    var padL = 8, padR = 74, padT = 10, padB = 22, axW = 52;
+    var plotW = W - padL - padR - axW, plotH = H - padT - padB;
+    liqCtx.clearRect(0, 0, W, H);
+
+    // janela fixa de 7 dias: colunas de 1h entram no lugar certo do tempo e o
+    // mapa preenche conforme o bot roda; a linha de preço (CoinGecko) cobre
+    // a janela toda desde o primeiro dia
+    var winS = 168 * 3600;
+    var tEnd = hist[hist.length - 1].t, tStart = tEnd - winS;
+    var xT = function (t) { return padL + (t - tStart) / winS * plotW; };
+    var colW = Math.max(2, plotW / 168);
+
+    // domínio de preço: bins dos snapshots + linha de preço 7d
+    var minP = Infinity, maxP = -Infinity, maxUsd = 1;
+    hist.forEach(function (h) {
+      var half = h.m * (d.grid.bin_pct / 100) / 2;
+      h.b.concat(h.a).forEach(function (r) {
+        if (r[0] - half < minP) minP = r[0] - half;
+        if (r[0] + half > maxP) maxP = r[0] + half;
+        if (r[1] > maxUsd) maxUsd = r[1];
+      });
+    });
+    var cg = (mkt.cache[7] || []).filter(function (r) {
+      return r[0] / 1000 >= tStart && r[0] / 1000 <= tEnd;
+    });
+    cg.forEach(function (r) {
+      if (r[1] < minP) minP = r[1];
+      if (r[1] > maxP) maxP = r[1];
+    });
+    if (!isFinite(minP)) return;
+    var y = function (p) { return padT + (maxP - p) / (maxP - minP) * plotH; };
+
+    var logMax = Math.log1p(maxUsd);
+    var cells = [];
+    hist.forEach(function (h, i) {
+      var half = h.m * (d.grid.bin_pct / 100) / 2;
+      var x = xT(h.t) - colW;
+      if (x + colW < padL) return;
+      [["b", h.b], ["a", h.a]].forEach(function (side) {
+        side[1].forEach(function (r) {
+          var yTop = y(r[0] + half), hPx = Math.max(1, y(r[0] - half) - yTop);
+          // gamma sobre a escala log: separa parede de ruído sem apagar o fundo
+          liqCtx.fillStyle = liqRamp(Math.pow(Math.log1p(r[1]) / logMax, 2.1));
+          liqCtx.fillRect(x, yTop, Math.ceil(colW), hPx);
+          cells.push({ i: i, x: x, y: yTop, w: colW, h: hPx,
+                       p: r[0], usd: r[1], side: side[0], t: h.t });
+        });
+      });
+    });
+
+    // recessive grid + price labels (right of the depth gutter)
+    liqCtx.font = "600 10px " + "ui-monospace,Menlo,monospace";
+    liqCtx.textBaseline = "middle";
+    for (var g = 0; g <= 4; g++) {
+      var pv = maxP - (maxP - minP) * g / 4, gy = y(pv);
+      liqCtx.strokeStyle = "rgba(244,239,232,.06)";
+      liqCtx.beginPath(); liqCtx.moveTo(padL, gy);
+      liqCtx.lineTo(padL + plotW + padR, gy); liqCtx.stroke();
+      liqCtx.fillStyle = LIQ_MUT; liqCtx.textAlign = "left";
+      liqCtx.fillText(pv.toFixed(7), padL + plotW + padR + 4, gy);
+    }
+    // time ticks: 4 marcas fixas na janela de 7 dias
+    liqCtx.textAlign = "center";
+    for (var ti = 0; ti < 4; ti++) {
+      var tv = tStart + winS * ti / 3;
+      var tx = Math.max(padL + 26, Math.min(xT(tv), padL + plotW - 26));
+      liqCtx.fillStyle = LIQ_MUT;
+      liqCtx.fillText(new Date(tv * 1000).toLocaleDateString("en-US",
+        { month: "short", day: "numeric" }), tx, H - padB / 2);
+    }
+    if (hist.length < 100) {
+      liqCtx.fillStyle = LIQ_MUT; liqCtx.textAlign = "left";
+      liqCtx.font = "600 11px ui-sans-serif,system-ui,sans-serif";
+      liqCtx.fillText("depth history builds hourly →", padL + 6, padT + 12);
+      liqCtx.font = "600 10px ui-monospace,Menlo,monospace";
+    }
+
+    // linha de preço: CoinGecko 7d cobre a janela; fallback = mids dos snapshots
+    var last = hist[hist.length - 1];
+    liqCtx.strokeStyle = LIQ_INK; liqCtx.lineWidth = 1.6; liqCtx.globalAlpha = 0.92;
+    liqCtx.beginPath();
+    if (cg.length > 1) {
+      cg.forEach(function (r, i) {
+        var px = xT(r[0] / 1000), py = y(r[1]);
+        i ? liqCtx.lineTo(px, py) : liqCtx.moveTo(px, py);
+      });
+    } else {
+      hist.forEach(function (h, i) {
+        var px = xT(h.t) - colW / 2, py = y(h.m);
+        i ? liqCtx.lineTo(px, py) : liqCtx.moveTo(px, py);
+      });
+    }
+    liqCtx.stroke(); liqCtx.globalAlpha = 1;
+    liqCtx.fillStyle = LIQ_INK;
+    liqCtx.beginPath(); liqCtx.arc(xT(last.t) - colW / 2, y(last.m), 3, 0, 7); liqCtx.fill();
+
+    // current depth profile in the right gutter
+    var gx = padL + plotW + 2, gw = padR - 6, maxLast = 1;
+    last.b.concat(last.a).forEach(function (r) { if (r[1] > maxLast) maxLast = r[1]; });
+    liqCtx.strokeStyle = "rgba(244,239,232,.12)";
+    liqCtx.beginPath(); liqCtx.moveTo(gx, padT); liqCtx.lineTo(gx, padT + plotH); liqCtx.stroke();
+    var halfL = last.m * (d.grid.bin_pct / 100) / 2;
+    [["b", last.b, LIQ_BID], ["a", last.a, LIQ_ASK]].forEach(function (side) {
+      side[1].forEach(function (r) {
+        var yTop = y(r[0] + halfL), hPx = Math.max(1, y(r[0] - halfL) - yTop - 1);
+        liqCtx.fillStyle = side[2]; liqCtx.globalAlpha = 0.85;
+        liqCtx.fillRect(gx + 2, yTop, (r[1] / maxLast) * gw, hPx);
+        cells.push({ i: hist.length - 1, x: gx + 2, y: yTop, w: gw, h: hPx,
+                     p: r[0], usd: r[1], side: side[0], t: last.t, now: true });
+      });
+    });
+    liqCtx.globalAlpha = 1;
+
+    // hovered cell highlight
+    if (liqHover) {
+      liqCtx.strokeStyle = LIQ_INK; liqCtx.lineWidth = 1;
+      liqCtx.strokeRect(liqHover.x + 0.5, liqHover.y + 0.5,
+        Math.ceil(liqHover.w) - 1, liqHover.h - 1);
+    }
+    liqGeo = { cells: cells };
+  }
+  function bindLiq() {
+    liqCv = document.getElementById("rd-liq-canvas");
+    var tip = document.getElementById("rd-liq-tip");
+    if (!liqCv || !data.liq) return;
+    liqFit();
+    window.addEventListener("resize", liqFit);
+    // linha de preço 7d (CoinGecko) para preencher a janela do heatmap
+    if (!mkt.cache[7]) {
+      fetch(CG + "/coins/" + CG_ID + "/market_chart?vs_currency=usd&days=7")
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) {
+          if (j && j.prices && j.prices.length) { mkt.cache[7] = j.prices; drawLiq(); }
+        }).catch(function () {});
+    }
+    liqCv.addEventListener("mousemove", function (ev) {
+      if (!liqGeo) return;
+      var rect = liqCv.getBoundingClientRect();
+      var mx = ev.clientX - rect.left, my = ev.clientY - rect.top;
+      var hit = null, cs = liqGeo.cells;
+      for (var i = cs.length - 1; i >= 0; i--) {
+        var c = cs[i];
+        if (mx >= c.x && mx <= c.x + c.w && my >= c.y && my <= c.y + c.h) { hit = c; break; }
+      }
+      if (hit !== liqHover) { liqHover = hit; drawLiq(); }
+      if (hit && tip) {
+        tip.innerHTML = "<b>" + fmtPrice(hit.p) + "</b> · " +
+          (hit.side === "b" ? '<span style="color:#43c59e">bids</span>' :
+                              '<span style="color:#e5484d">asks</span>') +
+          "<br>" + fmtUsd(hit.usd) + " resting on the books<br>" +
+          '<span class="rd-mono">' + (hit.now ? "right now" :
+            new Date(hit.t * 1000).toLocaleString("en-US",
+              { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false })) +
+          "</span>";
+        tip.style.display = "block";
+        tip.style.left = Math.min(mx + 14, liqCv.clientWidth - 190) + "px";
+        tip.style.top = Math.min(my + 14, liqCv.clientHeight - 70) + "px";
+      } else if (tip) { tip.style.display = "none"; }
+    });
+    liqCv.addEventListener("mouseleave", function () {
+      liqHover = null; if (tip) tip.style.display = "none"; drawLiq();
+    });
+  }
+
+  /* ---------- market dashboard (price, futures, liquidations) ---------- */
+  var CG = "https://api.coingecko.com/api/v3";
+  var CG_ID = "dog-go-to-the-moon-rune";
+  var mkt = { info: null, series: null, days: 1, cache: {} };
+  function renderMktTiles() {
+    var el = document.getElementById("rd-mkt-tiles");
+    if (!el) return;
+    var i = mkt.info, pp = (data.liq && data.liq.perp) || {};
+    var cx = pp.coinex || {}, kr = pp.kraken || {};
+    var lq = pp.liq || null, tt = pp.totals || {};
+    var chg = i ? i.price_change_percentage_24h : null;
+    el.innerHTML =
+      liqKpi(i ? fmtPrice(i.current_price) : "—",
+        "DOG price" + (chg != null ? ' · <em class="' + (chg >= 0 ? "rd-up" : "rd-down") +
+          '">' + (chg >= 0 ? "▲" : "▼") + Math.abs(chg).toFixed(1) + "% 24h</em>" : ""), "") +
+      liqKpi(i ? fmtUsd(i.market_cap) : "—", "market cap", "") +
+      liqKpi(tt.oi_usd ? fmtUsd(tt.oi_usd) : "—",
+        "futures open interest" + (cx.oi_usd ? " · CoinEx " + fmtUsd(cx.oi_usd) +
+          (kr.oi_usd ? " + Kraken " + fmtUsd(kr.oi_usd) : "") : ""), "") +
+      liqKpi(cx.funding != null ?
+          (cx.funding >= 0 ? "+" : "") + (cx.funding * 100).toFixed(3) + "%" : "—",
+        "funding / 8h (CoinEx)",
+        cx.funding != null && cx.funding < 0 ? "rd-lq-ask" : "rd-lq-bid") +
+      liqKpi(tt.fut_vol24h_usd ? fmtUsd(tt.fut_vol24h_usd) : "—",
+        "futures volume 24h", "") +
+      liqKpi(lq ? fmtUsd(lq.h24_usd) : "—",
+        "liquidations 24h" + (lq ? " · 7d " + fmtUsd(lq.d7_usd) + " (CoinEx)" : ""), "");
+  }
+  var mktCv, mktCtx, mktHover = null;
+  function mktFit() {
+    if (!mktCv) return;
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    mktCv.width = mktCv.clientWidth * dpr;
+    mktCv.height = mktCv.clientHeight * dpr;
+    mktCtx = mktCv.getContext("2d");
+    mktCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drawMkt();
+  }
+  function drawMkt() {
+    if (!mktCtx) return;
+    var W = mktCv.clientWidth, H = mktCv.clientHeight;
+    mktCtx.clearRect(0, 0, W, H);
+    var s = mkt.series;
+    if (!s || s.length < 2) {
+      mktCtx.fillStyle = LIQ_MUT;
+      mktCtx.font = "600 11px ui-sans-serif,system-ui,sans-serif";
+      mktCtx.textAlign = "center";
+      mktCtx.fillText("price chart unavailable", W / 2, H / 2);
+      return;
+    }
+    var padL = 8, padR = 58, padT = 12, padB = 20;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+    var minP = Infinity, maxP = -Infinity;
+    s.forEach(function (r) {
+      if (r[1] < minP) minP = r[1];
+      if (r[1] > maxP) maxP = r[1];
+    });
+    if (maxP === minP) { maxP += 1e-9; minP -= 1e-9; }
+    var t0 = s[0][0], t1 = s[s.length - 1][0];
+    var x = function (t) { return padL + (t - t0) / (t1 - t0) * plotW; };
+    var y = function (p) { return padT + (maxP - p) / (maxP - minP) * plotH; };
+    // grid + price labels
+    mktCtx.font = "600 10px ui-monospace,Menlo,monospace";
+    mktCtx.textBaseline = "middle";
+    for (var g = 0; g <= 4; g++) {
+      var pv = maxP - (maxP - minP) * g / 4, gy = y(pv);
+      mktCtx.strokeStyle = "rgba(244,239,232,.06)";
+      mktCtx.beginPath(); mktCtx.moveTo(padL, gy); mktCtx.lineTo(padL + plotW, gy); mktCtx.stroke();
+      mktCtx.fillStyle = LIQ_MUT; mktCtx.textAlign = "left";
+      mktCtx.fillText(pv.toFixed(7), padL + plotW + 6, gy);
+    }
+    // time labels
+    mktCtx.textAlign = "center";
+    for (var ti = 0; ti < 4; ti++) {
+      var tt = t0 + (t1 - t0) * ti / 3;
+      var lbl = mkt.days === 1 ?
+        new Date(tt).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: false }) :
+        mkt.days >= 365 ?
+        new Date(tt).toLocaleDateString("en-US", { month: "short", year: "2-digit" }) :
+        new Date(tt).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+      mktCtx.fillText(lbl, Math.max(padL + 26, Math.min(x(tt), padL + plotW - 26)), H - padB / 2);
+    }
+    // area + line
+    var grad = mktCtx.createLinearGradient(0, padT, 0, padT + plotH);
+    grad.addColorStop(0, "rgba(255,92,0,.20)"); grad.addColorStop(1, "rgba(255,92,0,0)");
+    mktCtx.beginPath();
+    s.forEach(function (r, i) { i ? mktCtx.lineTo(x(r[0]), y(r[1])) : mktCtx.moveTo(x(r[0]), y(r[1])); });
+    mktCtx.lineTo(x(t1), padT + plotH); mktCtx.lineTo(x(t0), padT + plotH); mktCtx.closePath();
+    mktCtx.fillStyle = grad; mktCtx.fill();
+    mktCtx.beginPath();
+    s.forEach(function (r, i) { i ? mktCtx.lineTo(x(r[0]), y(r[1])) : mktCtx.moveTo(x(r[0]), y(r[1])); });
+    mktCtx.strokeStyle = "#ff5c00"; mktCtx.lineWidth = 2; mktCtx.stroke();
+    // crosshair
+    if (mktHover != null) {
+      var r = s[mktHover], hx = x(r[0]), hy = y(r[1]);
+      mktCtx.strokeStyle = "rgba(244,239,232,.25)"; mktCtx.lineWidth = 1;
+      mktCtx.beginPath(); mktCtx.moveTo(hx, padT); mktCtx.lineTo(hx, padT + plotH); mktCtx.stroke();
+      mktCtx.fillStyle = LIQ_INK;
+      mktCtx.beginPath(); mktCtx.arc(hx, hy, 3.5, 0, 7); mktCtx.fill();
+    }
+  }
+  function loadMktChart(days) {
+    mkt.days = days;
+    if (mkt.cache[days]) { mkt.series = mkt.cache[days]; mktHover = null; drawMkt(); return; }
+    fetch(CG + "/coins/" + CG_ID + "/market_chart?vs_currency=usd&days=" + days)
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (j && j.prices && j.prices.length) {
+          mkt.cache[days] = j.prices;
+          if (mkt.days === days) { mkt.series = j.prices; mktHover = null; drawMkt(); }
+        } else { drawMkt(); }
+      }).catch(function () { drawMkt(); });
+  }
+  function bindMkt() {
+    mktCv = document.getElementById("rd-mkt-canvas");
+    var tip = document.getElementById("rd-mkt-tip");
+    var rg = document.getElementById("rd-mkt-ranges");
+    if (!mktCv) return;
+    mktFit();
+    window.addEventListener("resize", mktFit);
+    if (rg) rg.querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        rg.querySelectorAll("button").forEach(function (o) { o.classList.remove("on"); });
+        b.classList.add("on");
+        loadMktChart(Number(b.getAttribute("data-days")) || 1);
+      });
+    });
+    mktCv.addEventListener("mousemove", function (ev) {
+      var s = mkt.series; if (!s || s.length < 2) return;
+      var rect = mktCv.getBoundingClientRect();
+      var mx = ev.clientX - rect.left;
+      var padL = 8, plotW = mktCv.clientWidth - padL - 58;
+      var t0 = s[0][0], t1 = s[s.length - 1][0];
+      var t = t0 + Math.max(0, Math.min(1, (mx - padL) / plotW)) * (t1 - t0);
+      var lo = 0, hi = s.length - 1;
+      while (hi - lo > 1) { var mi = (lo + hi) >> 1; (s[mi][0] < t) ? lo = mi : hi = mi; }
+      var idx = (t - s[lo][0] < s[hi][0] - t) ? lo : hi;
+      if (idx !== mktHover) { mktHover = idx; drawMkt(); }
+      if (tip) {
+        var r = s[idx];
+        tip.innerHTML = "<b>" + fmtPrice(r[1]) + "</b><br><span class=\"rd-mono\">" +
+          new Date(r[0]).toLocaleString("en-US", { month: "short", day: "numeric",
+            hour: "2-digit", minute: "2-digit", hour12: false }) + "</span>";
+        tip.style.display = "block";
+        tip.style.left = Math.min(mx + 14, mktCv.clientWidth - 150) + "px";
+        tip.style.top = (ev.clientY - rect.top + 14) + "px";
+      }
+    });
+    mktCv.addEventListener("mouseleave", function () {
+      mktHover = null; if (tip) tip.style.display = "none"; drawMkt();
+    });
+    fetch(CG + "/coins/markets?vs_currency=usd&ids=" + CG_ID)
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (j && j[0]) { mkt.info = j[0]; renderMktTiles(); }
+        var upd = document.getElementById("rd-mkt-updated");
+        if (upd) upd.textContent = "Updated " + new Date()
+          .toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" });
+      }).catch(function () {});
+    loadMktChart(1);
+  }
+
+  function renderAll() { renderKpis(); renderFeed(); renderFlows(); renderLiqPanels(); renderMktTiles(); stamp(); }
 
   function load(name) {
     return fetch(BASE + name + ".json?v=" + Date.now(), { cache: "no-store" })
@@ -354,10 +811,12 @@
   }
   function init() {
     if (!document.getElementById("radar")) return;
-    Promise.all([load("daily"), load("feed"), load("graph"), load("flows")]).then(function (r) {
-      data.daily = r[0]; data.feed = r[1]; data.graph = r[2]; data.flows = r[3];
+    Promise.all([load("daily"), load("feed"), load("graph"), load("flows"), load("liqmap")]).then(function (r) {
+      data.daily = r[0]; data.feed = r[1]; data.graph = r[2]; data.flows = r[3]; data.liq = r[4];
       renderAll();
       if (data.graph) bindGraph();
+      if (data.liq) bindLiq();
+      bindMkt();
     });
     // re-render quando o idioma muda (i18n.js troca o atributo lang)
     new MutationObserver(function () { renderAll(); }).observe(
