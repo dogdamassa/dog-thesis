@@ -229,6 +229,8 @@
     }
 
     btn.addEventListener('click', openModal);
+    var heroBtn = $('walletBtnHero');   /* big hero CTA on the home — same modal */
+    if (heroBtn) heroBtn.addEventListener('click', openModal);
     if (drawerBtn) drawerBtn.addEventListener('click', function () {
       var navscrim = $('navscrim');
       if (navscrim && !navscrim.hidden) navscrim.click();
