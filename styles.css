@@ -2418,18 +2418,18 @@ body.wallet-open{overflow:hidden}
   .social-strip-track{animation:none}
 }
 .social-strip-msg{color:var(--muted);font-size:13px;padding:18px 24px}
-.social-card{display:flex;align-items:center;gap:15px;width:340px;padding:16px 20px 16px 16px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));text-decoration:none;transition:border-color .15s ease,transform .15s ease}
+.social-card{display:flex;align-items:center;gap:17px;width:392px;padding:18px 24px 18px 18px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));text-decoration:none;transition:border-color .15s ease,transform .15s ease}
 .social-card:hover{border-color:rgba(255,92,0,.55);transform:translateY(-2px)}
-.social-card-thumb{width:66px;height:66px;border-radius:13px;object-fit:cover;flex:0 0 66px;background:#111;border:1px solid rgba(255,255,255,.08)}
+.social-card-thumb{width:76px;height:76px;border-radius:15px;object-fit:cover;flex:0 0 76px;background:#111;border:1px solid rgba(255,255,255,.08)}
 .social-card-body{min-width:0}
-.social-card-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;color:var(--text);font-size:14.5px;font-weight:650;line-height:1.35;overflow:hidden;margin-bottom:7px}
-.social-card-stats{display:flex;gap:14px;color:var(--muted);font-size:12.5px;font-weight:700}
-.social-card-l2{display:inline-block;background:rgba(113,50,245,.28);color:#b79bff;font-size:10px;font-weight:900;letter-spacing:.05em;border-radius:5px;padding:1px 6px;margin-right:6px;vertical-align:1px}
+.social-card-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;color:var(--text);font-size:16px;font-weight:650;line-height:1.35;overflow:hidden;margin-bottom:8px}
+.social-card-stats{display:flex;gap:16px;color:var(--muted);font-size:13.5px;font-weight:700}
+.social-card-l2{display:inline-block;background:rgba(113,50,245,.28);color:#b79bff;font-size:11px;font-weight:900;letter-spacing:.05em;border-radius:5px;padding:2px 7px;margin-right:7px;vertical-align:1px}
 @media (max-width:760px){
   .social-strip-head{flex-wrap:wrap;gap:10px}
-  .social-card{width:272px;gap:12px;padding:13px 16px 13px 13px}
-  .social-card-thumb{width:54px;height:54px;flex-basis:54px}
-  .social-card-text{font-size:13.5px}
+  .social-card{width:312px;gap:14px;padding:15px 19px 15px 15px}
+  .social-card-thumb{width:62px;height:62px;flex-basis:62px}
+  .social-card-text{font-size:15px}
 }
 
 /* ===== community photos: culture gallery, campaign poster wall,
