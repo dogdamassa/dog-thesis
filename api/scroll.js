@@ -8,18 +8,33 @@
 
 var kray = require('./_kray.js');
 
+/* KRAY reports scroll amounts in RAW token units; divide by 10^divisibility
+   to get the display units a UI wants. KRAY's dev-scroll info carries no
+   divisibility field, so map it by token (KRAY=0, DOG=5, DSC=0, RADIOLA=2 —
+   per kray.space/developers). Unknown token -> 0 (show raw, never crash). */
+var DIVISIBILITY = { KRAY: 0, DOG: 5, DSC: 0, RADIOLA: 2 };
+function toDisplay(raw, token) {
+  var n = Number(raw);
+  if (!isFinite(n)) return raw;
+  var d = DIVISIBILITY[String(token || '').toUpperCase()];
+  return d ? n / Math.pow(10, d) : n;
+}
+
 function poolInfo(info) {
-  /* whitelist the public fields; never echo the key or internals */
+  /* whitelist the public fields; never echo the key or internals.
+     Amounts are converted to display units so consumers show "50 DOG",
+     not "5000000". */
+  var tok = info.pool_token || 'KRAY';
   return {
     title: info.title || '',
     description: info.description || '',
-    reward_per_claim: info.reward_per_claim,
+    reward_per_claim: toDisplay(info.reward_per_claim, tok),
     claims_completed: info.claims_completed,
     claims_remaining: info.claims_remaining,
-    pool_remaining: info.pool_remaining,
-    total_pool: info.total_pool,
+    pool_remaining: toDisplay(info.pool_remaining, tok),
+    total_pool: toDisplay(info.total_pool, tok),
     claim_mode: info.claim_mode || 'open',
-    pool_token: info.pool_token || 'KRAY',
+    pool_token: tok,
     is_active: info.is_active !== false
   };
 }
@@ -86,7 +101,7 @@ module.exports = async function handler(req, res) {
       res.status(r.ok ? 200 : 502).json({
         success: data.success === true,
         tx_id: data.tx_id,
-        reward: data.reward,
+        reward: toDisplay(data.reward, data.reward_token || 'DOG'),
         reward_token: data.reward_token,
         claims_remaining: data.claims_remaining,
         error: data.success === true ? undefined : String(data.error || 'claim-failed')

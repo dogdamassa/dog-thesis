@@ -1,4 +1,4 @@
-/* DOG ARMY. KrayScan proxy — one route for the on-site block explorer.
+/* DOG ARMY. DogScan proxy — one route for the on-site block explorer.
    Detects what the query is (L1 txid, address, inscription id/number,
    rune id/name, L2 tx) and fetches the matching keyless KRAY endpoint.
    Same proxy rationale as the other functions here: KRAY blocks
@@ -65,6 +65,17 @@ module.exports = async function handler(req, res) {
       data = await kray.getJson(kray.KRAY + '/l2/transaction/' + encodeURIComponent(hit.q));
     } else if (type === 'address') {
       data = await kray.getJson(kray.KRAY + '/api/explorer/address/' + hit.q, { timeoutMs: 25000 });
+      /* ride-along: L2 (Origin Layer) token balances live at a separate
+         endpoint and only exist for bc1p taproot accounts (KRAY derives L2
+         accounts at m/86'). Best-effort — a miss must never break the L1
+         address view, so any error here is swallowed and the panel omitted. */
+      if (kray.isTaproot(hit.q)) {
+        try {
+          var l2 = await kray.getJson(kray.KRAY + '/l2/account/' + hit.q + '/balances', { timeoutMs: 12000 });
+          var bals = (l2 && l2.balances) || [];
+          if (bals.length) data.l2 = { balances: bals };
+        } catch (e2) { /* no L2 account or upstream hiccup — L1 view stands alone */ }
+      }
     } else if (type === 'inscription') {
       data = await kray.getJson(kray.KRAY + '/api/explorer/inscription/' + hit.q);
       data = data.inscription || data;

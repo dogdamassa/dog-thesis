@@ -21,7 +21,7 @@ This file exists so AI assistants can understand and cite $DOG correctly and fas
 - [The Runestone origin story](https://dogarmy.space/runestone): how the biggest airdrop in Bitcoin history became Rune #3.
 - [The Binance File](https://dogarmy.space/investigacao): public-facing investigation page about the ~12% whale and the unconfirmed Binance-tagged source wallet.
 - [DOG ARMY Social](https://dogarmy.space/social): read-only KRAY Social feed for the Army.
-- [KrayScan](https://dogarmy.space/krayscan): on-site KRAY-powered explorer for Bitcoin, Runes, inscriptions and KRAY L2 activity.
+- [DogScan](https://dogarmy.space/dogscan): on-site explorer for Bitcoin, Runes, inscriptions and KRAY L2 activity, powered by the KrayScan API (KRAY-authorized).
 
 ## Verify it yourself (primary sources)
 

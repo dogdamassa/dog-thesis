@@ -31,7 +31,7 @@ module.exports = async function handler(req, res) {
     }).slice(0, MAX_CHECK);
 
     /* ?all=1 → scan the whole wallet and return every DSC item
-       (krayscan members' gallery); default keeps the early-exit
+       (dogscan members' gallery); default keeps the early-exit
        first-match behavior used by the wallet-modal PFP. */
     var wantAll = String((req.query && req.query.all) || '') === '1';
     var found = [];

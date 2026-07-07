@@ -986,7 +986,7 @@ footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.24)}
   --warn:#ff9a3d;
   --maxw:1220px;
 }
-html{scroll-padding-top:86px}
+html{scroll-padding-top:104px}
 body{
   background:#030303;
   color:var(--ink);
@@ -1402,6 +1402,13 @@ section{
   background:var(--black-2);
   color:var(--white-2);
 }
+.btn.market{
+  background:transparent;
+  color:var(--orange-solid);
+  border-color:var(--orange-solid);
+  font-weight:800;
+}
+.btn.market:hover{background:var(--orange-solid);color:#080808}
 .card,
 .daily-proof,
 .thesis-panel,
@@ -2026,9 +2033,10 @@ html{overflow-x:hidden}
   .navlinks a{font-size:13px}
   nav .nav-cta{display:none}
 }
-/* Below 1024px even the short English labels don't fit beside the brand + price
-   ticker — hand every language off to the hamburger/drawer. */
-@media (min-width:901px) and (max-width:1024px){
+/* Below 1180px the short English labels don't fit beside the brand + price
+   ticker + wallet button (now that DogMarket makes it 5 links + More) — hand
+   every language off to the hamburger/drawer, same threshold PT/ES already use. */
+@media (min-width:901px) and (max-width:1180px){
   .navlinks{display:none}
   nav .nav-cta{display:none}
   .navtoggle{display:inline-flex}
@@ -2305,7 +2313,7 @@ body.wallet-open{overflow:hidden}
 .rd-liq-kpi em{font-style:normal;font-weight:600;font-family:var(--font-mono);font-size:11px}
 @media (max-width:900px){.rd-mkt-canvasbox{height:220px}}
 
-/* ===== KrayScan embed block (web3 page) — visual cloned from kray.space/krayscan ===== */
+/* ===== DogScan embed block (web3 page) — KrayScan layout in DOG ARMY orange ===== */
 .ks-embed{
   background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.028));
   border:1px solid rgba(255,255,255,.08);
@@ -2322,14 +2330,15 @@ body.wallet-open{overflow:hidden}
   font-family:var(--font-mono,ui-monospace,Menlo,monospace);
   transition:border-color .2s ease,box-shadow .2s ease;
 }
-.ks-embed-input:focus{outline:none;border-color:rgba(113,50,245,.58);box-shadow:0 0 0 4px rgba(113,50,245,.16)}
+.ks-embed-input:focus{outline:none;border-color:rgba(255,92,0,.6);box-shadow:0 0 0 4px rgba(255,92,0,.18)}
 .ks-embed-input::placeholder{color:var(--muted)}
 .ks-embed-btn{
-  background:#7132f5;color:#fff;border:none;border-radius:999px;
-  padding:0 40px;font-size:15px;font-weight:600;cursor:pointer;
+  background:var(--orange-solid,#ff5c00);color:#080808;border:none;border-radius:999px;
+  padding:0 40px;font-size:15px;font-weight:700;cursor:pointer;
   font-family:inherit;transition:background .2s ease,transform .2s ease;
+  box-shadow:0 16px 34px rgba(255,92,0,.22);
 }
-.ks-embed-btn:hover{background:#7f45f7;transform:translateY(-2px)}
+.ks-embed-btn:hover{background:#ff7a1a;transform:translateY(-2px)}
 @media (max-width:768px){
   .ks-embed{padding:24px 18px;border-radius:20px}
   .ks-embed-form{flex-direction:column}
@@ -2499,7 +2508,8 @@ body.wallet-open{overflow:hidden}
 .rd-liq-src b{color:var(--ink);font-weight:600}
 .rd-liq-src i{font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 4px}
 .rd-liq-src span{font-family:var(--font-mono)}
-.rd-liq-build{position:absolute;top:10px;left:10px;max-width:calc(100% - 20px);background:rgba(16,16,16,.82);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:11px;color:var(--muted);pointer-events:none;backdrop-filter:blur(3px)}
+.rd-liq-build{margin:8px 0 0;font-size:11.5px;line-height:1.45;color:var(--muted);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:8px;padding:7px 12px}
+.rd-liq-build[hidden]{display:none}
 
 
 /* ===== header v2: editorial nav com a cara do Dog da Massa =====
@@ -3021,3 +3031,64 @@ header{box-shadow:0 8px 30px rgba(0,0,0,.32);border-bottom:1px solid rgba(255,25
 .w3-feed-acts span{font-family:var(--font-mono)}
 .w3-feed-reward{color:#ffca7a;font-weight:800;background:rgba(255,178,102,.1);border:1px solid rgba(255,178,102,.4);border-radius:6px;padding:2px 8px}
 .w3-feed-empty{color:rgba(255,247,239,.45);font-size:13px;padding:26px 10px;text-align:center}
+
+/* ===== DOG Summit São Paulo: real event photos passing (marquee).
+   No click needed — the photos are the feature; the whole strip still
+   links to the full gallery. Same loop pattern as the culture/social strips. ===== */
+.summit{margin-top:4px}
+.summit-head{max-width:720px}
+.summit-head h3{font-size:clamp(24px,3vw,32px);font-weight:900;letter-spacing:-.03em;line-height:1.05;margin:12px 0 12px}
+.summit-head p{color:var(--muted);font-size:15.5px;line-height:1.6;margin-bottom:14px}
+.summit-head .go{display:inline-flex;color:var(--orange);font-size:13px;font-weight:850;border-bottom:1px solid rgba(247,147,26,.38);padding-bottom:1px;text-decoration:none}
+.summit-head .go:hover{border-bottom-color:var(--orange)}
+
+.summit-strip{position:relative;display:block;margin-top:26px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#050607;text-decoration:none}
+.summit-strip-track{display:flex;width:max-content;gap:8px;padding:12px 0;animation:summit-scroll 80s linear infinite}
+.summit-strip-track img{height:210px;width:auto;display:block;border-radius:8px;border:1px solid rgba(255,255,255,.06);object-fit:cover}
+.summit-strip:hover .summit-strip-track{animation-play-state:paused}
+@keyframes summit-scroll{to{transform:translateX(calc(-50% - 4px))}}
+.summit-strip-badge{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:12px;padding:9px 18px;border-radius:999px;background:rgba(8,8,8,.82);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap;pointer-events:none}
+.summit-strip-badge span{color:var(--white-2,#fff7ef);font-size:12.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.summit-strip-badge b{color:var(--orange-solid,#ff5c00);font-size:12.5px;font-weight:850}
+.summit-strip:hover .summit-strip-badge b{text-decoration:underline}
+@media (prefers-reduced-motion:reduce){
+  .summit-strip{overflow-x:auto}
+  .summit-strip-track{animation:none}
+}
+@media (max-width:760px){
+  .summit-strip-track img{height:150px}
+  .summit-strip-badge{bottom:10px;padding:7px 14px}
+  .summit-strip-badge span,.summit-strip-badge b{font-size:11px}
+}
+
+/* Home nav (2026-07): the top-right wallet button wears the KRAY brand
+   (orange, like /web3's hero connect); the "Join the $DOG Army" CTA moved
+   into the "More" dropdown. Same #walletBtn → same modal/connect flow. */
+.nav-wallet.nav-wallet--kray{
+  color:#0a0a0a;
+  background:linear-gradient(135deg,#ffb25c,#ff5c00 55%,#e84a00);
+  border-color:transparent;
+  font-weight:820;
+  padding:8px 15px 8px 8px;
+  box-shadow:0 10px 26px rgba(255,92,0,.32),inset 0 1px 0 rgba(255,255,255,.3);
+}
+.nav-wallet.nav-wallet--kray:hover{
+  color:#0a0a0a;border-color:transparent;
+  transform:translateY(-1px);
+  box-shadow:0 14px 32px rgba(255,92,0,.46),inset 0 1px 0 rgba(255,255,255,.35);
+}
+.nav-wallet--kray .nav-wallet-icon{
+  width:22px;height:22px;border-radius:7px;background:#000;padding:2px;flex:0 0 auto;
+}
+/* once connected, drop the KRAY glyph and calm the fill so the PFP + address read */
+.nav-wallet.nav-wallet--kray.is-connected{
+  color:#fff8ef;
+  background:linear-gradient(135deg,rgba(255,178,92,.16),rgba(255,92,0,.14));
+  border-color:rgba(255,199,130,.34);
+  box-shadow:none;
+}
+.nav-wallet--kray.is-connected .nav-wallet-icon{display:none}
+.nav-wallet--kray .nav-wallet-addr{color:#fff8ef}
+
+/* the relocated Join CTA reads as the primary action inside the More menu */
+.navgroup-menu .navgroup-join{color:var(--pumpkin);font-weight:800}
