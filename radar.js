@@ -932,20 +932,22 @@
       }
       liqCtx.lineTo(padL + plotW, y(curP));
     };
-    // halo escuro por baixo para a linha ler sobre as células claras
+    // Linha de preço estilo Coinglass: casca preta NÍTIDA (sem blur) por baixo
+    // para separar das células laranja claras, e núcleo branco puro por cima.
+    // O blur suavizava demais e a linha sumia sobre as brasas mais claras.
+    liqCtx.shadowColor = "rgba(0,0,0,0)"; liqCtx.shadowBlur = 0;
     tracePath();
-    liqCtx.strokeStyle = "rgba(0,0,0,.55)"; liqCtx.lineWidth = 4.5;
-    liqCtx.shadowColor = "rgba(0,0,0,.9)"; liqCtx.shadowBlur = 6; liqCtx.stroke();
-    // linha branca por cima
+    liqCtx.strokeStyle = "rgba(0,0,0,.92)"; liqCtx.lineWidth = 5.5; liqCtx.stroke();
     tracePath();
-    liqCtx.strokeStyle = LIQ_INK; liqCtx.lineWidth = 2.2;
-    liqCtx.shadowColor = "rgba(0,0,0,0)"; liqCtx.shadowBlur = 0; liqCtx.stroke();
+    liqCtx.strokeStyle = "#ffffff"; liqCtx.lineWidth = 2.4; liqCtx.stroke();
     liqCtx.restore();
 
-    // preço atual: tracejado no plot + etiqueta no eixo (estilo Coinglass)
+    // preço atual: tracejado com casca escura para ler sobre o laranja (Coinglass)
     var cpy = y(curP);
-    liqCtx.strokeStyle = "rgba(255,122,26,.75)"; liqCtx.lineWidth = 1;
-    liqCtx.setLineDash([4, 4]);
+    liqCtx.setLineDash([5, 4]);
+    liqCtx.strokeStyle = "rgba(0,0,0,.6)"; liqCtx.lineWidth = 2.6;
+    liqCtx.beginPath(); liqCtx.moveTo(padL, cpy); liqCtx.lineTo(padL + plotW, cpy); liqCtx.stroke();
+    liqCtx.strokeStyle = "#ffe4c4"; liqCtx.lineWidth = 1.1;
     liqCtx.beginPath(); liqCtx.moveTo(padL, cpy); liqCtx.lineTo(padL + plotW, cpy); liqCtx.stroke();
     liqCtx.setLineDash([]);
     liqCtx.save();
@@ -987,7 +989,7 @@
     window.addEventListener("resize", liqFit);
     // linha de preço 7d (CoinGecko) para preencher a janela do heatmap
     if (!mkt.cache[7]) {
-      fetch(CG + "/coins/" + CG_ID + "/market_chart?vs_currency=usd&days=7")
+      fetch(CGP + "chart&days=7")
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (j) {
           if (j && j.prices && j.prices.length) { mkt.cache[7] = j.prices; drawLiq(); }
@@ -1024,8 +1026,9 @@
   }
 
   /* ---------- market dashboard (price, futures, liquidations) ---------- */
-  var CG = "https://api.coingecko.com/api/v3";
-  var CG_ID = "dog-go-to-the-moon-rune";
+  /* CoinGecko through our cached server proxy (api/cg.js). The browser used to
+     call CoinGecko directly and got rate-limited (429), blanking this chart. */
+  var CGP = "/api/cg?kind=";
   var mkt = { info: null, series: null, days: 1, cache: {} };
   function renderMktTiles() {
     var el = document.getElementById("rd-mkt-tiles");
@@ -1127,7 +1130,7 @@
   function loadMktChart(days) {
     mkt.days = days;
     if (mkt.cache[days]) { mkt.series = mkt.cache[days]; mktHover = null; drawMkt(); return; }
-    fetch(CG + "/coins/" + CG_ID + "/market_chart?vs_currency=usd&days=" + days)
+    fetch(CGP + "chart&days=" + days)
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (j) {
         if (j && j.prices && j.prices.length) {
@@ -1174,7 +1177,7 @@
     mktCv.addEventListener("mouseleave", function () {
       mktHover = null; if (tip) tip.style.display = "none"; drawMkt();
     });
-    fetch(CG + "/coins/markets?vs_currency=usd&ids=" + CG_ID)
+    fetch(CGP + "markets")
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (j) {
         if (j && j[0]) { mkt.info = j[0]; renderMktTiles(); }
