@@ -2408,7 +2408,7 @@ body.wallet-open{overflow:hidden}
 .soc-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--muted);font-family:inherit;font-size:12px;font-weight:800;padding:6px 14px;cursor:pointer;transition:border-color .15s ease,color .15s ease,background .15s ease}
 .soc-chip:hover{border-color:rgba(255,92,0,.45);color:var(--text)}
 .soc-chip.active{background:var(--orange-solid);border-color:transparent;color:#080808}
-.social-strip-viewport{overflow:hidden}
+.social-strip-viewport{overflow:hidden;padding:12px 0 14px}
 .social-strip-track{display:flex;gap:12px;width:max-content;animation:social-scroll 70s linear infinite}
 .social-strip-viewport:hover .social-strip-track{animation-play-state:paused}
 @keyframes social-scroll{to{transform:translateX(calc(-50% - 6px))}}
