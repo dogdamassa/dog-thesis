@@ -35,6 +35,7 @@ jobs:
           python3 scripts/build_data.py
           python3 scripts/flows.py
           python3 scripts/liqmap.py
+          python3 scripts/dog_news.py || echo "news falhou (RSS do YouTube) — não trava o radar"
 
       - name: Comitar se mudou
         run: |
