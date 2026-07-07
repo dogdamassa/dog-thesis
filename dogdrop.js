@@ -21,6 +21,8 @@
   var MAX_SHOWS    = 4;       /* auto-appearances per session (until caught/dismissed) */
   var CAUGHT_KEY   = 'dogDropCaught';   /* this browser already caught its DOG */
   var LSKEY_CONN   = 'dogArmyKrayConnected';   /* shared with wallet.js        */
+  /* anti-bot quiz options (the CORRECT one is judged server-side, never here) */
+  var QUIZ_OPTS    = [889806, 921530, 812940, 1000000];
 
   /* ---------- i18n (self-contained; mirrors sessionStorage.dogLang) ---------- */
   var STR = {
@@ -45,7 +47,10 @@
       getWallet:'Get KRAY Wallet ↗',
       locked:  'Your KRAY Wallet is locked — unlock it and try again.',
       err:     'The DOG slipped away. Try again.',
-      retry:   'Try again'
+      cancel:  'You closed the confirmation — tap catch to try again.',
+      retry:   'Try again',
+      quizQ:   'Quick check: how many $DOG did each 1 Runestone holder receive?',
+      quizErr: 'Not quite — pick the right answer to catch your DOG.'
     },
     pt: {
       bubble:  'me pega!',
@@ -68,7 +73,10 @@
       getWallet:'Baixar a KRAY Wallet ↗',
       locked:  'Sua KRAY Wallet está bloqueada — desbloqueie e tente de novo.',
       err:     'O DOG escapou. Tenta de novo.',
-      retry:   'Tentar de novo'
+      cancel:  'Você fechou a confirmação — toque em pegar para tentar de novo.',
+      retry:   'Tentar de novo',
+      quizQ:   'Pergunta rápida: quem tinha 1 Runestone recebeu quantos $DOG?',
+      quizErr: 'Quase — escolha a resposta certa pra pegar o seu DOG.'
     },
     es: {
       bubble:  '¡atrápame!',
@@ -91,7 +99,10 @@
       getWallet:'Obtener KRAY Wallet ↗',
       locked:  'Tu KRAY Wallet está bloqueada — desbloquéala e inténtalo otra vez.',
       err:     'El DOG se escapó. Inténtalo de nuevo.',
-      retry:   'Intentar de nuevo'
+      cancel:  'Cerraste la confirmación — toca atrapar para intentarlo otra vez.',
+      retry:   'Intentar de nuevo',
+      quizQ:   'Pregunta rápida: ¿cuántos $DOG recibió quien tenía 1 Runestone?',
+      quizErr: 'Casi — elige la respuesta correcta para atrapar tu DOG.'
     }
   };
   function lang() {
@@ -124,6 +135,22 @@
   }
   function caught() { try { return localStorage.getItem(CAUGHT_KEY) === '1'; } catch (e) { return false; } }
   function markCaught() { try { localStorage.setItem(CAUGHT_KEY, '1'); } catch (e) {} }
+  /* re-check the escrow ledger for this wallet — used to avoid a false "escaped"
+     when the claim may actually have gone through, or already happened before. */
+  function verifyClaimed(a) {
+    if (!a) return Promise.resolve(false);
+    return fetch('/api/scroll?address=' + encodeURIComponent(a))
+      .then(function (r) { return r.json(); })
+      .then(function (c) { return !!(c && c.claimed); })
+      .catch(function () { return false; });
+  }
+  /* did the user dismiss/reject the wallet popup (vs a real failure)? */
+  function isCancel(e) {
+    if (!e) return false;
+    if (e.cancelled) return true;
+    var s = (e.message || e.error || (typeof e === 'string' ? e : '')) + '';
+    return /reject|deni|cancel|declin|dismiss|closed|abort/i.test(s);
+  }
 
   /* ---------- style (style-src allows 'unsafe-inline') ---------- */
   var CSS =
@@ -153,7 +180,8 @@
     'backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:20px;' +
     'opacity:0;transition:opacity .25s;}' +
   '.dd-scrim.is-open{opacity:1;}' +
-  '.dd-card{width:100%;max-width:352px;background:#0b0b0d;border:1px solid #26170c;border-radius:18px;' +
+  '.dd-card{width:100%;max-width:352px;max-height:calc(100vh - 40px);overflow:auto;background:#0b0b0d;' +
+    'border:1px solid #26170c;border-radius:18px;' +
     'box-shadow:0 24px 70px rgba(0,0,0,.6),0 0 0 1px rgba(255,92,0,.12);padding:22px 20px 20px;' +
     'text-align:center;color:#f2ede8;position:relative;transform:translateY(12px) scale(.97);' +
     'transition:transform .25s cubic-bezier(.2,.9,.3,1.2);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;}' +
@@ -177,6 +205,14 @@
   '.dd-link:hover{text-decoration:underline;}' +
   '.dd-note{margin-top:12px;font-size:12px;color:#8a8a8a;}' +
   '.dd-err{color:#ff8f6b !important;}' +
+  /* anti-bot quiz */
+  '.dd-quiz{margin-top:16px;text-align:left;}' +
+  '.dd-quiz-q{font-size:13px;font-weight:700;color:#c7c1bb;line-height:1.4;text-align:center;margin-bottom:10px;}' +
+  '.dd-opt{display:block;width:100%;margin:6px 0;padding:11px 12px;border:1px solid #2a2a2e;border-radius:10px;' +
+    'background:#141416;color:#f2ede8;font:700 14px/1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;' +
+    'cursor:pointer;text-align:center;transition:border-color .15s,background .15s;}' +
+  '.dd-opt:hover{border-color:#ff8a3d;}' +
+  '.dd-opt.is-sel{border-color:#ff5c00;background:#241206;color:#fff;box-shadow:0 0 0 1px rgba(255,92,0,.4);}' +
   '.dd-spin{width:16px;height:16px;border-radius:50%;border:2px solid rgba(24,10,0,.35);border-top-color:#180a00;' +
     'animation:dd-spin .7s linear infinite;}' +
   '@keyframes dd-spin{to{transform:rotate(360deg)}}' +
@@ -194,6 +230,7 @@
   var shows = 0;
   var busy = false;
   var claimedOnServer = false;
+  var quizAnswer = '';      /* the visitor's picked answer, sent with the claim */
   var wrap, sprite, scrim, card, hideTimer, gapTimer, lastFocus;
 
   /* ---------- wallet handshake (own minimal flow, like web3.js/dogscan.js) ---------- */
@@ -259,7 +296,7 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            user_address: a, user_pubkey: pk, user_signature: sig, user_message: msg
+            user_address: a, user_pubkey: pk, user_signature: sig, user_message: msg, quiz: quizAnswer
           })
         });
       });
@@ -269,10 +306,30 @@
       var d = res.d || {};
       if (res.ok && d.success) { markCaught(); renderSuccess(d); return; }
       var e = String(d.error || '').toLowerCase();
-      if (/already|claimed|duplicate/.test(e)) { claimedOnServer = true; markCaught(); renderState('already'); return; }
-      renderState('err');
+      /* wrong quiz answer — send them back to pick again, no DOG spent */
+      if (e === 'quiz') { renderIntro(true); return; }
+      /* already got their DOG — any phrasing KRAY uses for one-per-wallet */
+      if (/already|claimed|duplicate|once|limit|eligib|whitelist/.test(e)) {
+        claimedOnServer = true; markCaught(); renderState('already'); return;
+      }
+      /* the pool ran dry between the peek and the catch — say so honestly */
+      if (/empty|exhaust|deplet|insufficient|no.?claims|out.?of/.test(e)) {
+        renderEmpty(); return;
+      }
+      /* unknown failure: the escrow may actually have paid, or already claimed
+         under a phrasing we don't match. Confirm before crying "escaped". */
+      return verifyClaimed(address).then(function (claimed) {
+        if (claimed) { claimedOnServer = true; markCaught(); renderState('already'); }
+        else renderState('err', d.error);
+      });
     }).catch(function (e) {
-      renderState(e && e.locked ? 'locked' : 'err');
+      if (e && e.locked) { renderState('locked'); return; }
+      if (isCancel(e)) { renderState('cancel'); return; }
+      /* network or wallet glitch — but they might have been paid; re-check */
+      return verifyClaimed(address).then(function (claimed) {
+        if (claimed) { claimedOnServer = true; markCaught(); renderState('already'); }
+        else renderState('err', e && (e.message || e.error));
+      });
     }).then(function () { busy = false; });
   }
 
@@ -316,7 +373,8 @@
     card.appendChild(inner);
   }
 
-  function renderIntro() {
+  function renderIntro(quizWrong) {
+    quizAnswer = '';   /* force a fresh pick every time the intro is shown */
     var box = el('div');
     var h = el('h3'); h.id = 'dd-title'; h.textContent = t('title');
     var reward = pool ? fmt(pool.reward_per_claim) : '';
@@ -326,23 +384,50 @@
       var left = el('div', 'dd-left'); left.textContent = t('left', fmt(pool.pool_remaining));
       box.appendChild(left);
     }
-    var btn = el('button', 'dd-btn'); btn.type = 'button';
+
+    /* anti-bot quiz — the DOG is only catchable after a correct answer, which
+       the server verifies (the right option is never marked here). */
+    var q = el('div', 'dd-quiz');
+    var qq = el('div', 'dd-quiz-q'); qq.textContent = t('quizQ');
+    q.appendChild(qq);
+    var opts = QUIZ_OPTS.slice(), optNodes = [];
+    for (var i = opts.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)); var sw = opts[i]; opts[i] = opts[j]; opts[j] = sw;
+    }
+    var btn;   /* the catch button, armed only after a pick (assigned below) */
+    opts.forEach(function (val) {
+      var o = el('button', 'dd-opt'); o.type = 'button'; o.textContent = fmt(val);
+      o.addEventListener('click', function () {
+        quizAnswer = String(val);
+        optNodes.forEach(function (n) { n.classList.remove('is-sel'); });
+        o.classList.add('is-sel');
+        if (btn) btn.disabled = false;
+      });
+      optNodes.push(o); q.appendChild(o);
+    });
+    box.appendChild(q);
+    if (quizWrong) { var qe = el('div', 'dd-note dd-err'); qe.textContent = t('quizErr'); box.appendChild(qe); }
+
+    btn = el('button', 'dd-btn'); btn.type = 'button';
     btn.textContent = address ? t('catch', reward) : t('connect');
+    btn.disabled = true;
     btn.addEventListener('click', claim);
     box.appendChild(btn);
     baseCard(box);
-    focusCard(btn);
+    focusCard(optNodes[0] || btn);
   }
 
-  function renderState(kind) {
+  function renderState(kind, detail) {
     var box = el('div');
     var h = el('h3'); h.id = 'dd-title';
     var p = el('p');
     var busyKind = (kind === 'signing' || kind === 'claim');
+    var errKind = (kind === 'err' || kind === 'locked' || kind === 'cancel');
     if (kind === 'signing') { h.textContent = t('title'); p.textContent = t('signing'); }
     else if (kind === 'claim') { h.textContent = t('title'); p.textContent = t('claim'); }
     else if (kind === 'already') { h.textContent = t('okTitle'); p.textContent = t('already'); }
     else if (kind === 'locked') { h.textContent = t('title'); p.className = 'dd-err'; p.textContent = t('locked'); }
+    else if (kind === 'cancel') { h.textContent = t('title'); p.textContent = t('cancel'); }
     else { h.textContent = t('title'); p.className = 'dd-err'; p.textContent = t('err'); }
     box.appendChild(h); box.appendChild(p);
 
@@ -350,10 +435,15 @@
       var b = el('button', 'dd-btn'); b.type = 'button'; b.disabled = true;
       b.appendChild(el('span', 'dd-spin'));
       box.appendChild(b);
-    } else if (kind === 'err' || kind === 'locked') {
+    } else if (errKind) {
       var retry = el('button', 'dd-btn'); retry.type = 'button'; retry.textContent = t('retry');
       retry.addEventListener('click', claim);
       box.appendChild(retry);
+    }
+    /* short, muted reason so the Army can report exactly what KRAY said */
+    if (kind === 'err' && detail) {
+      var why = el('div', 'dd-note'); why.textContent = String(detail).slice(0, 120);
+      box.appendChild(why);
     }
     baseCard(box);
     if (!busyKind) focusCard(card.querySelector('.dd-btn') || card.querySelector('.dd-card-x'));

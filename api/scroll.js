@@ -84,6 +84,14 @@ module.exports = async function handler(req, res) {
       res.status(400).json({ success: false, error: 'stale' });
       return;
     }
+    /* anti-bot quiz gate: pay only when the onboarding question was answered
+       right. The answer lives ONLY here — never in the browser bundle — so a
+       bot scraping dogdrop.js can't learn it and a naive direct POST is refused
+       before it ever reaches the escrow. */
+    if (String(b.quiz || '').replace(/\D/g, '') !== '889806') {
+      res.status(400).json({ success: false, error: 'quiz' });
+      return;
+    }
     try {
       var r = await fetch(kray.KRAY + '/api/dev-scroll/claim', {
         method: 'POST',

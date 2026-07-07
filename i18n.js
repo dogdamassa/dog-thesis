@@ -1796,3 +1796,29 @@ window.DOG_I18N = {
     document.addEventListener("DOMContentLoaded", init);
   } else { init(); }
 })();
+
+/* DOG Summit — slideshow das fotos do evento (crossfade automático). */
+(function () {
+  function init() {
+    var box = document.querySelector(".event-shots");
+    if (!box) return;
+    var shots = box.querySelectorAll(".event-shot");
+    if (shots.length < 2) return;
+    var i = 0, timer = null;
+    function show(n) {
+      shots[i].classList.remove("is-on");
+      i = (n + shots.length) % shots.length;
+      shots[i].classList.add("is-on");
+    }
+    function start() { if (!timer) timer = setInterval(function () { show(i + 1); }, 5000); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    /* não gira com a aba oculta; retoma ao voltar */
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stop(); else start();
+    });
+    if (!document.hidden) start();
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else { init(); }
+})();
