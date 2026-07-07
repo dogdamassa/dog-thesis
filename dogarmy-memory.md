@@ -32,7 +32,7 @@ ordinals.com, dogdata.xyz, mempool.space and public CEX APIs.
 - `index.html`: global homepage, radar, culture, archive, AI files and social strip.
 - `web3.html` + `web3.js`: KRAY wallet/Web3 HQ and rank/badge flow.
 - `social.html` + `social.js`: read-only KRAY Social feed for the Army.
-- `krayscan.html` + `krayscan.js`: on-site KRAY-powered explorer, gated by KRAY Wallet.
+- `dogscan.html` + `dogscan.js`: DogScan, the on-site explorer running on the full KrayScan API (KRAY-authorized rebrand, DOG ARMY skin); `/krayscan` 301s to `/dogscan`.
 - `radar.js` + `data/*.json`: live DOG Radar data and liquidity map.
 - `llms.txt`: compact AI briefing.
 - `llms-full.txt`: full citable AI briefing.

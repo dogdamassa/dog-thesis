@@ -92,18 +92,27 @@
     });
     return out;
   }
-  function currentDay() {
-    if (data.daily && data.daily.date) return data.daily.date;
-    if (data.feed && data.feed.updated_at) return String(data.feed.updated_at).slice(0, 10);
-    return new Date().toISOString().slice(0, 10);
-  }
   function flowEvents() {
     var evs = ((data.feed && data.feed.events) || []).filter(function (e) {
       return e && e.type !== "balance_change" && (e.amount_dog || 0) > 0;
     });
-    var day = currentDay();
-    var daily = evs.filter(function (e) { return String(e.ts || "").slice(0, 10) === day; });
-    return (daily.length ? daily : evs).slice(0, 32);
+    if (!evs.length) return [];
+    // Janela rolante ancorada no evento mais recente, em vez do dia-calendário
+    // UTC. Logo depois das 00:00 UTC (21:00 no Brasil) o filtro por dia deixava
+    // o radar com um único fluxo solitário, mesmo com um dia cheio na véspera.
+    var latest = evs.reduce(function (m, e) {
+      var t = new Date(e.ts || 0).getTime();
+      return t > m ? t : m;
+    }, 0);
+    function within(h) {
+      return evs.filter(function (e) {
+        return latest - new Date(e.ts || 0).getTime() <= h * 3600 * 1000;
+      });
+    }
+    // ~1 dia de atividade; se ficar fina perto da virada do dia, alarga p/ 48h
+    var win = within(24);
+    if (win.length < 8) win = within(48);
+    return (win.length ? win : evs).slice(0, 32);
   }
   function cleanLabel(label, id, fallback) {
     var L = flowLbl();

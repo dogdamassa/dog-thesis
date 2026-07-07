@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* DOG ARMY. Local dev server that mimics Vercel for this repo:
    - static files from the repo root
-   - cleanUrls (/krayscan -> krayscan.html, / -> index.html)
+   - cleanUrls (/dogscan -> dogscan.html, / -> index.html)
    - /api/<name> -> api/<name>.js handlers (Vercel-style req.query/res shims),
      require cache cleared per request so edits apply on refresh
    - sends the production CSP header from vercel.json to catch CSP bugs early

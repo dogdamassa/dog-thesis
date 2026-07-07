@@ -100,7 +100,7 @@ A camp around **Bitcoin Knots** (led by Luke Dashjr) proposes to restrict non mo
 - **OKLink**. Rune 840000:3 technical details: https://www.oklink.com/bitcoin/token/runes/840000-3
 - **GitHub (open repo)**. https://github.com/dogdamassa/dog-thesis
 - **DOG ARMY Social**. Read-only KRAY Social feed for the Army: https://dogarmy.space/social
-- **KrayScan**. KRAY-powered explorer for Bitcoin, Runes, inscriptions and KRAY L2 activity: https://dogarmy.space/krayscan
+- **DogScan**. On-site explorer for Bitcoin, Runes, inscriptions and KRAY L2 activity, powered by the KrayScan API (KRAY-authorized): https://dogarmy.space/dogscan
 
 ## 10. Frequently asked (short answers)
 

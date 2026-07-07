@@ -26,7 +26,7 @@ window.DOG_I18N = {
     "nav.history": "Home",
     "nav.runestone": "Runestone",
     "nav.evidence": "Evidências",
-    "nav.wallets": "Carteiras",
+    "nav.wallets": "Análise On-Chain",
     "nav.ecosystem": "Ecossistema",
     "nav.events": "Eventos",
     "nav.faq": "FAQ",
@@ -75,7 +75,7 @@ window.DOG_I18N = {
     "soc.trending": "Em alta",
     "soc.recent": "Recentes",
     "soc.loading": "Carregando posts…",
-    "nav.social": "Feed",
+    "nav.social": "Como Funciona",
     "socialPage.k": "KRAY Social",
     "socialPage.h": "A praça pública da $DOG Army. <span>Gravada no Bitcoin.</span>",
     "socialPage.lead": "Uma rede social gravada no Bitcoin: posts, likes e recompensas em $DOG, tudo assinado pela sua carteira. É o que a $DOG Army está falando agora.",
@@ -259,6 +259,7 @@ window.DOG_I18N = {
     "hero.b1": "Abrir o dossiê",
     "hero.b2": "Verifique você mesmo",
     "hero.b3": "Entrar na pesquisa",
+    "hero.market": "Comprar $DOG no Bitcoin",
 
     "fight.k": "Somos os novos maxis",
     "fight.h": "Defenda o blockspace sem permissão. Rejeite o BIP-110.",
@@ -395,7 +396,9 @@ window.DOG_I18N = {
     "ev.lead": "A $DOG Army se encontra pessoalmente pelo mundo. O primeiro DOG Summit dedicado aconteceu em São Paulo, Brasil. Cultura, não coordenação. Gente que segura $DOG, se reunindo pra falar de Bitcoin, Ordinals, Runes e autocustódia.",
     "ev.ft": "Destaque · organizado pela $DOG Army no Brasil 🇧🇷",
     "ev.fp": "O encontro definitivo da $DOG Army. Adoção regional e cultura Bitcoin. Estratégia, networking e soberania financeira no Brasil.",
-    "ev.fl": "Ver o DOG Summit →",
+    "ev.fl": "Ver a galeria completa →",
+    "ev.gcap": "DOG Summit · São Paulo",
+    "ev.gsee": "Ver a galeria completa ↗",
     "ev.g": "Onde a comunidade $DOG já apareceu",
     "ev.e1": "Maio de 2024 · a cultura de Ordinals e Runes se encontra no Brasil.",
     "ev.e2": "Julho de 2024 · um dos maiores eventos de Bitcoin dos EUA.",
@@ -647,6 +650,7 @@ window.DOG_I18N = {
     "rn.dogCard2h": "100 bilhões",
     "ft.disc": "Este material é informativo e educacional. Não é conselho financeiro, recomendação de compra ou venda, promessa de preço, acusação jurídica ou coordenação de mercado. A pesquisa descreve dados públicos e padrões observáveis, sempre com caveats.",
     "nav.web3": "Social Space",
+    "nav.market": "DogMarket",
     "nav.more": "Mais",
     "w3.eyebrow": "Social Space · Origin Layer",
     "w3.h1": "Sua patente vive <span>no Bitcoin.</span>",
@@ -700,6 +704,49 @@ window.DOG_I18N = {
     "w3.ftLine": "Social Space — movido pelo Origin Layer da KRAY, verificado no Bitcoin.",
     "w3.ftBack": "Voltar pro DOG ARMY",
     "w3.ftDisc": "Material educativo. Não é conselho financeiro. Patentes são simbólicas e lidas de dados públicos on-chain. Recompensas e apoios rodam no L2 da KRAY sob as regras do protocolo dela.",
+    "dm.eyebrow": "DogMarket · Atomic Swap de Runes",
+    "dm.h1": "Compre $DOG <span>direto no Bitcoin.</span>",
+    "dm.sub": "Essa é a loja do próprio exército pra rune DOG•GO•TO•THE•MOON. Cada pacote abaixo é um anúncio vivo, on-chain. Comprar é um atomic swap sem confiança — sua KRAY Wallet assina, as moedas trocam de mão de ponta a ponta, e nenhum mercado nunca segura seus fundos.",
+    "dm.connect": "Conectar KRAY Wallet",
+    "dm.install": "Baixar a KRAY Wallet ↗",
+    "dm.stOff": "Carteira não conectada. Navegar é livre pra todo mundo — conecte só quando quiser comprar ou anunciar.",
+    "dm.loading": "Carregando…",
+    "dm.loadingH": "Carregando pacotes…",
+    "dm.sortLow": "Menor preço",
+    "dm.sortHigh": "Maior preço",
+    "dm.sortMost": "Mais tokens",
+    "dm.sortLeast": "Menos tokens",
+    "dm.sortRecent": "Recentes",
+    "dm.sell": "Vender seu DOG",
+    "dm.dx1t": "Sem confiança",
+    "dm.dx1h": "Atomic swap, de ponta a ponta",
+    "dm.dx1p": "Comprador e vendedor assinam uma única transação Bitcoin que liquida por inteiro ou simplesmente não acontece. Nenhum escrow de mercado nunca segura seu DOG nem seus sats.",
+    "dm.dx2t": "Suas chaves",
+    "dm.dx2h": "Quem assina é a KRAY Wallet, não a gente",
+    "dm.dx2p": "Toda compra e todo anúncio abre o popup de confirmação da sua própria carteira. Este site nunca vê sua seed, nunca segura suas moedas e nunca pode movê-las.",
+    "dm.dx3t": "Limite honesto",
+    "dm.dx3h": "O mercado roda na KRAY",
+    "dm.dx3p": "O livro de ofertas e o motor de swap são operados pela KRAY SPACE, patrocinadora do exército, e cobram 2% de taxa de mercado. A liquidação é Bitcoin L1 de verdade. A gente diz isso em voz alta — essa é a doutrina do exército.",
+    "dm.ftLine": "DogMarket — anúncios da rune DOG liquidados no Bitcoin, movidos pelo motor de atomic swap da KRAY.",
+    "dm.ftKray": "Abrir na KRAY SPACE ↗",
+    "dm.ftBack": "Voltar pro DOG ARMY",
+    "dm.ftDisc": "Material educativo. Não é conselho financeiro. O DogMarket espelha o livro público de atomic swap da KRAY pra rune DOG; toda negociação é ponta a ponta no Bitcoin e liquida sob as regras do protocolo da KRAY e uma taxa de mercado de 2%.",
+    "dm.cancel": "Cancelar",
+    "dm.buyConfirm": "Comprar · assinar na carteira",
+    "dm.swapTag": "⚡ Atomic swap sem confiança — ponta a ponta no Bitcoin",
+    "dm.sellH": "Vender seu DOG",
+    "dm.sellSub": "Escolha um pacote de DOG da sua carteira pra anunciar.",
+    "dm.back": "Voltar",
+    "dm.pickPkg": "Escolha um pacote",
+    "dm.pickPkgSub": "Cada pacote é um UTXO com DOG. Pacotes já anunciados ficam travados.",
+    "dm.setPrice": "Defina seu preço",
+    "dm.amountSell": "Quantidade a vender",
+    "dm.max": "MÁX",
+    "dm.totalPrice": "Preço total (sats)",
+    "dm.perToken": "Preço por token",
+    "dm.marketFee": "Taxa de mercado (2%)",
+    "dm.youReceive": "Você recebe",
+    "dm.createListing": "Criar anúncio · assinar",
     "wl.btn": "Conectar carteira",
     "wl.title": "Suas chaves. Sua $DOG.",
     "wl.sub": "<b>KRAY</b>. Autocustódia para Bitcoin, Ordinals e Runes. Sua $DOG com você, não numa corretora que pode congelar tudo.",
@@ -763,7 +810,7 @@ window.DOG_I18N = {
     "nav.history": "Home",
     "nav.runestone": "Runestone",
     "nav.evidence": "Evidencias",
-    "nav.wallets": "Carteras",
+    "nav.wallets": "Análisis On-Chain",
     "nav.ecosystem": "Ecosistema",
     "nav.events": "Eventos",
     "nav.faq": "FAQ",
@@ -789,7 +836,7 @@ window.DOG_I18N = {
     "soc.trending": "Tendencias",
     "soc.recent": "Recientes",
     "soc.loading": "Cargando posts…",
-    "nav.social": "Feed",
+    "nav.social": "Cómo Funciona",
     "socialPage.k": "KRAY Social",
     "socialPage.h": "La plaza pública de la $DOG Army. <span>Grabada en Bitcoin.</span>",
     "socialPage.lead": "Una red social grabada en Bitcoin: posts, likes y recompensas en $DOG, todo firmado con tu cartera. Es lo que la $DOG Army está diciendo ahora.",
@@ -970,6 +1017,7 @@ window.DOG_I18N = {
     "hero.b1": "Abrir el expediente",
     "hero.b2": "Verifica tú mismo",
     "hero.b3": "Alistarse",
+    "hero.market": "Comprar $DOG en Bitcoin",
     "fight.k": "Somos los nuevos maxis",
     "fight.h": "Defiende el blockspace sin permiso. Rechaza el BIP-110.",
     "fight.lead": "El campo de Bitcoin Knots (BIP-110) quiere censurar lo que puedes grabar en Bitcoin. Apunta directo a Ordinals y Runes. Nunca pedimos perdón por usar la red que amamos. Casey abrió Bitcoin al mundo entero. Los nuevos maxis son quienes lo defienden.",
@@ -1098,7 +1146,9 @@ window.DOG_I18N = {
     "ev.lead": "La $DOG Army se reúne en persona por el mundo. La primera DOG Summit dedicada ocurrió en São Paulo, Brasil. Cultura, no coordinación. Gente que sostiene $DOG, reuniéndose para hablar de Bitcoin, Ordinals, Runes y autocustodia.",
     "ev.ft": "Destacado · organizado por la $DOG Army en Brasil 🇧🇷",
     "ev.fp": "El encuentro definitivo de la $DOG Army. Adopción regional y cultura Bitcoin. Estrategia, networking y soberanía financiera en Brasil.",
-    "ev.fl": "Ver la DOG Summit →",
+    "ev.fl": "Ver la galería completa →",
+    "ev.gcap": "DOG Summit · São Paulo",
+    "ev.gsee": "Ver la galería completa ↗",
     "ev.g": "Dónde ha aparecido la comunidad $DOG",
     "ev.e1": "Mayo de 2024 · la cultura de Ordinals y Runes se reúne en Brasil.",
     "ev.e2": "Julio de 2024 · uno de los mayores eventos de Bitcoin de EE. UU.",
@@ -1336,6 +1386,7 @@ window.DOG_I18N = {
     "rn.dogCard2h": "100 mil millones",
     "ft.disc": "Este material es informativo y educativo. No es consejo financiero, recomendación de compra o venta, promesa de precio, acusación jurídica ni coordinación de mercado. La investigación describe datos públicos y patrones observables, siempre con caveats.",
     "nav.web3": "Social Space",
+    "nav.market": "DogMarket",
     "nav.more": "Más",
     "w3.eyebrow": "Social Space · Origin Layer",
     "w3.h1": "Tu rango vive <span>en Bitcoin.</span>",
@@ -1389,6 +1440,49 @@ window.DOG_I18N = {
     "w3.ftLine": "Social Space — impulsado por el Origin Layer de KRAY, verificado en Bitcoin.",
     "w3.ftBack": "Volver a DOG ARMY",
     "w3.ftDisc": "Material educativo. No es consejo financiero. Los rangos son simbólicos y se leen de datos públicos on-chain. Recompensas y apoyos corren en el L2 de KRAY bajo las reglas de su protocolo.",
+    "dm.eyebrow": "DogMarket · Atomic Swap de Runes",
+    "dm.h1": "Compra $DOG <span>directo en Bitcoin.</span>",
+    "dm.sub": "Esta es la tienda del propio ejército para la rune DOG•GO•TO•THE•MOON. Cada paquete de abajo es un anuncio vivo, on-chain. Comprar es un atomic swap sin confianza — tu KRAY Wallet firma, las monedas cambian de mano de punta a punta, y ningún mercado retiene jamás tus fondos.",
+    "dm.connect": "Conectar KRAY Wallet",
+    "dm.install": "Descargar KRAY Wallet ↗",
+    "dm.stOff": "Cartera no conectada. Navegar es libre para todos — conecta solo cuando quieras comprar o anunciar.",
+    "dm.loading": "Cargando…",
+    "dm.loadingH": "Cargando paquetes…",
+    "dm.sortLow": "Menor precio",
+    "dm.sortHigh": "Mayor precio",
+    "dm.sortMost": "Más tokens",
+    "dm.sortLeast": "Menos tokens",
+    "dm.sortRecent": "Recientes",
+    "dm.sell": "Vender tu DOG",
+    "dm.dx1t": "Sin confianza",
+    "dm.dx1h": "Atomic swap, de punta a punta",
+    "dm.dx1p": "Comprador y vendedor firman una sola transacción Bitcoin que liquida por completo o no ocurre. Ningún escrow de mercado retiene jamás tu DOG ni tus sats.",
+    "dm.dx2t": "Tus llaves",
+    "dm.dx2h": "Quien firma es la KRAY Wallet, no nosotros",
+    "dm.dx2p": "Cada compra y cada anuncio abre el popup de confirmación de tu propia cartera. Este sitio nunca ve tu seed, nunca retiene tus monedas y nunca puede moverlas.",
+    "dm.dx3t": "Límite honesto",
+    "dm.dx3h": "El mercado corre en KRAY",
+    "dm.dx3p": "El libro de órdenes y el motor de swap los opera KRAY SPACE, patrocinadora del ejército, y cobran 2% de comisión de mercado. La liquidación es Bitcoin L1 real. Lo decimos en voz alta — esa es la doctrina del ejército.",
+    "dm.ftLine": "DogMarket — anuncios de la rune DOG liquidados en Bitcoin, movidos por el motor de atomic swap de KRAY.",
+    "dm.ftKray": "Abrir en KRAY SPACE ↗",
+    "dm.ftBack": "Volver a DOG ARMY",
+    "dm.ftDisc": "Material educativo. No es consejo financiero. DogMarket refleja el libro público de atomic swap de KRAY para la rune DOG; toda operación es de punta a punta en Bitcoin y liquida bajo las reglas del protocolo de KRAY y una comisión de mercado del 2%.",
+    "dm.cancel": "Cancelar",
+    "dm.buyConfirm": "Comprar · firmar en la cartera",
+    "dm.swapTag": "⚡ Atomic swap sin confianza — de punta a punta en Bitcoin",
+    "dm.sellH": "Vender tu DOG",
+    "dm.sellSub": "Elige un paquete de DOG de tu cartera para anunciar.",
+    "dm.back": "Volver",
+    "dm.pickPkg": "Elige un paquete",
+    "dm.pickPkgSub": "Cada paquete es un UTXO con DOG. Los paquetes ya anunciados quedan bloqueados.",
+    "dm.setPrice": "Define tu precio",
+    "dm.amountSell": "Cantidad a vender",
+    "dm.max": "MÁX",
+    "dm.totalPrice": "Precio total (sats)",
+    "dm.perToken": "Precio por token",
+    "dm.marketFee": "Comisión de mercado (2%)",
+    "dm.youReceive": "Recibes",
+    "dm.createListing": "Crear anuncio · firmar",
     "wl.btn": "Conectar cartera",
     "wl.title": "Tus llaves. Tus $DOG.",
     "wl.sub": "<b>KRAY</b>. Autocustodia para Bitcoin, Ordinals y Runes. Tus $DOG contigo, no en un exchange que puede congelarlas.",
@@ -1697,6 +1791,32 @@ window.DOG_I18N = {
     window.addEventListener("scroll", function () {
       if (window.scrollY < 120) clearCurrent();
     }, { passive: true });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else { init(); }
+})();
+
+/* DOG Summit — slideshow das fotos do evento (crossfade automático). */
+(function () {
+  function init() {
+    var box = document.querySelector(".event-shots");
+    if (!box) return;
+    var shots = box.querySelectorAll(".event-shot");
+    if (shots.length < 2) return;
+    var i = 0, timer = null;
+    function show(n) {
+      shots[i].classList.remove("is-on");
+      i = (n + shots.length) % shots.length;
+      shots[i].classList.add("is-on");
+    }
+    function start() { if (!timer) timer = setInterval(function () { show(i + 1); }, 5000); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    /* não gira com a aba oculta; retoma ao voltar */
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stop(); else start();
+    });
+    if (!document.hidden) start();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

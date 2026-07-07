@@ -1,9 +1,9 @@
-/* DOG ARMY. KrayScan — on-site block explorer, frontend cloned from
-   kray.space/krayscan. Searches L1 txs, addresses, inscriptions, runes
-   and KRAY L2 (Origin Layer) txs; everything renders here, nothing
-   leaves the site. Data comes from /api/scan (our proxy — KRAY blocks
-   foreign-Origin CORS). External file on purpose: script-src 'self'.
-   No inline handlers for the same reason (onerror etc. are inline JS). */
+/* DOG ARMY. DogScan — on-site block explorer running on the full KrayScan
+   API (kray.space, used with KRAY's authorization). Searches L1 txs,
+   addresses, inscriptions, runes and KRAY L2 (Origin Layer) txs;
+   everything renders here, nothing leaves the site. Data comes from
+   /api/scan (our proxy — KRAY blocks foreign-Origin CORS). External file
+   on purpose: script-src 'self'. No inline handlers for the same reason. */
 (function () {
   var KRAY_IMG = 'https://www.kray.space'; /* allowed by img-src */
   var TOKEN_DIV = { KRAY: 0, DOG: 5, DSC: 0, RADIOLA: 2 };
@@ -47,7 +47,7 @@
   }
   /* internal search link — stays on this page */
   function linkQ(q, label, cls) {
-    return '<a class="' + (cls || 'ks-link') + '" data-q="' + esc(q) + '" href="/krayscan?q=' + encodeURIComponent(q) + '">' + (label || esc(q)) + '</a>';
+    return '<a class="' + (cls || 'ks-link') + '" data-q="' + esc(q) + '" href="/dogscan?q=' + encodeURIComponent(q) + '">' + (label || esc(q)) + '</a>';
   }
   function row(k, vHtml) {
     return '<div class="info-row"><span class="info-key">' + k + '</span><span class="info-value">' + vHtml + '</span></div>';
@@ -64,11 +64,23 @@
     $('error').style.display = 'none';
     for (var i = 0; i < PANES.length; i++) $(PANES[i]).style.display = 'none';
   }
-  function showLoading() { hideAll(); $('loading').style.display = 'flex'; }
+  /* bring the result region into view past the sticky header — without this a
+     phone-sized viewport keeps the search card on screen and the result renders
+     below the fold, so a search looks like it did nothing */
+  function revealTo(el) {
+    try {
+      var header = document.querySelector('header');
+      var offset = (header ? header.getBoundingClientRect().height : 0) + 16;
+      var y = el.getBoundingClientRect().top + (window.pageYOffset || 0) - offset;
+      window.scrollTo({ top: y > 0 ? y : 0, behavior: 'smooth' });
+    } catch (e) { /* older browsers / no smooth scroll — harmless */ }
+  }
+  function showLoading() { hideAll(); $('loading').style.display = 'flex'; revealTo($('loading')); }
   function showError(msg) {
     hideAll();
     $('error-message').textContent = msg;
     $('error').style.display = 'block';
+    revealTo($('error'));
   }
   /* CSP: no inline onerror — wire image fallbacks after innerHTML */
   function wireFallbacks(el) {
@@ -90,7 +102,7 @@
     el.style.display = 'block';
   }
 
-  /* ---------- input detection (cloned from krayscan) ---------- */
+  /* ---------- input detection (same rules as kray.space's explorer) ---------- */
   function detect(input) {
     var q = String(input || '').trim();
     if (!q) return null;
@@ -118,7 +130,7 @@
     searching = true;
     $('searchInput').value = q;
     if (push !== false) {
-      try { history.pushState({ q: q }, '', '/krayscan?q=' + encodeURIComponent(q)); } catch (e) { /* file:// etc. */ }
+      try { history.pushState({ q: q }, '', '/dogscan?q=' + encodeURIComponent(q)); } catch (e) { /* file:// etc. */ }
     }
     showLoading();
     fetch('/api/scan?q=' + encodeURIComponent(q))
@@ -225,11 +237,13 @@
   function renderAddress(d) {
     var btc = d.bitcoin || {};
     var runes = d.runes || [], inscs = d.inscriptions || [], txs = d.transactions || [], utxos = d.utxos || [];
+    var l2bals = (d.l2 && d.l2.balances) || [];
     var badges =
       '<span class="status-badge">' + fmtNum(utxos.length) + ' UTXOs</span>' +
       '<span class="status-badge">' + fmtNum(txs.length) + ' transactions</span>' +
       (inscs.length ? '<span class="status-badge status-accent">◉ ' + fmtNum(inscs.length) + ' inscriptions</span>' : '') +
       (runes.length ? '<span class="status-badge status-accent">⧈ ' + fmtNum(runes.length) + ' runes</span>' : '') +
+      (l2bals.length ? '<span class="status-badge status-accent">⚡ ' + fmtNum(l2bals.length) + ' L2 ' + (l2bals.length === 1 ? 'token' : 'tokens') + '</span>' : '') +
       '<a class="status-badge" href="https://mempool.space/address/' + esc(d.address) + '" target="_blank" rel="noopener">mempool.space ↗</a>';
 
     var html =
@@ -239,6 +253,27 @@
       '<div class="balance-card"><div class="balance-amount">' + fmtBtc(btc.total) + '</div>' +
       '<div class="balance-label">' + fmtSats(btc.confirmed) + ' confirmed' +
       (btc.unconfirmed ? ' · ' + fmtSats(btc.unconfirmed) + ' unconfirmed' : '') + '</div></div>';
+
+    /* L2 · Origin Layer balances (KRAY's L2). The /balances endpoint self-describes
+       each token's divisibility, so we format straight off it — no local table. Only
+       non-zero balances come back, and the whole block only shows for taproot accounts
+       that hold something on the L2. */
+    if (l2bals.length) {
+      html += '<div class="list-section"><h2 class="section-title">⚡ Origin Layer balances ' +
+        '<span class="status-badge status-accent">KRAY L2</span></h2><div class="runes-grid">' +
+        l2bals.map(function (b) {
+          var div = Number(b.divisibility) || 0;
+          var raw = Number(b.balance);
+          var amt = div ? raw / Math.pow(10, div) : raw;
+          var sym = b.token_symbol || '';
+          var nm = b.token_name || sym;
+          return '<div class="rune-card"><div class="rune-header">' +
+            '<div class="rune-symbol-fallback">' + esc(b.emoji || '⚡') + '</div>' +
+            '<div class="rune-info"><div class="rune-name">' + linkQ(nm, esc(nm)) + '</div>' +
+            '<div class="item-meta">' + esc(sym) + ' · Origin Layer</div></div></div>' +
+            '<div class="rune-amount">' + (isNaN(amt) ? esc(b.balance) : fmtNum(amt, div)) + '</div></div>';
+        }).join('') + '</div></div>';
+    }
 
     if (runes.length) {
       html += '<div class="list-section"><h2 class="section-title">⧈ Runes (' + runes.length + ')</h2><div class="runes-grid">' +
@@ -277,7 +312,7 @@
     var id = it.inscriptionId || it.id || '';
     var num = it.inscriptionNumber != null ? it.inscriptionNumber : it.number;
     var src = it.contentUrl ? thumbUrl(it.contentUrl) : thumbUrl(id);
-    return '<a class="inscription-card" data-q="' + esc(id) + '" href="/krayscan?q=' + encodeURIComponent(id) + '">' +
+    return '<a class="inscription-card" data-q="' + esc(id) + '" href="/dogscan?q=' + encodeURIComponent(id) + '">' +
       '<div class="inscription-preview"><img src="' + esc(src) + '" alt="" loading="lazy" data-fallback="◉"></div>' +
       '<div class="inscription-info"><div class="inscription-number">' + (num != null ? '#' + fmtNum(num) : esc(short(id, 6))) + '</div></div></a>';
   }
@@ -430,65 +465,71 @@
       '<div class="info-grid">' + details + dataCard + '</div>');
   }
 
-  /* ---------- wallet gate: KrayWallet holders only ---------- */
+  /* ---------- optional wallet connect (unlocks the DSC panel) ----------
+     Search is public — the gate was removed. Connecting a KrayWallet only
+     adds the "Your DOG•SOCIAL•CLUB" panel; it never blocks the explorer. */
   var DSC_PARENT = '8a18494da6e0d1902243220c397cdecf4de9d64020cf0fa9fa16adfc6e29e4eci0';
   var entered = false;
 
   function shortAddr(a) { a = String(a || ''); return a.slice(0, 8) + '…' + a.slice(-6); }
+  function connStatus(html) { var s = $('ksConnectStatus'); if (s) s.innerHTML = html; }
 
-  function showGate(noWallet) {
-    $('ks-gate').style.display = 'block';
-    $('ks-app').style.display = 'none';
-    if (noWallet) {
-      $('ksInstall').hidden = false;
-      $('ksGateStatus').textContent = 'KRAY Wallet not found in this browser. Install it and reload — it takes a minute.';
-    }
+  /* the wallet may hand back a string, an array, {address} or {accounts:[…]} */
+  function pickAddr(r) {
+    if (!r) return '';
+    if (typeof r === 'string') return r;
+    if (Array.isArray(r)) return r[0] || '';
+    if (r.success === false) return '';
+    return r.address || (Array.isArray(r.accounts) && r.accounts[0]) || '';
   }
 
   function enter(addr) {
-    if (entered) return;
+    if (entered || !addr) return;
     entered = true;
     try { sessionStorage.setItem('ksAddr', addr); } catch (e) {}
-    $('ks-gate').style.display = 'none';
-    $('ks-app').style.display = 'block';
+    var chip = $('ksConnect'); if (chip) chip.hidden = true;
+    connStatus('');
     var who = $('ksWho');
-    who.innerHTML = 'Connected: <b>' + esc(shortAddr(addr)) + '</b> · ' + linkQ(addr, 'view wallet') + ' · <a href="/krayscan" id="ksLogout">disconnect</a>';
+    who.innerHTML = 'Connected: <b>' + esc(shortAddr(addr)) + '</b> · ' + linkQ(addr, 'view wallet') + ' · <a href="/dogscan" id="ksLogout">disconnect</a>';
     who.hidden = false;
     $('ksLogout').addEventListener('click', function (e) {
       e.preventDefault();
       try { sessionStorage.removeItem('ksAddr'); } catch (er) {}
-      location.href = '/krayscan';
+      location.href = '/dogscan';
     });
     loadDsc(addr);
-    var initial = fromUrl();
-    if (initial) search(initial, false);
   }
 
   function connectClick() {
     var w = window.krayWallet;
-    if (!w) { showGate(true); return; }
-    $('ksGateStatus').textContent = 'Waiting for KRAY Wallet… check the extension popup.';
+    if (!w) {
+      connStatus('KRAY Wallet not found — <a href="https://kray.space/install-extension" target="_blank" rel="noopener">get it ↗</a> and reload.');
+      return;
+    }
+    connStatus('Waiting for KRAY Wallet… check the extension popup.');
     Promise.resolve().then(function () { return w.requestAccounts(); }).then(function (r) {
-      if (r && r.address) { $('ksGateStatus').textContent = ''; enter(r.address); }
-      else $('ksGateStatus').textContent = 'Connection refused or wallet locked. Click the KRAY icon in your browser toolbar to unlock it, then try again.';
+      var addr = pickAddr(r);
+      if (addr) enter(addr);
+      else connStatus('Connection refused or wallet locked. Unlock the KRAY extension and try again.');
     }).catch(function () {
-      $('ksGateStatus').textContent = 'The wallet did not respond or the connection was refused. Try again.';
+      connStatus('The wallet did not respond. Try again.');
     });
   }
 
-  /* the extension may inject window.krayWallet after DOMContentLoaded */
+  /* the extension may inject window.krayWallet after DOMContentLoaded — try a
+     silent, non-prompting read so returning holders get their DSC panel back */
   function trySilent(attempt) {
     var w = window.krayWallet;
     if (!w) {
       if (attempt < 4) { setTimeout(function () { trySilent(attempt + 1); }, 350); return; }
-      showGate(true);
-      return;
+      return; /* no wallet — search still works, chip stays for manual connect */
     }
-    showGate(false);
-    Promise.resolve().then(function () { return w.connect ? w.connect() : w.getAccounts(); }).then(function (r) {
-      var addr = (r && r.address) || (Array.isArray(r) && r[0]);
+    var silent = w.getAccounts || w.connect;
+    if (!silent) return; /* only requestAccounts (prompts) — leave it to the chip */
+    Promise.resolve().then(function () { return silent.call(w); }).then(function (r) {
+      var addr = pickAddr(r);
       if (addr) enter(addr);
-    }).catch(function () { /* stay on the gate; user connects by click */ });
+    }).catch(function () { /* silent — user can still click connect */ });
   }
 
   /* ---------- your DOG SOCIAL CLUB ordinals ---------- */
@@ -537,24 +578,27 @@
       search(v);
     });
 
-    $('ksConnect').addEventListener('click', connectClick);
+    var chip = $('ksConnect');
+    if (chip) chip.addEventListener('click', connectClick);
 
     /* internal result links search in place */
     document.addEventListener('click', function (e) {
       var a = e.target && e.target.closest ? e.target.closest('a[data-q]') : null;
       if (!a) return;
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      search(a.getAttribute('data-q'));
+      search(a.getAttribute('data-q')); /* revealTo() scrolls to the new result */
     });
 
     window.addEventListener('popstate', function () {
-      if (!entered) return;
       var q = fromUrl();
       if (q) search(q, false); else hideAll();
     });
 
-    /* gate first; the search only opens for a connected wallet */
+    /* search is public — run any q in the URL right away */
+    var initial = fromUrl();
+    if (initial) search(initial, false);
+
+    /* optional: restore or silently reconnect the wallet for the DSC panel */
     var saved = null;
     try { saved = sessionStorage.getItem('ksAddr'); } catch (e) {}
     if (saved && /^bc1[a-z0-9]{20,90}$/i.test(saved)) enter(saved);

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DogMarket · Buy &amp; sell $DOG on Bitcoin</title>
+<meta name="description" content="The DOG Army marketplace for the DOG•GO•TO•THE•MOON rune. Browse live listings, buy packages and sell your own — trustless atomic swaps, signed straight from your KRAY Wallet on Bitcoin L1.">
+<meta property="og:site_name" content="DOG ARMY">
+<meta property="og:title" content="DogMarket · Buy & sell $DOG on Bitcoin">
+<meta property="og:description" content="Live DOG rune listings. Buy and sell trustless, peer-to-peer, straight from your KRAY Wallet.">
+<meta property="og:image" content="https://dogarmy.space/public/og-card.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dogarmy.space/dogmarket">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DogMarket · Buy & sell $DOG on Bitcoin">
+<meta name="twitter:description" content="Live DOG rune listings, bought and sold straight from your KRAY Wallet.">
+<meta name="twitter:image" content="https://dogarmy.space/public/og-card.png">
+<link rel="icon" href="/public/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+<link rel="preload" as="font" href="/public/fonts/geist-sans.woff2" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=8878593099">
+<link rel="canonical" href="https://dogarmy.space/dogmarket">
+<style>
+/* ── DogMarket · scoped UI (brand: orange #ff5c00 on #030303) ───────── */
+.dm-hero .sub{max-width:52ch}
+.dm-connect-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:22px}
+.dm-connect-big{display:inline-flex;align-items:center;gap:11px;border:0;cursor:pointer;
+  background:linear-gradient(135deg,#ff9a3d,#ff5c00 55%,#ff3d00);color:#160a02;font-weight:800;
+  font-size:15px;padding:14px 22px;border-radius:999px;box-shadow:0 8px 30px rgba(255,92,0,.35);
+  transition:transform .15s ease,box-shadow .15s ease}
+.dm-connect-big:hover{transform:translateY(-1px);box-shadow:0 12px 38px rgba(255,92,0,.5)}
+.dm-connect-big img{display:block}
+.dm-status{margin-top:14px;font-size:13px;color:rgba(255,247,239,.6);max-width:56ch}
+.dm-status.on{color:#7be08a}
+
+/* rune header card */
+.dm-runehead{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.09);border-radius:20px;
+  padding:22px;margin-bottom:26px;position:relative;overflow:hidden}
+.dm-runehead::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;
+  background:linear-gradient(90deg,#ff5c00,transparent)}
+.dm-rh-top{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.dm-rh-thumb{position:relative;width:70px;height:70px;border-radius:14px;flex-shrink:0;overflow:hidden;
+  border:2px solid #ff5c00;background:linear-gradient(135deg,rgba(255,92,0,.25),rgba(255,92,0,.06));
+  display:flex;align-items:center;justify-content:center;font-size:34px;box-shadow:0 4px 18px rgba(255,92,0,.25)}
+.dm-rh-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:5px;box-sizing:border-box;
+  background:linear-gradient(135deg,rgba(255,92,0,.25),rgba(255,92,0,.06)),#160a02}
+.dm-rh-id{flex:1;min-width:200px}
+.dm-rh-name{font-size:23px;font-weight:850;margin:0 0 8px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.dm-rh-name .sym{font-size:22px}
+.dm-rh-badges{display:flex;gap:6px;flex-wrap:wrap}
+.dm-pill{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,247,239,.85)}
+.dm-pill.orange{background:rgba(255,92,0,.16);border-color:rgba(255,92,0,.5);color:#ffb98a}
+.dm-pill.dao{background:linear-gradient(135deg,#ffd23f,#ff9a00);color:#160a02;border:0;text-decoration:none}
+.dm-rh-stats{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;
+  padding:15px 18px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.07);border-radius:12px}
+.dm-stat{text-align:center;min-width:84px}
+.dm-stat span{display:block;font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,247,239,.45);margin-bottom:4px}
+.dm-stat b{font-size:15px;font-weight:800;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+/* market toolbar */
+.dm-toolbar{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}
+.dm-count{font-size:13px;color:rgba(255,247,239,.6);font-weight:600}
+.dm-count b{color:#ff5c00}
+.dm-sorts{display:flex;gap:7px;flex-wrap:wrap}
+.dm-sort{font-size:12px;font-weight:650;padding:7px 13px;border-radius:999px;cursor:pointer;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:rgba(255,247,239,.75);
+  transition:all .15s ease}
+.dm-sort:hover{border-color:rgba(255,92,0,.5)}
+.dm-sort.active{background:#ff5c00;border-color:#ff5c00;color:#160a02}
+.dm-sell-btn{display:none;align-items:center;gap:7px}
+
+/* listings grid */
+.dm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.dm-card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.09);border-radius:16px;
+  overflow:hidden;cursor:pointer;transition:transform .15s ease,border-color .15s ease}
+.dm-card:hover{transform:translateY(-3px);border-color:rgba(255,92,0,.55)}
+.dm-card.own{cursor:default}
+.dm-thumb{position:relative;height:172px;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 40%,rgba(255,92,0,.14),rgba(0,0,0,.4));font-size:46px}
+.dm-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;box-sizing:border-box;padding:12px;
+  background:radial-gradient(circle at 50% 40%,rgba(255,92,0,.14),rgba(0,0,0,.4)),#0a0705}
+.dm-cardbadge{position:absolute;top:9px;left:9px;font-size:10px;font-weight:800;letter-spacing:.4px;
+  padding:3px 8px;border-radius:999px;background:rgba(0,0,0,.6);color:#ffb98a;border:1px solid rgba(255,92,0,.5);z-index:2}
+.dm-cardbadge.own{color:#7be08a;border-color:rgba(90,220,130,.5);background:rgba(0,0,0,.6)}
+.dm-cardbody{padding:14px}
+.dm-amt{font-size:18px;font-weight:850}
+.dm-amt-lbl{font-size:11px;color:rgba(255,247,239,.45);margin-bottom:9px}
+.dm-price{font-size:16px;font-weight:800;color:#ff5c00;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.dm-price-usd{font-size:12px;color:rgba(255,247,239,.4);min-height:15px}
+.dm-price-per{font-size:11px;color:rgba(255,247,239,.5);margin:2px 0 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.dm-actions{display:flex;gap:7px}
+.dm-buy{flex:1;border:0;cursor:pointer;border-radius:10px;padding:10px;font-weight:800;font-size:13px;
+  background:linear-gradient(135deg,#ff9a3d,#ff5c00 60%,#ff3d00);color:#160a02;transition:filter .15s ease}
+.dm-buy:hover{filter:brightness(1.08)}
+.dm-buy.cancel{background:linear-gradient(135deg,#ef4444,#b91c1c);color:#fff}
+.dm-cart-add{width:40px;flex-shrink:0;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);
+  color:#fff;border-radius:10px;font-size:18px;font-weight:700;cursor:pointer}
+.dm-cart-add.in{background:#ff5c00;border-color:#ff5c00;color:#160a02}
+
+/* empty / loading */
+.dm-empty{text-align:center;padding:56px 20px;color:rgba(255,247,239,.55)}
+.dm-empty .ic{font-size:40px;margin-bottom:12px}
+.dm-empty h3{margin:0 0 6px;font-size:18px;color:var(--ink)}
+
+/* modal */
+.dm-modal{position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;padding:18px}
+.dm-modal[hidden]{display:none}
+.dm-modal-scrim{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(4px)}
+.dm-modal-card{position:relative;width:min(460px,100%);max-height:90vh;overflow-y:auto;
+  background:#0c0c0e;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:26px 24px;
+  box-shadow:0 24px 80px rgba(0,0,0,.6)}
+.dm-modal-x{position:absolute;top:14px;right:16px;background:none;border:0;color:rgba(255,247,239,.55);
+  font-size:26px;line-height:1;cursor:pointer}
+.dm-modal-card h3{margin:0 0 4px;font-size:19px;font-weight:800}
+.dm-modal-sub{font-size:13px;color:rgba(255,247,239,.5);margin-bottom:18px}
+.dm-rows{background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:15px;margin:16px 0}
+.dm-row{display:flex;justify-content:space-between;margin-bottom:11px;font-size:14px}
+.dm-row:last-child{margin-bottom:0}
+.dm-row span{color:rgba(255,247,239,.5)}
+.dm-row b{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.dm-row.total{border-top:1px solid rgba(255,255,255,.12);padding-top:11px;margin-top:4px}
+.dm-row.total b{color:#7be08a;font-size:17px;font-weight:800}
+.dm-fee-label{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,247,239,.45);margin:16px 0 9px}
+.dm-fee-grid{display:flex;gap:8px;margin-bottom:9px}
+.dm-fee{flex:1;padding:10px 6px;border-radius:10px;background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.12);color:#fff;cursor:pointer;text-align:center}
+.dm-fee.on{background:rgba(255,92,0,.15);border-color:#ff5c00}
+.dm-fee b{display:block;font-size:13px;font-weight:700}
+.dm-fee i{font-size:11px;color:rgba(255,247,239,.5);font-style:normal}
+.dm-input{width:100%;padding:11px 13px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);
+  border-radius:10px;color:#fff;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;box-sizing:border-box}
+.dm-input:focus{outline:none;border-color:#ff5c00}
+.dm-field-lbl{font-size:12px;color:rgba(255,247,239,.6);margin:14px 0 6px;display:flex;justify-content:space-between}
+.dm-field-lbl button{background:none;border:0;color:#ff5c00;font-size:12px;font-weight:700;cursor:pointer}
+.dm-modal-actions{display:flex;gap:10px;margin-top:20px}
+.dm-modal-actions .btn{flex:1}
+.dm-err{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.4);color:#fca5a5;
+  border-radius:10px;padding:11px 13px;font-size:13px;margin-top:14px}
+.dm-note{font-size:12px;color:rgba(255,247,239,.4);text-align:center;margin-top:14px}
+.dm-swap-tag{font-size:12px;color:rgba(255,247,239,.45);text-align:center;margin-top:12px}
+
+/* pick lists (sell flow) */
+.dm-picklist{display:flex;flex-direction:column;gap:9px;max-height:340px;overflow-y:auto}
+.dm-pick{display:flex;align-items:center;gap:12px;padding:12px;background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.1);border-radius:12px;cursor:pointer;transition:border-color .15s ease}
+.dm-pick:hover{border-color:#ff5c00}
+.dm-pick .ic{position:relative;width:46px;height:46px;border-radius:10px;overflow:hidden;flex-shrink:0;background:#111;
+  display:flex;align-items:center;justify-content:center;font-size:24px}
+.dm-pick .ic img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:3px;box-sizing:border-box;background:#111}
+.dm-pick .nm{flex:1;min-width:0}
+.dm-pick .nm b{display:block;font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dm-pick .nm i{font-size:13px;color:#ff5c00;font-style:normal;font-weight:600}
+.dm-back{background:none;border:0;color:rgba(255,247,239,.6);font-size:13px;cursor:pointer;margin-bottom:12px}
+
+/* toasts */
+.dm-toasts{position:fixed;bottom:20px;right:20px;z-index:1400;display:flex;flex-direction:column;gap:9px;max-width:340px}
+.dm-toast{display:flex;gap:9px;align-items:flex-start;background:#141416;border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;padding:12px 14px;font-size:13px;box-shadow:0 10px 34px rgba(0,0,0,.5);animation:dmSlide .25s ease}
+.dm-toast.success{border-color:rgba(90,220,130,.45)}
+.dm-toast.error{border-color:rgba(239,68,68,.5)}
+@keyframes dmSlide{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+
+/* cart */
+.dm-cart-fab{position:fixed;bottom:20px;left:20px;z-index:1350;display:none;align-items:center;gap:8px;
+  background:linear-gradient(135deg,#ff9a3d,#ff5c00 60%,#ff3d00);color:#160a02;font-weight:800;font-size:14px;
+  border:0;border-radius:999px;padding:13px 20px;cursor:pointer;box-shadow:0 10px 34px rgba(255,92,0,.4)}
+.dm-cart-fab.show{display:inline-flex}
+.dm-cart-fab .n{background:rgba(0,0,0,.35);border-radius:999px;padding:1px 8px;font-size:12px}
+.dm-drawer{position:fixed;top:0;right:0;bottom:0;width:min(380px,92vw);z-index:1360;background:#0c0c0e;
+  border-left:1px solid rgba(255,255,255,.12);transform:translateX(100%);transition:transform .25s ease;
+  display:flex;flex-direction:column}
+.dm-drawer.open{transform:none}
+.dm-drawer-scrim{position:fixed;inset:0;z-index:1355;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .25s ease}
+.dm-drawer-scrim.open{opacity:1;pointer-events:auto}
+.dm-drawer-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.1)}
+.dm-drawer-head h3{margin:0;font-size:17px}
+.dm-drawer-head button{background:none;border:0;color:rgba(255,247,239,.6);font-size:24px;cursor:pointer}
+.dm-cart-items{flex:1;overflow-y:auto;padding:14px 18px;display:flex;flex-direction:column;gap:10px}
+.dm-cart-item{display:flex;gap:10px;align-items:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:11px}
+.dm-cart-item .nm{flex:1;min-width:0}
+.dm-cart-item .nm b{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dm-cart-item .nm i{font-size:12px;color:rgba(255,247,239,.5);font-style:normal}
+.dm-cart-item .rm{background:none;border:0;color:rgba(255,120,120,.8);font-size:16px;cursor:pointer}
+.dm-cart-foot{padding:16px 18px;border-top:1px solid rgba(255,255,255,.1)}
+.dm-cart-empty{text-align:center;color:rgba(255,247,239,.45);padding:40px 10px;font-size:14px}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="brand" href="/" aria-label="Back to home"><span class="brand-logo"><img src="/public/dog-army-logo.png" alt="DOG ARMY"></span></a>
+    <div class="navlinks" aria-label="Main navigation">
+      <a href="/" data-i18n="nav.history">Home</a>
+      <a href="/#luta" data-i18n="nav.fight">The Fight</a>
+      <a href="/#radar" data-i18n="nav.wallets">On-Chain Analysis</a>
+      <a href="/dogmarket" class="active" data-i18n="nav.market">DogMarket</a>
+      <a href="/web3" data-i18n="nav.web3">Social Space</a>
+      <a href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
+      <a href="/#faq" data-i18n="nav.faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <div class="langsw" id="langsw" aria-label="Language"></div>
+      <button type="button" class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="navdrawer"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+<div class="navscrim" id="navscrim" hidden></div>
+<aside class="navdrawer" id="navdrawer" aria-label="Menu" aria-hidden="true">
+  <nav class="navdrawer-inner">
+    <a class="navdrawer-link" href="/" data-i18n="nav.history">Home</a>
+    <a class="navdrawer-link" href="/#luta" data-i18n="nav.fight">The Fight</a>
+    <a class="navdrawer-link" href="/#radar" data-i18n="nav.wallets">On-Chain Analysis</a>
+    <a class="navdrawer-link active" href="/dogmarket" data-i18n="nav.market">DogMarket</a>
+    <a class="navdrawer-link" href="/web3" data-i18n="nav.web3">Social Space</a>
+    <a class="navdrawer-link" href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
+    <a class="navdrawer-link" href="/#faq" data-i18n="nav.faq">FAQ</a>
+  </nav>
+</aside>
+
+<main id="top">
+
+  <!-- ACT 1 · CONNECT -->
+  <section class="hero dm-hero" aria-labelledby="page-title">
+    <div class="wrap hero-content">
+      <div class="hero-copy">
+        <span class="eyebrow" data-i18n="dm.eyebrow">DogMarket · Runes Atomic Swap</span>
+        <h1 id="page-title" data-i18n="dm.h1">Buy $DOG <span>straight on Bitcoin.</span></h1>
+        <p class="sub" data-i18n="dm.sub">This is the DOG Army's own storefront for the DOG•GO•TO•THE•MOON rune. Every package below is a live, on-chain listing. Buying is a trustless atomic swap — your KRAY Wallet signs, coins move peer-to-peer, and no marketplace ever holds your funds.</p>
+        <div class="dm-connect-row">
+          <button type="button" class="dm-connect-big" id="dmConnect">
+            <img src="/public/kray-space-icon.png" alt="" width="28" height="28">
+            <span id="dmConnectLbl" data-i18n="dm.connect">Connect KRAY Wallet</span>
+          </button>
+          <a class="btn secondary" href="https://kray.space/install-extension" target="_blank" rel="noopener" id="dmInstall" hidden data-i18n="dm.install">Get KRAY Wallet ↗</a>
+        </div>
+        <p class="dm-status" id="dmStatus" data-i18n="dm.stOff">Wallet not connected. Browsing is open to everyone — connect only when you want to buy or list.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 2 · MARKET -->
+  <section id="market">
+    <div class="wrap">
+      <div id="dmRuneHeader"></div>
+
+      <div class="dm-toolbar">
+        <div class="dm-count" id="dmCount"><b data-i18n="dm.loading">Loading…</b></div>
+        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+          <div class="dm-sorts" id="dmSorts" role="tablist" aria-label="Sort listings">
+            <button type="button" class="dm-sort active" data-sort="price_asc" data-i18n="dm.sortLow">Lowest price</button>
+            <button type="button" class="dm-sort" data-sort="price_desc" data-i18n="dm.sortHigh">Highest price</button>
+            <button type="button" class="dm-sort" data-sort="amount_desc" data-i18n="dm.sortMost">Most tokens</button>
+            <button type="button" class="dm-sort" data-sort="amount_asc" data-i18n="dm.sortLeast">Least tokens</button>
+            <button type="button" class="dm-sort" data-sort="recent" data-i18n="dm.sortRecent">Recent</button>
+          </div>
+          <button type="button" class="btn primary dm-sell-btn" id="dmSellBtn"><span data-i18n="dm.sell">Sell your DOG</span></button>
+        </div>
+      </div>
+
+      <div class="dm-grid" id="dmGrid" aria-live="polite">
+        <div class="dm-empty"><div class="ic">⧈</div><h3 data-i18n="dm.loadingH">Loading packages…</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 3 · HONESTY -->
+  <section id="dm-doctrine">
+    <div class="wrap">
+      <div class="grid grid-3">
+        <article class="card"><span class="tag proved" data-i18n="dm.dx1t">Trustless</span><h3 data-i18n="dm.dx1h">Atomic swap, peer-to-peer</h3><p data-i18n="dm.dx1p">Buyer and seller sign one Bitcoin transaction that either fully settles or never happens. No marketplace escrow ever holds your DOG or your sats.</p></article>
+        <article class="card"><span class="tag proved" data-i18n="dm.dx2t">Your keys</span><h3 data-i18n="dm.dx2h">The KRAY Wallet signs, not us</h3><p data-i18n="dm.dx2p">Every buy and every listing opens your own wallet's confirmation popup. This site never sees your seed, never holds your coins, and can never move them.</p></article>
+        <article class="card"><span class="tag watch" data-i18n="dm.dx3t">Honest limit</span><h3 data-i18n="dm.dx3h">Market runs on KRAY</h3><p data-i18n="dm.dx3p">The order book and swap engine are operated by KRAY SPACE, an army sponsor, and charge a 2% market fee. Settlement is real Bitcoin L1. We say this out loud — that's the army's doctrine.</p></article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap"><div class="inner"><p><strong>DOG ARMY</strong><br><span data-i18n="dm.ftLine">DogMarket — DOG rune listings settled on Bitcoin, powered by the KRAY atomic-swap engine.</span></p><p><a href="https://www.kray.space/rune/DOGGOTOTHEMOON" target="_blank" rel="noopener" data-i18n="dm.ftKray">Open on KRAY SPACE ↗</a><br><a href="/" data-i18n="dm.ftBack">Back to DOG ARMY</a></p></div><div class="disclaimer" data-i18n="dm.ftDisc">Educational material only. No financial advice. DogMarket mirrors the public KRAY atomic-swap order book for the DOG rune; all trades are peer-to-peer on Bitcoin and settle under KRAY's protocol rules and a 2% market fee.</div></div>
+</footer>
+
+<!-- BUY MODAL -->
+<div class="dm-modal" id="dmBuyModal" hidden>
+  <div class="dm-modal-scrim" data-close="buy"></div>
+  <div class="dm-modal-card">
+    <button type="button" class="dm-modal-x" data-close="buy" aria-label="Close">×</button>
+    <div id="dmBuyBody"></div>
+    <div class="dm-err" id="dmBuyErr" hidden></div>
+    <div class="dm-modal-actions">
+      <button type="button" class="btn secondary" data-close="buy" data-i18n="dm.cancel">Cancel</button>
+      <button type="button" class="btn primary" id="dmBuyConfirm" data-i18n="dm.buyConfirm">Buy · sign in wallet</button>
+    </div>
+    <p class="dm-swap-tag" data-i18n="dm.swapTag">⚡ Trustless atomic swap — peer-to-peer on Bitcoin</p>
+  </div>
+</div>
+
+<!-- SELL / LIST MODAL -->
+<div class="dm-modal" id="dmListModal" hidden>
+  <div class="dm-modal-scrim" data-close="list"></div>
+  <div class="dm-modal-card">
+    <button type="button" class="dm-modal-x" data-close="list" aria-label="Close">×</button>
+
+    <div id="dmListStep1">
+      <h3 data-i18n="dm.sellH">Sell your DOG</h3>
+      <p class="dm-modal-sub" data-i18n="dm.sellSub">Pick a DOG package from your wallet to list for sale.</p>
+      <div class="dm-picklist" id="dmMyRunes"></div>
+    </div>
+
+    <div id="dmListStep2" hidden>
+      <button type="button" class="dm-back" data-back="1">‹ <span data-i18n="dm.back">Back</span></button>
+      <h3 id="dmListPkgTitle" data-i18n="dm.pickPkg">Pick a package</h3>
+      <p class="dm-modal-sub" data-i18n="dm.pickPkgSub">Each package is one UTXO holding DOG. Listed packages are locked.</p>
+      <div class="dm-picklist" id="dmMyPackages"></div>
+    </div>
+
+    <div id="dmListStep3" hidden>
+      <button type="button" class="dm-back" data-back="2">‹ <span data-i18n="dm.back">Back</span></button>
+      <h3 data-i18n="dm.setPrice">Set your price</h3>
+      <p class="dm-modal-sub" id="dmListPkgInfo"></p>
+      <div class="dm-field-lbl"><span data-i18n="dm.amountSell">Amount to sell</span><button type="button" id="dmListMax" data-i18n="dm.max">MAX</button></div>
+      <input type="number" class="dm-input" id="dmListAmount" min="0" step="any" placeholder="0">
+      <div class="dm-field-lbl" style="margin-top:14px"><span data-i18n="dm.totalPrice">Total price (sats)</span></div>
+      <input type="number" class="dm-input" id="dmListPrice" min="330" step="1" placeholder="≥ 330">
+      <div class="dm-rows" id="dmListSummary" hidden>
+        <div class="dm-row"><span data-i18n="dm.perToken">Price per token</span><b id="dmSumPer">—</b></div>
+        <div class="dm-row"><span data-i18n="dm.marketFee">Market fee (2%)</span><b id="dmSumFee">—</b></div>
+        <div class="dm-row total"><span data-i18n="dm.youReceive">You receive</span><b id="dmSumReceive">—</b></div>
+      </div>
+      <div class="dm-err" id="dmListErr" hidden></div>
+      <div class="dm-modal-actions">
+        <button type="button" class="btn secondary" data-close="list" data-i18n="dm.cancel">Cancel</button>
+        <button type="button" class="btn primary" id="dmCreateBtn" disabled data-i18n="dm.createListing">Create listing · sign</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dm-toasts" id="dmToasts" aria-live="polite"></div>
+
+<script src="/i18n.js?v=09ed5b516f"></script>
+<script src="/dogmarket.js?v=f697fcc576" defer></script>
+</body>
+</html>

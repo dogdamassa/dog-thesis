@@ -1,0 +1,9 @@
+{
+  "name": "dog-thesis",
+  "version": "1.0.0",
+  "private": true,
+  "description": "dogarmy.space — site estático (militância com recibo). Sem dependências.",
+  "scripts": {
+    "build": "node scripts/cache-bust.js"
+  }
+}

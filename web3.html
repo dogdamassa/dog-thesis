@@ -20,7 +20,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
 <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
 <link rel="preload" as="font" href="/public/fonts/geist-sans.woff2" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles.css?v=8878593099">
 <link rel="canonical" href="https://dogarmy.space/web3">
 </head>
 <body>
@@ -30,9 +30,10 @@
     <div class="navlinks" aria-label="Main navigation">
       <a href="/" data-i18n="nav.history">Home</a>
       <a href="/#luta" data-i18n="nav.fight">The Fight</a>
-      <a href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
+      <a href="/#radar" data-i18n="nav.wallets">On-Chain Analysis</a>
+      <a href="/dogmarket" data-i18n="nav.market">DogMarket</a>
       <a href="/web3" class="active" data-i18n="nav.web3">Social Space</a>
-      <a href="/social" data-i18n="nav.social">Feed</a>
+      <a href="/social" data-i18n="nav.social">How It Works</a>
       <a href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
       <a href="/#faq" data-i18n="nav.faq">FAQ</a>
     </div>
@@ -47,9 +48,10 @@
   <nav class="navdrawer-inner">
     <a class="navdrawer-link" href="/" data-i18n="nav.history">Home</a>
     <a class="navdrawer-link" href="/#luta" data-i18n="nav.fight">The Fight</a>
-    <a class="navdrawer-link" href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
+    <a class="navdrawer-link" href="/#radar" data-i18n="nav.wallets">On-Chain Analysis</a>
+    <a class="navdrawer-link" href="/dogmarket" data-i18n="nav.market">DogMarket</a>
     <a class="navdrawer-link active" href="/web3" data-i18n="nav.web3">Social Space</a>
-    <a class="navdrawer-link" href="/social" data-i18n="nav.social">Feed</a>
+    <a class="navdrawer-link" href="/social" data-i18n="nav.social">How It Works</a>
     <a class="navdrawer-link" href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
     <a class="navdrawer-link" href="/#faq" data-i18n="nav.faq">FAQ</a>
   </nav>
@@ -231,14 +233,14 @@
     </div>
   </div>
 
-  <!-- ACT 5.5 · KRAYSCAN -->
-  <section id="krayscan-embed">
+  <!-- ACT 5.5 · DOGSCAN -->
+  <section id="dogscan-embed">
     <div class="wrap">
       <div class="ks-embed">
-        <div class="ks-embed-title">🔍 KrayScan</div>
+        <div class="ks-embed-title">🔍 DogScan</div>
         <p class="ks-embed-sub">Explore Bitcoin transactions, addresses, inscriptions, runes and KRAY L2 activity</p>
-        <form class="ks-embed-form" action="/krayscan" method="get">
-          <input type="text" class="ks-embed-input" name="q" placeholder="Enter TXID (64 hex chars) or Address (bc1...)" autocomplete="off" spellcheck="false" required>
+        <form class="ks-embed-form" action="/dogscan" method="get">
+          <input type="text" class="ks-embed-input" name="q" placeholder="TXID, address, inscription, or rune name (e.g. DOGDAMASSA)" autocomplete="off" spellcheck="false" required>
           <button type="submit" class="ks-embed-btn">Search</button>
         </form>
       </div>
@@ -261,7 +263,7 @@
 <footer>
   <div class="wrap"><div class="inner"><p><strong>DOG ARMY</strong><br><span data-i18n="w3.ftLine">Social Space — powered by the KRAY Origin Layer, verified on Bitcoin.</span></p><p><a href="https://www.kray.space/developers" target="_blank" rel="noopener">KRAY Developers ↗</a><br><a href="/" data-i18n="w3.ftBack">Back to DOG ARMY</a></p></div><div class="disclaimer" data-i18n="w3.ftDisc">Educational material only. No financial advice. Ranks are symbolic and read from public on-chain data. Rewards and tips run on KRAY's L2 under KRAY's protocol rules.</div></div>
 </footer>
-<script src="/i18n.js"></script>
-<script src="/web3.js" defer></script>
+<script src="/i18n.js?v=09ed5b516f"></script>
+<script src="/web3.js?v=34a772e788" defer></script>
 </body>
 </html>

@@ -492,7 +492,7 @@
       var letters = name.replace(/[^A-Za-z]/g, '').toUpperCase();
       var a = document.createElement('a');
       a.className = 'w3-rune';
-      a.href = '/krayscan?q=' + encodeURIComponent(letters || name);
+      a.href = '/dogscan?q=' + encodeURIComponent(letters || name);
       var iconSrc = runeIconSrc(letters);
       if (iconSrc) {
         var img = document.createElement('img');
@@ -959,6 +959,27 @@
     });
   }
 
+  function pickAddr(res) {
+    if (!res) return '';
+    if (typeof res === 'string') return res;
+    if (Array.isArray(res)) return res[0] || '';
+    if (res.success === false) return '';
+    return res.address || (Array.isArray(res.accounts) && res.accounts[0]) || '';
+  }
+
+  function enter(a, pk) {
+    address = a;
+    pubkey = normalizePubkey(pk);
+    setStatus(t('stConnected', { addr: short(address) }), 'is-ok');
+    var lbl = $('w3ConnectLbl');
+    if (lbl) { lbl.removeAttribute('data-i18n'); lbl.textContent = short(address); }
+    var btn = $('w3Connect');
+    if (btn) btn.classList.add('is-connected');
+    renderProfile();     /* the panel opens right away; stats fill as reads land */
+    fetchBtcUsd();
+    readChain();
+  }
+
   function connect() {
     var w = kray();
     if (!w) {
@@ -974,21 +995,31 @@
         setStatus(t(res.needsUserAction ? 'stLocked' : 'stErr'), 'is-err');
         return;
       }
-      var a = (typeof res === 'string') ? res
-        : Array.isArray(res) ? res[0]
-        : (res && res.address) || (res && Array.isArray(res.accounts) && res.accounts[0]) || '';
+      var a = pickAddr(res);
       if (!a) { setStatus(t('stErr'), 'is-err'); return; }
-      address = a;
-      pubkey = normalizePubkey(res && res.publicKey);
-      setStatus(t('stConnected', { addr: short(address) }), 'is-ok');
-      var lbl = $('w3ConnectLbl');
-      if (lbl) { lbl.removeAttribute('data-i18n'); lbl.textContent = short(address); }
-      var btn = $('w3Connect');
-      if (btn) btn.classList.add('is-connected');
-      renderProfile();     /* the panel opens right away; stats fill as reads land */
-      fetchBtcUsd();
-      readChain();
+      enter(a, res && res.publicKey);
     }).catch(function () { setStatus(t('stErr'), 'is-err'); });
+  }
+
+  /* Returning holders: reconnect silently on load so a refresh never asks for
+     another click. getAccounts()/connect() never popup — they only answer for
+     origins the user already approved via requestAccounts(), so a first-time
+     visitor still connects through the button. The extension may inject
+     window.krayWallet after DOMContentLoaded — retry briefly (same pattern
+     as dogscan.js). */
+  function trySilent(attempt) {
+    if (address) return;
+    var w = kray();
+    if (!w) {
+      if (attempt < 5) setTimeout(function () { trySilent(attempt + 1); }, 350);
+      return; /* no wallet — the install CTA watcher below handles it */
+    }
+    var silent = w.getAccounts || w.connect;
+    if (!silent) return; /* only requestAccounts (prompts) — leave it to the button */
+    Promise.resolve().then(function () { return silent.call(w); }).then(function (res) {
+      var a = pickAddr(res);
+      if (a && !address) enter(a, res && res.publicKey);
+    }).catch(function () { /* silent — the user can still click connect */ });
   }
 
   /* proxies need the x-only form: 64 hex chars. A 66-char compressed key
@@ -1231,6 +1262,17 @@
     var oathBtn = $('w3Oath');
     if (oathBtn) oathBtn.addEventListener('click', signOath);
 
+    /* DogScan embed: the site CSP is form-action 'none', so a native GET submit
+       is blocked by the browser. Intercept it and navigate to the explorer
+       ourselves — /dogscan?q=… auto-runs the search on arrival. */
+    var ksForm = document.querySelector('.ks-embed-form');
+    if (ksForm) ksForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var inp = ksForm.querySelector('.ks-embed-input');
+      var q = inp && inp.value ? inp.value.trim() : '';
+      if (q) location.href = '/dogscan?q=' + encodeURIComponent(q);
+    });
+
     /* profile: copy address, refresh reads, tab switch */
     var copyBtn = $('w3Copy');
     if (copyBtn) copyBtn.addEventListener('click', function () {
@@ -1291,6 +1333,9 @@
         renderFeed(); /* re-translates stats labels, mode note and empty states */
       }, 0);
     });
+
+    /* returning holder? recognize the wallet without another click */
+    trySilent(0);
 
     /* show install CTA early when there is clearly no wallet */
     var tries = 0;

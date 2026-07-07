@@ -3,42 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KrayScan · DOG ARMY</title>
+<title>DogScan · DOG ARMY</title>
 <meta name="description" content="Explore Bitcoin transactions, addresses, inscriptions, runes and KRAY L2 activity — without leaving the DOG ARMY site.">
 <meta property="og:site_name" content="DOG ARMY">
-<meta property="og:title" content="KrayScan · DOG ARMY">
+<meta property="og:title" content="DogScan · DOG ARMY">
 <meta property="og:description" content="Explore Bitcoin transactions, addresses, inscriptions, runes and KRAY L2 activity.">
 <meta property="og:image" content="https://dogarmy.space/public/og-card.png">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://dogarmy.space/krayscan">
+<meta property="og:url" content="https://dogarmy.space/dogscan">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/public/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
 <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
 <link rel="preload" as="font" href="/public/fonts/geist-sans.woff2" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css">
-<link rel="canonical" href="https://dogarmy.space/krayscan">
+<link rel="stylesheet" href="/styles.css?v=8878593099">
+<link rel="canonical" href="https://dogarmy.space/dogscan">
 <style>
-/* ═══ KrayScan clone — visual layer cloned from kray.space/krayscan ═══ */
+/* ═══ DogScan — KrayScan engine (KRAY SPACE APIs, used with authorization),
+   reskinned with the DOG ARMY identity: #030303 + orange, Geist type ═══ */
 body{
   background:
-    radial-gradient(circle at 50% -18%, rgba(113,50,245,.18), transparent 34rem),
-    #000 !important;
+    radial-gradient(circle at 50% -18%, rgba(255,92,0,.18), transparent 34rem),
+    #030303 !important;
 }
-.krayscan-container{
+.dogscan-container{
   max-width:1240px;
   margin:0 auto;
   padding:48px 24px 96px;
-  font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Geist',Inter,sans-serif;
+  font-family:var(--font-sans);
   -webkit-font-smoothing:antialiased;
-  color:#f5f5f7;
+  color:#fff7ef;
 }
-.krayscan-container .ks-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.dogscan-container .ks-mono{font-family:var(--font-mono)}
 
 /* Search */
 .search-section{
-  background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.028));
+  background:linear-gradient(180deg,rgba(255,122,26,.07),rgba(255,255,255,.02));
   border:1px solid rgba(255,255,255,.08);
   border-radius:24px;
   padding:40px;
@@ -47,91 +48,92 @@ body{
 }
 .search-section:hover{border-color:rgba(255,255,255,.14)}
 .search-title{
-  font-size:28px;font-weight:700;margin-bottom:8px;color:#f5f5f7;
+  font-size:28px;font-weight:700;margin-bottom:8px;color:#fff7ef;
   letter-spacing:-.04em;display:flex;align-items:center;gap:12px;
 }
-.search-subtitle{font-size:14px;color:#9a9aa2;margin-bottom:28px}
+.search-subtitle{font-size:14px;color:#a79d95;margin-bottom:28px}
 .search-form{display:flex;gap:12px}
 .search-input{
   flex:1;min-width:0;
   background:rgba(255,255,255,.055);
   border:1px solid rgba(255,255,255,.08);
   border-radius:16px;
-  padding:16px 18px;font-size:15px;color:#f5f5f7;
-  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  padding:16px 18px;font-size:15px;color:#fff7ef;
+  font-family:var(--font-mono);
   transition:all .2s ease;
 }
 .search-input:focus{
   outline:none;
-  border-color:rgba(113,50,245,.58);
-  box-shadow:0 0 0 4px rgba(113,50,245,.16);
+  border-color:rgba(255,92,0,.58);
+  box-shadow:0 0 0 4px rgba(255,92,0,.16);
 }
-.search-input::placeholder{color:#6a6a72}
+.search-input::placeholder{color:#8b8177}
 .search-btn{
-  background:#7132f5;color:#fff;border:none;border-radius:999px;
-  padding:0 40px;font-size:15px;font-weight:600;cursor:pointer;
+  background:#ff5c00;color:#080808;border:none;border-radius:999px;
+  padding:0 40px;font-size:15px;font-weight:700;cursor:pointer;
   font-family:inherit;transition:all .2s ease;
+  box-shadow:0 16px 34px rgba(255,92,0,.22);
 }
-.search-btn:hover{background:#7f45f7;transform:translateY(-2px)}
+.search-btn:hover{background:#ff7a1a;transform:translateY(-2px)}
 
 /* Loading */
 @keyframes ks-spin{to{transform:rotate(360deg)}}
 @keyframes ks-pulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
 .ks-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;gap:16px;min-height:40vh}
 .ks-loading-container{position:relative;display:flex;align-items:center;justify-content:center;width:80px;height:80px}
-.ks-loading-logo{width:56px;height:56px;animation:ks-pulse 2s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(255,255,255,.2));border-radius:50%}
-.ks-loading-ring{position:absolute;width:80px;height:80px;border:2px solid transparent;border-top-color:rgba(255,255,255,.8);border-radius:50%;animation:ks-spin 1s linear infinite}
+.ks-loading-logo{width:56px;height:56px;animation:ks-pulse 2s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(255,92,0,.35));border-radius:50%}
+.ks-loading-ring{position:absolute;width:80px;height:80px;border:2px solid transparent;border-top-color:rgba(255,122,26,.9);border-radius:50%;animation:ks-spin 1s linear infinite}
 .ks-loading-text{color:rgba(255,255,255,.5);font-size:13px;font-weight:500;letter-spacing:.5px}
 
 /* Error */
 .error-message{
-  background:rgba(255,59,48,.1);border:1px solid rgba(255,59,48,.3);
-  border-radius:24px;padding:56px 32px;text-align:center;color:#ff6b62;
+  background:rgba(229,72,77,.1);border:1px solid rgba(229,72,77,.3);
+  border-radius:24px;padding:56px 32px;text-align:center;color:#e5484d;
 }
-.error-message h2{margin:0 0 8px;font-size:22px;color:#ff6b62}
-.error-message p{margin:0;color:#d99}
+.error-message h2{margin:0 0 8px;font-size:22px;color:#e5484d}
+.error-message p{margin:0;color:#e0b3ad}
 
 /* Content header */
 .content-header{
-  background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.028));
+  background:linear-gradient(180deg,rgba(255,122,26,.07),rgba(255,255,255,.02));
   border:1px solid rgba(255,255,255,.08);
   border-radius:24px;padding:40px;margin-bottom:28px;
 }
-.content-label{font-size:12px;color:#6a6a72;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.content-label{font-size:12px;color:#8b8177;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
 .content-hash{
-  font-size:18px;font-weight:600;color:#f5f5f7;
-  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:18px;font-weight:600;color:#fff7ef;
+  font-family:var(--font-mono);
   word-break:break-all;margin-bottom:28px;
 }
 .content-badges{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .status-badge{
   display:inline-flex;align-items:center;gap:8px;padding:8px 18px;
   border-radius:999px;font-size:13px;font-weight:600;
-  background:rgba(255,255,255,.06);color:#c9c9cf;border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.06);color:#eee4dc;border:1px solid rgba(255,255,255,.1);
 }
-.status-confirmed{background:rgba(52,199,89,.1);color:#34c759;border-color:rgba(52,199,89,.2)}
-.status-pending{background:rgba(255,149,0,.1);color:#ff9500;border-color:rgba(255,149,0,.2)}
-.status-accent{background:rgba(113,50,245,.14);color:#b18cff;border-color:rgba(113,50,245,.3)}
+.status-confirmed{background:rgba(255,122,26,.12);color:#ff7a1a;border-color:rgba(255,122,26,.32)}
+.status-pending{background:rgba(255,154,61,.1);color:#ff9a3d;border-color:rgba(255,154,61,.24)}
+.status-accent{background:rgba(255,92,0,.14);color:#ff9a3d;border-color:rgba(255,92,0,.3)}
 a.status-badge{text-decoration:none;cursor:pointer}
 a.status-badge:hover{border-color:rgba(255,255,255,.25)}
 
 /* Info grid */
 .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-bottom:28px}
 .info-card{
-  background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.028));
+  background:linear-gradient(180deg,rgba(255,122,26,.07),rgba(255,255,255,.02));
   border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:28px;min-width:0;
 }
-.card-title{font-size:16px;font-weight:600;color:#f5f5f7;margin:0 0 16px;display:flex;align-items:center;gap:8px}
+.card-title{font-size:16px;font-weight:600;color:#fff7ef;margin:0 0 16px;display:flex;align-items:center;gap:8px}
 .info-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .info-row:last-child{border-bottom:none}
-.info-key{font-size:14px;color:#9a9aa2;flex-shrink:0}
+.info-key{font-size:14px;color:#a79d95;flex-shrink:0}
 .info-value{
-  font-size:14px;color:#f5f5f7;font-weight:500;text-align:right;
-  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:14px;color:#fff7ef;font-weight:500;text-align:right;
+  font-family:var(--font-mono);
   word-break:break-all;min-width:0;
 }
-.info-value a,.krayscan-container a.ks-link{color:#b18cff;text-decoration:none}
-.info-value a:hover,.krayscan-container a.ks-link:hover{text-decoration:underline}
+.info-value a,.dogscan-container a.ks-link{color:#ff9a3d;text-decoration:none}
+.info-value a:hover,.dogscan-container a.ks-link:hover{text-decoration:underline}
 
 /* Balance (address) */
 .balance-card{
@@ -139,29 +141,29 @@ a.status-badge:hover{border-color:rgba(255,255,255,.25)}
   border:1px solid rgba(255,255,255,.14);border-radius:24px;
   padding:40px;margin-bottom:28px;text-align:center;
 }
-.balance-amount{font-size:48px;font-weight:700;color:#34c759;margin-bottom:8px;letter-spacing:-.03em;word-break:break-all}
-.balance-label{font-size:14px;color:#9a9aa2}
+.balance-amount{font-size:48px;font-weight:700;color:#ff7a1a;margin-bottom:8px;letter-spacing:-.03em;word-break:break-all}
+.balance-label{font-size:14px;color:#a79d95}
 
 /* Sections */
 .list-section{
-  background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.028));
+  background:linear-gradient(180deg,rgba(255,122,26,.07),rgba(255,255,255,.02));
   border:1px solid rgba(255,255,255,.08);border-radius:24px;
   padding:40px;margin-bottom:28px;
 }
-.section-title{font-size:20px;font-weight:700;color:#f5f5f7;margin:0 0 28px;letter-spacing:-.04em;display:flex;align-items:center;gap:12px}
+.section-title{font-size:20px;font-weight:700;color:#fff7ef;margin:0 0 28px;letter-spacing:-.04em;display:flex;align-items:center;gap:12px}
 .list-items{display:flex;flex-direction:column;gap:12px}
 .list-item{
   background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
   border-radius:16px;padding:16px 18px;transition:border-color .2s ease;
 }
 .list-item:hover{border-color:rgba(255,255,255,.16)}
-.item-index{font-size:11px;color:#6a6a72;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-.item-content{font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#f5f5f7;word-break:break-all;margin-bottom:8px}
-.item-value{font-size:16px;font-weight:600;color:#34c759}
-.item-meta{font-size:12px;color:#9a9aa2;margin-top:6px}
+.item-index{font-size:11px;color:#8b8177;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.item-content{font-size:14px;font-family:var(--font-mono);color:#fff7ef;word-break:break-all;margin-bottom:8px}
+.item-value{font-size:16px;font-weight:600;color:#ff7a1a}
+.item-meta{font-size:12px;color:#a79d95;margin-top:6px}
 .item-script{
-  font-size:11px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  color:#8a8a92;margin-top:8px;padding:10px;background:#000;border-radius:8px;
+  font-size:11px;font-family:var(--font-mono);
+  color:#a79d95;margin-top:8px;padding:10px;background:#000;border-radius:8px;
   overflow-x:auto;white-space:pre-wrap;word-break:break-all;
 }
 
@@ -176,8 +178,8 @@ a.status-badge:hover{border-color:rgba(255,255,255,.25)}
 .rune-thumbnail{width:50px;height:50px;border-radius:10px;object-fit:cover;border:1px solid rgba(255,255,255,.1);background:#000}
 .rune-symbol-fallback{width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-size:24px;background:rgba(255,255,255,.06);border-radius:10px}
 .rune-info{flex:1;min-width:0}
-.rune-name{font-size:15px;font-weight:600;color:#f5f5f7;word-break:break-all}
-.rune-amount{font-size:20px;font-weight:700;color:#fff;word-break:break-all}
+.rune-name{font-size:15px;font-weight:600;color:#fff7ef;word-break:break-all}
+.rune-amount{font-size:20px;font-weight:700;color:#fff7ef;word-break:break-all}
 
 /* Inscriptions grid */
 .inscriptions-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
@@ -187,45 +189,51 @@ a.status-badge:hover{border-color:rgba(255,255,255,.25)}
   display:block;text-decoration:none;
 }
 .inscription-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2);box-shadow:0 8px 24px rgba(0,0,0,.5)}
-.inscription-preview{width:100%;height:150px;background:#000;display:flex;align-items:center;justify-content:center;font-size:34px;color:#6a6a72}
+.inscription-preview{width:100%;height:150px;background:#000;display:flex;align-items:center;justify-content:center;font-size:34px;color:#8b8177}
 .inscription-preview img{max-width:100%;max-height:100%;object-fit:contain;image-rendering:pixelated}
 .inscription-info{padding:12px;text-align:center}
-.inscription-number{font-size:12px;font-weight:600;color:#f5f5f7}
+.inscription-number{font-size:12px;font-weight:600;color:#fff7ef}
 
 /* Holders table (rune) */
 .holders-table{width:100%;border-collapse:collapse;font-size:13px}
-.holders-table th{font-size:11px;color:#6a6a72;text-transform:uppercase;letter-spacing:1px;text-align:left;padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.08)}
-.holders-table td{padding:10px;border-bottom:1px solid rgba(255,255,255,.05);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#e8e8ee;vertical-align:middle}
+.holders-table th{font-size:11px;color:#8b8177;text-transform:uppercase;letter-spacing:1px;text-align:left;padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.08)}
+.holders-table td{padding:10px;border-bottom:1px solid rgba(255,255,255,.05);font-family:var(--font-mono);color:#eee4dc;vertical-align:middle}
 .holders-table tr:last-child td{border-bottom:none}
-.holder-bar{height:4px;border-radius:2px;background:rgba(113,50,245,.9);min-width:2px}
+.holder-bar{height:4px;border-radius:2px;background:rgba(255,92,0,.9);min-width:2px}
 .holders-scroll{overflow-x:auto}
 
 /* Big preview (inscription) */
 .insc-hero{display:flex;align-items:center;justify-content:center;background:#000;border-radius:16px;min-height:280px;overflow:hidden}
 .insc-hero img{max-width:100%;max-height:420px;object-fit:contain;image-rendering:pixelated}
-.insc-hero .ks-fallback{font-size:64px;color:#6a6a72}
+.insc-hero .ks-fallback{font-size:64px;color:#8b8177}
 
-/* Gate + connected state */
-.ks-gate-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.ks-gate-actions .search-btn{padding:14px 40px}
-.ks-btn-ghost{background:rgba(255,255,255,.06) !important;color:#c9c9cf !important;border:1px solid rgba(255,255,255,.14) !important;text-decoration:none;display:inline-flex;align-items:center}
-.ks-btn-ghost:hover{background:rgba(255,255,255,.1) !important;transform:translateY(-2px)}
-.ks-gate-status{font-size:13px;color:#ff9500;margin:16px 0 0;min-height:1em}
+/* Optional wallet connect (unlocks the DSC panel — search works without it) */
+.ks-connect-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:20px}
+.ks-connect-chip{
+  background:rgba(255,92,0,.12);color:#ff9a3d;border:1px solid rgba(255,92,0,.28);
+  border-radius:999px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;
+  font-family:inherit;transition:all .2s ease;display:inline-flex;align-items:center;gap:8px;
+}
+.ks-connect-chip:hover{background:rgba(255,92,0,.2);border-color:rgba(255,92,0,.45);transform:translateY(-1px)}
+.ks-connect-chip[hidden]{display:none}
+.ks-connect-status{font-size:12px;color:#ff9a3d;min-height:1em}
+.ks-connect-status a{color:#ff9a3d;text-decoration:none}
+.ks-connect-status a:hover{text-decoration:underline}
 .ks-who{
   display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;
   margin:-12px 0 22px;padding:8px 16px;border-radius:999px;
-  background:rgba(52,199,89,.08);border:1px solid rgba(52,199,89,.18);
-  font-size:13px;color:#9a9aa2;
+  background:rgba(255,122,26,.08);border:1px solid rgba(255,122,26,.2);
+  font-size:13px;color:#a79d95;
 }
-.ks-who b{color:#34c759;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-.ks-who a{color:#6a6a72;text-decoration:none}
-.ks-who a:hover{color:#c9c9cf;text-decoration:underline}
-.ks-dsc-empty{font-size:14px;color:#9a9aa2}
-.ks-dsc-empty a{color:#b18cff;text-decoration:none}
+.ks-who b{color:#ff7a1a;font-weight:600;font-family:var(--font-mono)}
+.ks-who a{color:#8b8177;text-decoration:none}
+.ks-who a:hover{color:#eee4dc;text-decoration:underline}
+.ks-dsc-empty{font-size:14px;color:#a79d95}
+.ks-dsc-empty a{color:#ff9a3d;text-decoration:none}
 .ks-dsc-empty a:hover{text-decoration:underline}
 
 @media (max-width:768px){
-  .krayscan-container{padding:24px 14px 72px}
+  .dogscan-container{padding:24px 14px 72px}
   .search-section,.content-header,.list-section{padding:24px 18px;border-radius:20px}
   .search-form{flex-direction:column}
   .search-btn{padding:14px 40px}
@@ -242,9 +250,10 @@ a.status-badge:hover{border-color:rgba(255,255,255,.25)}
     <div class="navlinks" aria-label="Main navigation">
       <a href="/" data-i18n="nav.history">Home</a>
       <a href="/#luta" data-i18n="nav.fight">The Fight</a>
-      <a href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
-      <a href="/web3" data-i18n="nav.web3">Web3 HQ</a>
-      <a href="/krayscan" class="active">KrayScan</a>
+      <a href="/#radar" data-i18n="nav.wallets">On-Chain Analysis</a>
+      <a href="/dogmarket" data-i18n="nav.market">DogMarket</a>
+      <a href="/web3" data-i18n="nav.web3">Social Space</a>
+      <a href="/dogscan" class="active">DogScan</a>
       <a href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
       <a href="/#faq" data-i18n="nav.faq">FAQ</a>
     </div>
@@ -259,34 +268,25 @@ a.status-badge:hover{border-color:rgba(255,255,255,.25)}
   <nav class="navdrawer-inner">
     <a class="navdrawer-link" href="/" data-i18n="nav.history">Home</a>
     <a class="navdrawer-link" href="/#luta" data-i18n="nav.fight">The Fight</a>
-    <a class="navdrawer-link" href="/#carteiras" data-i18n="nav.wallets">Wallets</a>
-    <a class="navdrawer-link" href="/web3" data-i18n="nav.web3">Web3 HQ</a>
-    <a class="navdrawer-link active" href="/krayscan">KrayScan</a>
+    <a class="navdrawer-link" href="/#radar" data-i18n="nav.wallets">On-Chain Analysis</a>
+    <a class="navdrawer-link" href="/dogmarket" data-i18n="nav.market">DogMarket</a>
+    <a class="navdrawer-link" href="/web3" data-i18n="nav.web3">Social Space</a>
+    <a class="navdrawer-link" href="/social" data-i18n="nav.social">How It Works</a>
+    <a class="navdrawer-link active" href="/dogscan">DogScan</a>
     <a class="navdrawer-link" href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
     <a class="navdrawer-link" href="/#faq" data-i18n="nav.faq">FAQ</a>
   </nav>
 </aside>
 
 <main id="top">
-  <div class="krayscan-container">
+  <div class="dogscan-container">
 
-    <!-- Gate: KrayWallet holders only -->
-    <div id="ks-gate" class="search-section" style="display:none">
-      <div class="search-title">🔒 KrayScan — soldiers only</div>
-      <div class="search-subtitle">This explorer is reserved for the connected army. Connect your KRAY Wallet to enter — read-only, no signatures, this site can never move your coins.</div>
-      <div class="ks-gate-actions">
-        <button type="button" id="ksConnect" class="search-btn">Connect KRAY Wallet</button>
-        <a id="ksInstall" class="search-btn ks-btn-ghost" href="https://kray.space/install-extension" target="_blank" rel="noopener" hidden>Get KRAY Wallet ↗</a>
-      </div>
-      <p class="ks-gate-status" id="ksGateStatus"></p>
-    </div>
-
-    <!-- App: everything below only exists for connected wallets -->
-    <div id="ks-app" style="display:none">
+    <!-- App: search is public (public chain data); wallet connect is optional -->
+    <div id="ks-app">
 
     <!-- Search Section -->
     <div class="search-section">
-      <div class="search-title">🔍 KrayScan</div>
+      <div class="search-title">🔍 DogScan</div>
       <div class="search-subtitle">Explore Bitcoin transactions, addresses, inscriptions, runes and KRAY L2 activity</div>
       <div class="ks-who" id="ksWho" hidden></div>
       <form class="search-form" id="searchForm">
@@ -294,13 +294,17 @@ a.status-badge:hover{border-color:rgba(255,255,255,.25)}
           type="text"
           class="search-input"
           id="searchInput"
-          placeholder="Enter TXID (64 hex chars) or Address (bc1...)"
+          placeholder="TXID, address, inscription, or rune name (e.g. DOGDAMASSA)"
           autocomplete="off"
           spellcheck="false"
           autofocus
         >
         <button type="submit" class="search-btn">Search</button>
       </form>
+      <div class="ks-connect-row" id="ksConnectRow">
+        <button type="button" id="ksConnect" class="ks-connect-chip">🐾 Connect KRAY Wallet to see your DOG•SOCIAL•CLUB</button>
+        <span class="ks-connect-status" id="ksConnectStatus"></span>
+      </div>
     </div>
 
     <!-- Loading State -->
@@ -334,9 +338,9 @@ a.status-badge:hover{border-color:rgba(255,255,255,.25)}
 </main>
 
 <footer>
-  <div class="wrap"><div class="inner"><p><strong>DOG ARMY</strong><br><span>KrayScan — Bitcoin &amp; Origin Layer explorer, data served by KRAY SPACE.</span></p><p><a href="https://www.kray.space/developers" target="_blank" rel="noopener">KRAY Developers ↗</a><br><a href="/">Back to DOG ARMY</a></p></div><div class="disclaimer">Educational material only. No financial advice. All data shown is read live from public blockchain sources via KRAY SPACE, an army sponsor. Always verify critical transactions in more than one explorer.</div></div>
+  <div class="wrap"><div class="inner"><p><strong>DOG ARMY</strong><br><span>DogScan — Bitcoin &amp; Origin Layer explorer, powered by KRAY SPACE.</span></p><p><a href="https://www.kray.space/developers" target="_blank" rel="noopener">KRAY Developers ↗</a><br><a href="/">Back to DOG ARMY</a></p></div><div class="disclaimer">Educational material only. No financial advice. All data shown is read live from public blockchain sources via KRAY SPACE, an army sponsor. Always verify critical transactions in more than one explorer.</div></div>
 </footer>
-<script src="/i18n.js"></script>
-<script src="/krayscan.js" defer></script>
+<script src="/i18n.js?v=09ed5b516f"></script>
+<script src="/dogscan.js?v=fb5617eb38" defer></script>
 </body>
 </html>
