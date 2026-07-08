@@ -1,6 +1,45 @@
 {
-  "updated_at": "2026-07-08T09:42:37.057700+00:00",
+  "updated_at": "2026-07-08T12:00:02.323059+00:00",
   "events": [
+    {
+      "id": "543651bfb65652ee885002f866065d3ce9007e8c294589b999ea5bbaaf5841f4",
+      "ts": "2026-07-08T11:31:17+00:00",
+      "type": "exchange_out",
+      "amount_dog": 69980444.57192,
+      "level": "info",
+      "from_label": "Top #2",
+      "to_label": "bc1pjywv...hqul",
+      "from_id": "h2",
+      "to_id": "bc1pjywvrxfrsr25dkl9gmtuy8w7w8a7mg7vz0j89v3g6d0x8suvgg6qdchqul",
+      "community": null,
+      "txid": "543651bfb65652ee885002f866065d3ce9007e8c294589b999ea5bbaaf5841f4"
+    },
+    {
+      "id": "1c265d6ad827077bb2cb65d09acbcbf1597ff3999bff307ffc5359657bbadb8c",
+      "ts": "2026-07-08T11:31:17+00:00",
+      "type": "exchange_out",
+      "amount_dog": 7548103.123,
+      "level": "info",
+      "from_label": "Top #3",
+      "to_label": "bc1p0zvj...c80a",
+      "from_id": "h3",
+      "to_id": "bc1p0zvjcm5rfunz5eva06nsp3utcc0pucqpax7gd57z6xnsgaruuhpsfsc80a",
+      "community": null,
+      "txid": "1c265d6ad827077bb2cb65d09acbcbf1597ff3999bff307ffc5359657bbadb8c"
+    },
+    {
+      "id": "c813c37a27e9af962daa37a92dd5f8a58906d361a816fc5c713979ff62b3ce63",
+      "ts": "2026-07-08T11:05:25+00:00",
+      "type": "exchange_out",
+      "amount_dog": 119979327.45192,
+      "level": "info",
+      "from_label": "Top #2",
+      "to_label": "bc1pjywv...hqul",
+      "from_id": "h2",
+      "to_id": "bc1pjywvrxfrsr25dkl9gmtuy8w7w8a7mg7vz0j89v3g6d0x8suvgg6qdchqul",
+      "community": null,
+      "txid": "c813c37a27e9af962daa37a92dd5f8a58906d361a816fc5c713979ff62b3ce63"
+    },
     {
       "id": "182dc03bf14716b7286239ed1661b4c5210293b6e9815de994897b6f4a933da4",
       "ts": "2026-07-08T05:16:10+00:00",
@@ -741,45 +780,6 @@
       "to_id": "h2",
       "community": "Gate",
       "txid": "9c703c7c5f067bf4f498e25479bc0f270e0cd2650c8f3942c7e0f9d5f24e59f9"
-    },
-    {
-      "id": "e354f111adc7b7a072b9eb84b161467cf5d917b4491be70ab4ea5ac281d9ab02",
-      "ts": "2026-07-05T19:16:41+00:00",
-      "type": "exchange_out",
-      "amount_dog": 8708608.16314,
-      "level": "info",
-      "from_label": "Top #3",
-      "to_label": "bc1qkgjl...ct5y",
-      "from_id": "h3",
-      "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "community": null,
-      "txid": "e354f111adc7b7a072b9eb84b161467cf5d917b4491be70ab4ea5ac281d9ab02"
-    },
-    {
-      "id": "bal-2026-07-05",
-      "ts": "2026-07-05T19:11:24.014539+00:00",
-      "type": "balance_change",
-      "amount_dog": 2558477.25,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
-    },
-    {
-      "id": "7eaac2a2bafeb64b354f041154edd502b5554a030c362f84941ba654d3cf6861",
-      "ts": "2026-07-05T17:38:31+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 291999420.56232,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1pv2ek2hyt0sn3xc6x9q68kzrxuuy6esntkdrw9gku00sgd2e2ashsktjauk",
-      "community": null,
-      "txid": "7eaac2a2bafeb64b354f041154edd502b5554a030c362f84941ba654d3cf6861"
     }
   ]
 }
