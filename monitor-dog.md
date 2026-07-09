@@ -4,6 +4,13 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
+## 2026-07-09 ⚠️ API bloqueada (14º dia)
+
+- **Baleia:** `dogdata.xyz` inacessível (403 proxy) — último dado fresco remoto: **28/06, 12,32% do supply**. Dado local mais recente (06/07): **12,15% (Δ -163,6M DOG desde 28/06)** — queda a ser confirmada on-chain.
+- Saques novos da Binance → cluster: impossível verificar (API bloqueada).
+- Depósito em exchange: impossível verificar (API bloqueada).
+- 🔎 **Leitura:** rotina remota bloqueada pelo **14º dia consecutivo**. Dados de saques e depósitos não puderam ser verificados hoje. Último snapshot on-chain confirmado (06/07, local): baleia em 12,15%. **Para retomar coleta ao vivo, liberar `dogdata.xyz` e `mempool.space` na allowlist de egress do ambiente remoto.**
+
 ## 2026-07-08 ⚠️ API bloqueada (13º dia)
 
 - **Baleia:** `dogdata.xyz` inacessível (403 proxy) — último dado fresco remoto: **28/06, 12,32% do supply**. Dado local mais recente (06/07): **12,15% (Δ -163,6M DOG desde 28/06)** — queda a ser confirmada on-chain.
@@ -131,6 +138,7 @@ Dia de **CEX restringindo DOG**: a Gate tira a alavancagem (perp delistado) e mo
 
 | Data | Status | Dado fresco? |
 |---|---|---|
+| 09/07/2026 (rotina remota) | API bloqueada (14º dia) | ❌ |
 | 08/07/2026 (rotina remota) | API bloqueada (13º dia) | ❌ |
 | 07/07/2026 (rotina remota) | API bloqueada (12º dia) | ❌ |
 | 06/07/2026 (manual, local) | APIs OK | ✅ |
