@@ -74,6 +74,7 @@ window.DOG_I18N = {
     "soc.cta": "Conhecer o Social →",
     "soc.trending": "Em alta",
     "soc.recent": "Recentes",
+    "soc.rewards": "Recompensas",
     "soc.loading": "Carregando posts…",
     "nav.social": "Como Funciona",
     "socialPage.k": "KRAY Social",
@@ -835,6 +836,7 @@ window.DOG_I18N = {
     "soc.cta": "Conocer el Social →",
     "soc.trending": "Tendencias",
     "soc.recent": "Recientes",
+    "soc.rewards": "Recompensas",
     "soc.loading": "Cargando posts…",
     "nav.social": "Cómo Funciona",
     "socialPage.k": "KRAY Social",
@@ -1655,6 +1657,7 @@ window.DOG_I18N = {
     var track = document.getElementById('krSocialTrack');
     if (!strip || !track) return;
     var current = 'trending';
+    var lastGood = 'trending';
 
     function card(p) {
       var a = document.createElement('a');
@@ -1687,6 +1690,12 @@ window.DOG_I18N = {
       comments.textContent = '💬 ' + (p.comments || 0);
       stats.appendChild(likes);
       stats.appendChild(comments);
+      if (p.reward && p.reward.left > 0) {
+        var reward = document.createElement('span');
+        reward.className = 'social-card-reward';
+        reward.textContent = '💰 ' + p.reward.amount.toLocaleString('en-US', { maximumFractionDigits: 5 }) + ' ' + p.reward.token;
+        stats.appendChild(reward);
+      }
       body.appendChild(text);
       body.appendChild(stats);
       a.appendChild(img);
@@ -1712,6 +1721,7 @@ window.DOG_I18N = {
           var posts = (d && d.success && d.posts) || [];
           if (!posts.length) throw new Error('empty');
           hasContent = true;
+          lastGood = feed;
           strip.hidden = false;
           track.innerHTML = '';
           posts.forEach(function (p) { track.appendChild(card(p)); });
@@ -1732,9 +1742,10 @@ window.DOG_I18N = {
           if (feed !== current) return;
           if (!hasContent) { strip.hidden = true; return; }
           /* a failed toggle keeps the strip alive: fall back to what's
-             already rendered and put the active chip back where it was */
-          current = current === 'recent' ? 'trending' : 'recent';
-          setActiveChip(current);
+             already rendered and put the active chip back on the last feed
+             that actually loaded */
+          current = lastGood;
+          setActiveChip(lastGood);
           track.classList.remove('no-anim');
         });
     }
