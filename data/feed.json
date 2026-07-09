@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-07-09T12:18:32.447936+00:00",
+  "updated_at": "2026-07-09T14:26:12.280622+00:00",
   "events": [
     {
       "id": "bal-2026-07-09",
-      "ts": "2026-07-09T12:18:32.447936+00:00",
+      "ts": "2026-07-09T14:26:12.280622+00:00",
       "type": "balance_change",
-      "amount_dog": 13482877.948400497,
+      "amount_dog": 3334277.2559986115,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,19 @@
       "to_id": "",
       "sign": "+",
       "txid": null
+    },
+    {
+      "id": "bce8fab69eecb0fb1f0d2a6d6672f880c574f0ad2f1169998faa2646fb69cd58",
+      "ts": "2026-07-09T12:42:17+00:00",
+      "type": "cofre_in",
+      "amount_dog": 7994632.88,
+      "level": "info",
+      "from_label": "bc1p8d8k...tach",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "bce8fab69eecb0fb1f0d2a6d6672f880c574f0ad2f1169998faa2646fb69cd58"
     },
     {
       "id": "484c05773091b7c8a659586397465c59b93fc7e0b0f7167333ff071f92e8ec0e",
@@ -767,19 +780,6 @@
       "to_id": "",
       "community": null,
       "txid": "9a3d16bbda43037806d1294900839baf477b0e7ab479356111bfe895169ab10d"
-    },
-    {
-      "id": "91861775494344cf5040b16ef42f8a1e2aa6521f6c46ecf8c7e374460da39a01",
-      "ts": "2026-07-07T04:25:18+00:00",
-      "type": "exchange_out",
-      "amount_dog": 21459269.64192,
-      "level": "info",
-      "from_label": "Top #2",
-      "to_label": "bc1pjywv...hqul",
-      "from_id": "h2",
-      "to_id": "bc1pjywvrxfrsr25dkl9gmtuy8w7w8a7mg7vz0j89v3g6d0x8suvgg6qdchqul",
-      "community": null,
-      "txid": "91861775494344cf5040b16ef42f8a1e2aa6521f6c46ecf8c7e374460da39a01"
     }
   ]
 }
