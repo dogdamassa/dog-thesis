@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-07-08T22:29:35.484744+00:00",
+  "updated_at": "2026-07-09T01:07:08.569970+00:00",
   "events": [
+    {
+      "id": "b9548c77fa6f24814f1daeb80c3d615f2d320e10644dd084b23fb3ab9cb33000",
+      "ts": "2026-07-09T00:33:40+00:00",
+      "type": "cofre_in",
+      "amount_dog": 10263216.88,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "b9548c77fa6f24814f1daeb80c3d615f2d320e10644dd084b23fb3ab9cb33000"
+    },
+    {
+      "id": "f5d098fbd677ef72a3d25e9fbd9fef32204c7e36101960131282f82ae5014068",
+      "ts": "2026-07-08T23:20:12+00:00",
+      "type": "exchange_out",
+      "amount_dog": 7237997.2957,
+      "level": "info",
+      "from_label": "MEXC Wallet",
+      "to_label": "bc1p8d8k...tach",
+      "from_id": "mexc",
+      "to_id": "bc1p8d8kexdxatnfejdvd9dq7uky4m9wjxl59r3dnqg7nqq9gaxz2jxq6ntach",
+      "community": null,
+      "txid": "f5d098fbd677ef72a3d25e9fbd9fef32204c7e36101960131282f82ae5014068"
+    },
     {
       "id": "bal-2026-07-08",
       "ts": "2026-07-08T22:29:35.484744+00:00",
@@ -754,32 +780,6 @@
       "to_id": "bc1pzsx4xvghxmc0prv4mys0xdly9dh9js3e88e4m24k5gxzkeskx30s4qzjud",
       "community": null,
       "txid": "a83b3e16178ae009299fa943f05f5480e7c0f80d2d282ec0de2e4c9aba84192e"
-    },
-    {
-      "id": "dde634cd3444a98073fe81456154d271e572c73a33ba9ef1e2ee8d7043be79ed",
-      "ts": "2026-07-06T12:22:35+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 270735606.85501,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1pzsx4xvghxmc0prv4mys0xdly9dh9js3e88e4m24k5gxzkeskx30s4qzjud",
-      "community": null,
-      "txid": "dde634cd3444a98073fe81456154d271e572c73a33ba9ef1e2ee8d7043be79ed"
-    },
-    {
-      "id": "7fd5840b297aa615e0268049d7ea88d7ea06d4ed76773f0c068c89281553b498",
-      "ts": "2026-07-06T10:38:16+00:00",
-      "type": "exchange_out",
-      "amount_dog": 8961588.09272,
-      "level": "info",
-      "from_label": "Top #2",
-      "to_label": "unmapped wallet",
-      "from_id": "h2",
-      "to_id": "",
-      "community": null,
-      "txid": "7fd5840b297aa615e0268049d7ea88d7ea06d4ed76773f0c068c89281553b498"
     }
   ]
 }
