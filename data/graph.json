@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T04:29:50.454367+00:00",
+  "updated_at": "2026-07-10T08:46:12.048644+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12163873732.73384,
+      "balance_dog": 12151380184.73544,
       "rank": 1,
-      "pct": 12.16,
+      "pct": 12.15,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3246663773.32333,
+      "balance_dog": 3246987798.40733,
       "rank": 2,
       "pct": 3.25,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2049344286.73749,
+      "balance_dog": 2057480243.25246,
       "rank": 6,
-      "pct": 2.05,
+      "pct": 2.06,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -102,6 +102,17 @@
       "addr": "bc1phg2dwj8g2tnkvm4e3jxmthe0t8798ns7jnmn3hg6n0hg4mre9gxsack4j9"
     },
     {
+      "id": "bc1p2y0y336sgx7g4d8rhqq4na792xahkurw0rvjz3n7tmpt3gey5q8qka4flv",
+      "label": "bc1p2y0y...4flv",
+      "kind": "fresh",
+      "community": null,
+      "confirmed": false,
+      "balance_dog": 0,
+      "rank": null,
+      "pct": 0,
+      "addr": "bc1p2y0y336sgx7g4d8rhqq4na792xahkurw0rvjz3n7tmpt3gey5q8qka4flv"
+    },
+    {
       "id": "bc1pv2ek2hyt0sn3xc6x9q68kzrxuuy6esntkdrw9gku00sgd2e2ashsktjauk",
       "label": "bc1pv2ek...jauk",
       "kind": "fresh",
@@ -122,20 +133,17 @@
       "rank": null,
       "pct": 0,
       "addr": "bc1pcjqedhnxmjhl00ht6l0r0y9e79lhme3qeza5n4rd3a7f3yyqhqzqeeagwm"
-    },
-    {
-      "id": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq",
-      "label": "bc1p8lkq...7fgq",
-      "kind": "fresh",
-      "community": null,
-      "confirmed": false,
-      "balance_dog": 0,
-      "rank": null,
-      "pct": 0,
-      "addr": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq"
     }
   ],
   "edges": [
+    {
+      "from": "cofre",
+      "to": "bc1p2y0y336sgx7g4d8rhqq4na792xahkurw0rvjz3n7tmpt3gey5q8qka4flv",
+      "from_label": "Vault #1",
+      "to_label": "bc1p2y0y...4flv",
+      "dog": 680291856,
+      "count": 5
+    },
     {
       "from": "cofre",
       "to": "int1",
@@ -170,14 +178,6 @@
     },
     {
       "from": "cofre",
-      "to": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq",
-      "from_label": "Vault #1",
-      "to_label": "bc1p8lkq...7fgq",
-      "dog": 604688001,
-      "count": 4
-    },
-    {
-      "from": "cofre",
       "to": "bc1phg2dwj8g2tnkvm4e3jxmthe0t8798ns7jnmn3hg6n0hg4mre9gxsack4j9",
       "from_label": "Vault #1",
       "to_label": "bc1phg2d...k4j9",
@@ -191,6 +191,14 @@
       "to_label": "bc1pcjqe...agwm",
       "dog": 608302630,
       "count": 3
+    },
+    {
+      "from": "h2",
+      "to": "bc1p2y0y336sgx7g4d8rhqq4na792xahkurw0rvjz3n7tmpt3gey5q8qka4flv",
+      "from_label": "Top #2",
+      "to_label": "bc1p2y0y...4flv",
+      "dog": 1998500,
+      "count": 1
     },
     {
       "from": "bc1pcjqedhnxmjhl00ht6l0r0y9e79lhme3qeza5n4rd3a7f3yyqhqzqeeagwm",
