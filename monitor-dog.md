@@ -4,6 +4,19 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
+## 2026-07-10 ✅ Dado FRESCO — Cluster ativo · pass-through suspeito
+
+> Fonte: `data/daily.json` + `data/feed.json` + `data/graph.json` · atualizado às 12:11 UTC · dogdata.xyz acessível via scripts locais (proxy remoto segue bloqueado).
+
+- **Baleia (Vault #1, rank #1):** **12,15% do supply** (12,148B DOG). Δ líquido: -3,06M DOG. **NÃO depositou em exchange conhecida** (cofre_to_exchange: 0). Preço DOG: $0,0006246.
+- **Movimentação bruta suspeita:** 12 saídas `cofre_out_new` hoje = **636,3M DOG enviados para wallets não mapeadas ("fresh")**, incluindo lotes de **306,26M DOG** (06:44 UTC) e **241,43M DOG** (04:38 UTC). Padrão pass-through: valores idênticos/similares foram depositados no cofre em 08/07 por carteiras "unmapped" e saem agora — relay encoberto.
+- **Saques novos Binance → cluster (72h):** Int#3 inativo desde 30/04 (watermark histórico). Nos dados de hoje, **a fonte dos relays é Gate (Top #2), não a Binance diretamente**. Binance como counterparty dos relays Int#1/Int#2 **não confirmada** nesta janela — possível, mas não verificável sem acesso direto ao dogdata.xyz.
+- **Cluster relay ativo hoje (Gate → Int → Bitget):**
+  - `Int#2 → Bitget`: 10,41M DOG @ 11:25 UTC + 2,86M DOG @ 11:23 UTC
+  - `Int#1 → Bitget`: 5,30M DOG @ 11:25 UTC
+  - Fonte: `Gate (Top #2) → Int#2` (5,80M) e `Gate → Int#1` (3,08M) @ 11:12 UTC
+- 🔎 **Leitura:** **Movimento suspeito.** A baleia movimentou 636M DOG em gross saídas hoje para wallets não rastreadas, repetindo o mesmo padrão pass-through de valores que entraram 48h antes. O cluster relay está ativo (Gate → Int#1/Int#2 → Bitget). A Binance alimentou esse cluster por ~22 meses via Int#3 (48 saques documentados); hoje a fonte direta visível é a Gate, mas **a Binance pode estar envolvida** na camada anterior — o rastro histórico une essas estruturas. Sem acusação de crime: descrevemos o padrão que a chain mostra.
+
 ## 2026-07-09 ⚠️ API bloqueada (14º dia)
 
 - **Baleia:** `dogdata.xyz` inacessível (403 proxy) — último dado fresco remoto: **28/06, 12,32% do supply**. Dado local mais recente (06/07): **12,15% (Δ -163,6M DOG desde 28/06)** — queda a ser confirmada on-chain.
@@ -138,6 +151,7 @@ Dia de **CEX restringindo DOG**: a Gate tira a alavancagem (perp delistado) e mo
 
 | Data | Status | Dado fresco? |
 |---|---|---|
+| 10/07/2026 (rotina remota) | Dado fresco via data/*.json | ✅ |
 | 09/07/2026 (rotina remota) | API bloqueada (14º dia) | ❌ |
 | 08/07/2026 (rotina remota) | API bloqueada (13º dia) | ❌ |
 | 07/07/2026 (rotina remota) | API bloqueada (12º dia) | ❌ |
