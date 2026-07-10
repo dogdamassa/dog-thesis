@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T08:46:12.048644+00:00",
+  "updated_at": "2026-07-10T12:11:24.480236+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,7 +8,7 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12151380184.73544,
+      "balance_dog": 12148315333.73644,
       "rank": 1,
       "pct": 12.15,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2057480243.25246,
+      "balance_dog": 2057013644.85968,
       "rank": 6,
       "pct": 2.06,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -53,7 +53,7 @@
       "community": "bridge to Bitget",
       "confirmed": true,
       "balance_dog": 2769102.3,
-      "rank": 2947,
+      "rank": 2948,
       "pct": 0.0,
       "addr": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar"
     },
@@ -62,10 +62,10 @@
       "label": "Intermediary Wallet #2",
       "kind": "relay",
       "community": "bridge to Bitget",
-      "confirmed": false,
-      "balance_dog": 0,
-      "rank": null,
-      "pct": 0,
+      "confirmed": true,
+      "balance_dog": 2861996.2,
+      "rank": 2877,
+      "pct": 0.0,
       "addr": "bc1p52673nrtsed5n5nal7cm02u6pg63p0e6u4nm2fhm90xd8r4w3ass090zzy"
     },
     {
@@ -138,27 +138,27 @@
   "edges": [
     {
       "from": "cofre",
-      "to": "bc1p2y0y336sgx7g4d8rhqq4na792xahkurw0rvjz3n7tmpt3gey5q8qka4flv",
+      "to": "int2",
       "from_label": "Vault #1",
-      "to_label": "bc1p2y0y...4flv",
-      "dog": 680291856,
-      "count": 5
+      "to_label": "Intermediary Wallet #2",
+      "dog": 235527125,
+      "count": 20
     },
     {
       "from": "cofre",
       "to": "int1",
       "from_label": "Vault #1",
       "to_label": "Intermediary Wallet #1",
-      "dog": 530899220,
-      "count": 14
+      "dog": 538469067,
+      "count": 15
     },
     {
       "from": "cofre",
-      "to": "int2",
+      "to": "bc1p2y0y336sgx7g4d8rhqq4na792xahkurw0rvjz3n7tmpt3gey5q8qka4flv",
       "from_label": "Vault #1",
-      "to_label": "Intermediary Wallet #2",
-      "dog": 197588577,
-      "count": 17
+      "to_label": "bc1p2y0y...4flv",
+      "dog": 680291856,
+      "count": 5
     },
     {
       "from": "cofre",
@@ -194,6 +194,22 @@
     },
     {
       "from": "h2",
+      "to": "int1",
+      "from_label": "Top #2",
+      "to_label": "Intermediary Wallet #1",
+      "dog": 13213048,
+      "count": 3
+    },
+    {
+      "from": "h2",
+      "to": "int2",
+      "from_label": "Top #2",
+      "to_label": "Intermediary Wallet #2",
+      "dog": 97059250,
+      "count": 9
+    },
+    {
+      "from": "h2",
       "to": "bc1p2y0y336sgx7g4d8rhqq4na792xahkurw0rvjz3n7tmpt3gey5q8qka4flv",
       "from_label": "Top #2",
       "to_label": "bc1p2y0y...4flv",
@@ -210,22 +226,6 @@
     },
     {
       "from": "h2",
-      "to": "int2",
-      "from_label": "Top #2",
-      "to_label": "Intermediary Wallet #2",
-      "dog": 91261199,
-      "count": 8
-    },
-    {
-      "from": "h2",
-      "to": "int1",
-      "from_label": "Top #2",
-      "to_label": "Intermediary Wallet #1",
-      "dog": 10127431,
-      "count": 2
-    },
-    {
-      "from": "h2",
       "to": "int3",
       "from_label": "Top #2",
       "to_label": "Intermediary Wallet #3",
@@ -233,20 +233,20 @@
       "count": 1
     },
     {
-      "from": "int1",
-      "to": "h3",
-      "from_label": "Intermediary Wallet #1",
-      "to_label": "Top #3",
-      "dog": 272146990,
-      "count": 50
-    },
-    {
       "from": "int2",
       "to": "h3",
       "from_label": "Intermediary Wallet #2",
       "to_label": "Top #3",
-      "dog": 471097702,
-      "count": 80
+      "dog": 484370210,
+      "count": 82
+    },
+    {
+      "from": "int1",
+      "to": "h3",
+      "from_label": "Intermediary Wallet #1",
+      "to_label": "Top #3",
+      "dog": 277446655,
+      "count": 51
     },
     {
       "from": "int3",
