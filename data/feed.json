@@ -1,18 +1,31 @@
 {
-  "updated_at": "2026-07-11T06:31:21.668243+00:00",
+  "updated_at": "2026-07-11T09:02:39.325822+00:00",
   "events": [
     {
       "id": "bal-2026-07-11",
-      "ts": "2026-07-11T06:31:21.668243+00:00",
+      "ts": "2026-07-11T09:02:39.325822+00:00",
       "type": "balance_change",
-      "amount_dog": 2000000.0,
+      "amount_dog": 1664872.0405101776,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "-",
+      "sign": "+",
       "txid": null
+    },
+    {
+      "id": "80f8e71edcb6849dcdc2de8fea61f421fc1a318aea4702bb306a463e755e6b2b",
+      "ts": "2026-07-11T06:49:17+00:00",
+      "type": "cofre_in",
+      "amount_dog": 249463577.47478,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "80f8e71edcb6849dcdc2de8fea61f421fc1a318aea4702bb306a463e755e6b2b"
     },
     {
       "id": "6be1ebe01cfe44540feccf305f11cb29766766e1b4ef6cac2020c2116e8ccbb6",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "b9548c77fa6f24814f1daeb80c3d615f2d320e10644dd084b23fb3ab9cb33000"
-    },
-    {
-      "id": "f5d098fbd677ef72a3d25e9fbd9fef32204c7e36101960131282f82ae5014068",
-      "ts": "2026-07-08T23:20:12+00:00",
-      "type": "exchange_out",
-      "amount_dog": 7237997.2957,
-      "level": "info",
-      "from_label": "MEXC Wallet",
-      "to_label": "bc1p8d8k...tach",
-      "from_id": "mexc",
-      "to_id": "bc1p8d8kexdxatnfejdvd9dq7uky4m9wjxl59r3dnqg7nqq9gaxz2jxq6ntach",
-      "community": null,
-      "txid": "f5d098fbd677ef72a3d25e9fbd9fef32204c7e36101960131282f82ae5014068"
     }
   ]
 }
