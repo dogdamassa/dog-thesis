@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-07-11T10:37:46.907080+00:00",
+  "updated_at": "2026-07-11T12:10:59.690083+00:00",
   "events": [
+    {
+      "id": "bal-2026-07-11",
+      "ts": "2026-07-11T12:10:59.690083+00:00",
+      "type": "balance_change",
+      "amount_dog": 11744698.306921005,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "89df18a0c7a726286c95696848f3c068a55eba94140ff00ab7aff74f7bea7cba",
+      "ts": "2026-07-11T12:03:23+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 5603719.30696,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar",
+      "community": null,
+      "txid": "89df18a0c7a726286c95696848f3c068a55eba94140ff00ab7aff74f7bea7cba"
+    },
     {
       "id": "94714334e634ffd488e89ee8a23e9bf8887ab4edfec236baa0584cd76d8a7c31",
       "ts": "2026-07-11T10:34:42+00:00",
@@ -52,19 +78,6 @@
       "to_id": "int2",
       "community": null,
       "txid": "7169956cf55811fe538875ade947e240541415074959f7d80bdbdde743232fd7"
-    },
-    {
-      "id": "bal-2026-07-11",
-      "ts": "2026-07-11T09:02:39.325822+00:00",
-      "type": "balance_change",
-      "amount_dog": 1664872.0405101776,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
     },
     {
       "id": "80f8e71edcb6849dcdc2de8fea61f421fc1a318aea4702bb306a463e755e6b2b",
@@ -767,19 +780,6 @@
       "to_id": "bc1pjywvrxfrsr25dkl9gmtuy8w7w8a7mg7vz0j89v3g6d0x8suvgg6qdchqul",
       "community": null,
       "txid": "dbc84d19c282bd8e5c509a4a7352b70d6182088400aa7bac69de70b035973cf0"
-    },
-    {
-      "id": "46bc521114e8c89650c9d055a220a31439180029d470ebba7d38f2962ea1a487",
-      "ts": "2026-07-09T03:07:25+00:00",
-      "type": "exchange_out",
-      "amount_dog": 282990693.96192,
-      "level": "info",
-      "from_label": "Top #2",
-      "to_label": "bc1pjywv...hqul",
-      "from_id": "h2",
-      "to_id": "bc1pjywvrxfrsr25dkl9gmtuy8w7w8a7mg7vz0j89v3g6d0x8suvgg6qdchqul",
-      "community": null,
-      "txid": "46bc521114e8c89650c9d055a220a31439180029d470ebba7d38f2962ea1a487"
     }
   ]
 }
