@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11T03:48:52.537609+00:00",
+  "updated_at": "2026-07-11T06:31:21.668243+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12116902064.18591,
+      "balance_dog": 12114902064.18591,
       "rank": 1,
-      "pct": 12.12,
+      "pct": 12.11,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3238327046.87876,
+      "balance_dog": 3238188132.15765,
       "rank": 2,
       "pct": 3.24,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2987877871.50902,
+      "balance_dog": 2990646973.80902,
       "rank": 3,
       "pct": 2.99,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -51,10 +51,10 @@
       "label": "Intermediary Wallet #1",
       "kind": "relay",
       "community": "bridge to Bitget",
-      "confirmed": true,
-      "balance_dog": 2769102.3,
-      "rank": 2946,
-      "pct": 0.0,
+      "confirmed": false,
+      "balance_dog": 0,
+      "rank": null,
+      "pct": 0,
       "addr": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar"
     },
     {
@@ -225,20 +225,20 @@
       "count": 1
     },
     {
+      "from": "int1",
+      "to": "h3",
+      "from_label": "Intermediary Wallet #1",
+      "to_label": "Top #3",
+      "dog": 280215758,
+      "count": 52
+    },
+    {
       "from": "int2",
       "to": "h3",
       "from_label": "Intermediary Wallet #2",
       "to_label": "Top #3",
       "dog": 484370210,
       "count": 82
-    },
-    {
-      "from": "int1",
-      "to": "h3",
-      "from_label": "Intermediary Wallet #1",
-      "to_label": "Top #3",
-      "dog": 277446655,
-      "count": 51
     },
     {
       "from": "int3",
