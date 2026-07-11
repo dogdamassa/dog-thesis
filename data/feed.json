@@ -1,18 +1,31 @@
 {
-  "updated_at": "2026-07-11T17:26:55.867359+00:00",
+  "updated_at": "2026-07-11T19:37:20.781917+00:00",
   "events": [
     {
       "id": "bal-2026-07-11",
-      "ts": "2026-07-11T17:26:55.867359+00:00",
+      "ts": "2026-07-11T19:37:20.781917+00:00",
       "type": "balance_change",
-      "amount_dog": 5214718.697000504,
+      "amount_dog": 8955713.225000381,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "-",
+      "sign": "+",
       "txid": null
+    },
+    {
+      "id": "ae2e84255201dfbc7e5480be1943916422ffa0562119293afa6549e925815949",
+      "ts": "2026-07-11T18:43:56+00:00",
+      "type": "cofre_in",
+      "amount_dog": 3001378.36,
+      "level": "info",
+      "from_label": "bc1p8d8k...tach",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "ae2e84255201dfbc7e5480be1943916422ffa0562119293afa6549e925815949"
     },
     {
       "id": "0e8bd65a22a39330d6d7236b7732fda215305661beb6b2cbfda00a29197d8645",
@@ -767,19 +780,6 @@
       "to_id": "bc1pjywvrxfrsr25dkl9gmtuy8w7w8a7mg7vz0j89v3g6d0x8suvgg6qdchqul",
       "community": null,
       "txid": "ee502c274510482cb071814bfc7ebaf29379f48cf6c0df5d906a30db017024bd"
-    },
-    {
-      "id": "141143510d8fb3de7efb8bebfbee4a964465b4b41a927077547b0c485f6e7b81",
-      "ts": "2026-07-09T09:58:53+00:00",
-      "type": "exchange_out",
-      "amount_dog": 13792683.81192,
-      "level": "info",
-      "from_label": "Top #2",
-      "to_label": "bc1p8d8k...tach",
-      "from_id": "h2",
-      "to_id": "bc1p8d8kexdxatnfejdvd9dq7uky4m9wjxl59r3dnqg7nqq9gaxz2jxq6ntach",
-      "community": null,
-      "txid": "141143510d8fb3de7efb8bebfbee4a964465b4b41a927077547b0c485f6e7b81"
     }
   ]
 }
