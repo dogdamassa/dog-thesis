@@ -4,6 +4,21 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
+## 2026-07-11 ⚠️ Cluster ativo · baleia alimenta relays diretamente
+
+> Fonte: `data/daily.json` + `data/feed.json` · atualizado às 10:37 UTC · dado fresco (arquivos locais).
+
+- **Baleia (Vault #1, rank #1):** **12,12% do supply** (12,117B DOG). Δ líquido bruto: +51,6M DOG (entradas 262M > saídas 210M). **NÃO depositou diretamente em exchange conhecida** (cofre_to_exchange: 0).
+- **Saques da baleia hoje (3 txs = 210,5M DOG brutos):** 204,1M DOG (05:38 UTC) + 5,4M (04:55) + 1,1M (10:34) → todas para **fresh wallets não mapeadas**. Padrão recorrente de pass-through.
+- **Aportes na baleia hoje:** 249,5M DOG (06:49 UTC) + 12,6M (10:03) ← wallets não mapeadas — dinâmica de entrada/saída simultânea suspeita.
+- ⚠️ **Cluster relay ATIVO hoje:**
+  - `Gate (Top #2) → Int#2` : 13,0M DOG @ 09:07 UTC
+  - `Int#2 → Bitget (Top #3)` : 11,6M DOG @ 09:24 UTC
+  - `Int#1 → Bitget (Top #3)` : 2,8M DOG @ 04:45 UTC
+- **Ligação baleia → relays confirmada (10/07):** A baleia enviou diretamente para Int#1 (7,6M) e Int#2 (22,4M + 10,4M + 5,1M) em 10/07 às 11:12 UTC — os mesmos relays que hoje despejam na Bitget.
+- **Saques novos Binance → cluster (72h):** Binance hot wallet não aparece como counterparty direto em Int#1/Int#2/Int#3 nesta janela. Fonte visível dos relays: Gate. Int#3 sem atividade recente.
+- 🔎 **Leitura:** **Movimento suspeito.** A baleia alimenta Int#1/Int#2 diretamente, que por sua vez despejam na Bitget (pass-through chain documentado). Hoje o fluxo de entrada nos relays vem da Gate, mas **a Binance pode estar envolvida** — historicamente foi ela que alimentou essa mesma estrutura via Int#3 (48 saques documentados). O padrão de entrada/saída simultânea na baleia (wallets não mapeadas ↔ fresh wallets) sugere gestão ativa da posição. Sem acusação de crime: descrevemos o que a chain mostra.
+
 ## 2026-07-10 ✅ Dado FRESCO — Cluster ativo · pass-through suspeito
 
 > Fonte: `data/daily.json` + `data/feed.json` + `data/graph.json` · atualizado às 12:11 UTC · dogdata.xyz acessível via scripts locais (proxy remoto segue bloqueado).
