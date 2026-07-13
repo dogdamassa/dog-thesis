@@ -285,8 +285,13 @@
     pAddr.then(function (a) {
       renderState('signing');
       var msg = 'scroll_claim:reward:' + a + ':' + Date.now();
-      var sign = (typeof w.signMessageWithConfirmation === 'function')
-        ? w.signMessageWithConfirmation(msg) : w.signMessage(msg);
+      /* prefer the lighter signMessage: on an already-connected/unlocked wallet
+         it signs with a single tap and NO password re-entry (better conversion).
+         It still pops a confirm for scroll_* messages so the user stays in
+         control, and the L2 reward never debits them. Same 128-hex Schnorr
+         signature as WithConfirmation, so KRAY verifies it identically. */
+      var sign = (typeof w.signMessage === 'function')
+        ? w.signMessage(msg) : w.signMessageWithConfirmation(msg);
       return Promise.all([sign, getPubkey()]).then(function (rs) {
         var sig = rs[0] && rs[0].signature, pk = rs[1];
         if (!sig) throw { locked: !!(rs[0] && rs[0].needsUserAction) };

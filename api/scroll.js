@@ -92,6 +92,19 @@ module.exports = async function handler(req, res) {
       res.status(400).json({ success: false, error: 'quiz' });
       return;
     }
+    /* one-per-wallet, enforced at OUR layer: this scroll is open-mode and its
+       claim_mode is immutable on-chain (KRAY refuses to switch it to single),
+       so we refuse a claim from a wallet the escrow ledger already paid — no
+       single wallet drains the pool. Best-effort: fails open on a check-claim
+       blip so a KRAY hiccup can't block honest first-timers (the quiz still
+       gates bots). The 15-min-fresh signed message also caps replay bursts. */
+    try {
+      var chk = await kray.getJson(kray.KRAY + '/api/dev-scroll/check-claim/' + key + '/' + addr);
+      if (chk && chk.claimed === true) {
+        res.status(409).json({ success: false, error: 'already-claimed' });
+        return;
+      }
+    } catch (e) { /* ledger check unavailable — don't block a legit claim on it */ }
     try {
       var r = await fetch(kray.KRAY + '/api/dev-scroll/claim', {
         method: 'POST',
