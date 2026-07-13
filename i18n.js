@@ -21,19 +21,19 @@ window.DOG_I18N = {
     "mt.b2": "Conversar no DAO Room",
     "pl.k": "Planos · a $DOG Army em ação",
     "pl.h": "Conversar. Planejar. Financiar. <span>Executar no Bitcoin.</span>",
-    "pl.lead": "A $DOG Army não é plateia. É matilha que se move. Aqui a comunidade transforma conversa em plano, financia junto e executa com cada recibo na chain. Don't trust. Verify.",
+    "pl.lead": "A $DOG Army não é plateia. É matilha que se move. Aqui a comunidade transforma conversa em plano, financia junto e executa com cada recibo na chain. Não confie. Verifique.",
     "pl.b1": "Ver os planos ↓",
     "pl.b2": "Conversar no DAO Room",
     "pl.c1t": "1 · Propor",
     "pl.c1h": "Todo plano começa como conversa.",
-    "pl.c1p": "Poste sua ideia no DOG DAO Room ou leve pra $DOG Army no KRAY Social. A matilha debate. A matilha decide. Sem comitê, sem chefe.",
+    "pl.c1p": "Poste sua ideia no DOG DAO Room ou leve pro feed social da $DOG Army. A matilha debate. A matilha decide. Sem comitê, sem chefe.",
     "pl.c2t": "2 · Financiar",
     "pl.c2h": "A matilha financia junto.",
-    "pl.c2p": "Plano ativo ganha endereço on-chain próprio, publicado aqui. Qualquer um contribui $DOG direto da própria KrayWallet. Cada contribuição é uma transação que qualquer um audita no DogScan.",
+    "pl.c2p": "Plano ativo ganha endereço on-chain próprio, publicado aqui. Qualquer um contribui $DOG direto da própria carteira. Cada contribuição é uma transação que qualquer um audita no DogScan.",
     "pl.c3t": "3 · Executar",
     "pl.c3h": "Executado com recibo.",
     "pl.c3p": "Quem recebeu, o que foi pago, o que foi entregue: cada passo é publicado nesta página com sua transação e sua fonte. Militância com recibo.",
-    "pl.bk": "O board · ao vivo da chain",
+    "pl.bk": "O quadro · ao vivo da chain",
     "pl.bh": "Planos da matilha.",
     "pl.loading": "Carregando os planos…",
     "pl.note": "O número de cada plano ativo é o saldo atual do cofre on-chain dele, lido ao vivo da chain. Não é promessa, não é banco de dados: é um saldo que você mesmo verifica no DogScan.",
@@ -50,16 +50,18 @@ window.DOG_I18N = {
     "pl.jp": "Leva pro DOG DAO Room. Diz o que ele faz, quem executa e que recibo deixa. A $DOG Army debate ali mesmo, com voz de holder pesada on-chain.",
     "pl.jb1": "Abrir o DAO Room",
     "pl.jb2": "Chamar o @dogdamassa no X ↗",
-    "pl.mSub": "Contribuição em $DOG no Origin Layer, da sua wallet pro cofre público do plano. A KRAY cobra 1 KRAY de gás.",
+    "pl.mSub": "Contribuição em $DOG, da sua carteira direto pro cofre público do plano. A rede cobra 1 KRAY de gás.",
     "pl.mAmount": "Quanto $DOG marcha com a matilha?",
     "pl.mGo": "Contribuir · assinar na wallet",
     "pl.mGas": "Atenção: sua conta L2 precisa de pelo menos 1 KRAY de gás.",
-    "pl.mBusy": "Esperando a KRAY Wallet… confere o popup da extensão.",
+    "pl.mBusy": "Esperando sua carteira… confere o popup da extensão.",
     "pl.mDone": "Contribuição na chain. A matilha agradece, soldado.",
     "pl.mTx": "Ver o recibo no DogScan",
-    "pl.ftLine": "Planos — propostos pela comunidade, financiados no Origin Layer, verificados no Bitcoin.",
-    "pl.ftDisc": "Planos comunitários são propostos e executados pela própria comunidade. Contribuições são transações L2 voluntárias sob as regras do protocolo KRAY, não são investimento e não compram nada. Nada aqui é conselho financeiro. Verifique cada endereço e cada recibo você mesmo.",
+    "pl.ftLine": "Planos — propostos, financiados e executados pela comunidade, verificados no Bitcoin.",
+    "pl.ftDisc": "Planos comunitários são propostos e executados pela própria comunidade. Contribuições são transações L2 voluntárias sob as regras do protocolo da rede, não são investimento e não compram nada. Nada aqui é conselho financeiro. Verifique cada endereço e cada recibo você mesmo.",
     "pl.w3link": "Os planos que nascem nesta sala moram em Planos: financiados pela matilha, executados com recibo →",
+    "pl.mNoW": "Você precisa da extensão de carteira da $DOG Army pra marchar com a matilha. É grátis e leva um minuto:",
+    "pl.mInstall": "Instalar a carteira ↗",
     "vf.view": "Ver ↗",
     "vf.download": "Baixar ↓",
     "vf.archiveDocs": "documentos",
@@ -712,7 +714,7 @@ window.DOG_I18N = {
     "w3.eyebrow": "Social Space · Origin Layer",
     "w3.h1": "Sua patente vive <span>no Bitcoin.</span>",
     "w3.sub": "Sem cadastro, sem e-mail, sem senha. Conecte sua KRAY Wallet e esta página lê a blockchain: sua $DOG, sua Runestone, seu Dog Social Club. O que você segura é o que você é.",
-    "w3.connect": "Conectar KRAY Wallet",
+    "w3.connect": "Conectar carteira",
     "w3.soon": "em breve",
     "w3.pfEmpty": "Seu perfil on-chain abre aqui quando você conectar a KRAY Wallet lá em cima — sats, inscriptions, runas, KRAY e sua patente, lidos ao vivo da chain. Somente leitura: esta página nunca consegue mover suas moedas.",
     "w3.pfCopy": "Copiar",
@@ -839,19 +841,19 @@ window.DOG_I18N = {
     "mt.b2": "Conversar en el DAO Room",
     "pl.k": "Planes · la $DOG Army en acción",
     "pl.h": "Conversar. Planear. Financiar. <span>Ejecutar en Bitcoin.</span>",
-    "pl.lead": "La $DOG Army no es público. Es una manada que se mueve. Aquí la comunidad convierte conversación en planes, los financia junta y ejecuta con cada recibo en la chain. Don't trust. Verify.",
+    "pl.lead": "La $DOG Army no es público. Es una manada que se mueve. Aquí la comunidad convierte conversación en planes, los financia junta y ejecuta con cada recibo en la chain. No confíes. Verifica.",
     "pl.b1": "Ver los planes ↓",
     "pl.b2": "Conversar en el DAO Room",
     "pl.c1t": "1 · Proponer",
     "pl.c1h": "Todo plan empieza como conversación.",
-    "pl.c1p": "Publica tu idea en el DOG DAO Room o llévala a la $DOG Army en KRAY Social. La manada debate. La manada decide. Sin comité, sin jefe.",
+    "pl.c1p": "Publica tu idea en el DOG DAO Room o llévala al feed social de la $DOG Army. La manada debate. La manada decide. Sin comité, sin jefe.",
     "pl.c2t": "2 · Financiar",
     "pl.c2h": "La manada financia junta.",
-    "pl.c2p": "Un plan activo recibe su propia dirección on-chain, publicada aquí. Cualquiera contribuye $DOG directo desde su propia KrayWallet. Cada contribución es una transacción que cualquiera audita en DogScan.",
+    "pl.c2p": "Un plan activo recibe su propia dirección on-chain, publicada aquí. Cualquiera contribuye $DOG directo desde su propia cartera. Cada contribución es una transacción que cualquiera audita en DogScan.",
     "pl.c3t": "3 · Ejecutar",
     "pl.c3h": "Ejecutado con recibos.",
     "pl.c3p": "Quién recibió, qué se pagó, qué se entregó: cada paso se publica en esta página con su transacción y su fuente. Militancia con recibo.",
-    "pl.bk": "El board · en vivo desde la chain",
+    "pl.bk": "El tablero · en vivo desde la chain",
     "pl.bh": "Planes de la manada.",
     "pl.loading": "Cargando los planes…",
     "pl.note": "El número de cada plan activo es el saldo actual de su bóveda on-chain, leído en vivo de la chain. No es una promesa, no es una base de datos: es un saldo que tú mismo verificas en DogScan.",
@@ -868,16 +870,18 @@ window.DOG_I18N = {
     "pl.jp": "Llévalo al DOG DAO Room. Di qué hace, quién lo ejecuta y qué recibo deja. La $DOG Army lo debate ahí mismo, con voz de holder pesada on-chain.",
     "pl.jb1": "Abrir el DAO Room",
     "pl.jb2": "Llamar a @dogdamassa en X ↗",
-    "pl.mSub": "Contribución en $DOG en el Origin Layer, de tu wallet a la bóveda pública del plan. KRAY cobra 1 KRAY de gas.",
+    "pl.mSub": "Contribución en $DOG, de tu cartera directo a la bóveda pública del plan. La red cobra 1 KRAY de gas.",
     "pl.mAmount": "¿Cuánto $DOG marcha con la manada?",
     "pl.mGo": "Contribuir · firmar en la wallet",
     "pl.mGas": "Ojo: tu cuenta L2 necesita al menos 1 KRAY de gas.",
-    "pl.mBusy": "Esperando la KRAY Wallet… mira el popup de la extensión.",
+    "pl.mBusy": "Esperando tu cartera… mira el popup de la extensión.",
     "pl.mDone": "Contribución en la chain. La manada te lo agradece, soldado.",
     "pl.mTx": "Ver el recibo en DogScan",
-    "pl.ftLine": "Planes — propuestos por la comunidad, financiados en el Origin Layer, verificados en Bitcoin.",
-    "pl.ftDisc": "Los planes comunitarios los propone y ejecuta la propia comunidad. Las contribuciones son transacciones L2 voluntarias bajo las reglas del protocolo KRAY, no son una inversión y no compran nada. Nada aquí es consejo financiero. Verifica cada dirección y cada recibo tú mismo.",
+    "pl.ftLine": "Planes — propuestos, financiados y ejecutados por la comunidad, verificados en Bitcoin.",
+    "pl.ftDisc": "Los planes comunitarios los propone y ejecuta la propia comunidad. Las contribuciones son transacciones L2 voluntarias bajo las reglas del protocolo de la red, no son una inversión y no compran nada. Nada aquí es consejo financiero. Verifica cada dirección y cada recibo tú mismo.",
     "pl.w3link": "Los planes que nacen en esta sala viven en Planes: financiados por la manada, ejecutados con recibos →",
+    "pl.mNoW": "Necesitas la extensión de cartera de la $DOG Army para marchar con la manada. Es gratis y toma un minuto:",
+    "pl.mInstall": "Instalar la cartera ↗",
     "nav.radar": "Radar",
     "rd.k": "Radar de flujo de wallets · se actualiza cada día",
     "rd.h": "Hacia dónde se movió $DOG hoy",
@@ -1505,7 +1509,7 @@ window.DOG_I18N = {
     "w3.eyebrow": "Social Space · Origin Layer",
     "w3.h1": "Tu rango vive <span>en Bitcoin.</span>",
     "w3.sub": "Sin registro, sin correo, sin contraseña. Conecta tu KRAY Wallet y esta página lee la blockchain: tus $DOG, tu Runestone, tu Dog Social Club. Lo que sostienes es lo que eres.",
-    "w3.connect": "Conectar KRAY Wallet",
+    "w3.connect": "Conectar cartera",
     "w3.soon": "pronto",
     "w3.pfEmpty": "Tu perfil on-chain se abre aquí cuando conectes la KRAY Wallet arriba — sats, inscriptions, runas, KRAY y tu rango, leídos en vivo de la chain. Solo lectura: esta página nunca puede mover tus monedas.",
     "w3.pfCopy": "Copiar",
@@ -1636,6 +1640,10 @@ window.DOG_I18N = {
     });
     document.documentElement.setAttribute("lang", lang === "zh" ? "zh-CN" : (lang === "pt" ? "pt-BR" : lang));
     try { sessionStorage.setItem("dogLang", lang); } catch (e) {}
+    try { localStorage.setItem("dogLang", lang); } catch (e) {}
+    /* dynamic renderers (planos.js etc.) re-render on this signal, so a language
+       switch never leaves JS-built content behind in the old language */
+    try { document.dispatchEvent(new CustomEvent("dog:lang", { detail: { lang: lang } })); } catch (e) {}
     var sw = document.getElementById("langsw");
     if (sw) {
       var cur = sw.querySelector(".langsw-cur");
@@ -1649,8 +1657,10 @@ window.DOG_I18N = {
   }
 
   function pick() {
-    // English on every fresh entry. ?lang= always wins (shared links); a choice made
-    // via the switcher persists only for the current session, never across visits.
+    // ?lang= always wins (shared links). A choice made via the switcher persists
+    // across tabs and visits (localStorage; sessionStorage kept as the per-tab
+    // mirror that page scripts read). First visit with no choice: follow the
+    // browser language, so a PT-BR soldier lands in PT and nothing mixes.
     try {
       var q = new URLSearchParams(location.search).get("lang");
       if (q && has(q)) return q;
@@ -1658,6 +1668,15 @@ window.DOG_I18N = {
     try {
       var s = sessionStorage.getItem("dogLang");
       if (s && has(s)) return s;
+    } catch (e) {}
+    try {
+      var l = localStorage.getItem("dogLang");
+      if (l && has(l)) return l;
+    } catch (e) {}
+    try {
+      var nav = String((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase();
+      if (nav.indexOf("pt") === 0 && has("pt")) return "pt";
+      if (nav.indexOf("es") === 0 && has("es")) return "es";
     } catch (e) {}
     return "en";
   }

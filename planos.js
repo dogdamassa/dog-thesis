@@ -13,10 +13,24 @@
   var DOG_RAW = 100000;            /* 1 $DOG = 1e5 raw (divisibility 5) */
   var MAX_DOG = 10000000;          /* sanity bound, casa com a API */
 
-  var lang = null;
-  try { lang = sessionStorage.getItem('dogLang'); } catch (e) {}
-  if (!lang && /[?&]lang=(pt|es)/.test(location.search)) lang = RegExp.$1;
-  if (lang !== 'pt' && lang !== 'es') lang = 'en';
+  /* idioma: mesma cascata do i18n.js (que roda antes e espelha a escolha no
+     sessionStorage); fallback pra localStorage (outras abas) e pro idioma do
+     navegador, pra nunca abrir metade PT metade EN */
+  function resolveLang() {
+    var l = null;
+    if (/[?&]lang=(pt|es|en)/.test(location.search)) l = RegExp.$1;
+    if (!l) { try { l = sessionStorage.getItem('dogLang'); } catch (e) {} }
+    if (!l) { try { l = localStorage.getItem('dogLang'); } catch (e) {} }
+    if (!l) {
+      try {
+        var nav = String((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+        if (nav.indexOf('pt') === 0) l = 'pt';
+        else if (nav.indexOf('es') === 0) l = 'es';
+      } catch (e) {}
+    }
+    return (l === 'pt' || l === 'es') ? l : 'en';
+  }
+  var lang = resolveLang();
 
   var STR = {
     en: {
@@ -25,11 +39,11 @@
       status: { proposta: 'PROPOSAL', captando: 'FUNDING LIVE', executando: 'EXECUTING', concluido: 'DONE' },
       goal: 'Goal', goalDao: 'Goal set in the DAO Room', vault: 'In the plan vault now',
       exec: 'How it executes', receipts: 'Receipts',
-      discuss: 'Debate it in the DAO Room ↗', contribute: 'Contribute $DOG',
+      discuss: 'Debate it in the DAO Room', contribute: 'Contribute $DOG',
       verify: 'Verify the vault on DogScan', copy: 'Copy', copied: 'Copied ✓',
       soonNote: 'This plan is a live proposal. The pack debates it in the DAO Room; the vault address is published here the moment funding opens.',
       badAmount: 'Enter a whole amount between 1 and 10,000,000 $DOG.',
-      signing: 'Check the KRAY Wallet popup and confirm the transfer…',
+      signing: 'Check your wallet popup and confirm the transfer…',
       sending: 'Broadcasting to the Origin Layer…',
       refused: 'The wallet did not sign. No coins moved. Try again when you are ready.',
       failTx: 'The Origin Layer refused the transaction. No coins moved. Reason: ',
@@ -41,11 +55,11 @@
       status: { proposta: 'PROPOSTA', captando: 'CAPTANDO', executando: 'EXECUTANDO', concluido: 'CONCLUÍDO' },
       goal: 'Meta', goalDao: 'Meta definida no DAO Room', vault: 'No cofre do plano agora',
       exec: 'Como executa', receipts: 'Recibos',
-      discuss: 'Debater no DAO Room ↗', contribute: 'Contribuir $DOG',
+      discuss: 'Debater no DAO Room', contribute: 'Contribuir $DOG',
       verify: 'Verificar o cofre no DogScan', copy: 'Copiar', copied: 'Copiado ✓',
       soonNote: 'Este plano é uma proposta viva. A matilha debate no DAO Room; o endereço do cofre é publicado aqui assim que a captação abrir.',
       badAmount: 'Digite um valor inteiro entre 1 e 10.000.000 $DOG.',
-      signing: 'Confira o popup da KRAY Wallet e confirme a transferência…',
+      signing: 'Confira o popup da sua carteira e confirme a transferência…',
       sending: 'Transmitindo pro Origin Layer…',
       refused: 'A wallet não assinou. Nenhuma moeda saiu do lugar. Tenta quando quiser.',
       failTx: 'O Origin Layer recusou a transação. Nenhuma moeda saiu do lugar. Motivo: ',
@@ -57,19 +71,24 @@
       status: { proposta: 'PROPUESTA', captando: 'RECAUDANDO', executando: 'EJECUTANDO', concluido: 'HECHO' },
       goal: 'Meta', goalDao: 'Meta definida en el DAO Room', vault: 'En la bóveda del plan ahora',
       exec: 'Cómo se ejecuta', receipts: 'Recibos',
-      discuss: 'Debatir en el DAO Room ↗', contribute: 'Contribuir $DOG',
+      discuss: 'Debatir en el DAO Room', contribute: 'Contribuir $DOG',
       verify: 'Verificar la bóveda en DogScan', copy: 'Copiar', copied: 'Copiado ✓',
       soonNote: 'Este plan es una propuesta viva. La manada lo debate en el DAO Room; la dirección de la bóveda se publica aquí cuando abra la recaudación.',
       badAmount: 'Escribe un valor entero entre 1 y 10.000.000 $DOG.',
-      signing: 'Mira el popup de la KRAY Wallet y confirma la transferencia…',
+      signing: 'Mira el popup de tu cartera y confirma la transferencia…',
       sending: 'Transmitiendo al Origin Layer…',
       refused: 'La wallet no firmó. Ninguna moneda se movió. Inténtalo cuando quieras.',
       failTx: 'El Origin Layer rechazó la transacción. Ninguna moneda se movió. Motivo: ',
       gas: 'Ojo: tu cuenta L2 necesita al menos 1 KRAY de gas.'
     }
   };
-  var T = STR[lang];
-  var NUM = lang === 'en' ? 'en-US' : (lang === 'es' ? 'es-ES' : 'pt-BR');
+  var T, NUM;
+  function setLang(l) {
+    lang = (l === 'pt' || l === 'es') ? l : 'en';
+    T = STR[lang];
+    NUM = lang === 'en' ? 'en-US' : (lang === 'es' ? 'es-ES' : 'pt-BR');
+  }
+  setLang(lang);
 
   function $(id) { return document.getElementById(id); }
   function el(tag, cls, text) {
@@ -82,8 +101,8 @@
   function fmt(n) { try { return Number(n).toLocaleString(NUM, { maximumFractionDigits: 0 }); } catch (e) { return String(n); } }
   function short(a) { return a ? a.slice(0, 10) + '…' + a.slice(-6) : ''; }
 
-  var board = null, discussUrl = 'https://www.kray.space/dao-room?rune=DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON';
-  var plansById = {};
+  var board = null, discussUrl = '/web3';
+  var plansById = {}, boardData = null;
 
   /* ---------- board ---------- */
 
@@ -163,7 +182,8 @@
       acts.appendChild(vf);
     } else {
       var d = el('a', 'btn secondary', T.discuss);
-      d.href = discussUrl; d.target = '_blank'; d.rel = 'noopener';
+      d.href = discussUrl;
+      if (discussUrl.charAt(0) !== '/') { d.target = '_blank'; d.rel = 'noopener'; }
       acts.appendChild(d);
     }
     card.appendChild(acts);
@@ -171,6 +191,7 @@
   }
 
   function renderBoard(data) {
+    boardData = data;
     board.textContent = '';
     discussUrl = data.discuss || discussUrl;
     (data.plans || []).forEach(function (p) {
@@ -315,6 +336,16 @@
     $('plScrim').addEventListener('click', closeModal);
     document.addEventListener('keydown', function (ev) {
       if (ev.key === 'Escape' && !$('plModal').hidden) closeModal();
+    });
+
+    /* o i18n.js avisa quando o idioma troca: re-renderiza o board (os cards são
+       construídos por JS e não têm data-i18n) pra página nunca ficar misturada */
+    document.addEventListener('dog:lang', function (ev) {
+      var l = ev && ev.detail && ev.detail.lang;
+      if (!l || l === lang) return;
+      setLang(l);
+      if (!$('plModal').hidden) closeModal();
+      if (boardData) renderBoard(boardData);
     });
   });
 })();

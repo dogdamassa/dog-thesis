@@ -2,7 +2,7 @@
   "_readme": "Planos da matilha (fonte do /planos). Para ATIVAR a captação de um plano: preencha 'address' com um endereço taproot (bc1p...) controlado pelos executores do plano e mude 'status' para 'captando'. A api/planos.js só aceita contribuição para plano 'captando' com endereço válido; o destino é sempre lido daqui no servidor, nunca do cliente. Status: proposta -> captando -> executando -> concluido. 'goal' em unidades de display do token (DOG); null = meta a definir no DAO. 'receipts' recebe os recibos da execução: {label:{en,pt,es}, url}.",
   "updated": "2026-07-13",
   "token": "DOG",
-  "discuss": "https://www.kray.space/dao-room?rune=DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON",
+  "discuss": "/web3",
   "plans": [
     {
       "id": "recarga-dog-drop",
@@ -34,14 +34,14 @@
       "goal": null,
       "address": null,
       "title": {
-        "en": "First aid mutirão of the pack",
+        "en": "First community aid drive",
         "pt": "1º Mutirão de ajuda da matilha",
-        "es": "1er Mutirão de ayuda de la manada"
+        "es": "1ª Jornada de ayuda de la manada"
       },
       "pitch": {
-        "en": "The $DOG Army exists beyond the chart. First social mutirão: turn $DOG into real help for people who need it. Food on the table. Receipt on the chain.",
+        "en": "The $DOG Army exists beyond the chart. First community aid drive: turn $DOG into real help for people who need it. Food on the table. Receipt on the chain.",
         "pt": "A $DOG Army existe pra além do gráfico. Primeiro mutirão social: transformar $DOG em ajuda real pra quem precisa. Comida na mesa. Recibo na chain.",
-        "es": "La $DOG Army existe más allá del gráfico. Primer mutirão social: convertir $DOG en ayuda real para quien la necesita. Comida en la mesa. Recibo en la chain."
+        "es": "La $DOG Army existe más allá del gráfico. Primera jornada social: convertir $DOG en ayuda real para quien la necesita. Comida en la mesa. Recibo en la chain."
       },
       "exec": {
         "en": "The community picks the action in the DAO Room. Local executors buy and deliver. Photos, invoices and transactions published right here.",
