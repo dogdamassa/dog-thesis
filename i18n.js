@@ -462,9 +462,9 @@ window.DOG_I18N = {
     "ss.p2": "<b>Negocie sem se render.</b> Swap atômico de Ordinals na L1 do Bitcoin. Sem depósito. Sem custódia. Uma assinatura na sua própria carteira.",
     "ss.p3": "<b>Pergunte ao Satoshi.</b> Um guia que lê o node ao vivo e responde em qualquer idioma. Texto e microfone de graça.",
     "ss.b1": "Explorar aqui mesmo",
-    "ss.b2": "Abrir em tela cheia ↗",
+    "ss.b2": "Abrir o universo completo ↗",
     "ss.b3": "O que eu tô vendo?",
-    "ss.live": "O universo ao vivo · alimentado por um node real de Bitcoin",
+    "ss.live": "O universo ao vivo · pra conectar a carteira, abra o universo completo",
     "ss.close": "Fechar ✕",
     "ss.mt": "Um explorer de Bitcoin. Só que no espaço.",
     "ss.m1": "Explorer é onde você confere o que acontece no Bitcoin: blocos, transações, endereços. Normalmente parece uma planilha. O satspace pega os mesmos dados e desenha um universo.",
@@ -1296,9 +1296,9 @@ window.DOG_I18N = {
     "ss.p2": "<b>Negocia sin rendirte.</b> Swaps atómicos de Ordinals en la L1 de Bitcoin. Sin depósito. Sin custodia. Una firma en tu propia wallet.",
     "ss.p3": "<b>Pregúntale a Satoshi.</b> Un guía que lee el nodo en vivo y responde en cualquier idioma. Texto y micrófono gratis.",
     "ss.b1": "Explorar aquí mismo",
-    "ss.b2": "Abrir a pantalla completa ↗",
+    "ss.b2": "Abrir el universo completo ↗",
     "ss.b3": "¿Qué estoy viendo?",
-    "ss.live": "El universo en vivo · alimentado por un nodo real de Bitcoin",
+    "ss.live": "El universo en vivo · para conectar tu wallet, abre el universo completo",
     "ss.close": "Cerrar ✕",
     "ss.mt": "Un explorer de Bitcoin. Pero en el espacio.",
     "ss.m1": "Un explorer es donde compruebas lo que pasa en Bitcoin: bloques, transacciones, direcciones. Normalmente parece una hoja de cálculo. satspace toma los mismos datos y dibuja un universo.",
@@ -2005,6 +2005,9 @@ window.DOG_I18N = {
           f.title = "satspace";
           f.allow = "fullscreen; clipboard-write";
           f.setAttribute("allowfullscreen", "");
+          /* sem allow-popups: nada dentro do embed abre aba externa.
+             Carteira é no /universo (nosso domínio), onde a extensão existe. */
+          f.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms allow-pointer-lock");
           frameBox.appendChild(f);
         }
         portal.hidden = false;

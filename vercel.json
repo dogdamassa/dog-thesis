@@ -5,6 +5,24 @@
   "installCommand": null,
   "outputDirectory": ".",
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/universo",
+      "destination": "https://www.satspace.io/"
+    },
+    {
+      "source": "/assets/:path*",
+      "destination": "https://www.satspace.io/assets/:path*"
+    },
+    {
+      "source": "/audio/:path*",
+      "destination": "https://www.satspace.io/audio/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://www.satspace.io/api/:path*"
+    }
+  ],
   "redirects": [
     {
       "source": "/(.*)",
@@ -30,7 +48,24 @@
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/universo",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "microphone=(self), camera=(), geolocation=(), payment=(), usb=()"
+        }
+      ]
+    },
+    {
+      "source": "/((?!universo).*)",
       "headers": [
         {
           "key": "Content-Security-Policy",
