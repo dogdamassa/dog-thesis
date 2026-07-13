@@ -1,0 +1,77 @@
+{
+  "_readme": "Planos da matilha (fonte do /planos). Para ATIVAR a captação de um plano: preencha 'address' com um endereço taproot (bc1p...) controlado pelos executores do plano e mude 'status' para 'captando'. A api/planos.js só aceita contribuição para plano 'captando' com endereço válido; o destino é sempre lido daqui no servidor, nunca do cliente. Status: proposta -> captando -> executando -> concluido. 'goal' em unidades de display do token (DOG); null = meta a definir no DAO. 'receipts' recebe os recibos da execução: {label:{en,pt,es}, url}.",
+  "updated": "2026-07-13",
+  "token": "DOG",
+  "discuss": "https://www.kray.space/dao-room?rune=DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON",
+  "plans": [
+    {
+      "id": "recarga-dog-drop",
+      "status": "proposta",
+      "emoji": "🐶",
+      "goal": { "token": "DOG", "amount": 5000 },
+      "address": null,
+      "title": {
+        "en": "Reload the DOG Drop",
+        "pt": "Recarregar o DOG Drop",
+        "es": "Recargar el DOG Drop"
+      },
+      "pitch": {
+        "en": "The puppy on the home page pays real $DOG to every new soldier. Straight to self-custody. The pool is finite. The pack reloads it and no recruit misses their first $DOG.",
+        "pt": "O filhote da home paga $DOG de verdade pra quem chega. Direto pra autocustódia. A pool é finita. A matilha recarrega e nenhum novato fica sem o primeiro $DOG.",
+        "es": "El cachorro de la home paga $DOG de verdad a quien llega. Directo a la autocustodia. La pool es finita. La manada la recarga y ningún novato se queda sin su primer $DOG."
+      },
+      "exec": {
+        "en": "The fund becomes a reload of the DOG Drop's on-chain escrow. Every reload is a public transaction. Every claim is paid by the escrow itself.",
+        "pt": "O fundo vira recarga do escrow on-chain do DOG Drop. Cada recarga é uma transação pública. Cada claim é pago pelo próprio escrow.",
+        "es": "El fondo se convierte en recarga del escrow on-chain del DOG Drop. Cada recarga es una transacción pública. Cada claim lo paga el propio escrow."
+      },
+      "receipts": []
+    },
+    {
+      "id": "mutirao-ajuda",
+      "status": "proposta",
+      "emoji": "🧡",
+      "goal": null,
+      "address": null,
+      "title": {
+        "en": "First aid mutirão of the pack",
+        "pt": "1º Mutirão de ajuda da matilha",
+        "es": "1er Mutirão de ayuda de la manada"
+      },
+      "pitch": {
+        "en": "The $DOG Army exists beyond the chart. First social mutirão: turn $DOG into real help for people who need it. Food on the table. Receipt on the chain.",
+        "pt": "A $DOG Army existe pra além do gráfico. Primeiro mutirão social: transformar $DOG em ajuda real pra quem precisa. Comida na mesa. Recibo na chain.",
+        "es": "La $DOG Army existe más allá del gráfico. Primer mutirão social: convertir $DOG en ayuda real para quien la necesita. Comida en la mesa. Recibo en la chain."
+      },
+      "exec": {
+        "en": "The community picks the action in the DAO Room. Local executors buy and deliver. Photos, invoices and transactions published right here.",
+        "pt": "A comunidade escolhe a ação no DAO Room. Executores locais compram e entregam. Fotos, notas e transações publicadas aqui.",
+        "es": "La comunidad elige la acción en el DAO Room. Ejecutores locales compran y entregan. Fotos, facturas y transacciones publicadas aquí."
+      },
+      "receipts": []
+    },
+    {
+      "id": "dog-nas-ruas",
+      "status": "proposta",
+      "emoji": "🏴",
+      "goal": { "token": "DOG", "amount": 20000 },
+      "address": null,
+      "title": {
+        "en": "$DOG on the streets",
+        "pt": "$DOG nas ruas",
+        "es": "$DOG en las calles"
+      },
+      "pitch": {
+        "en": "Stickers, posters and QR codes. $DOG was born on Bitcoin and the street needs to know. Printed by the pack. Spread by the pack.",
+        "pt": "Adesivo, lambe e QR code. O $DOG nasceu no Bitcoin e a rua precisa saber. Impresso pela matilha. Espalhado pela matilha.",
+        "es": "Stickers, carteles y códigos QR. $DOG nació en Bitcoin y la calle tiene que saberlo. Impreso por la manada. Repartido por la manada."
+      },
+      "exec": {
+        "en": "Print-shop quote published before. Invoice and photo of every batch published after. All linked here.",
+        "pt": "Orçamento de gráfica publicado antes. Nota fiscal e foto de cada remessa publicadas depois. Tudo linkado aqui.",
+        "es": "Presupuesto de imprenta publicado antes. Factura y foto de cada lote publicadas después. Todo enlazado aquí."
+      },
+      "receipts": []
+    }
+  ]
+}
