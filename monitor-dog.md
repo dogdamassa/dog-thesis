@@ -4,6 +4,22 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
+## 2026-07-13 ⚠️ Cluster relay ativo · baleia → Int#2 → Bitget
+
+> Fonte: `data/daily.json` + `data/feed.json` + `data/graph.json` · atualizado às 11:34 UTC · dado fresco (scripts locais; dogdata.xyz bloqueado no proxy remoto).
+
+- **Baleia (Vault #1, rank #1):** **12,22% do supply** (12,218B DOG). Δ líquido: +4,5M DOG. **NÃO depositou diretamente em exchange conhecida** (cofre_to_exchange: 0).
+- **Cluster relay ATIVO hoje:**
+  - 08:44 UTC — Vault #1 → **Int#2**: 6,537,380 DOG (cofre alimenta relay)
+  - 09:07 UTC — **Int#2 → Bitget (Top #3)**: 4,738,334 DOG (relay despeja na exchange)
+  - Padrão pass-through direto: baleia → Int#2 → Bitget, a ~25 min de distância.
+- **Outras movimentações suspeitas:**
+  - 03:10 UTC — entrada de **216,0M DOG** na baleia de wallet não mapeada (unmapped).
+  - 07:01 UTC — entrada de 9,4M DOG na baleia de wallet não mapeada.
+  - 10:04 UTC — saída de 1,7M DOG da baleia para fresh wallet (bc1pv2ek...jauk).
+- **Saques novos Binance → cluster (72h):** Binance hot wallet não aparece como counterparty direto nos relays nesta janela. Int#3 inativo desde 30/04. Fonte visível do relay Int#2 hoje: o próprio cofre (baleia).
+- 🔎 **Leitura:** **Movimento suspeito.** A baleia alimentou Int#2 diretamente às 08:44 UTC e este relay despejou 4,7M DOG na Bitget às 09:07 UTC — pass-through documentado. A entrada de 216M DOG de wallet não mapeada de madrugada mantém o padrão de gestão ativa do cofre. A Binance não aparece como counterparty direto nesta janela, mas **pode estar envolvida** na camada anterior (historicamente alimentou Int#3 com 48 saques documentados; hoje a estrutura ativa é baleia → Int#2 → Bitget). Sem acusação de crime: descrevemos o padrão que a chain mostra.
+
 ## 2026-07-12
 
 - **Baleia:** API indisponível hoje.
