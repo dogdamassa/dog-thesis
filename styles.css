@@ -3145,3 +3145,45 @@ header{box-shadow:0 8px 30px rgba(0,0,0,.32);border-bottom:1px solid rgba(255,25
   .pl-title{font-size:18px}
 }
 .mt-actions{margin-top:22px}
+
+/* ---- satspace. o universo ---- */
+.sat-feature{display:block;position:relative;overflow:hidden;text-decoration:none;color:var(--white-2);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:34px 30px;background:radial-gradient(120% 140% at 82% -10%,rgba(255,92,0,.16),transparent 52%),radial-gradient(90% 120% at 8% 110%,rgba(99,132,255,.12),transparent 55%),#060608;box-shadow:0 22px 54px rgba(0,0,0,.35);transition:transform .15s ease,border-color .15s ease}
+.sat-feature:hover{transform:translateY(-2px);border-color:rgba(255,92,0,.55)}
+.sat-sky{position:absolute;inset:0;pointer-events:none}
+.sat-sky::before,.sat-sky::after{content:"";position:absolute;inset:0}
+.sat-sky::before{background-image:
+  radial-gradient(1.5px 1.5px at 12% 24%,rgba(255,255,255,.95),transparent 60%),
+  radial-gradient(1px 1px at 32% 68%,rgba(255,255,255,.8),transparent 60%),
+  radial-gradient(1.5px 1.5px at 48% 16%,rgba(255,232,196,.9),transparent 60%),
+  radial-gradient(1px 1px at 63% 54%,rgba(255,255,255,.75),transparent 60%),
+  radial-gradient(2px 2px at 78% 30%,rgba(255,255,255,.95),transparent 60%),
+  radial-gradient(1px 1px at 88% 74%,rgba(255,214,165,.85),transparent 60%),
+  radial-gradient(1px 1px at 22% 86%,rgba(255,255,255,.7),transparent 60%),
+  radial-gradient(1.5px 1.5px at 94% 12%,rgba(255,255,255,.9),transparent 60%);
+  background-size:520px 340px;animation:satTwinkle 7s ease-in-out infinite}
+.sat-sky::after{background-image:
+  radial-gradient(1px 1px at 8% 52%,rgba(255,255,255,.6),transparent 60%),
+  radial-gradient(1px 1px at 27% 12%,rgba(255,255,255,.55),transparent 60%),
+  radial-gradient(1px 1px at 41% 88%,rgba(255,232,196,.6),transparent 60%),
+  radial-gradient(1px 1px at 57% 38%,rgba(255,255,255,.5),transparent 60%),
+  radial-gradient(1px 1px at 71% 80%,rgba(255,255,255,.55),transparent 60%),
+  radial-gradient(1px 1px at 85% 48%,rgba(255,255,255,.6),transparent 60%),
+  radial-gradient(1px 1px at 97% 90%,rgba(255,255,255,.5),transparent 60%);
+  background-size:340px 260px;animation:satTwinkle 9s ease-in-out -3s infinite}
+@keyframes satTwinkle{0%,100%{opacity:.35}50%{opacity:.85}}
+@media (prefers-reduced-motion:reduce){.sat-sky::before,.sat-sky::after{animation:none}}
+.sat-badge{position:absolute;top:26px;right:28px;width:54px;height:54px;border-radius:14px;border:1px solid rgba(255,255,255,.16);opacity:.92}
+.sat-feature-body{position:relative;max-width:760px}
+.sat-feature h3{font-size:30px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:12px;color:var(--white-2)}
+.sat-feature-body>p{color:var(--muted);font-size:15.5px;line-height:1.6}
+.sat-points{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0 4px;padding:0}
+.sat-points li{border:1px solid rgba(255,255,255,.13);border-radius:10px;background:rgba(255,255,255,.035);padding:14px 16px;font-size:13.5px;line-height:1.55;color:var(--muted)}
+.sat-points li b{display:block;color:var(--white-2);font-weight:800;margin-bottom:4px}
+.sat-feature .go{display:inline-flex;margin-top:18px;color:var(--orange);font-size:13px;font-weight:850;border-bottom:1px solid rgba(247,147,26,.38);padding-bottom:1px}
+.sat-note{font-size:13.5px;color:var(--muted);margin-top:14px;max-width:none}
+@media (max-width:860px){
+  .sat-points{grid-template-columns:1fr}
+  .sat-badge{width:42px;height:42px;top:20px;right:20px}
+  .sat-feature{padding:26px 20px}
+  .sat-feature h3{font-size:24px;padding-right:52px}
+}
