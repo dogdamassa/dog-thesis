@@ -464,7 +464,7 @@ window.DOG_I18N = {
     "ss.b1": "Explorar aqui mesmo",
     "ss.b2": "Abrir o universo completo ↗",
     "ss.b3": "O que eu tô vendo?",
-    "ss.live": "O universo ao vivo · pra conectar a carteira, abra o universo completo",
+    "ss.live": "O universo ao vivo · conecte sua carteira e acenda sua constelação",
     "ss.close": "Fechar ✕",
     "ss.mt": "Um explorer de Bitcoin. Só que no espaço.",
     "ss.m1": "Explorer é onde você confere o que acontece no Bitcoin: blocos, transações, endereços. Normalmente parece uma planilha. O satspace pega os mesmos dados e desenha um universo.",
@@ -1298,7 +1298,7 @@ window.DOG_I18N = {
     "ss.b1": "Explorar aquí mismo",
     "ss.b2": "Abrir el universo completo ↗",
     "ss.b3": "¿Qué estoy viendo?",
-    "ss.live": "El universo en vivo · para conectar tu wallet, abre el universo completo",
+    "ss.live": "El universo en vivo · conecta tu wallet y enciende tu constelación",
     "ss.close": "Cerrar ✕",
     "ss.mt": "Un explorer de Bitcoin. Pero en el espacio.",
     "ss.m1": "Un explorer es donde compruebas lo que pasa en Bitcoin: bloques, transacciones, direcciones. Normalmente parece una hoja de cálculo. satspace toma los mismos datos y dibuja un universo.",
@@ -2001,13 +2001,32 @@ window.DOG_I18N = {
       launch.addEventListener("click", function () {
         if (!frameBox.querySelector("iframe")) {
           var f = document.createElement("iframe");
-          f.src = "https://www.satspace.io/";
+          /* /universo = satspace servido pelo nosso domínio (proxy). Mesma
+             origem, então a página pai empresta a carteira pro iframe:
+             a extensão KRAY só injeta em top-level, e o satspace faz
+             polling de window.krayWallet a cada 1,5s até enxergar. */
+          f.src = "/universo";
           f.title = "satspace";
           f.allow = "fullscreen; clipboard-write";
           f.setAttribute("allowfullscreen", "");
-          /* sem allow-popups: nada dentro do embed abre aba externa.
-             Carteira é no /universo (nosso domínio), onde a extensão existe. */
+          /* sem allow-popups: nada dentro do embed abre aba externa */
           f.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms allow-pointer-lock");
+          var tries = 0;
+          function bridge() {
+            try {
+              if (f.contentWindow && window.krayWallet && !f.contentWindow.krayWallet) {
+                f.contentWindow.krayWallet = window.krayWallet;
+                try { f.contentWindow.dispatchEvent(new Event("krayWalletReady")); } catch (e) {}
+              }
+            } catch (e) { tries = 99; }
+          }
+          f.addEventListener("load", bridge);
+          /* a extensão pode injetar depois do load; insiste por ~30s */
+          var t = window.setInterval(function () {
+            tries++;
+            if (tries > 20 || !frameBox.querySelector("iframe")) { window.clearInterval(t); return; }
+            bridge();
+          }, 1500);
           frameBox.appendChild(f);
         }
         portal.hidden = false;
