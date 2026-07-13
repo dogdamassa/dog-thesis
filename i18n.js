@@ -461,7 +461,18 @@ window.DOG_I18N = {
     "ss.p1": "<b>Sua constelação.</b> Conecte a KRAY Wallet e suas inscrições sobem como estrelas de ouro num céu que só você desenha.",
     "ss.p2": "<b>Negocie sem se render.</b> Swap atômico de Ordinals na L1 do Bitcoin. Sem depósito. Sem custódia. Uma assinatura na sua própria carteira.",
     "ss.p3": "<b>Pergunte ao Satoshi.</b> Um guia que lê o node ao vivo e responde em qualquer idioma. Texto e microfone de graça.",
-    "ss.fl": "Entrar no universo →",
+    "ss.b1": "Explorar aqui mesmo",
+    "ss.b2": "Abrir em tela cheia ↗",
+    "ss.b3": "O que eu tô vendo?",
+    "ss.live": "O universo ao vivo · alimentado por um node real de Bitcoin",
+    "ss.close": "Fechar ✕",
+    "ss.mt": "Um explorer de Bitcoin. Só que no espaço.",
+    "ss.m1": "Explorer é onde você confere o que acontece no Bitcoin: blocos, transações, endereços. Normalmente parece uma planilha. O satspace pega os mesmos dados e desenha um universo.",
+    "ss.m2": "<b>Cada estrela é real.</b> Cada uma é uma inscrição gravada num satoshi de verdade. O lugar dela no céu vem do número da inscrição, então o céu é o mesmo pra todo mundo. Igual à chain.",
+    "ss.m3": "<b>Os planetas são os protocolos.</b> Ordinals, Runes, BRC-20, Lightning, Stacks e a L2 da KRAY orbitam o centro. O centro é o Bitcoin. Clicou num planeta, abre o status ao vivo. A $DOG é a Rune #3: o planeta de Runes é a nossa vizinhança.",
+    "ss.m4": "<b>O céu reage aos blocos.</b> Quando um bloco novo confirma, raios cruzam o universo inteiro e cometas voam pra sats raros. Não é enfeite. É o node reportando, em tempo real.",
+    "ss.m5": "<b>Dá pra usar, não só olhar.</b> Clique numa estrela e veja os dados reais: número, bloco, sat, taxa, dono. Conecte sua carteira e veja sua própria constelação. Negocie Ordinals por swap atômico na L1. Pergunte qualquer coisa ao Satoshi por texto, de graça.",
+    "ss.m6": "<b>Autocustódia, sempre.</b> O satspace nunca pede seed e nunca segura suas moedas. Toda ação é uma assinatura feita na sua própria carteira. Não confie. Verifique.",
     "ss.note": "O satspace está escrito no próprio céu que desenha: a rune SATSPACE foi gravada dentro da inscrição 106.364.538, block 915,390, montada num sat alpha uncommon. Qualquer um decodifica a runestone. App de terceiros no ecossistema KRAY. A lei de sempre: suas chaves, sua $DOG. Verifique.",
 
     "ev.k": "No mundo real",
@@ -1284,7 +1295,18 @@ window.DOG_I18N = {
     "ss.p1": "<b>Tu constelación.</b> Conecta la KRAY Wallet y tus inscripciones suben como estrellas de oro en un cielo que solo tú dibujas.",
     "ss.p2": "<b>Negocia sin rendirte.</b> Swaps atómicos de Ordinals en la L1 de Bitcoin. Sin depósito. Sin custodia. Una firma en tu propia wallet.",
     "ss.p3": "<b>Pregúntale a Satoshi.</b> Un guía que lee el nodo en vivo y responde en cualquier idioma. Texto y micrófono gratis.",
-    "ss.fl": "Entrar al universo →",
+    "ss.b1": "Explorar aquí mismo",
+    "ss.b2": "Abrir a pantalla completa ↗",
+    "ss.b3": "¿Qué estoy viendo?",
+    "ss.live": "El universo en vivo · alimentado por un nodo real de Bitcoin",
+    "ss.close": "Cerrar ✕",
+    "ss.mt": "Un explorer de Bitcoin. Pero en el espacio.",
+    "ss.m1": "Un explorer es donde compruebas lo que pasa en Bitcoin: bloques, transacciones, direcciones. Normalmente parece una hoja de cálculo. satspace toma los mismos datos y dibuja un universo.",
+    "ss.m2": "<b>Cada estrella es real.</b> Cada una es una inscripción grabada en un satoshi de verdad. Su lugar en el cielo viene del número de la inscripción, así que el cielo es el mismo para todos. Como la chain.",
+    "ss.m3": "<b>Los planetas son los protocolos.</b> Ordinals, Runes, BRC-20, Lightning, Stacks y la L2 de KRAY orbitan el centro. El centro es Bitcoin. Haz clic en un planeta y se abre su estado en vivo. El $DOG es la Rune #3: el planeta de Runes es nuestro vecindario.",
+    "ss.m4": "<b>El cielo reacciona a los bloques.</b> Cuando un bloque nuevo se confirma, rayos cruzan todo el universo y cometas vuelan para los sats raros. No es adorno. Es el nodo reportando, en tiempo real.",
+    "ss.m5": "<b>Se puede usar, no solo mirar.</b> Haz clic en una estrella y ve sus datos reales: número, bloque, sat, tarifa, dueño. Conecta tu wallet y ve tu propia constelación. Comercia Ordinals por swap atómico en la L1. Pregúntale lo que sea a Satoshi por texto, gratis.",
+    "ss.m6": "<b>Autocustodia, siempre.</b> satspace nunca pide una seed y nunca retiene tus monedas. Cada acción es una firma hecha en tu propia wallet. No confíes. Verifica.",
     "ss.note": "satspace está escrito en el propio cielo que dibuja: la rune SATSPACE fue grabada dentro de la inscripción 106.364.538, block 915,390, montada en un sat alpha uncommon. Cualquiera decodifica la runestone. App de terceros en el ecosistema KRAY. La ley de siempre: tus claves, tu $DOG. Verifica.",
     "ev.k": "En el mundo real",
     "ev.h": "El $DOG no vive solo on chain. Marcha en el mundo real.",
@@ -1960,6 +1982,61 @@ window.DOG_I18N = {
     window.addEventListener("scroll", function () {
       if (window.scrollY < 120) clearCurrent();
     }, { passive: true });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else { init(); }
+})();
+
+/* satspace — portal embutido (iframe só carrega no clique) + modal
+   "o que é isso". Fechar o portal remove o iframe: a engine 3D para de
+   rodar e não queima bateria de ninguém. */
+(function () {
+  function init() {
+    var launch = document.getElementById("satLaunch");
+    var portal = document.getElementById("satPortal");
+    var frameBox = document.getElementById("satFrameBox");
+    if (launch && portal && frameBox) {
+      var closeBtn = document.getElementById("satPortalClose");
+      launch.addEventListener("click", function () {
+        if (!frameBox.querySelector("iframe")) {
+          var f = document.createElement("iframe");
+          f.src = "https://www.satspace.io/";
+          f.title = "satspace";
+          f.allow = "fullscreen; clipboard-write";
+          f.setAttribute("allowfullscreen", "");
+          frameBox.appendChild(f);
+        }
+        portal.hidden = false;
+        launch.hidden = true;
+        try { portal.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {}
+      });
+      if (closeBtn) closeBtn.addEventListener("click", function () {
+        portal.hidden = true;
+        launch.hidden = false;
+        var f = frameBox.querySelector("iframe");
+        if (f) f.remove();
+      });
+    }
+    var what = document.getElementById("satWhat");
+    var modal = document.getElementById("satModal");
+    var scrim = document.getElementById("satScrim");
+    if (!what || !modal || !scrim) return;
+    var mClose = document.getElementById("satModalClose");
+    function shut() {
+      modal.hidden = true; scrim.hidden = true;
+      document.body.style.overflow = "";
+    }
+    what.addEventListener("click", function () {
+      modal.hidden = false; scrim.hidden = false;
+      document.body.style.overflow = "hidden";
+      modal.scrollTop = 0;
+    });
+    scrim.addEventListener("click", shut);
+    if (mClose) mClose.addEventListener("click", shut);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) shut();
+    });
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

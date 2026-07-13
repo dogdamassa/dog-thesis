@@ -3179,11 +3179,32 @@ header{box-shadow:0 8px 30px rgba(0,0,0,.32);border-bottom:1px solid rgba(255,25
 .sat-points{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0 4px;padding:0}
 .sat-points li{border:1px solid rgba(255,255,255,.13);border-radius:10px;background:rgba(255,255,255,.035);padding:14px 16px;font-size:13.5px;line-height:1.55;color:var(--muted)}
 .sat-points li b{display:block;color:var(--white-2);font-weight:800;margin-bottom:4px}
-.sat-feature .go{display:inline-flex;margin-top:18px;color:var(--orange);font-size:13px;font-weight:850;border-bottom:1px solid rgba(247,147,26,.38);padding-bottom:1px}
 .sat-note{font-size:13.5px;color:var(--muted);margin-top:14px;max-width:none}
+.sat-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.sat-actions .btn{cursor:pointer}
+.sat-portal{position:relative;margin-top:22px}
+.sat-portal-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.sat-portal-bar .event-feature-tag{margin-bottom:0}
+.sat-portal-close{cursor:pointer;background:transparent;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:var(--white-2);font-size:12px;font-weight:750;padding:6px 14px;transition:border-color .15s ease}
+.sat-portal-close:hover{border-color:rgba(255,92,0,.7)}
+.sat-portal-frame{position:relative;width:100%;height:min(78vh,760px);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.22);background:#000}
+.sat-portal-frame iframe{display:block;width:100%;height:100%;border:0}
+.satmodal{
+  position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:110;
+  width:min(560px,calc(100vw - 32px));max-height:min(84vh,720px);overflow:auto;
+  background:var(--black-2);border:1px solid rgba(255,255,255,.16);border-radius:20px;
+  padding:34px 30px 26px;box-shadow:0 40px 120px rgba(0,0,0,.62);
+}
+.satmodal h3{font-size:24px;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin-bottom:16px;color:var(--white-2);padding-right:34px}
+.satmodal-body p{color:var(--muted);font-size:14px;line-height:1.62;margin-bottom:13px}
+.satmodal-body p b{color:var(--white-2);font-weight:800}
+.satmodal-body p:last-child{margin-bottom:0}
 @media (max-width:860px){
   .sat-points{grid-template-columns:1fr}
   .sat-badge{width:42px;height:42px;top:20px;right:20px}
   .sat-feature{padding:26px 20px}
   .sat-feature h3{font-size:24px;padding-right:52px}
+  .sat-actions .btn{flex:1 1 100%;text-align:center;justify-content:center}
+  .sat-portal-frame{height:min(88vh,640px)}
+  .satmodal{padding:26px 20px 20px}
 }

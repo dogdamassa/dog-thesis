@@ -912,7 +912,7 @@
         <p class="lead" data-i18n="ss.lead">satspace turns the chain into a living sky. A real Bitcoin node feeds it, block by block. Every inscription is a star. Runes shine as a planet. $DOG was born in that sky: Rune #3, block 840,000. Now the $DOG Army can watch its home breathe in real time.</p>
       </div>
 
-      <a class="sat-feature" href="https://www.satspace.io/" target="_blank" rel="noopener">
+      <div class="sat-feature">
         <span class="sat-sky" aria-hidden="true"></span>
         <img class="sat-badge" src="public/satspace-icon.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <div class="sat-feature-body">
@@ -924,10 +924,35 @@
             <li data-i18n="ss.p2"><b>Trade without surrender.</b> Atomic swaps for Ordinals on Bitcoin L1. No deposit. No custody. One signature in your own wallet.</li>
             <li data-i18n="ss.p3"><b>Ask Satoshi.</b> A guide that reads the node live and answers in any language. Text and mic cost nothing.</li>
           </ul>
-          <span class="go" data-i18n="ss.fl">Enter the universe →</span>
+          <div class="sat-actions">
+            <button type="button" class="btn primary" id="satLaunch" data-i18n="ss.b1">Explore it right here</button>
+            <a class="btn secondary" href="https://www.satspace.io/" target="_blank" rel="noopener" data-i18n="ss.b2">Open full screen ↗</a>
+            <button type="button" class="btn secondary" id="satWhat" data-i18n="ss.b3">What am I looking at?</button>
+          </div>
         </div>
-      </a>
+        <div class="sat-portal" id="satPortal" hidden>
+          <div class="sat-portal-bar">
+            <span class="event-feature-tag" data-i18n="ss.live">The universe, live · fed by a real Bitcoin node</span>
+            <button type="button" class="sat-portal-close" id="satPortalClose" data-i18n="ss.close">Close ✕</button>
+          </div>
+          <div class="sat-portal-frame" id="satFrameBox"></div>
+        </div>
+      </div>
       <p class="lead sat-note" data-i18n="ss.note">satspace is written into the sky it draws: the SATSPACE rune is etched inside inscription 106,364,538, block 915,390, riding an uncommon alpha sat. Anyone can decode the runestone. A third party app in the KRAY ecosystem. Same law as always: your keys, your $DOG. Verify.</p>
+
+      <div class="wscrim" id="satScrim" hidden></div>
+      <div class="satmodal" id="satModal" role="dialog" aria-modal="true" aria-labelledby="satModalTitle" hidden>
+        <button type="button" class="wmodal-close" id="satModalClose" aria-label="Close">×</button>
+        <h3 id="satModalTitle" data-i18n="ss.mt">A Bitcoin explorer. In space.</h3>
+        <div class="satmodal-body">
+          <p data-i18n="ss.m1">An explorer is where you check what happens on Bitcoin: blocks, transactions, addresses. Usually it looks like a spreadsheet. satspace takes the same data and draws it as a universe.</p>
+          <p data-i18n="ss.m2"><b>Every star is real.</b> Each one is an inscription written on a real satoshi. Its place in the sky comes from its inscription number, so the sky is the same for everyone. Like the chain.</p>
+          <p data-i18n="ss.m3"><b>The planets are the protocols.</b> Ordinals, Runes, BRC-20, Lightning, Stacks and the KRAY L2 orbit the center. The center is Bitcoin. Click a planet and its live status opens. $DOG is Rune #3: the Runes planet is our neighborhood.</p>
+          <p data-i18n="ss.m4"><b>The sky reacts to blocks.</b> When a new block confirms, lightning crosses the whole universe and comets fly for rare sats. That is not decoration. That is the node reporting, in real time.</p>
+          <p data-i18n="ss.m5"><b>You can use it, not just watch.</b> Click a star to see its real data: number, block, sat, fee, owner. Connect your wallet to see your own constellation. Trade Ordinals by atomic swap on L1. Ask Satoshi anything by text, free.</p>
+          <p data-i18n="ss.m6"><b>Self custody, always.</b> satspace never asks for a seed and never holds your coins. Every action is a signature made in your own wallet. Don't trust. Verify.</p>
+        </div>
+      </div>
     </div>
   </section>
 
