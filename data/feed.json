@@ -1,18 +1,57 @@
 {
-  "updated_at": "2026-07-14T03:41:48.850507+00:00",
+  "updated_at": "2026-07-14T06:31:12.185989+00:00",
   "events": [
     {
       "id": "bal-2026-07-14",
-      "ts": "2026-07-14T03:41:48.850507+00:00",
+      "ts": "2026-07-14T06:31:12.185989+00:00",
       "type": "balance_change",
-      "amount_dog": 5320501.607000351,
+      "amount_dog": 7793374.3999996185,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "+",
+      "sign": "-",
       "txid": null
+    },
+    {
+      "id": "54e8eff1686b2a80065acc29b63e84c575c0fb832a7d90632fd203ab16a81bef",
+      "ts": "2026-07-14T05:46:23+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 206792575.56461,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "community": null,
+      "txid": "54e8eff1686b2a80065acc29b63e84c575c0fb832a7d90632fd203ab16a81bef"
+    },
+    {
+      "id": "c04ba62862058790cf945d3f22b0fe17101ffa74aa2566dfffe288cbe1111faf",
+      "ts": "2026-07-14T05:46:23+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 8847430.90692,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1prdyzwdg0rcdgf9cg0a4zyx0cq3mdr3n6mcym95f3eg4dexfvnsjq200ly4",
+      "community": null,
+      "txid": "c04ba62862058790cf945d3f22b0fe17101ffa74aa2566dfffe288cbe1111faf"
+    },
+    {
+      "id": "7f37b99775124d46c0d341902084a35c2db8e56e9816cee10ad2589b49804304",
+      "ts": "2026-07-14T05:46:23+00:00",
+      "type": "exchange_out",
+      "amount_dog": 8605731.71133,
+      "level": "info",
+      "from_label": "Top #3",
+      "to_label": "bc1prdyz...0ly4",
+      "from_id": "h3",
+      "to_id": "bc1prdyzwdg0rcdgf9cg0a4zyx0cq3mdr3n6mcym95f3eg4dexfvnsjq200ly4",
+      "community": null,
+      "txid": "7f37b99775124d46c0d341902084a35c2db8e56e9816cee10ad2589b49804304"
     },
     {
       "id": "f3b1f31e198621f99db6c7a22ced5096ab56c44e463089f61606acedf14e697b",
@@ -741,45 +780,6 @@
       "to_id": "bc1pv2ek2hyt0sn3xc6x9q68kzrxuuy6esntkdrw9gku00sgd2e2ashsktjauk",
       "community": null,
       "txid": "b14206b92743046896f69bf5512092568e0efec6bd1973acf5f5b6da9658c66b"
-    },
-    {
-      "id": "c834699c2e88e522891840ad83100fd96aca0037ebfeeefbd81ab2bfe653417c",
-      "ts": "2026-07-10T22:04:48+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 20598205.72396,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1plxqexkqhh93pgazz6670xll2dcwn2h3vjqtlpkftc3cjzhx9shwst0lyd2",
-      "community": null,
-      "txid": "c834699c2e88e522891840ad83100fd96aca0037ebfeeefbd81ab2bfe653417c"
-    },
-    {
-      "id": "bal-2026-07-10",
-      "ts": "2026-07-10T20:46:34.546528+00:00",
-      "type": "balance_change",
-      "amount_dog": 7814868.5,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
-    },
-    {
-      "id": "b81ace2af5b824cd89ef824b95da1200a6c01445da28de62c4c2f49d0aa15b5d",
-      "ts": "2026-07-10T18:02:22+00:00",
-      "type": "cofre_in",
-      "amount_dog": 8064619,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "b81ace2af5b824cd89ef824b95da1200a6c01445da28de62c4c2f49d0aa15b5d"
     }
   ]
 }
