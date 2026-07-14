@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-14T09:20:45.764471+00:00",
+  "updated_at": "2026-07-14T11:04:47.895750+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3216804416.8525,
+      "balance_dog": 3222678210.1016,
       "rank": 2,
       "pct": 3.22,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2936781967.71108,
+      "balance_dog": 2945440230.57108,
       "rank": 3,
-      "pct": 2.94,
+      "pct": 2.95,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -229,8 +229,8 @@
       "to": "h3",
       "from_label": "Intermediary Wallet #2",
       "to_label": "Top #3",
-      "dog": 512756528,
-      "count": 86
+      "dog": 521414791,
+      "count": 87
     },
     {
       "from": "int1",
