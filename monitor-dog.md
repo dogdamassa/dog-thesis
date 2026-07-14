@@ -4,6 +4,15 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
+## 2026-07-14 ⚠️ API bloqueada · ontem: pass-through suspeito confirmado
+
+> Fonte: proxy remoto — `dogdata.xyz` inacessível (403). Dado mais recente fresco: **13/07, 12,22% do supply**.
+
+- **Baleia:** `dogdata.xyz` inacessível (403 proxy) — último dado fresco: **13/07, 12,22% do supply (#1)**. Δ do dia anterior: +4,5M DOG.
+- Saques novos da Binance → cluster: impossível verificar (API bloqueada).
+- Depósito em exchange: impossível verificar (API bloqueada).
+- 🔎 **Leitura:** API bloqueada hoje; sem dado on-chain novo. **Referência de ontem (13/07): movimento suspeito confirmado** — baleia alimentou Int#2 às 08:44 UTC (6,5M DOG) e o relay despejou 4,7M DOG na Bitget às 09:07 UTC (pass-through direto, 25 min). Também houve entrada de 216M DOG de wallet não mapeada às 03:10 UTC. A Binance não aparece como counterparty direto nesta janela, mas **pode estar envolvida** na camada anterior (48 saques históricos documentados via Int#3). Seguimos vigiando o rastro até chegar na Binance.
+
 ## 2026-07-13 ⚠️ Cluster relay ativo · baleia → Int#2 → Bitget
 
 > Fonte: `data/daily.json` + `data/feed.json` + `data/graph.json` · atualizado às 11:34 UTC · dado fresco (scripts locais; dogdata.xyz bloqueado no proxy remoto).
@@ -189,6 +198,10 @@ Dia de **CEX restringindo DOG**: a Gate tira a alavancagem (perp delistado) e mo
 
 | Data | Status | Dado fresco? |
 |---|---|---|
+| 14/07/2026 (rotina remota) | API bloqueada — referência 13/07 (pass-through suspeito) | ❌ |
+| 13/07/2026 (rotina remota) | Dado fresco via data/*.json — baleia → Int#2 → Bitget | ✅ |
+| 12/07/2026 (rotina remota) | API bloqueada | ❌ |
+| 11/07/2026 (rotina remota) | Dado fresco via data/*.json — cluster ativo Gate → Int → Bitget | ✅ |
 | 10/07/2026 (rotina remota) | Dado fresco via data/*.json | ✅ |
 | 09/07/2026 (rotina remota) | API bloqueada (14º dia) | ❌ |
 | 08/07/2026 (rotina remota) | API bloqueada (13º dia) | ❌ |
