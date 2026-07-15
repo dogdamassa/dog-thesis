@@ -830,7 +830,8 @@
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           what: 'message', address: address, content: text,
-          weight: (weight != null ? weight : (dogAmount || 0) / 1e11)
+          /* percent of the 100B supply — keep in sync with homechat.js */
+          weight: (weight != null ? weight : (dogAmount || 0) / 1e9)
         })
       });
     }).then(function (r) { return r.json(); }).then(function (d) {

@@ -850,13 +850,11 @@ window.DOG_I18N = {
 
     "intro.title": "Conheça a $DOG — o vídeo de apresentação da Army",
     "intro.sound": "🔊 Ativar som",
-    "intro.enter": "Entrar no QG →",
 
     "hc.h": "Sala de guerra da matilha — ao vivo",
     "hc.open": "Abrir o QG completo →",
     "hc.loading": "Ouvindo a chain…",
     "hc.teaser": "Holders de verdade latindo on-chain, agora. Conecte a carteira e ocupe seu lugar na sala.",
-    "hc.connect": "Conectar carteira",
     "hc.checking": "Lendo sua patente na chain…",
     "hc.gate": "Você está na sala, soldado — mas só $DOG te dá voz aqui.",
     "hc.buy": "Garanta $DOG no Bitcoin →",
@@ -1722,13 +1720,11 @@ window.DOG_I18N = {
 
     "intro.title": "Conoce $DOG — el video de presentación de la Army",
     "intro.sound": "🔊 Activar sonido",
-    "intro.enter": "Entrar al cuartel →",
 
     "hc.h": "Sala de guerra de la manada — en vivo",
     "hc.open": "Abrir el cuartel completo →",
     "hc.loading": "Escuchando la chain…",
     "hc.teaser": "Holders de verdad ladrando on-chain, ahora mismo. Conecta tu cartera y ocupa tu lugar en la sala.",
-    "hc.connect": "Conectar cartera",
     "hc.checking": "Leyendo tu rango en la chain…",
     "hc.gate": "Estás en la sala, soldado — pero solo $DOG te da voz aquí.",
     "hc.buy": "Consigue $DOG en Bitcoin →",
@@ -1911,9 +1907,17 @@ window.DOG_I18N = {
 
 /* Hero video: mount the source and play only after the page finishes loading,
    so the heavy .mp4 stays off the critical path (the poster paints instantly).
-   Graceful: with JS disabled the poster simply stays. CSP-safe (script-src 'self'). */
+   While the intro gate (intro.js) is showing, the mount is deferred entirely —
+   pausing wouldn't stop the 6MB download, so we don't start it: the handoff
+   happens on the dog:intro:closed event. Graceful: with JS disabled the poster
+   simply stays. CSP-safe (script-src 'self'). */
 (function () {
+  function introOpen() {
+    var m = document.getElementById("introModal");
+    return document.documentElement.classList.contains("introPending") || (m && !m.hidden);
+  }
   function mount() {
+    if (introOpen()) return;   /* dog:intro:closed re-triggers below */
     var v = document.querySelector("video[data-hero-video]");
     if (!v) return;
     var s = v.querySelector("source[data-src]");
@@ -1926,6 +1930,27 @@ window.DOG_I18N = {
   }
   if (document.readyState === "complete") mount();
   else window.addEventListener("load", mount);
+  document.addEventListener("dog:intro:closed", mount);
+})();
+
+/* Deep links into collapsed <details> (e.g. /#carteiras inside the radar,
+   the #dog101 timeline): opening the ancestors is what makes the anchor's
+   content actually visible — browsers don't do it for plain fragments. */
+(function () {
+  function reveal() {
+    var id = location.hash.slice(1);
+    if (!id) return;
+    var el = null;
+    try { el = document.getElementById(decodeURIComponent(id)); } catch (e) {}
+    if (!el) return;
+    var d = el.closest ? el.closest("details") : null;
+    var opened = false;
+    while (d) { if (!d.open) { d.open = true; opened = true; } d = d.parentElement && d.parentElement.closest("details"); }
+    if (opened) el.scrollIntoView();
+  }
+  window.addEventListener("hashchange", reveal);
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", reveal);
+  else reveal();
 })();
 
 /* DOG ARMY. KRAY Social strip (home): live posts from kray.space read through

@@ -3213,7 +3213,9 @@ header{box-shadow:0 8px 30px rgba(0,0,0,.32);border-bottom:1px solid rgba(255,25
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 html.introPending{overflow:hidden}
 html.introPending::before{content:"";position:fixed;inset:0;z-index:199;background:#04060a}
-.introscrim{position:fixed;inset:0;z-index:200;background:rgba(4,6,8,.94);backdrop-filter:blur(6px)}
+/* rides the shared .wscrim base; at 94% black the blur is invisible — off,
+   so the GPU isn't compositing a fullscreen blur behind a playing video */
+.introscrim{z-index:200;background:rgba(4,6,8,.94);backdrop-filter:none}
 .intromodal{position:fixed;inset:0;z-index:210;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:20px}
 .intro-frame{width:min(1100px,94vw,calc(72vh*16/9));aspect-ratio:16/9;background:#000;border:1px solid rgba(255,255,255,.16);border-radius:16px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.62)}
 .intro-frame iframe{display:block;width:100%;height:100%;border:0}

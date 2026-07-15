@@ -98,6 +98,9 @@
       try { frame.remove(); } catch (e) {} /* kills the audio instantly */
       document.body.style.overflow = '';
       root.classList.remove('introPending');
+      /* hand the stage back: i18n.js defers the hero mp4 mount while the
+         gate is open and mounts it on this event */
+      try { document.dispatchEvent(new CustomEvent('dog:intro:closed')); } catch (e) {}
       if (heroVideo) { try { heroVideo.play().catch(function () {}); } catch (e) {} }
     }
 

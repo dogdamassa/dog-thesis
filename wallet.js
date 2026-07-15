@@ -105,13 +105,11 @@
        site's dog:lang event. */
     function emitWallet() {
       var snap = { connected: connected, address: address, dogAmount: dogAmt };
-      if (window.DogWallet) window.DogWallet.state = snap;
+      window.DogWallet.state = snap;
       try { document.dispatchEvent(new CustomEvent('dog:wallet', { detail: snap })); } catch (e) {}
     }
-    window.DogWallet = {
-      state: { connected: false, address: '', dogAmount: null },
-      open: function () { openModal(); }
-    };
+    window.DogWallet = { state: null, open: function () { openModal(); } };
+    emitWallet();
 
     function showState(name) {
       for (var k in states) { if (states[k]) states[k].hidden = k !== name; }
@@ -196,9 +194,14 @@
           emitWallet();
         }).catch(function () { emitWallet(); });
       } else if (typeof w.getBalance === 'function') {
+        /* no getFullWalletData → $DOG unreadable; emit anyway so listeners
+           (homechat) aren't stranded waiting for a read that never comes */
         w.getBalance().then(function (b) {
           if (out.btc) out.btc.textContent = fmtBtc(sats(b));
-        }).catch(function () {});
+          emitWallet();
+        }).catch(function () { emitWallet(); });
+      } else {
+        emitWallet();
       }
     }
 

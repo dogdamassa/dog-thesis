@@ -148,6 +148,9 @@
   var tried = false;       /* "never fetched" vs "fetch failed" */
   var loading = false;
   var chatSig = '';        /* rebuild the feed only when content changes */
+  var painted = false;     /* first real paint pins the scroll to the bottom */
+  var checkStale = false;  /* 'checking' never resolved — stop claiming to read */
+  var checkTimer = 0;
   var inView = false;
   var lastLoad = 0;
   var verified = false;    /* room handshake done this session */
@@ -174,7 +177,9 @@
     if (teaser) teaser.hidden = m !== 'idle';
     if (gate) gate.hidden = m !== 'guest';
     if (compose) compose.hidden = m !== 'holder';
-    if (checking) checking.hidden = m !== 'checking';
+    /* if the wallet never delivers a $DOG read (older builds), drop the
+       "reading your rank" claim and stay a quiet read-only room */
+    if (checking) checking.hidden = m !== 'checking' || checkStale;
     root.classList.toggle('is-teaser', m === 'idle');
 
     var onlineEl = $('hqchatOnline');
@@ -184,19 +189,23 @@
     }
 
     var msgs = (data && data.chat) ? (data.chat.messages || []) : null;
-    if (msgs && msgs.length) resolveAvatars(msgs);
+    var shown = msgs ? msgs.slice(m === 'idle' ? -TEASER_N : -FULL_N) : null;
+    /* only the senders we actually render — not the whole 30-msg payload */
+    if (shown && shown.length) resolveAvatars(shown);
     if (msgs === null && !tried) return;  /* keep the static placeholder */
 
     var sig = lang() + ':' + wallet.address + ':' + m + ':' + (msgs === null ? 'err'
       : msgs.length + ':' + (msgs.length
         ? String(msgs[msgs.length - 1].id || msgs[msgs.length - 1].timestamp || '') : ''));
     if (sig === chatSig) return;
-    /* a reader scrolled up must not be yanked down by the 30s poll */
-    var firstPaint = !chatSig;
-    var nearBottom = firstPaint ||
+    /* a reader scrolled up must not be yanked down by the 30s poll — nor by
+       forced rebuilds (avatar resolve, dog:lang), so "first paint" is its own
+       flag rather than derived from an empty signature */
+    var nearBottom = !painted ||
       (feed.scrollHeight - feed.scrollTop - feed.clientHeight) < 48;
     var prevTop = feed.scrollTop;
     chatSig = sig;
+    painted = true;
     feed.textContent = '';
     if (msgs === null || !msgs.length) {
       var e1 = document.createElement('div');
@@ -205,7 +214,7 @@
       feed.appendChild(e1);
       return;
     }
-    msgs.slice(m === 'idle' ? -TEASER_N : -FULL_N).forEach(function (msg) {
+    shown.forEach(function (msg) {
       var row = document.createElement('div');
       row.className = 'hqchat-msg';
       row.appendChild(avatar(msg));
@@ -257,8 +266,10 @@
         if (d && d.success) {
           /* per-part merge: an upstream part that failed must not wipe the
              last good read of that part */
+          /* the home only renders chat + members ('proposals' rides along in
+             the shared what=all payload for the /web3 edge-cache entry) */
           if (!data) data = {};
-          ['chat', 'proposals', 'members'].forEach(function (k) {
+          ['chat', 'members'].forEach(function (k) {
             if (d[k]) data[k] = d[k];
           });
         }
@@ -320,6 +331,7 @@
     if (mode() !== 'holder') { setStatus(t('hcNeedDog'), 'is-err'); return; }
     if (!retried && Date.now() - lastSend < COOLDOWN) { setStatus(t('hcCooldown'), 'is-err'); return; }
     sending = true;
+    var hadSession = verified;   /* gates the auto-heal below */
     var btn = $('hqchatSend');
     if (btn) btn.disabled = true;
     setStatus(t(verified ? 'hcPosting' : 'hcSigning'));
@@ -348,9 +360,12 @@
       sending = false;
       if (btn) btn.disabled = false;
       var msg = (e && e.message) || 'wallet';
-      if (!retried && msg === 'upstream') {
-        /* KRAY's room session went cold while idle — renew it once inside
-           the same gesture (one extra signature popup), never in a loop */
+      if (!retried && msg === 'upstream' && hadSession) {
+        /* Our cached session went cold while idle — KRAY rejected the post
+           (nothing was recorded), so renewing once inside the same gesture
+           is safe. A FIRST post failing 'upstream' is different: it may be a
+           timeout AFTER the room accepted, and a blind retry would double-
+           post — there the user retries by hand. Never loops. */
         setStatus(t('hcRenew'));
         send(true);
         return;
@@ -409,7 +424,22 @@
   }
 
   document.addEventListener('dog:wallet', function (e) {
-    if (e.detail) wallet = e.detail;
+    if (!e.detail) return;
+    if (e.detail.address !== wallet.address) {
+      /* account switched: the room session and pubkey belong to the OLD
+         address — posting with them would fail (or impersonate) forever */
+      verified = false;
+      roomWeight = null;
+      pubkey = '';
+    }
+    wallet = e.detail;
+    clearTimeout(checkTimer);
+    if (mode() === 'checking') {
+      checkStale = false;
+      checkTimer = setTimeout(function () { checkStale = true; render(); }, 12000);
+    } else {
+      checkStale = false;
+    }
     render();
   });
   document.addEventListener('dog:lang', function () {
