@@ -850,7 +850,17 @@ window.DOG_I18N = {
 
     "intro.title": "Conheça a $DOG — o vídeo de apresentação da Army",
     "intro.sound": "🔊 Ativar som",
-    "intro.enter": "Entrar no QG →"
+    "intro.enter": "Entrar no QG →",
+
+    "hc.h": "Sala de guerra da matilha — ao vivo",
+    "hc.open": "Abrir o QG completo →",
+    "hc.loading": "Ouvindo a chain…",
+    "hc.teaser": "Holders de verdade latindo on-chain, agora. Conecte a carteira e ocupe seu lugar na sala.",
+    "hc.connect": "Conectar carteira",
+    "hc.checking": "Lendo sua patente na chain…",
+    "hc.gate": "Você está na sala, soldado — mas só $DOG te dá voz aqui.",
+    "hc.buy": "Garanta $DOG no Bitcoin →",
+    "hc.send": "Latir · assinar na carteira"
   },
   es: {
     "nav.plans": "Planes",
@@ -1673,7 +1683,17 @@ window.DOG_I18N = {
 
     "intro.title": "Conoce $DOG — el video de presentación de la Army",
     "intro.sound": "🔊 Activar sonido",
-    "intro.enter": "Entrar al cuartel →"
+    "intro.enter": "Entrar al cuartel →",
+
+    "hc.h": "Sala de guerra de la manada — en vivo",
+    "hc.open": "Abrir el cuartel completo →",
+    "hc.loading": "Escuchando la chain…",
+    "hc.teaser": "Holders de verdad ladrando on-chain, ahora mismo. Conecta tu cartera y ocupa tu lugar en la sala.",
+    "hc.connect": "Conectar cartera",
+    "hc.checking": "Leyendo tu rango en la chain…",
+    "hc.gate": "Estás en la sala, soldado — pero solo $DOG te da voz aquí.",
+    "hc.buy": "Consigue $DOG en Bitcoin →",
+    "hc.send": "Ladrar · firmar en la cartera"
   }
 };
 

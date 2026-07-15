@@ -465,6 +465,39 @@
         </div>
         <p class="lead" data-i18n="mt.lead">This site is a HQ, not a billboard. The $DOG Army debates in the DAO Room, turns ideas into plans, funds them together on chain and executes with receipts. Help people. Reload the DOG Drop. Take $DOG to the streets.</p>
       </div>
+
+      <!-- War room: live DAO Room chat, driven by /homechat.js.
+           Dynamic containers (feed/status) carry NO data-i18n on purpose —
+           the i18n apply() swaps innerHTML and chat content is textContent. -->
+      <div class="hqchat" id="hqchat">
+        <div class="hqchat-head">
+          <h3><span class="hqchat-dot" aria-hidden="true"></span> <span data-i18n="hc.h">War room of the pack — live</span> <em class="hqchat-online" id="hqchatOnline"></em></h3>
+          <a class="hqchat-openhq" href="/web3" data-i18n="hc.open">Open the full HQ →</a>
+        </div>
+        <div class="hqchat-stage">
+          <div class="hqchat-feed" id="hqchatFeed" aria-live="polite">
+            <div class="hqchat-empty" data-i18n="hc.loading">Listening to the chain…</div>
+          </div>
+          <div class="hqchat-teaser" id="hqchatTeaser">
+            <p data-i18n="hc.teaser">Real holders barking on chain, right now. Connect your wallet and take your seat in the room.</p>
+            <button type="button" class="btn primary" id="hqchatConnect" data-i18n="hc.connect">Connect wallet</button>
+          </div>
+        </div>
+        <p class="hqchat-note" id="hqchatChecking" hidden data-i18n="hc.checking">Reading your rank on the chain…</p>
+        <div class="hqchat-gate" id="hqchatGate" hidden>
+          <span data-i18n="hc.gate">You're in the room, soldier — but only $DOG gives you a voice here.</span>
+          <a class="btn market" href="/dogmarket" data-i18n="hc.buy">Get $DOG on Bitcoin →</a>
+        </div>
+        <form class="hqchat-compose" id="hqchatCompose" hidden>
+          <textarea id="hqchatInput" rows="2" maxlength="280"></textarea>
+          <div class="hqchat-bar">
+            <span class="hqchat-status" id="hqchatStatus"></span>
+            <span class="hqchat-count" id="hqchatCount">0/280</span>
+            <button type="submit" class="btn primary hqchat-send" id="hqchatSend" data-i18n="hc.send">Bark · sign in wallet</button>
+          </div>
+        </form>
+      </div>
+
       <div class="grid grid-3">
         <article class="card">
           <span class="tag" data-i18n="mt.c1t">Talk</span>
@@ -1090,6 +1123,8 @@
 <script src="/news.js?v=b9001c3073" defer></script>
 <script src="/radar.js?v=236ebffb34" defer></script>
 <script src="/wallet.js?v=44cd2765d1" defer></script>
+<!-- homechat depends on wallet.js (window.DogWallet + dog:wallet) — keep this order -->
+<script src="/homechat.js" defer></script>
 <script src="/dogdrop.js?v=4948b05e0b" defer></script>
 <script>
 (function(){

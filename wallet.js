@@ -98,6 +98,20 @@
     var dscImg = $('walletDscImg');
     var connected = false;
     var address = '';
+    var dogAmt = null;   /* last $DOG read; null = not read yet ("checking") */
+
+    /* Home widgets (homechat.js) observe the wallet through this snapshot +
+       event instead of reaching into the modal's DOM. Same pattern as the
+       site's dog:lang event. */
+    function emitWallet() {
+      var snap = { connected: connected, address: address, dogAmount: dogAmt };
+      if (window.DogWallet) window.DogWallet.state = snap;
+      try { document.dispatchEvent(new CustomEvent('dog:wallet', { detail: snap })); } catch (e) {}
+    }
+    window.DogWallet = {
+      state: { connected: false, address: '', dogAmount: null },
+      open: function () { openModal(); }
+    };
 
     function showState(name) {
       for (var k in states) { if (states[k]) states[k].hidden = k !== name; }
@@ -174,10 +188,13 @@
       if (out.addr) out.addr.textContent = short(address);
       if (typeof w.getFullWalletData === 'function') {
         w.getFullWalletData().then(function (data) {
-          if (!data) return;
+          if (!data) { emitWallet(); return; }
           if (out.btc) out.btc.textContent = fmtBtc(sats(data.balance));
-          if (out.dog) out.dog.textContent = fmtDog(runeAmount(findDogRune(data.runes)));
-        }).catch(function () {});
+          var dog = runeAmount(findDogRune(data.runes));
+          if (out.dog) out.dog.textContent = fmtDog(dog);
+          dogAmt = dog || 0;
+          emitWallet();
+        }).catch(function () { emitWallet(); });
       } else if (typeof w.getBalance === 'function') {
         w.getBalance().then(function (b) {
           if (out.btc) out.btc.textContent = fmtBtc(sats(b));
@@ -210,6 +227,8 @@
         try { localStorage.setItem(LSKEY, '1'); } catch (e) {}
         renderButton();
         showState('info');
+        dogAmt = null;    /* fresh read lands via refreshData */
+        emitWallet();
         refreshData();
         checkDsc();
       }).catch(function () {
@@ -222,10 +241,12 @@
     function disconnect() {
       connected = false;
       address = '';
+      dogAmt = null;
       try { localStorage.removeItem(LSKEY); localStorage.removeItem(DSCKEY); } catch (e) {}
       renderButton();
       applyDsc(null);
       showState(kray() ? 'ready' : 'none');
+      emitWallet();
     }
 
     btn.addEventListener('click', openModal);
