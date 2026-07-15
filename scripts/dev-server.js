@@ -29,7 +29,10 @@ var MIME = {
 var CSP = '';
 try {
   var vc = JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8'));
-  var all = (vc.headers || []).find(function (h) { return h.source === '/(.*)'; });
+  /* find whichever header block carries the CSP (source pattern changed over time) */
+  var all = (vc.headers || []).find(function (h) {
+    return (h.headers || []).some(function (x) { return x.key === 'Content-Security-Policy'; });
+  });
   var cspH = all && all.headers.find(function (h) { return h.key === 'Content-Security-Policy'; });
   /* drop upgrade-insecure-requests locally (we serve plain http) */
   if (cspH) CSP = cspH.value.replace(/;?\s*upgrade-insecure-requests/, '');

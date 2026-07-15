@@ -27,6 +27,9 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
 <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
 <link rel="stylesheet" href="/styles.css?v=f675088205">
+<!-- Intro gate. Render-blocking on purpose: decides before first paint whether
+     the presentation video opens (3-day TTL). External file = CSP-safe. -->
+<script src="/intro.js"></script>
 <link rel="canonical" href="https://dogarmy.space/">
 <link rel="preload" as="font" href="/public/fonts/geist-sans.woff2" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="/public/dog-army-hero.png">
@@ -242,6 +245,19 @@
 
   <p class="wmodal-err" id="walletErr" hidden data-i18n="wl.err">The wallet did not respond or the connection was refused. Try again.</p>
   <p class="wmodal-err" id="walletLocked" hidden data-i18n="wl.locked">Your KRAY Wallet is locked. Click the KRAY icon in your browser toolbar to unlock it, then try again.</p>
+</div>
+
+<!-- Intro gate: presentation video. Static shell only — /intro.js mounts the
+     YouTube iframe when the 3-day TTL (dogArmyIntroSeen) has lapsed. -->
+<div class="introscrim" id="introScrim" hidden></div>
+<div class="intromodal" id="introModal" role="dialog" aria-modal="true" aria-labelledby="introTitle" hidden>
+  <h2 id="introTitle" class="sr-only" data-i18n="intro.title">Meet $DOG — the Army's intro video</h2>
+  <button type="button" class="intro-close" id="introClose" aria-label="Close">×</button>
+  <div class="intro-frame" id="introFrame"></div>
+  <div class="intro-actions">
+    <button type="button" class="intro-sound" id="introSound" data-i18n="intro.sound">🔊 Enable sound</button>
+    <button type="button" class="intro-enter" id="introEnter" data-i18n="intro.enter">Enter the HQ →</button>
+  </div>
 </div>
 
 <main id="top">

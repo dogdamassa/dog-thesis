@@ -846,7 +846,11 @@ window.DOG_I18N = {
     "wl.selfNote": "Essas moedas estão na sua autocustódia. Nenhuma corretora consegue congelá-las.",
     "wl.disconnect": "Desconectar",
     "wl.err": "A carteira não respondeu ou a conexão foi recusada. Tente de novo.",
-    "wl.locked": "Sua KRAY Wallet está bloqueada. Clique no ícone da KRAY na barra do navegador para desbloquear e tente de novo."
+    "wl.locked": "Sua KRAY Wallet está bloqueada. Clique no ícone da KRAY na barra do navegador para desbloquear e tente de novo.",
+
+    "intro.title": "Conheça a $DOG — o vídeo de apresentação da Army",
+    "intro.sound": "🔊 Ativar som",
+    "intro.enter": "Entrar no QG →"
   },
   es: {
     "nav.plans": "Planes",
@@ -1665,7 +1669,11 @@ window.DOG_I18N = {
     "wl.selfNote": "Esas monedas están en tu autocustodia. Ninguna casa de cambio puede congelarlas.",
     "wl.disconnect": "Desconectar",
     "wl.err": "La cartera no respondió o la conexión fue rechazada. Inténtalo de nuevo.",
-    "wl.locked": "Tu KRAY Wallet está bloqueada. Haz clic en el icono de KRAY en la barra del navegador para desbloquearla e inténtalo de nuevo."
+    "wl.locked": "Tu KRAY Wallet está bloqueada. Haz clic en el icono de KRAY en la barra del navegador para desbloquearla e inténtalo de nuevo.",
+
+    "intro.title": "Conoce $DOG — el video de presentación de la Army",
+    "intro.sound": "🔊 Activar sonido",
+    "intro.enter": "Entrar al cuartel →"
   }
 };
 
