@@ -4,6 +4,24 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
+## 2026-07-15 ⚠️ Movimento suspeito · baleia despeja 456M DOG em fresh wallets · cluster ativo (Int→Bitget)
+
+> Fonte: `data/daily.json` + `data/feed.json` · atualizado às 11:54 UTC · dado fresco (scripts locais; dogdata.xyz bloqueado no proxy remoto).
+
+- **Baleia (Vault #1, rank #1):** **12,13% do supply** (12,128B DOG). Δ líquido: ≈0 (saldo estável). **NÃO depositou diretamente em exchange conhecida** (cofre_to_exchange: 0).
+- **Saídas grandes da baleia HOJE (15/07):**
+  - 00:19 UTC — **248,2M DOG** → fresh wallet `bc1pp3nx...`
+  - 05:07 UTC — **5,7M DOG** → fresh wallet `bc1pkvs...`
+  - 07:27 UTC — **202,4M DOG** → fresh wallet `bc1p69p...`
+  - **Total: 456,2M DOG** enviados para wallets não mapeadas — padrão pass-through recorrente.
+- **Cluster relay ATIVO (13–14/07, dentro das 72h):**
+  - A baleia alimentou os relays diretamente: **Int#1 ← 29,1M DOG** (14/07) e **Int#2 ← 15,9M+5,6M DOG** (13–14/07) — total ~50,6M DOG.
+  - Int#1 → Bitget: 4,1M DOG @ 13:17 + 3,9M @ 18:13 (14/07) = **8,0M DOG**
+  - Int#2 → Bitget: 4,7M DOG @ 09:07 (13/07) + 8,1M @ 12:31 (13/07) + 8,7M @ 09:38 (14/07) + 4,0M @ 13:17 (14/07) + 9,1M @ 17:57 (14/07) = **34,6M DOG**
+  - **Total cluster → Bitget (72h): ~42,6M DOG** despejados via Int#1/Int#2.
+- **Saques novos Binance → cluster (72h):** Binance hot wallet **não aparece como counterparty direto** nos relays Int#1/Int#2/Int#3 nesta janela. Fonte visível: a própria baleia (Vault #1) alimentando os relays.
+- 🔎 **Leitura:** **Movimento suspeito.** A baleia despejou **456M DOG em fresh wallets hoje** e alimentou Int#1/Int#2 com ~50,6M DOG nos últimos 2 dias; esses relays, por sua vez, despejaram ~42,6M DOG na Bitget (pass-through confirmado: baleia → relay → exchange). A Binance não aparece como counterparty direto dos relays nesta janela, mas **pode estar envolvida** — historicamente alimentou essa estrutura via Int#3 (48 saques documentados) e as wallets não mapeadas que reabastecem a baleia seguem sem origem rastreável. Sem acusação de crime: descrevemos o padrão que a chain mostra.
+
 ## 2026-07-14 ⚠️ API bloqueada · ontem: pass-through suspeito confirmado
 
 > Fonte: proxy remoto — `dogdata.xyz` inacessível (403). Dado mais recente fresco: **13/07, 12,22% do supply**.
@@ -198,6 +216,7 @@ Dia de **CEX restringindo DOG**: a Gate tira a alavancagem (perp delistado) e mo
 
 | Data | Status | Dado fresco? |
 |---|---|---|
+| 15/07/2026 (rotina remota) | Dado fresco via data/*.json — 456M DOG em fresh wallets · cluster Int→Bitget ativo | ✅ |
 | 14/07/2026 (rotina remota) | API bloqueada — referência 13/07 (pass-through suspeito) | ❌ |
 | 13/07/2026 (rotina remota) | Dado fresco via data/*.json — baleia → Int#2 → Bitget | ✅ |
 | 12/07/2026 (rotina remota) | API bloqueada | ❌ |
