@@ -3273,3 +3273,31 @@ html.introPending::before{content:"";position:fixed;inset:0;z-index:199;backgrou
   .hqchat-bar{flex-wrap:wrap}
   .hqchat-send{flex:1 1 100%;text-align:center;justify-content:center}
 }
+
+/* ===== Home redesign: $DOG 101 / QG / band & merged sections ===== */
+.d101-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:860px){.d101-grid{grid-template-columns:1fr}}
+.d101-grid .card .go,.qg-grid .card .go{margin-top:auto}
+.d101-more{margin-top:26px}
+.d101-summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 18px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:var(--black-2,#111)}
+.d101-summary::-webkit-details-marker{display:none}
+.d101-summary:hover{border-color:rgba(255,92,0,.5)}
+.d101-summary .kicker{margin:0}
+.d101-summary b{color:var(--white-2,#fff8ef);font-size:15px}
+.d101-summary span{color:var(--white-2,#fff8ef);font-weight:750;font-size:14.5px}
+details[open]>.d101-summary{border-color:rgba(255,92,0,.5);margin-bottom:18px}
+.d101-faq{margin-top:34px}
+.d101-faq .vf-subhead{margin-bottom:14px}
+.rd-wallets{margin-top:26px}
+.rd-wallets .wnote{margin:14px 0 16px;max-width:none}
+.fight-band{padding:52px 0}
+.fight-band .fight-cta{margin-top:0}
+.eco-sat{margin-bottom:34px}
+.eco-sat-head{margin-bottom:24px}
+.eco-sat-title{font-size:clamp(24px,3.2vw,34px);font-weight:900;letter-spacing:-.02em;line-height:1.08;color:var(--white-2,#fff8ef)}
+.eco-sat-title span{color:var(--orange-solid,#ff5c00)}
+.social-strip--qg{border:1px solid rgba(255,255,255,.12);border-radius:20px;margin-top:26px;padding:18px 20px 6px;overflow:hidden}
+.social-strip--qg .social-strip-viewport{margin:0 -20px;padding:12px 20px 14px}
+@media (max-width:640px){.social-strip--qg{padding:14px 14px 4px}.social-strip--qg .social-strip-viewport{margin:0 -14px;padding:12px 14px}}
+.navlinks .nav-case{color:var(--orange-solid,#ff5c00);font-weight:850}
+.navlinks .nav-case:hover{color:var(--white-2,#fff8ef)}
