@@ -83,7 +83,7 @@ Planilha do Cryptolution: "Top 31.975 wallets, dados até 03/jun/2026". Manchete
 ## Float / LTH — 1ª medição on-chain (top holders, 25/06)
 
 API dogdata: 88.293 holders, 246.024 UTXOs. Top 25 holders = **24,96% do supply** (alta concentração).
-- **Exchanges (utxo≥1000): 4 wallets = 11,05% do supply** (float líquido). #1 `bc1pk8g4` 3,36% (20.900 UTXOs, prov. Bitget); #2 `bc1p50n9` 3,09% (1.884); #3 `3G7gSax` 2,36% (1.353); #4 `bc1qj7dam` 2,24% (1.103).
+- **Exchanges (utxo≥1000): 4 wallets = 11,05% do supply** (float líquido). #1 `bc1pk8g4` 3,36% (20.900 UTXOs, **Gate.io** — rótulo oficial confirmado em 15/07/2026; a atribuição "prov. Bitget" era erro); #2 `bc1p50n9` 3,09% (1.884); #3 `3G7gSax` 2,36% (1.353); #4 `bc1qj7dam` 2,24% (1.103).
 - **Top 21 non-exchange whales = 13,91%.** Dormência (amostra top 20): **0% LTH** — TODAS moveram em ≤70 dias, as maiores em ≤1 dia.
 
 🚨 ~~**Achado-chave:** os "82% LTH" NÃO se sustentam no TOPO~~ → **CORRIGIDO ABAIXO.**
