@@ -2,7 +2,7 @@
    kray.space/rune/DOGGOTOTHEMOON with the DOG Army skin. Browse live packages,
    buy them, list your own and cancel — all through the original KRAY Wallet.
 
-   Every kray.space read/write is proxied through /api/market (their CORS
+   Every kray.space read/write is proxied through /api/dogmarket (their CORS
    allowlist 500s foreign-Origin browsers). Signing always happens inside the
    wallet's own popup; this file never touches a seed. External file on purpose:
    script-src 'self' in vercel.json forbids inline scripts AND inline event
@@ -91,7 +91,7 @@
   function short(a) { return a ? a.slice(0, 6) + '…' + a.slice(-4) : '—'; }
 
   function apiUrl(ep, params) {
-    var u = '/api/market?ep=' + encodeURIComponent(ep);
+    var u = '/api/dogmarket?ep=' + encodeURIComponent(ep);
     params = params || {};
     Object.keys(params).forEach(function (k) { u += '&' + k + '=' + encodeURIComponent(params[k]); });
     return u;
