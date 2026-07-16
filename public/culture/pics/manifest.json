@@ -1,0 +1,494 @@
+[
+{
+"f": "pic-art-01.webp",
+"t": "ART"
+},
+{
+"f": "pic-art-02.webp",
+"t": "ART"
+},
+{
+"f": "pic-art-03.webp",
+"t": "ART"
+},
+{
+"f": "pic-bear-01.webp",
+"t": "BEAR"
+},
+{
+"f": "pic-bear-02.webp",
+"t": "BEAR"
+},
+{
+"f": "pic-bear-03.webp",
+"t": "BEAR"
+},
+{
+"f": "pic-bear-04.webp",
+"t": "BEAR"
+},
+{
+"f": "pic-binance-01.webp",
+"t": "BINANCE"
+},
+{
+"f": "pic-binance-02.webp",
+"t": "BINANCE"
+},
+{
+"f": "pic-binance-03.webp",
+"t": "BINANCE"
+},
+{
+"f": "pic-binance-04.webp",
+"t": "BINANCE"
+},
+{
+"f": "pic-bip-110-01.webp",
+"t": "BIP-110"
+},
+{
+"f": "pic-bip-110-02.webp",
+"t": "BIP-110"
+},
+{
+"f": "pic-bip-110-03.webp",
+"t": "BIP-110"
+},
+{
+"f": "pic-bitflow-01.webp",
+"t": "BITFLOW"
+},
+{
+"f": "pic-bitflow-02.webp",
+"t": "BITFLOW"
+},
+{
+"f": "pic-bull-01.webp",
+"t": "BULL"
+},
+{
+"f": "pic-bull-02.webp",
+"t": "BULL"
+},
+{
+"f": "pic-bull-03.webp",
+"t": "BULL"
+},
+{
+"f": "pic-bull-04.webp",
+"t": "BULL"
+},
+{
+"f": "pic-buy-01.webp",
+"t": "BUY"
+},
+{
+"f": "pic-buy-02.webp",
+"t": "BUY"
+},
+{
+"f": "pic-casey-01.webp",
+"t": "CASEY"
+},
+{
+"f": "pic-cexs-01.webp",
+"t": "CEXs"
+},
+{
+"f": "pic-claudinho-01.webp",
+"t": "CLAUDINHO"
+},
+{
+"f": "pic-cmc-01.webp",
+"t": "CMC"
+},
+{
+"f": "pic-community-01.webp",
+"t": "COMMUNITY"
+},
+{
+"f": "pic-community-02.webp",
+"t": "COMMUNITY"
+},
+{
+"f": "pic-community-03.webp",
+"t": "COMMUNITY"
+},
+{
+"f": "pic-consistencia-01.webp",
+"t": "CONSISTÊNCIA"
+},
+{
+"f": "pic-consistencia-02.webp",
+"t": "CONSISTÊNCIA"
+},
+{
+"f": "pic-cooking-01.webp",
+"t": "COOKING"
+},
+{
+"f": "pic-dca-01.webp",
+"t": "DCA"
+},
+{
+"f": "pic-dog-da-massa-01.webp",
+"t": "DOG DA MASSA"
+},
+{
+"f": "pic-dog-da-massa-02.webp",
+"t": "DOG DA MASSA"
+},
+{
+"f": "pic-dog-da-massa-03.webp",
+"t": "DOG DA MASSA"
+},
+{
+"f": "pic-dog-da-massa-04.webp",
+"t": "DOG DA MASSA"
+},
+{
+"f": "pic-dog-da-massa-05.webp",
+"t": "DOG DA MASSA"
+},
+{
+"f": "pic-doge-01.webp",
+"t": "DOGE"
+},
+{
+"f": "pic-dogspace-01.webp",
+"t": "DOGSPACE"
+},
+{
+"f": "pic-dogspace-02.webp",
+"t": "DOGSPACE"
+},
+{
+"f": "pic-dogspace-03.webp",
+"t": "DOGSPACE"
+},
+{
+"f": "pic-dsc-01.webp",
+"t": "DSC"
+},
+{
+"f": "pic-elon-musk-01.webp",
+"t": "ELON MUSK"
+},
+{
+"f": "pic-elon-musk-02.webp",
+"t": "ELON MUSK"
+},
+{
+"f": "pic-elon-musk-03.webp",
+"t": "ELON MUSK"
+},
+{
+"f": "pic-elon-musk-04.webp",
+"t": "ELON MUSK"
+},
+{
+"f": "pic-elon-musk-05.webp",
+"t": "ELON MUSK"
+},
+{
+"f": "pic-elon-musk-06.webp",
+"t": "ELON MUSK"
+},
+{
+"f": "pic-elon-musk-07.webp",
+"t": "ELON MUSK"
+},
+{
+"f": "pic-elon-musk-08.webp",
+"t": "ELON MUSK"
+},
+{
+"f": "pic-elon-musk-09.webp",
+"t": "ELON MUSK"
+},
+{
+"f": "pic-elon-musk-10.webp",
+"t": "ELON MUSK"
+},
+{
+"f": "pic-elon-musk-11.webp",
+"t": "ELON MUSK"
+},
+{
+"f": "pic-fifa-world-cup-01.webp",
+"t": "FIFA WORLD CUP"
+},
+{
+"f": "pic-fifa-world-cup-02.webp",
+"t": "FIFA WORLD CUP"
+},
+{
+"f": "pic-fifa-world-cup-03.webp",
+"t": "FIFA WORLD CUP"
+},
+{
+"f": "pic-fun-01.webp",
+"t": "FUN"
+},
+{
+"f": "pic-fun-02.webp",
+"t": "FUN"
+},
+{
+"f": "pic-fun-03.webp",
+"t": "FUN"
+},
+{
+"f": "pic-fun-04.webp",
+"t": "FUN"
+},
+{
+"f": "pic-fun-05.webp",
+"t": "FUN"
+},
+{
+"f": "pic-fun-06.webp",
+"t": "FUN"
+},
+{
+"f": "pic-fun-07.webp",
+"t": "FUN"
+},
+{
+"f": "pic-fun-08.webp",
+"t": "FUN"
+},
+{
+"f": "pic-fun-09.webp",
+"t": "FUN"
+},
+{
+"f": "pic-fun-10.webp",
+"t": "FUN"
+},
+{
+"f": "pic-gta-vi-01.webp",
+"t": "GTA VI"
+},
+{
+"f": "pic-hodl-01.webp",
+"t": "HODL"
+},
+{
+"f": "pic-hodl-02.webp",
+"t": "HODL"
+},
+{
+"f": "pic-italy-01.webp",
+"t": "ITALY"
+},
+{
+"f": "pic-leonidas-01.webp",
+"t": "LEONIDAS"
+},
+{
+"f": "pic-lobo-01.webp",
+"t": "LOBO"
+},
+{
+"f": "pic-logo-01.webp",
+"t": "LOGO"
+},
+{
+"f": "pic-logo-02.webp",
+"t": "LOGO"
+},
+{
+"f": "pic-logo-03.webp",
+"t": "LOGO"
+},
+{
+"f": "pic-matrix-01.webp",
+"t": "MATRIX"
+},
+{
+"f": "pic-matrix-02.webp",
+"t": "MATRIX"
+},
+{
+"f": "pic-matrix-03.webp",
+"t": "MATRIX"
+},
+{
+"f": "pic-matrix-04.webp",
+"t": "MATRIX"
+},
+{
+"f": "pic-meme-fight-01.webp",
+"t": "MEME FIGHT"
+},
+{
+"f": "pic-moon-01.webp",
+"t": "MOON"
+},
+{
+"f": "pic-news-01.webp",
+"t": "NEWS"
+},
+{
+"f": "pic-news-02.webp",
+"t": "NEWS"
+},
+{
+"f": "pic-news-03.webp",
+"t": "NEWS"
+},
+{
+"f": "pic-news-04.webp",
+"t": "NEWS"
+},
+{
+"f": "pic-ney-01.webp",
+"t": "NEY"
+},
+{
+"f": "pic-okx-01.webp",
+"t": "OKX"
+},
+{
+"f": "pic-on-chain-01.webp",
+"t": "ON CHAIN"
+},
+{
+"f": "pic-on-chain-02.webp",
+"t": "ON CHAIN"
+},
+{
+"f": "pic-orange-01.webp",
+"t": "ORANGE"
+},
+{
+"f": "pic-orange-02.webp",
+"t": "ORANGE"
+},
+{
+"f": "pic-red-bull-01.webp",
+"t": "RED BULL"
+},
+{
+"f": "pic-red-bull-02.webp",
+"t": "RED BULL"
+},
+{
+"f": "pic-robobuild-01.webp",
+"t": "ROBOBUILD"
+},
+{
+"f": "pic-robobuild-02.webp",
+"t": "ROBOBUILD"
+},
+{
+"f": "pic-robobuild-03.webp",
+"t": "ROBOBUILD"
+},
+{
+"f": "pic-robobuild-04.webp",
+"t": "ROBOBUILD"
+},
+{
+"f": "pic-robobuild-05.webp",
+"t": "ROBOBUILD"
+},
+{
+"f": "pic-runestone-01.webp",
+"t": "RUNESTONE"
+},
+{
+"f": "pic-runestone-02.webp",
+"t": "RUNESTONE"
+},
+{
+"f": "pic-runestone-03.webp",
+"t": "RUNESTONE"
+},
+{
+"f": "pic-runestone-04.webp",
+"t": "RUNESTONE"
+},
+{
+"f": "pic-runestone-05.webp",
+"t": "RUNESTONE"
+},
+{
+"f": "pic-runestone-06.webp",
+"t": "RUNESTONE"
+},
+{
+"f": "pic-saylor-01.webp",
+"t": "SAYLOR"
+},
+{
+"f": "pic-saylor-02.webp",
+"t": "SAYLOR"
+},
+{
+"f": "pic-saylor-03.webp",
+"t": "SAYLOR"
+},
+{
+"f": "pic-sextou-01.webp",
+"t": "SEXTOU"
+},
+{
+"f": "pic-style-01.webp",
+"t": "STYLE"
+},
+{
+"f": "pic-style-02.webp",
+"t": "STYLE"
+},
+{
+"f": "pic-style-03.webp",
+"t": "STYLE"
+},
+{
+"f": "pic-style-04.webp",
+"t": "STYLE"
+},
+{
+"f": "pic-style-05.webp",
+"t": "STYLE"
+},
+{
+"f": "pic-style-06.webp",
+"t": "STYLE"
+},
+{
+"f": "pic-style-07.webp",
+"t": "STYLE"
+},
+{
+"f": "pic-style-08.webp",
+"t": "STYLE"
+},
+{
+"f": "pic-style-09.webp",
+"t": "STYLE"
+},
+{
+"f": "pic-style-10.webp",
+"t": "STYLE"
+},
+{
+"f": "pic-style-11.webp",
+"t": "STYLE"
+},
+{
+"f": "pic-vincent-01.webp",
+"t": "VINCENT"
+},
+{
+"f": "pic-withdraw-dog-01.webp",
+"t": "WITHDRAW DOG"
+},
+{
+"f": "pic-withdraw-dog-02.webp",
+"t": "WITHDRAW DOG"
+}
+]

@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-15T23:25:38.170029+00:00",
-  "date": "2026-07-15",
+  "updated_at": "2026-07-16T00:49:17.606649+00:00",
+  "date": "2026-07-16",
   "source": "dogdata.xyz",
   "cofre": {
     "rank": 1,
@@ -14,14 +14,14 @@
   "exchanges": [
     {
       "id": "h2",
-      "label": "Top #2",
+      "label": "Gate.io hot",
       "community": "Gate",
       "balance_dog": 3439555100.52782,
       "rank": 2
     },
     {
       "id": "h3",
-      "label": "Top #3",
+      "label": "Bitget hot",
       "community": "Bitget",
       "balance_dog": 2964137976.47012,
       "rank": 3
@@ -36,8 +36,8 @@
   ],
   "signals": {
     "cofre_to_exchange": 0,
-    "cofre_big_out": 11,
+    "cofre_big_out": 0,
     "relay_flows": 0
   },
-  "level": "watch"
+  "level": "stable"
 }

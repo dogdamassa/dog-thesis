@@ -119,8 +119,8 @@
     label = String(label || "");
     id = String(id || "");
     if (id === "cofre" || /vault\s*#?\s*1/i.test(label)) return L.large;
-    if (id === "h2" || /top\s*#?\s*2/i.test(label)) return "Gate watched wallet";
-    if (id === "h3" || /top\s*#?\s*3/i.test(label)) return "Bitget watched wallet";
+    if (id === "h2" || /top\s*#?\s*2/i.test(label)) return "Gate.io hot wallet";
+    if (id === "h3" || /top\s*#?\s*3/i.test(label)) return "Bitget hot wallet";
     if (id === "mexc" || /mexc/i.test(label)) return "MEXC wallet";
     if (/fresh wallet/i.test(label)) return L.fresh;
     if (/unmapped wallet/i.test(label)) return fallback || L.unknownDst;
@@ -131,10 +131,10 @@
   function nodeKind(id, label, type, side) {
     id = String(id || "");
     label = String(label || "");
-    if (id === "h2" || id === "h3" || id === "mexc" || /gate|bitget|mexc|exchange|top\s*#?/i.test(label)) {
+    if (id === "h2" || id === "h3" || id === "mexc" || /gate|bitget|mexc|exchange|top\s*#?|sweeper/i.test(label)) {
       return "exchange";
     }
-    if (/^int/i.test(id) || /intermediary|relay|bridge|ponte/i.test(label)) return "relay";
+    if (/^int/i.test(id) || /intermediary|relay|bridge|ponte|deposit|shuttle|sleeper|desk/i.test(label)) return "relay";
     if (id === "cofre") return "source";
     if (/fresh|unmapped/i.test(label) || isBtcAddr(id)) return "fresh";
     if (type === "cofre_in" && side === "to") return "source";

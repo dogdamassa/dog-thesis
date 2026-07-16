@@ -26,7 +26,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
 <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css?v=f080094428">
+<link rel="stylesheet" href="/styles.css?v=3c33b21424">
 <!-- Intro gate. Render-blocking on purpose: decides before first paint whether
      the presentation video opens (3-day TTL). External file = CSP-safe. -->
 <script src="/intro.js?v=85b612ad24"></script>
@@ -102,7 +102,7 @@
         {
           "@type": "Question",
           "name": "Who controls $DOG today?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No one is the owner of $DOG, but concentration is watched. On Jun 25, 2026, a wallet gathered about 12% of supply in one day. Co spending supports the read of a single control cluster. It held. It was a consolidation. The nominal identity remains unknown." }
+          "acceptedAnswer": { "@type": "Answer", "text": "No company, no CEO, no team wallet. $DOG is spread across tens of thousands of real people — the airdrop alone reached about 75,000 wallets, and the community ($DOG Army) is who carries the coin. Concentration is still watched with receipts: one cluster gathered about 12% of supply on Jun 25, 2026 (co-spending supports a single control cluster; identity unknown; documented, not proven)." }
         },
         {
           "@type": "Question",
@@ -142,29 +142,26 @@
       </a>
     </div>
     <div class="navlinks" aria-label="Main navigation">
-      <a href="#dog101">$DOG 101</a>
-      <a href="#qg" class="nav-new" data-i18n="nav.qg">HQ</a>
+      <a href="#top" data-i18n="nav.history">Home</a>
       <a href="#radar" data-i18n="nav.radar">Radar</a>
       <a href="/dogscan">DogScan</a>
       <a href="/dogmarket" data-i18n="nav.market">DogMarket</a>
-      <a href="/investigacao" class="nav-case" data-i18n="nav.inv">Investigation</a>
+      <a href="/web3" data-i18n="nav.web3">Social Space</a>
       <div class="navgroup">
         <button type="button" class="navgroup-trigger" aria-expanded="false"><span data-i18n="nav.more">More</span><span class="caret" aria-hidden="true">▾</span></button>
         <div class="navgroup-menu" role="menu">
-          <!-- /#qg (não #qg): tira o link do scrollspy — o destaque da seção
-               QG pertence ao tab HQ, não ao grupo More -->
           <a class="navgroup-join" href="/#qg" data-i18n="nav.cta">Join the $DOG Army</a>
+          <a href="#dog101">$DOG 101</a>
+          <a href="#qg" data-i18n="nav.qg">HQ</a>
+          <a href="/investigacao" class="nav-case" data-i18n="nav.inv">Investigation</a>
           <a href="/runestone" data-i18n="nav.runestone">Runestone</a>
-          <a href="/web3" data-i18n="nav.web3">Social Space</a>
           <a href="/planos" data-i18n="nav.plans">Plans</a>
           <a href="#verificar" data-i18n="nav.gverify">Verify</a>
           <a href="#luta" data-i18n="nav.fight">The Fight</a>
           <a href="#cultura" data-i18n="nav.culture">Culture</a>
           <a href="#ecossistema" data-i18n="nav.ecosystem">Ecosystem</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
           <a href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
-          <!-- /#faq: o FAQ vive DENTRO da seção #dog101 — observá-lo faria o
-               destaque da nav tremer entre "$DOG 101" e "More" -->
-          <a href="/#faq" data-i18n="nav.faq">FAQ</a>
         </div>
       </div>
     </div>
@@ -192,25 +189,26 @@
 <div class="navscrim" id="navscrim" hidden></div>
 <aside class="navdrawer" id="navdrawer" aria-label="Menu" aria-hidden="true">
   <nav class="navdrawer-inner">
-    <a class="navdrawer-link" href="#dog101">$DOG 101</a>
-    <a class="navdrawer-link" href="#qg" data-i18n="nav.qg">HQ</a>
+    <a class="navdrawer-link" href="#top" data-i18n="nav.history">Home</a>
     <a class="navdrawer-link" href="#radar" data-i18n="nav.radar">Radar</a>
     <a class="navdrawer-link" href="/dogscan">DogScan</a>
     <a class="navdrawer-link" href="/dogmarket" data-i18n="nav.market">DogMarket</a>
-    <a class="navdrawer-link" href="/investigacao" data-i18n="nav.inv">Investigation</a>
+    <a class="navdrawer-link" href="/web3" data-i18n="nav.web3">Social Space</a>
     <details class="navdrawer-group">
       <summary data-i18n="nav.more">More</summary>
+      <a class="navdrawer-link" href="#dog101">$DOG 101</a>
+      <a class="navdrawer-link" href="#qg" data-i18n="nav.qg">HQ</a>
+      <a class="navdrawer-link" href="/investigacao" data-i18n="nav.inv">Investigation</a>
       <a class="navdrawer-link" href="/runestone" data-i18n="nav.runestone">Runestone</a>
-      <a class="navdrawer-link" href="/web3" data-i18n="nav.web3">Social Space</a>
       <a class="navdrawer-link" href="/planos" data-i18n="nav.plans">Plans</a>
       <a class="navdrawer-link" href="#verificar" data-i18n="nav.gverify">Verify</a>
       <a class="navdrawer-link" href="#luta" data-i18n="nav.fight">The Fight</a>
       <a class="navdrawer-link" href="#cultura" data-i18n="nav.culture">Culture</a>
       <a class="navdrawer-link" href="#ecossistema" data-i18n="nav.ecosystem">Ecosystem</a>
-      <a class="navdrawer-link" href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
       <a class="navdrawer-link" href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a class="navdrawer-link" href="/patrocinadores.html" data-i18n="nav.sponsor">Sponsors</a>
     </details>
-    <a class="navdrawer-cta" href="#qg" data-i18n="nav.cta">Join the $DOG Army</a>
+    <a class="navdrawer-cta" href="/#qg" data-i18n="nav.cta">Join the $DOG Army</a>
     <button type="button" class="navdrawer-wallet" id="walletBtnDrawer">
       <span class="nav-wallet-dot" aria-hidden="true"></span>
       <img class="nav-wallet-pfp" id="walletBtnPfpDrawer" alt="Dog Social Club" hidden>
@@ -350,27 +348,6 @@
       </div>
       </details>
 
-      <div class="d101-faq" id="faq">
-        <h3 class="vf-subhead" data-i18n="f.h">Everything you need to understand $DOG.</h3>
-        <div class="faq">
-          <details open><summary data-i18n="f.q1">What is $DOG?</summary><div class="a" data-i18n="f.a1">$DOG (DOG•GO•TO•THE•MOON) is the largest community coin on <b>Bitcoin</b>. Technically it's <b>Rune #3</b>, etched inside Bitcoin's own network with the Runes protocol at block 840,000. Supply of 100 billion, open license (CC0), <b>no owner</b>. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">View on chain</a>.</div></details>
-          <details><summary data-i18n="f.q2">How was it created? Was it fair?</summary><div class="a" data-i18n="f.a2">One of the fairest launches ever. <b>No presale. No team reserve. No discounted investor.</b> $DOG was airdropped free to those who <b>contributed to the network</b>. People active in the Bitcoin and Ordinals ecosystem earned the <b>Runestone</b>, and Runestone holders got the $DOG airdrop (~75,000 wallets). Even the creator took only ~0.008%. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">Source</a>.</div></details>
-          <details><summary data-i18n="f.q6">Who controls $DOG today?</summary><div class="a" data-i18n="f.a6">No one "owns" $DOG. But we watch concentration closely. We traced a single control cluster that gathered about <b>12% of supply</b>. It consolidated. It held. The identity is still unknown. Suspicious, documented, not proven. <a href="#briefing">See today's read</a> and <a href="#carteiras">the watched wallets</a>.</div></details>
-          <details><summary data-i18n="f.q8">How do I store $DOG safely?</summary><div class="a" data-i18n="f.a8">The most sovereign way is <b>self custody</b>. Take $DOG off the exchange and keep it in your own Bitcoin and Runes wallet that only you control. Pulling coins off the exchange shrinks the float that can be used against the holder. <i>This is education, not financial advice.</i></div></details>
-          <details><summary data-i18n="f.q9">Why "don't trust, verify"?</summary><div class="a" data-i18n="f.a9">Because everything here is <b>public and reproducible</b>. You don't take our word for it. The data lives on dogdata.xyz, mempool.space and ordinals.com. <a href="#metodo">See the sources</a> and check it yourself.</div></details>
-        </div>
-        <div class="linklist" style="margin-top:18px">
-          <a href="/what-is-dog-bitcoin"><b>What is DOG on Bitcoin?</b><span>Beginner guide to DOG•GO•TO•THE•MOON, Rune #3, supply and launch.</span></a>
-          <a href="/dog-rune"><b>DOG Rune guide</b><span>Technical explanation of DOG as Rune 840000:3 on Bitcoin.</span></a>
-          <a href="/how-to-store-dog-rune"><b>How to store DOG safely</b><span>Self-custody basics for DOG holders using Bitcoin/Runes wallets.</span></a>
-          <a href="/dog-proof-of-reserves"><b>DOG proof-of-reserves watch</b><span>Exchange wallet monitoring and public reserve evidence.</span></a>
-          <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener"><b>ordinals.com</b><span data-i18n="f.l1">$DOG (Rune #3) on the chain itself</span></a>
-          <a href="https://www.dogdata.xyz" target="_blank" rel="noopener"><b>dogdata.xyz</b><span data-i18n="f.l2">Holders, float, supply, and markets</span></a>
-          <a href="https://mempool.space" target="_blank" rel="noopener"><b>mempool.space</b><span data-i18n="f.l3">Explore any Bitcoin wallet</span></a>
-          <a href="https://www.oklink.com/bitcoin/token/runes/840000-3" target="_blank" rel="noopener"><b>OKLink: Rune 840000:3</b><span data-i18n="f.l4">$DOG technical details</span></a>
-          <a href="https://bitcoinmagazine.com/technical/bitcoin-core-or-bitcoin-knots-what-the-op_return-debate-is-actually-about" target="_blank" rel="noopener"><b>Bitcoin Magazine: BIP 110</b><span data-i18n="f.l6">The debate over data on Bitcoin</span></a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -577,22 +554,22 @@
         <p class="lead wnote" data-i18n="w.lead">Six addresses carry the case. Click any of them and verify on mempool.space. Every relay, satellite and co spend lives in the full investigation. We watch. We don't blink.</p>
 
       <div class="wallets wgrid">
-        <div class="wrow"><div class="nm" data-i18n="w.c1n">The whale (12%)</div><div class="info" data-i18n="w.c1">gathered <b>about 12% of the supply</b> in one day. Jun 25, 2026. It held. · <a href="https://mempool.space/address/bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn" target="_blank" rel="noopener">bc1plzs…dhspn</a></div></div>
-        <div class="wrow"><div class="nm">Binance?</div><div class="info" data-i18n="w.c2">community tag, unconfirmed. <b>51 withdrawals</b> toward the cluster, zero back. · <a href="https://mempool.space/address/bc1qhuv3dhpnm0wktasd3v0kt6e4aqfqsd0uhfdu7d" target="_blank" rel="noopener">bc1qhuv3…fdu7d</a></div></div>
-        <div class="wrow"><div class="nm">Bitget</div><div class="info" data-i18n="w.c3">the cluster's exit door: <b>~190 deposits</b>. · <a href="https://mempool.space/address/bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k" target="_blank" rel="noopener">bc1p50n9…hpp9k</a></div></div>
-        <div class="wrow"><div class="nm">Gate</div><div class="info" data-i18n="w.c4">the top $DOG holder in the public ranking. · <a href="https://mempool.space/address/bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv" target="_blank" rel="noopener">bc1pk8g4…x9ctv</a></div></div>
+        <div class="wrow"><div class="nm" data-i18n="w.c1n">The whale (12%)</div><div class="info" data-i18n="w.c1">gathered <b>about 12% of the supply</b> in one day. Jun 25, 2026. It absorbed the MM2 and Whale7 wallets in transfers <b>without a runestone</b> — invisible to casual explorers. It behaves like one liquidity desk. It held. · <a href="https://mempool.space/address/bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn" target="_blank" rel="noopener">bc1plzs…dhspn</a></div></div>
+        <div class="wrow"><div class="nm">Binance?</div><div class="info" data-i18n="w.c2">community tag, unconfirmed. <b>51 withdrawals</b> toward the cluster, zero back. The wallet holds 0 $DOG itself: what leaves this door is funding, not custody. · <a href="https://mempool.space/address/bc1qhuv3dhpnm0wktasd3v0kt6e4aqfqsd0uhfdu7d" target="_blank" rel="noopener">bc1qhuv3…fdu7d</a></div></div>
+        <div class="wrow"><div class="nm">Bitget</div><div class="info" data-i18n="w.c3">the cluster's exit door: <b>~190 deposits</b>. Official label, verified on dogdata.xyz. · <a href="https://mempool.space/address/bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k" target="_blank" rel="noopener">bc1p50n9…hpp9k</a></div></div>
+        <div class="wrow"><div class="nm">Gate</div><div class="info" data-i18n="w.c4">official Gate.io label — the visible face of a <b>~5.87B cluster</b>: hot wallet + sweeper + ~67 deposit-farm wallets. · <a href="https://mempool.space/address/bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv" target="_blank" rel="noopener">bc1pk8g4…x9ctv</a></div></div>
         <div class="wrow"><div class="nm" data-i18n="w.c5n">Relay #3</div><div class="info" data-i18n="w.c5">the bridge that pulls from the suspected Binance wallet. · <a href="https://mempool.space/address/bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j" target="_blank" rel="noopener">bc1pu03udw…jch8j</a></div></div>
         <div class="wrow"><div class="nm">Whale23</div><div class="info" data-i18n="w.c6">wash trading pattern, documented. · <a href="https://mempool.space/address/bc1prdyzwdg0rcdgf9cg0a4zyx0cq3mdr3n6mcym95f3eg4dexfvnsjq200ly4" target="_blank" rel="noopener">bc1prdyz…00ly4</a></div></div>
       </div>
 
       <div class="wmore">
-        <p data-i18n="w.more"><b>+9 wallets</b> under daily watch: MM2, Whale7, Market Maker 1, relays and satellites, all tied to one owner by co spending. Plus the MEXC and Merlin Chain wallets, outside the cluster.</p>
+        <p data-i18n="w.more"><b>+9 wallets</b> under daily watch. Jun 25–26, 2026: the whale absorbed MM2, Whale7 and Market Maker 1 (~3.9B) — today they run as zero-balance shuttles recycling exchange withdrawals. The "sleeper" the community flagged in July 2026 is another arm of the same desk, operating inside Gate's custody. Plus the MEXC and Merlin Chain wallets, outside the cluster.</p>
         <div class="wmore-cta">
           <a class="btn primary" href="/doc.html?f=investigacao-binance.md" target="_blank" rel="noopener" data-i18n="w.cta1">Read the full investigation</a>
           <a class="btn secondary" href="/doc.html?f=fase2-forensics.md" target="_blank" rel="noopener" data-i18n="w.cta2">Phase 2: every wallet and co spend</a>
         </div>
       </div>
-      <p class="lead wnote" data-i18n="w.note">The flow is an on chain fact. Exchange labels are community attribution, unconfirmed. Movement is not ownership. Intent is not confirmed. We hold that line.</p>
+      <p class="lead wnote" data-i18n="w.note">The flow is an on chain fact. The Gate.io, Bitget and MEXC labels are officially verified on dogdata.xyz; the rest is community attribution, unconfirmed. Movement is not ownership. Intent is not confirmed. We hold that line.</p>
       </details>
     </div>
   </section>
@@ -603,12 +580,12 @@
       <div class="invcta-box">
         <div class="invcta-top">
           <span class="invcta-tag" data-i18n="br.k">Case file · open since Aug 2024</span>
-          <span class="briefing-live" data-i18n="br.live">Live · Jul 6, 2026</span>
+          <span class="briefing-live" data-i18n="br.live">Live · Jul 15, 2026</span>
         </div>
         <h2 data-i18n="br.h">12% of all $DOG sits in one wallet. And the trail runs through Binance's door.</h2>
         <p class="invcta-sub" data-i18n="br.p">A wallet the community tags as Binance fed that cluster for 22 months. 51 withdrawals. Zero back. The same company funded BRC 20's biggest infrastructure and never listed the Rune. We lined up every date. We show every receipt. You judge. We don't accuse. We document.</p>
         <div class="invcta-stats">
-          <span><b>12.15%</b> <i data-i18n="br.s1">one entity</i></span>
+          <span><b>~12.7%</b> <i data-i18n="br.s1">one desk, satellites included</i></span>
           <span><b>51×</b> <i data-i18n="br.s2">withdrawals</i></span>
           <span><b>~22 mo</b> <i data-i18n="br.s3">one direction</i></span>
           <span><b>0</b> <i data-i18n="br.s4">coins back</i></span>
@@ -638,6 +615,10 @@
 
   <section id="luta" class="fight-band">
     <div class="wrap">
+      <figure class="fight-banner">
+        <img src="public/culture/hodl-army.webp" alt="Community art: an army of DOG puppies holding HODL shields" loading="lazy">
+        <figcaption data-i18n="fight.bcap">The $DOG Army doesn't ask permission to use Bitcoin.</figcaption>
+      </figure>
       <div class="fight-cta">
         <div class="slogan" data-i18n="fight.slogan">“Defend permissionless blockspace. Reject BIP-110.”</div>
         <p data-i18n="fight.ctap">If you paid the fee, the blockspace is yours. That's the whole point of Bitcoin. This is advocacy on protocol policy. Our opinion on Bitcoin's direction, not financial advice or market coordination.</p>
@@ -791,6 +772,12 @@
         <figure class="culture-item"><img src="public/culture/culture-hodl.webp" alt="Community art: an army of DOG puppies with HODL shields" loading="lazy"></figure>
         <figure class="culture-item"><img src="public/culture/culture-tattoo.webp" alt="A real tattoo of the DOG puppy logo on skin" loading="lazy"></figure>
       </div>
+
+      <!-- Acervo da matilha: filmstrip rotativo montado pelo /culture.js a
+           partir de public/culture/pics/manifest.json (123 peças, CC0) -->
+      <p class="pics-note" data-i18n="cult.acervo"><b>The Army's whole archive rotates below — 120+ pieces, all CC0.</b> Click any image to open it, save it, post it. The dog belongs to you too.</p>
+      <div class="pics-row" id="picsRowA" aria-label="DOG Army art archive"></div>
+      <div class="pics-row pics-row--rev" id="picsRowB" aria-hidden="true"></div>
     </div>
   </section>
 
@@ -935,6 +922,36 @@
       <p class="lead" style="font-size:13.5px;color:var(--muted);margin-top:18px;max-width:none" data-i18n="eco.note">Listed because the community uses them, not because they pay us. Links open third party sites we don't control. always confirm the URL, keep your keys, and treat nothing here as a recommendation to buy or sell.</p>
     </div>
   </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker" data-i18n="f.k">FAQ · for people and for AIs</div>
+          <h2 data-i18n="f.h">Everything you need to understand $DOG.</h2>
+        </div>
+        <p class="lead" data-i18n="f.lead">A straight guide for newcomers. And for any AI that wants to answer about $DOG on facts and sources.</p>
+      </div>
+      <div class="faq">
+        <details open><summary data-i18n="f.q1">What is $DOG?</summary><div class="a" data-i18n="f.a1">$DOG (DOG•GO•TO•THE•MOON) is the largest community coin on <b>Bitcoin</b>. Technically it's <b>Rune #3</b>, etched inside Bitcoin's own network with the Runes protocol at block 840,000. Supply of 100 billion, open license (CC0), <b>no owner</b>. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">View on chain</a>.</div></details>
+        <details><summary data-i18n="f.q2">How was it created? Was it fair?</summary><div class="a" data-i18n="f.a2">One of the fairest launches ever. <b>No presale. No team reserve. No discounted investor.</b> $DOG was airdropped free to those who <b>contributed to the network</b>. People active in the Bitcoin and Ordinals ecosystem earned the <b>Runestone</b>, and Runestone holders got the $DOG airdrop (~75,000 wallets). Even the creator took only ~0.008%. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">Source</a>.</div></details>
+        <details><summary data-i18n="f.q6">Who controls $DOG today?</summary><div class="a" data-i18n="f.a6"><b>No company. No CEO. No team wallet.</b> $DOG is spread across <b>tens of thousands of real people</b> — the airdrop alone reached ~75,000 wallets, and the $DOG Army you see barking in the chat, funding plans and marching in the streets is who actually carries the coin. Diversified, human, verifiable. And because nobody should take that on faith, we also watch the exceptions: one cluster gathered about <b>12% of supply</b> — documented, not proven, under daily watch. <a href="#briefing">See the case</a> and <a href="#carteiras">the watched wallets</a>.</div></details>
+        <details><summary data-i18n="f.q8">How do I store $DOG safely?</summary><div class="a" data-i18n="f.a8">The most sovereign way is <b>self custody</b>. Take $DOG off the exchange and keep it in your own Bitcoin and Runes wallet that only you control. Pulling coins off the exchange shrinks the float that can be used against the holder. <i>This is education, not financial advice.</i></div></details>
+        <details><summary data-i18n="f.q9">Why "don't trust, verify"?</summary><div class="a" data-i18n="f.a9">Because everything here is <b>public and reproducible</b>. You don't take our word for it. The data lives on dogdata.xyz, mempool.space and ordinals.com. <a href="#metodo">See the sources</a> and check it yourself.</div></details>
+      </div>
+      <div class="linklist" style="margin-top:18px">
+        <a href="/what-is-dog-bitcoin"><b>What is DOG on Bitcoin?</b><span>Beginner guide to DOG•GO•TO•THE•MOON, Rune #3, supply and launch.</span></a>
+        <a href="/dog-rune"><b>DOG Rune guide</b><span>Technical explanation of DOG as Rune 840000:3 on Bitcoin.</span></a>
+        <a href="/how-to-store-dog-rune"><b>How to store DOG safely</b><span>Self-custody basics for DOG holders using Bitcoin/Runes wallets.</span></a>
+        <a href="/dog-proof-of-reserves"><b>DOG proof-of-reserves watch</b><span>Exchange wallet monitoring and public reserve evidence.</span></a>
+        <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener"><b>ordinals.com</b><span data-i18n="f.l1">$DOG (Rune #3) on the chain itself</span></a>
+        <a href="https://www.dogdata.xyz" target="_blank" rel="noopener"><b>dogdata.xyz</b><span data-i18n="f.l2">Holders, float, supply, and markets</span></a>
+        <a href="https://mempool.space" target="_blank" rel="noopener"><b>mempool.space</b><span data-i18n="f.l3">Explore any Bitcoin wallet</span></a>
+        <a href="https://www.oklink.com/bitcoin/token/runes/840000-3" target="_blank" rel="noopener"><b>OKLink: Rune 840000:3</b><span data-i18n="f.l4">$DOG technical details</span></a>
+        <a href="https://bitcoinmagazine.com/technical/bitcoin-core-or-bitcoin-knots-what-the-op_return-debate-is-actually-about" target="_blank" rel="noopener"><b>Bitcoin Magazine: BIP 110</b><span data-i18n="f.l6">The debate over data on Bitcoin</span></a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -972,12 +989,13 @@
   </div>
 </footer>
 
-<script src="/i18n.js?v=59993e6b04"></script>
+<script src="/i18n.js?v=4741596776"></script>
 <script src="/news.js?v=b9001c3073" defer></script>
-<script src="/radar.js?v=236ebffb34" defer></script>
+<script src="/radar.js?v=21b191ca80" defer></script>
 <script src="/wallet.js?v=d217895ce6" defer></script>
 <!-- homechat depends on wallet.js (window.DogWallet + dog:wallet) — keep this order -->
-<script src="/homechat.js?v=76fa0025bb" defer></script>
+<script src="/homechat.js?v=6a3b9c61c8" defer></script>
+<script src="/culture.js?v=9bf917546c" defer></script>
 <script src="/dogdrop.js?v=4948b05e0b" defer></script>
 <script>
 (function(){

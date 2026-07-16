@@ -183,10 +183,13 @@
     root.classList.toggle('is-teaser', m === 'idle');
 
     var onlineEl = $('hqchatOnline');
+    var mem = data && data.members;
     if (onlineEl) {
-      var mem = data && data.members;
       onlineEl.textContent = (mem && mem.onlineCount != null) ? t('hcOnline', { n: mem.onlineCount }) : '';
     }
+    /* the "live" pulse only runs when the room really has people in it */
+    var dot = root.querySelector('.hqchat-dot');
+    if (dot) dot.classList.toggle('is-live', !!(mem && mem.onlineCount > 0));
 
     var msgs = (data && data.chat) ? (data.chat.messages || []) : null;
     var shown = msgs ? msgs.slice(m === 'idle' ? -TEASER_N : -FULL_N) : null;

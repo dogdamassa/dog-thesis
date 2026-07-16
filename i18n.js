@@ -171,13 +171,13 @@ window.DOG_I18N = {
     "br.k": "Dossiê aberto · desde 08/2024",
     "br.h": "12% de todo o $DOG numa carteira só. E a trilha corre pela porta da Binance.",
     "br.p": "Uma carteira que a comunidade aponta como Binance alimentou esse cluster por 22 meses. 51 saques. Zero de volta. A mesma empresa financiou a maior infraestrutura de BRC 20 e nunca listou a Rune. A gente alinhou cada data. A gente mostra cada recibo. Você julga. A gente não acusa. A gente documenta.",
-    "br.s1": "uma entidade",
+    "br.s1": "uma mesa, contando os satélites",
     "br.s2": "saques",
     "br.s3": "uma direção",
     "br.s4": "moedas de volta",
     "br.note": "Suspeito. Documentado. Não provado. Essa linha é o método. Não confie. Verifique.",
     "br.lead": "Caso aberto do dia. Uma carteira que a comunidade aponta como Binance — ainda não confirmada — é fonte sustentada e de mão única para o cluster de 12%; suspeito e documentado, mas sem prova de controle da empresa.",
-    "br.live": "Ao vivo · 06/07/2026",
+    "br.live": "Ao vivo · 15/07/2026",
     "br.src": "Fonte: @Cryptolution + on chain (mempool.space · dogdata.xyz) · refeito pelo $DOG Army",
     "br.studyTag": "Estudo diário",
     "br.studyH": "O que mudou hoje",
@@ -273,6 +273,9 @@ window.DOG_I18N = {
     "inv.t3w": "25/06/2026",
     "inv.t3h": "A consolidação.",
     "inv.t3p": "O cluster consolida mais de 12% de todo o $DOG que existe num único endereço. Em um dia. Em silêncio. Provado por co gasto: as carteiras que encheram o cofre assinam juntas.",
+    "inv.t5w": "15/07/2026",
+    "inv.t5h": "A mesa mostra os braços.",
+    "inv.t5p": "Decodificando os runestones crus: a baleia absorveu as carteiras MM2 e Whale7 em transferências <b>sem runestone</b> — e o \"6B movimentados\" viral era na verdade ~1,6B: o número de saída do dogdata conta o troco que a carteira manda pra si mesma. A \"sleeper\" redeposita direto na hot da Gate — privilégio de conta de market maker. As hot wallets da Gate.io e da Bitget agora têm rótulo oficial.",
     "inv.t4w": "Hoje",
     "inv.t4h": "Ele segura. Nós vigiamos.",
     "inv.t4p": "Nenhum depósito do cofre em corretora. O movimento fica entre relays, Bitget e Gate. A $DOG Army monitora todo dia no <a href=\"/#radar\">radar</a>.",
@@ -416,17 +419,17 @@ window.DOG_I18N = {
     "w.h": "As carteiras que a gente vigia. Todo santo dia.",
     "w.lead": "Seis endereços carregam o caso. Clica em qualquer um e confere na mempool.space. Cada ponte, satélite e gasto conjunto vive na investigação completa. A gente vigia. A gente não pisca.",
     "w.c1n": "A baleia (12%)",
-    "w.c1": "juntou <b>cerca de 12% do supply</b> em um dia. 25/06/2026. Segurou. · <a href=\"https://mempool.space/address/bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn\" target=\"_blank\" rel=\"noopener\">bc1plzs…dhspn</a>",
-    "w.c2": "rótulo da comunidade, sem confirmação. <b>51 saques</b> em direção ao cluster, zero de volta. · <a href=\"https://mempool.space/address/bc1qhuv3dhpnm0wktasd3v0kt6e4aqfqsd0uhfdu7d\" target=\"_blank\" rel=\"noopener\">bc1qhuv3…fdu7d</a>",
-    "w.c3": "a porta de saída do cluster: <b>~190 depósitos</b>. · <a href=\"https://mempool.space/address/bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k\" target=\"_blank\" rel=\"noopener\">bc1p50n9…hpp9k</a>",
-    "w.c4": "a maior holder de $DOG no ranking público. · <a href=\"https://mempool.space/address/bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv\" target=\"_blank\" rel=\"noopener\">bc1pk8g4…x9ctv</a>",
+    "w.c1": "juntou <b>cerca de 12% do supply</b> em um dia. 25/06/2026. Absorveu as carteiras MM2 e Whale7 em transferências <b>sem runestone</b> — invisíveis no explorador casual. Na chain, se comporta como uma única mesa de liquidez. Segurou. · <a href=\"https://mempool.space/address/bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn\" target=\"_blank\" rel=\"noopener\">bc1plzs…dhspn</a>",
+    "w.c2": "rótulo da comunidade, sem confirmação. <b>51 saques</b> em direção ao cluster, zero de volta. A carteira em si guarda 0 $DOG: o que sai dessa porta é financiamento, não custódia. · <a href=\"https://mempool.space/address/bc1qhuv3dhpnm0wktasd3v0kt6e4aqfqsd0uhfdu7d\" target=\"_blank\" rel=\"noopener\">bc1qhuv3…fdu7d</a>",
+    "w.c3": "a porta de saída do cluster: <b>~190 depósitos</b>. Rótulo oficial, verificado no dogdata.xyz. · <a href=\"https://mempool.space/address/bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k\" target=\"_blank\" rel=\"noopener\">bc1p50n9…hpp9k</a>",
+    "w.c4": "rótulo oficial da Gate.io — a face visível de um <b>cluster de ~5,87B</b>: hot wallet + sweeper + ~67 carteiras-fazenda de depósito. · <a href=\"https://mempool.space/address/bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv\" target=\"_blank\" rel=\"noopener\">bc1pk8g4…x9ctv</a>",
     "w.c5n": "Intermediary Wallet #3",
     "w.c5": "a ponte que puxa da suspeita carteira Binance. · <a href=\"https://mempool.space/address/bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j\" target=\"_blank\" rel=\"noopener\">bc1pu03udw…jch8j</a>",
     "w.c6": "padrão de wash trading, documentado. · <a href=\"https://mempool.space/address/bc1prdyzwdg0rcdgf9cg0a4zyx0cq3mdr3n6mcym95f3eg4dexfvnsjq200ly4\" target=\"_blank\" rel=\"noopener\">bc1prdyz…00ly4</a>",
-    "w.more": "<b>+9 carteiras</b> sob vigilância diária: MM2, Whale7, Market Maker 1, pontes e satélites, todas amarradas a um dono só por gasto conjunto. E mais as carteiras da MEXC e da Merlin Chain, fora do cluster.",
+    "w.more": "<b>+9 carteiras</b> sob vigilância diária. Em 25–26/06/2026, a baleia absorveu MM2, Whale7 e Market Maker 1 (~3,9B) — hoje elas operam como ônibus de saldo zero, reciclando saques de corretora. A carteira \"sleeper\" que a comunidade apontou em julho de 2026 é outro braço da mesma mesa, operando dentro da custódia da Gate. E mais as carteiras da MEXC e da Merlin Chain, fora do cluster.",
     "w.cta1": "Leia a investigação completa",
     "w.cta2": "Fase 2: todas as carteiras e gastos conjuntos",
-    "w.note": "O fluxo é fato da chain. Rótulo de corretora é atribuição da comunidade, não confirmado. Movimento não é posse. Intenção não é confirmada. A gente segura essa linha.",
+    "w.note": "O fluxo é fato da chain. Os rótulos de Gate.io, Bitget e MEXC são oficiais, verificados no dogdata.xyz; o resto é atribuição da comunidade, não confirmada. Movimento não é posse. Intenção não é confirmada. A gente segura essa linha.",
 
     "eco.k": "Ecossistema",
     "eco.h": "Onde o ecossistema da $DOG realmente vive.",
@@ -588,7 +591,7 @@ window.DOG_I18N = {
     "f.q5": "O que são Ordinals e Runes?",
     "f.a5": "<b>Ordinals</b> deixam gravar dados (imagens, texto) direto no Bitcoin. <b>Runes</b> deixam criar moedas (tokens) no Bitcoin de um jeito limpo, sem entupir a rede. A $DOG é uma Rune. <a href=\"#historia\">Ver a linha do tempo completa</a>.",
     "f.q6": "Quem controla a $DOG hoje?",
-    "f.a6": "Ninguém é \"dono\" da $DOG, mas a gente vigia a concentração. Em 25/06/2026, rastreamos uma carteira que juntou <b>cerca de 12% do supply</b> num dia. O gasto conjunto sustenta a leitura de um cluster de mesmo controle. Foi consolidação. Segurou. A identidade nominal segue desconhecida, e a gente segue vigiando. <a href=\"#carteiras\">Ver as carteiras vigiadas</a>.",
+    "f.a6": "<b>Sem empresa. Sem CEO. Sem carteira de time.</b> A $DOG está espalhada por <b>dezenas de milhares de pessoas reais</b> — só o airdrop alcançou ~75.000 carteiras, e a $DOG Army que você vê latindo no chat, financiando planos e marchando nas ruas é quem carrega a moeda de verdade. Diversificada, humana, verificável. E como ninguém deve acreditar nisso de graça, a gente também vigia as exceções: um cluster juntou <b>cerca de 12% do supply</b> — documentado, não provado, sob vigília diária. <a href=\"#briefing\">Ver o caso</a> e <a href=\"#carteiras\">as carteiras vigiadas</a>.",
     "f.q7": "A $DOG é manipulada?",
     "f.a7": "O mercado dela é <b>raso</b> (pouco dinheiro girando), o que torna o preço fácil de empurrar. A gente documentou <b>padrões consistentes com spoofing</b> (ordens fantasmas que aparecem e somem sem executar) em corretoras como Bitget e Kraken. Mostramos o comportamento; não cravamos a intenção. <a href=\"#metodo\">Como verificar</a>.",
     "f.q8": "Como eu guardo $DOG com segurança?",
@@ -893,6 +896,7 @@ window.DOG_I18N = {
     "qg.c4t": "Construir",
     "qg.c5t": "Incentivar",
     "qg.c5l": "Financiar uma boa ideia →",
+    "cult.acervo": "<b>O acervo inteiro da Army roda aqui embaixo — mais de 120 peças, tudo CC0.</b> Clique em qualquer imagem pra abrir, salvar, postar. O cachorro também é seu.",
     "qgsoc.label": "$DOG Army Social · ao vivo da chain",
     "qgsoc.hook": "Uma rede social gravada no Bitcoin. Posts, likes e recompensas on-chain. É isso que a $DOG Army está dizendo agora.",
     "vf.s6": "Quem verifica com a gente",
@@ -1065,13 +1069,13 @@ window.DOG_I18N = {
     "br.k": "Expediente abierto · desde 08/2024",
     "br.h": "El 12% de todo el $DOG en una sola cartera. Y el rastro corre por la puerta de Binance.",
     "br.p": "Una cartera que la comunidad señala como Binance alimentó ese clúster durante 22 meses. 51 retiros. Cero de vuelta. La misma empresa financió la mayor infraestructura de BRC 20 y nunca listó la Rune. Alineamos cada fecha. Mostramos cada recibo. Tú juzgas. No acusamos. Documentamos.",
-    "br.s1": "una entidad",
+    "br.s1": "una mesa, contando los satélites",
     "br.s2": "retiros",
     "br.s3": "una dirección",
     "br.s4": "monedas de vuelta",
     "br.note": "Sospechoso. Documentado. No probado. Esa línea es el método. No confíes. Verifica.",
     "br.lead": "Caso abierto del día. Una cartera que la comunidad señala como Binance — aún no confirmada — es fuente sostenida y unidireccional para el clúster del 12%; sospechoso y documentado, pero sin prueba de control de la empresa.",
-    "br.live": "En vivo · 06/07/2026",
+    "br.live": "En vivo · 15/07/2026",
     "br.src": "Fuente: @Cryptolution + on chain (mempool.space · dogdata.xyz) · rehecho por el $DOG Army",
     "br.studyTag": "Estudio diario",
     "br.studyH": "Qué cambió hoy",
@@ -1167,6 +1171,9 @@ window.DOG_I18N = {
     "inv.t3w": "25/06/2026",
     "inv.t3h": "La consolidación.",
     "inv.t3p": "El clúster consolida más del 12% de todo el $DOG existente en una sola dirección. En un día. En silencio. Probado por co gasto: las carteras que llenaron la bóveda firman juntas.",
+    "inv.t5w": "15/07/2026",
+    "inv.t5h": "La mesa muestra sus brazos.",
+    "inv.t5p": "Decodificando los runestones crudos: la ballena absorbió las carteras MM2 y Whale7 en transferencias <b>sin runestone</b> — y el \"6B movidos\" viral era en realidad ~1,6B: la cifra de salida de dogdata cuenta el cambio que la cartera se envía a sí misma. La \"sleeper\" redeposita directo en la hot de Gate — un privilegio de cuenta de market maker. Las hot wallets de Gate.io y Bitget ya tienen etiqueta oficial.",
     "inv.t4w": "Hoy",
     "inv.t4h": "Ella aguanta. Nosotros vigilamos.",
     "inv.t4p": "Ningún depósito de la bóveda en exchange. El movimiento queda entre relays, Bitget y Gate. La $DOG Army lo monitorea cada día en el <a href=\"/#radar\">radar</a>.",
@@ -1303,17 +1310,17 @@ window.DOG_I18N = {
     "w.h": "Las carteras que vigilamos. Cada santo día.",
     "w.lead": "Seis direcciones sostienen el caso. Haz clic en cualquiera y compruébala en mempool.space. Cada puente, satélite y gasto conjunto vive en la investigación completa. Vigilamos. No parpadeamos.",
     "w.c1n": "La ballena (12%)",
-    "w.c1": "acumuló <b>cerca del 12% del supply</b> en un día. 25/06/2026. Aguantó. · <a href=\"https://mempool.space/address/bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn\" target=\"_blank\" rel=\"noopener\">bc1plzs…dhspn</a>",
-    "w.c2": "etiqueta de la comunidad, sin confirmar. <b>51 retiros</b> hacia el clúster, cero de vuelta. · <a href=\"https://mempool.space/address/bc1qhuv3dhpnm0wktasd3v0kt6e4aqfqsd0uhfdu7d\" target=\"_blank\" rel=\"noopener\">bc1qhuv3…fdu7d</a>",
-    "w.c3": "la puerta de salida del clúster: <b>~190 depósitos</b>. · <a href=\"https://mempool.space/address/bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k\" target=\"_blank\" rel=\"noopener\">bc1p50n9…hpp9k</a>",
-    "w.c4": "la mayor holder de $DOG en el ranking público. · <a href=\"https://mempool.space/address/bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv\" target=\"_blank\" rel=\"noopener\">bc1pk8g4…x9ctv</a>",
+    "w.c1": "acumuló <b>cerca del 12% del supply</b> en un día. 25/06/2026. Absorbió las carteras MM2 y Whale7 en transferencias <b>sin runestone</b> — invisibles en el explorador casual. En la chain se comporta como una única mesa de liquidez. Aguantó. · <a href=\"https://mempool.space/address/bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn\" target=\"_blank\" rel=\"noopener\">bc1plzs…dhspn</a>",
+    "w.c2": "etiqueta de la comunidad, sin confirmar. <b>51 retiros</b> hacia el clúster, cero de vuelta. La cartera en sí guarda 0 $DOG: lo que sale por esa puerta es financiamiento, no custodia. · <a href=\"https://mempool.space/address/bc1qhuv3dhpnm0wktasd3v0kt6e4aqfqsd0uhfdu7d\" target=\"_blank\" rel=\"noopener\">bc1qhuv3…fdu7d</a>",
+    "w.c3": "la puerta de salida del clúster: <b>~190 depósitos</b>. Etiqueta oficial, verificada en dogdata.xyz. · <a href=\"https://mempool.space/address/bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k\" target=\"_blank\" rel=\"noopener\">bc1p50n9…hpp9k</a>",
+    "w.c4": "etiqueta oficial de Gate.io — la cara visible de un <b>clúster de ~5,87B</b>: hot wallet + sweeper + ~67 carteras-granja de depósito. · <a href=\"https://mempool.space/address/bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv\" target=\"_blank\" rel=\"noopener\">bc1pk8g4…x9ctv</a>",
     "w.c5n": "Intermediary Wallet #3",
     "w.c5": "el puente que saca de la sospechosa cartera Binance. · <a href=\"https://mempool.space/address/bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j\" target=\"_blank\" rel=\"noopener\">bc1pu03udw…jch8j</a>",
     "w.c6": "patrón de wash trading, documentado. · <a href=\"https://mempool.space/address/bc1prdyzwdg0rcdgf9cg0a4zyx0cq3mdr3n6mcym95f3eg4dexfvnsjq200ly4\" target=\"_blank\" rel=\"noopener\">bc1prdyz…00ly4</a>",
-    "w.more": "<b>+9 carteras</b> bajo vigilancia diaria: MM2, Whale7, Market Maker 1, puentes y satélites, todas atadas a un solo dueño por gasto conjunto. Además, las carteras de MEXC y Merlin Chain, fuera del clúster.",
+    "w.more": "<b>+9 carteras</b> bajo vigilancia diaria. El 25–26/06/2026 la ballena absorbió MM2, Whale7 y Market Maker 1 (~3,9B) — hoy operan como lanzaderas de saldo cero, reciclando retiros de exchange. La cartera \"sleeper\" que la comunidad señaló en julio de 2026 es otro brazo de la misma mesa, operando dentro de la custodia de Gate. Además, las carteras de MEXC y Merlin Chain, fuera del clúster.",
     "w.cta1": "Lee la investigación completa",
     "w.cta2": "Fase 2: todas las carteras y gastos conjuntos",
-    "w.note": "El flujo es un hecho de la chain. La etiqueta de exchange es atribución de la comunidad, no confirmada. Movimiento no es posesión. La intención no está confirmada. Sostenemos esa línea.",
+    "w.note": "El flujo es un hecho de la chain. Las etiquetas de Gate.io, Bitget y MEXC son oficiales, verificadas en dogdata.xyz; el resto es atribución de la comunidad, sin confirmar. Movimiento no es posesión. La intención no está confirmada. Sostenemos esa línea.",
     "eco.k": "Ecosistema",
     "eco.h": "Dónde vive realmente el ecosistema del $DOG.",
     "eco.lead": "Las herramientas que la $DOG Army usa para comprar, intercambiar, explorar y verificar el $DOG en Bitcoin. Apps públicas de terceros. No es recomendación ni consejo financiero. Haz autocustodia. Comprueba cada transacción tú mismo.",
@@ -1464,7 +1471,7 @@ window.DOG_I18N = {
     "f.q5": "¿Qué son Ordinals y Runes?",
     "f.a5": "<b>Ordinals</b> permiten grabar datos (imágenes, texto) directo en Bitcoin. <b>Runes</b> permiten crear monedas (tokens) en Bitcoin de forma limpia, sin saturar la red. El $DOG es una Rune. <a href=\"#historia\">Ver la línea de tiempo completa</a>.",
     "f.q6": "¿Quién controla el $DOG hoy?",
-    "f.a6": "Nadie es “dueño” del $DOG, pero vigilamos la concentración. El 25/06/2026, rastreamos una cartera que acumuló <b>cerca del 12% del supply</b> en un día. El gasto conjunto sostiene la lectura de un clúster de mismo control. Fue consolidación. Aguantó. La identidad nominal sigue siendo desconocida, y seguimos vigilando. <a href=\"#carteiras\">Ver las carteras vigiladas</a>.",
+    "f.a6": "<b>Sin empresa. Sin CEO. Sin cartera de equipo.</b> $DOG está repartido entre <b>decenas de miles de personas reales</b> — solo el airdrop llegó a ~75.000 carteras, y la $DOG Army que ves ladrando en el chat, financiando planes y marchando en las calles es quien de verdad carga la moneda. Diversificada, humana, verificable. Y como nadie debe creerlo gratis, también vigilamos las excepciones: un clúster acumuló <b>cerca del 12% del supply</b> — documentado, no probado, bajo vigilancia diaria. <a href=\"#briefing\">Ver el caso</a> y <a href=\"#carteiras\">las carteras vigiladas</a>.",
     "f.q7": "¿El $DOG está manipulado?",
     "f.a7": "Su mercado es <b>poco profundo</b> (poco dinero girando), lo que hace que el precio sea fácil de empujar. Documentamos <b>patrones consistentes con spoofing</b> (órdenes fantasma que aparecen y desaparecen sin ejecutarse) en exchanges como Bitget y Kraken. Mostramos el comportamiento; no afirmamos la intención. <a href=\"#metodo\">Cómo verificar</a>.",
     "f.q8": "¿Cómo guardo $DOG de forma segura?",
@@ -1763,6 +1770,7 @@ window.DOG_I18N = {
     "qg.c4t": "Construir",
     "qg.c5t": "Incentivar",
     "qg.c5l": "Financiar una buena idea →",
+    "cult.acervo": "<b>El archivo entero de la Army gira aquí abajo — más de 120 piezas, todo CC0.</b> Haz clic en cualquier imagen para abrirla, guardarla, postearla. El perro también es tuyo.",
     "qgsoc.label": "$DOG Army Social · en vivo desde la chain",
     "qgsoc.hook": "Una red social grabada en Bitcoin. Posts, likes y recompensas on-chain. Esto es lo que la $DOG Army está diciendo ahora mismo.",
     "vf.s6": "Quiénes verifican con nosotros",
@@ -2034,6 +2042,9 @@ window.DOG_I18N = {
           hasContent = true;
           lastGood = feed;
           strip.hidden = false;
+          /* o pulso só liga quando há posts de verdade na tela */
+          var dot = strip.querySelector('.social-dot');
+          if (dot) dot.classList.add('is-live');
           track.innerHTML = '';
           posts.forEach(function (p) { track.appendChild(card(p)); });
           /* duplicate set for the seamless -50% loop — decorative only, so it
@@ -2129,7 +2140,8 @@ window.DOG_I18N = {
     var frameBox = document.getElementById("satFrameBox");
     if (launch && portal && frameBox) {
       var closeBtn = document.getElementById("satPortalClose");
-      launch.addEventListener("click", function () {
+      var userClosed = false;   /* quem fechou na mão não é reaberto à força */
+      function openPortal(auto) {
         if (!frameBox.querySelector("iframe")) {
           var f = document.createElement("iframe");
           /* /universo = satspace servido pelo nosso domínio (proxy). Mesma
@@ -2162,14 +2174,24 @@ window.DOG_I18N = {
         }
         portal.hidden = false;
         launch.hidden = true;
-        try { portal.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {}
-      });
+        /* abertura automática não rouba o scroll da pessoa */
+        if (!auto) { try { portal.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {} }
+      }
+      launch.addEventListener("click", function () { openPortal(false); });
       if (closeBtn) closeBtn.addEventListener("click", function () {
+        userClosed = true;
         portal.hidden = true;
         launch.hidden = false;
         var f = frameBox.querySelector("iframe");
         if (f) f.remove();
       });
+      /* carteira conectada = universo já aberto quando a pessoa chegar nele
+         (wallet.js publica window.DogWallet + evento dog:wallet) */
+      function autoOpen(state) {
+        if (state && state.connected && !userClosed && portal.hidden) openPortal(true);
+      }
+      document.addEventListener("dog:wallet", function (e) { autoOpen(e.detail); });
+      autoOpen(window.DogWallet && window.DogWallet.state);
     }
     var what = document.getElementById("satWhat");
     var modal = document.getElementById("satModal");
