@@ -4,6 +4,13 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
+## 2026-07-16 ⚠️ API bloqueada · referência: 15/07 movimento suspeito confirmado
+
+- **Baleia:** `dogdata.xyz` inacessível (403 proxy) — último dado fresco: **15/07, 12,13% do supply, rank #1**.
+- Saques novos da Binance → cluster: impossível verificar (API bloqueada).
+- Depósito em exchange: impossível verificar (API bloqueada).
+- 🔎 **Leitura:** rotina remota bloqueada. **Referência de ontem (15/07): movimento suspeito confirmado** — baleia despejou 456M DOG em fresh wallets e cluster relay **baleia → Int#1/Int#2 → Bitget** despejou ~42,6M DOG (72h). A Binance não aparece como counterparty direto nesta janela, mas **pode estar envolvida** na camada anterior (48 saques históricos documentados via Int#3; wallets não mapeadas que reabastecem a baleia seguem sem origem rastreável). Sem acusação de crime: descrevemos o padrão que a chain mostra. **Para retomar coleta ao vivo, liberar `dogdata.xyz` na allowlist de egress.**
+
 ## 2026-07-15 ⚠️ Movimento suspeito · baleia despeja 456M DOG em fresh wallets · cluster ativo (Int→Bitget)
 
 > Fonte: `data/daily.json` + `data/feed.json` · atualizado às 11:54 UTC · dado fresco (scripts locais; dogdata.xyz bloqueado no proxy remoto).
