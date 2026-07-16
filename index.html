@@ -26,7 +26,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
 <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css?v=59ae35ce54">
+<link rel="stylesheet" href="/styles.css?v=d57a89a863">
 <!-- Intro gate. Render-blocking on purpose: decides before first paint whether
      the presentation video opens (3-day TTL). External file = CSP-safe. -->
 <script src="/intro.js?v=85b612ad24"></script>
@@ -364,7 +364,24 @@
       </div>
 
       <details class="archive-details d101-more">
-        <summary class="d101-summary"><span data-i18n="d101.tl">The full timeline — from Taproot to Rune #3 ↓</span></summary>
+        <summary class="d101-summary"><img class="d101-rune" src="public/culture/pics/pic-runestone-06.webp" alt="" aria-hidden="true"><span data-i18n="d101.tl">The full timeline — from Taproot to Rune #3 ↓</span></summary>
+
+        <!-- Relíquias: as fotos históricas da Runestone (acervo DOG PIC) -->
+        <div class="d101-relics">
+          <figure>
+            <img src="public/culture/pics/pic-runestone-09.webp" alt="The on-chain etching transaction of DOG: OP_RETURN Runestone, premine of 100B DOG•GO•TO•THE•MOON" loading="lazy">
+            <figcaption data-i18n="d101.r1">The birth receipt, on chain: all 100B $DOG etched in a single transaction.</figcaption>
+          </figure>
+          <figure>
+            <img src="public/culture/pics/pic-runestone-08.webp" alt="Bitcoin block visualization filled by Runestone airdrop transactions" loading="lazy">
+            <figcaption data-i18n="d101.r2">The airdrop hitting the chain — Runestone deliveries packing entire blocks.</figcaption>
+          </figure>
+          <figure>
+            <img src="public/culture/pics/pic-runestone-04.webp" alt="Community art: explorers facing a giant rune-marked monolith in a frozen land" loading="lazy">
+            <figcaption data-i18n="d101.r3">The stone that started it all — as the Army remembers it.</figcaption>
+          </figure>
+        </div>
+
         <div class="timeline">
         <div class="tl-row"><div class="when">Nov 2021</div><div><h3 data-i18n="h.tl1h">Taproot activates on Bitcoin</h3><p data-i18n="h.tl1p">A soft fork expanded the witness data space and created the groundwork for everything that followed.</p></div></div>
         <div class="tl-row"><div class="when">Jan 2023</div><div><h3 data-i18n="h.tl2h">Ordinals (Casey Rodarmor)</h3><p data-i18n="h.tl2p">Casey's protocol lets people inscribe images, text and art onto individual sats, directly on Bitcoin. <a href="https://blockmanity.com/news/bitcoin-ordinals-surpass-10-million-inscriptions-creator-casey-rodarmor-steps-down/" target="_blank" rel="noopener">Source</a></p></div></div>
@@ -996,7 +1013,7 @@
   </div>
 </footer>
 
-<script src="/i18n.js?v=4741596776"></script>
+<script src="/i18n.js?v=1180c8ab85"></script>
 <script src="/news.js?v=b9001c3073" defer></script>
 <script src="/radar.js?v=21b191ca80" defer></script>
 <script src="/wallet.js?v=d217895ce6" defer></script>
