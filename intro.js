@@ -57,10 +57,18 @@
     var reduce = false;
     try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
 
+    /* the video ships without burned-in subtitles; YouTube captions come in
+       many languages, so default them ON in the visitor's own language —
+       the player starts muted, captions are what make it land. Inert until
+       the captions exist on the video. */
+    var cc = 'en';
+    try { cc = String((navigator.languages && navigator.languages[0]) || navigator.language || 'en').slice(0, 2).toLowerCase() || 'en'; } catch (e) {}
     var frame = document.createElement('iframe');
     frame.src = YT + '/embed/' + VIDEO_ID +
       '?autoplay=' + (reduce ? 0 : 1) +
       '&mute=1&playsinline=1&rel=0&enablejsapi=1' +
+      '&cc_load_policy=1&cc_lang_pref=' + encodeURIComponent(cc) +
+      '&hl=' + encodeURIComponent(cc) +
       '&origin=' + encodeURIComponent(location.origin);
     frame.title = 'DOG ARMY';
     frame.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');

@@ -1824,8 +1824,9 @@ window.DOG_I18N = {
   function pick() {
     // ?lang= always wins (shared links). A choice made via the switcher persists
     // across tabs and visits (localStorage; sessionStorage kept as the per-tab
-    // mirror that page scripts read). First visit with no choice: follow the
-    // browser language, so a PT-BR soldier lands in PT and nothing mixes.
+    // mirror that page scripts read). First visit with no choice: ENGLISH —
+    // the site presents itself in EN to the world (owner's call, 2026-07-16);
+    // PT/ES are one click away in the switcher and the choice sticks.
     try {
       var q = new URLSearchParams(location.search).get("lang");
       if (q && has(q)) return q;
@@ -1837,11 +1838,6 @@ window.DOG_I18N = {
     try {
       var l = localStorage.getItem("dogLang");
       if (l && has(l)) return l;
-    } catch (e) {}
-    try {
-      var nav = String((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase();
-      if (nav.indexOf("pt") === 0 && has("pt")) return "pt";
-      if (nav.indexOf("es") === 0 && has("es")) return "es";
     } catch (e) {}
     return "en";
   }
