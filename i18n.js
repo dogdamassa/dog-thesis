@@ -466,8 +466,9 @@ window.DOG_I18N = {
     "ss.p3": "<b>Pergunte ao Satoshi.</b> Um guia que lê o node ao vivo e responde em qualquer idioma. Texto e microfone de graça.",
     "ss.b1": "Explorar aqui mesmo",
     "ss.b2": "Abrir o universo completo ↗",
+    "ss.bx": "@satspacebtc no X ↗",
     "ss.b3": "O que eu tô vendo?",
-    "ss.live": "O universo ao vivo · conecte sua carteira e acenda sua constelação",
+    "ss.live": "O universo ao vivo · cada satoshi é uma estrela",
     "ss.close": "Fechar ✕",
     "ss.mt": "Um explorer de Bitcoin. Só que no espaço.",
     "ss.m1": "Explorer é onde você confere o que acontece no Bitcoin: blocos, transações, endereços. Normalmente parece uma planilha. O satspace pega os mesmos dados e desenha um universo.",
@@ -1358,8 +1359,9 @@ window.DOG_I18N = {
     "ss.p3": "<b>Pregúntale a Satoshi.</b> Un guía que lee el nodo en vivo y responde en cualquier idioma. Texto y micrófono gratis.",
     "ss.b1": "Explorar aquí mismo",
     "ss.b2": "Abrir el universo completo ↗",
+    "ss.bx": "@satspacebtc en X ↗",
     "ss.b3": "¿Qué estoy viendo?",
-    "ss.live": "El universo en vivo · conecta tu wallet y enciende tu constelación",
+    "ss.live": "El universo en vivo · cada satoshi es una estrella",
     "ss.close": "Cerrar ✕",
     "ss.mt": "Un explorer de Bitcoin. Pero en el espacio.",
     "ss.m1": "Un explorer es donde compruebas lo que pasa en Bitcoin: bloques, transacciones, direcciones. Normalmente parece una hoja de cálculo. satspace toma los mismos datos y dibuja un universo.",
@@ -2146,32 +2148,18 @@ window.DOG_I18N = {
       function openPortal(auto) {
         if (!frameBox.querySelector("iframe")) {
           var f = document.createElement("iframe");
-          /* /universo = satspace servido pelo nosso domínio (proxy). Mesma
-             origem, então a página pai empresta a carteira pro iframe:
-             a extensão KRAY só injeta em top-level, e o satspace faz
-             polling de window.krayWallet a cada 1,5s até enxergar. */
-          f.src = "/universo";
+          /* satspace.io DIRETO (eles não mandam X-Frame-Options e nosso
+             frame-src já permite): tudo roda na origem real deles — APIs,
+             assets, WebGL — sem as fragilidades do proxy /universo, que
+             passou a renderizar preto. Para conectar a carteira dentro do
+             universo, o caminho é o botão "abrir o universo completo". */
+          f.src = "https://www.satspace.io/";
           f.title = "satspace";
           f.allow = "fullscreen; clipboard-write";
           f.setAttribute("allowfullscreen", "");
+          f.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
           /* sem allow-popups: nada dentro do embed abre aba externa */
           f.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms allow-pointer-lock");
-          var tries = 0;
-          function bridge() {
-            try {
-              if (f.contentWindow && window.krayWallet && !f.contentWindow.krayWallet) {
-                f.contentWindow.krayWallet = window.krayWallet;
-                try { f.contentWindow.dispatchEvent(new Event("krayWalletReady")); } catch (e) {}
-              }
-            } catch (e) { tries = 99; }
-          }
-          f.addEventListener("load", bridge);
-          /* a extensão pode injetar depois do load; insiste por ~30s */
-          var t = window.setInterval(function () {
-            tries++;
-            if (tries > 20 || !frameBox.querySelector("iframe")) { window.clearInterval(t); return; }
-            bridge();
-          }, 1500);
           frameBox.appendChild(f);
         }
         portal.hidden = false;
