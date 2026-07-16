@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-07-16T20:15:34.755331+00:00",
+  "updated_at": "2026-07-16T21:29:28.641934+00:00",
   "events": [
+    {
+      "id": "ad1782946709adef1c8bdd44f769de28c62b001fd27ffa0d48861191d92efe7f",
+      "ts": "2026-07-16T20:44:14+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 2473452.88,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p02r53wzn06zsa3nz4rzqhphnpw3vf64zkd0mua9vjy4wp96k997qfnnejr",
+      "community": null,
+      "txid": "ad1782946709adef1c8bdd44f769de28c62b001fd27ffa0d48861191d92efe7f"
+    },
+    {
+      "id": "371637c017f3207e51336d6e521043f2835a3fb27e8e85e8b85b319a528b0daf",
+      "ts": "2026-07-16T20:44:14+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 6000000,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p02r53wzn06zsa3nz4rzqhphnpw3vf64zkd0mua9vjy4wp96k997qfnnejr",
+      "community": null,
+      "txid": "371637c017f3207e51336d6e521043f2835a3fb27e8e85e8b85b319a528b0daf"
+    },
     {
       "id": "9008426955677293d763a688bef3b58efbe4b92c6e435be4804a405bda9a5670",
       "ts": "2026-07-16T19:27:05+00:00",
@@ -754,32 +780,6 @@
       "to_id": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar",
       "community": null,
       "txid": "03858ee16ef8eaac6d612c92537ec71359a98d241f70e2a9715095ef642dce00"
-    },
-    {
-      "id": "5a13702013483309e34ae02cc6fd82fdf54aad7def938319c974d780de8a028b",
-      "ts": "2026-07-14T12:11:57+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2890425,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1pzsx4xvghxmc0prv4mys0xdly9dh9js3e88e4m24k5gxzkeskx30s4qzjud",
-      "community": null,
-      "txid": "5a13702013483309e34ae02cc6fd82fdf54aad7def938319c974d780de8a028b"
-    },
-    {
-      "id": "e7fdc500809606b2dea827b794f6d243c98c38fc39841b57193cadfd7a2890c9",
-      "ts": "2026-07-14T09:38:22+00:00",
-      "type": "exchange_in",
-      "amount_dog": 8658262.86,
-      "level": "watch",
-      "from_label": "Intermediary Wallet #2",
-      "to_label": "Top #3",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": "Bitget",
-      "txid": "e7fdc500809606b2dea827b794f6d243c98c38fc39841b57193cadfd7a2890c9"
     }
   ]
 }
