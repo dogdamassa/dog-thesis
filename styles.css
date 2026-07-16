@@ -3307,20 +3307,15 @@ details[open]>.d101-summary{border-color:rgba(255,92,0,.5);margin-bottom:18px}
 .pics-note{margin:26px 0 14px;font-size:14px;color:var(--muted)}
 .pics-note b{color:var(--white-2,#fff8ef)}
 .pics-row{overflow:hidden;margin:0 -20px;padding:6px 0}
-.pics-track{display:flex;gap:12px;width:max-content;animation:pics-scroll 90s linear infinite}
+.pics-track{display:flex;gap:14px;width:max-content;animation:pics-scroll 130s linear infinite}
 .pics-row--rev .pics-track{animation-direction:reverse}
 .pics-row:hover .pics-track{animation-play-state:paused}
-.pics-item{display:block;flex:0 0 auto;height:150px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#101010}
-.pics-item img{display:block;height:100%;width:auto;max-width:280px;object-fit:cover;transition:transform .2s ease}
+.pics-item{display:block;flex:0 0 auto;height:250px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#101010}
+.pics-item img{display:block;height:100%;width:auto;max-width:470px;object-fit:cover;transition:transform .2s ease}
 .pics-item:hover img{transform:scale(1.04)}
 @keyframes pics-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (max-width:640px){.pics-item{height:110px}.pics-item img{max-width:200px}}
+@media (max-width:640px){.pics-item{height:160px}.pics-item img{max-width:300px}}
 @media (prefers-reduced-motion: reduce){.pics-track{animation:none}}
-
-/* ===== Fotos temáticas nos cards (acervo DOG PIC — [[dog-pic-photo-library]]) ===== */
-.card .card-pic{display:block;width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:16px}
-.card .card-pic--top{object-position:top}
-@media (max-width:640px){.card .card-pic{height:160px}}
 
 /* ===== Relíquias da Runestone na timeline do #dog101 ===== */
 .d101-rune{height:30px;width:auto;flex:0 0 auto}
