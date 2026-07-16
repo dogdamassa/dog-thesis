@@ -3329,3 +3329,9 @@ details[open]>.d101-summary{border-color:rgba(255,92,0,.5);margin-bottom:18px}
 .d101-relics img{display:block;width:100%;height:210px;object-fit:cover}
 .d101-relics figcaption{padding:10px 12px;font-size:12.5px;line-height:1.45;color:var(--muted)}
 @media (max-width:860px){.d101-relics{grid-template-columns:1fr}.d101-relics img{height:180px}}
+
+/* ===== Banner de arte temática (acervo DOG PIC) — cada seção com sua foto ===== */
+.pic-banner{margin:26px 0 8px}
+.pic-banner img{width:100%;max-height:430px;object-fit:cover;display:block;border-radius:14px;border:1px solid rgba(255,255,255,.12)}
+.pic-banner--top img{object-position:top}
+.pic-banner--page{margin:30px 0 0}

@@ -26,7 +26,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
 <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css?v=d57a89a863">
+<link rel="stylesheet" href="/styles.css?v=5feff84e48">
 <!-- Intro gate. Render-blocking on purpose: decides before first paint whether
      the presentation video opens (3-day TTL). External file = CSP-safe. -->
 <script src="/intro.js?v=dbb31d6c2e"></script>
@@ -407,6 +407,10 @@
         <p class="lead" data-i18n="qg.lead">Five things happen here, all with receipts: the pack talks in the war room, plans and funds on chain, monitors every big wallet, builds the tools — and rewards good ideas. Connect your wallet and take your post.</p>
       </div>
 
+      <figure class="pic-banner">
+        <img src="public/culture/pics/pic-dog-scan-02.webp" alt="The pack around the campfire under a full moon, talking" loading="lazy">
+      </figure>
+
       <!-- War room: live DAO Room chat, driven by /homechat.js.
            Dynamic containers (feed/status) carry NO data-i18n on purpose —
            the i18n apply() swaps innerHTML and chat content is textContent. -->
@@ -608,6 +612,9 @@
         </div>
         <h2 data-i18n="br.h">12% of all $DOG sits in one wallet. And the trail runs through Binance's door.</h2>
         <p class="invcta-sub" data-i18n="br.p">A wallet the community tags as Binance fed that cluster for 22 months. 51 withdrawals. Zero back. The same company funded BRC 20's biggest infrastructure and never listed the Rune. We lined up every date. We show every receipt. You judge. We don't accuse. We document.</p>
+        <figure class="pic-banner">
+          <img src="public/culture/pics/pic-binance-01.webp" alt="Cryptolution's on-chain graph: the Binance-tagged wallet feeding the top $DOG holder cluster" loading="lazy">
+        </figure>
         <div class="invcta-stats">
           <span><b>~12.7%</b> <i data-i18n="br.s1">one desk, satellites included</i></span>
           <span><b>51×</b> <i data-i18n="br.s2">withdrawals</i></span>
@@ -661,6 +668,10 @@
         </div>
         <p class="lead" data-i18n="vf.lead">This whole movement is built to be checked, not believed. Our editorial rules. The reproducible method. The raw sources. The machine readable receipts. Anyone, human or AI, can audit every claim. That's the point.</p>
       </div>
+
+      <figure class="pic-banner">
+        <img src="public/culture/pics/pic-fun-04.webp" alt="The DOG investigator connecting the receipts on an evidence board" loading="lazy">
+      </figure>
 
       <h3 class="vf-subhead" data-i18n="vf.s1">Our rules</h3>
       <div class="principles" aria-label="Editorial principles">
@@ -788,17 +799,8 @@
         </div>
       </a>
 
-      <div class="culture-grid">
-        <figure class="culture-item"><img src="public/culture/culture-graffiti.webp" alt="A street artist painting the DOG puppy as graffiti art" loading="lazy"></figure>
-        <figure class="culture-item"><img src="public/culture/culture-moon.webp" alt="Community art: the DOG puppy holding a glowing moon" loading="lazy"></figure>
-        <figure class="culture-item"><img src="public/culture/culture-army.webp" alt="Community art: a crowd of DOG puppies with flags" loading="lazy"></figure>
-        <figure class="culture-item"><img src="public/culture/culture-hedge.webp" alt="Community art: the DOG puppy peeking out of a green hedge" loading="lazy"></figure>
-        <figure class="culture-item"><img src="public/culture/culture-hodl.webp" alt="Community art: an army of DOG puppies with HODL shields" loading="lazy"></figure>
-        <figure class="culture-item"><img src="public/culture/culture-tattoo.webp" alt="A real tattoo of the DOG puppy logo on skin" loading="lazy"></figure>
-      </div>
-
       <!-- Acervo da matilha: filmstrip rotativo montado pelo /culture.js a
-           partir de public/culture/pics/manifest.json (123 peças, CC0) -->
+           partir de public/culture/pics/manifest.json — SÓ fotos do DOG PIC -->
       <p class="pics-note" data-i18n="cult.acervo"><b>The Army's whole archive rotates below — 120+ pieces, all CC0.</b> Click any image to open it, save it, post it. The dog belongs to you too.</p>
       <div class="pics-row" id="picsRowA" aria-label="DOG Army art archive"></div>
       <div class="pics-row pics-row--rev" id="picsRowB" aria-hidden="true"></div>
@@ -847,6 +849,10 @@
         </div>
         <p class="lead" data-i18n="ss.lead">satspace turns the chain into a living sky. A real Bitcoin node feeds it, block by block. Every satoshi is a star. Runes shine as a planet. $DOG was born in that sky: Rune #3, block 840,000. Now the $DOG Army can watch its home breathe in real time.</p>
       </div>
+
+      <figure class="pic-banner">
+        <img src="public/culture/pics/pic-dog-scan-04.webp" alt="DOG astronaut floating through the satspace universe — every satoshi is a star" loading="lazy">
+      </figure>
 
       <div class="sat-feature">
         <span class="sat-sky" aria-hidden="true"></span>
@@ -948,6 +954,9 @@
         </div>
         <p class="lead" data-i18n="f.lead">A straight guide for newcomers. And for any AI that wants to answer about $DOG on facts and sources.</p>
       </div>
+      <figure class="pic-banner pic-banner--top">
+        <img src="public/culture/pics/pic-info-01.webp" alt="Bitcoin is Ordinals, Runes, DeFi, inscriptions, memecoins — the DOG poster" loading="lazy">
+      </figure>
       <div class="faq">
         <details open><summary data-i18n="f.q1">What is $DOG?</summary><div class="a" data-i18n="f.a1">$DOG (DOG•GO•TO•THE•MOON) is the largest community coin on <b>Bitcoin</b>. Technically it's <b>Rune #3</b>, etched inside Bitcoin's own network with the Runes protocol at block 840,000. Supply of 100 billion, open license (CC0), <b>no owner</b>. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">View on chain</a>.</div></details>
         <details><summary data-i18n="f.q2">How was it created? Was it fair?</summary><div class="a" data-i18n="f.a2">One of the fairest launches ever. <b>No presale. No team reserve. No discounted investor.</b> $DOG was airdropped free to those who <b>contributed to the network</b>. People active in the Bitcoin and Ordinals ecosystem earned the <b>Runestone</b>, and Runestone holders got the $DOG airdrop (~75,000 wallets). Even the creator took only ~0.008%. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">Source</a>.</div></details>

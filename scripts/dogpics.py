@@ -59,7 +59,9 @@ def main() -> int:
                 if w > MAX_W:
                     im = im.resize((MAX_W, int(h * MAX_W / w)), Image.LANCZOS)
                 im.save(os.path.join(DST, out), 'WEBP', quality=QUALITY, method=6)
-                manifest.append({'f': out, 't': folder})
+                # 'n' = nome original do arquivo (o dono nomeia pelo destino:
+                # "DOG MARKET.png", "dogfire.png" — é o mapa tema→seção)
+                manifest.append({'f': out, 't': folder, 'n': os.path.splitext(f)[0]})
                 count += 1
             except Exception as e:  # arquivo corrompido não derruba o resto
                 errors.append(f'{folder}/{f}: {e}')
