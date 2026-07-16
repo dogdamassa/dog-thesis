@@ -30,24 +30,57 @@ EXCHANGE_MIN_DOG = 5_000_000      # carteiras de corretora giram muito; so vira
 FEED_MAX = 60
 FIRST_RUN_EVENTS = 12
 
-# Watched wallets.
+# Watched wallets. Rótulos revisados na caça de 2026-07-15: Gate.io e Bitget
+# são rótulos OFICIAIS (dogdata.xyz/data/verified_addresses.json); os antigos
+# "Intermediary #1/#2" são endereços de depósito da Bitget reusados por uma
+# mesa (pass-through de 18-21 min). Ver studies/2026-07-15-dog-wallet-map.md.
 NODES = [
     {"id": "cofre", "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn",
      "label": "Vault #1", "kind": "cofre", "community": None, "feed": True},
     {"id": "h2", "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv",
-     "label": "Top #2", "kind": "holder", "community": "Gate", "feed": True},
+     "label": "Gate.io hot", "kind": "holder", "community": "Gate", "feed": True},
     {"id": "h3", "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k",
-     "label": "Top #3", "kind": "holder", "community": "Bitget", "feed": True},
+     "label": "Bitget hot", "kind": "holder", "community": "Bitget", "feed": True},
     {"id": "mexc", "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu",
      "label": "MEXC Wallet", "kind": "holder", "community": "MEXC", "feed": True},
     {"id": "int1", "addr": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar",
-     "label": "Intermediary Wallet #1", "kind": "relay", "community": "bridge to Bitget", "feed": True},
+     "label": "Bitget Deposit #1", "kind": "relay", "community": "Bitget deposit, desk reuse", "feed": True},
     {"id": "int2", "addr": "bc1p52673nrtsed5n5nal7cm02u6pg63p0e6u4nm2fhm90xd8r4w3ass090zzy",
-     "label": "Intermediary Wallet #2", "kind": "relay", "community": "bridge to Bitget", "feed": True},
+     "label": "Bitget Deposit #2", "kind": "relay", "community": "Bitget deposit, desk reuse", "feed": True},
     {"id": "int3", "addr": "bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j",
      "label": "Intermediary Wallet #3", "kind": "relay", "community": "Gate to Bitget", "feed": True},
 ]
 BY_ADDR = {n["addr"]: n for n in NODES}
+
+# Entidades mapeadas (2026-07-15), rótulo-apenas: não são vigiadas (sem fetch),
+# mas quando aparecem como contraparte o feed e o grafo as nomeiam em vez de
+# "fresh wallet". Fonte: clustering por co-gasto + rótulos oficiais do dogdata.
+ENTITIES = [
+    {"id": "gatesweep", "addr": "bc1pqdtrwkjwdutzs5z8f75gc5srhcwewx4u77pdnumc0fh7l47aanqqa8n4da",
+     "label": "Gate.io sweeper", "kind": "entity", "community": "Gate"},
+    {"id": "bitgetsweep", "addr": "bc1p0jm3ucw8sh7edx37lw06ce9aaem09tcx2yr2zuenqr33hqce3lps67k0ns",
+     "label": "Bitget sweeper", "kind": "entity", "community": "Bitget"},
+    {"id": "mm2", "addr": "bc1p8d8kexdxatnfejdvd9dq7uky4m9wjxl59r3dnqg7nqq9gaxz2jxq6ntach",
+     "label": "MM2 shuttle", "kind": "entity", "community": "whale #1 desk"},
+    {"id": "whale7", "addr": "bc1pap56p2rgmqgk4rc0vxpkldszhgldx49cfs3zer8e2k7q9q6x079scfa8nx",
+     "label": "Whale7 shuttle", "kind": "entity", "community": "whale #1 desk"},
+    {"id": "sleeper", "addr": "bc1pjywvrxfrsr25dkl9gmtuy8w7w8a7mg7vz0j89v3g6d0x8suvgg6qdchqul",
+     "label": "Sleeper wallet", "kind": "entity", "community": "whale #1 desk"},
+    {"id": "whale23", "addr": "bc1prdyzwdg0rcdgf9cg0a4zyx0cq3mdr3n6mcym95f3eg4dexfvnsjq200ly4",
+     "label": "Whale23", "kind": "entity", "community": None},
+    {"id": "merlin2", "addr": "bc1pzsx4xvghxmc0prv4mys0xdly9dh9js3e88e4m24k5gxzkeskx30s4qzjud",
+     "label": "Merlin Chain vault (2026)", "kind": "entity", "community": "Merlin"},
+    {"id": "merlin1", "addr": "bc1p38d6mfutw5h6gx46c7334uxtsf5ey5l7xqfeg36gyc4q83plmwwqsf9wxd",
+     "label": "Merlin Chain vault (old)", "kind": "entity", "community": "Merlin"},
+    {"id": "dotswap", "addr": "bc1pwper8wpfssxl4pd5grudsvcwxc8pecerxm46flmupj9n8l675rtsehu659",
+     "label": "DotSwap DEX", "kind": "entity", "community": "DotSwap"},
+    {"id": "desk9", "addr": "bc1pczdzvvuulwyna9e6dsl8w0r35prvnmpawcwlrv4y42u5npysrdzqhwa7wl",
+     "label": "Trading desk (rank #9)", "kind": "entity", "community": None},
+]
+ENT_BY_KEY = {}
+for _e in ENTITIES:
+    ENT_BY_KEY[_e["addr"]] = _e
+    ENT_BY_KEY[_e["id"]] = _e
 
 
 def get(url, tries=3):
@@ -62,8 +95,8 @@ def get(url, tries=3):
 
 
 def label_for(addr):
-    """Friendly label for a watched address, or a short unknown address."""
-    n = BY_ADDR.get(addr)
+    """Friendly label for a watched address or mapped entity, else a short address."""
+    n = BY_ADDR.get(addr) or ENT_BY_KEY.get(addr)
     if n:
         return n["label"], n["id"], n["kind"], n["community"]
     short = (addr[:8] + "..." + addr[-4:]) if addr else "unmapped wallet"
@@ -206,11 +239,15 @@ def run():
         if frm == "cofre" and to not in seeded_ids:
             ext[to] = ext.get(to, 0) + e["dog"]
     fresh = [addr for addr, _ in sorted(ext.items(), key=lambda x: -x[1])[:5]]
-    for addr in fresh:
-        lbl, _, _, _ = label_for(addr)
-        nodes_out.append({"id": addr, "label": lbl, "kind": "fresh",
-                          "community": None, "confirmed": False,
-                          "balance_dog": 0, "rank": None, "pct": 0, "addr": addr})
+    for key in fresh:
+        # key pode ser um id de entidade mapeada (add_edge usa o id quando há rótulo)
+        ent = ENT_BY_KEY.get(key)
+        lbl, _, _, comm = label_for(key)
+        nodes_out.append({"id": ent["id"] if ent else key, "label": lbl,
+                          "kind": ent["kind"] if ent else "fresh",
+                          "community": comm, "confirmed": False,
+                          "balance_dog": 0, "rank": None, "pct": 0,
+                          "addr": ent["addr"] if ent else key})
     kept = seeded_ids | set(fresh)
     edges_out = [dict(e, dog=round(e["dog"])) for e in edge_acc.values()
                  if e["from"] in kept and e["to"] in kept and e["dog"] >= MIN_DOG]
@@ -270,8 +307,9 @@ def classify(node, direction, cp, amt, ts, txid):
             if cp_node and cp_node["kind"] == "holder":
                 return mk("cofre_out_exchange", amt, ts, txid, "alert",
                           node["label"], cp_node["label"], "cofre", cp_node["id"], cp_node["community"])
+            lbl, lid, _, lcomm = label_for(cp)
             return mk("cofre_out_new", amt, ts, txid, "watch",
-                      node["label"], "fresh wallet", "cofre", cp, None)
+                      node["label"], lbl if lid else "fresh wallet", "cofre", lid or cp, lcomm)
         else:
             return mk("cofre_in", amt, ts, txid, "info",
                       label_for(cp)[0], node["label"], None, "cofre", None)

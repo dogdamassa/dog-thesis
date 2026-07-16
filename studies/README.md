@@ -32,5 +32,6 @@ And must **never**: name a person/company as a criminal without independent proo
 | Date | Study | Author | Grade |
 |---|---|---|---|
 | 2026-06-28 | [Gate Proof of Reserves — on-chain vs reported](2026-06-28-gate-proof-of-reserves.md) | @Cryptolution + DOG Thesis | 🟡 / ✅ on-chain |
+| 2026-07-15 | [DOG wallet map — who is who on-chain](2026-07-15-dog-wallet-map.md) | DOG Thesis, continuing @Cryptolution's flag | ✅ labels & desk / 🟡 clusters |
 
 _Add your row above when you submit a study._

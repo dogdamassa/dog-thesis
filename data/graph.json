@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-15T23:25:38.170029+00:00",
+  "updated_at": "2026-07-16T01:06:59.731263+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "id": "h2",
-      "label": "Top #2",
+      "label": "Gate.io hot",
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
@@ -26,7 +26,7 @@
     },
     {
       "id": "h3",
-      "label": "Top #3",
+      "label": "Bitget hot",
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
@@ -48,9 +48,9 @@
     },
     {
       "id": "int1",
-      "label": "Intermediary Wallet #1",
+      "label": "Bitget Deposit #1",
       "kind": "relay",
-      "community": "bridge to Bitget",
+      "community": "Bitget deposit, desk reuse",
       "confirmed": false,
       "balance_dog": 0,
       "rank": null,
@@ -59,9 +59,9 @@
     },
     {
       "id": "int2",
-      "label": "Intermediary Wallet #2",
+      "label": "Bitget Deposit #2",
       "kind": "relay",
-      "community": "bridge to Bitget",
+      "community": "Bitget deposit, desk reuse",
       "confirmed": false,
       "balance_dog": 0,
       "rank": null,
@@ -80,10 +80,10 @@
       "addr": "bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j"
     },
     {
-      "id": "bc1pzsx4xvghxmc0prv4mys0xdly9dh9js3e88e4m24k5gxzkeskx30s4qzjud",
-      "label": "bc1pzsx4...zjud",
-      "kind": "fresh",
-      "community": null,
+      "id": "merlin2",
+      "label": "Merlin Chain vault (2026)",
+      "kind": "entity",
+      "community": "Merlin",
       "confirmed": false,
       "balance_dog": 0,
       "rank": null,
@@ -146,9 +146,9 @@
     },
     {
       "from": "cofre",
-      "to": "bc1pzsx4xvghxmc0prv4mys0xdly9dh9js3e88e4m24k5gxzkeskx30s4qzjud",
+      "to": "merlin2",
       "from_label": "Vault #1",
-      "to_label": "bc1pzsx4...zjud",
+      "to_label": "Merlin Chain vault (2026)",
       "dog": 1824472668,
       "count": 12
     },
@@ -156,7 +156,7 @@
       "from": "cofre",
       "to": "int1",
       "from_label": "Vault #1",
-      "to_label": "Intermediary Wallet #1",
+      "to_label": "Bitget Deposit #1",
       "dog": 573170163,
       "count": 18
     },
@@ -164,7 +164,7 @@
       "from": "cofre",
       "to": "int2",
       "from_label": "Vault #1",
-      "to_label": "Intermediary Wallet #2",
+      "to_label": "Bitget Deposit #2",
       "dog": 263962283,
       "count": 24
     },
@@ -195,23 +195,23 @@
     {
       "from": "h2",
       "to": "int2",
-      "from_label": "Top #2",
-      "to_label": "Intermediary Wallet #2",
+      "from_label": "Gate.io hot",
+      "to_label": "Bitget Deposit #2",
       "dog": 110057764,
       "count": 10
     },
     {
       "from": "h2",
       "to": "int1",
-      "from_label": "Top #2",
-      "to_label": "Intermediary Wallet #1",
+      "from_label": "Gate.io hot",
+      "to_label": "Bitget Deposit #1",
       "dog": 13213048,
       "count": 3
     },
     {
       "from": "h2",
       "to": "bc1p2y0y336sgx7g4d8rhqq4na792xahkurw0rvjz3n7tmpt3gey5q8qka4flv",
-      "from_label": "Top #2",
+      "from_label": "Gate.io hot",
       "to_label": "bc1p2y0y...4flv",
       "dog": 1998500,
       "count": 1
@@ -219,7 +219,7 @@
     {
       "from": "h2",
       "to": "int3",
-      "from_label": "Top #2",
+      "from_label": "Gate.io hot",
       "to_label": "Intermediary Wallet #3",
       "dog": 19138936,
       "count": 1
@@ -227,16 +227,16 @@
     {
       "from": "int1",
       "to": "h3",
-      "from_label": "Intermediary Wallet #1",
-      "to_label": "Top #3",
+      "from_label": "Bitget Deposit #1",
+      "to_label": "Bitget hot",
       "dog": 292965287,
       "count": 55
     },
     {
       "from": "int2",
       "to": "h3",
-      "from_label": "Intermediary Wallet #2",
-      "to_label": "Top #3",
+      "from_label": "Bitget Deposit #2",
+      "to_label": "Bitget hot",
       "dog": 534503631,
       "count": 89
     },
@@ -244,7 +244,7 @@
       "from": "int3",
       "to": "h3",
       "from_label": "Intermediary Wallet #3",
-      "to_label": "Top #3",
+      "to_label": "Bitget hot",
       "dog": 19307299,
       "count": 1
     }

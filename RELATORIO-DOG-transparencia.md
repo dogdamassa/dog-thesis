@@ -40,7 +40,7 @@ Fonte: API pública dogdata `/api/metrics/utxo-age` e `/api/dog-rune/holders`.
 ⚠️ **Movimento de 25→26/06 (registrado por honestidade):** o LTH caiu de **82,4% → 75,5%** num dia — **~13,7% do supply moveu em <24h**. MAS a cohorte **>1 ano (59,5%) não mudou**: o que girou foi supply de **meia-idade (155–365 dias)**, não as mãos mais velhas. Padrão consistente com **consolidação/reorganização de UTXOs**, não com capitulação de LTH. On-chain mostra o movimento, não a intenção → **fica em monitoramento**.
 
 **LTH soberano (auto-custódia, excluindo exchanges):** 🟡 estimativa
-- Exchange-held ≈ **11–12%** do supply (top: `bc1pk8g4…` = Bitget, 3,36%, 20.900 UTXOs).
+- Exchange-held ≈ **11–12%** do supply (top: `bc1pk8g4…` = **Gate.io** — rótulo oficial no dogdata; a atribuição antiga "Bitget" estava errada, corrigida em 15/07/2026 — 3,36%, 20.900 UTXOs).
 - Soberano = LTH − exchange-em-LTH → **~64% (piso) a ~72% (provável)**. Hot wallets de exchange fazem churn (são STH), então pouco do float de exchange infla o LTH.
 - Float manipulável (STH + custódia de exchange) ≈ **28–35%**. **Tese do float segue válida** (maioria soberana), porém menos extrema que na leitura de 25/06.
 - **Limite:** o filtro `?cohort=lth` da dogdata não filtra → split exato por carteira não disponível via API.
