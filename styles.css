@@ -2477,11 +2477,11 @@ body.wallet-open{overflow:hidden}
 .rd-exbar-buy{background:linear-gradient(90deg,#ffb15c,#ff5c00);box-shadow:0 0 8px rgba(255,122,26,.5)}
 .rd-flow{position:relative;overflow:hidden;padding:10px 14px 10px 16px}
 .rd-flow::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px}
-.rd-flow.rd-buy::before{background:linear-gradient(180deg,#ff9a3d,#ff5c00)}
+.rd-flow.rd-buy::before{background:linear-gradient(180deg,#16c784,#0e9f6a)}
 .rd-flow.rd-sell::before{background:#e5484d}
-.rd-flow.rd-buy{background:linear-gradient(90deg,rgba(255,122,26,.08),rgba(255,122,26,.015) 55%,var(--surface-2))}
+.rd-flow.rd-buy{background:linear-gradient(90deg,rgba(22,199,132,.07),rgba(22,199,132,.015) 55%,var(--surface-2))}
 .rd-flow.rd-sell{background:linear-gradient(90deg,rgba(229,72,77,.08),rgba(229,72,77,.015) 55%,var(--surface-2))}
-.rd-flow.rd-buy:hover{border-color:rgba(255,122,26,.5)}
+.rd-flow.rd-buy:hover{border-color:rgba(22,199,132,.5)}
 .rd-flow.rd-sell:hover{border-color:rgba(229,72,77,.5)}
 .rd-flow.rd-buy .rd-flow-side{box-shadow:0 0 12px rgba(255,122,26,.4)}
 .rd-flow.rd-sell .rd-flow-side{box-shadow:0 0 12px rgba(229,72,77,.35)}
@@ -2579,13 +2579,26 @@ html[lang="pt-BR"] .navgroup-trigger,
 html[lang="es"]    .navgroup-trigger{font-size:11px}
 
 /* ===== liquidity map v3: heatmap "fire" contínuo (estilo Coinglass) =====
-   lado comprador em laranja — mesma linguagem do painel de exchange flow */
-.rd-liq-kpi.rd-lq-bid b{color:#ff9a3d}
-.rd-balbar i{background:linear-gradient(90deg,#ffb15c,#ff5c00)}
-.rd-balbuy{color:#ff9a3d}
-.rd-wall.rd-buy .rd-wall-side{color:#ff9a3d;background:rgba(255,122,26,.14)}
+   lados em verde/vermelho (convenção de trading); o fogo fica só no heatmap,
+   que codifica magnitude — não lado. Verde #16c784 e vermelho #f6465d passam
+   WCAG AA sobre --surface-3 e o texto BUY/SELL cobre o caso de daltonismo */
+.rd-liq-kpi.rd-lq-bid b{color:#16c784}
+.rd-liq-kpi.rd-lq-ask b{color:#f6465d}
+.rd-balbar{background:rgba(246,70,93,.6)}
+.rd-balbar i{background:linear-gradient(90deg,#0e9f6a,#16c784)}
+/* .rd-liq-kpi b (classe+elemento) ganharia da classe sozinha — por isso o
+   seletor mais específico aqui, senão os rótulos ficam brancos (var(--ink)) */
+.rd-balrow b.rd-balbuy{color:#16c784}
+.rd-balrow b.rd-balsell{color:#f6465d}
+.rd-wall.rd-buy .rd-wall-side{color:#16c784;background:rgba(22,199,132,.13)}
+.rd-wall.rd-sell .rd-wall-side{color:#f6465d;background:rgba(246,70,93,.13)}
 .rd-wall:hover{border-color:rgba(255,122,26,.5)}
 .rd-liq-src:hover{border-color:rgba(255,122,26,.5)}
+/* exchange flow e variações de preço na mesma convenção verde/vermelho
+   (--mint vira laranja nesta camada, então os literais entram aqui) */
+.rd-buy .rd-flow-side{background:#16c784}
+.rd-exbar-buy{background:#16c784}
+.rd-up{color:#16c784}
 .rd-liq-grad{background:linear-gradient(90deg,#100906,#3d1308,#7d240a,#c73e0a,#ff6a00,#ffa733,#ffe9b8)}
 .rd-liq-canvasbox{background:#100906}
 .rd-liq .rd-updated{display:inline-flex;align-items:center;gap:7px}

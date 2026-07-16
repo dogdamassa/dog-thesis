@@ -621,8 +621,9 @@
   }
 
   /* ---------- liquidity map (aggregated order-book heatmap) ---------- */
-  var LIQ_BID = "#ff9a3d", LIQ_ASK = "#e5484d";
+  var LIQ_BID = "#16c784", LIQ_ASK = "#f6465d";
   var LIQ_INK = "#f4efe8", LIQ_MUT = "#8b939c";
+  var LIQ_FONT = '"Geist Mono",ui-monospace,Menlo,monospace';
   // "fire" ramp (Coinglass-like): near-black -> ember red -> orange -> gold.
   // Big walls land on the bright gold end so they pop against the field.
   var LIQ_RAMP = [
@@ -797,7 +798,7 @@
     }
   }
 
-  var liqCv, liqCtx, liqGeo = null, liqHover = null;
+  var liqCv, liqCtx, liqGeo = null, liqHover = null, liqPrices = null;
   function liqFit() {
     if (!liqCv) return;
     var dpr = Math.min(2, window.devicePixelRatio || 1);
@@ -851,12 +852,26 @@
         if (r[1] > 0) pos.push(r[1]);
       });
     });
-    var cg = (mkt.cache[7] || []).filter(function (r) {
-      return r[0] / 1000 >= tStart && r[0] / 1000 <= tEnd;
+    // linha de preço: um ponto por coluna — média dos preços CoinGecko que
+    // caem na janela daquele snapshot, senão o mid do próprio snapshot. O eixo
+    // é não-linear por coluna: sem essa agregação, horas de preço se espremem
+    // nas colunas que cobrem buracos do histórico e a linha vira serrilha
+    // (e o fetch antigo, fixo em 7d, deixava a linha nascendo no meio do mapa)
+    var cgAll = (liqPrices || mkt.cache[7]) || [];
+    var cgSum = [], cgN = [], bi2 = 0;
+    hist.forEach(function () { cgSum.push(0); cgN.push(0); });
+    cgAll.forEach(function (r) {
+      var t = r[0] / 1000;
+      if (t < tStart || t >= tEnd) return;
+      while (bi2 < hist.length - 1 && t >= bounds[bi2 + 1]) bi2++;
+      cgSum[bi2] += r[1]; cgN[bi2]++;
     });
-    cg.forEach(function (r) {
-      if (r[1] < minP) minP = r[1];
-      if (r[1] > maxP) maxP = r[1];
+    var line = hist.map(function (h, i) {
+      return cgN[i] ? cgSum[i] / cgN[i] : h.m;
+    });
+    line.forEach(function (p) {
+      if (p < minP) minP = p;
+      if (p > maxP) maxP = p;
     });
     if (!isFinite(minP)) return;
     var padP = (maxP - minP) * 0.02;
@@ -894,7 +909,7 @@
     });
 
     // recessive grid + price labels on the right axis
-    liqCtx.font = "600 10px " + "ui-monospace,Menlo,monospace";
+    liqCtx.font = "500 10px " + LIQ_FONT;
     liqCtx.textBaseline = "middle";
     for (var g = 0; g <= 5; g++) {
       var pv = maxP - (maxP - minP) * g / 5, gy = y(pv);
@@ -919,26 +934,18 @@
       liqCtx.fillText(new Date(bounds[bj] * 1000).toLocaleString("en-US", tickOpts),
         tx, H - padB / 2);
     }
-    // linha de preço: CoinGecko 7d cobre a janela; fallback = mids dos
-    // snapshots. Sombra escura para a linha ler por cima das células claras.
+    // linha de preço sobre a série por coluna montada acima.
     var last = hist[hist.length - 1];
-    var curP = cg.length ? cg[cg.length - 1][1] : last.m;
+    var curP = cgAll.length ? cgAll[cgAll.length - 1][1] : last.m;
     liqCtx.save();
     liqCtx.beginPath(); liqCtx.rect(padL, padT, plotW, plotH); liqCtx.clip();
     liqCtx.lineJoin = "round"; liqCtx.lineCap = "round";
     var tracePath = function () {
       liqCtx.beginPath();
-      if (cg.length > 1) {
-        cg.forEach(function (r, i) {
-          var px = xT(r[0] / 1000), py = y(r[1]);
-          i ? liqCtx.lineTo(px, py) : liqCtx.moveTo(px, py);
-        });
-      } else {
-        hist.forEach(function (h, i) {
-          var px = padL + (i + 0.5) * colW, py = y(h.m);
-          i ? liqCtx.lineTo(px, py) : liqCtx.moveTo(px, py);
-        });
-      }
+      liqCtx.moveTo(padL, y(line[0]));
+      line.forEach(function (p, i) {
+        liqCtx.lineTo(padL + (i + 0.5) * colW, y(p));
+      });
       liqCtx.lineTo(padL + plotW, y(curP));
     };
     // Linha de preço estilo Coinglass: casca preta NÍTIDA (sem blur) por baixo
@@ -946,9 +953,9 @@
     // O blur suavizava demais e a linha sumia sobre as brasas mais claras.
     liqCtx.shadowColor = "rgba(0,0,0,0)"; liqCtx.shadowBlur = 0;
     tracePath();
-    liqCtx.strokeStyle = "rgba(0,0,0,.92)"; liqCtx.lineWidth = 5.5; liqCtx.stroke();
+    liqCtx.strokeStyle = "rgba(0,0,0,.85)"; liqCtx.lineWidth = 4; liqCtx.stroke();
     tracePath();
-    liqCtx.strokeStyle = "#ffffff"; liqCtx.lineWidth = 2.4; liqCtx.stroke();
+    liqCtx.strokeStyle = "#ffffff"; liqCtx.lineWidth = 1.8; liqCtx.stroke();
     liqCtx.restore();
 
     // preço atual: tracejado com casca escura para ler sobre o laranja (Coinglass)
@@ -973,7 +980,7 @@
     else liqCtx.rect(padL + plotW + 2, tagY, padR - 4, tagH);
     liqCtx.fill();
     liqCtx.fillStyle = "#1a0d02"; liqCtx.textAlign = "left";
-    liqCtx.font = "700 10px " + "ui-monospace,Menlo,monospace";
+    liqCtx.font = "700 10px " + LIQ_FONT;
     liqCtx.fillText(curP.toFixed(7), padL + plotW + 6, tagY + tagH / 2);
 
     // crosshair + hovered cell highlight
@@ -996,14 +1003,23 @@
     if (!liqCv || !data.liq) return;
     liqFit();
     window.addEventListener("resize", liqFit);
-    // linha de preço 7d (CoinGecko) para preencher a janela do heatmap
-    if (!mkt.cache[7]) {
-      fetch(CGP + "chart&days=7")
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (j) {
-          if (j && j.prices && j.prices.length) { mkt.cache[7] = j.prices; drawLiq(); }
-        }).catch(function () {});
+    // o canvas desenha os rótulos em Geist Mono; se a fonte chegar depois do
+    // primeiro paint, redesenha para não ficar no fallback do sistema
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { drawLiq(); });
     }
+    // linha de preço (CoinGecko) dimensionada para a janela real do heatmap —
+    // com days fixo a linha nascia no meio do mapa quando o histórico passava
+    // do fetch (heatmap guarda ~12 dias, o fetch antigo cobria 7)
+    var lh = data.liq.history || [];
+    var liqDays = lh.length
+      ? Math.max(2, Math.min(90, Math.ceil((Date.now() / 1000 - lh[0].t) / 86400) + 1))
+      : 7;
+    fetch(CGP + "chart&days=" + liqDays)
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (j && j.prices && j.prices.length) { liqPrices = j.prices; drawLiq(); }
+      }).catch(function () {});
     liqCv.addEventListener("mousemove", function (ev) {
       if (!liqGeo) return;
       var rect = liqCv.getBoundingClientRect();
@@ -1097,7 +1113,7 @@
     var x = function (t) { return padL + (t - t0) / (t1 - t0) * plotW; };
     var y = function (p) { return padT + (maxP - p) / (maxP - minP) * plotH; };
     // grid + price labels
-    mktCtx.font = "600 10px ui-monospace,Menlo,monospace";
+    mktCtx.font = "500 10px " + LIQ_FONT;
     mktCtx.textBaseline = "middle";
     for (var g = 0; g <= 4; g++) {
       var pv = maxP - (maxP - minP) * g / 4, gy = y(pv);
