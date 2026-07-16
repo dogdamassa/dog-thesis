@@ -3329,5 +3329,7 @@ details[open]>.d101-summary{border-color:rgba(255,92,0,.5);margin-bottom:18px}
 .pic-banner{margin:26px 0 8px}
 .pic-banner img{width:100%;max-height:430px;object-fit:cover;display:block;border-radius:14px;border:1px solid rgba(255,255,255,.12)}
 .pic-banner--page{margin:30px 0 0}
+/* Wide page art: native 16:9, full container width, no portrait-style cap. */
+.pic-banner--wide img{width:100%;height:auto;max-height:none;aspect-ratio:16/9;object-fit:cover;margin:0}
 /* foto inteira, sem corte — pro banner cuja composição não sobrevive ao cover */
 .pic-banner--full img{width:auto;max-width:100%;max-height:560px;object-fit:contain;margin:0 auto}
