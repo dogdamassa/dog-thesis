@@ -26,7 +26,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
 <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css?v=3c33b21424">
+<link rel="stylesheet" href="/styles.css?v=0838aee866">
 <!-- Intro gate. Render-blocking on purpose: decides before first paint whether
      the presentation video opens (3-day TTL). External file = CSP-safe. -->
 <script src="/intro.js?v=85b612ad24"></script>
@@ -296,6 +296,30 @@
     </div>
   </section>
 
+  <!-- Carrossel social full-bleed, como sempre foi: atravessa a página
+       inteira logo abaixo do hero (marca KRAY fora da jornada — qgsoc.*) -->
+  <div class="social-strip" id="krSocial" aria-label="$DOG Army social feed">
+    <div class="wrap social-strip-head">
+      <div class="social-strip-pitch">
+        <span class="social-strip-label"><span class="social-dot" aria-hidden="true"></span><span data-i18n="qgsoc.label">$DOG Army Social · live from the chain</span></span>
+        <p class="social-strip-hook" data-i18n="qgsoc.hook">A social network recorded on Bitcoin. Posts, likes and on-chain rewards. This is what the $DOG Army is saying right now.</p>
+      </div>
+      <div class="social-strip-actions">
+        <div class="social-strip-filters">
+          <button type="button" class="soc-chip active" data-feed="trending">🔥 <span data-i18n="soc.trending">Trending</span></button>
+          <button type="button" class="soc-chip" data-feed="recent">🕐 <span data-i18n="soc.recent">Recent</span></button>
+          <button type="button" class="soc-chip" data-feed="rewards">💰 <span data-i18n="soc.rewards">Rewards</span></button>
+        </div>
+        <a class="btn primary social-strip-btn" href="/social" data-i18n="soc.cta">Explore the Social →</a>
+      </div>
+    </div>
+    <div class="social-strip-viewport">
+      <div class="social-strip-track" id="krSocialTrack">
+        <span class="social-strip-msg" data-i18n="soc.loading">Loading posts…</span>
+      </div>
+    </div>
+  </div>
+
   <section id="dog101">
     <div class="wrap">
       <span id="historia" aria-hidden="true"></span>
@@ -427,27 +451,6 @@
         </article>
       </div>
 
-      <div class="social-strip social-strip--qg" id="krSocial" aria-label="$DOG Army social feed">
-        <div class="social-strip-head">
-          <div class="social-strip-pitch">
-            <span class="social-strip-label"><span class="social-dot" aria-hidden="true"></span><span data-i18n="qgsoc.label">$DOG Army Social · live from the chain</span></span>
-            <p class="social-strip-hook" data-i18n="qgsoc.hook">A social network recorded on Bitcoin. Posts, likes and on-chain rewards. This is what the $DOG Army is saying right now.</p>
-          </div>
-          <div class="social-strip-actions">
-            <div class="social-strip-filters">
-              <button type="button" class="soc-chip active" data-feed="trending">🔥 <span data-i18n="soc.trending">Trending</span></button>
-              <button type="button" class="soc-chip" data-feed="recent">🕐 <span data-i18n="soc.recent">Recent</span></button>
-              <button type="button" class="soc-chip" data-feed="rewards">💰 <span data-i18n="soc.rewards">Rewards</span></button>
-            </div>
-            <a class="btn primary social-strip-btn" href="/social" data-i18n="soc.cta">Explore the Social →</a>
-          </div>
-        </div>
-        <div class="social-strip-viewport">
-          <div class="social-strip-track" id="krSocialTrack">
-            <span class="social-strip-msg" data-i18n="soc.loading">Loading posts…</span>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
