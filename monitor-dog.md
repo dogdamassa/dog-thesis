@@ -4,6 +4,31 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
+## 2026-07-17 ⚠️ Movimento suspeito · pass-through baleia → MEXC (28min) · cluster Int→Bitget ativo
+
+> Fonte: `data/daily.json` + `data/feed.json` · atualizado às 11:47 UTC · dado fresco (scripts locais; dogdata.xyz bloqueado no proxy remoto).
+
+- **Baleia (Vault #1, rank #1):** **12,12% do supply** (12,118B DOG). Δ líquido: −12,6M DOG. **NÃO depositou diretamente em exchange conhecida** (cofre_to_exchange: 0).
+- **Saídas da baleia hoje (17/07) — 5 txs = 28,1M DOG:**
+  - 03:06 UTC — **4,4M DOG** → Int#2 (relay Bitget, pass-through confirmado abaixo)
+  - 06:40 UTC — 1,7M DOG → fresh wallet (`bc1pfhl...`)
+  - 09:14 UTC — **10,2M DOG** → `bc1qkgjl...ct5y` (→ MEXC em 28min)
+  - 09:14 UTC — **10,8M DOG** → `bc1q06c7...w355` (→ MEXC em 28min)
+  - 11:10 UTC — 1,0M DOG → fresh wallet (`bc1p3v8...`)
+- ⚠️ **Pass-through baleia → MEXC detectado (17/07, ~28min de distância):**
+  - `baleia → bc1qkgjl...ct5y` 09:14 UTC (10,2M DOG) → `→ MEXC` 09:42 UTC (6,2M DOG)
+  - `baleia → bc1q06c7...w355` 09:14 UTC (10,8M DOG) → `→ MEXC` 09:42 UTC (6,4M DOG)
+  - **Total estimado chegou na MEXC via intermediário hoje: ~12,6M DOG**
+- **Cluster relay ativo (72h):**
+  - 16/07 08:04 — Baleia → Int#2: 8,3M DOG; Gate → Int#1: 204M DOG
+  - 16/07 08:19 — Int#1 → Bitget: 6,3M DOG; Int#2 → Bitget: 2,4M DOG
+  - 17/07 03:06 — Baleia → Int#2: 4,4M DOG
+  - 17/07 03:33 — Int#2 → Bitget: 2,6M DOG
+  - **Total cluster → Bitget (72h): ~11,3M DOG**
+- **Outros (16/07):** baleia enviou **218,4M DOG** para "Merlin Chain vault (2026)" (possível bridge/staking — destino diferente, monitorar) + 96,9M + 52M DOG para fresh wallets não mapeadas.
+- **Saques novos Binance → cluster (72h):** Binance hot wallet (`bc1qhuv...`) **não aparece como counterparty direto** em Int#1/Int#2/Int#3 nesta janela. Int#3 inativo desde 30/04. Fonte do cluster: baleia (Int#2) e Gate (Int#1).
+- 🔎 **Leitura:** **movimento suspeito.** A baleia alimentou Int#2 duas vezes (4,4M + 8,3M DOG) que despejou na Bitget; e enviou 21M DOG para duas wallets intermediárias que depositaram ~12,6M DOG na MEXC em menos de 30 minutos — pass-through de 2 hops. A Binance não aparece como counterparty direto nesta janela, mas **pode estar envolvida** — histórico de 48 saques via Int#3 liga essa estrutura à Binance. Sem acusação de crime: descrevemos o padrão que a chain mostra.
+
 ## 2026-07-16 ⚠️ API bloqueada · referência: 15/07 movimento suspeito confirmado
 
 - **Baleia:** `dogdata.xyz` inacessível (403 proxy) — último dado fresco: **15/07, 12,13% do supply, rank #1**.
