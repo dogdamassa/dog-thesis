@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-07-18T17:26:53.893078+00:00",
+  "updated_at": "2026-07-18T19:37:31.594002+00:00",
   "events": [
+    {
+      "id": "bal-2026-07-18",
+      "ts": "2026-07-18T19:37:31.594002+00:00",
+      "type": "balance_change",
+      "amount_dog": 1556034.3000011444,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
     {
       "id": "50daf43c0d2302903d191b1d153ece176f59b155b2052fb1eb5b734d5f9a346a",
       "ts": "2026-07-18T16:04:36+00:00",
@@ -26,19 +39,6 @@
       "to_id": "whale7",
       "community": null,
       "txid": "2a92d7473fab29705118cb647b9ea6c5451c201e0e23574ff2ed36ca9d4a44df"
-    },
-    {
-      "id": "bal-2026-07-18",
-      "ts": "2026-07-18T15:26:27.578177+00:00",
-      "type": "balance_change",
-      "amount_dog": 1700223.0213890076,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     },
     {
       "id": "b70e5dd7bcfd7438a664faffc3de716f1b773f3f57ba627eceaf23062937fc50",
