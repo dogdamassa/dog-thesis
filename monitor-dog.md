@@ -4,6 +4,13 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
+## 2026-07-18
+
+- **Baleia:** API indisponível hoje.
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+
 ## 2026-07-17 ⚠️ Movimento suspeito · pass-through baleia → MEXC (28min) · cluster Int→Bitget ativo
 
 > Fonte: `data/daily.json` + `data/feed.json` · atualizado às 11:47 UTC · dado fresco (scripts locais; dogdata.xyz bloqueado no proxy remoto).
