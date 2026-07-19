@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-19T21:11:10.039801+00:00",
+  "updated_at": "2026-07-19T22:12:46.818141+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12215432379.27221,
+      "balance_dog": 12198802832.01989,
       "rank": 1,
-      "pct": 12.22,
+      "pct": 12.2,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3241033228.42091,
+      "balance_dog": 3241033279.48891,
       "rank": 2,
       "pct": 3.24,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2043693037.49247,
+      "balance_dog": 2035764927.49247,
       "rank": 6,
       "pct": 2.04,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -51,10 +51,10 @@
       "label": "Bitget Deposit #1",
       "kind": "relay",
       "community": "Bitget deposit, desk reuse",
-      "confirmed": false,
-      "balance_dog": 0,
-      "rank": null,
-      "pct": 0,
+      "confirmed": true,
+      "balance_dog": 17384845.8,
+      "rank": 421,
+      "pct": 0.02,
       "addr": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar"
     },
     {
@@ -225,20 +225,20 @@
       "count": 1
     },
     {
+      "from": "int1",
+      "to": "h3",
+      "from_label": "Bitget Deposit #1",
+      "to_label": "Bitget hot",
+      "dog": 316691139,
+      "count": 57
+    },
+    {
       "from": "int2",
       "to": "h3",
       "from_label": "Bitget Deposit #2",
       "to_label": "Bitget hot",
       "dog": 539508310,
       "count": 91
-    },
-    {
-      "from": "int1",
-      "to": "h3",
-      "from_label": "Bitget Deposit #1",
-      "to_label": "Bitget hot",
-      "dog": 299306293,
-      "count": 56
     },
     {
       "from": "int3",

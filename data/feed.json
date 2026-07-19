@@ -1,18 +1,44 @@
 {
-  "updated_at": "2026-07-19T21:11:10.039801+00:00",
+  "updated_at": "2026-07-19T22:12:46.818141+00:00",
   "events": [
     {
       "id": "bal-2026-07-19",
-      "ts": "2026-07-19T21:11:10.039801+00:00",
+      "ts": "2026-07-19T22:12:46.818141+00:00",
       "type": "balance_change",
-      "amount_dog": 11786020.808418274,
+      "amount_dog": 16629547.252319336,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "+",
+      "sign": "-",
       "txid": null
+    },
+    {
+      "id": "489bb3cf11acde6f856cc9c2219313c1a23f121fb66c18213a18086647c58aec",
+      "ts": "2026-07-19T22:07:06+00:00",
+      "type": "exchange_out",
+      "amount_dog": 29744600.17446,
+      "level": "info",
+      "from_label": "Gate.io hot",
+      "to_label": "MM2 shuttle",
+      "from_id": "h2",
+      "to_id": "mm2",
+      "community": null,
+      "txid": "489bb3cf11acde6f856cc9c2219313c1a23f121fb66c18213a18086647c58aec"
+    },
+    {
+      "id": "65fe9ce97d86d3eb1cea5bfb08fb82f836da0ffba4f39710a65a089f6abcf578",
+      "ts": "2026-07-19T21:14:01+00:00",
+      "type": "exchange_in",
+      "amount_dog": 17384845.8,
+      "level": "watch",
+      "from_label": "Bitget Deposit #1",
+      "to_label": "Bitget hot",
+      "from_id": "int1",
+      "to_id": "h3",
+      "community": "Bitget",
+      "txid": "65fe9ce97d86d3eb1cea5bfb08fb82f836da0ffba4f39710a65a089f6abcf578"
     },
     {
       "id": "988df9c480347cfe30db0de47b1f18d24fe7ba194c5ecddf3d9f6c3d7df37813",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "52c8eef3416df6f316f25700791d66ccd78dcd7af721b8e7bffad38b69152bfa"
-    },
-    {
-      "id": "1ac4a54b65937da5e3b8360dae7ad956303d7152b8927db3d07972821790bd01",
-      "ts": "2026-07-17T00:46:47+00:00",
-      "type": "exchange_out",
-      "amount_dog": 14191331.9926,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "Whale7 shuttle",
-      "from_id": "h3",
-      "to_id": "whale7",
-      "community": null,
-      "txid": "1ac4a54b65937da5e3b8360dae7ad956303d7152b8927db3d07972821790bd01"
-    },
-    {
-      "id": "41b66718e8682634000845be891b7cd5855d6bd7b72a0996111fd41d5c8bbc86",
-      "ts": "2026-07-17T00:36:57+00:00",
-      "type": "exchange_out",
-      "amount_dog": 12546346.60737,
-      "level": "info",
-      "from_label": "MEXC Wallet",
-      "to_label": "MM2 shuttle",
-      "from_id": "mexc",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "41b66718e8682634000845be891b7cd5855d6bd7b72a0996111fd41d5c8bbc86"
     }
   ]
 }
