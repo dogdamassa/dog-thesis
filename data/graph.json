@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-19T22:12:46.818141+00:00",
+  "updated_at": "2026-07-19T23:15:50.842837+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12198802832.01989,
+      "balance_dog": 12194620369.01989,
       "rank": 1,
-      "pct": 12.2,
+      "pct": 12.19,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2926848294.95017,
+      "balance_dog": 2944233140.75017,
       "rank": 3,
-      "pct": 2.93,
+      "pct": 2.94,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2035764927.49247,
+      "balance_dog": 2039295128.49247,
       "rank": 6,
       "pct": 2.04,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -51,10 +51,10 @@
       "label": "Bitget Deposit #1",
       "kind": "relay",
       "community": "Bitget deposit, desk reuse",
-      "confirmed": true,
-      "balance_dog": 17384845.8,
-      "rank": 421,
-      "pct": 0.02,
+      "confirmed": false,
+      "balance_dog": 0,
+      "rank": null,
+      "pct": 0,
       "addr": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar"
     },
     {
