@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-07-20T00:59:38.443932+00:00",
+  "updated_at": "2026-07-20T04:57:34.193593+00:00",
   "events": [
+    {
+      "id": "bal-2026-07-20",
+      "ts": "2026-07-20T04:57:34.193593+00:00",
+      "type": "balance_change",
+      "amount_dog": 8039011.180000305,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "c788cb1c0b97cf95496fc3931143a07c668b3968df912e76486aa1a2b4b7880c",
+      "ts": "2026-07-20T04:55:29+00:00",
+      "type": "exchange_out",
+      "amount_dog": 11667053.8,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "Whale7 shuttle",
+      "from_id": "h3",
+      "to_id": "whale7",
+      "community": null,
+      "txid": "c788cb1c0b97cf95496fc3931143a07c668b3968df912e76486aa1a2b4b7880c"
+    },
+    {
+      "id": "83c40d4d91e052b26b9c44b21b072b4b25aa9fe4937a46bf2183c70a8f1616c4",
+      "ts": "2026-07-20T02:22:58+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 2247202.37535,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p2y0y336sgx7g4d8rhqq4na792xahkurw0rvjz3n7tmpt3gey5q8qka4flv",
+      "community": null,
+      "txid": "83c40d4d91e052b26b9c44b21b072b4b25aa9fe4937a46bf2183c70a8f1616c4"
+    },
+    {
+      "id": "99b35272e7d691969771755d601b82c311c9f988df5c37b61806ac6a55ba256c",
+      "ts": "2026-07-20T02:15:01+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 1280802.326,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1ps5j4f8cg38pzltjfvqs5dcheqqq7eyqmnarv5ks9v5f5w0lugprs6ulry4",
+      "community": null,
+      "txid": "99b35272e7d691969771755d601b82c311c9f988df5c37b61806ac6a55ba256c"
+    },
     {
       "id": "d2688edaee9137bc63fe1ee23bfe1e33d107eb331bc478abccc50183f2175ee4",
       "ts": "2026-07-20T00:52:19+00:00",
@@ -728,58 +780,6 @@
       "to_id": "sleeper",
       "community": null,
       "txid": "b2a9c39f04bb6963271cd634f357ef683c44d2eeb92212a82bd9251a55842e44"
-    },
-    {
-      "id": "2aae9510e0b8d9d0a5fdb69aa744d1567c238eede9c3013531a42e8117f5b6ee",
-      "ts": "2026-07-17T03:33:11+00:00",
-      "type": "relay_flow",
-      "amount_dog": 2639020.2,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": null,
-      "txid": "2aae9510e0b8d9d0a5fdb69aa744d1567c238eede9c3013531a42e8117f5b6ee"
-    },
-    {
-      "id": "a39a6e238f534347f7f5162b49e4c0b1646c5affa0684519e53ea57befd696f9",
-      "ts": "2026-07-17T03:06:18+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 4369565.204,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #2",
-      "from_id": "cofre",
-      "to_id": "int2",
-      "community": "Bitget deposit, desk reuse",
-      "txid": "a39a6e238f534347f7f5162b49e4c0b1646c5affa0684519e53ea57befd696f9"
-    },
-    {
-      "id": "0971a967c2cc0586243502d66e18c3f1aaff009a8abbbbfe8224e08a2ec88ded",
-      "ts": "2026-07-17T03:06:18+00:00",
-      "type": "exchange_out",
-      "amount_dog": 159739829.84446,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "Sleeper wallet",
-      "from_id": "h2",
-      "to_id": "sleeper",
-      "community": null,
-      "txid": "0971a967c2cc0586243502d66e18c3f1aaff009a8abbbbfe8224e08a2ec88ded"
-    },
-    {
-      "id": "71fc799c20cf26a27cae6b588f177432e74baad14299cca6e31e08ebb2bd72a2",
-      "ts": "2026-07-17T02:28:59+00:00",
-      "type": "exchange_out",
-      "amount_dog": 189738239.73446,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "Sleeper wallet",
-      "from_id": "h2",
-      "to_id": "sleeper",
-      "community": null,
-      "txid": "71fc799c20cf26a27cae6b588f177432e74baad14299cca6e31e08ebb2bd72a2"
     }
   ]
 }
