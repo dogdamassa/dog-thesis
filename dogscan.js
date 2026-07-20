@@ -600,7 +600,7 @@
         '</div>';
     }
 
-    showPane('rune-content', head + distHtml + '<div class="info-grid">' + supply + etching + '</div>' + holders);
+    showPane('rune-content', head + distHtml + holders + '<div class="info-grid">' + supply + etching + '</div>');
   }
 
   function renderL2Tx(tx) {
