@@ -5,5 +5,7 @@ dist/
 .env.*
 *.log
 .vercel
-scripts/monitor-state.json
 .claude/
+# scripts/monitor-state.json NAO entra aqui: o monitor roda no GitHub Actions,
+# onde o checkout e limpo. Sem o estado versionado ele faz bootstrap toda hora
+# e nunca alerta nada. O bot comita o estado junto com data/.

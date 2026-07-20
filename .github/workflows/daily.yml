@@ -36,12 +36,13 @@ jobs:
           python3 scripts/flows.py
           python3 scripts/liqmap.py
           python3 scripts/dog_news.py || echo "news falhou (RSS do YouTube) — não trava o radar"
+          python3 scripts/monitor.py || echo "monitor falhou — não trava o radar"
 
       - name: Comitar se mudou
         run: |
           git config user.name  "dog-radar-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/
+          git add data/ monitor-dog.md scripts/monitor-state.json
           if git diff --cached --quiet; then
             echo "Sem mudanças nos dados hoje — nada a publicar."
           else
