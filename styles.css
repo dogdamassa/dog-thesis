@@ -3318,7 +3318,6 @@ details[open]>.d101-summary{border-color:rgba(255,92,0,.5);margin-bottom:18px}
 .rd-wallets .wnote{margin:14px 0 16px;max-width:none}
 .fight-band{padding:52px 0}
 .fight-band .fight-cta{margin-top:0}
-.fight-banner--dogmode img{max-height:none;aspect-ratio:1672/941;object-fit:cover}
 .eco-sat{margin-bottom:34px}
 .eco-sat-head{margin-bottom:24px}
 .eco-sat-title{font-size:clamp(24px,3.2vw,34px);font-weight:900;letter-spacing:-.02em;line-height:1.08;color:var(--white-2,#fff8ef)}
@@ -3473,4 +3472,9 @@ details[open]>.d101-summary{border-color:rgba(255,92,0,.5);margin-bottom:18px}
 .dogmode-point span{font-size:13.5px;line-height:1.52;color:var(--muted)}
 .dogmode-actions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
 .dogmode-note{font-size:12.5px;font-weight:600;color:var(--muted);margin:0;max-width:none}
+.dogmode-date{font-family:var(--font-mono,ui-monospace,Menlo,monospace);font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.04em}
+.dogmode-cover{margin:0 0 22px}
+.dogmode-cover a{display:block}
+.dogmode-cover img{width:100%;height:auto;aspect-ratio:1672/941;object-fit:cover;display:block;border-radius:12px;border:1px solid rgba(247,147,26,.35)}
+.dogmode-cover figcaption{margin-top:9px;text-align:center;font-size:12.5px;color:var(--muted);font-weight:700;letter-spacing:.02em}
 @media(max-width:760px){.dogmode-points{grid-template-columns:1fr}.dogmode-actions .btn{display:flex;flex:1 1 100%;justify-content:center}}
