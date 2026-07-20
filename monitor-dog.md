@@ -4,30 +4,12 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
-## 2026-07-20 ⚠️ Movimento suspeito · ciclo Bitget→Whale7 shuttle ativo (58,8M DOG em 72h) · relay Vault→Int#1→Bitget confirmado ontem
+## 2026-07-20
 
-> Fonte: `data/daily.json` + `data/feed.json` · atualizado às ~12:09 UTC · dado FRESCO (scripts locais; dogdata.xyz bloqueado no proxy remoto).
-
-- **Baleia (Vault #1, rank #1):** **12,21% do supply** (12,212B DOG). Δ líquido: −1,85M DOG. **NÃO depositou diretamente em exchange** (cofre_to_exchange: 0).
-- **Saídas da baleia hoje (20/07) — 5 txs:**
-  - 11:08 UTC — **11,48M DOG** → Whale23
-  - 11:08 UTC — **10,54M DOG** → fresh wallet
-  - 08:04 UTC — 4,50M DOG → fresh wallet
-  - 02:22 UTC — 2,25M DOG → fresh wallet
-  - 02:15 UTC — 1,28M DOG → fresh wallet
-  - _(retornos: 2 entradas ~22,1M DOG de unmapped wallets — rotação intraday)_
-- ⚠️ **Relay Vault→Int#1→Bitget (19/07, ontem):**
-  - 20:55 UTC — Vault#1 → **Int#1** (Bitget Deposit #1): 17,48M DOG
-  - 21:14 UTC — **Int#1 → Bitget hot**: 17,38M DOG (19 min depois — pass-through confirmado)
-- 🔴 **Ciclo suspeito Bitget hot → Whale7 shuttle (72h) — 4 saques:**
-  - 18/07 16:04 — 7,57M DOG
-  - 19/07 19:26 — 20,00M DOG
-  - 20/07 04:55 — 11,67M DOG
-  - 20/07 09:03 — 19,56M DOG
-  - **Total: 58,8M DOG** saídos da Bitget hot em direção ao shuttle em 72h
-- **Gate.io ativa (19-20/07):** 4 saídas = 8,47M + 8,46M + 29,74M + 11,69M DOG para MM2 shuttle e carteiras não mapeadas (~58,4M DOG)
-- **Saques novos da Binance hot → cluster (72h):** **nenhum confirmado.** A carteira Binance (`bc1qhuv...`) não aparece como origem direta em Int#1/Int#2/Int#3 nesta janela. Int#3 inativo desde 30/04; Int#2 inativo desde 17/07; Int#1 recebeu da **baleia** (não da Binance).
-- 🔎 **Leitura:** **movimento suspeito em múltiplas frentes.** (1) Relay Vault#1→Int#1→Bitget confirmado ontem — a baleia usa o cluster para depositar na Bitget sem aparecer como "cofre_to_exchange". (2) Bitget hot recicla DOG de volta via Whale7 shuttle (58,8M DOG em 72h) — ciclo Bitget↔shuttle em operação contínua. (3) Gate.io também ativa despejando em MM2 shuttle. A **Binance não aparece como counterparty direto** nesta janela, mas **pode estar envolvida** — o cluster Int#1 foi historicamente alimentado por ela (documentado) e o padrão atual reproduz a mesma estrutura de reciclagem. Sem acusação de crime: descrevemos o padrão que a chain mostra.
+- **Baleia (#1):** 12.2% do supply (Δ +0.0M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
 
 ## 2026-07-19 ⚠️ Movimento suspeito · 189M DOG em fresh wallet · ciclo Bitget → shuttle → baleia · Gate despejou 559M DOG
 
