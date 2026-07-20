@@ -14,7 +14,8 @@
   'use strict';
 
   /* ---------- config ---------- */
-  var DOG_IMG      = '/public/dog-logo.png';
+  /* the original DOG art (rune 840000:3), not the DOG ARMY crest */
+  var DOG_IMG      = '/public/dog-rune-840000-3.png';
   var FIRST_DELAY  = 14000;   /* let the visitor engage before the DOG shows  */
   var VISIBLE_MS   = 22000;   /* time on screen to notice + click before it hides */
   var REAPPEAR_GAP = 80000;   /* gap before it peeks again if missed          */
@@ -156,13 +157,15 @@
   var CSS =
   '.dd-wrap{position:fixed;right:16px;bottom:16px;z-index:2147483000;' +
     'right:calc(16px + env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));}' +
+  /* box is portrait to match the DOG art's 460x726 — a square one would leave
+     the puppy floating small in the middle of it */
   '.dd-sprite{position:relative;display:block;border:0;background:none;padding:0;cursor:pointer;' +
-    'width:96px;height:96px;filter:drop-shadow(0 8px 22px rgba(255,92,0,.45));' +
+    'width:88px;height:139px;filter:drop-shadow(0 8px 22px rgba(255,92,0,.45));' +
     'transform:translateY(140%);opacity:0;transition:transform .55s cubic-bezier(.2,.9,.25,1.3),opacity .4s;}' +
   '.dd-wrap.is-in .dd-sprite{transform:translateY(0);opacity:1;}' +
   '.dd-sprite img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;' +
     'animation:dd-wag 2.4s ease-in-out infinite;transform-origin:50% 90%;}' +
-  '.dd-sprite::before{content:"";position:absolute;inset:-14% -14% -6% -14%;border-radius:50%;z-index:-1;' +
+  '.dd-sprite::before{content:"";position:absolute;inset:18% -20% -4% -20%;border-radius:50%;z-index:-1;' +
     'background:radial-gradient(closest-side,rgba(255,92,0,.55),transparent 72%);animation:dd-pulse 2.4s ease-in-out infinite;}' +
   '.dd-sprite:hover img{animation-duration:.9s;}' +
   '.dd-bubble{position:absolute;top:-14px;left:50%;transform:translateX(-58%);white-space:nowrap;' +
@@ -189,7 +192,7 @@
   '.dd-card-x{position:absolute;top:10px;right:12px;width:30px;height:30px;border:0;background:none;color:#8a8a8a;' +
     'font-size:22px;line-height:1;cursor:pointer;border-radius:8px;}' +
   '.dd-card-x:hover{color:#fff;background:#1a1a1a;}' +
-  '.dd-hero{width:104px;height:104px;margin:0 auto 4px;object-fit:contain;' +
+  '.dd-hero{width:84px;height:132px;margin:0 auto 4px;object-fit:contain;' +
     'filter:drop-shadow(0 10px 22px rgba(255,92,0,.4));}' +
   '.dd-card h3{margin:6px 0 6px;font-size:20px;font-weight:800;letter-spacing:-.01em;}' +
   '.dd-card p{margin:0 auto;font-size:14px;line-height:1.5;color:#c7c1bb;max-width:30ch;}' +
@@ -221,7 +224,7 @@
   '@media (prefers-reduced-motion: reduce){' +
     '.dd-sprite{transition:opacity .3s;transform:none;}.dd-sprite img,.dd-sprite::before{animation:none;}' +
     '.dd-scrim,.dd-card{transition:none;}.dd-spin{animation-duration:1.2s;}}' +
-  '@media (max-width:420px){.dd-sprite{width:82px;height:82px;}}';
+  '@media (max-width:420px){.dd-sprite{width:74px;height:117px;}}';
 
   /* ---------- state ---------- */
   var pool = null;          /* poolInfo from /api/scroll */
