@@ -96,12 +96,12 @@
   /* bring the result region into view past the sticky header — without this a
      phone-sized viewport keeps the search card on screen and the result renders
      below the fold, so a search looks like it did nothing */
-  function revealTo(el) {
+  function revealTo(el, instant) {
     try {
       var header = document.querySelector('header');
       var offset = (header ? header.getBoundingClientRect().height : 0) + 16;
       var y = el.getBoundingClientRect().top + (window.pageYOffset || 0) - offset;
-      window.scrollTo({ top: y > 0 ? y : 0, behavior: 'smooth' });
+      window.scrollTo({ top: y > 0 ? y : 0, behavior: instant ? 'auto' : 'smooth' });
     } catch (e) { /* older browsers / no smooth scroll — harmless */ }
   }
   function showLoading() { hideAll(); $('loading').style.display = 'flex'; revealTo($('loading')); }
@@ -129,6 +129,10 @@
     el.innerHTML = html;
     wireFallbacks(el);
     el.style.display = 'block';
+    /* re-anchor on the freshly rendered result — the showLoading() scroll raced
+       the fetch, so where the viewport ended up depended on response timing;
+       instant so a half-finished smooth scroll can't strand the viewport */
+    revealTo(el, true);
   }
 
   /* ---------- input detection (same rules as kray.space's explorer) ---------- */
