@@ -1,19 +1,6 @@
 {
-  "updated_at": "2026-07-20T02:02:17.404033+00:00",
+  "updated_at": "2026-07-20T00:59:38.443932+00:00",
   "events": [
-    {
-      "id": "bal-2026-07-20",
-      "ts": "2026-07-20T02:02:17.404033+00:00",
-      "type": "balance_change",
-      "amount_dog": 1409769.3066997528,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
-    },
     {
       "id": "d2688edaee9137bc63fe1ee23bfe1e33d107eb331bc478abccc50183f2175ee4",
       "ts": "2026-07-20T00:52:19+00:00",
@@ -26,6 +13,19 @@
       "to_id": "cofre",
       "community": null,
       "txid": "d2688edaee9137bc63fe1ee23bfe1e33d107eb331bc478abccc50183f2175ee4"
+    },
+    {
+      "id": "bal-2026-07-19",
+      "ts": "2026-07-19T23:15:50.842837+00:00",
+      "type": "balance_change",
+      "amount_dog": 4182463.0,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
     },
     {
       "id": "489bb3cf11acde6f856cc9c2219313c1a23f121fb66c18213a18086647c58aec",
@@ -54,19 +54,6 @@
       "txid": "65fe9ce97d86d3eb1cea5bfb08fb82f836da0ffba4f39710a65a089f6abcf578"
     },
     {
-      "id": "f58f28314970695d26686a8cedb5802d8cf7adb4cdff5cd374825e4b5d7fb4de",
-      "ts": "2026-07-19T21:08:39+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 10138648.35411,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "f58f28314970695d26686a8cedb5802d8cf7adb4cdff5cd374825e4b5d7fb4de"
-    },
-    {
       "id": "988df9c480347cfe30db0de47b1f18d24fe7ba194c5ecddf3d9f6c3d7df37813",
       "ts": "2026-07-19T21:08:39+00:00",
       "type": "cofre_out_new",
@@ -78,6 +65,19 @@
       "to_id": "bc1pyu3fl74frumq742tqq6vgp35g4nmdmc238kzvvch44ncecvz7qvqn2a4de",
       "community": null,
       "txid": "988df9c480347cfe30db0de47b1f18d24fe7ba194c5ecddf3d9f6c3d7df37813"
+    },
+    {
+      "id": "f58f28314970695d26686a8cedb5802d8cf7adb4cdff5cd374825e4b5d7fb4de",
+      "ts": "2026-07-19T21:08:39+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 10138648.35411,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "f58f28314970695d26686a8cedb5802d8cf7adb4cdff5cd374825e4b5d7fb4de"
     },
     {
       "id": "258b69b16db99d9d8f31e1bc80a061a1e49038564fc0aa5206126c9aad30e7b9",
@@ -171,19 +171,6 @@
       "txid": "b215a02ef3294c982a3c995aaed3c3d6343f42a01b1fc46d3b640038f15ded3c"
     },
     {
-      "id": "7ce0e103c18b15fcc6954b62278d78ccc27c02429e0e4c125d194061ec396a5c",
-      "ts": "2026-07-19T19:36:26+00:00",
-      "type": "exchange_in",
-      "amount_dog": 8125407.97,
-      "level": "watch",
-      "from_label": "bc1qkgjl...ct5y",
-      "to_label": "MEXC Wallet",
-      "from_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "to_id": "mexc",
-      "community": "MEXC",
-      "txid": "7ce0e103c18b15fcc6954b62278d78ccc27c02429e0e4c125d194061ec396a5c"
-    },
-    {
       "id": "08699e36356f36315fa25c00d48b725513f221fd5e145f0a9b256a8f89569eec",
       "ts": "2026-07-19T19:36:26+00:00",
       "type": "exchange_in",
@@ -195,6 +182,19 @@
       "to_id": "mexc",
       "community": "MEXC",
       "txid": "08699e36356f36315fa25c00d48b725513f221fd5e145f0a9b256a8f89569eec"
+    },
+    {
+      "id": "7ce0e103c18b15fcc6954b62278d78ccc27c02429e0e4c125d194061ec396a5c",
+      "ts": "2026-07-19T19:36:26+00:00",
+      "type": "exchange_in",
+      "amount_dog": 8125407.97,
+      "level": "watch",
+      "from_label": "bc1qkgjl...ct5y",
+      "to_label": "MEXC Wallet",
+      "from_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
+      "to_id": "mexc",
+      "community": "MEXC",
+      "txid": "7ce0e103c18b15fcc6954b62278d78ccc27c02429e0e4c125d194061ec396a5c"
     },
     {
       "id": "822316bca0b3c61dda7e14c66d23024de0e10918e90e49c16a276e5cbef211d4",
@@ -288,19 +288,6 @@
       "txid": "dbb7de3f7094cc26d806ca9b410315376bc051a2fbbc0f83e652eaecaaf0525a"
     },
     {
-      "id": "bal-2026-07-19",
-      "ts": "2026-07-19T14:55:45.710795+00:00",
-      "type": "balance_change",
-      "amount_dog": 94064717.04463005,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
-    },
-    {
       "id": "44c28d87dc45669a6b9bd506bb00b5fa7d109b550abc727d930381452fea58dc",
       "ts": "2026-07-19T12:35:36+00:00",
       "type": "cofre_in",
@@ -377,6 +364,19 @@
       "to_id": "bc1pyu3fl74frumq742tqq6vgp35g4nmdmc238kzvvch44ncecvz7qvqn2a4de",
       "community": null,
       "txid": "4df224cf65e04942c89420823a6362cde8e82f3093d9e67f29cdead6031075fb"
+    },
+    {
+      "id": "bal-2026-07-18",
+      "ts": "2026-07-18T19:37:31.594002+00:00",
+      "type": "balance_change",
+      "amount_dog": 1556034.3000011444,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
     },
     {
       "id": "50daf43c0d2302903d191b1d153ece176f59b155b2052fb1eb5b734d5f9a346a",
@@ -509,6 +509,19 @@
       "txid": "95c760a4c5feae130a299554b29e0e3e4f359d3ade388c418f0059d201a12e37"
     },
     {
+      "id": "bal-2026-07-17",
+      "ts": "2026-07-17T21:12:19.833671+00:00",
+      "type": "balance_change",
+      "amount_dog": 2919697.318248749,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
       "id": "8bdd7ec2b19dda48d376f5c1f1ccb364237f15b10c32bdf5fc53e447e9d91784",
       "ts": "2026-07-17T19:49:21+00:00",
       "type": "cofre_in",
@@ -546,19 +559,6 @@
       "to_id": "bc1pux4050sv6ydu7daqm9yjj59hr87wptlpn8d0pv2mpy58anc9f9fqggr6nu",
       "community": null,
       "txid": "b898b961ca3314258c6321b3dfdae9bbc13f6cb02294c2f8dabd0fea06315289"
-    },
-    {
-      "id": "bal-2026-07-17",
-      "ts": "2026-07-17T14:54:06.789487+00:00",
-      "type": "balance_change",
-      "amount_dog": 4500083.702129364,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     },
     {
       "id": "375870b1363f54b236c0aea31b6b42d5cb87999423f32dae53f5db3a004ffc01",
@@ -665,19 +665,6 @@
       "txid": "a285cdfd0e783d8bfe659baa676b570d50effb64dbad88930a00f9601c31a347"
     },
     {
-      "id": "a37a03ecd51e04ba205f1090e8539440e65730bafc52696bdb3cac14b9c03ce4",
-      "ts": "2026-07-17T09:14:21+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 10801024,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1q06c7e6x70asxms4m8j3sn3ze4ddmayv4w4w355",
-      "community": null,
-      "txid": "a37a03ecd51e04ba205f1090e8539440e65730bafc52696bdb3cac14b9c03ce4"
-    },
-    {
       "id": "a6049cdd757946213c4b454705981766d9285af3d24269f0ba4afe103b30232c",
       "ts": "2026-07-17T09:14:21+00:00",
       "type": "cofre_out_new",
@@ -689,6 +676,19 @@
       "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "community": null,
       "txid": "a6049cdd757946213c4b454705981766d9285af3d24269f0ba4afe103b30232c"
+    },
+    {
+      "id": "a37a03ecd51e04ba205f1090e8539440e65730bafc52696bdb3cac14b9c03ce4",
+      "ts": "2026-07-17T09:14:21+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 10801024,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1q06c7e6x70asxms4m8j3sn3ze4ddmayv4w4w355",
+      "community": null,
+      "txid": "a37a03ecd51e04ba205f1090e8539440e65730bafc52696bdb3cac14b9c03ce4"
     },
     {
       "id": "b594b1d21023a302bfb42bb1551748409271380acfcf679b49897567a8a41906",
