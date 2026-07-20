@@ -8,6 +8,8 @@ Rodar sempre que a pasta ganhar arte nova:
 
 Nomes são determinísticos (pic-<tema>-NN.webp, NN pela ordem alfabética do
 arquivo original), então re-rodar não duplica nada — só adiciona/atualiza.
+As pastas em SKIP_FOLDERS ficam fora do site (ex.: DOG DA MASSA, fotos
+pessoais do dono) — o script nunca as converte nem as põe no manifest.
 Peças usadas em seções fixas (cards do #dog101 etc.) referenciam esses nomes;
 se um arquivo de origem for renomeado/removido, confira os <img> no HTML.
 """
@@ -23,6 +25,8 @@ SRC = os.path.expanduser('~/Desktop/DOG PIC')
 DST = os.path.join(os.path.dirname(__dirname := os.path.dirname(os.path.abspath(__file__))), 'public', 'culture', 'pics')
 MAX_W = 900
 QUALITY = 80
+# Pastas do acervo que NÃO vão pro site (decisão do dono, não mexer sem ele pedir).
+SKIP_FOLDERS = {'DOG DA MASSA'}
 
 
 def slug(s: str) -> str:
@@ -39,7 +43,7 @@ def main() -> int:
     manifest, errors, count = [], [], 0
     for folder in sorted(os.listdir(SRC)):
         fpath = os.path.join(SRC, folder)
-        if not os.path.isdir(fpath) or folder.startswith('.'):
+        if not os.path.isdir(fpath) or folder.startswith('.') or folder in SKIP_FOLDERS:
             continue
         theme, n = slug(folder), 0
         for f in sorted(os.listdir(fpath)):
