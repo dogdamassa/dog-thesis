@@ -3480,18 +3480,43 @@ details[open]>.d101-summary{border-color:rgba(255,92,0,.5);margin-bottom:18px}
 @media(max-width:760px){.dogmode-points{grid-template-columns:1fr}.dogmode-actions .btn{display:flex;flex:1 1 100%;justify-content:center}}
 
 /* ===== /noticias — parede de imprensa (quem já falou da DOG) ===== */
-.news-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* 2x2 só do tablet pra cima: sem o min-width esta regra, por vir DEPOIS do
+   @media(max-width:760px) lá em cima e ter a mesma especificidade, vencia
+   também no celular e espremia os 4 cards em 2 colunas de ~170px. */
+@media(min-width:761px){.news-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .news-feature{min-height:0}
 .news-outlet-logo{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px}
 .news-outlet-logo img{display:block;width:100%;height:100%;object-fit:contain;border-radius:8px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
-/* parede de imprensa em marquee: loop contínuo lento, pausa em hover/teclado,
-   fade nas bordas; com prefers-reduced-motion vira fila rolável estática */
-.press-marquee{position:relative;overflow:hidden;padding:8px 0 14px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
-.press-track{display:flex;width:max-content;animation:press-scroll 90s linear infinite}
-.press-marquee:hover .press-track,.press-marquee:focus-within .press-track{animation-play-state:paused}
-.press-set{display:flex;gap:15px;padding-right:15px}
-@keyframes press-scroll{to{transform:translateX(-50%)}}
-.press-card{width:min(320px,78vw);flex:0 0 auto;position:relative;display:flex;gap:14px;align-items:flex-start;min-width:0;padding:19px;border:1px solid rgba(255,255,255,.13);border-radius:18px;background:linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:0 20px 54px rgba(0,0,0,.2);text-decoration:none;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+/* parede de imprensa em marquee FULL-BLEED: atravessa a tela inteira (no HTML ela
+   fica FORA do .wrap, como a .social-strip da home). Loop contínuo lento, pausa em
+   hover/teclado, fade nas bordas; com prefers-reduced-motion vira fila rolável.
+   Quem anda é CADA .press-set, em translateX(-100%) da PRÓPRIA largura — todos
+   andam junto, o efeito é o do track inteiro, mas o CSS não precisa saber quantos
+   sets nem quantos cards existem (mexer na parede não mexe na conta).
+   Anti-buraco: com N sets de largura W o conteúdo cobre (N-1)*W. Com 3 sets de
+   ~4345px dá ~8700px — 4K, 5K e 8K com folga. Se a parede encolher para menos de
+   6 veículos, cole mais um .press-set (é só HTML). */
+.press-marquee{
+  /* --press-step = card + gap. Uma variável só comanda card, logo e tipografia,
+     pra que o card cresça junto com a tela em vez de virar cartãozinho perdido.
+     --press-dur cresce junto: como a volta é 1 set e o set engorda com o card,
+     duração fixa faria o marquee ACELERAR na tela grande. Assim fica ~42px/s
+     em qualquer monitor. */
+  --press-step:clamp(355px,calc(355px + (100vw - 1440px) * .045),470px);
+  --press-gap:clamp(15px,1vw,24px);
+  --press-fade:clamp(28px,5vw,150px);
+  --press-dur:clamp(90s,calc(90s + (100vw - 1440px) * .022s),126s);
+  position:relative;overflow:hidden;margin-top:30px;
+  padding:clamp(16px,1.4vw,30px) 0 clamp(18px,1.6vw,34px);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#050607;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--press-fade),#000 calc(100% - var(--press-fade)),transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 var(--press-fade),#000 calc(100% - var(--press-fade)),transparent 100%);
+}
+.press-track{display:flex;width:max-content}
+.press-set{display:flex;gap:var(--press-gap);padding-right:var(--press-gap);animation:press-scroll var(--press-dur) linear infinite}
+.press-marquee:hover .press-set,.press-marquee:focus-within .press-set{animation-play-state:paused}
+@keyframes press-scroll{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.press-card{width:min(80vw,calc(var(--press-step) - var(--press-gap)));flex:0 0 auto;position:relative;display:flex;gap:14px;align-items:flex-start;min-width:0;padding:19px;border:1px solid rgba(255,255,255,.13);border-radius:18px;background:linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:0 20px 54px rgba(0,0,0,.2);text-decoration:none;transition:transform .18s ease,border-color .18s ease,background .18s ease}
 .press-card:hover{transform:translateY(-3px);border-color:rgba(255,92,0,.58);background:linear-gradient(155deg,rgba(255,92,0,.11),rgba(255,255,255,.025))}
 .press-logo{flex:0 0 auto;width:46px;height:46px}
 .press-logo img{display:block;width:100%;height:100%;object-fit:contain;border-radius:12px;filter:drop-shadow(0 5px 12px rgba(0,0,0,.5))}
@@ -3502,9 +3527,40 @@ details[open]>.d101-summary{border-color:rgba(255,92,0,.5);margin-bottom:18px}
 .press-ext{position:absolute;top:16px;right:17px;color:var(--orange);font-size:15px;font-weight:850;transition:transform .15s ease}
 .press-card:hover .press-ext{transform:translate(2px,-2px)}
 .press-what{display:block;margin-top:7px;color:var(--muted);font-size:12.5px;line-height:1.55}
-@media(max-width:640px){.press-card{padding:16px}}
-@media(prefers-reduced-motion:reduce){
-  .press-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
-  .press-track{animation:none;width:auto}
+/* logo e tipografia acompanham o --press-step, senão o card cresce e o miolo
+   fica pequeno dentro dele */
+.press-logo{width:clamp(46px,calc(var(--press-step) * .135),62px);height:clamp(46px,calc(var(--press-step) * .135),62px)}
+.press-name{font-size:clamp(15.5px,calc(var(--press-step) * .044),19px)}
+.press-what{font-size:clamp(12.5px,calc(var(--press-step) * .0355),15px)}
+.press-card{padding:clamp(19px,calc(var(--press-step) * .056),26px)}
+/* a página inteira também respira na tela grande — escopado na /noticias pra não
+   mexer no resto do site. Só passa de 1220px acima de ~1970px de tela, então
+   1440 e 1920 continuam idênticos ao que já estava no ar. */
+body.news-page{--maxw:clamp(1220px,62vw,1560px)}
+/* foco de teclado: o fade não pode apagar justamente o card focado */
+.press-marquee:focus-within{-webkit-mask-image:none;mask-image:none}
+.press-card:focus-visible{outline:2px solid var(--orange-solid,#ff5c00);outline-offset:3px;border-color:rgba(255,92,0,.58)}
+@media(max-width:640px){
+  .press-marquee{margin-top:22px}
+  .press-card{padding:16px}
+}
+/* CELULAR/TABLET (e reduced-motion): a faixa deixa de andar sozinha e vira
+   trilho de arrastar com o dedo. Não é só gosto — conteúdo em movimento que o
+   usuário não consegue parar é falha de acessibilidade (WCAG 2.2.2), e num
+   aparelho sem hover não existe como pausar. De quebra some o jank e a bateria
+   gasta à toa. Os clones saem do DOM acessível: sobram os 11 links de verdade. */
+@media(max-width:760px),(hover:none),(prefers-reduced-motion:reduce){
+  .press-marquee{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scroll-padding-inline:20px;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;-webkit-mask-image:none;mask-image:none}
+  /* a calha acompanha a do .wrap, pro 1º card nascer alinhado com o título
+     (18px no celular; em desktop com reduced-motion, alinha com a coluna) */
+  .press-track{width:max-content;padding-inline:max(18px,calc((100% - var(--maxw))/2 + 24px))}
+  .press-set{animation:none;will-change:auto}
   .press-set[aria-hidden="true"]{display:none}
+  .press-card{scroll-snap-align:start}
+}
+/* toque: sem :hover grudado depois do tap, com feedback de pressão no lugar */
+@media(hover:none){
+  .press-card:hover{transform:none;border-color:rgba(255,255,255,.13);background:linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.018))}
+  .press-card:hover .press-ext{transform:none}
+  .press-card:active{transform:scale(.985);border-color:rgba(255,92,0,.55);background:linear-gradient(155deg,rgba(255,92,0,.11),rgba(255,255,255,.025))}
 }
