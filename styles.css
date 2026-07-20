@@ -3501,17 +3501,27 @@ details[open]>.d101-summary{border-color:rgba(255,92,0,.5);margin-bottom:18px}
      pra que o card cresça junto com a tela em vez de virar cartãozinho perdido.
      --press-dur cresce junto: como a volta é 1 set e o set engorda com o card,
      duração fixa faria o marquee ACELERAR na tela grande. Assim fica ~42px/s
-     em qualquer monitor. */
+     em qualquer monitor.
+     ATENÇÃO: a duração NÃO pode sair de um calc() com a largura da tela.
+     calc(90s + (100vw - 1440px) * .022s) multiplica comprimento por tempo, o que
+     é inválido em CSS: o var vira lixo, o shorthand `animation` cai inteiro e a
+     parede congela (foi exatamente esse o bug de 20/07). Como não dá pra derivar
+     tempo de px, os degraus vêm de @media logo abaixo. */
   --press-step:clamp(355px,calc(355px + (100vw - 1440px) * .045),470px);
   --press-gap:clamp(15px,1vw,24px);
   --press-fade:clamp(28px,5vw,150px);
-  --press-dur:clamp(90s,calc(90s + (100vw - 1440px) * .022s),126s);
+  --press-dur:94s;
   position:relative;overflow:hidden;margin-top:30px;
   padding:clamp(16px,1.4vw,30px) 0 clamp(18px,1.6vw,34px);
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#050607;
   -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--press-fade),#000 calc(100% - var(--press-fade)),transparent 100%);
           mask-image:linear-gradient(90deg,transparent 0,#000 var(--press-fade),#000 calc(100% - var(--press-fade)),transparent 100%);
 }
+/* a volta é 1 set = 11 cards = 11 * --press-step. Os degraus seguram ~40px/s do
+   laptop ao 4K: 3905px/94s em 1440, 4480px/116s em 2600, 5170px/124s no talo. */
+@media(min-width:1800px){.press-marquee{--press-dur:104s}}
+@media(min-width:2600px){.press-marquee{--press-dur:116s}}
+@media(min-width:3600px){.press-marquee{--press-dur:124s}}
 .press-track{display:flex;width:max-content}
 .press-set{display:flex;gap:var(--press-gap);padding-right:var(--press-gap);animation:press-scroll var(--press-dur) linear infinite}
 .press-marquee:hover .press-set,.press-marquee:focus-within .press-set{animation-play-state:paused}
