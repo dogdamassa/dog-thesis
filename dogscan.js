@@ -10,6 +10,24 @@
   var MAX_GRID = 60;   /* inscriptions shown per grid */
   var MAX_LIST = 25;   /* tx / utxo rows */
 
+  /* Wallet labels shown next to top holders — only the type:"official" entries
+     of the public registry dogdata.xyz/data/verified_addresses.json (curated,
+     paid-verification). No guessed/heuristic labels here. */
+  var KNOWN_ADDR = {
+    'bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k': 'Bitget',
+    'bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv': 'Gate.io',
+    'bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu': 'MEXC',
+    'bc1p38d6mfutw5h6gx46c7334uxtsf5ey5l7xqfeg36gyc4q83plmwwqsf9wxd': 'Merlin Chain',
+    'bc1qcmj5lkumeycyn35lxc3yr32k3fzue87yrjrna6': 'Merlin Chain',
+    'bc1pz66497g7mj8cq0ncj2hjjfxcxuzv44yxnlach5puypf39ghejmaq20zgne': 'Dog of Bitcoin treasury',
+    'bc1pwper8wpfssxl4pd5grudsvcwxc8pecerxm46flmupj9n8l675rtsehu659': 'DotSwap',
+    'bc1pxk7aw9ug55jkkz02z7ayhlkxxq92ya0ctegcwm5j8jumgaavjlkqdylk2p': 'DogData Treasury'
+  };
+  /* segment colors for the distribution bar — pair validated for CVD + contrast
+     on the #030303 surface; "others" wears the de-emphasis gray on purpose */
+  var SEG_TOP10 = '#ea5303', SEG_MID = '#6577f3', SEG_OTHERS = 'rgba(255,255,255,.22)';
+  var BURN_RED = '#e5484d';
+
   function $(id) { return document.getElementById(id); }
   var PANES = ['tx-content', 'address-content', 'inscription-content', 'rune-content', 'l2tx-content'];
 
@@ -31,6 +49,17 @@
   function fmtBtc(sats) {
     if (sats == null || isNaN(sats)) return '—';
     return (Number(sats) / 1e8).toLocaleString('en-US', { maximumFractionDigits: 8 }) + ' BTC';
+  }
+  /* 99,975,593,202 → "99.98B" — stat tiles show the compact figure, the exact
+     value rides in the tile's title/sub line */
+  function fmtCompact(n) {
+    if (n == null || isNaN(n)) return '—';
+    n = Number(n);
+    var abs = Math.abs(n);
+    if (abs >= 1e12) return fmtNum(n / 1e12, 2) + 'T';
+    if (abs >= 1e9) return fmtNum(n / 1e9, 2) + 'B';
+    if (abs >= 1e6) return fmtNum(n / 1e6, 2) + 'M';
+    return fmtNum(n, 2);
   }
   function fmtSats(sats) { return fmtNum(sats) + ' sats'; }
   function fmtTime(ts) {
@@ -377,57 +406,201 @@
       '<div class="info-grid">' + hero + details + '</div>' + extra);
   }
 
+  /* one icon stat tile for the supply / distribution grids */
+  function statTile(ico, label, value, sub, exact) {
+    return '<div class="stat-tile"' + (exact ? ' title="' + esc(exact) + '"' : '') + '>' +
+      '<div class="stat-label">' + ico + ' ' + label + '</div>' +
+      '<div class="stat-value">' + value + '</div>' +
+      (sub ? '<div class="stat-sub">' + sub + '</div>' : '') +
+      '</div>';
+  }
+
+  /* 4-axis radar with the decentralization score in the middle. Inline SVG,
+     no libs (CSP script-src 'self'). Values are 0–100 per axis. */
+  function radarSvg(m, score) {
+    var cx = 160, cy = 122, R = 84;
+    var axes = [
+      { label: 'DISTRIBUTION', v: m.distribution, a: -90 },
+      { label: 'HOLDERS', v: m.holders, a: 0 },
+      { label: 'SPREAD', v: m.spread, a: 90 },
+      { label: 'DECENTR.', v: m.concentration, a: 180 }
+    ];
+    function pt(deg, r) {
+      var rad = deg * Math.PI / 180;
+      return (cx + r * Math.cos(rad)).toFixed(1) + ',' + (cy + r * Math.sin(rad)).toFixed(1);
+    }
+    var grid = '';
+    for (var g = 1; g <= 4; g++) {
+      grid += '<circle cx="' + cx + '" cy="' + cy + '" r="' + (R * g / 4) + '" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1"/>';
+    }
+    grid += '<line x1="' + cx + '" y1="' + (cy - R) + '" x2="' + cx + '" y2="' + (cy + R) + '" stroke="rgba(255,255,255,.07)" stroke-width="1"/>' +
+      '<line x1="' + (cx - R) + '" y1="' + cy + '" x2="' + (cx + R) + '" y2="' + cy + '" stroke="rgba(255,255,255,.07)" stroke-width="1"/>';
+    var pts = [], dots = '', labels = '';
+    for (var i = 0; i < axes.length; i++) {
+      var ax = axes[i];
+      var v = Math.max(0, Math.min(100, Number(ax.v) || 0));
+      var p = pt(ax.a, R * v / 100);
+      pts.push(p);
+      dots += '<circle cx="' + p.split(',')[0] + '" cy="' + p.split(',')[1] + '" r="4.5" fill="#ff7a1a" stroke="#030303" stroke-width="2"/>';
+      var anchor = ax.a === 0 ? 'start' : (ax.a === 180 ? 'end' : 'middle');
+      var lp = pt(ax.a, R + 14).split(',');
+      var ly = ax.a === -90 ? Number(lp[1]) - 2 : (ax.a === 90 ? Number(lp[1]) + 8 : Number(lp[1]) + 3);
+      labels += '<text x="' + lp[0] + '" y="' + ly + '" text-anchor="' + anchor + '" class="radar-axis">' + ax.label + '</text>';
+    }
+    return '<svg viewBox="0 0 320 250" role="img" aria-label="Decentralization score ' + score + ' of 100">' +
+      grid +
+      '<polygon points="' + pts.join(' ') + '" fill="rgba(255,92,0,.16)" stroke="#ff7a1a" stroke-width="2" stroke-linejoin="round"/>' +
+      dots +
+      '<text x="' + cx + '" y="' + (cy + 8) + '" text-anchor="middle" class="radar-score">' + score + '</text>' +
+      '<text x="' + cx + '" y="' + (cy + 26) + '" text-anchor="middle" class="radar-axis">SCORE</text>' +
+      labels + '</svg>';
+  }
+
   function renderRune(r) {
     var div = r.divisibility || 0;
     var sup = r.supply || {};
-    function s(v) { return v != null ? fmtNum(Number(v) / Math.pow(10, div), 2) : '—'; }
+    var links = r.links || {};
+    function u(v) { return v != null ? Number(v) / Math.pow(10, div) : null; } /* raw → display units */
+    var total = u(sup.total), premine = u(sup.premine), minted = u(sup.minted),
+        burned = u(sup.burned), circ = u(sup.circulating);
+    function pctOf(part) { return total && part != null ? part / total * 100 : null; }
+    /* "0.024%" for slivers, "99.98%" elsewhere, clean "100%" at the top */
+    function pctStr(p) {
+      if (p == null) return '—';
+      if (p >= 99.995) return '100%';
+      return p.toFixed(p > 0 && p < 0.1 ? 3 : 2) + '%';
+    }
+
     var badges =
       '<span class="status-badge status-accent">⧈ ' + esc(r.id || '') + '</span>' +
       (r.number != null ? '<span class="status-badge">Rune #' + fmtNum(r.number) + '</span>' : '') +
       '<span class="status-badge">Divisibility ' + esc(div) + '</span>' +
-      '<span class="status-badge ' + (r.mintable ? 'status-confirmed' : '') + '">' + (r.mintable ? 'Mintable' : 'Mint closed') + '</span>';
+      '<span class="status-badge ' + (r.mintable ? 'status-confirmed' : '') + '">' + (r.mintable ? '🟢 Mintable' : '🔒 Mint closed') + '</span>' +
+      (/^https:\/\/ordinals\.com\//.test(links.ordinals || '') ? '<a class="status-badge" href="' + esc(links.ordinals) + '" target="_blank" rel="noopener">ordinals.com ↗</a>' : '');
 
+    /* holders / distribution (folded in by the proxy from the same payload) */
+    var hs = r.holders || {};
+    var distr = hs.distribution || {};
+    var top10 = parseFloat(distr.top10) || 0;
+    var top50 = parseFloat(distr.top50) || 0;
+    var others = parseFloat(distr.others) || (top50 ? 100 - top50 : 0);
+    var totalHolders = Number(distr.totalHolders || hs.total || 0);
+
+    /* ── hero header: avatar + badges + KPI strip ── */
+    var avatar = r.thumbnail
+      ? '<img class="rune-avatar" src="' + esc(thumbUrl(r.thumbnail)) + '" alt="" data-fallback="' + esc(r.symbol || '⧈') + '" data-fbclass="rune-avatar-fallback">'
+      : '<div class="rune-avatar-fallback">' + esc(r.symbol || '⧈') + '</div>';
     var head =
-      '<div class="content-header"><div class="content-label">Rune</div>' +
-      '<div class="content-hash">' +
-      (r.thumbnail ? '<img src="' + esc(thumbUrl(r.thumbnail)) + '" alt="" style="width:44px;height:44px;border-radius:10px;vertical-align:middle;margin-right:12px" data-fallback="⧈" data-fbclass="rune-symbol-fallback">' : '') +
-      esc(r.spacedName || r.name || '') + (r.symbol ? ' <span style="font-family:inherit">' + esc(r.symbol) + '</span>' : '') +
-      '</div><div class="content-badges">' + badges + '</div></div>';
+      '<div class="content-header">' +
+      '<div class="rune-hero">' + avatar +
+      '<div style="min-width:0;flex:1">' +
+      '<div class="content-label">Rune</div>' +
+      '<div class="rune-title">' + esc(r.spacedName || r.name || '') +
+      (r.symbol ? '<span class="rune-sym">' + esc(r.symbol) + '</span>' : '') + '</div>' +
+      '<div class="content-badges">' + badges + '</div>' +
+      '</div></div>' +
+      '<div class="kpi-strip">' +
+      '<div class="kpi"><div class="kpi-label">🪙 Total supply</div><div class="kpi-value is-accent"' +
+        (total != null ? ' title="' + fmtNum(total, 2) + '"' : '') + '>' + fmtCompact(total) + '</div></div>' +
+      '<div class="kpi"><div class="kpi-label">👥 Holders</div><div class="kpi-value">' + (totalHolders ? fmtNum(totalHolders) : '—') + '</div></div>' +
+      '<div class="kpi"><div class="kpi-label">🔥 Burned</div><div class="kpi-value is-burn"' +
+        (burned ? ' title="' + fmtNum(burned, 2) + '"' : '') + '>' + (burned ? fmtCompact(burned) : '0') + '</div>' +
+        (burned && pctOf(burned) != null ? '<div class="kpi-sub">' + pctStr(pctOf(burned)) + ' of supply</div>' : '') + '</div>' +
+      '</div></div>';
 
+    /* ── distribution: radar + score + share bar + tiles ── */
+    var distHtml = '';
+    if (top10 > 0 || top50 > 0) {
+      /* same scoring formula as KrayScan's explorer, rendered our way */
+      var top10Score = Math.max(0, 100 - top10);
+      var othersScore = Math.min(100, others * 2);
+      var holdersScore = Math.min(100, Math.log10(totalHolders + 1) * 25);
+      var score = Math.round(top10Score * 0.4 + othersScore * 0.3 + holdersScore * 0.3);
+      var metrics = {
+        distribution: Math.min(100, others * 1.5),
+        holders: holdersScore,
+        concentration: top10Score,
+        spread: Math.min(100, (100 - top10) + others / 2)
+      };
+      var decColor = score >= 70 ? '#34c759' : (score >= 40 ? '#ffb224' : BURN_RED);
+      var decLabel = score >= 70 ? 'HIGH' : (score >= 40 ? 'MEDIUM' : 'LOW');
+      var mid = Math.max(0, top50 - top10);
+      var seg = function (val, color, label) {
+        if (!(val > 0.05)) return '';
+        return '<div class="share-seg" style="width:' + val + '%;background:' + color + '" title="' + label + ' · ' + pctStr(val) + '"></div>';
+      };
+      distHtml =
+        '<div class="list-section"><h2 class="section-title">🥧 Distribution</h2>' +
+        '<div class="dist-grid">' +
+        '<div class="dist-radar">' + radarSvg(metrics, score) + '</div>' +
+        '<div>' +
+        '<div class="content-label">Decentralization</div>' +
+        '<div class="decent-chip"><span class="decent-dot" style="background:' + decColor + '"></span>' + decLabel + '</div>' +
+        '<div class="share-bar">' +
+        seg(top10, SEG_TOP10, 'Top 10') + seg(mid, SEG_MID, 'Top 11–100') + seg(others, SEG_OTHERS, 'Others') +
+        '</div>' +
+        '<div class="stat-tiles dist-tiles">' +
+        statTile('<span class="legend-dot" style="background:' + SEG_TOP10 + '"></span>', 'Top 10', pctStr(top10), 'of supply') +
+        statTile('<span class="legend-dot" style="background:' + SEG_MID + '"></span>', 'Top 11–100', pctStr(mid), 'of supply') +
+        statTile('<span class="legend-dot" style="background:' + SEG_OTHERS + '"></span>', 'Others', pctStr(others), 'of supply') +
+        statTile('👥', 'Holders', totalHolders ? fmtNum(totalHolders) : '—', 'addresses') +
+        '</div>' +
+        '</div></div></div>';
+    }
+
+    /* ── supply: meter + icon tiles instead of key/value rows ── */
+    var meter = '';
+    if (total && circ != null) {
+      meter =
+        '<div class="meter-head"><span>Circulating</span><b>' + pctStr(pctOf(circ)) + '</b></div>' +
+        '<div class="share-bar">' +
+        '<div class="share-seg" style="width:' + Math.max(0.5, pctOf(circ)) + '%;background:' + SEG_TOP10 + '" title="Circulating · ' + pctStr(pctOf(circ)) + '"></div>' +
+        (burned ? '<div class="share-seg" style="width:' + pctOf(burned) + '%;background:' + BURN_RED + '" title="Burned · ' + pctStr(pctOf(burned)) + '"></div>' : '') +
+        '</div>' +
+        (burned ? '<div class="stat-sub"><span class="legend-dot" style="background:' + SEG_TOP10 + '"></span>Circulating ' + pctStr(pctOf(circ)) +
+          ' · <span class="legend-dot" style="background:' + BURN_RED + '"></span>Burned ' + pctStr(pctOf(burned)) + '</div>' : '');
+    }
     var supply =
-      '<div class="info-card"><h3 class="card-title">📊 Supply</h3>' +
-      row('Circulating', s(sup.circulating)) +
-      row('Total', s(sup.total)) +
-      row('Premine', s(sup.premine)) +
-      row('Minted', s(sup.minted)) +
-      row('Burned', s(sup.burned)) +
-      '</div>';
+      '<div class="info-card"><h3 class="card-title">📊 Supply</h3>' + meter +
+      '<div class="stat-tiles">' +
+      statTile('🪙', 'Total', fmtCompact(total), null, total != null ? fmtNum(total, 2) : null) +
+      statTile('⛏️', 'Premine', fmtCompact(premine), premine != null && total ? pctStr(pctOf(premine)) + ' of supply' : null, premine != null ? fmtNum(premine, 2) : null) +
+      (minted ? statTile('✨', 'Minted', fmtCompact(minted), pctStr(pctOf(minted)) + ' of supply', fmtNum(minted, 2)) : '') +
+      statTile('🔥', 'Burned', burned ? fmtCompact(burned) : '0', burned ? pctStr(pctOf(burned)) + ' of supply' : 'nothing burned', burned ? fmtNum(burned, 2) : null) +
+      statTile('💧', 'Circulating', fmtCompact(circ), circ != null && total ? pctStr(pctOf(circ)) + ' of supply' : null, circ != null ? fmtNum(circ, 2) : null) +
+      '</div></div>';
 
     var et = r.etching || {};
+    var mt = r.mintTerms || {};
     var etching =
       '<div class="info-card"><h3 class="card-title">🪨 Etching</h3>' +
       row('Transaction', et.txid ? linkQ(et.txid, esc(short(et.txid, 10))) : '—') +
       row('Block', et.block != null ? fmtNum(et.block) : '—') +
       row('Time', esc(fmtTime(et.timestamp))) +
       row('Parent inscription', r.parent ? linkQ(r.parent, esc(short(r.parent, 8))) : '—') +
+      (mt.cap != null ? row('Mint cap', fmtNum(mt.cap)) : '') +
+      (mt.amount != null ? row('Per mint', fmtNum(u(mt.amount), 2)) : '') +
       '</div>';
 
     var holders = '';
-    var hs = r.holders || {};
     if (hs.top && hs.top.length) {
+      var maxPct = parseFloat(hs.top[0].percentage) || 1;
       holders = '<div class="list-section"><h2 class="section-title">👥 Top holders' +
-        (hs.total ? ' <span class="status-badge">' + fmtNum(hs.total) + ' total</span>' : '') + '</h2>' +
+        (totalHolders ? ' <span class="status-badge">' + fmtNum(totalHolders) + ' total</span>' : '') + '</h2>' +
         '<div class="holders-scroll"><table class="holders-table"><thead><tr><th>#</th><th>Address</th><th>Balance</th><th style="min-width:140px">Share</th></tr></thead><tbody>' +
         hs.top.slice(0, 15).map(function (h, i) {
           var pct = parseFloat(h.percentage) || 0;
+          var tag = KNOWN_ADDR[h.address] ? '<span class="holder-tag">' + esc(KNOWN_ADDR[h.address]) + '</span>' : '';
           return '<tr><td>' + (i + 1) + '</td>' +
-            '<td>' + linkQ(h.address, esc(short(h.address, 8))) + '</td>' +
+            '<td>' + linkQ(h.address, esc(short(h.address, 8))) + tag + '</td>' +
             '<td>' + fmtNum(h.balance, 0) + '</td>' +
-            '<td><div style="display:flex;align-items:center;gap:8px"><div class="holder-bar" style="width:' + Math.min(100, pct * 6) + 'px"></div>' + esc(h.percentage) + '%</div></td></tr>';
-        }).join('') + '</tbody></table></div></div>';
+            '<td><div style="display:flex;align-items:center;gap:8px"><div class="holder-bar" style="width:' + Math.max(2, Math.round(pct / maxPct * 140)) + 'px"></div>' + esc(h.percentage) + '%</div></td></tr>';
+        }).join('') + '</tbody></table></div>' +
+        '<div class="item-meta" style="margin-top:12px">Top 15 of the indexed holder list · exchange labels come from the public <a class="ks-link" href="https://www.dogdata.xyz/data/verified_addresses.json" target="_blank" rel="noopener">dogdata.xyz verified registry</a></div>' +
+        '</div>';
     }
 
-    showPane('rune-content', head + '<div class="info-grid">' + supply + etching + '</div>' + holders);
+    showPane('rune-content', head + distHtml + '<div class="info-grid">' + supply + etching + '</div>' + holders);
   }
 
   function renderL2Tx(tx) {

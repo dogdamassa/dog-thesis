@@ -97,7 +97,12 @@ module.exports = async function handler(req, res) {
         }
       }
       if (!data) throw lastErr;
-      data = data.rune || data;
+      /* the payload splits the rune from its holders/links siblings — fold them
+         back into one object (holders powers the distribution panel client-side) */
+      var runeData = data.rune || data;
+      if (data.holders) runeData.holders = data.holders;
+      if (data.links) runeData.links = data.links;
+      data = runeData;
     }
     res.setHeader('Cache-Control', (type === 'inscription' || type === 'rune') ? stable : fresh);
     res.status(200).json({ success: true, type: type, query: hit.q, data: data });

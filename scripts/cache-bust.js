@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /*
  * cache-bust.js — carimba um hash do conteúdo em cada referência local de
- * .css / .js dentro dos *.html (ex.: /styles.css -> /styles.css?v=ab12cd34ef).
+ * .css / .js e imagens locais dentro dos *.html
+ * (ex.: /styles.css -> /styles.css?v=ab12cd34ef).
  *
  * Por quê: as URLs dos assets nunca mudavam, então o navegador (e caches
  * intermediários) continuavam servindo a versão velha até o usuário dar
@@ -33,8 +34,17 @@ function hashFor(assetPath) {
   return h;
 }
 
-// href="/foo.css"  ou  src="/foo.js"  (com ?v= antigo opcional)
-const re = /((?:href|src)=")(\/[a-zA-Z0-9_./-]+\.(?:css|js))(?:\?v=[a-z0-9]+)?(")/g;
+const extensions = 'css|js|png|jpe?g|webp|gif|svg|ico';
+// Atributos locais absolutos ou relativos: href, src e poster.
+const localRe = new RegExp(
+  `((?:href|src|poster)=")((?:/)?[a-zA-Z0-9_./-]+\\.(?:${extensions}))(?:\\?v=[a-zA-Z0-9_-]+)?(")`,
+  'g'
+);
+// URLs canônicas em metadados/JSON-LD (og:image, twitter:image, logo etc.).
+const canonicalRe = new RegExp(
+  `("https://dogarmy\\.space/)([a-zA-Z0-9_./-]+\\.(?:${extensions}))(?:\\?v=[a-zA-Z0-9_-]+)?(")`,
+  'g'
+);
 
 const htmlFiles = fs.readdirSync(root).filter((f) => f.endsWith('.html'));
 let total = 0;
@@ -43,7 +53,13 @@ for (const file of htmlFiles) {
   const abs = path.join(root, file);
   const src = fs.readFileSync(abs, 'utf8');
   let count = 0;
-  const out = src.replace(re, (m, pre, assetPath, post) => {
+  let out = src.replace(localRe, (m, pre, assetPath, post) => {
+    const h = hashFor(assetPath.replace(/^\//, ''));
+    if (!h) return m;
+    count++;
+    return `${pre}${assetPath}?v=${h}${post}`;
+  });
+  out = out.replace(canonicalRe, (m, pre, assetPath, post) => {
     const h = hashFor(assetPath);
     if (!h) return m;
     count++;

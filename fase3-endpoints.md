@@ -28,6 +28,11 @@
 
 ## Endpoints verificados (order book ✅ testado; trades/ticker = padrão da exchange)
 
+> **Atualização 17/07/2026:** o par DOG/USDT não aparece mais na lista oficial
+> de símbolos da XT; o endpoint antigo ainda devolve um ticker congelado e book
+> vazio. O coletor ao vivo substituiu XT por **BigONE**, hoje ativa. Esta nota
+> não altera os snapshots históricos abaixo.
+
 ### Gate — `api.gateio.ws`
 - Book: `GET /api/v4/spot/order_book?currency_pair=DOG_USDT&limit=100` ✅
 - Trades: `GET /api/v4/spot/trades?currency_pair=DOG_USDT&limit=1000`
@@ -59,6 +64,11 @@
 - Trades: `GET /v4/public/trade?symbol=dog_usdt&limit=100`
 - Ticker24h: `GET /v4/public/ticker/24h?symbol=dog_usdt`
 
+### BigONE — `api.big.one` (v3, ativa no coletor desde 17/07/2026)
+- Book: `GET /api/v3/asset_pairs/DOG-USDT/depth` ✅
+- Trades: `GET /api/v3/asset_pairs/DOG-USDT/trades?limit=200` ✅
+- Ticker24h: `GET /api/v3/asset_pairs/DOG-USDT/ticker` ✅
+
 ### CoinEx — `api.coinex.com` (v2)
 - Book: `GET /v2/spot/depth?market=DOGUSDT&limit=50&interval=0` ✅
 - Trades: `GET /v2/spot/deals?market=DOGUSDT&limit=100`
@@ -69,7 +79,7 @@
 - Trades: `GET /api/v1/trades?symbol=DOGUSDT&limit=100`
 - Ticker24h: `GET /api/v1/ticker/24hr?symbol=DOGUSDT`
 
-> Faltam testar: WEEX, BigONE, DigiFinex, AscendEX, CoinW, Ourbit (vol relevante mas API menos padrão).
+> Faltam testar: WEEX, DigiFinex, AscendEX, CoinW, Ourbit (vol relevante mas API menos padrão).
 
 ## Como cada dado vira prova
 

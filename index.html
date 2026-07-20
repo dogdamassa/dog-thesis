@@ -8,8 +8,8 @@
 <meta property="og:site_name" content="DOG ARMY">
 <meta property="og:title" content="DOG ARMY - Defend permissionless Bitcoin">
 <meta property="og:description" content="Learn what $DOG is: DOG•GO•TO•THE•MOON, Bitcoin Rune #3, born from Runestone, fair launch, no owner, tracked with public on-chain evidence.">
-<meta property="og:image" content="https://dogarmy.space/public/og-card.png">
-<meta property="og:image:secure_url" content="https://dogarmy.space/public/og-card.png">
+<meta property="og:image" content="https://dogarmy.space/public/og-card.png?v=d04cb8c614">
+<meta property="og:image:secure_url" content="https://dogarmy.space/public/og-card.png?v=d04cb8c614">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,20 +19,20 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DOG ARMY - Defend permissionless Bitcoin">
 <meta name="twitter:description" content="DOG•GO•TO•THE•MOON is Bitcoin Rune #3. Learn the origin, fair launch, Runestone airdrop and public on-chain verification.">
-<meta name="twitter:image" content="https://dogarmy.space/public/og-card.png">
+<meta name="twitter:image" content="https://dogarmy.space/public/og-card.png?v=d04cb8c614">
 <meta name="twitter:image:alt" content="Join the DOG ARMY. Don't trust. Verify. Defend permissionless Bitcoin.">
 <!-- Favicon (DOG ARMY badge, transparent) -->
-<link rel="icon" href="/public/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
-<link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css?v=80022a868d">
+<link rel="icon" href="/public/favicon.ico?v=64aabe184b" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png?v=7e09acc205">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png?v=06de286ca2">
+<link rel="apple-touch-icon" href="/public/apple-touch-icon.png?v=51ec561b9a">
+<link rel="stylesheet" href="/styles.css?v=a61fc0d8b9">
 <!-- Intro gate. Render-blocking on purpose: decides before first paint whether
      the presentation video opens (3-day TTL). External file = CSP-safe. -->
-<script src="/intro.js?v=dbb31d6c2e"></script>
+<script src="/intro.js?v=ff31726ee3"></script>
 <link rel="canonical" href="https://dogarmy.space/">
 <link rel="preload" as="font" href="/public/fonts/geist-sans.woff2" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="/public/dog-army-hero.png">
+<link rel="preload" as="image" href="/public/dog-army-hero.png?v=5e5221d402">
 <!-- Machine readable briefings so AI assistants learn $DOG fast and cite it correctly -->
 <link rel="alternate" type="text/plain" title="LLM briefing (llms.txt)" href="/llms.txt">
 <link rel="alternate" type="text/plain" title="Full LLM briefing file" href="/llms-full.txt">
@@ -45,7 +45,7 @@
       "@id": "https://dogarmy.space/#org",
       "name": "DOG of Bitcoin Army",
       "url": "https://dogarmy.space/",
-      "logo": "https://dogarmy.space/public/dog-logo.png",
+      "logo": "https://dogarmy.space/public/dog-army-logo.png?v=b65d871201",
       "description": "An open, community run research movement documenting $DOG (DOG•GO•TO•THE•MOON), Bitcoin's Rune #3, and defending permissionless Bitcoin blockspace. Don't trust, verify.",
       "sameAs": [
         "https://github.com/dogdamassa/dog-thesis",
@@ -128,7 +128,7 @@
 <body>
 <aside class="alertbar dog-newsbar" id="dogNewsBar" aria-label="DOG news">
   <div class="wrap alertbar-inner">
-    <span class="pulse" id="dogNewsLabel" data-i18n="alert.label">$DOG NEWS</span>
+    <a class="pulse" id="dogNewsLabel" href="/noticias" data-i18n="alert.label" aria-label="Open the DOG News archive">$DOG NEWS</a>
     <a class="msg" id="dogNewsLink" href="https://www.youtube.com/watch?v=u_1bTOcaBzk" target="_blank" rel="noopener">
       <span id="dogNewsMsg" data-i18n="alert.msg"><b>$DOG news, every day, straight from the trenches.</b> The main story updates from the latest public video.</span>
     </a>
@@ -138,14 +138,14 @@
   <nav>
     <div class="brand-col">
       <a class="brand" href="#top" aria-label="Back to top">
-        <span class="brand-logo"><img src="public/dog-army-logo.png" alt="DOG ARMY"></span>
+        <span class="brand-logo"><img src="public/dog-army-logo.png?v=b65d871201" alt="DOG ARMY"></span>
       </a>
     </div>
     <div class="navlinks" aria-label="Main navigation">
       <a href="#top" data-i18n="nav.history">Home</a>
       <a href="#radar" data-i18n="nav.radar">Radar</a>
       <a href="/dogscan">DogScan</a>
-      <a href="/dogmarket" data-i18n="nav.market">DogMarket</a>
+      <a href="/noticias" data-i18n="nav.news">News</a>
       <a href="/web3" data-i18n="nav.web3">Social Space</a>
       <div class="navgroup">
         <button type="button" class="navgroup-trigger" aria-expanded="false"><span data-i18n="nav.more">More</span><span class="caret" aria-hidden="true">▾</span></button>
@@ -155,6 +155,7 @@
           <a href="#qg" data-i18n="nav.qg">HQ</a>
           <a href="/investigacao" class="nav-case" data-i18n="nav.inv">Investigation</a>
           <a href="/runestone" data-i18n="nav.runestone">Runestone</a>
+          <a href="/dogmarket" data-i18n="nav.market">DogMarket</a>
           <a href="/planos" data-i18n="nav.plans">Plans</a>
           <a href="#verificar" data-i18n="nav.gverify">Verify</a>
           <a href="#luta" data-i18n="nav.fight">The Fight</a>
@@ -176,7 +177,7 @@
     <div class="nav-right">
       <div class="langsw" id="langsw" aria-label="Language"></div>
       <button type="button" class="nav-wallet nav-wallet--kray" id="walletBtn" aria-haspopup="dialog">
-        <img class="nav-wallet-icon" src="/public/kray-space-icon.png" alt="" width="22" height="22">
+        <img class="nav-wallet-icon" src="/public/kray-space-icon.png?v=f8b9bff879" alt="" width="22" height="22">
         <span class="nav-wallet-dot" aria-hidden="true"></span>
         <img class="nav-wallet-pfp" id="walletBtnPfp" alt="Dog Social Club" hidden>
         <span id="walletBtnText" data-i18n="w3.connect">Connect Wallet</span>
@@ -192,7 +193,7 @@
     <a class="navdrawer-link" href="#top" data-i18n="nav.history">Home</a>
     <a class="navdrawer-link" href="#radar" data-i18n="nav.radar">Radar</a>
     <a class="navdrawer-link" href="/dogscan">DogScan</a>
-    <a class="navdrawer-link" href="/dogmarket" data-i18n="nav.market">DogMarket</a>
+    <a class="navdrawer-link" href="/noticias" data-i18n="nav.news">News</a>
     <a class="navdrawer-link" href="/web3" data-i18n="nav.web3">Social Space</a>
     <details class="navdrawer-group">
       <summary data-i18n="nav.more">More</summary>
@@ -200,6 +201,7 @@
       <a class="navdrawer-link" href="#qg" data-i18n="nav.qg">HQ</a>
       <a class="navdrawer-link" href="/investigacao" data-i18n="nav.inv">Investigation</a>
       <a class="navdrawer-link" href="/runestone" data-i18n="nav.runestone">Runestone</a>
+      <a class="navdrawer-link" href="/dogmarket" data-i18n="nav.market">DogMarket</a>
       <a class="navdrawer-link" href="/planos" data-i18n="nav.plans">Plans</a>
       <a class="navdrawer-link" href="#verificar" data-i18n="nav.gverify">Verify</a>
       <a class="navdrawer-link" href="#luta" data-i18n="nav.fight">The Fight</a>
@@ -271,7 +273,7 @@
 <main id="top">
 
   <section class="hero hero--cinematic" aria-labelledby="hero-title">
-    <video class="hero-bg" data-hero-video muted loop playsinline preload="none" poster="public/dog-army-hero.png" aria-hidden="true">
+    <video class="hero-bg" data-hero-video muted loop playsinline preload="none" poster="public/dog-army-hero.png?v=5e5221d402" aria-hidden="true">
       <source data-src="public/dogspace.mp4" type="video/mp4">
     </video>
     <div class="wrap hero-content">
@@ -360,20 +362,20 @@
       </div>
 
       <details class="archive-details d101-more">
-        <summary class="d101-summary"><img class="d101-rune" src="public/culture/pics/pic-runestone-06.webp" alt="" aria-hidden="true"><span data-i18n="d101.tl">The full timeline — from Taproot to Rune #3 ↓</span></summary>
+        <summary class="d101-summary"><img class="d101-rune" src="public/culture/pics/pic-runestone-06.webp?v=8e44479fb5" alt="" aria-hidden="true"><span data-i18n="d101.tl">The full timeline — from Taproot to Rune #3 ↓</span></summary>
 
         <!-- Relíquias: as fotos históricas da Runestone (acervo DOG PIC) -->
         <div class="d101-relics">
           <figure>
-            <img src="public/culture/pics/pic-runestone-09.webp" alt="The on-chain etching transaction of DOG: OP_RETURN Runestone, premine of 100B DOG•GO•TO•THE•MOON" loading="lazy">
+            <img src="public/culture/pics/pic-runestone-09.webp?v=ab90e0fcbb" alt="The on-chain etching transaction of DOG: OP_RETURN Runestone, premine of 100B DOG•GO•TO•THE•MOON" loading="lazy">
             <figcaption data-i18n="d101.r1">The birth receipt, on chain: all 100B $DOG etched in a single transaction.</figcaption>
           </figure>
           <figure>
-            <img src="public/culture/pics/pic-runestone-08.webp" alt="Bitcoin block visualization filled by Runestone airdrop transactions" loading="lazy">
+            <img src="public/culture/pics/pic-runestone-08.webp?v=c9b8e44595" alt="Bitcoin block visualization filled by Runestone airdrop transactions" loading="lazy">
             <figcaption data-i18n="d101.r2">The airdrop hitting the chain — Runestone deliveries packing entire blocks.</figcaption>
           </figure>
           <figure>
-            <img src="public/culture/pics/pic-runestone-04.webp" alt="Community art: explorers facing a giant rune-marked monolith in a frozen land" loading="lazy">
+            <img src="public/culture/pics/pic-runestone-04.webp?v=2e2271cd83" alt="Community art: explorers facing a giant rune-marked monolith in a frozen land" loading="lazy">
             <figcaption data-i18n="d101.r3">The stone that started it all — as the Army remembers it.</figcaption>
           </figure>
         </div>
@@ -404,7 +406,7 @@
       </div>
 
       <figure class="pic-banner">
-        <img src="public/culture/pics/pic-dog-scan-02.webp" alt="The pack around the campfire under a full moon, talking" loading="lazy">
+        <img src="public/culture/pics/pic-dog-scan-02.webp?v=8b4ec744fe" alt="The pack around the campfire under a full moon, talking" loading="lazy">
       </figure>
 
       <!-- War room: live DAO Room chat, driven by /homechat.js.
@@ -489,7 +491,7 @@
         </div>
         <div id="rd-flows-ex" class="rd-flows-ex"></div>
         <div id="rd-flows-list" class="rd-flows-list"><div class="rd-empty">Loading…</div></div>
-        <p class="rd-note" data-i18n="rd.flnote">Public CEX APIs (Kraken · Gate · Bitget · MEXC · CoinEx). Each bar shows buy (orange) vs sell (red) pressure in a recent trades window; "net" = buys minus sells. "Big orders" = buys/sells ≥ 5M $DOG from that window — a snapshot, not the full day. Click an exchange to verify.</p>
+        <p class="rd-note" data-i18n="rd.flnote">Public CEX APIs (Kraken · Gate · Bitget · MEXC · CoinEx · BigONE). Each bar shows buy (green) vs sell (red) pressure in a recent trades window; "net" = buys minus sells. "Big orders" = buys/sells ≥ 5M $DOG from that window — a snapshot, not the full day. Click an exchange to verify.</p>
       </div>
 
       <div class="rd-mkt">
@@ -577,7 +579,7 @@
         <h2 data-i18n="br.h">12% of all $DOG sits in one wallet. And the trail runs through Binance's door.</h2>
         <p class="invcta-sub" data-i18n="br.p">A wallet the community tags as Binance fed that cluster for 22 months. 51 withdrawals. Zero back. The same company funded BRC 20's biggest infrastructure and never listed the Rune. We lined up every date. We show every receipt. You judge. We don't accuse. We document.</p>
         <figure class="pic-banner">
-          <img src="public/culture/pics/pic-binance-01.webp" alt="Cryptolution's on-chain graph: the Binance-tagged wallet feeding the top $DOG holder cluster" loading="lazy">
+          <img src="public/culture/pics/pic-binance-01.webp?v=566307c748" alt="Cryptolution's on-chain graph: the Binance-tagged wallet feeding the top $DOG holder cluster" loading="lazy">
         </figure>
         <div class="invcta-stats">
           <span><b>~12.7%</b> <i data-i18n="br.s1">one desk, satellites included</i></span>
@@ -610,15 +612,15 @@
 
   <section id="luta" class="fight-band">
     <div class="wrap">
-      <figure class="fight-banner">
-        <img src="public/culture/hodl-army.webp" alt="Community art: an army of DOG puppies holding HODL shields" loading="lazy">
-        <figcaption data-i18n="fight.bcap">The $DOG Army doesn't ask permission to use Bitcoin.</figcaption>
+      <figure class="fight-banner fight-banner--dogmode">
+        <img src="public/culture/pics/dogmode1.jpg?v=05a98093ef" width="1672" height="941" alt="DOG in an orange Bitcoin hoodie at a desk running a Bitcoin DOG Mode node" loading="lazy">
+        <figcaption data-i18n="fight.bcap">Bitcoin DOG Mode — defend permissionless blockspace.</figcaption>
       </figure>
       <div class="fight-cta">
         <div class="slogan" data-i18n="fight.slogan">“Defend permissionless blockspace. Reject BIP-110.”</div>
-        <p data-i18n="fight.ctap">If you paid the fee, the blockspace is yours. That's the whole point of Bitcoin. This is advocacy on protocol policy. Our opinion on Bitcoin's direction, not financial advice or market coordination.</p>
-        <a class="btn primary" href="https://bitcoinmagazine.com/technical/bitcoin-core-or-bitcoin-knots-what-the-op_return-debate-is-actually-about" target="_blank" rel="noopener" data-i18n="fight.ctab1">Read the full debate</a>
-        <a class="btn secondary" href="https://x.com/Cryptolution/status/2071658235472511345" target="_blank" rel="noopener" data-i18n="fight.sigl">See the data on X →</a>
+        <p data-i18n="fight.ctap">DOG Mode proposes relaying consensus-valid transactions without asking policy gatekeepers for permission. It changes relay policy, not Bitcoin consensus. This is protocol advocacy, not financial advice.</p>
+        <a class="btn primary" href="/noticias#dog-mode" data-i18n="fight.ctab1">Open the DOG Mode news archive</a>
+        <a class="btn secondary" href="https://www.coindesk.com/tech/2026/07/17/bitcoin-s-anti-spam-fight-gets-a-dog-mode-reply" target="_blank" rel="noopener" data-i18n="fight.sigl">Read CoinDesk →</a>
       </div>
     </div>
   </section>
@@ -634,7 +636,7 @@
       </div>
 
       <figure class="pic-banner">
-        <img src="public/culture/pics/pic-fun-04.webp" alt="The DOG investigator connecting the receipts on an evidence board" loading="lazy">
+        <img src="public/culture/pics/pic-fun-04.webp?v=63a77b75d3" alt="The DOG investigator connecting the receipts on an evidence board" loading="lazy">
       </figure>
 
       <h3 class="vf-subhead" data-i18n="vf.s1">Our rules</h3>
@@ -710,7 +712,7 @@
       <h3 class="vf-subhead" data-i18n="vf.s6">Who verifies with us</h3>
       <div class="source-grid">
         <article class="source-card">
-          <img src="public/dog-data-logo.png" alt="DOG DATA logo">
+          <img src="public/dog-data-logo.png?v=723625e3e2" alt="DOG DATA logo">
           <div>
             <h3>DOG DATA</h3>
             <p data-i18n="c.ddp">The data source for Ordinals, with a special focus on $DOG. It organizes holders, markets, float, UTXO age, and concentration so the thesis can be verified with numbers.</p>
@@ -718,7 +720,7 @@
           </div>
         </article>
         <article class="source-card">
-          <img src="public/cryptolution-x.png" alt="Vincent's profile, Cryptolution, on X">
+          <img src="public/cryptolution-x.png?v=a5f72be0bd" alt="Vincent's profile, Cryptolution, on X">
           <div>
             <h3>Vincent, Cryptolution</h3>
             <p data-i18n="c.crp">On chain forensic analyst, with over 720 videos about $DOG. His public reads of wallets and clusters helped kick off an investigation that anyone can now review.</p>
@@ -748,18 +750,18 @@
           <span class="go" data-i18n="ev.fl">See DOG Summit →</span>
         </div>
         <div class="event-feature-photo event-shots" role="img" aria-label="Photos from the DOG Summit in São Paulo, Brazil">
-          <img class="event-shot is-on" src="public/summit/summit-hd-01.webp" alt="" loading="lazy" decoding="async">
-          <img class="event-shot" src="public/summit/summit-hd-02.webp" alt="" loading="lazy" decoding="async">
-          <img class="event-shot" src="public/summit/summit-hd-03.webp" alt="" loading="lazy" decoding="async">
-          <img class="event-shot" src="public/summit/summit-hd-04.webp" alt="" loading="lazy" decoding="async">
-          <img class="event-shot" src="public/summit/summit-hd-05.webp" alt="" loading="lazy" decoding="async">
-          <img class="event-shot" src="public/summit/summit-hd-06.webp" alt="" loading="lazy" decoding="async">
-          <img class="event-shot" src="public/summit/summit-hd-07.webp" alt="" loading="lazy" decoding="async">
-          <img class="event-shot" src="public/summit/summit-hd-08.webp" alt="" loading="lazy" decoding="async">
-          <img class="event-shot" src="public/summit/summit-hd-09.webp" alt="" loading="lazy" decoding="async">
-          <img class="event-shot" src="public/summit/summit-hd-10.webp" alt="" loading="lazy" decoding="async">
-          <img class="event-shot" src="public/summit/summit-hd-11.webp" alt="" loading="lazy" decoding="async">
-          <img class="event-shot" src="public/summit/summit-hd-12.webp" alt="" loading="lazy" decoding="async">
+          <img class="event-shot is-on" src="public/summit/summit-hd-01.webp?v=59a6776763" alt="" loading="lazy" decoding="async">
+          <img class="event-shot" src="public/summit/summit-hd-02.webp?v=d53086a244" alt="" loading="lazy" decoding="async">
+          <img class="event-shot" src="public/summit/summit-hd-03.webp?v=8f8379f513" alt="" loading="lazy" decoding="async">
+          <img class="event-shot" src="public/summit/summit-hd-04.webp?v=99d78f2d41" alt="" loading="lazy" decoding="async">
+          <img class="event-shot" src="public/summit/summit-hd-05.webp?v=5b4cfdff75" alt="" loading="lazy" decoding="async">
+          <img class="event-shot" src="public/summit/summit-hd-06.webp?v=861eeaa501" alt="" loading="lazy" decoding="async">
+          <img class="event-shot" src="public/summit/summit-hd-07.webp?v=6c2c9bc71a" alt="" loading="lazy" decoding="async">
+          <img class="event-shot" src="public/summit/summit-hd-08.webp?v=873f60e77a" alt="" loading="lazy" decoding="async">
+          <img class="event-shot" src="public/summit/summit-hd-09.webp?v=c56e864bb9" alt="" loading="lazy" decoding="async">
+          <img class="event-shot" src="public/summit/summit-hd-10.webp?v=5cd3fc4c24" alt="" loading="lazy" decoding="async">
+          <img class="event-shot" src="public/summit/summit-hd-11.webp?v=090f3ab6c2" alt="" loading="lazy" decoding="async">
+          <img class="event-shot" src="public/summit/summit-hd-12.webp?v=4ee09142d3" alt="" loading="lazy" decoding="async">
         </div>
       </a>
 
@@ -815,12 +817,12 @@
       </div>
 
       <figure class="pic-banner">
-        <img src="public/culture/pics/pic-dog-scan-04.webp" alt="DOG astronaut floating through the satspace universe — every satoshi is a star" loading="lazy">
+        <img src="public/culture/pics/pic-dog-scan-04.webp?v=1674bc3c3c" alt="DOG astronaut floating through the satspace universe — every satoshi is a star" loading="lazy">
       </figure>
 
       <div class="sat-feature">
         <span class="sat-sky" aria-hidden="true"></span>
-        <img class="sat-badge" src="public/satspace-icon.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <img class="sat-badge" src="public/satspace-icon.png?v=d06ffb7453" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <div class="sat-feature-body">
           <div class="event-feature-tag" data-i18n="ss.ft">satspace.io · every satoshi is a star</div>
           <h3 data-i18n="ss.fh">The sky answers the block.</h3>
@@ -864,42 +866,42 @@
 
       <div class="grid grid-3">
         <a class="card app-card" href="https://app.bitflow.finance/trade" target="_blank" rel="noopener">
-          <img class="app-logo" src="public/bitflow-icon.png" alt="Bitflow logo" loading="lazy">
+          <img class="app-logo" src="public/bitflow-icon.png?v=30f724059b" alt="Bitflow logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c1t">DEX · Stacks L2</span>
           <h3>Bitflow</h3>
           <p data-i18n="eco.c1p">Swap and DCA through Stacks, with Bitcoin native settlement paths.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://swap.dogofbitcoin.com/" target="_blank" rel="noopener">
-          <img class="app-logo" src="public/dogswap-logo.png" alt="DOG Swap logo" loading="lazy">
+          <img class="app-logo" src="public/dogswap-logo.png?v=dca5cc1fc0" alt="DOG Swap logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c2t">Swap</span>
           <h3>DOG Swap</h3>
           <p data-i18n="eco.c2p">Move between $DOG pairs without a centralized exchange account.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://kray.space/krayscan.html" target="_blank" rel="noopener">
-          <img class="app-logo" src="public/kray-space-icon.png" alt="KrayScan logo" loading="lazy">
+          <img class="app-logo" src="public/kray-space-icon.png?v=f8b9bff879" alt="KrayScan logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c3t">Explorer</span>
           <h3>KrayScan</h3>
           <p data-i18n="eco.c3p">Inspect Runes, Ordinals, $DOG holders, and transfers.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://www.dogdata.xyz/" target="_blank" rel="noopener">
-          <img class="app-logo" src="public/dog-data-dog.png" alt="DOG DATA dog mark" loading="lazy">
+          <img class="app-logo" src="public/dog-data-dog.png?v=65c0c246b5" alt="DOG DATA dog mark" loading="lazy">
           <span class="app-tag" data-i18n="eco.c4t">Analytics</span>
           <h3>DOG DATA</h3>
           <p data-i18n="eco.c4p">Holders, float, UTXO age, and concentration in one place.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://ordinals.com/" target="_blank" rel="noopener">
-          <img class="app-logo" src="public/ordinals-icon.svg" alt="Ordinals logo" loading="lazy">
+          <img class="app-logo" src="public/ordinals-icon.svg?v=5178d6fd25" alt="Ordinals logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c8t">Explorer · Ordinals</span>
           <h3>Ordinals.com</h3>
           <p data-i18n="eco.c8p">Canonical explorer for inscriptions, Runes, and blocks.</p>
           <span class="go" data-i18n="eco.go">Open →</span>
         </a>
         <a class="card app-card" href="https://www.kray.space/ordinals" target="_blank" rel="noopener">
-          <img class="app-logo" src="public/kray-space-icon.png" alt="Kray Space logo" loading="lazy">
+          <img class="app-logo" src="public/kray-space-icon.png?v=f8b9bff879" alt="Kray Space logo" loading="lazy">
           <span class="app-tag" data-i18n="eco.c56t">Marketplace · Ordinals &amp; Runes</span>
           <h3>Kray Marketplace</h3>
           <p data-i18n="eco.c56p">Trade Ordinals and Runes self-custodially, with the keys in your hands.</p>
@@ -920,7 +922,7 @@
         <p class="lead" data-i18n="f.lead">A straight guide for newcomers. And for any AI that wants to answer about $DOG on facts and sources.</p>
       </div>
       <figure class="pic-banner pic-banner--full">
-        <img src="public/culture/pics/pic-fun-08.webp" alt="The curious DOG puppy peeking out from behind a hedge" loading="lazy">
+        <img src="public/culture/pics/pic-fun-08.webp?v=1c33084b10" alt="The curious DOG puppy peeking out from behind a hedge" loading="lazy">
       </figure>
       <div class="faq">
         <details open><summary data-i18n="f.q1">What is $DOG?</summary><div class="a" data-i18n="f.a1">$DOG (DOG•GO•TO•THE•MOON) is the largest community coin on <b>Bitcoin</b>. Technically it's <b>Rune #3</b>, etched inside Bitcoin's own network with the Runes protocol at block 840,000. Supply of 100 billion, open license (CC0), <b>no owner</b>. <a href="https://ordinals.com/rune/DOG%E2%80%A2GO%E2%80%A2TO%E2%80%A2THE%E2%80%A2MOON" target="_blank" rel="noopener">View on chain</a>.</div></details>
@@ -952,21 +954,21 @@
     </div>
     <div class="footer-sponsors" aria-label="Sponsors">
       <a class="footer-sponsor" href="https://www.kray.space/" target="_blank" rel="sponsored noopener">
-        <img src="public/kray-space-icon.png" alt="Kray Space">
+        <img src="public/kray-space-icon.png?v=f8b9bff879" alt="Kray Space">
         <span>
           <b data-i18n="ft.krayTitle">KRAY SPACE</b>
           <small data-i18n="ft.krayText">Bitcoin self custody wallet recommended for $DOG holders.</small>
         </span>
       </a>
       <a class="footer-sponsor" href="https://b2pix.org/bolao/palpites?turma=dogdamassa" target="_blank" rel="sponsored noopener">
-        <img src="public/b2pix-logo.png" alt="B2Pix">
+        <img src="public/b2pix-logo.png?v=5a07fc941d" alt="B2Pix">
         <span>
           <b data-i18n="ft.b2pixTitle">B2Pix</b>
           <small data-i18n="ft.b2pixText">Buy crypto without KYC using Stacks infrastructure.</small>
         </span>
       </a>
       <a class="footer-sponsor" href="https://app.bitflow.finance/trade" target="_blank" rel="sponsored noopener">
-        <img src="public/bitflow-icon.png" alt="Bitflow">
+        <img src="public/bitflow-icon.png?v=30f724059b" alt="Bitflow">
         <span>
           <b data-i18n="ft.bitflowTitle">Bitflow</b>
           <small data-i18n="ft.bitflowText">Trade through Stacks DeFi with transparent swap routes.</small>
@@ -979,9 +981,9 @@
   </div>
 </footer>
 
-<script src="/i18n.js?v=2fe34bc1d6"></script>
+<script src="/i18n.js?v=e6889f97b8"></script>
 <script src="/news.js?v=b9001c3073" defer></script>
-<script src="/radar.js?v=21b191ca80" defer></script>
+<script src="/radar.js?v=15ce0ebdd7" defer></script>
 <script src="/wallet.js?v=d217895ce6" defer></script>
 <!-- homechat depends on wallet.js (window.DogWallet + dog:wallet) — keep this order -->
 <script src="/homechat.js?v=6a3b9c61c8" defer></script>

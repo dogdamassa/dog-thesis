@@ -99,6 +99,15 @@
       ]
     },
     {
+      "source": "/public/(.*)\\.(mp4|vtt|jpg)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
       "source": "/(.*).md",
       "headers": [
         {

@@ -1,14 +1,28 @@
-/* DOG ARMY. Intro gate: the presentation video (YouTube nocookie) that greets
-   visitors on the home. Shows again after 3 days (localStorage TTL); a refresh
-   never repeats it. External file on purpose: script-src 'self' allows it
-   without touching the inline-script hashes in vercel.json. Loaded in <head>
-   WITHOUT defer so the decision lands before first paint (zero flash). */
+/* DOG ARMY. Intro gate: the local presentation video that greets visitors on
+   the home. Shows again after 3 days (localStorage TTL); a refresh never
+   repeats it. Captions are separate WebVTT tracks and start OFF. External file
+   on purpose: script-src 'self' allows it without touching CSP hashes. */
 (function () {
   'use strict';
   var KEY = 'dogArmyIntroSeen';
   var TTL = 3 * 24 * 60 * 60 * 1000;
-  var VIDEO_ID = 'LYAMy07heZc';
-  var YT = 'https://www.youtube-nocookie.com';
+  var VIDEO_SRC = '/public/videos/dog-history-global-v2.mp4';
+  var POSTER_SRC = '/public/videos/dog-history-poster-v2.jpg';
+  var TRACKS = [
+    { code: 'en', flag: '🇺🇸', label: 'English', src: '/public/subtitles/dog-history.en.vtt' },
+    { code: 'pt-BR', flag: '🇧🇷', label: 'Português (Brasil)', src: '/public/subtitles/dog-history.pt-BR.vtt' },
+    { code: 'es', flag: '🇪🇸', label: 'Español', src: '/public/subtitles/dog-history.es.vtt' },
+    { code: 'fr', flag: '🇫🇷', label: 'Français', src: '/public/subtitles/dog-history.fr.vtt' },
+    { code: 'de', flag: '🇩🇪', label: 'Deutsch', src: '/public/subtitles/dog-history.de.vtt' },
+    { code: 'it', flag: '🇮🇹', label: 'Italiano', src: '/public/subtitles/dog-history.it.vtt' },
+    { code: 'tr', flag: '🇹🇷', label: 'Türkçe', src: '/public/subtitles/dog-history.tr.vtt' },
+    { code: 'ru', flag: '🇷🇺', label: 'Русский', src: '/public/subtitles/dog-history.ru.vtt' },
+    { code: 'ar', flag: '🇸🇦', label: 'العربية', src: '/public/subtitles/dog-history.ar.vtt' },
+    { code: 'hi', flag: '🇮🇳', label: 'हिन्दी', src: '/public/subtitles/dog-history.hi.vtt' },
+    { code: 'ja', flag: '🇯🇵', label: '日本語', src: '/public/subtitles/dog-history.ja.vtt' },
+    { code: 'ko', flag: '🇰🇷', label: '한국어', src: '/public/subtitles/dog-history.ko.vtt' },
+    { code: 'zh-Hans', flag: '🇨🇳', label: '简体中文', src: '/public/subtitles/dog-history.zh-Hans.vtt' }
+  ];
 
   /* home only (the dev server also serves it as /index.html) */
   if (location.pathname !== '/' && location.pathname !== '/index.html') return;
@@ -29,6 +43,7 @@
     } catch (e) {}
     return 0;
   }
+
   function markSeen() {
     var v = JSON.stringify({ t: Date.now() });
     try { localStorage.setItem(KEY, v); return; } catch (e) {}
@@ -37,13 +52,11 @@
 
   if (force !== '1' && Date.now() - lastSeen() <= TTL) return;
 
-  /* ---- phase A: before first paint (this file is render-blocking).
-     "Seen" is stamped when the gate decides to open, so a refresh —
-     wallet connected or not — never repeats the video within the TTL. ---- */
+  /* Before first paint. "Seen" is stamped when the gate decides to open, so a
+     refresh never repeats the video within the TTL. */
   document.documentElement.classList.add('introPending');
   markSeen();
 
-  /* ---- phase B: mount the player + show once the DOM exists ---- */
   function open() {
     var root = document.documentElement;
     var scrim = document.getElementById('introScrim');
@@ -57,32 +70,67 @@
     var reduce = false;
     try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
 
-    /* the video ships without burned-in subtitles; YouTube captions come in
-       many languages, so default them ON in the visitor's own language —
-       the player starts muted, captions are what make it land. Inert until
-       the captions exist on the video. */
-    var cc = 'en';
-    try { cc = String((navigator.languages && navigator.languages[0]) || navigator.language || 'en').slice(0, 2).toLowerCase() || 'en'; } catch (e) {}
-    var frame = document.createElement('iframe');
-    frame.src = YT + '/embed/' + VIDEO_ID +
-      '?autoplay=' + (reduce ? 0 : 1) +
-      '&mute=1&playsinline=1&rel=0&enablejsapi=1' +
-      '&cc_load_policy=1&cc_lang_pref=' + encodeURIComponent(cc) +
-      '&hl=' + encodeURIComponent(cc) +
-      '&origin=' + encodeURIComponent(location.origin);
-    frame.title = 'DOG ARMY';
-    frame.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
-    frame.setAttribute('allowfullscreen', '');
-    frame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-    frame.addEventListener('load', function () {
-      /* raw widget-protocol handshake: registers us for player events */
-      post({ event: 'listening', id: 'introPlayer', channel: 'widget' });
-    });
-    box.appendChild(frame);
+    var video = document.createElement('video');
+    video.className = 'intro-video';
+    video.src = VIDEO_SRC;
+    video.poster = POSTER_SRC;
+    video.preload = 'metadata';
+    video.autoplay = !reduce;
+    video.muted = true;
+    video.controls = true;
+    video.playsInline = true;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('controlslist', 'nodownload noplaybackrate');
+    video.setAttribute('aria-label', 'DOG ARMY presentation video');
 
-    function post(msg) {
-      try { frame.contentWindow.postMessage(JSON.stringify(msg), YT); } catch (e) {}
+    TRACKS.forEach(function (item) {
+      var track = document.createElement('track');
+      track.kind = 'subtitles';
+      track.srclang = item.code;
+      track.label = item.flag + ' ' + item.label;
+      track.src = item.src;
+      video.appendChild(track);
+    });
+    box.appendChild(video);
+
+    /* A visible global-language control complements the browser's native CC
+       menu. The source remains clean: every track starts disabled. */
+    var actions = modal.querySelector('.intro-actions');
+    var languageWrap = document.createElement('label');
+    languageWrap.className = 'intro-language';
+    languageWrap.innerHTML = '<span>🌍 Subtitles · 13 languages</span>';
+    var languageSelect = document.createElement('select');
+    languageSelect.id = 'introCaptions';
+    languageSelect.setAttribute('aria-label', 'Choose subtitle language');
+
+    var off = document.createElement('option');
+    off.value = '';
+    off.textContent = 'CC off · no subtitles';
+    languageSelect.appendChild(off);
+
+    var browserLang = '';
+    try { browserLang = String((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase(); } catch (e) {}
+    TRACKS.forEach(function (item) {
+      var option = document.createElement('option');
+      option.value = item.code;
+      option.textContent = item.flag + ' ' + item.label;
+      if (browserLang && (browserLang === item.code.toLowerCase() || browserLang.indexOf(item.code.toLowerCase() + '-') === 0 || item.code.toLowerCase().indexOf(browserLang + '-') === 0)) {
+        option.textContent += ' ★';
+        option.title = 'Suggested for your browser';
+      }
+      languageSelect.appendChild(option);
+    });
+    languageWrap.appendChild(languageSelect);
+    if (actions) actions.insertBefore(languageWrap, soundBtn || enterBtn);
+
+    function setCaptions(code) {
+      for (var i = 0; i < video.textTracks.length; i += 1) {
+        video.textTracks[i].mode = (code && TRACKS[i] && TRACKS[i].code === code) ? 'showing' : 'disabled';
+      }
+      languageWrap.classList.toggle('is-on', !!code);
     }
+    languageSelect.addEventListener('change', function () { setCaptions(languageSelect.value); });
+    video.addEventListener('loadedmetadata', function () { setCaptions(''); });
 
     var heroVideo = document.querySelector('video[data-hero-video]');
     function pauseHero() { if (heroVideo) { try { heroVideo.pause(); } catch (e) {} } }
@@ -92,10 +140,11 @@
     root.classList.remove('introPending');
     document.body.style.overflow = 'hidden';
     pauseHero();
-    /* i18n.js mounts + plays the hero bg video on window.load, which can fire
-       after we opened — pause it again when that happens. */
     window.addEventListener('load', function () { if (!modal.hidden) pauseHero(); });
     try { enterBtn.focus(); } catch (e) {}
+    if (!reduce) {
+      try { video.play().catch(function () {}); } catch (e) {}
+    }
 
     var closed = false;
     function close() {
@@ -103,11 +152,11 @@
       closed = true;
       modal.hidden = true;
       scrim.hidden = true;
-      try { frame.remove(); } catch (e) {} /* kills the audio instantly */
+      try { video.pause(); } catch (e) {}
+      try { video.removeAttribute('src'); video.load(); } catch (e) {}
+      try { box.textContent = ''; } catch (e) {}
       document.body.style.overflow = '';
       root.classList.remove('introPending');
-      /* hand the stage back: i18n.js defers the hero mp4 mount while the
-         gate is open and mounts it on this event */
       try { document.dispatchEvent(new CustomEvent('dog:intro:closed')); } catch (e) {}
       if (heroVideo) { try { heroVideo.play().catch(function () {}); } catch (e) {} }
     }
@@ -118,26 +167,13 @@
     document.addEventListener('keydown', function (e) {
       if ((e.key === 'Escape' || e.key === 'Esc') && !modal.hidden) close();
     });
+    video.addEventListener('ended', close);
 
     if (soundBtn) soundBtn.addEventListener('click', function () {
-      /* the click is the user gesture browsers require to unmute */
-      post({ event: 'command', func: 'unMute', args: [] });
-      post({ event: 'command', func: 'setVolume', args: [100] });
-      post({ event: 'command', func: 'playVideo', args: [] });
+      video.muted = false;
+      video.volume = 1;
+      try { video.play().catch(function () {}); } catch (e) {}
       soundBtn.hidden = true;
-    });
-
-    /* Best-effort auto-close when the video ends. postMessage between frames
-       is not governed by connect-src; loading YouTube's iframe_api script
-       would be blocked by script-src 'self', so we speak the raw protocol.
-       If the handshake fails, manual close still covers everything. */
-    window.addEventListener('message', function (e) {
-      if (e.origin !== YT) return;
-      var d;
-      try { d = JSON.parse(e.data); } catch (err) { return; }
-      if (!d) return;
-      if (d.event === 'onStateChange' && d.info === 0) close();
-      else if (d.event === 'infoDelivery' && d.info && d.info.playerState === 0) close();
     });
   }
 

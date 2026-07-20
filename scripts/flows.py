@@ -8,10 +8,10 @@ de cada corretora, calcula pressao de compra x venda e isola as ORDENS GRANDES
 (>= 5M DOG), agrupando trades fragmentados que cairam quase no mesmo instante.
 
 Escreve data/flows.json. Reproduzivel: `python3 scripts/flows.py`.
-Caveat: 'trades recentes' e uma janela (ultimos ~1000 trades), nao o dia inteiro;
+Caveat: 'trades recentes' e uma janela (ate ~1000 trades), nao o dia inteiro;
 o buy/sell e dessa janela. O volume 24h vem do ticker. 1 snapshot mostra estado.
 """
-import json, os, time, urllib.request, datetime, collections
+import json, os, time, urllib.request, datetime, collections, statistics
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(os.path.dirname(HERE), "data")
@@ -116,12 +116,45 @@ def coinex():
     return ticker, trades
 
 
+def bigone():
+    """BigONE v3 public market data.
+
+    `taker_side=BID` means the taker bought from the ask; `ASK` means the
+    taker sold into the bid. BigONE caps this REST trade window below the
+    1,000 rows used by some other venues, so `window_min` remains explicit in
+    the generated data instead of pretending every exchange has equal depth.
+    """
+    base = "https://api.big.one/api/v3/asset_pairs/DOG-USDT"
+    t = get(base + "/ticker")
+    tr = get(base + "/trades?limit=200")
+    ticker, trades = None, []
+    if t and t.get("code") == 0 and t.get("data"):
+        x = t["data"]
+        last = f(x.get("close"))
+        op = f(x.get("open")) or last
+        ticker = {"price": last, "vol24h": f(x.get("volume")),
+                  "change": ((last - op) / op * 100) if op else None}
+    if tr and tr.get("code") == 0 and isinstance(tr.get("data"), list):
+        for r in tr["data"]:
+            try:
+                ts = int(datetime.datetime.fromisoformat(
+                    str(r.get("created_at", "")).replace("Z", "+00:00")
+                ).timestamp())
+            except Exception:
+                ts = 0
+            side = "buy" if str(r.get("taker_side", "")).upper() == "BID" else "sell"
+            trades.append({"side": side, "dog": f(r.get("amount")),
+                           "price": f(r.get("price")), "ts": ts})
+    return ticker, trades
+
+
 EXCHANGES = [
     ("Kraken", "https://pro.kraken.com/app/trade/DOG-USD", kraken),
     ("Gate",   "https://www.gate.io/trade/DOG_USDT", gate),
     ("Bitget", "https://www.bitget.com/spot/DOGUSDT", bitget),
     ("MEXC",   "https://www.mexc.com/exchange/DOG_USDT", mexc),
     ("CoinEx", "https://www.coinex.com/en/exchange/dog-usdt", coinex),
+    ("BigONE", "https://big.one/trade/DOG-USDT", bigone),
 ]
 
 
@@ -172,10 +205,10 @@ def run():
     notable.sort(key=lambda e: e["ts"], reverse=True)
     out = {
         "updated_at": now.isoformat(),
-        "price_usd": round(sorted(prices)[len(prices) // 2], 8) if prices else None,
+        "price_usd": round(statistics.median(prices), 8) if prices else None,
         "exchanges": rows,
         "notable": notable[:24],
-        "caveat": "Janela de trades recentes (ultimos ~1000), nao o dia inteiro; volume 24h vem do ticker.",
+        "caveat": "Janela de trades recentes (ate ~1000), nao o dia inteiro; volume 24h vem do ticker.",
     }
     json.dump(out, open(os.path.join(DATA, "flows.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)

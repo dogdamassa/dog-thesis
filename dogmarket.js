@@ -13,10 +13,9 @@
   'use strict';
 
   var DOG_NAME = 'DOG•GO•TO•THE•MOON';
-  /* The DOG mascot — the site's own cut-out (transparent bg), same asset
-     web3.js uses for the rune. Local + on-brand; the KRAY rune-thumbnail
-     endpoint serves the raw on-chain photo (couch background) which reads
-     as off-brand here. */
+  /* Official DOG ARMY mark, shared with web3.js and every branded surface.
+     Keep this path pointed at the canonical site asset so older mascot/logo
+     variants cannot drift back into the marketplace. */
   var DOG_THUMB = '/public/dog-logo.png';
   var MARKET_FEE = 0.02;        /* KRAY's 2% */
   var MIN_FEE_SATS = 330;

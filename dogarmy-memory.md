@@ -18,6 +18,17 @@ It was airdropped to Runestone holders. DOG ARMY tracks the origin story, holder
 conviction, concentration and exchange microstructure with public data from
 ordinals.com, dogdata.xyz, mempool.space and public CEX APIs.
 
+## Official Visual Identity
+
+- `public/dog-army-logo.png` is the sole canonical DOG ARMY mark from
+  2026-07-19 onward.
+- The official mark is the black/orange shield with the floppy-eared DOG in an
+  orange Bitcoin hoodie, exactly two orange military stripes (one per cheek),
+  white `DOG`, orange `ARMY`, and the orange Bitcoin medallion.
+- Do not restore the pointed-ear/Shiba-like variants or the earlier puppy
+  cut-outs. Derive compact marks, favicons, app icons, social cards and posters
+  from the canonical file.
+
 ## Editorial Guardrails
 
 - Evidence before narrative.
@@ -32,23 +43,27 @@ ordinals.com, dogdata.xyz, mempool.space and public CEX APIs.
 - `index.html`: global homepage, radar, culture, archive, AI files and social strip.
 - `web3.html` + `web3.js`: KRAY wallet/Web3 HQ and rank/badge flow.
 - `social.html` + `social.js`: read-only KRAY Social feed for the Army.
+- `noticias.html` + `noticias.js`: curated DOG press archive at `/noticias`, with the latest DOG Mode coverage featured and source-linked filters for protocol, adoption and launch history.
 - `dogscan.html` + `dogscan.js`: DogScan, the on-site explorer running on the full KrayScan API (KRAY-authorized rebrand, DOG ARMY skin); `/krayscan` 301s to `/dogscan`.
 - `radar.js` + `data/*.json`: live DOG Radar data and liquidity map.
 - `llms.txt`: compact AI briefing.
 - `llms-full.txt`: full citable AI briefing.
 - `monitor-dog.md`: dated operational read of the watched whale and exchange flow.
+- `public/culture/pics/dogmode1.png`: lossless official DOG Mode desk scene.
+- `public/culture/pics/dogmode1.jpg`: optimized delivery copy used in the home `#luta` block and the DOG News hero.
 
-## Live Snapshot From 2026-07-06
+## Live Snapshot From 2026-07-19
 
 Fresh local collection succeeded:
 
 - DOG DATA reachable from this machine.
-- Vault #1 / whale: rank #1, about 12.15% of supply.
-- Holders: 86,305.
+- Vault #1 / whale: rank #1, about 12.21% of supply.
+- Holders: 86,213.
 - No new Binance-to-cluster withdrawal in the simple monitor run.
 - No whale deposit into a watched exchange in the simple monitor run.
-- Exchange flow: 5/5 configured spot CEX APIs responded.
-- Liquidity map: 9/10 configured books responded.
+- Exchange flow: 6/6 configured spot CEX APIs responded.
+- Liquidity map: 10/10 configured books responded after replacing the delisted
+  XT DOG/USDT market with BigONE's live public book.
 - Gate DOG perp still reports delisting with zero Gate OI in the liquidity data.
 
 Treat old "API bloqueada" blocks in `monitor-dog.md` as remote-run history, not
@@ -82,4 +97,3 @@ For future work, read in this order:
 2. `llms.txt`
 3. The exact page/script being edited
 4. Only then open `llms-full.txt`, reports or phase docs if the task needs depth
-
