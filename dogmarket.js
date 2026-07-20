@@ -13,10 +13,9 @@
   'use strict';
 
   var DOG_NAME = 'DOG•GO•TO•THE•MOON';
-  /* Official DOG ARMY mark, shared with web3.js and every branded surface.
-     Keep this path pointed at the canonical site asset so older mascot/logo
-     variants cannot drift back into the marketplace. */
-  var DOG_THUMB = '/public/dog-logo.png';
+  /* DogMarket sells Rune 840000:3, so its cards keep the original DOG artwork
+     used by this market — never the DOG ARMY site/brand logo. */
+  var DOG_THUMB = '/public/dog-rune-840000-3.png';
   var MARKET_FEE = 0.02;        /* KRAY's 2% */
   var MIN_FEE_SATS = 330;
   var EST_VBYTES = 500;         /* single-buy tx estimate, matches KRAY */

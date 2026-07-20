@@ -28,6 +28,9 @@ ordinals.com, dogdata.xyz, mempool.space and public CEX APIs.
 - Do not restore the pointed-ear/Shiba-like variants or the earlier puppy
   cut-outs. Derive compact marks, favicons, app icons, social cards and posters
   from the canonical file.
+- DogMarket is the protocol-art exception: its Rune header, listings and trade
+  dialogs must show `public/dog-rune-840000-3.png`, the original transparent DOG
+  artwork historically used by this market, never the DOG ARMY brand mark.
 
 ## Editorial Guardrails
 
@@ -51,6 +54,7 @@ ordinals.com, dogdata.xyz, mempool.space and public CEX APIs.
 - `monitor-dog.md`: dated operational read of the watched whale and exchange flow.
 - `public/culture/pics/dogmode1.png`: lossless official DOG Mode desk scene.
 - `public/culture/pics/dogmode1.jpg`: optimized delivery copy used in the home `#luta` block and the DOG News hero.
+- `public/dog-army-mark-transparent.png`: background-free derivative of the canonical mark used to build browser and app icons; preserve the black areas inside the shield.
 
 ## Live Snapshot From 2026-07-19
 
