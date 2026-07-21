@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-07-21T15:19:47.120464+00:00",
+  "updated_at": "2026-07-21T16:52:07.557764+00:00",
   "events": [
     {
       "id": "bal-2026-07-21",
-      "ts": "2026-07-21T15:19:47.120464+00:00",
+      "ts": "2026-07-21T16:52:07.557764+00:00",
       "type": "balance_change",
-      "amount_dog": 1083779.299999237,
+      "amount_dog": 1368034.472000122,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,19 @@
       "to_id": "",
       "sign": "-",
       "txid": null
+    },
+    {
+      "id": "ed552d9d34dd361d2f6b1d4e019e4cc011fd4ce13c75f8858a888f2869687233",
+      "ts": "2026-07-21T16:30:17+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 1426818.17629,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p9gal34x9uxfq57ctrlg8496tzv56c0fsm9qm9q6wy36jmynla7zsus3mfr",
+      "community": null,
+      "txid": "ed552d9d34dd361d2f6b1d4e019e4cc011fd4ce13c75f8858a888f2869687233"
     },
     {
       "id": "057cc2278cf1cbccb48cb7458b3ebee6781586c4cc58fcf47e5aa74cd569c92a",
@@ -767,19 +780,6 @@
       "to_id": "",
       "community": null,
       "txid": "6ac2df4bd66445b2e9968d600d266689251ce7a47370d12aa293873d50999ed7"
-    },
-    {
-      "id": "f42c3a801ca56d8d0213132973ee06c4aa1f585167f01ef7046fb1f2072a8cac",
-      "ts": "2026-07-19T12:22:08+00:00",
-      "type": "exchange_out",
-      "amount_dog": 16576617.68188,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "MM2 shuttle",
-      "from_id": "h3",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "f42c3a801ca56d8d0213132973ee06c4aa1f585167f01ef7046fb1f2072a8cac"
     }
   ]
 }
