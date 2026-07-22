@@ -1,18 +1,31 @@
 {
-  "updated_at": "2026-07-22T16:53:37.594094+00:00",
+  "updated_at": "2026-07-22T18:37:42.632613+00:00",
   "events": [
     {
       "id": "bal-2026-07-22",
-      "ts": "2026-07-22T16:53:37.594094+00:00",
+      "ts": "2026-07-22T18:37:42.632613+00:00",
       "type": "balance_change",
-      "amount_dog": 5044251.207920074,
+      "amount_dog": 8235971.65199852,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "+",
+      "sign": "-",
       "txid": null
+    },
+    {
+      "id": "1f4a08beff214da55d70d95b5055f01f6ec171d273517bc6beb3aba02d32f652",
+      "ts": "2026-07-22T17:44:39+00:00",
+      "type": "exchange_in",
+      "amount_dog": 8136024.3,
+      "level": "watch",
+      "from_label": "bc1qkgjl...ct5y",
+      "to_label": "MEXC Wallet",
+      "from_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
+      "to_id": "mexc",
+      "community": "MEXC",
+      "txid": "1f4a08beff214da55d70d95b5055f01f6ec171d273517bc6beb3aba02d32f652"
     },
     {
       "id": "3f26a62be958cbd9490608eb6310aa9516b85921284a52b015b1efb04d469f9d",
@@ -767,19 +780,6 @@
       "to_id": "int1",
       "community": "Bitget deposit, desk reuse",
       "txid": "9a5bc065d69b9cae1c5cb4a5816bc2f8a67e381f2c16e8de701b535ae0b91044"
-    },
-    {
-      "id": "3571cfd8a6d6f0f991692f6e922ca5927503172438e1267a667152e5f6bd0784",
-      "ts": "2026-07-19T20:33:00+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 8025834.71529,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "community": null,
-      "txid": "3571cfd8a6d6f0f991692f6e922ca5927503172438e1267a667152e5f6bd0784"
     }
   ]
 }
