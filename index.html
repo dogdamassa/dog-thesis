@@ -26,7 +26,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png?v=568912e90f">
 <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png?v=96f76c57ec">
 <link rel="apple-touch-icon" href="/public/apple-touch-icon.png?v=1ab30e10fe">
-<link rel="stylesheet" href="/styles.css?v=b97a2268b7">
+<link rel="stylesheet" href="/styles.css?v=a17240739a">
 <!-- Intro gate. Render-blocking on purpose: decides before first paint whether
      the presentation video opens (3-day TTL). External file = CSP-safe. -->
 <script src="/intro.js?v=ff31726ee3"></script>
@@ -279,6 +279,59 @@
           <a class="btn market" href="/dogmarket" data-i18n="hero.market">Buy $DOG on Bitcoin</a>
           <a class="btn secondary" href="#qg" data-i18n="hero.b3">Enter the HQ →</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="episode" class="episode-feature" aria-labelledby="episode-title">
+    <div class="wrap">
+      <div class="episode-head">
+        <div>
+          <div class="kicker" data-i18n="ep.k">Featured conversation · full replay</div>
+          <h2 id="episode-title" data-i18n="ep.h">David Gokhshtein × Leonidas: Bitcoin, $DOG and meme culture.</h2>
+          <p class="lead" data-i18n="ep.lead">The complete Breakdown #750 replay, available right here without leaving DOG ARMY. Press play and choose subtitles in Portuguese, English, Spanish or Italian.</p>
+        </div>
+        <div class="episode-facts" aria-label="Episode details">
+          <span><b>2h52</b><small data-i18n="ep.length">full episode</small></span>
+          <span><b>4</b><small data-i18n="ep.languages">subtitle languages</small></span>
+          <span><b>20 JUL 2026</b><small data-i18n="ep.date">original broadcast</small></span>
+        </div>
+      </div>
+
+      <div class="episode-shell">
+        <div class="episode-player-wrap">
+          <video
+            id="episodePlayer"
+            class="episode-player"
+            controls
+            playsinline
+            preload="none"
+            poster="/public/episodes/breakdown-750-poster.jpg?v=b031a7730d"
+            data-src="/public/episodes/breakdown-750.m3u8?v=cdd8ade61c">
+            <track kind="subtitles" srclang="en" label="English" src="/public/episodes/breakdown-750-en.vtt?v=00066fb9e5">
+            <track kind="subtitles" srclang="pt-BR" label="Português" src="/public/episodes/breakdown-750-pt.vtt?v=f084346ccf">
+            <track kind="subtitles" srclang="es" label="Español" src="/public/episodes/breakdown-750-es.vtt?v=7d0a1258b2">
+            <track kind="subtitles" srclang="it" label="Italiano" src="/public/episodes/breakdown-750-it.vtt?v=40bd8e5074">
+          </video>
+          <button type="button" class="episode-start" id="episodeStart" aria-label="Watch the full episode">
+            <span class="episode-start-icon" aria-hidden="true">▶</span>
+            <span><b data-i18n="ep.play">Watch the full episode</b><small data-i18n="ep.here">It plays here. No redirect.</small></span>
+          </button>
+        </div>
+
+        <div class="episode-toolbar">
+          <div class="episode-captions" role="group" aria-label="Subtitle language">
+            <span data-i18n="ep.cc">Subtitles</span>
+            <button type="button" data-episode-caption="pt" aria-pressed="false">PT</button>
+            <button type="button" data-episode-caption="en" aria-pressed="false">EN</button>
+            <button type="button" data-episode-caption="es" aria-pressed="false">ES</button>
+            <button type="button" data-episode-caption="it" aria-pressed="false">IT</button>
+            <button type="button" data-episode-caption="off" aria-pressed="false" data-i18n="ep.off">Off</button>
+          </div>
+          <a class="episode-source" href="https://x.com/davidgokhshtein/status/2079255029916049468" target="_blank" rel="noopener" data-i18n="ep.source">Original broadcast on X ↗</a>
+        </div>
+        <p class="episode-status" id="episodeStatus" role="status" aria-live="polite" hidden></p>
+        <p class="episode-note" data-i18n="ep.note">Subtitles were transcribed and translated for accessibility; names and technical terms may contain small errors.</p>
       </div>
     </div>
   </section>
@@ -992,14 +1045,16 @@
   </div>
 </footer>
 
-<script src="/i18n.js?v=2ddeefdcc9"></script>
+<script src="/i18n.js?v=084197d428"></script>
+<script src="/public/vendor/hls.min.js?v=947b45be13" defer></script>
+<script src="/episode.js?v=be07eddb3d" defer></script>
 <script src="/news.js?v=b9001c3073" defer></script>
 <script src="/radar.js?v=15ce0ebdd7" defer></script>
 <script src="/wallet.js?v=d217895ce6" defer></script>
 <!-- homechat depends on wallet.js (window.DogWallet + dog:wallet) — keep this order -->
 <script src="/homechat.js?v=6a3b9c61c8" defer></script>
 <script src="/culture.js?v=9bf917546c" defer></script>
-<script src="/dogdrop.js?v=4948b05e0b" defer></script>
+<script src="/dogdrop.js?v=794532233e" defer></script>
 <script>
 (function(){
   var ticker = document.getElementById('marketTicker');

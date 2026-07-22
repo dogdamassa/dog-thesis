@@ -34,7 +34,7 @@ function hashFor(assetPath) {
   return h;
 }
 
-const extensions = 'css|js|png|jpe?g|webp|gif|svg|ico';
+const extensions = 'css|js|png|jpe?g|webp|gif|svg|ico|m3u8|vtt';
 // Atributos locais absolutos ou relativos: href, src e poster.
 const localRe = new RegExp(
   `((?:href|src|poster)=")((?:/)?[a-zA-Z0-9_./-]+\\.(?:${extensions}))(?:\\?v=[a-zA-Z0-9_-]+)?(")`,

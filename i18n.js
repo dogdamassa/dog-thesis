@@ -4,6 +4,18 @@
    Default = English; respects ?lang= and the saved choice (no auto-redirect). */
 window.DOG_I18N = {
   pt: {
+    "ep.k": "Conversa em destaque · episódio completo",
+    "ep.h": "David Gokhshtein × Leonidas: Bitcoin, $DOG e cultura meme.",
+    "ep.lead": "Assista ao episódio completo do Breakdown #750 aqui mesmo, sem sair do DOG ARMY. Aperte o play e escolha legendas em português, inglês, espanhol ou italiano.",
+    "ep.length": "episódio completo",
+    "ep.languages": "idiomas de legenda",
+    "ep.date": "transmissão original",
+    "ep.play": "Assistir ao episódio completo",
+    "ep.here": "Abre aqui. Sem redirecionamento.",
+    "ep.cc": "Legendas",
+    "ep.off": "Sem",
+    "ep.source": "Transmissão original no X ↗",
+    "ep.note": "As legendas foram transcritas e traduzidas para acessibilidade; nomes e termos técnicos podem conter pequenos erros.",
     "nav.plans": "Planos",
     "mt.k": "Planos · a $DOG Army em ação",
     "mt.h": "A matilha conversa. A matilha planeja. <span>A matilha executa.</span>",
@@ -960,6 +972,18 @@ window.DOG_I18N = {
     "news.ftDisc": "Arquivo editorial apenas. Cobertura não é endosso, conselho financeiro, promessa de preço nem coordenação de mercado. Verifique cada matéria na fonte original."
   },
   es: {
+    "ep.k": "Conversación destacada · episodio completo",
+    "ep.h": "David Gokhshtein × Leonidas: Bitcoin, $DOG y cultura meme.",
+    "ep.lead": "Mira el episodio completo de Breakdown #750 aquí mismo, sin salir de DOG ARMY. Pulsa play y elige subtítulos en portugués, inglés, español o italiano.",
+    "ep.length": "episodio completo",
+    "ep.languages": "idiomas de subtítulos",
+    "ep.date": "transmisión original",
+    "ep.play": "Ver el episodio completo",
+    "ep.here": "Se reproduce aquí. Sin redirección.",
+    "ep.cc": "Subtítulos",
+    "ep.off": "Sin",
+    "ep.source": "Transmisión original en X ↗",
+    "ep.note": "Los subtítulos fueron transcritos y traducidos por accesibilidad; los nombres y términos técnicos pueden contener pequeños errores.",
     "nav.plans": "Planes",
     "mt.k": "Planes · la $DOG Army en acción",
     "mt.h": "La manada conversa. La manada planea. <span>La manada ejecuta.</span>",

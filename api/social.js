@@ -6,8 +6,47 @@
 
 var kray = require('./_kray.js');
 
+/* The X replay CDN accepts server-to-server requests, but rejects browser
+   requests carrying a non-X Origin header. Keep this tiny allowlisted relay in
+   the existing function so the player can remain same-origin without adding a
+   thirteenth public API function. */
+var EPISODE_STREAMS = {
+  320: 'https://prod-fastly-us-east-1.video.pscp.tv/Transcoding/v1/hls/de2txrbz8sn_Jnv6mGwNzPo0_SAWE7kjEnIMVybupBIVsiFCcgDi_BMA3m-xHfmMQIIMA0LrXtXIfYMRPzfyEA/transcode/us-east-1/periscope-replay-direct-prod-us-east-1-public/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInZlcnNpb24iOiIyIn0.eyJFbmNvZGVyU2V0dGluZyI6ImVuY29kZXJfc2V0dGluZ18zMjBwMzBfMTAiLCJIZWlnaHQiOjMyMCwiS2JwcyI6NjAwLCJUcmFuc2NvZGVBdWRpbyI6dHJ1ZSwiV2lkdGgiOjU2OH0.es_XpNv3J12hFXU4WrCwmH28GmToYAPDPdT_EjerHCU/',
+  480: 'https://prod-fastly-us-east-1.video.pscp.tv/Transcoding/v1/hls/de2txrbz8sn_Jnv6mGwNzPo0_SAWE7kjEnIMVybupBIVsiFCcgDi_BMA3m-xHfmMQIIMA0LrXtXIfYMRPzfyEA/transcode/us-east-1/periscope-replay-direct-prod-us-east-1-public/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInZlcnNpb24iOiIyIn0.eyJFbmNvZGVyU2V0dGluZyI6ImVuY29kZXJfc2V0dGluZ180ODBwMzBfMTAiLCJIZWlnaHQiOjQ4MCwiS2JwcyI6MTIwMCwiV2lkdGgiOjg0OH0.0LJi1usWbiPqp0QIcpq7Md5g1WxvJcPqVWNqsKw5nhA/'
+};
+
+async function serveEpisodeSegment(req, res) {
+  var quality = String((req.query && req.query.quality) || '');
+  var filename = String((req.query && req.query.file) || '');
+  var base = EPISODE_STREAMS[quality];
+  if (!base || !/^chunk_[0-9]+_[0-9]+_a\.ts$/.test(filename)) {
+    res.status(404).json({ success: false, error: 'episode-segment' });
+    return;
+  }
+
+  try {
+    var upstream = await fetch(base + filename, {
+      headers: { Accept: 'video/mp2t', 'User-Agent': 'DOG-ARMY-Episode-Player/1.0' },
+      signal: AbortSignal.timeout(12000)
+    });
+    if (!upstream.ok) throw new Error('upstream-' + upstream.status);
+    var body = Buffer.from(await upstream.arrayBuffer());
+    res.setHeader('Content-Type', 'video/mp2t');
+    res.setHeader('Content-Length', String(body.length));
+    res.setHeader('Cache-Control', 'public, max-age=31536000, s-maxage=31536000, immutable');
+    res.status(200).send(body);
+  } catch (e) {
+    res.status(502).json({ success: false, error: 'episode-upstream' });
+  }
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'GET') { res.status(405).json({ success: false, error: 'method' }); return; }
+
+  if (String((req.query && req.query.episode) || '') === '750') {
+    await serveEpisodeSegment(req, res);
+    return;
+  }
 
   var feed = String((req.query && req.query.feed) || 'trending');
   if (feed !== 'trending' && feed !== 'recent' && feed !== 'rewards') feed = 'trending';

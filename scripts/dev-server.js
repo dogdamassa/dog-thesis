@@ -24,7 +24,8 @@ var MIME = {
   '.ico': 'image/x-icon', '.woff2': 'font/woff2', '.woff': 'font/woff',
   '.txt': 'text/plain; charset=utf-8', '.md': 'text/plain; charset=utf-8',
   '.xml': 'application/xml; charset=utf-8', '.pdf': 'application/pdf',
-  '.mp4': 'video/mp4', '.vtt': 'text/vtt; charset=utf-8'
+  '.mp4': 'video/mp4', '.m3u8': 'application/vnd.apple.mpegurl',
+  '.vtt': 'text/vtt; charset=utf-8'
 };
 
 var CSP = '';
@@ -101,6 +102,13 @@ var server = http.createServer(function (req, res) {
 
   var apiMatch = p.match(/^\/api\/([^/]+)\/?$/);
   if (apiMatch) { serveApi(apiMatch[1], req, res, u.searchParams); return; }
+
+  var episodeMatch = p.match(/^\/episode-stream\/750\/(320|480)\/([a-zA-Z0-9_.-]+\.ts)$/);
+  if (episodeMatch) {
+    var episodeQuery = new URLSearchParams({ episode: '750', quality: episodeMatch[1], file: episodeMatch[2] });
+    serveApi('social', req, res, episodeQuery);
+    return;
+  }
 
   /* static files are read-only: GET/HEAD */
   if (req.method !== 'GET' && req.method !== 'HEAD') { send(res, 405, 'method not allowed'); return; }
