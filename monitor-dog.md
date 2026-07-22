@@ -4,22 +4,12 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
-## 2026-07-22 ⚠️ Movimento suspeito · ciclo Bitget → MM2 shuttle → Vault #1 · Gate+MEXC sacam para Whale7
+## 2026-07-22
 
-> Fonte: `data/daily.json` + `data/feed.json` · atualizado às 12:09 UTC · dado FRESCO (scripts locais; dogdata.xyz bloqueado no proxy remoto).
-
-- **Baleia (Vault #1, rank #1):** **12,19% do supply** (12,186B DOG). Δ líquido: estável. **NÃO depositou diretamente em exchange conhecida** (cofre_to_exchange: 0).
-- ⚠️ **Ciclo suspeito Bitget → MM2 shuttle → Vault #1 (madrugada):**
-  - 22/07 00:04 UTC — **Bitget hot → MM2 shuttle**: 9,407,122 DOG
-  - 22/07 00:38 UTC — **MM2 shuttle → Vault #1**: 9,079,354 DOG (~34 min depois)
-  - 22/07 05:39 UTC — **MM2 shuttle → Vault #1**: 3,300,653 DOG
-  - **Total reciclado Bitget → baleia hoje: ~12,4M DOG** — padrão de reciclagem exchange → shuttle → cofre, mesmo ciclo documentado em 19–21/07.
-- ⚠️ **Gate e MEXC sacam para Whale7 shuttle (manhã):**
-  - 22/07 09:38 UTC — Gate.io hot → Whale7 shuttle: 7,107,816 DOG
-  - 22/07 09:38 UTC — MEXC Wallet → Whale7 shuttle: 5,454,132 DOG
-  - Total: 12,562,148 DOG → Whale7 shuttle (destino monitorado — já reabasteceu a baleia em 21/07 23:33).
-- **Saques novos da Binance → cluster (72h):** Binance hot wallet (`bc1qhuv3…`) **não aparece como counterparty direto** em Int#1/Int#2/Int#3 nesta janela. Int#3 inativo desde 30/04. Fonte dos relays: a própria baleia (Vault #1) e wallets não mapeadas.
-- 🔎 **Leitura:** **movimento suspeito.** O ciclo exchange → shuttle → baleia está ativo: Bitget hot reciclou ~12,4M DOG de volta para o cofre via MM2 shuttle nas primeiras horas do dia; Gate e MEXC sacaram juntas 12,6M DOG para o Whale7 shuttle (que já havia alimentado a baleia ontem). A Binance não aparece como counterparty direto dos relays nesta janela, mas **pode estar envolvida** — historicamente alimentou essa estrutura via Int#3 (48 saques documentados) e o padrão de reciclagem coordenado entre exchanges e shuttles sugere gestão ativa integrada. Sem acusação de crime: descrevemos o que a chain mostra.
+- **Baleia (#1):** 12.2% do supply (Δ +13.2M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
 
 ## 2026-07-21
 
