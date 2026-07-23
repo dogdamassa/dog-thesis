@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-07-23T00:57:29.128111+00:00",
+  "updated_at": "2026-07-23T04:43:09.770948+00:00",
   "events": [
+    {
+      "id": "5cedb2ed13d5c6d2e7ae5cf81c09da33119b3b7e3600237b52527560d104f46c",
+      "ts": "2026-07-23T01:39:34+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 54803250.60707,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p6dy5waj9eyv88t0zx0nmel2nc79cyvu6lmp7gq7xmg7dqnlt40uq2s8sdj",
+      "community": null,
+      "txid": "5cedb2ed13d5c6d2e7ae5cf81c09da33119b3b7e3600237b52527560d104f46c"
+    },
+    {
+      "id": "ce4e8f1b01786ee19c293f16dfc6b58031f40a9699eb1f80cf11829a10221be0",
+      "ts": "2026-07-23T01:39:34+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 1444010,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p7srwud56f2a0pdek563l82l492phqnkvw2yvzacvyffaftsykgqq7cvysp",
+      "community": null,
+      "txid": "ce4e8f1b01786ee19c293f16dfc6b58031f40a9699eb1f80cf11829a10221be0"
+    },
     {
       "id": "bal-2026-07-23",
       "ts": "2026-07-23T00:57:29.128111+00:00",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "d2688edaee9137bc63fe1ee23bfe1e33d107eb331bc478abccc50183f2175ee4"
-    },
-    {
-      "id": "bal-2026-07-19",
-      "ts": "2026-07-19T23:15:50.842837+00:00",
-      "type": "balance_change",
-      "amount_dog": 4182463.0,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
-    },
-    {
-      "id": "489bb3cf11acde6f856cc9c2219313c1a23f121fb66c18213a18086647c58aec",
-      "ts": "2026-07-19T22:07:06+00:00",
-      "type": "exchange_out",
-      "amount_dog": 29744600.17446,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "MM2 shuttle",
-      "from_id": "h2",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "489bb3cf11acde6f856cc9c2219313c1a23f121fb66c18213a18086647c58aec"
     }
   ]
 }
