@@ -1,18 +1,31 @@
 {
-  "updated_at": "2026-07-23T15:29:23.557717+00:00",
+  "updated_at": "2026-07-23T17:52:04.765424+00:00",
   "events": [
     {
       "id": "bal-2026-07-23",
-      "ts": "2026-07-23T15:29:23.557717+00:00",
+      "ts": "2026-07-23T17:52:04.765424+00:00",
       "type": "balance_change",
-      "amount_dog": 1511616.734998703,
+      "amount_dog": 8597993.301488876,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "-",
+      "sign": "+",
       "txid": null
+    },
+    {
+      "id": "67087fe090fb558adeaa13bb839c214852781b9fdd4623c5c2cdec69b0b8b945",
+      "ts": "2026-07-23T17:17:45+00:00",
+      "type": "exchange_out",
+      "amount_dog": 5005277.76,
+      "level": "info",
+      "from_label": "MEXC Wallet",
+      "to_label": "bc1pm4ej...9p2j",
+      "from_id": "mexc",
+      "to_id": "bc1pm4ejxyzdfv0a4f087pfdqvv0q4lwj9ssfjzft9ffpxqm4yumezxsg29p2j",
+      "community": null,
+      "txid": "67087fe090fb558adeaa13bb839c214852781b9fdd4623c5c2cdec69b0b8b945"
     },
     {
       "id": "c32d9a1334027730f091783a4ab7193afbf8fac7f0fcfef50142fe6eab550dbc",
@@ -767,19 +780,6 @@
       "to_id": "sleeper",
       "community": null,
       "txid": "4e073ed8c979a8eea528da69cc1326e19714e4d9d5e6dc1d6a6b9ea934deee97"
-    },
-    {
-      "id": "b3253d238df17187c6deb3546744b689b2011612838c207915f984ea19cca361",
-      "ts": "2026-07-20T11:36:30+00:00",
-      "type": "cofre_in",
-      "amount_dog": 4643643.66798,
-      "level": "info",
-      "from_label": "Whale7 shuttle",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "b3253d238df17187c6deb3546744b689b2011612838c207915f984ea19cca361"
     }
   ]
 }
