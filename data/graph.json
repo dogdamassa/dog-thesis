@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T12:53:17.124071+00:00",
+  "updated_at": "2026-07-23T15:29:23.557717+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,7 +8,7 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12193334015.18467,
+      "balance_dog": 12191822398.44967,
       "rank": 1,
       "pct": 12.19,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2055962839.75152,
+      "balance_dog": 2047224512.56152,
       "rank": 6,
-      "pct": 2.06,
+      "pct": 2.05,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
