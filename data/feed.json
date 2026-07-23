@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-07-23T04:43:09.770948+00:00",
+  "updated_at": "2026-07-23T07:46:26.803606+00:00",
   "events": [
+    {
+      "id": "9f5db585ebf23eb7e507e61d6ca0434e50d32a271b3660714a2d49895f2924e3",
+      "ts": "2026-07-23T07:28:19+00:00",
+      "type": "exchange_in",
+      "amount_dog": 199580455.41964,
+      "level": "watch",
+      "from_label": "bc1pcjqe...agwm",
+      "to_label": "Gate.io hot",
+      "from_id": "bc1pcjqedhnxmjhl00ht6l0r0y9e79lhme3qeza5n4rd3a7f3yyqhqzqeeagwm",
+      "to_id": "h2",
+      "community": "Gate",
+      "txid": "9f5db585ebf23eb7e507e61d6ca0434e50d32a271b3660714a2d49895f2924e3"
+    },
     {
       "id": "5cedb2ed13d5c6d2e7ae5cf81c09da33119b3b7e3600237b52527560d104f46c",
       "ts": "2026-07-23T01:39:34+00:00",
@@ -767,19 +780,6 @@
       "to_id": "bc1ps5j4f8cg38pzltjfvqs5dcheqqq7eyqmnarv5ks9v5f5w0lugprs6ulry4",
       "community": null,
       "txid": "99b35272e7d691969771755d601b82c311c9f988df5c37b61806ac6a55ba256c"
-    },
-    {
-      "id": "d2688edaee9137bc63fe1ee23bfe1e33d107eb331bc478abccc50183f2175ee4",
-      "ts": "2026-07-20T00:52:19+00:00",
-      "type": "cofre_in",
-      "amount_dog": 10539011.18,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "d2688edaee9137bc63fe1ee23bfe1e33d107eb331bc478abccc50183f2175ee4"
     }
   ]
 }

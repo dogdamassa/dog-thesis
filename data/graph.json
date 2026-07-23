@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T04:43:09.770948+00:00",
+  "updated_at": "2026-07-23T07:46:26.803606+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3494264032.44665,
+      "balance_dog": 3493465458.22665,
       "rank": 2,
       "pct": 3.49,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
