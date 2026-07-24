@@ -1,0 +1,14 @@
+{
+  "updated_at": "2026-07-24T00:00:00-03:00",
+  "network": "solana",
+  "asset": "$DOG on Solana",
+  "cluster_id": "solana-ghost-accumulator",
+  "status": "watch_strong_signal",
+  "source": {
+    "author": "Vincent",
+    "type": "community_onchain_investigation",
+    "independently_reproduced_by_repo": false,
+    "claimed_decoded_transactions": 4800
+  },
+  "classification": {
+    "primary
