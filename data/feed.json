@@ -1,18 +1,44 @@
 {
-  "updated_at": "2026-07-24T19:52:12.210129+00:00",
+  "updated_at": "2026-07-24T21:33:33.955901+00:00",
   "events": [
     {
       "id": "bal-2026-07-24",
-      "ts": "2026-07-24T15:50:39.434841+00:00",
+      "ts": "2026-07-24T21:33:33.955901+00:00",
       "type": "balance_change",
-      "amount_dog": 4500000.0,
+      "amount_dog": 1893878.5069999695,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "-",
+      "sign": "+",
       "txid": null
+    },
+    {
+      "id": "3004bbd5556f57731ef1c6e22dbb6ed06b5962dd07db735592271273d1481e7c",
+      "ts": "2026-07-24T21:26:15+00:00",
+      "type": "exchange_out",
+      "amount_dog": 9997750.28897,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "MM2 shuttle",
+      "from_id": "h3",
+      "to_id": "mm2",
+      "community": null,
+      "txid": "3004bbd5556f57731ef1c6e22dbb6ed06b5962dd07db735592271273d1481e7c"
+    },
+    {
+      "id": "67375ace26dfd9a73f35bce1a05b9416417496c5b54d0d18cfe8f6fe01bedb1e",
+      "ts": "2026-07-24T20:11:56+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2134629.5,
+      "level": "info",
+      "from_label": "MM2 shuttle",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "67375ace26dfd9a73f35bce1a05b9416417496c5b54d0d18cfe8f6fe01bedb1e"
     },
     {
       "id": "19b5fbccc89e1b03f8f6123904943e6466a7e469d92f553d3f5097d0c7c77e27",
@@ -754,32 +780,6 @@
       "to_id": "bc1p2tmzh8lvvtta6pkt9v2nuqj4a2p0edrrghrl0e4dnzsap5duf5dqz83x75",
       "community": null,
       "txid": "76362bd61d61bd6b3d5d5f8c02d764e9660d2868de16a7d7e785661cbbab3743"
-    },
-    {
-      "id": "7ba6820b0b66ebea71bc0f314cd7437435e2d1055de40380db7463ab892559a8",
-      "ts": "2026-07-21T03:03:40+00:00",
-      "type": "cofre_in",
-      "amount_dog": 248364302.44178,
-      "level": "info",
-      "from_label": "bc1pgf9q...s79g",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "7ba6820b0b66ebea71bc0f314cd7437435e2d1055de40380db7463ab892559a8"
-    },
-    {
-      "id": "bal-2026-07-20",
-      "ts": "2026-07-20T20:46:01.073142+00:00",
-      "type": "balance_change",
-      "amount_dog": 5454132.1000003815,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     }
   ]
 }
