@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T23:25:26.380982+00:00",
+  "updated_at": "2026-07-24T03:50:44.973436+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -229,8 +229,8 @@
       "to": "h3",
       "from_label": "Bitget Deposit #2",
       "to_label": "Bitget hot",
-      "dog": 553432335,
-      "count": 93
+      "dog": 557117670,
+      "count": 94
     },
     {
       "from": "int1",

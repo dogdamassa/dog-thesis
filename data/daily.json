@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-23T23:25:26.380982+00:00",
-  "date": "2026-07-23",
+  "updated_at": "2026-07-24T03:50:44.973436+00:00",
+  "date": "2026-07-24",
   "source": "dogdata.xyz",
   "cofre": {
     "rank": 1,
@@ -36,8 +36,8 @@
   ],
   "signals": {
     "cofre_to_exchange": 0,
-    "cofre_big_out": 6,
+    "cofre_big_out": 0,
     "relay_flows": 0
   },
-  "level": "watch"
+  "level": "stable"
 }
