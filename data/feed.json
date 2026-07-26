@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-07-26T17:29:40.931570+00:00",
+  "updated_at": "2026-07-26T19:40:56.541182+00:00",
   "events": [
+    {
+      "id": "4a186edb506b95ff9743022ae2fa06e4349eb0aea0b86df1636aa332cd319ba6",
+      "ts": "2026-07-26T19:40:22+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 2328930.04,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p92sgml7t9yfq8d4srtzw36gyymr5kqfpzl3kghtnrhuh86x4s42qgscjqd",
+      "community": null,
+      "txid": "4a186edb506b95ff9743022ae2fa06e4349eb0aea0b86df1636aa332cd319ba6"
+    },
+    {
+      "id": "de7c1eb27892eefd48f97f73e76206cb9e60884cf641132b36696b0686855548",
+      "ts": "2026-07-26T19:40:22+00:00",
+      "type": "exchange_out",
+      "amount_dog": 16492350.83599,
+      "level": "info",
+      "from_label": "Gate.io hot",
+      "to_label": "bc1q06c7...w355",
+      "from_id": "h2",
+      "to_id": "bc1q06c7e6x70asxms4m8j3sn3ze4ddmayv4w4w355",
+      "community": null,
+      "txid": "de7c1eb27892eefd48f97f73e76206cb9e60884cf641132b36696b0686855548"
+    },
     {
       "id": "bal-2026-07-26",
       "ts": "2026-07-26T15:35:00.801762+00:00",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "eebf03630c61ee59a8498b9014d4ca0e6402f0509425f6853bef58be08d0b639"
-    },
-    {
-      "id": "4e55a2855d96f2eef2f74c32c0dcd0d2425a3591f8e688a1d9523d4045ecef4a",
-      "ts": "2026-07-22T09:38:35+00:00",
-      "type": "exchange_out",
-      "amount_dog": 7107816.40873,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "Whale7 shuttle",
-      "from_id": "h2",
-      "to_id": "whale7",
-      "community": null,
-      "txid": "4e55a2855d96f2eef2f74c32c0dcd0d2425a3591f8e688a1d9523d4045ecef4a"
-    },
-    {
-      "id": "5d67a2791fe5c81ca88531c78dc0f468822d2016bc78a5b674be0cddb1c494e3",
-      "ts": "2026-07-22T09:38:35+00:00",
-      "type": "exchange_out",
-      "amount_dog": 5454132.1,
-      "level": "info",
-      "from_label": "MEXC Wallet",
-      "to_label": "Whale7 shuttle",
-      "from_id": "mexc",
-      "to_id": "whale7",
-      "community": null,
-      "txid": "5d67a2791fe5c81ca88531c78dc0f468822d2016bc78a5b674be0cddb1c494e3"
     }
   ]
 }
