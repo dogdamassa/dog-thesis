@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-07-27T15:57:14.432352+00:00",
+  "updated_at": "2026-07-27T17:59:33.106238+00:00",
   "events": [
+    {
+      "id": "d6733685ab26acbc5c7e6c9f01b53bb975e6de69ba9ca1eab4318f89c5cce539",
+      "ts": "2026-07-27T17:29:11+00:00",
+      "type": "exchange_out",
+      "amount_dog": 13840065.63759,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "bc1p5gxw...khjl",
+      "from_id": "h3",
+      "to_id": "bc1p5gxweykqvrws5q2gskk7g8kcfa94hy85fy23s48stuk3hecj69asmukhjl",
+      "community": null,
+      "txid": "d6733685ab26acbc5c7e6c9f01b53bb975e6de69ba9ca1eab4318f89c5cce539"
+    },
     {
       "id": "bal-2026-07-27",
       "ts": "2026-07-27T15:57:14.432352+00:00",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "1e7326bda25b4466b83a9bd85182fc977e290bccac135fe8c76aaeb890212217"
-    },
-    {
-      "id": "24a91ceea7c60f11fa699d97952bd92c06aa158e8dcdcdc06c039140f55e9c8a",
-      "ts": "2026-07-23T10:47:29+00:00",
-      "type": "exchange_in",
-      "amount_dog": 8400971.4,
-      "level": "watch",
-      "from_label": "bc1qkgjl...ct5y",
-      "to_label": "MEXC Wallet",
-      "from_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "to_id": "mexc",
-      "community": "MEXC",
-      "txid": "24a91ceea7c60f11fa699d97952bd92c06aa158e8dcdcdc06c039140f55e9c8a"
     }
   ]
 }
