@@ -6,10 +6,11 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ## 2026-07-28
 
-- **Baleia (#1):** 12.24% do supply (Δ +0.0M DOG).
-- Saques novos da Binance → cluster: nenhum hoje.
-- A baleia não depositou em exchange (segue acumulando/parada).
-- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+> Nota: dogdata.xyz inacessível na run das ~12h UTC (conexão rejeitada). Dados abaixo do estado salvo pela run da manhã (~10h UTC, dado fresco).
+
+- **Baleia (#1):** 12.24% do supply (Δ +0.0M DOG). Sem depósito em exchange (segue acumulando/parada).
+- Saques novos da Binance → cluster (72h): nenhum. Int#1 e Int#2 com última tx em 27/07 22:34 UTC (sem Binance como counterparty). Int#3 inativo desde 30/04.
+- 🔎 **Leitura:** estável, seguimos vigiando o rastro até chegar na Binance.
 
 ## 2026-07-27
 
