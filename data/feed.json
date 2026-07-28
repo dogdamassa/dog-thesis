@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-07-28T14:54:48.017897+00:00",
+  "updated_at": "2026-07-28T16:55:06.832485+00:00",
   "events": [
+    {
+      "id": "bal-2026-07-28",
+      "ts": "2026-07-28T16:55:06.832485+00:00",
+      "type": "balance_change",
+      "amount_dog": 20990401.24600029,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "0d901f6d93ef1978888f357d397644a3416cb2ebd04ee20fbf8c5cad3c515daa",
+      "ts": "2026-07-28T16:10:30+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2548476.13,
+      "level": "info",
+      "from_label": "MM2 shuttle",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "0d901f6d93ef1978888f357d397644a3416cb2ebd04ee20fbf8c5cad3c515daa"
+    },
     {
       "id": "5f068855dc9bb3e9687e20faaec8ab6f58e45612ba9df823e4a1d2c47b8cafae",
       "ts": "2026-07-28T12:31:32+00:00",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "67375ace26dfd9a73f35bce1a05b9416417496c5b54d0d18cfe8f6fe01bedb1e"
-    },
-    {
-      "id": "19b5fbccc89e1b03f8f6123904943e6466a7e469d92f553d3f5097d0c7c77e27",
-      "ts": "2026-07-24T13:20:05+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 169294421.81995,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1pccjc8x533dj0hsgxn3w7fxhcemz5ss88u6y9czu7zwgfqtwv3x4q7xcsms",
-      "community": null,
-      "txid": "19b5fbccc89e1b03f8f6123904943e6466a7e469d92f553d3f5097d0c7c77e27"
-    },
-    {
-      "id": "990d96a44072c6604ea80c1c47a913bbca2f551a9585b2b37e31043d43c21467",
-      "ts": "2026-07-24T12:18:59+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 80680651.68987,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1pzg6aed026czampasr6lp7q0eugeptmw789z4d0xm605sc0qm2cmqxf5vtk",
-      "community": null,
-      "txid": "990d96a44072c6604ea80c1c47a913bbca2f551a9585b2b37e31043d43c21467"
     }
   ]
 }
