@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-07-28T18:51:36.780297+00:00",
+  "updated_at": "2026-07-28T20:38:10.395375+00:00",
   "events": [
+    {
+      "id": "0d4bb475c095a965d021df620467530a50ac8542511593aa7d447702c420bb0d",
+      "ts": "2026-07-28T20:23:41+00:00",
+      "type": "cofre_in",
+      "amount_dog": 4400140.13,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "0d4bb475c095a965d021df620467530a50ac8542511593aa7d447702c420bb0d"
+    },
+    {
+      "id": "6378d06931c82b5fbda2734e79d9952a196b34a5f3e3113c4f4446cfffce612d",
+      "ts": "2026-07-28T19:28:46+00:00",
+      "type": "exchange_out",
+      "amount_dog": 253583769.00943,
+      "level": "info",
+      "from_label": "Gate.io hot",
+      "to_label": "MM2 shuttle",
+      "from_id": "h2",
+      "to_id": "mm2",
+      "community": null,
+      "txid": "6378d06931c82b5fbda2734e79d9952a196b34a5f3e3113c4f4446cfffce612d"
+    },
     {
       "id": "bal-2026-07-28",
       "ts": "2026-07-28T18:51:36.780297+00:00",
@@ -754,32 +780,6 @@
       "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "community": null,
       "txid": "b239cb63ec5e64edf6285df5a907c3a66c45d35fc2543abf831ac108022f6912"
-    },
-    {
-      "id": "76698e3d3b4a116fc8f50e90238f4edb005b7e01ea2f41372a70a3608fafdb03",
-      "ts": "2026-07-24T22:33:51+00:00",
-      "type": "cofre_in",
-      "amount_dog": 11282439.2355,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "76698e3d3b4a116fc8f50e90238f4edb005b7e01ea2f41372a70a3608fafdb03"
-    },
-    {
-      "id": "3004bbd5556f57731ef1c6e22dbb6ed06b5962dd07db735592271273d1481e7c",
-      "ts": "2026-07-24T21:26:15+00:00",
-      "type": "exchange_out",
-      "amount_dog": 9997750.28897,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "MM2 shuttle",
-      "from_id": "h3",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "3004bbd5556f57731ef1c6e22dbb6ed06b5962dd07db735592271273d1481e7c"
     }
   ]
 }
