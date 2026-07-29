@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-29T07:10:50.295166+00:00",
+  "updated_at": "2026-07-29T10:02:32.284192+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -225,20 +225,20 @@
       "count": 1
     },
     {
-      "from": "int2",
-      "to": "h3",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "dog": 574711541,
-      "count": 96
-    },
-    {
       "from": "int1",
       "to": "h3",
       "from_label": "Bitget Deposit #1",
       "to_label": "Bitget hot",
       "dog": 328905299,
       "count": 59
+    },
+    {
+      "from": "int2",
+      "to": "h3",
+      "from_label": "Bitget Deposit #2",
+      "to_label": "Bitget hot",
+      "dog": 574711541,
+      "count": 96
     },
     {
       "from": "int3",
