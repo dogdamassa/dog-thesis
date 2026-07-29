@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-29T10:02:32.284192+00:00",
+  "updated_at": "2026-07-29T12:26:09.574157+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12261030683.78111,
+      "balance_dog": 12271848858.07628,
       "rank": 1,
-      "pct": 12.26,
+      "pct": 12.27,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2930600703.45622,
+      "balance_dog": 2921837479.16105,
       "rank": 3,
-      "pct": 2.93,
+      "pct": 2.92,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2049631025.46156,
+      "balance_dog": 2047576075.46156,
       "rank": 6,
       "pct": 2.05,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -138,6 +138,14 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "merlin2",
+      "from_label": "Vault #1",
+      "to_label": "Merlin Chain vault (2026)",
+      "dog": 2467302859,
+      "count": 19
+    },
+    {
+      "from": "cofre",
       "to": "bc1pxj0d5rx9glmxna55hudjezgr9juhydvf3k5fy6xjy29tylx7nrmsgs4ecl",
       "from_label": "Vault #1",
       "to_label": "bc1pxj0d...4ecl",
@@ -151,14 +159,6 @@
       "to_label": "Bitget Deposit #2",
       "dog": 308417593,
       "count": 30
-    },
-    {
-      "from": "cofre",
-      "to": "merlin2",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "dog": 2456484685,
-      "count": 18
     },
     {
       "from": "cofre",
