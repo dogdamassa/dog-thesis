@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-07-29T15:24:14.395574+00:00",
+  "updated_at": "2026-07-29T17:44:07.213446+00:00",
   "events": [
+    {
+      "id": "2d7dc019ffdb7909b33542d5abe2679026507cf3cb56af5046627663c3ed751c",
+      "ts": "2026-07-29T16:24:27+00:00",
+      "type": "cofre_in",
+      "amount_dog": 292399420.56232,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "2d7dc019ffdb7909b33542d5abe2679026507cf3cb56af5046627663c3ed751c"
+    },
     {
       "id": "bal-2026-07-29",
       "ts": "2026-07-29T15:24:14.395574+00:00",
@@ -767,19 +780,6 @@
       "to_id": "whale7",
       "community": null,
       "txid": "6cede28895e5dc0f8499dc9bcd01345b9ff3eb5c2ec7b131656a0a76773428d9"
-    },
-    {
-      "id": "ad9ca3679f98cb9eac6edd51e8bf0b22d05954b522dbdb0acd589fd6a7d899a9",
-      "ts": "2026-07-26T10:11:53+00:00",
-      "type": "exchange_out",
-      "amount_dog": 5626858.97,
-      "level": "info",
-      "from_label": "MEXC Wallet",
-      "to_label": "Whale7 shuttle",
-      "from_id": "mexc",
-      "to_id": "whale7",
-      "community": null,
-      "txid": "ad9ca3679f98cb9eac6edd51e8bf0b22d05954b522dbdb0acd589fd6a7d899a9"
     }
   ]
 }
