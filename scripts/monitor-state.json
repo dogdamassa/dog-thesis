@@ -5,15 +5,17 @@
     "Int#2": "2026-07-29T03:12:36+00:00",
     "Int#3": "2026-04-30T07:32:51+00:00"
   },
-  "whale_total_dog": 12271848858.07628,
+  "whale_total_dog": 12267274275.92328,
   "cold_last_block": {
-    "Whale #7": 958075
+    "Whale #7": 960112
   },
   "day": {
     "date": "2026-07-29",
     "alertas": []
   },
   "cold_seen_txids": {
-    "Whale #7": []
+    "Whale #7": [
+      "1b9f08ef4e63b6ae97336c742374967f0c1db5b7886c58e8cbdcd3afaa1b7471"
+    ]
   }
 }
