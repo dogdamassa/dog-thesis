@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-07-30T03:38:53.456093+00:00",
+  "updated_at": "2026-07-30T07:06:42.496364+00:00",
   "events": [
     {
       "id": "bal-2026-07-30",
-      "ts": "2026-07-30T03:38:53.456093+00:00",
+      "ts": "2026-07-30T07:06:42.496364+00:00",
       "type": "balance_change",
-      "amount_dog": 2231199.636220932,
+      "amount_dog": 2935636.0,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,32 @@
       "to_id": "",
       "sign": "+",
       "txid": null
+    },
+    {
+      "id": "f32c7dcf63837c5f4ac0503b5bfe00b9dd31036a0c626fb56e3a7a8a3cf3bccb",
+      "ts": "2026-07-30T06:56:58+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 9230466.94,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "f32c7dcf63837c5f4ac0503b5bfe00b9dd31036a0c626fb56e3a7a8a3cf3bccb"
+    },
+    {
+      "id": "15d15092d7184a136b3b90522802e2c73d1057195fd489c5a5879578cb76bff8",
+      "ts": "2026-07-30T05:12:45+00:00",
+      "type": "cofre_in",
+      "amount_dog": 3935636,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "15d15092d7184a136b3b90522802e2c73d1057195fd489c5a5879578cb76bff8"
     },
     {
       "id": "ce40896571ef642ceeb82a81ad156932ce349e4263135842de1f36cc9151894b",
@@ -754,32 +780,6 @@
       "to_id": "bc1qwg7lrz0h7f828n2gpweeg748k7kpyl3ls383gg",
       "community": null,
       "txid": "3c5e3d35a71e5758b474d09e2246235a3ca2ac49a8b97e669e03383d561e0d32"
-    },
-    {
-      "id": "bal-2026-07-26",
-      "ts": "2026-07-26T21:15:25.392496+00:00",
-      "type": "balance_change",
-      "amount_dog": 9063071.551000595,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
-    },
-    {
-      "id": "37a01af1923cde9f084db89fb641836d3e6f83bb5058dd3e1a0ea27d8e0e155e",
-      "ts": "2026-07-26T21:09:28+00:00",
-      "type": "exchange_out",
-      "amount_dog": 10146190.40599,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "bc1paffd...jan3",
-      "from_id": "h2",
-      "to_id": "bc1paffda07jykuyupyu5kmfrmfgzp0avu4w9ew42af0j5hajkdlwxns5vjan3",
-      "community": null,
-      "txid": "37a01af1923cde9f084db89fb641836d3e6f83bb5058dd3e1a0ea27d8e0e155e"
     }
   ]
 }
