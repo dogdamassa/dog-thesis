@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-07-31T13:10:21.888775+00:00",
+  "updated_at": "2026-07-31T15:33:36.161283+00:00",
   "events": [
+    {
+      "id": "bal-2026-07-31",
+      "ts": "2026-07-31T15:33:36.161283+00:00",
+      "type": "balance_change",
+      "amount_dog": 14923871.883590698,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
+    {
+      "id": "c60122a024241e78a31dd1c880fe8e13a74cca4c9330ad31f887c4d1f9aff8de",
+      "ts": "2026-07-31T13:34:21+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 12100029.16,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "c60122a024241e78a31dd1c880fe8e13a74cca4c9330ad31f887c4d1f9aff8de"
+    },
     {
       "id": "a034e06e38e0eb970c46a5a918274a9f4001063e156f54c50538931221b6d9c9",
       "ts": "2026-07-31T12:51:30+00:00",
@@ -754,32 +780,6 @@
       "to_id": "",
       "sign": "+",
       "txid": null
-    },
-    {
-      "id": "c5150a7dab2645f5cbb48f7b4a796cdb2c17ce313d9785e8bd58c15a6da7c8b5",
-      "ts": "2026-07-27T18:21:57+00:00",
-      "type": "cofre_in",
-      "amount_dog": 3855457.16099,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "c5150a7dab2645f5cbb48f7b4a796cdb2c17ce313d9785e8bd58c15a6da7c8b5"
-    },
-    {
-      "id": "d6733685ab26acbc5c7e6c9f01b53bb975e6de69ba9ca1eab4318f89c5cce539",
-      "ts": "2026-07-27T17:29:11+00:00",
-      "type": "exchange_out",
-      "amount_dog": 13840065.63759,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1p5gxw...khjl",
-      "from_id": "h3",
-      "to_id": "bc1p5gxweykqvrws5q2gskk7g8kcfa94hy85fy23s48stuk3hecj69asmukhjl",
-      "community": null,
-      "txid": "d6733685ab26acbc5c7e6c9f01b53bb975e6de69ba9ca1eab4318f89c5cce539"
     }
   ]
 }
