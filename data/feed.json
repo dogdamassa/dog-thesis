@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-07-31T17:58:46.028531+00:00",
+  "updated_at": "2026-07-31T19:58:47.279958+00:00",
   "events": [
+    {
+      "id": "47c48c4ad8eeae9f164aeda230aed310f9025caf74fbfe5394665e3b4e8232e1",
+      "ts": "2026-07-31T19:53:13+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 1225255.82863,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pfecpxd6r873slmmdtcss86nr72r6e82eycvgmq9v0anpt9xvn09qn3xrkt",
+      "community": null,
+      "txid": "47c48c4ad8eeae9f164aeda230aed310f9025caf74fbfe5394665e3b4e8232e1"
+    },
+    {
+      "id": "a6ce9328d7a1d02918c9a0bc7952ea9ef27707f0ee669c4d4ddaffd92a981371",
+      "ts": "2026-07-31T19:13:46+00:00",
+      "type": "cofre_in",
+      "amount_dog": 50000000,
+      "level": "info",
+      "from_label": "bc1p3avw...ltsh",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "a6ce9328d7a1d02918c9a0bc7952ea9ef27707f0ee669c4d4ddaffd92a981371"
+    },
     {
       "id": "bal-2026-07-31",
       "ts": "2026-07-31T17:58:46.028531+00:00",
@@ -754,32 +780,6 @@
       "to_id": "h3",
       "community": "Bitget",
       "txid": "a276418e80f368afdc54e566735c5c2f266e52b720bf5fe27c7158f140b2460f"
-    },
-    {
-      "id": "d79fa21c8a8f1c566c70565bd43ec4a307ca7371f662f9cff2db9c4108c810da",
-      "ts": "2026-07-27T22:34:13+00:00",
-      "type": "exchange_in",
-      "amount_dog": 6904111.2,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": "Bitget",
-      "txid": "d79fa21c8a8f1c566c70565bd43ec4a307ca7371f662f9cff2db9c4108c810da"
-    },
-    {
-      "id": "f296e072a90e2c4653cee3fec0f22242b9350bb2e50d08c93083be0973b57a81",
-      "ts": "2026-07-27T22:20:09+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 4175823.5,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #2",
-      "from_id": "cofre",
-      "to_id": "int2",
-      "community": "Bitget deposit, desk reuse",
-      "txid": "f296e072a90e2c4653cee3fec0f22242b9350bb2e50d08c93083be0973b57a81"
     }
   ]
 }
