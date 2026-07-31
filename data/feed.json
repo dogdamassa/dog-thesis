@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-07-31T19:58:47.279958+00:00",
+  "updated_at": "2026-07-31T21:33:31.716804+00:00",
   "events": [
+    {
+      "id": "bal-2026-07-31",
+      "ts": "2026-07-31T21:33:31.716804+00:00",
+      "type": "balance_change",
+      "amount_dog": 47782295.64400101,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "f1fb4c5a6222933bf5d04d35602544b56c9b63861e211900c0e3c8a54d923162",
+      "ts": "2026-07-31T20:52:39+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 1121335.76,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p85hvh59dfrelsjmwqj0nv3nycptawexrs4xfexknwsw9wdevrrxqlmdmyh",
+      "community": null,
+      "txid": "f1fb4c5a6222933bf5d04d35602544b56c9b63861e211900c0e3c8a54d923162"
+    },
     {
       "id": "47c48c4ad8eeae9f164aeda230aed310f9025caf74fbfe5394665e3b4e8232e1",
       "ts": "2026-07-31T19:53:13+00:00",
@@ -26,19 +52,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "a6ce9328d7a1d02918c9a0bc7952ea9ef27707f0ee669c4d4ddaffd92a981371"
-    },
-    {
-      "id": "bal-2026-07-31",
-      "ts": "2026-07-31T17:58:46.028531+00:00",
-      "type": "balance_change",
-      "amount_dog": 8399868.017999649,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
     },
     {
       "id": "b875d7ec5c711faaae1b5dc1cebbd5dc2db437946cb4f6b36189983de15f532e",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "064db5c0a64461bf9e6a88767383e535fc3d73ce1ede365da772bcb3275703ee"
-    },
-    {
-      "id": "a276418e80f368afdc54e566735c5c2f266e52b720bf5fe27c7158f140b2460f",
-      "ts": "2026-07-27T22:34:13+00:00",
-      "type": "exchange_in",
-      "amount_dog": 7842614.94,
-      "level": "watch",
-      "from_label": "Bitget Deposit #1",
-      "to_label": "Bitget hot",
-      "from_id": "int1",
-      "to_id": "h3",
-      "community": "Bitget",
-      "txid": "a276418e80f368afdc54e566735c5c2f266e52b720bf5fe27c7158f140b2460f"
     }
   ]
 }
