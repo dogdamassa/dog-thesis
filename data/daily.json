@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-08-01T15:32:33.600275+00:00",
+  "updated_at": "2026-08-01T17:28:27.491095+00:00",
   "date": "2026-08-01",
   "source": "dogdata.xyz",
   "cofre": {
     "rank": 1,
     "pct": 12.33,
-    "total_dog": 12328672295.90825,
-    "delta_dog": 0.0,
+    "total_dog": 12328357938.73518,
+    "delta_dog": -314357.1730709076,
     "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
   },
   "holders_total": 86024,
@@ -23,7 +23,7 @@
       "id": "h3",
       "label": "Bitget hot",
       "community": "Bitget",
-      "balance_dog": 2904314522.72182,
+      "balance_dog": 2908332856.27194,
       "rank": 3
     },
     {
