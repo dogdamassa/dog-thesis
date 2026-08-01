@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-01T19:39:59.768940+00:00",
+  "updated_at": "2026-08-01T21:13:20.314707+00:00",
   "events": [
+    {
+      "id": "1b0855499e7e05abe02c88aaa2011cdf8f96a39705bd080155a0e25fbd8f54b9",
+      "ts": "2026-08-01T20:20:27+00:00",
+      "type": "cofre_in",
+      "amount_dog": 3406019.031,
+      "level": "info",
+      "from_label": "bc1p454t...9sax",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "1b0855499e7e05abe02c88aaa2011cdf8f96a39705bd080155a0e25fbd8f54b9"
+    },
     {
       "id": "c0f4ba395d7228f88260bb4bea2a9f2aecdc8fd66fad8aa6af615bda3a4a1f09",
       "ts": "2026-08-01T13:04:16+00:00",
@@ -767,19 +780,6 @@
       "to_id": "bc1pzg6aed026czampasr6lp7q0eugeptmw789z4d0xm605sc0qm2cmqxf5vtk",
       "community": null,
       "txid": "5f068855dc9bb3e9687e20faaec8ab6f58e45612ba9df823e4a1d2c47b8cafae"
-    },
-    {
-      "id": "f5325ec06b2b6b9d2a8c2fb7f6c3b09ea15ff3d0c047c80d8e29f7a27cb48513",
-      "ts": "2026-07-28T12:22:35+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 139064380.14839,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "from_id": "cofre",
-      "to_id": "merlin2",
-      "community": "Merlin",
-      "txid": "f5325ec06b2b6b9d2a8c2fb7f6c3b09ea15ff3d0c047c80d8e29f7a27cb48513"
     }
   ]
 }
