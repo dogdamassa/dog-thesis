@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-01T21:13:20.314707+00:00",
+  "updated_at": "2026-08-01T22:16:58.165817+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-01",
+      "ts": "2026-08-01T22:16:58.165817+00:00",
+      "type": "balance_change",
+      "amount_dog": 5308438.717340469,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
     {
       "id": "1b0855499e7e05abe02c88aaa2011cdf8f96a39705bd080155a0e25fbd8f54b9",
       "ts": "2026-08-01T20:20:27+00:00",
@@ -26,19 +39,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "c0f4ba395d7228f88260bb4bea2a9f2aecdc8fd66fad8aa6af615bda3a4a1f09"
-    },
-    {
-      "id": "bal-2026-08-01",
-      "ts": "2026-08-01T09:29:12.529286+00:00",
-      "type": "balance_change",
-      "amount_dog": 2132412.5669994354,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     },
     {
       "id": "7ccee84679edab6fdf81841da03d17f3610d47264e44b6905d2c5e8cf5bf81a2",
