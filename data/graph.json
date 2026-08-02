@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-02T07:04:45.174223+00:00",
+  "updated_at": "2026-08-02T09:27:38.381770+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12337881074.96709,
+      "balance_dog": 12326204829.16709,
       "rank": 1,
-      "pct": 12.34,
+      "pct": 12.33,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2908332856.27194,
+      "balance_dog": 2921185402.07194,
       "rank": 3,
-      "pct": 2.91,
+      "pct": 2.92,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -225,20 +225,20 @@
       "count": 1
     },
     {
-      "from": "int1",
-      "to": "h3",
-      "from_label": "Bitget Deposit #1",
-      "to_label": "Bitget hot",
-      "dog": 332186126,
-      "count": 60
-    },
-    {
       "from": "int2",
       "to": "h3",
       "from_label": "Bitget Deposit #2",
       "to_label": "Bitget hot",
       "dog": 584283260,
       "count": 97
+    },
+    {
+      "from": "int1",
+      "to": "h3",
+      "from_label": "Bitget Deposit #1",
+      "to_label": "Bitget hot",
+      "dog": 332186126,
+      "count": 60
     },
     {
       "from": "int3",
