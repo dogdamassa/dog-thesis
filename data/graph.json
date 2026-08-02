@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-02T09:27:38.381770+00:00",
+  "updated_at": "2026-08-02T11:38:34.468471+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12326204829.16709,
+      "balance_dog": 12320306375.90909,
       "rank": 1,
-      "pct": 12.33,
+      "pct": 12.32,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2921185402.07194,
+      "balance_dog": 2910864067.62099,
       "rank": 3,
-      "pct": 2.92,
+      "pct": 2.91,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -205,7 +205,7 @@
       "to": "int2",
       "from_label": "Gate.io hot",
       "to_label": "Bitget Deposit #2",
-      "dog": 110057764,
+      "dog": 109929941,
       "count": 10
     },
     {
