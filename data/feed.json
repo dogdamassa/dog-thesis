@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-02T17:29:38.809997+00:00",
+  "updated_at": "2026-08-02T19:39:49.975399+00:00",
   "events": [
+    {
+      "id": "1b320f9c4ad7f4e6a0926176081a8d0f8aa543bfbd8751d9b6659d033bf41b04",
+      "ts": "2026-08-02T19:18:56+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 3000000,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "community": null,
+      "txid": "1b320f9c4ad7f4e6a0926176081a8d0f8aa543bfbd8751d9b6659d033bf41b04"
+    },
     {
       "id": "bal-2026-08-02",
       "ts": "2026-08-02T11:38:34.468471+00:00",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "7ea6a58aa19a298a40141a40de2758716d37d12103396f6fcdb220e7e337468f"
-    },
-    {
-      "id": "70c6d52441af3777f4434a7b384bdcd6c9ec8dce36182d546a3ac4c9a38a8b11",
-      "ts": "2026-07-29T09:17:53+00:00",
-      "type": "exchange_out",
-      "amount_dog": 15061305.59,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "Whale7 shuttle",
-      "from_id": "h3",
-      "to_id": "whale7",
-      "community": null,
-      "txid": "70c6d52441af3777f4434a7b384bdcd6c9ec8dce36182d546a3ac4c9a38a8b11"
     }
   ]
 }
