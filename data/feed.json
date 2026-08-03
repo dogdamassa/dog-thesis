@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-03T15:22:04.529766+00:00",
+  "updated_at": "2026-08-03T17:24:36.474089+00:00",
   "events": [
+    {
+      "id": "d86b07b062d52b0bd77587fe9b25699076610b4ae6a3aa8f4f77dd49bcc8a499",
+      "ts": "2026-08-03T16:09:21+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 12166037.91057,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "d86b07b062d52b0bd77587fe9b25699076610b4ae6a3aa8f4f77dd49bcc8a499"
+    },
+    {
+      "id": "f17db0f5d54e379122f4f5828f59c76a5a863e1d68dd133dd686c47c50583872",
+      "ts": "2026-08-03T16:09:21+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 18200203.921,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "community": null,
+      "txid": "f17db0f5d54e379122f4f5828f59c76a5a863e1d68dd133dd686c47c50583872"
+    },
     {
       "id": "bal-2026-08-03",
       "ts": "2026-08-03T15:22:04.529766+00:00",
@@ -754,32 +780,6 @@
       "to_id": "whale23",
       "community": null,
       "txid": "f32c7dcf63837c5f4ac0503b5bfe00b9dd31036a0c626fb56e3a7a8a3cf3bccb"
-    },
-    {
-      "id": "15d15092d7184a136b3b90522802e2c73d1057195fd489c5a5879578cb76bff8",
-      "ts": "2026-07-30T05:12:45+00:00",
-      "type": "cofre_in",
-      "amount_dog": 3935636,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "15d15092d7184a136b3b90522802e2c73d1057195fd489c5a5879578cb76bff8"
-    },
-    {
-      "id": "ce40896571ef642ceeb82a81ad156932ce349e4263135842de1f36cc9151894b",
-      "ts": "2026-07-30T01:27:58+00:00",
-      "type": "exchange_out",
-      "amount_dog": 11646458.93177,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "Whale23",
-      "from_id": "h3",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "ce40896571ef642ceeb82a81ad156932ce349e4263135842de1f36cc9151894b"
     }
   ]
 }
