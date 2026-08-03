@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-08-02T23:24:47.274074+00:00",
+  "updated_at": "2026-08-03T04:03:37.326755+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-03",
+      "ts": "2026-08-03T04:03:37.326755+00:00",
+      "type": "balance_change",
+      "amount_dog": 4531696.295059204,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
+    {
+      "id": "9932cb274deefb163542e33adfa00d0689d53dbf033bbee23a4ac9096c47564b",
+      "ts": "2026-08-03T03:33:22+00:00",
+      "type": "cofre_in",
+      "amount_dog": 18200203.921,
+      "level": "info",
+      "from_label": "bc1pcn9s...whft",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "9932cb274deefb163542e33adfa00d0689d53dbf033bbee23a4ac9096c47564b"
+    },
+    {
+      "id": "2457c61c458fc6db43289b52fbbda136ac21f7c2bb6e37e44e7e0d27a9f763ad",
+      "ts": "2026-08-03T02:11:00+00:00",
+      "type": "exchange_in",
+      "amount_dog": 5000000,
+      "level": "watch",
+      "from_label": "bc1p22lv...fmc3",
+      "to_label": "Bitget hot",
+      "from_id": "bc1p22lvcnq8q9ped2stwegtgzx5akvykrqkpd9jgh2zu5er7hly88zqslfmc3",
+      "to_id": "h3",
+      "community": "Bitget",
+      "txid": "2457c61c458fc6db43289b52fbbda136ac21f7c2bb6e37e44e7e0d27a9f763ad"
+    },
+    {
+      "id": "d79feeb3a3a42d120e8f59a2d61fd3f19c830ccb2695e7e9f728fd49a8a68740",
+      "ts": "2026-08-03T01:46:10+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 9410418.39,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p22lvcnq8q9ped2stwegtgzx5akvykrqkpd9jgh2zu5er7hly88zqslfmc3",
+      "community": null,
+      "txid": "d79feeb3a3a42d120e8f59a2d61fd3f19c830ccb2695e7e9f728fd49a8a68740"
+    },
     {
       "id": "bal-2026-08-02",
       "ts": "2026-08-02T21:14:10.065135+00:00",
@@ -728,58 +780,6 @@
       "to_id": "mm2",
       "community": null,
       "txid": "4dfcd5d01253a436c59c117e3ac005f014b768532717d4af5e9eb8f20046303f"
-    },
-    {
-      "id": "2d7dc019ffdb7909b33542d5abe2679026507cf3cb56af5046627663c3ed751c",
-      "ts": "2026-07-29T16:24:27+00:00",
-      "type": "cofre_in",
-      "amount_dog": 292399420.56232,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "2d7dc019ffdb7909b33542d5abe2679026507cf3cb56af5046627663c3ed751c"
-    },
-    {
-      "id": "5c008793803172ae72b2c6f9481f1d412fb3d5e81dc14785ab2e229f630ce1b2",
-      "ts": "2026-07-29T12:17:19+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 49094646.01766,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1ps48lkwxntjmyg5vluegmasxuhxszhuglwjesuejx7c45zt96ka3ssrsxgh",
-      "community": null,
-      "txid": "5c008793803172ae72b2c6f9481f1d412fb3d5e81dc14785ab2e229f630ce1b2"
-    },
-    {
-      "id": "6bcb3ed39baa9f38aac8808c84ad7e3fc783ddfeeadfdfdc87b33048b39db8a2",
-      "ts": "2026-07-29T12:09:15+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 10818174.29517,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "from_id": "cofre",
-      "to_id": "merlin2",
-      "community": "Merlin",
-      "txid": "6bcb3ed39baa9f38aac8808c84ad7e3fc783ddfeeadfdfdc87b33048b39db8a2"
-    },
-    {
-      "id": "7ea6a58aa19a298a40141a40de2758716d37d12103396f6fcdb220e7e337468f",
-      "ts": "2026-07-29T10:00:39+00:00",
-      "type": "cofre_in",
-      "amount_dog": 10818174.29517,
-      "level": "info",
-      "from_label": "Whale7 shuttle",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "7ea6a58aa19a298a40141a40de2758716d37d12103396f6fcdb220e7e337468f"
     }
   ]
 }
