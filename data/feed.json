@@ -1,18 +1,31 @@
 {
-  "updated_at": "2026-08-03T04:03:37.326755+00:00",
+  "updated_at": "2026-08-03T07:53:19.593841+00:00",
   "events": [
     {
       "id": "bal-2026-08-03",
-      "ts": "2026-08-03T04:03:37.326755+00:00",
+      "ts": "2026-08-03T07:53:19.593841+00:00",
       "type": "balance_change",
-      "amount_dog": 4531696.295059204,
+      "amount_dog": 19600000.0,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "-",
+      "sign": "+",
       "txid": null
+    },
+    {
+      "id": "20176430577f11e14b99d9d2e8e87d006a7669e8e9ad37880f062847a315a789",
+      "ts": "2026-08-03T07:38:11+00:00",
+      "type": "exchange_out",
+      "amount_dog": 7061325.8,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "Whale7 shuttle",
+      "from_id": "h3",
+      "to_id": "whale7",
+      "community": null,
+      "txid": "20176430577f11e14b99d9d2e8e87d006a7669e8e9ad37880f062847a315a789"
     },
     {
       "id": "9932cb274deefb163542e33adfa00d0689d53dbf033bbee23a4ac9096c47564b",
@@ -767,19 +780,6 @@
       "to_id": "mm2",
       "community": null,
       "txid": "ab7a0d7846c927719eaad20f5cecfd0422bfff79a410bfab25c623cf5d5927c6"
-    },
-    {
-      "id": "4dfcd5d01253a436c59c117e3ac005f014b768532717d4af5e9eb8f20046303f",
-      "ts": "2026-07-29T18:48:49+00:00",
-      "type": "exchange_out",
-      "amount_dog": 245210583.78943,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "MM2 shuttle",
-      "from_id": "h2",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "4dfcd5d01253a436c59c117e3ac005f014b768532717d4af5e9eb8f20046303f"
     }
   ]
 }
