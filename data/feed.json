@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-04T03:44:31.780533+00:00",
+  "updated_at": "2026-08-04T07:05:36.832550+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-04",
+      "ts": "2026-08-04T07:05:36.832550+00:00",
+      "type": "balance_change",
+      "amount_dog": 39892916.34700966,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
     {
       "id": "bal-2026-08-03",
       "ts": "2026-08-03T21:34:57.530321+00:00",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "9bd7e317711980465f13e23fee52ada0727f8d95a420fb728a63bc9428642e98"
-    },
-    {
-      "id": "dec042cfba78a37ae99164187b4d58ae1bb1a3f7220d5a2637b923362169eff0",
-      "ts": "2026-07-30T08:29:14+00:00",
-      "type": "exchange_out",
-      "amount_dog": 235980116.84943,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "MM2 shuttle",
-      "from_id": "h2",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "dec042cfba78a37ae99164187b4d58ae1bb1a3f7220d5a2637b923362169eff0"
     }
   ]
 }
