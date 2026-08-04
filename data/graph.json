@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-04T17:09:39.969137+00:00",
+  "updated_at": "2026-08-04T19:00:17.579940+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12294927279.40747,
+      "balance_dog": 12302067272.84747,
       "rank": 1,
-      "pct": 12.29,
+      "pct": 12.3,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2876600717.22844,
+      "balance_dog": 2876587909.04602,
       "rank": 3,
       "pct": 2.88,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -154,19 +154,19 @@
     },
     {
       "from": "cofre",
-      "to": "int2",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #2",
-      "dog": 318820359,
-      "count": 31
-    },
-    {
-      "from": "cofre",
       "to": "int1",
       "from_label": "Vault #1",
       "to_label": "Bitget Deposit #1",
       "dog": 595635075,
       "count": 20
+    },
+    {
+      "from": "cofre",
+      "to": "int2",
+      "from_label": "Vault #1",
+      "to_label": "Bitget Deposit #2",
+      "dog": 318820359,
+      "count": 31
     },
     {
       "from": "cofre",
