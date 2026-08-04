@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-04T12:22:58.064014+00:00",
+  "updated_at": "2026-08-04T15:00:54.724383+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12279648755.66047,
+      "balance_dog": 12294927279.40747,
       "rank": 1,
-      "pct": 12.28,
+      "pct": 12.29,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3356001138.00753,
+      "balance_dog": 3356900604.71897,
       "rank": 2,
       "pct": 3.36,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2886928824.82772,
+      "balance_dog": 2876600717.22844,
       "rank": 3,
-      "pct": 2.89,
+      "pct": 2.88,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2046310977.04145,
+      "balance_dog": 2046246824.18145,
       "rank": 6,
       "pct": 2.05,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
