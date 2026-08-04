@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-03T23:32:19.155773+00:00",
+  "updated_at": "2026-08-04T03:44:31.780533+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2052549779.49145,
+      "balance_dog": 2049933140.49145,
       "rank": 6,
       "pct": 2.05,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -225,20 +225,20 @@
       "count": 1
     },
     {
-      "from": "int2",
-      "to": "h3",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "dog": 584283260,
-      "count": 97
-    },
-    {
       "from": "int1",
       "to": "h3",
       "from_label": "Bitget Deposit #1",
       "to_label": "Bitget hot",
       "dog": 332186126,
       "count": 60
+    },
+    {
+      "from": "int2",
+      "to": "h3",
+      "from_label": "Bitget Deposit #2",
+      "to_label": "Bitget hot",
+      "dog": 584283260,
+      "count": 97
     },
     {
       "from": "int3",
