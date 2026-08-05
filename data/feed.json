@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-05T17:59:35.217000+00:00",
+  "updated_at": "2026-08-05T20:00:39.356926+00:00",
   "events": [
+    {
+      "id": "95907bb7702626636e163b613c2ddf89e93fed6a48cc0e9ebbced6fc5d120e05",
+      "ts": "2026-08-05T19:24:33+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 15083305.221,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "95907bb7702626636e163b613c2ddf89e93fed6a48cc0e9ebbced6fc5d120e05"
+    },
+    {
+      "id": "9d8ca32fe619d0af4c57674b48462c8a47117379ace55b2fef2a199bb4687c0a",
+      "ts": "2026-08-05T19:03:29+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 5756837.67862,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1q06c7e6x70asxms4m8j3sn3ze4ddmayv4w4w355",
+      "community": null,
+      "txid": "9d8ca32fe619d0af4c57674b48462c8a47117379ace55b2fef2a199bb4687c0a"
+    },
     {
       "id": "bal-2026-08-05",
       "ts": "2026-08-05T15:34:03.399926+00:00",
@@ -754,32 +780,6 @@
       "to_id": "whale23",
       "community": null,
       "txid": "ed3215983a2183dca4c419b959780abb17bcfd3c2472212a35c9fb13ad319386"
-    },
-    {
-      "id": "18841ae2fa154ebc34a73554ea950fb65f98f728a48085a3b26d6abc38ca628d",
-      "ts": "2026-07-31T16:33:26+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 1107822.03441,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1p2834u7gnn936mses6k624nv5r3lrj0w9rrnlmxsn49q55ksdek0qgaucgq",
-      "community": null,
-      "txid": "18841ae2fa154ebc34a73554ea950fb65f98f728a48085a3b26d6abc38ca628d"
-    },
-    {
-      "id": "62f4635d20e49ed74aa9ed124fe335aca10e176af932e57315359de214e245bd",
-      "ts": "2026-07-31T15:48:33+00:00",
-      "type": "cofre_in",
-      "amount_dog": 9410418.39,
-      "level": "info",
-      "from_label": "MM2 shuttle",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "62f4635d20e49ed74aa9ed124fe335aca10e176af932e57315359de214e245bd"
     }
   ]
 }
