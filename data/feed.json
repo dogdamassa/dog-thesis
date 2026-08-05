@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-05T10:55:55.215136+00:00",
+  "updated_at": "2026-08-05T13:07:43.847759+00:00",
   "events": [
+    {
+      "id": "d863961f97babb8677f7dab04d06990dcf8c74fe2e942fc3c9ed92c7d3af74cd",
+      "ts": "2026-08-05T12:19:42+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 1176300,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p9kqmqpk0l0sj9z0cn89kq20x3jcjukuc8vwvyuj5xpr9a6zx333s787a7q",
+      "community": null,
+      "txid": "d863961f97babb8677f7dab04d06990dcf8c74fe2e942fc3c9ed92c7d3af74cd"
+    },
+    {
+      "id": "695b2a04b68bf1d085e13b7a3f5632d2a568176ab3f77debf3f4011557978a41",
+      "ts": "2026-08-05T12:16:56+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 6791443.86,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Merlin Chain vault (2026)",
+      "from_id": "cofre",
+      "to_id": "merlin2",
+      "community": "Merlin",
+      "txid": "695b2a04b68bf1d085e13b7a3f5632d2a568176ab3f77debf3f4011557978a41"
+    },
     {
       "id": "bal-2026-08-05",
       "ts": "2026-08-05T10:55:55.215136+00:00",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "62f4635d20e49ed74aa9ed124fe335aca10e176af932e57315359de214e245bd"
-    },
-    {
-      "id": "c60122a024241e78a31dd1c880fe8e13a74cca4c9330ad31f887c4d1f9aff8de",
-      "ts": "2026-07-31T13:34:21+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 12100029.16,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "c60122a024241e78a31dd1c880fe8e13a74cca4c9330ad31f887c4d1f9aff8de"
-    },
-    {
-      "id": "a034e06e38e0eb970c46a5a918274a9f4001063e156f54c50538931221b6d9c9",
-      "ts": "2026-07-31T12:51:30+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 5976049.46063,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "from_id": "cofre",
-      "to_id": "merlin2",
-      "community": "Merlin",
-      "txid": "a034e06e38e0eb970c46a5a918274a9f4001063e156f54c50538931221b6d9c9"
     }
   ]
 }
