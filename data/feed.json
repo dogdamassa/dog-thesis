@@ -1,6 +1,71 @@
 {
-  "updated_at": "2026-08-06T12:23:11.488264+00:00",
+  "updated_at": "2026-08-06T14:53:14.497893+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-06",
+      "ts": "2026-08-06T14:53:14.497893+00:00",
+      "type": "balance_change",
+      "amount_dog": 1501346.6000003815,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
+    {
+      "id": "5f927015bb6f7b9c8ed92a1c78dc39b463a1eaa07e980c21077ecf03908b8fb9",
+      "ts": "2026-08-06T14:48:10+00:00",
+      "type": "exchange_in",
+      "amount_dog": 6379953.9,
+      "level": "watch",
+      "from_label": "Bitget Deposit #2",
+      "to_label": "Bitget hot",
+      "from_id": "int2",
+      "to_id": "h3",
+      "community": "Bitget",
+      "txid": "5f927015bb6f7b9c8ed92a1c78dc39b463a1eaa07e980c21077ecf03908b8fb9"
+    },
+    {
+      "id": "1511b207fe8a150e9a22fdb7d840c824cd4525bac4689412fd70bb62c073cee3",
+      "ts": "2026-08-06T14:48:10+00:00",
+      "type": "relay_flow",
+      "amount_dog": 4234464.9,
+      "level": "watch",
+      "from_label": "Bitget Deposit #1",
+      "to_label": "Bitget hot",
+      "from_id": "int1",
+      "to_id": "h3",
+      "community": null,
+      "txid": "1511b207fe8a150e9a22fdb7d840c824cd4525bac4689412fd70bb62c073cee3"
+    },
+    {
+      "id": "9570b26202aae513fb99cece0dbee929391507b17a8d61051ef8e6d16224562a",
+      "ts": "2026-08-06T14:40:41+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 4998950,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Bitget Deposit #1",
+      "from_id": "cofre",
+      "to_id": "int1",
+      "community": "Bitget deposit, desk reuse",
+      "txid": "9570b26202aae513fb99cece0dbee929391507b17a8d61051ef8e6d16224562a"
+    },
+    {
+      "id": "7f93165b0365345150af19f7f2068588488790922d216023f21e438789706b09",
+      "ts": "2026-08-06T14:40:41+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 20459925.80487,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Bitget Deposit #2",
+      "from_id": "cofre",
+      "to_id": "int2",
+      "community": "Bitget deposit, desk reuse",
+      "txid": "7f93165b0365345150af19f7f2068588488790922d216023f21e438789706b09"
+    },
     {
       "id": "b543737282a5b9816f9377c9581090115668f97527a91f8f4e3632aeac4b5571",
       "ts": "2026-08-06T12:06:00+00:00",
@@ -39,19 +104,6 @@
       "to_id": "bc1qtvw66607sa9tf9z37new29xqaxajcrd64f5u2m",
       "community": null,
       "txid": "01513105b801c5c73e4a9276477c16b9e13dafdf9a2ecf3e31e5e5a783bb523a"
-    },
-    {
-      "id": "bal-2026-08-06",
-      "ts": "2026-08-06T10:04:22.489652+00:00",
-      "type": "balance_change",
-      "amount_dog": 2541491.8000011444,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     },
     {
       "id": "57dcfbea97bd00a94b1529b7e8b607f8d1346ad0b8da0460c6f6a081c81d469a",
@@ -728,58 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "c0f4ba395d7228f88260bb4bea2a9f2aecdc8fd66fad8aa6af615bda3a4a1f09"
-    },
-    {
-      "id": "7ccee84679edab6fdf81841da03d17f3610d47264e44b6905d2c5e8cf5bf81a2",
-      "ts": "2026-08-01T08:10:46+00:00",
-      "type": "exchange_out",
-      "amount_dog": 257007882.33021,
-      "level": "info",
-      "from_label": "MEXC Wallet",
-      "to_label": "unmapped wallet",
-      "from_id": "mexc",
-      "to_id": "",
-      "community": null,
-      "txid": "7ccee84679edab6fdf81841da03d17f3610d47264e44b6905d2c5e8cf5bf81a2"
-    },
-    {
-      "id": "d2f13e49487fbd28448983fe03edb9594c021fe44b73b767884568129bf419dd",
-      "ts": "2026-08-01T06:37:38+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2231199.63622,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1p43yvxugqyhknr60mpl4hxup9c8zw9wsnn2xhnrq6p99td0v6an3qvu7hsz",
-      "community": null,
-      "txid": "d2f13e49487fbd28448983fe03edb9594c021fe44b73b767884568129bf419dd"
-    },
-    {
-      "id": "ba29647abbe4322778752995df53e042d21a31aedd455b365179a150ef1c607a",
-      "ts": "2026-08-01T01:44:19+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2197390.6114,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1p8qh7q6rj3wukfxkw22mazga08g8vzmt67n3rlqtkkfnx6kmnl7eqkywk84",
-      "community": null,
-      "txid": "ba29647abbe4322778752995df53e042d21a31aedd455b365179a150ef1c607a"
-    },
-    {
-      "id": "871dd27ac2ccd1d81a4a65705896566dee22448164c6d85145c181969c68c5fc",
-      "ts": "2026-07-31T23:47:03+00:00",
-      "type": "cofre_in",
-      "amount_dog": 3000000,
-      "level": "info",
-      "from_label": "bc1p2p9k...s04k",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "871dd27ac2ccd1d81a4a65705896566dee22448164c6d85145c181969c68c5fc"
     }
   ]
 }
