@@ -4,19 +4,12 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
-## 2026-08-07 · contexto: pass-through suspeito de 612M DOG em 31/07
+## 2026-08-07
 
-> Fonte: dogdata.xyz (dado fresco, API acessível na máquina local). Contexto adicional: `data/feed.json` · 31/07–01/08.
-
-- **Baleia (#1):** 12.37% do supply (Δ -0.9M DOG).
+- **Baleia (#1):** 12.36% do supply (Δ -2.2M DOG).
 - Saques novos da Binance → cluster: nenhum hoje.
 - A baleia não depositou em exchange (segue acumulando/parada).
-- **Contexto — eventos suspeitos do último dado local (2026-07-31):**
-  - 12:51 UTC — **Vault #1 → fresh wallet: 320.0M DOG** (pass-through suspeito)
-  - 17:07 UTC — **Vault #1 → fresh wallet: 292.4M DOG** (pass-through suspeito)
-  - 15:48 UTC — **MM2 shuttle → Vault #1: 9.4M DOG** (shuttle Bitget-conectado reciclando de volta)
-- **Contexto — 2026-08-01:** MEXC Wallet → unmapped wallet: **257.0M DOG** (grande saída da MEXC).
-- 🔎 **Leitura:** sem movimento novo relevante hoje (baleia -0.9M DOG, estável). Em perspectiva, na janela 31/07–01/08 houve **movimento suspeito**: a baleia enviou 612M+ DOG para fresh wallets; o MM2 shuttle (Bitget-conectado) reciclou 9.4M de volta — padrão Bitget ↔ shuttle ↔ baleia. A MEXC despejou 257M DOG para wallet não mapeada. A Binance não aparece como counterparty direto dos relays, mas **pode estar envolvida** — o ciclo shuttle→baleia parte da estrutura que historicamente ela alimentou. Sem acusação de crime.
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
 
 ## 2026-08-06
 
