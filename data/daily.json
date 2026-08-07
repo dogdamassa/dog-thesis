@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-07T19:25:43.459529+00:00",
+  "updated_at": "2026-08-07T21:05:08.114654+00:00",
   "date": "2026-08-07",
   "source": "dogdata.xyz",
   "cofre": {
@@ -10,7 +10,7 @@
     "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
   },
   "holders_total": 86030,
-  "holders_delta": -2,
+  "holders_delta": 0,
   "exchanges": [
     {
       "id": "h2",
@@ -23,14 +23,14 @@
       "id": "h3",
       "label": "Bitget hot",
       "community": "Bitget",
-      "balance_dog": 2890941165.66168,
+      "balance_dog": 2880797156.28184,
       "rank": 3
     },
     {
       "id": "mexc",
       "label": "MEXC Wallet",
       "community": "MEXC",
-      "balance_dog": 2037668338.48034,
+      "balance_dog": 2036843696.13034,
       "rank": 6
     }
   ],
