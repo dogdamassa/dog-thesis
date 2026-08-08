@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-08T13:23:19.842850+00:00",
+  "updated_at": "2026-08-08T14:54:49.522896+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-08",
+      "ts": "2026-08-08T14:54:49.522896+00:00",
+      "type": "balance_change",
+      "amount_dog": 15518481.633020401,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "1cc4c824947ac0794f23775813e4cebc8f23ea2a5497bc876e9dc990aec61b26",
+      "ts": "2026-08-08T13:45:24+00:00",
+      "type": "cofre_in",
+      "amount_dog": 33672991.17302,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "1cc4c824947ac0794f23775813e4cebc8f23ea2a5497bc876e9dc990aec61b26"
+    },
     {
       "id": "c78db26986012f2ba8cb62b0d1428eb8dbf456c5d81700ecac35e6c0fda93549",
       "ts": "2026-08-08T13:10:57+00:00",
@@ -754,32 +780,6 @@
       "to_id": "h3",
       "community": "Bitget",
       "txid": "5f927015bb6f7b9c8ed92a1c78dc39b463a1eaa07e980c21077ecf03908b8fb9"
-    },
-    {
-      "id": "1511b207fe8a150e9a22fdb7d840c824cd4525bac4689412fd70bb62c073cee3",
-      "ts": "2026-08-06T14:48:10+00:00",
-      "type": "relay_flow",
-      "amount_dog": 4234464.9,
-      "level": "watch",
-      "from_label": "Bitget Deposit #1",
-      "to_label": "Bitget hot",
-      "from_id": "int1",
-      "to_id": "h3",
-      "community": null,
-      "txid": "1511b207fe8a150e9a22fdb7d840c824cd4525bac4689412fd70bb62c073cee3"
-    },
-    {
-      "id": "9570b26202aae513fb99cece0dbee929391507b17a8d61051ef8e6d16224562a",
-      "ts": "2026-08-06T14:40:41+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 4998950,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #1",
-      "from_id": "cofre",
-      "to_id": "int1",
-      "community": "Bitget deposit, desk reuse",
-      "txid": "9570b26202aae513fb99cece0dbee929391507b17a8d61051ef8e6d16224562a"
     }
   ]
 }
