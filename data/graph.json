@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-08T11:49:33.065367+00:00",
+  "updated_at": "2026-08-08T13:23:19.842850+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -141,8 +141,8 @@
       "to": "int2",
       "from_label": "Vault #1",
       "to_label": "Bitget Deposit #2",
-      "dog": 321683074,
-      "count": 34
+      "dog": 324067231,
+      "count": 35
     },
     {
       "from": "cofre",
@@ -221,8 +221,8 @@
       "to": "h3",
       "from_label": "Bitget Deposit #2",
       "to_label": "Bitget hot",
-      "dog": 626729644,
-      "count": 103
+      "dog": 628863043,
+      "count": 104
     },
     {
       "from": "int1",
