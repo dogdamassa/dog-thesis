@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-08T15:52:01.785397+00:00",
+  "updated_at": "2026-08-08T16:57:46.328484+00:00",
   "events": [
+    {
+      "id": "e8fbec3c5274406f912c1552c03e19ae5bd41c3254e9d4fca41c97bcf8edce9b",
+      "ts": "2026-08-08T16:41:41+00:00",
+      "type": "cofre_in",
+      "amount_dog": 8145721.22,
+      "level": "info",
+      "from_label": "MM2 shuttle",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "e8fbec3c5274406f912c1552c03e19ae5bd41c3254e9d4fca41c97bcf8edce9b"
+    },
     {
       "id": "bal-2026-08-08",
       "ts": "2026-08-08T14:54:49.522896+00:00",
@@ -767,19 +780,6 @@
       "to_id": "",
       "sign": "-",
       "txid": null
-    },
-    {
-      "id": "5f927015bb6f7b9c8ed92a1c78dc39b463a1eaa07e980c21077ecf03908b8fb9",
-      "ts": "2026-08-06T14:48:10+00:00",
-      "type": "exchange_in",
-      "amount_dog": 6379953.9,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": "Bitget",
-      "txid": "5f927015bb6f7b9c8ed92a1c78dc39b463a1eaa07e980c21077ecf03908b8fb9"
     }
   ]
 }
