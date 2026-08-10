@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-10T22:03:17.230580+00:00",
+  "updated_at": "2026-08-10T23:01:51.181645+00:00",
   "events": [
+    {
+      "id": "f3584b680cfc7561757c40614b4946f84f91908800f9914b4d958146688b5a01",
+      "ts": "2026-08-10T22:31:08+00:00",
+      "type": "cofre_in",
+      "amount_dog": 1634717,
+      "level": "info",
+      "from_label": "Whale7 shuttle",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "f3584b680cfc7561757c40614b4946f84f91908800f9914b4d958146688b5a01"
+    },
     {
       "id": "bal-2026-08-10",
       "ts": "2026-08-10T22:03:17.230580+00:00",
@@ -767,19 +780,6 @@
       "to_id": "h3",
       "community": "Bitget",
       "txid": "65fa1f3c87fdd6545afb08a19b0e24faa2b68d8a353e6523c04ede7057889b17"
-    },
-    {
-      "id": "06f18be09c6c326974422458addf7fe3e55608704e8174e517b26b5ece9b5bae",
-      "ts": "2026-08-09T17:14:04+00:00",
-      "type": "exchange_in",
-      "amount_dog": 9090653.7,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": "Bitget",
-      "txid": "06f18be09c6c326974422458addf7fe3e55608704e8174e517b26b5ece9b5bae"
     }
   ]
 }
