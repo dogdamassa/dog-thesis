@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-08-10T21:07:30.540773+00:00",
+  "updated_at": "2026-08-10T22:03:17.230580+00:00",
   "events": [
     {
       "id": "bal-2026-08-10",
-      "ts": "2026-08-10T21:07:30.540773+00:00",
+      "ts": "2026-08-10T22:03:17.230580+00:00",
       "type": "balance_change",
-      "amount_dog": 14872485.600000381,
+      "amount_dog": 10041496.800001144,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,19 @@
       "to_id": "",
       "sign": "-",
       "txid": null
+    },
+    {
+      "id": "654b11c5f52ff9eca6d7c8ad653ea0b8cab4c70f3c49cc39a60fabb6c246667e",
+      "ts": "2026-08-10T21:11:41+00:00",
+      "type": "exchange_out",
+      "amount_dog": 9022348.38814,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "Whale23",
+      "from_id": "h3",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "654b11c5f52ff9eca6d7c8ad653ea0b8cab4c70f3c49cc39a60fabb6c246667e"
     },
     {
       "id": "6485ae8c9b1c08b7569d29b6e5c1ea86aeebd670030073bca90a6e1bfb993a5b",
@@ -767,19 +780,6 @@
       "to_id": "h3",
       "community": "Bitget",
       "txid": "06f18be09c6c326974422458addf7fe3e55608704e8174e517b26b5ece9b5bae"
-    },
-    {
-      "id": "ead4cfb1939d40195822c3c9744364e50534a2146f2bfaa2edb55a133a30e1a4",
-      "ts": "2026-08-09T17:14:04+00:00",
-      "type": "relay_flow",
-      "amount_dog": 1714147.17,
-      "level": "watch",
-      "from_label": "Bitget Deposit #1",
-      "to_label": "Bitget hot",
-      "from_id": "int1",
-      "to_id": "h3",
-      "community": null,
-      "txid": "ead4cfb1939d40195822c3c9744364e50534a2146f2bfaa2edb55a133a30e1a4"
     }
   ]
 }
