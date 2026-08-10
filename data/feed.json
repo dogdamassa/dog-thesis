@@ -1,18 +1,44 @@
 {
-  "updated_at": "2026-08-10T12:05:17.158237+00:00",
+  "updated_at": "2026-08-10T13:50:25.537346+00:00",
   "events": [
     {
       "id": "bal-2026-08-10",
-      "ts": "2026-08-10T12:05:17.158237+00:00",
+      "ts": "2026-08-10T13:50:25.537346+00:00",
       "type": "balance_change",
-      "amount_dog": 5981860.775390625,
+      "amount_dog": 27213828.1230011,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "+",
+      "sign": "-",
       "txid": null
+    },
+    {
+      "id": "174e0f487ebe4e383591eedca25762e918bf3d32923c4ec9e30cd2828521d7b7",
+      "ts": "2026-08-10T12:55:58+00:00",
+      "type": "exchange_out",
+      "amount_dog": 8646101.90686,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "Whale23",
+      "from_id": "h3",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "174e0f487ebe4e383591eedca25762e918bf3d32923c4ec9e30cd2828521d7b7"
+    },
+    {
+      "id": "b0813c5e89a511d3ebb6479068e43294cf9d40ee87f72057fdbe25868fef1f41",
+      "ts": "2026-08-10T12:17:49+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 27179313.79984,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Merlin Chain vault (2026)",
+      "from_id": "cofre",
+      "to_id": "merlin2",
+      "community": "Merlin",
+      "txid": "b0813c5e89a511d3ebb6479068e43294cf9d40ee87f72057fdbe25868fef1f41"
     },
     {
       "id": "fd127a7098710c90bd561b92f80108e1d6fa56e7954c7dc4014c50e7944314df",
@@ -754,32 +780,6 @@
       "to_id": "whale23",
       "community": null,
       "txid": "0198dec56debfae6991ff76c9200dad8ed00bfef1c6ece3fea7a7c4cfd6573ae"
-    },
-    {
-      "id": "7e0f786fcfcee66dd771b2b4cf12870d840e9a5fbaa722543ad7d5cbc12651bc",
-      "ts": "2026-08-08T18:07:14+00:00",
-      "type": "cofre_in",
-      "amount_dog": 10098500.06,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "7e0f786fcfcee66dd771b2b4cf12870d840e9a5fbaa722543ad7d5cbc12651bc"
-    },
-    {
-      "id": "e8fbec3c5274406f912c1552c03e19ae5bd41c3254e9d4fca41c97bcf8edce9b",
-      "ts": "2026-08-08T16:41:41+00:00",
-      "type": "cofre_in",
-      "amount_dog": 8145721.22,
-      "level": "info",
-      "from_label": "MM2 shuttle",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "e8fbec3c5274406f912c1552c03e19ae5bd41c3254e9d4fca41c97bcf8edce9b"
     }
   ]
 }
