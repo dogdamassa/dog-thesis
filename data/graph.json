@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-10T15:27:23.925781+00:00",
+  "updated_at": "2026-08-10T17:14:35.884427+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,7 +8,7 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12400332292.40708,
+      "balance_dog": 12400093085.44008,
       "rank": 1,
       "pct": 12.4,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
@@ -19,9 +19,9 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3287247801.45033,
+      "balance_dog": 3273926543.59033,
       "rank": 2,
-      "pct": 3.29,
+      "pct": 3.27,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
     },
     {
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2886018962.45618,
+      "balance_dog": 2882499103.79947,
       "rank": 3,
-      "pct": 2.89,
+      "pct": 2.88,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2037187230.51097,
+      "balance_dog": 2034371212.51097,
       "rank": 6,
-      "pct": 2.04,
+      "pct": 2.03,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -162,19 +162,19 @@
     },
     {
       "from": "cofre",
-      "to": "bc1p2y0y336sgx7g4d8rhqq4na792xahkurw0rvjz3n7tmpt3gey5q8qka4flv",
-      "from_label": "Vault #1",
-      "to_label": "bc1p2y0y...4flv",
-      "dog": 1007622100,
-      "count": 10
-    },
-    {
-      "from": "cofre",
       "to": "int1",
       "from_label": "Vault #1",
       "to_label": "Bitget Deposit #1",
       "dog": 617981840,
       "count": 23
+    },
+    {
+      "from": "cofre",
+      "to": "bc1p2y0y336sgx7g4d8rhqq4na792xahkurw0rvjz3n7tmpt3gey5q8qka4flv",
+      "from_label": "Vault #1",
+      "to_label": "bc1p2y0y...4flv",
+      "dog": 1007622100,
+      "count": 10
     },
     {
       "from": "cofre",
