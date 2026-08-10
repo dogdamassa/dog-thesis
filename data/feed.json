@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-10T23:01:51.181645+00:00",
+  "updated_at": "2026-08-10T23:55:51.277034+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-10",
+      "ts": "2026-08-10T23:55:51.277034+00:00",
+      "type": "balance_change",
+      "amount_dog": 1634717.0,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "dfb5829cb36ce307036887544fcf80bd5f35f2f7338e9bdd15f53e543d66b517",
+      "ts": "2026-08-10T23:17:28+00:00",
+      "type": "exchange_out",
+      "amount_dog": 12937870.86371,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "bc1pjqjc...0xuu",
+      "from_id": "h3",
+      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "community": null,
+      "txid": "dfb5829cb36ce307036887544fcf80bd5f35f2f7338e9bdd15f53e543d66b517"
+    },
     {
       "id": "f3584b680cfc7561757c40614b4946f84f91908800f9914b4d958146688b5a01",
       "ts": "2026-08-10T22:31:08+00:00",
@@ -13,19 +39,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "f3584b680cfc7561757c40614b4946f84f91908800f9914b4d958146688b5a01"
-    },
-    {
-      "id": "bal-2026-08-10",
-      "ts": "2026-08-10T22:03:17.230580+00:00",
-      "type": "balance_change",
-      "amount_dog": 10041496.800001144,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     },
     {
       "id": "654b11c5f52ff9eca6d7c8ad653ea0b8cab4c70f3c49cc39a60fabb6c246667e",
@@ -767,19 +780,6 @@
       "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "community": null,
       "txid": "71aeba5eede52abd555af72ff372c339e2e6d2dfe4f764db03b32a38f41eff9d"
-    },
-    {
-      "id": "65fa1f3c87fdd6545afb08a19b0e24faa2b68d8a353e6523c04ede7057889b17",
-      "ts": "2026-08-09T17:28:02+00:00",
-      "type": "exchange_in",
-      "amount_dog": 21370215.34,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": "Bitget",
-      "txid": "65fa1f3c87fdd6545afb08a19b0e24faa2b68d8a353e6523c04ede7057889b17"
     }
   ]
 }
