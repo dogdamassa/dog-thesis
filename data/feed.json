@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-08-11T02:32:18.638754+00:00",
+  "updated_at": "2026-08-11T04:45:16.124823+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-11",
+      "ts": "2026-08-11T04:45:16.124823+00:00",
+      "type": "balance_change",
+      "amount_dog": 7053893.296701431,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "27455f102f93ff8c5b45797e1ca3801851eb2829d41faa454249e566dcdd2560",
+      "ts": "2026-08-11T03:46:53+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 1240420.26,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pxj0d5rx9glmxna55hudjezgr9juhydvf3k5fy6xjy29tylx7nrmsgs4ecl",
+      "community": null,
+      "txid": "27455f102f93ff8c5b45797e1ca3801851eb2829d41faa454249e566dcdd2560"
+    },
+    {
+      "id": "e4305d729650f2b705132bfbcba4d487d18adc5305a429494b7465086870988b",
+      "ts": "2026-08-11T03:20:06+00:00",
+      "type": "cofre_in",
+      "amount_dog": 8053893.2967,
+      "level": "info",
+      "from_label": "bc1pvh3j...yv8r",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "e4305d729650f2b705132bfbcba4d487d18adc5305a429494b7465086870988b"
+    },
+    {
+      "id": "4282b0f9093b48eaec5d0e71b8d9ae4fbe9319c85686b0a82b1b1bec82e97b41",
+      "ts": "2026-08-11T03:20:06+00:00",
+      "type": "exchange_in",
+      "amount_dog": 6325616.37356,
+      "level": "watch",
+      "from_label": "bc1qy5kc...el49",
+      "to_label": "MEXC Wallet",
+      "from_id": "bc1qy5kckppa7letzes0887e35daajdv7rcwmwel49",
+      "to_id": "mexc",
+      "community": "MEXC",
+      "txid": "4282b0f9093b48eaec5d0e71b8d9ae4fbe9319c85686b0a82b1b1bec82e97b41"
+    },
     {
       "id": "54fcdc2a47d78c02caef9de344ff5c97ec655edda6001b145516d5e4f21c1872",
       "ts": "2026-08-10T23:58:46+00:00",
@@ -728,58 +780,6 @@
       "to_id": "whale23",
       "community": null,
       "txid": "f3ca8e0cf2f847e104f8844a8529e8d66439fc0003bb595bdc2e55f3f55fa234"
-    },
-    {
-      "id": "463c923d1a269f51f710faaf035f289b618abbba1a7dceaac2446d1b0149ec9c",
-      "ts": "2026-08-09T18:08:18+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 4047453.12,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
-      "community": null,
-      "txid": "463c923d1a269f51f710faaf035f289b618abbba1a7dceaac2446d1b0149ec9c"
-    },
-    {
-      "id": "ebbb9d8a0a72dee4670651b33636842e985b4a41708d1465f28f089cf0ee92f4",
-      "ts": "2026-08-09T18:03:23+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2430691.00487,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
-      "community": null,
-      "txid": "ebbb9d8a0a72dee4670651b33636842e985b4a41708d1465f28f089cf0ee92f4"
-    },
-    {
-      "id": "65bfd490d8d4acbdd6fdde877edcae31597181660b7a97106e7985514f8c17cd",
-      "ts": "2026-08-09T18:03:23+00:00",
-      "type": "exchange_out",
-      "amount_dog": 10441210.22964,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "Whale23",
-      "from_id": "h3",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "65bfd490d8d4acbdd6fdde877edcae31597181660b7a97106e7985514f8c17cd"
-    },
-    {
-      "id": "8b8bc4d3bbdc834ea43577fe4898b9c74637ae8e9732a355c6e5ae2f7287335e",
-      "ts": "2026-08-09T17:28:02+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2020624.17,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1q06c7e6x70asxms4m8j3sn3ze4ddmayv4w4w355",
-      "community": null,
-      "txid": "8b8bc4d3bbdc834ea43577fe4898b9c74637ae8e9732a355c6e5ae2f7287335e"
     }
   ]
 }
