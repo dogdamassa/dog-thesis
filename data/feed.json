@@ -1,6 +1,45 @@
 {
-  "updated_at": "2026-08-11T12:03:10.861217+00:00",
+  "updated_at": "2026-08-11T13:48:36.741719+00:00",
   "events": [
+    {
+      "id": "33bb428f412eeccec7fdd1e75e59f33d436a30843ef595483992251e9b8d2ec7",
+      "ts": "2026-08-11T13:25:53+00:00",
+      "type": "exchange_out",
+      "amount_dog": 84903300.43943,
+      "level": "info",
+      "from_label": "Gate.io hot",
+      "to_label": "bc1qkgjl...ct5y",
+      "from_id": "h2",
+      "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
+      "community": null,
+      "txid": "33bb428f412eeccec7fdd1e75e59f33d436a30843ef595483992251e9b8d2ec7"
+    },
+    {
+      "id": "b8108d9c8f84d899817ca16264e75d6e45e0e65e1c16ed315cbcec80822c3ef7",
+      "ts": "2026-08-11T13:11:57+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 5981860.77539,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pzg6aed026czampasr6lp7q0eugeptmw789z4d0xm605sc0qm2cmqxf5vtk",
+      "community": null,
+      "txid": "b8108d9c8f84d899817ca16264e75d6e45e0e65e1c16ed315cbcec80822c3ef7"
+    },
+    {
+      "id": "1878c74554a7bc8006055b48ddec913f86102082d3fb79e23ac914aa49b54fc9",
+      "ts": "2026-08-11T13:11:57+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 5161611.34,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Merlin Chain vault (2026)",
+      "from_id": "cofre",
+      "to_id": "merlin2",
+      "community": "Merlin",
+      "txid": "1878c74554a7bc8006055b48ddec913f86102082d3fb79e23ac914aa49b54fc9"
+    },
     {
       "id": "5f642b7023b1653e53a35bf6ad1590db1f0d0aa53e816a905a766cb5843c466b",
       "ts": "2026-08-11T05:37:36+00:00",
@@ -741,45 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "b0f9f6d0110e345aaf48b4cce23af0887b42e5555e9c744ce7abe2fa4af112d5"
-    },
-    {
-      "id": "5075538b4545febbec7e9f7b5b72a0c89540a1ae8a8abdfa9c52ef3b4ff6d7fc",
-      "ts": "2026-08-09T19:29:36+00:00",
-      "type": "exchange_in",
-      "amount_dog": 20000000,
-      "level": "watch",
-      "from_label": "bc1pr7ez...t98n",
-      "to_label": "Bitget hot",
-      "from_id": "bc1pr7ezmct2hqhdqk6en0u0v5c7n0nt52rr4aw5pncupnu5qt5unf2srkt98n",
-      "to_id": "h3",
-      "community": "Bitget",
-      "txid": "5075538b4545febbec7e9f7b5b72a0c89540a1ae8a8abdfa9c52ef3b4ff6d7fc"
-    },
-    {
-      "id": "fae6630776f7f3a4b1ee7449e3c0f69fd1a30c9f1035da063d32f15b8aaacce1",
-      "ts": "2026-08-09T18:43:53+00:00",
-      "type": "exchange_out",
-      "amount_dog": 19996999,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1pjqjc...0xuu",
-      "from_id": "h3",
-      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
-      "community": null,
-      "txid": "fae6630776f7f3a4b1ee7449e3c0f69fd1a30c9f1035da063d32f15b8aaacce1"
-    },
-    {
-      "id": "18c5f4a7ed05f47733a048a89b6f4c3011fed8967d4d1d1ff58dec0d9f58ff33",
-      "ts": "2026-08-09T18:43:53+00:00",
-      "type": "exchange_out",
-      "amount_dog": 20494673.02,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "MM2 shuttle",
-      "from_id": "h3",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "18c5f4a7ed05f47733a048a89b6f4c3011fed8967d4d1d1ff58dec0d9f58ff33"
     }
   ]
 }
