@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-12T13:53:49.948244+00:00",
+  "updated_at": "2026-08-12T15:25:21.425808+00:00",
   "events": [
+    {
+      "id": "7e4326b769b9b9bed802b3bb526da201586f8848188adb7f64e1964ad9f04c98",
+      "ts": "2026-08-12T15:08:49+00:00",
+      "type": "relay_flow",
+      "amount_dog": 6297912.39,
+      "level": "watch",
+      "from_label": "unmapped wallet",
+      "to_label": "Bitget Deposit #1",
+      "from_id": null,
+      "to_id": "int1",
+      "community": null,
+      "txid": "7e4326b769b9b9bed802b3bb526da201586f8848188adb7f64e1964ad9f04c98"
+    },
+    {
+      "id": "46a788befffdaa3068c00df68abd70588965cb3f002fbdc5f952b6fdc2481113",
+      "ts": "2026-08-12T15:08:49+00:00",
+      "type": "relay_flow",
+      "amount_dog": 4195514.39,
+      "level": "watch",
+      "from_label": "unmapped wallet",
+      "to_label": "Bitget Deposit #2",
+      "from_id": null,
+      "to_id": "int2",
+      "community": null,
+      "txid": "46a788befffdaa3068c00df68abd70588965cb3f002fbdc5f952b6fdc2481113"
+    },
     {
       "id": "bal-2026-08-12",
       "ts": "2026-08-12T13:53:49.948244+00:00",
@@ -754,32 +780,6 @@
       "to_id": "int1",
       "community": null,
       "txid": "935a9151a41cbae3c66d92fb2d7cbd350c4cb5648379261d8137ff45e613a5ad"
-    },
-    {
-      "id": "43a8567407c9be6b904fd0d31eea4b233ba93894a928ef19db347bcea5990503",
-      "ts": "2026-08-10T07:07:40+00:00",
-      "type": "cofre_in",
-      "amount_dog": 5161611.34,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "43a8567407c9be6b904fd0d31eea4b233ba93894a928ef19db347bcea5990503"
-    },
-    {
-      "id": "581d10eb5874d4ee58181bec6a9937271b6e5b010ad933b00222a1d14f19b38d",
-      "ts": "2026-08-10T04:08:32+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 5522368.866,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1p6ld5c2ud95j2jqwy0dxdl2cmhl9zfh08qyvjc8cvr2de0vw0yjhqyrp8mq",
-      "community": null,
-      "txid": "581d10eb5874d4ee58181bec6a9937271b6e5b010ad933b00222a1d14f19b38d"
     }
   ]
 }
