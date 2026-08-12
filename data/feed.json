@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-12T17:24:01.498527+00:00",
+  "updated_at": "2026-08-12T19:32:11.422597+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-12",
+      "ts": "2026-08-12T19:32:11.422597+00:00",
+      "type": "balance_change",
+      "amount_dog": 7122520.527000427,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "72a62ac8349181af00545f3a1e4d8472a3ff7df3643882df09f82f8538a536c7",
+      "ts": "2026-08-12T18:48:26+00:00",
+      "type": "cofre_in",
+      "amount_dog": 4231384.94,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "72a62ac8349181af00545f3a1e4d8472a3ff7df3643882df09f82f8538a536c7"
+    },
     {
       "id": "698fc83760c76bddfa5eebb1bf32ff457ed881d1d00d442bded4262c8f070104",
       "ts": "2026-08-12T15:47:14+00:00",
@@ -65,19 +91,6 @@
       "to_id": "int2",
       "community": null,
       "txid": "46a788befffdaa3068c00df68abd70588965cb3f002fbdc5f952b6fdc2481113"
-    },
-    {
-      "id": "bal-2026-08-12",
-      "ts": "2026-08-12T13:53:49.948244+00:00",
-      "type": "balance_change",
-      "amount_dog": 6675688.87100029,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     },
     {
       "id": "bc790b32417a91446532cccb78ec5c10e3745d47a33e0e3e2dbc52fa32d34993",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "c6ee5e886b6bcce67c40a31c14ee3782a18b22599dc2cbdd94becdc19cc53da9"
-    },
-    {
-      "id": "09659fd4b670624997617d078cd246f86168b4886c63c5c14b7aa083608dd765",
-      "ts": "2026-08-10T08:55:32+00:00",
-      "type": "exchange_in",
-      "amount_dog": 9573599.86,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": "Bitget",
-      "txid": "09659fd4b670624997617d078cd246f86168b4886c63c5c14b7aa083608dd765"
     }
   ]
 }
