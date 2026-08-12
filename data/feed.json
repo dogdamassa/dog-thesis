@@ -1,6 +1,45 @@
 {
-  "updated_at": "2026-08-12T15:25:21.425808+00:00",
+  "updated_at": "2026-08-12T17:24:01.498527+00:00",
   "events": [
+    {
+      "id": "698fc83760c76bddfa5eebb1bf32ff457ed881d1d00d442bded4262c8f070104",
+      "ts": "2026-08-12T15:47:14+00:00",
+      "type": "exchange_out",
+      "amount_dog": 5085320.39,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "bc1pjqjc...0xuu",
+      "from_id": "h3",
+      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "community": null,
+      "txid": "698fc83760c76bddfa5eebb1bf32ff457ed881d1d00d442bded4262c8f070104"
+    },
+    {
+      "id": "01276680e0804d0093825a6c86766dbe1541856f346107620d86d8b34e2b12fd",
+      "ts": "2026-08-12T15:31:28+00:00",
+      "type": "exchange_in",
+      "amount_dog": 6297912.39,
+      "level": "watch",
+      "from_label": "Bitget Deposit #1",
+      "to_label": "Bitget hot",
+      "from_id": "int1",
+      "to_id": "h3",
+      "community": "Bitget",
+      "txid": "01276680e0804d0093825a6c86766dbe1541856f346107620d86d8b34e2b12fd"
+    },
+    {
+      "id": "6c63d082ee8c01e3ab0cc2953febf05d5b729c542a3920cde02b84d5f2d20851",
+      "ts": "2026-08-12T15:31:28+00:00",
+      "type": "relay_flow",
+      "amount_dog": 4195514.39,
+      "level": "watch",
+      "from_label": "Bitget Deposit #2",
+      "to_label": "Bitget hot",
+      "from_id": "int2",
+      "to_id": "h3",
+      "community": null,
+      "txid": "6c63d082ee8c01e3ab0cc2953febf05d5b729c542a3920cde02b84d5f2d20851"
+    },
     {
       "id": "7e4326b769b9b9bed802b3bb526da201586f8848188adb7f64e1964ad9f04c98",
       "ts": "2026-08-12T15:08:49+00:00",
@@ -741,45 +780,6 @@
       "to_id": "h3",
       "community": "Bitget",
       "txid": "09659fd4b670624997617d078cd246f86168b4886c63c5c14b7aa083608dd765"
-    },
-    {
-      "id": "62227959241d04a05538985cc32211783e99ce65ffdde1337a52f660f9515abd",
-      "ts": "2026-08-10T08:55:32+00:00",
-      "type": "relay_flow",
-      "amount_dog": 4080776.86,
-      "level": "watch",
-      "from_label": "Bitget Deposit #1",
-      "to_label": "Bitget hot",
-      "from_id": "int1",
-      "to_id": "h3",
-      "community": null,
-      "txid": "62227959241d04a05538985cc32211783e99ce65ffdde1337a52f660f9515abd"
-    },
-    {
-      "id": "5c5c8c2e9717bba7b6552d173290a5d7eec1453fb4744fbdc1035358dbc66e10",
-      "ts": "2026-08-10T08:35:06+00:00",
-      "type": "exchange_out",
-      "amount_dog": 12330858.03,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "Bitget Deposit #2",
-      "from_id": "h2",
-      "to_id": "int2",
-      "community": null,
-      "txid": "5c5c8c2e9717bba7b6552d173290a5d7eec1453fb4744fbdc1035358dbc66e10"
-    },
-    {
-      "id": "935a9151a41cbae3c66d92fb2d7cbd350c4cb5648379261d8137ff45e613a5ad",
-      "ts": "2026-08-10T08:35:06+00:00",
-      "type": "relay_flow",
-      "amount_dog": 4080776.86,
-      "level": "watch",
-      "from_label": "unmapped wallet",
-      "to_label": "Bitget Deposit #1",
-      "from_id": null,
-      "to_id": "int1",
-      "community": null,
-      "txid": "935a9151a41cbae3c66d92fb2d7cbd350c4cb5648379261d8137ff45e613a5ad"
     }
   ]
 }
