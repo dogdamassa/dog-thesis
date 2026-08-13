@@ -4,12 +4,12 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
-## 2026-08-13 · API bloqueada nas runs posteriores · tx detectada às 11:38 UTC
+## 2026-08-13
 
-- **Baleia (rank #1):** **12.44% do supply** (~12,439B DOG, Δ +0.0M DOG). Não depositou em exchange.
-- **Nota:** `whale_last_ts` no estado interno = `2026-08-13T11:38:55+00:00` — há pelo menos uma tx da baleia hoje às 11:38 UTC que não pôde ser analisada (dogdata.xyz bloqueado no proxy nas runs posteriores).
-- Saques novos da Binance → cluster (72h): nenhum confirmado. Int#1/Int#2 watermark = 2026-08-12T15:31. Int#3 inativo desde 30/04.
-- 🔎 **Leitura:** estável, seguimos vigiando o rastro até chegar na Binance.
+- **Baleia (#1):** 12.42% do supply (Δ -14.3M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
 
 ## 2026-08-12
 
