@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-13T03:04:14.473500+00:00",
+  "updated_at": "2026-08-13T05:14:14.225462+00:00",
   "events": [
+    {
+      "id": "e9327ef3c383714e021eb8cdad99a49c8ba3e7893bb5dbb7e14d05f3a82dedb1",
+      "ts": "2026-08-13T03:04:25+00:00",
+      "type": "cofre_in",
+      "amount_dog": 320220176.3108,
+      "level": "info",
+      "from_label": "bc1pyysw...5myv",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "e9327ef3c383714e021eb8cdad99a49c8ba3e7893bb5dbb7e14d05f3a82dedb1"
+    },
     {
       "id": "bal-2026-08-13",
       "ts": "2026-08-13T03:04:14.473500+00:00",
@@ -767,19 +780,6 @@
       "to_id": "mm2",
       "community": null,
       "txid": "9c56782994dc5abd50dde04d0bc60cfb874ce0556ece01d134cdd8b8263c2483"
-    },
-    {
-      "id": "0d51b672ad222a1e4122a1f372b4bf3dd845a2748f9213b97c2b1c3334391fbf",
-      "ts": "2026-08-10T15:09:54+00:00",
-      "type": "exchange_out",
-      "amount_dog": 9605481.11015,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "Whale7 shuttle",
-      "from_id": "h3",
-      "to_id": "whale7",
-      "community": null,
-      "txid": "0d51b672ad222a1e4122a1f372b4bf3dd845a2748f9213b97c2b1c3334391fbf"
     }
   ]
 }
