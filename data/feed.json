@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-13T10:32:25.108571+00:00",
+  "updated_at": "2026-08-13T12:04:44.186277+00:00",
   "events": [
+    {
+      "id": "1383136127bd1c09c6cb18aa496a057c9a7806bbf67ed962fb517e91486a7840",
+      "ts": "2026-08-13T11:38:55+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 4526205.26848,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "community": null,
+      "txid": "1383136127bd1c09c6cb18aa496a057c9a7806bbf67ed962fb517e91486a7840"
+    },
     {
       "id": "e9327ef3c383714e021eb8cdad99a49c8ba3e7893bb5dbb7e14d05f3a82dedb1",
       "ts": "2026-08-13T03:04:25+00:00",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "8c1ed47ef396965e4fdeaa654c73207b1d36cb2eac2910ba8a5f16d3659a3c24"
-    },
-    {
-      "id": "9c56782994dc5abd50dde04d0bc60cfb874ce0556ece01d134cdd8b8263c2483",
-      "ts": "2026-08-10T15:09:54+00:00",
-      "type": "exchange_out",
-      "amount_dog": 98224558.29943,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "MM2 shuttle",
-      "from_id": "h2",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "9c56782994dc5abd50dde04d0bc60cfb874ce0556ece01d134cdd8b8263c2483"
     }
   ]
 }
