@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-13T00:03:46.293373+00:00",
+  "updated_at": "2026-08-13T03:04:14.473500+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-13",
+      "ts": "2026-08-13T03:04:14.473500+00:00",
+      "type": "balance_change",
+      "amount_dog": 10398455.27199936,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
+    {
+      "id": "225829e1f49095455fbade0fce397912e41dd33b574ea92fc7abe6011c802b68",
+      "ts": "2026-08-13T00:38:30+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 12904359.26848,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pdktsy6e502m7zvuy2rw6f6ckwttrgcxq0k78mwtgaej9xvmvlz9sted0tk",
+      "community": null,
+      "txid": "225829e1f49095455fbade0fce397912e41dd33b574ea92fc7abe6011c802b68"
+    },
     {
       "id": "e0bbc8d73ab2511b5f254310105c6f99e054933463fd25a3f23e4b63c86eff2d",
       "ts": "2026-08-12T23:55:50+00:00",
@@ -754,32 +780,6 @@
       "to_id": "whale7",
       "community": null,
       "txid": "0d51b672ad222a1e4122a1f372b4bf3dd845a2748f9213b97c2b1c3334391fbf"
-    },
-    {
-      "id": "5ca9e961a84bf95d3dc5c64c9cfeb1a596ae9d8d190131c8abbe7161f70a8f12",
-      "ts": "2026-08-10T13:52:02+00:00",
-      "type": "cofre_in",
-      "amount_dog": 1521496,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "5ca9e961a84bf95d3dc5c64c9cfeb1a596ae9d8d190131c8abbe7161f70a8f12"
-    },
-    {
-      "id": "174e0f487ebe4e383591eedca25762e918bf3d32923c4ec9e30cd2828521d7b7",
-      "ts": "2026-08-10T12:55:58+00:00",
-      "type": "exchange_out",
-      "amount_dog": 8646101.90686,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "Whale23",
-      "from_id": "h3",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "174e0f487ebe4e383591eedca25762e918bf3d32923c4ec9e30cd2828521d7b7"
     }
   ]
 }
