@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-13T19:30:55.416591+00:00",
+  "updated_at": "2026-08-13T21:09:08.365639+00:00",
   "events": [
+    {
+      "id": "9666a1c474e6f3a844d9577cb8d9efbf36fcb4e4b6d3309bc196c18284094076",
+      "ts": "2026-08-13T20:21:47+00:00",
+      "type": "exchange_in",
+      "amount_dog": 43651030.779,
+      "level": "watch",
+      "from_label": "bc1qpcpe...p2qg",
+      "to_label": "MEXC Wallet",
+      "from_id": "bc1qpcpervvyp2ss88dqw3wgdp9axhljlxqlnrp2qg",
+      "to_id": "mexc",
+      "community": "MEXC",
+      "txid": "9666a1c474e6f3a844d9577cb8d9efbf36fcb4e4b6d3309bc196c18284094076"
+    },
     {
       "id": "bal-2026-08-13",
       "ts": "2026-08-13T19:30:55.416591+00:00",
@@ -767,19 +780,6 @@
       "to_id": "int2",
       "community": null,
       "txid": "24b27654cdea38ab0d0ceefab4ca51b79d65be0300a2149d720e7a00c2b0c94d"
-    },
-    {
-      "id": "a9714fac030f87fc05d4d43637c9930b0317e5086b30b16dcf65a9a729013901",
-      "ts": "2026-08-10T19:07:15+00:00",
-      "type": "relay_flow",
-      "amount_dog": 7178715.96361,
-      "level": "watch",
-      "from_label": "bc1p7jgz...lqxt",
-      "to_label": "Bitget Deposit #1",
-      "from_id": null,
-      "to_id": "int1",
-      "community": null,
-      "txid": "a9714fac030f87fc05d4d43637c9930b0317e5086b30b16dcf65a9a729013901"
     }
   ]
 }
