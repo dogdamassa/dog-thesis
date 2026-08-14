@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-14T05:11:02.299923+00:00",
+  "updated_at": "2026-08-14T06:49:41.900077+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-14",
+      "ts": "2026-08-14T06:49:41.900077+00:00",
+      "type": "balance_change",
+      "amount_dog": 8537615.878040314,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "e83fab95e48622c34c082f7c5f670977a755be7057882222fe563776b2d5e36a",
+      "ts": "2026-08-14T05:33:37+00:00",
+      "type": "exchange_out",
+      "amount_dog": 43651030.779,
+      "level": "info",
+      "from_label": "MEXC Wallet",
+      "to_label": "bc1pjqjc...0xuu",
+      "from_id": "mexc",
+      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "community": null,
+      "txid": "e83fab95e48622c34c082f7c5f670977a755be7057882222fe563776b2d5e36a"
+    },
     {
       "id": "dee74edf9a40358cc4cd42e286440bcc94df56ef122140e73b44c9cfa36e8040",
       "ts": "2026-08-14T04:00:44+00:00",
@@ -754,32 +780,6 @@
       "to_id": "h3",
       "community": null,
       "txid": "72db9519f618abdfb4f4a16a3e91edee2fea28bffa74ba39928c1ddb26f93f1b"
-    },
-    {
-      "id": "5a108f3df08762d175a0ee5d0905a66d0d59cc24126234eaa9cf93a3e268ef6c",
-      "ts": "2026-08-10T19:24:40+00:00",
-      "type": "relay_flow",
-      "amount_dog": 2186910.54,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": null,
-      "txid": "5a108f3df08762d175a0ee5d0905a66d0d59cc24126234eaa9cf93a3e268ef6c"
-    },
-    {
-      "id": "8901f292808d339162171a5acf192b31171405362ea9f80b0e26a9ccdfbf91c8",
-      "ts": "2026-08-10T19:18:28+00:00",
-      "type": "exchange_in",
-      "amount_dog": 7178715.96361,
-      "level": "watch",
-      "from_label": "Bitget Deposit #1",
-      "to_label": "Bitget hot",
-      "from_id": "int1",
-      "to_id": "h3",
-      "community": "Bitget",
-      "txid": "8901f292808d339162171a5acf192b31171405362ea9f80b0e26a9ccdfbf91c8"
     }
   ]
 }
