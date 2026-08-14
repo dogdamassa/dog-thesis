@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-14T15:11:37.153694+00:00",
+  "updated_at": "2026-08-14T16:10:11.483055+00:00",
   "events": [
+    {
+      "id": "767b5daee9c9c6e092bbb7e044f4f3529af5bf0bde530173d4553d988c4c7d0e",
+      "ts": "2026-08-14T15:48:07+00:00",
+      "type": "exchange_out",
+      "amount_dog": 40470180.779,
+      "level": "info",
+      "from_label": "MEXC Wallet",
+      "to_label": "Whale23",
+      "from_id": "mexc",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "767b5daee9c9c6e092bbb7e044f4f3529af5bf0bde530173d4553d988c4c7d0e"
+    },
     {
       "id": "bal-2026-08-14",
       "ts": "2026-08-14T15:11:37.153694+00:00",
@@ -767,19 +780,6 @@
       "to_id": "whale23",
       "community": null,
       "txid": "654b11c5f52ff9eca6d7c8ad653ea0b8cab4c70f3c49cc39a60fabb6c246667e"
-    },
-    {
-      "id": "6485ae8c9b1c08b7569d29b6e5c1ea86aeebd670030073bca90a6e1bfb993a5b",
-      "ts": "2026-08-10T20:18:50+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2898235.6648,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #1",
-      "from_id": "cofre",
-      "to_id": "int1",
-      "community": "Bitget deposit, desk reuse",
-      "txid": "6485ae8c9b1c08b7569d29b6e5c1ea86aeebd670030073bca90a6e1bfb993a5b"
     }
   ]
 }
