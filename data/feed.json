@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-08-15T01:54:01.858857+00:00",
+  "updated_at": "2026-08-15T03:09:07.145823+00:00",
   "events": [
+    {
+      "id": "880941a1cad4d40ae8681b51a67f9f396c5010ba8c53d75cdbdc786b4ce4043f",
+      "ts": "2026-08-15T03:02:10+00:00",
+      "type": "cofre_in",
+      "amount_dog": 15711844.8,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "880941a1cad4d40ae8681b51a67f9f396c5010ba8c53d75cdbdc786b4ce4043f"
+    },
+    {
+      "id": "07656b367ca4125111cb5a60986299ba4a176ca2cc478358276107cdd7ad0873",
+      "ts": "2026-08-15T02:44:00+00:00",
+      "type": "relay_flow",
+      "amount_dog": 2425821.6,
+      "level": "watch",
+      "from_label": "Bitget Deposit #2",
+      "to_label": "Bitget hot",
+      "from_id": "int2",
+      "to_id": "h3",
+      "community": null,
+      "txid": "07656b367ca4125111cb5a60986299ba4a176ca2cc478358276107cdd7ad0873"
+    },
+    {
+      "id": "47e1192fabad13a2a53b9619c4ac0402f7a2c58e6bcc26caa629badeddcef9ca",
+      "ts": "2026-08-15T02:26:51+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 7516066.08969,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Bitget Deposit #2",
+      "from_id": "cofre",
+      "to_id": "int2",
+      "community": "Bitget deposit, desk reuse",
+      "txid": "47e1192fabad13a2a53b9619c4ac0402f7a2c58e6bcc26caa629badeddcef9ca"
+    },
+    {
+      "id": "7cdf68f95fca6d01f84f8a100776ddb0ca767c5e08ace96d79a5e6ff97895ff5",
+      "ts": "2026-08-15T02:13:51+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 5031070.23476,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "community": null,
+      "txid": "7cdf68f95fca6d01f84f8a100776ddb0ca767c5e08ace96d79a5e6ff97895ff5"
+    },
     {
       "id": "767b5daee9c9c6e092bbb7e044f4f3529af5bf0bde530173d4553d988c4c7d0e",
       "ts": "2026-08-14T15:48:07+00:00",
@@ -728,58 +780,6 @@
       "to_id": "bc1p6dy5waj9eyv88t0zx0nmel2nc79cyvu6lmp7gq7xmg7dqnlt40uq2s8sdj",
       "community": null,
       "txid": "54fcdc2a47d78c02caef9de344ff5c97ec655edda6001b145516d5e4f21c1872"
-    },
-    {
-      "id": "bal-2026-08-10",
-      "ts": "2026-08-10T23:55:51.277034+00:00",
-      "type": "balance_change",
-      "amount_dog": 1634717.0,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
-    },
-    {
-      "id": "dfb5829cb36ce307036887544fcf80bd5f35f2f7338e9bdd15f53e543d66b517",
-      "ts": "2026-08-10T23:17:28+00:00",
-      "type": "exchange_out",
-      "amount_dog": 12937870.86371,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1pjqjc...0xuu",
-      "from_id": "h3",
-      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
-      "community": null,
-      "txid": "dfb5829cb36ce307036887544fcf80bd5f35f2f7338e9bdd15f53e543d66b517"
-    },
-    {
-      "id": "f3584b680cfc7561757c40614b4946f84f91908800f9914b4d958146688b5a01",
-      "ts": "2026-08-10T22:31:08+00:00",
-      "type": "cofre_in",
-      "amount_dog": 1634717,
-      "level": "info",
-      "from_label": "Whale7 shuttle",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "f3584b680cfc7561757c40614b4946f84f91908800f9914b4d958146688b5a01"
-    },
-    {
-      "id": "654b11c5f52ff9eca6d7c8ad653ea0b8cab4c70f3c49cc39a60fabb6c246667e",
-      "ts": "2026-08-10T21:11:41+00:00",
-      "type": "exchange_out",
-      "amount_dog": 9022348.38814,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "Whale23",
-      "from_id": "h3",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "654b11c5f52ff9eca6d7c8ad653ea0b8cab4c70f3c49cc39a60fabb6c246667e"
     }
   ]
 }
