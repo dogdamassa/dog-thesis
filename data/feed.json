@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-08-15T03:59:03.940272+00:00",
+  "updated_at": "2026-08-15T04:52:26.414197+00:00",
   "events": [
     {
       "id": "bal-2026-08-15",
-      "ts": "2026-08-15T03:59:03.940272+00:00",
+      "ts": "2026-08-15T04:52:26.414197+00:00",
       "type": "balance_change",
-      "amount_dog": 4571218.299999237,
+      "amount_dog": 15711844.799999237,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "-",
+      "sign": "+",
       "txid": null
     },
     {
