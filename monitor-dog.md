@@ -4,19 +4,36 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
-## 2026-08-16
+## 2026-08-16 ⚠️ Movimento suspeito · cluster Int#2 ativo ontem · 320M DOG entrada não mapeada (13/08) · pass-through → MEXC em 1h
 
-- **Baleia (#1):** 12.4% do supply (Δ +0.0M DOG).
-- Saques novos da Binance → cluster: nenhum hoje.
-- A baleia não depositou em exchange (segue acumulando/parada).
-- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+> Fonte: `data/daily.json` + `data/feed.json` · atualizado às 11:40 UTC · dado FRESCO (scripts locais; dogdata.xyz bloqueado no proxy remoto mas build_data.py acessa diretamente).
 
-## 2026-08-15
+- **Baleia (Vault #1, rank #1):** **12,4% do supply** (12,404,429,934 DOG). Saldo estável hoje (saída de 1,58M DOG às 06:39 UTC para fresh wallet; entrada de +9,5M DOG às 07:50 UTC de origem não mapeada). **NÃO depositou em exchange conhecida diretamente** (cofre_to_exchange: 0).
+- **Saques da Binance → cluster (72h):** Binance hot wallet (`bc1qhuv...`) **não aparece como counterparty direto** em Int#1/Int#2/Int#3 nesta janela. **Porém o cluster relay Int#2 esteve ativo ontem (15/08)** — veja abaixo.
+- ⚠️ **Cluster relay Int#2 ativo (15/08 — dentro das 72h):**
+  - 15/08 02:26 UTC — **Vault #1 → Int#2 (Bitget Deposit #2):** 7,516,066 DOG ← cofre alimenta relay diretamente
+  - 15/08 02:44 UTC — **Int#2 → Bitget hot:** 2,425,821 DOG ← relay_flow confirmado (pass-through em 18 min)
+- ⚠️ **Entrada massiva não mapeada (13/08 03:04 UTC):**
+  - **bc1pyysw...5myv → Vault #1:** **320,220,176 DOG** — wallet de origem desconhecida, reabastecimento da estrutura.
+- ⚠️ **Pass-through baleia → MEXC em ~1h (13/08):**
+  - 13/08 19:20 UTC — Vault #1 → fresh wallet (`bc1qpcpe...p2qg`): **44,366,726 DOG**
+  - 13/08 20:21 UTC — mesma wallet → **MEXC Wallet:** 43,651,030 DOG (~98% do valor em 1h)
+- **Outras saídas recentes da baleia (72h):**
+  - 15/08: 8,537,615 DOG → Whale23; 5,031,070 + 2,450,325 + 5,090,244 DOG → fresh wallets
+  - 14/08: 6,780,106 DOG → Merlin Chain vault (bridge/staking); 2x small fresh wallets
+- 🔎 **Leitura:** **movimento suspeito nas últimas 72h.** (1) O cluster relay Int#2 foi ativado ontem: **baleia → Int#2 → Bitget** em 18 min (pass-through direto, fonte: o próprio cofre). (2) Em 13/08, 320M DOG entraram na baleia de wallet não mapeada — padrão de reabastecimento recorrente. (3) Pass-through para MEXC em 1h confirmado em 13/08 (~44M DOG). A Binance não aparece como counterparty direto dos relays nesta janela, mas **pode estar envolvida** — historicamente alimentou essa estrutura via Int#3 (48 saques documentados) e o padrão de entradas de wallet não mapeada na baleia sugere camadas encobridoras. Sem acusação de crime: descrevemos o padrão que a chain mostra.
 
-- **Baleia (#1):** 12.39% do supply (Δ +0.0M DOG).
-- Saques novos da Binance → cluster: nenhum hoje.
-- A baleia não depositou em exchange (segue acumulando/parada).
-- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+## 2026-08-15 ⚠️ Cluster Int#2 ativo · pass-through baleia → Bitget (18 min) · saída 8,5M DOG → Whale23
+
+> Fonte: `data/feed.json` · dado fresco (corrigido na execução de 16/08).
+
+- **Baleia (Vault #1):** ativa — múltiplos fluxos saída + entrada no dia.
+- ⚠️ **Cluster relay Int#2 ativo:**
+  - 02:26 UTC — Vault #1 → Int#2: 7,516,066 DOG
+  - 02:44 UTC — Int#2 → Bitget: 2,425,821 DOG (pass-through em 18 min)
+- **Outras saídas:** 8,537,615 DOG → Whale23 (11:03 UTC); 5,031,070 + 2,450,325 + 5,090,244 DOG → fresh wallets.
+- **Entradas na baleia:** 15,711,844 DOG de unmapped (03:02 UTC); 7,002,469 DOG de unmapped (11:34 UTC); 10,011,794 DOG de bc1pd5x0...ntp9 (18:05 UTC).
+- 🔎 **Leitura:** movimento suspeito. Cluster relay ativo: baleia alimentou Int#2 diretamente → Bitget em 18 min. A Binance pode estar envolvida na camada anterior. Sem acusação de crime.
 
 ## 2026-08-14
 
