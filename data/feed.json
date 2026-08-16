@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-16T16:46:28.241753+00:00",
+  "updated_at": "2026-08-16T17:40:04.235902+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-16",
+      "ts": "2026-08-16T17:40:04.235902+00:00",
+      "type": "balance_change",
+      "amount_dog": 5000000.0,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
+    {
+      "id": "be900868478911ea976d7d56dae36adaaf95b0dc130b7fe6fc1028e79fd11661",
+      "ts": "2026-08-16T17:05:10+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2086202.01,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "be900868478911ea976d7d56dae36adaaf95b0dc130b7fe6fc1028e79fd11661"
+    },
     {
       "id": "91e08ef545224564c1bd48db8a2208674aa5c30d98dcf24aa9a84e581e842beb",
       "ts": "2026-08-16T12:45:53+00:00",
@@ -52,19 +78,6 @@
       "to_id": "bc1pesqwwpqf528azdxkz60pj8q58k0l7xjsch0czs8lf3tymssrwmtsrf65ak",
       "community": null,
       "txid": "855f1f890290a53b6e0bfde12cd40b96a20be227b3c5275e7275db6ae2beacd9"
-    },
-    {
-      "id": "bal-2026-08-16",
-      "ts": "2026-08-16T07:50:24.558163+00:00",
-      "type": "balance_change",
-      "amount_dog": 9501280.824371338,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
     },
     {
       "id": "962ac099820791f58c294a85787a939aa5182a989bec40756a72c886c138cc8b",
@@ -767,19 +780,6 @@
       "to_id": "mexc",
       "community": "MEXC",
       "txid": "4810f8570facf47ba08eedb382b09a9262dbb894893b8f313a506d44ac56cd01"
-    },
-    {
-      "id": "8e784b08b2199e871cad8210a424ab22b3f10bfee00ec91647e9f8811e6cdfe4",
-      "ts": "2026-08-11T18:40:12+00:00",
-      "type": "exchange_out",
-      "amount_dog": 5000000,
-      "level": "info",
-      "from_label": "MEXC Wallet",
-      "to_label": "bc1pp4dr...6dmk",
-      "from_id": "mexc",
-      "to_id": "bc1pp4dr3ym9qjmf3je38s9nfkawu7vhnf2mmpe5f3d8ul6n2cncrcysj76dmk",
-      "community": null,
-      "txid": "8e784b08b2199e871cad8210a424ab22b3f10bfee00ec91647e9f8811e6cdfe4"
     }
   ]
 }
