@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-08-17T16:50:30.522706+00:00",
+  "updated_at": "2026-08-17T17:50:39.692452+00:00",
   "events": [
     {
       "id": "bal-2026-08-17",
-      "ts": "2026-08-17T16:50:30.522706+00:00",
+      "ts": "2026-08-17T17:50:39.692452+00:00",
       "type": "balance_change",
-      "amount_dog": 1677601.0387001038,
+      "amount_dog": 1847358.8450012207,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,19 @@
       "to_id": "",
       "sign": "+",
       "txid": null
+    },
+    {
+      "id": "342f571fe6120323b2b330929b74ad190fbbfb58961302892dc1265625e5e7d3",
+      "ts": "2026-08-17T16:51:09+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2000000,
+      "level": "info",
+      "from_label": "bc1p9gxf...nds8",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "342f571fe6120323b2b330929b74ad190fbbfb58961302892dc1265625e5e7d3"
     },
     {
       "id": "31d084ce0a6299a403c4ce56ae0b5268f001f589b0d98eff1c79279704ec9c14",
@@ -767,19 +780,6 @@
       "to_id": "bc1p6tjqlnxj678pw7pmgn5lrqct995txl99tm37p2hacnt7uae0auks5mvnsz",
       "community": null,
       "txid": "dd6995cb91a7582e1eeb579627cdd26639d44d93de7ed9aa9c0131dac0bbde97"
-    },
-    {
-      "id": "4b3a667c890fad3d27daa43fddadd2b37329845f16bf5bd9ab2756e5083d14de",
-      "ts": "2026-08-11T23:49:26+00:00",
-      "type": "exchange_out",
-      "amount_dog": 61432507.05943,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "MM2 shuttle",
-      "from_id": "h2",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "4b3a667c890fad3d27daa43fddadd2b37329845f16bf5bd9ab2756e5083d14de"
     }
   ]
 }
