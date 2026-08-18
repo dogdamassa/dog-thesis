@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-18T14:01:38.054041+00:00",
+  "updated_at": "2026-08-18T14:57:31.549303+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-18",
+      "ts": "2026-08-18T14:57:31.549303+00:00",
+      "type": "balance_change",
+      "amount_dog": 3027266.6000003815,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
+    {
+      "id": "d50ca0f710b8a28a27fbdfa426f4a0614395711aa5e4724c8021337dc740ddc6",
+      "ts": "2026-08-18T14:01:20+00:00",
+      "type": "relay_flow",
+      "amount_dog": 3027266.6,
+      "level": "watch",
+      "from_label": "Bitget Deposit #2",
+      "to_label": "Bitget hot",
+      "from_id": "int2",
+      "to_id": "h3",
+      "community": null,
+      "txid": "d50ca0f710b8a28a27fbdfa426f4a0614395711aa5e4724c8021337dc740ddc6"
+    },
     {
       "id": "555295d5c505114bfa2d967e3c9dfc6beeb02992a90534cf71f76ee6c7c207e2",
       "ts": "2026-08-18T13:54:40+00:00",
@@ -13,19 +39,6 @@
       "to_id": "int2",
       "community": "Bitget deposit, desk reuse",
       "txid": "555295d5c505114bfa2d967e3c9dfc6beeb02992a90534cf71f76ee6c7c207e2"
-    },
-    {
-      "id": "bal-2026-08-18",
-      "ts": "2026-08-18T13:14:19.369541+00:00",
-      "type": "balance_change",
-      "amount_dog": 10722244.0,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
     },
     {
       "id": "d73e7db16467eaa5a500a9acd8b8593a66fe11e8eaa6d7f77352178bbfae2f40",
@@ -767,19 +780,6 @@
       "to_id": "mexc",
       "community": "MEXC",
       "txid": "9666a1c474e6f3a844d9577cb8d9efbf36fcb4e4b6d3309bc196c18284094076"
-    },
-    {
-      "id": "1a122d829522a44128abbb41cf4305ec2912bd35b9e19efc4eda4d871e58e85e",
-      "ts": "2026-08-13T19:20:17+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 44366726.96853,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1qpcpervvyp2ss88dqw3wgdp9axhljlxqlnrp2qg",
-      "community": null,
-      "txid": "1a122d829522a44128abbb41cf4305ec2912bd35b9e19efc4eda4d871e58e85e"
     }
   ]
 }
