@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-19T11:45:44.259836+00:00",
+  "updated_at": "2026-08-19T13:17:08.516412+00:00",
   "events": [
+    {
+      "id": "f997c7cdb774f3f5808b451a1b19defd199e94da38e6601a2928ed5cdca898c2",
+      "ts": "2026-08-19T12:42:55+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 10722244,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Merlin Chain vault (2026)",
+      "from_id": "cofre",
+      "to_id": "merlin2",
+      "community": "Merlin",
+      "txid": "f997c7cdb774f3f5808b451a1b19defd199e94da38e6601a2928ed5cdca898c2"
+    },
     {
       "id": "bal-2026-08-19",
       "ts": "2026-08-19T10:50:40.855484+00:00",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "880941a1cad4d40ae8681b51a67f9f396c5010ba8c53d75cdbdc786b4ce4043f"
-    },
-    {
-      "id": "07656b367ca4125111cb5a60986299ba4a176ca2cc478358276107cdd7ad0873",
-      "ts": "2026-08-15T02:44:00+00:00",
-      "type": "relay_flow",
-      "amount_dog": 2425821.6,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": null,
-      "txid": "07656b367ca4125111cb5a60986299ba4a176ca2cc478358276107cdd7ad0873"
     }
   ]
 }
