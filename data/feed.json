@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-19T13:17:08.516412+00:00",
+  "updated_at": "2026-08-19T14:02:38.783681+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-19",
+      "ts": "2026-08-19T14:02:38.783681+00:00",
+      "type": "balance_change",
+      "amount_dog": 7012725.00399971,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
     {
       "id": "f997c7cdb774f3f5808b451a1b19defd199e94da38e6601a2928ed5cdca898c2",
       "ts": "2026-08-19T12:42:55+00:00",
@@ -13,19 +26,6 @@
       "to_id": "merlin2",
       "community": "Merlin",
       "txid": "f997c7cdb774f3f5808b451a1b19defd199e94da38e6601a2928ed5cdca898c2"
-    },
-    {
-      "id": "bal-2026-08-19",
-      "ts": "2026-08-19T10:50:40.855484+00:00",
-      "type": "balance_change",
-      "amount_dog": 1495181.0135288239,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
     },
     {
       "id": "2da50a2ab398b5aaddade686ceab2b5a547c1fa677831b4cdcbe62c930e7723b",
