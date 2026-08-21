@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T19:48:26.917469+00:00",
+  "updated_at": "2026-08-21T20:45:07.216109+00:00",
   "date": "2026-08-21",
   "source": "dogdata.xyz",
   "cofre": {
@@ -9,7 +9,7 @@
     "delta_dog": 0.0,
     "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
   },
-  "holders_total": 85890,
+  "holders_total": 85891,
   "holders_delta": 1,
   "exchanges": [
     {
