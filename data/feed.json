@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-20T23:45:42.064600+00:00",
+  "updated_at": "2026-08-21T02:02:54.918964+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-21",
+      "ts": "2026-08-21T02:02:54.918964+00:00",
+      "type": "balance_change",
+      "amount_dog": 1400000.0,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
     {
       "id": "bal-2026-08-20",
       "ts": "2026-08-20T23:45:42.064600+00:00",
@@ -767,19 +780,6 @@
       "to_id": "bc1pm4ejxyzdfv0a4f087pfdqvv0q4lwj9ssfjzft9ffpxqm4yumezxsg29p2j",
       "community": null,
       "txid": "30cfcf356c9fdbcff8db640e6b584ace6ec8fdf2c3af5b035ac5bed5af43506c"
-    },
-    {
-      "id": "5668518640f4f7817ba51bb3279878e47461ef4192d88afadde8da1824a29381",
-      "ts": "2026-08-18T07:18:23+00:00",
-      "type": "exchange_out",
-      "amount_dog": 14163446.84,
-      "level": "info",
-      "from_label": "MEXC Wallet",
-      "to_label": "MM2 shuttle",
-      "from_id": "mexc",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "5668518640f4f7817ba51bb3279878e47461ef4192d88afadde8da1824a29381"
     }
   ]
 }
