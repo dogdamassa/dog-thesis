@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-22T07:05:48.619991+00:00",
+  "updated_at": "2026-08-22T07:50:35.778630+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12612555165.98837,
+      "balance_dog": 12622963881.13675,
       "rank": 1,
-      "pct": 12.61,
+      "pct": 12.62,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3244491641.55759,
+      "balance_dog": 3244632001.06759,
       "rank": 2,
       "pct": 3.24,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -197,8 +197,8 @@
       "to": "int2",
       "from_label": "Gate.io hot",
       "to_label": "Bitget Deposit #2",
-      "dog": 412552427,
-      "count": 14
+      "dog": 419392588,
+      "count": 15
     },
     {
       "from": "h2",
@@ -213,8 +213,8 @@
       "to": "h3",
       "from_label": "Bitget Deposit #2",
       "to_label": "Bitget hot",
-      "dog": 695289161,
-      "count": 115
+      "dog": 700451737,
+      "count": 116
     },
     {
       "from": "int1",
