@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-22T13:48:25.190197+00:00",
+  "updated_at": "2026-08-22T14:43:04.860672+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12633709268.35077,
+      "balance_dog": 12640071466.14077,
       "rank": 1,
-      "pct": 12.63,
+      "pct": 12.64,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
