@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-22T08:52:51.481572+00:00",
+  "updated_at": "2026-08-22T09:47:15.642582+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-22",
+      "ts": "2026-08-22T09:47:15.642582+00:00",
+      "type": "balance_change",
+      "amount_dog": 11110736.782020569,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "1fb536c37a58ca08394139f861541c2a007814824fc9f916ec3df86ff84354ef",
+      "ts": "2026-08-22T09:06:14+00:00",
+      "type": "exchange_out",
+      "amount_dog": 50323700.16943,
+      "level": "info",
+      "from_label": "Gate.io hot",
+      "to_label": "Whale7 shuttle",
+      "from_id": "h2",
+      "to_id": "whale7",
+      "community": null,
+      "txid": "1fb536c37a58ca08394139f861541c2a007814824fc9f916ec3df86ff84354ef"
+    },
     {
       "id": "26f631c7824eb36a0b7b0ceba9008bfdb7cbb0844ccc436266e2c44313bbfe89",
       "ts": "2026-08-22T08:39:05+00:00",
@@ -39,19 +65,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "732d4d70ba4524a6b858839e3eaae2e8ba688bd607d2d8c3025c2e34ffc40957"
-    },
-    {
-      "id": "bal-2026-08-22",
-      "ts": "2026-08-22T07:50:35.778630+00:00",
-      "type": "balance_change",
-      "amount_dog": 10408715.148378372,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
     },
     {
       "id": "18e81be9c86f428e2d13b81ae834e0844c69edaef60dd72faa41cbb665a89bf9",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "7a9e98adeb6d58ee44cd7bdfc1f0aa8384326d3f3d166c154d8a30afd8406eaf"
-    },
-    {
-      "id": "eb95af9afc73d36ea7daac6525df21f88d862ec2ae1abe07b9c95e5974a5f3f9",
-      "ts": "2026-08-20T12:28:46+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 9776461.52,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "from_id": "cofre",
-      "to_id": "merlin2",
-      "community": "Merlin",
-      "txid": "eb95af9afc73d36ea7daac6525df21f88d862ec2ae1abe07b9c95e5974a5f3f9"
     }
   ]
 }
