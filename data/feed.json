@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-23T18:53:25.864016+00:00",
+  "updated_at": "2026-08-23T19:41:24.070942+00:00",
   "events": [
+    {
+      "id": "7dc39b0ed9debb0be294c0b1a01eedd71da81afb3ef234d1ea9b4b0cb24dc81d",
+      "ts": "2026-08-23T19:02:03+00:00",
+      "type": "cofre_in",
+      "amount_dog": 3993784.48,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "7dc39b0ed9debb0be294c0b1a01eedd71da81afb3ef234d1ea9b4b0cb24dc81d"
+    },
+    {
+      "id": "1b5a047710675ea73707afd35e2257da854c872ef3c6e484b835349aace219dd",
+      "ts": "2026-08-23T19:02:03+00:00",
+      "type": "exchange_out",
+      "amount_dog": 22160146.48733,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "MM2 shuttle",
+      "from_id": "h3",
+      "to_id": "mm2",
+      "community": null,
+      "txid": "1b5a047710675ea73707afd35e2257da854c872ef3c6e484b835349aace219dd"
+    },
     {
       "id": "bal-2026-08-23",
       "ts": "2026-08-23T17:40:49.454254+00:00",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "648db4a016aa67d8feb39c9249c494f57d780b2e45871c2f2f82ce29407f5d82"
-    },
-    {
-      "id": "20d7bd17f738d0ea299ab06b6e6f41f70bb59b7217359f85d758a6ac4ab12cde",
-      "ts": "2026-08-21T02:02:24+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 3024958.02,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "20d7bd17f738d0ea299ab06b6e6f41f70bb59b7217359f85d758a6ac4ab12cde"
-    },
-    {
-      "id": "bal-2026-08-20",
-      "ts": "2026-08-20T23:45:42.064600+00:00",
-      "type": "balance_change",
-      "amount_dog": 2273468.5,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     }
   ]
 }
