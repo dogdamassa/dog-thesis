@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-22T23:40:45.925113+00:00",
+  "updated_at": "2026-08-23T02:06:07.264098+00:00",
   "events": [
+    {
+      "id": "882c8537467ef090ee5652a1de916f3377b2840b1dba54966a20940b886cb4ea",
+      "ts": "2026-08-23T01:14:17+00:00",
+      "type": "exchange_out",
+      "amount_dog": 7795471.5838,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "MM2 shuttle",
+      "from_id": "h3",
+      "to_id": "mm2",
+      "community": null,
+      "txid": "882c8537467ef090ee5652a1de916f3377b2840b1dba54966a20940b886cb4ea"
+    },
     {
       "id": "2b5d9c80bd720375d233ab3166531e0b716d2f6ed59cfc4855231ebc886047da",
       "ts": "2026-08-22T23:12:46+00:00",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "ece69d311c8ccff1b9435ce874d60bc4d4f22579b0dbf03c52e8bd9fa398368a"
-    },
-    {
-      "id": "cd25dc617a0e500ff15644c9009f03e51f55d26d428f02780358b40b069d1fad",
-      "ts": "2026-08-20T16:35:39+00:00",
-      "type": "exchange_out",
-      "amount_dog": 9998500,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1peevn...g2cz",
-      "from_id": "h3",
-      "to_id": "bc1peevnvdcmnxyhd3mafwfkhh8dx57prfu3m6l8krsfmqw23hk7l2ks0xg2cz",
-      "community": null,
-      "txid": "cd25dc617a0e500ff15644c9009f03e51f55d26d428f02780358b40b069d1fad"
     }
   ]
 }
