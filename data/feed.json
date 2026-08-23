@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-23T15:42:39.410422+00:00",
+  "updated_at": "2026-08-23T16:46:56.946258+00:00",
   "events": [
+    {
+      "id": "bal-2026-08-23",
+      "ts": "2026-08-23T16:46:56.946258+00:00",
+      "type": "balance_change",
+      "amount_dog": 5555027.221000671,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "facf6575a82af419fc92e3a6a8eef26b55093c44c2496cccda191b1f73b5c844",
+      "ts": "2026-08-23T16:20:09+00:00",
+      "type": "cofre_in",
+      "amount_dog": 3614837.48,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "facf6575a82af419fc92e3a6a8eef26b55093c44c2496cccda191b1f73b5c844"
+    },
     {
       "id": "9322a6953cc079855bcee76610be7483d1aa5abace8aee8463b2413492310f2c",
       "ts": "2026-08-23T14:41:38+00:00",
@@ -13,19 +39,6 @@
       "to_id": "bc1pf8k3m2eqn6l0q56kye7c8437f3mful2lkqjtxkapudrfc9gnkrssdcg9e4",
       "community": null,
       "txid": "9322a6953cc079855bcee76610be7483d1aa5abace8aee8463b2413492310f2c"
-    },
-    {
-      "id": "bal-2026-08-23",
-      "ts": "2026-08-23T13:49:58.040678+00:00",
-      "type": "balance_change",
-      "amount_dog": 4134126.0,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     },
     {
       "id": "28a1b21fb8d01eb86f2db43fde83083dc6406644b125c50e115811e9c754cf4e",
@@ -767,19 +780,6 @@
       "to_id": "",
       "sign": "-",
       "txid": null
-    },
-    {
-      "id": "36598e4bc56742866be2a2b6e3fa3eb9b9e8a50b306cf1c99a76e91451510d6a",
-      "ts": "2026-08-20T23:14:04+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 1522686.46711,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1ps5j4f8cg38pzltjfvqs5dcheqqq7eyqmnarv5ks9v5f5w0lugprs6ulry4",
-      "community": null,
-      "txid": "36598e4bc56742866be2a2b6e3fa3eb9b9e8a50b306cf1c99a76e91451510d6a"
     }
   ]
 }
