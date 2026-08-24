@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-08-24T19:50:07.758133+00:00",
+  "updated_at": "2026-08-24T20:54:06.875505+00:00",
   "events": [
     {
       "id": "bal-2026-08-24",
-      "ts": "2026-08-24T19:50:07.758133+00:00",
+      "ts": "2026-08-24T20:54:06.875505+00:00",
       "type": "balance_change",
-      "amount_dog": 4718847.198350906,
+      "amount_dog": 4286417.3999996185,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,19 @@
       "to_id": "",
       "sign": "-",
       "txid": null
+    },
+    {
+      "id": "028f7ea42ff20402648d37ed869f9f635fc833c37f3152f80eb4c7377f05c95e",
+      "ts": "2026-08-24T20:33:20+00:00",
+      "type": "cofre_in",
+      "amount_dog": 6097620.06,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "028f7ea42ff20402648d37ed869f9f635fc833c37f3152f80eb4c7377f05c95e"
     },
     {
       "id": "b0f608ad3cb4cf7a81f9da7fb308a2f5a602116d9f5b1e92569b3dbba396a039",
@@ -767,19 +780,6 @@
       "to_id": "h3",
       "community": "Bitget",
       "txid": "e051b7a48579562db1240efdb6e66ae6c1ca115189fcadcb5ae72f921fe56d11"
-    },
-    {
-      "id": "0f21dd064118eb7c4d49523ddb7372646170c6b6831d6579c77bdcd5e37de181",
-      "ts": "2026-08-24T08:14:37+00:00",
-      "type": "cofre_in",
-      "amount_dog": 4792489.23354,
-      "level": "info",
-      "from_label": "MM2 shuttle",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "0f21dd064118eb7c4d49523ddb7372646170c6b6831d6579c77bdcd5e37de181"
     }
   ]
 }
