@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-24T07:33:26.714377+00:00",
+  "updated_at": "2026-08-24T09:09:35.795063+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12695775881.51374,
+      "balance_dog": 12740201489.3589,
       "rank": 1,
-      "pct": 12.7,
+      "pct": 12.74,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,9 +19,9 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3190078343.43731,
+      "balance_dog": 3182657944.03753,
       "rank": 2,
-      "pct": 3.19,
+      "pct": 3.18,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
     },
     {
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2782710208.04613,
+      "balance_dog": 2785621413.59659,
       "rank": 4,
-      "pct": 2.78,
+      "pct": 2.79,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -63,8 +63,8 @@
       "kind": "relay",
       "community": "Bitget deposit, desk reuse",
       "confirmed": true,
-      "balance_dog": 1465498.1,
-      "rank": 6166,
+      "balance_dog": 3619445.32,
+      "rank": 2238,
       "pct": 0.0,
       "addr": "bc1p52673nrtsed5n5nal7cm02u6pg63p0e6u4nm2fhm90xd8r4w3ass090zzy"
     },
@@ -197,8 +197,8 @@
       "to": "int2",
       "from_label": "Gate.io hot",
       "to_label": "Bitget Deposit #2",
-      "dog": 420481554,
-      "count": 16
+      "dog": 424182919,
+      "count": 17
     },
     {
       "from": "h2",
@@ -213,16 +213,16 @@
       "to": "h3",
       "from_label": "Bitget Deposit #2",
       "to_label": "Bitget hot",
-      "dog": 707489148,
-      "count": 119
+      "dog": 716044226,
+      "count": 122
     },
     {
       "from": "int1",
       "to": "h3",
       "from_label": "Bitget Deposit #1",
       "to_label": "Bitget hot",
-      "dog": 384422896,
-      "count": 73
+      "dog": 385531760,
+      "count": 74
     },
     {
       "from": "int3",
