@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-23T23:40:46.628722+00:00",
+  "updated_at": "2026-08-24T02:02:13.116117+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12684411751.31202,
+      "balance_dog": 12706941013.98071,
       "rank": 1,
-      "pct": 12.68,
+      "pct": 12.71,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3227470317.61931,
+      "balance_dog": 3227798114.3743,
       "rank": 2,
       "pct": 3.23,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2811750252.75773,
+      "balance_dog": 2795672079.10917,
       "rank": 4,
-      "pct": 2.81,
+      "pct": 2.8,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -91,17 +91,6 @@
       "addr": "bc1pzsx4xvghxmc0prv4mys0xdly9dh9js3e88e4m24k5gxzkeskx30s4qzjud"
     },
     {
-      "id": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq",
-      "label": "bc1p8lkq...7fgq",
-      "kind": "fresh",
-      "community": null,
-      "confirmed": false,
-      "balance_dog": 0,
-      "rank": null,
-      "pct": 0,
-      "addr": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq"
-    },
-    {
       "id": "bc1pxj0d5rx9glmxna55hudjezgr9juhydvf3k5fy6xjy29tylx7nrmsgs4ecl",
       "label": "bc1pxj0d...4ecl",
       "kind": "fresh",
@@ -111,6 +100,17 @@
       "rank": null,
       "pct": 0,
       "addr": "bc1pxj0d5rx9glmxna55hudjezgr9juhydvf3k5fy6xjy29tylx7nrmsgs4ecl"
+    },
+    {
+      "id": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq",
+      "label": "bc1p8lkq...7fgq",
+      "kind": "fresh",
+      "community": null,
+      "confirmed": false,
+      "balance_dog": 0,
+      "rank": null,
+      "pct": 0,
+      "addr": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq"
     },
     {
       "id": "bc1pyu3fl74frumq742tqq6vgp35g4nmdmc238kzvvch44ncecvz7qvqn2a4de",
@@ -141,31 +141,31 @@
       "to": "bc1pzg6aed026czampasr6lp7q0eugeptmw789z4d0xm605sc0qm2cmqxf5vtk",
       "from_label": "Vault #1",
       "to_label": "bc1pzg6a...5vtk",
-      "dog": 879472341,
-      "count": 17
+      "dog": 878064800,
+      "count": 16
     },
     {
       "from": "cofre",
       "to": "merlin2",
       "from_label": "Vault #1",
       "to_label": "Merlin Chain vault (2026)",
-      "dog": 2572568834,
-      "count": 29
+      "dog": 1463145034,
+      "count": 26
     },
     {
       "from": "cofre",
       "to": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq",
       "from_label": "Vault #1",
       "to_label": "bc1p8lkq...7fgq",
-      "dog": 1246165052,
-      "count": 8
+      "dog": 1054812919,
+      "count": 7
     },
     {
       "from": "cofre",
       "to": "int2",
       "from_label": "Vault #1",
       "to_label": "Bitget Deposit #2",
-      "dog": 313781597,
+      "dog": 312922939,
       "count": 41
     },
     {
@@ -181,7 +181,7 @@
       "to": "int1",
       "from_label": "Vault #1",
       "to_label": "Bitget Deposit #1",
-      "dog": 385048180,
+      "dog": 380160599,
       "count": 24
     },
     {
@@ -209,20 +209,20 @@
       "count": 7
     },
     {
+      "from": "int1",
+      "to": "h3",
+      "from_label": "Bitget Deposit #1",
+      "to_label": "Bitget hot",
+      "dog": 377155380,
+      "count": 70
+    },
+    {
       "from": "int2",
       "to": "h3",
       "from_label": "Bitget Deposit #2",
       "to_label": "Bitget hot",
       "dog": 700451737,
       "count": 116
-    },
-    {
-      "from": "int1",
-      "to": "h3",
-      "from_label": "Bitget Deposit #1",
-      "to_label": "Bitget hot",
-      "dog": 373960536,
-      "count": 69
     },
     {
       "from": "int3",
