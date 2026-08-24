@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-08-24T17:52:55.007154+00:00",
+  "updated_at": "2026-08-24T19:06:55.749627+00:00",
   "events": [
+    {
+      "id": "9795f4e40a0149136324ad54df0c78050b54e788c44282e7966412d0db99c125",
+      "ts": "2026-08-24T18:29:58+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 29529360.52582,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pdzc3wq7n06pf6w68z2fxer6petuc326xfjncmuw8yc7xdyzqz3wsjhwk2f",
+      "community": null,
+      "txid": "9795f4e40a0149136324ad54df0c78050b54e788c44282e7966412d0db99c125"
+    },
+    {
+      "id": "bd6c3213a3a7684b8291f20e231edfd7e2bc838a1baa2d9ee7e2e4ae1ecf30ad",
+      "ts": "2026-08-24T18:11:01+00:00",
+      "type": "relay_flow",
+      "amount_dog": 1999979.03,
+      "level": "watch",
+      "from_label": "Bitget Deposit #2",
+      "to_label": "Bitget hot",
+      "from_id": "int2",
+      "to_id": "h3",
+      "community": null,
+      "txid": "bd6c3213a3a7684b8291f20e231edfd7e2bc838a1baa2d9ee7e2e4ae1ecf30ad"
+    },
     {
       "id": "bal-2026-08-24",
       "ts": "2026-08-24T17:52:55.007154+00:00",
@@ -754,32 +780,6 @@
       "to_id": "int2",
       "community": null,
       "txid": "d28872840e3a03940f2f4edabca5c6cb221805c2e3dd9d6c48ed053f1de1189e"
-    },
-    {
-      "id": "1b071a2730cf4b07c1d45801b247b99dfe734f600b6626db1d8326cc3827cf3d",
-      "ts": "2026-08-24T08:14:37+00:00",
-      "type": "relay_flow",
-      "amount_dog": 3619445.32,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": null,
-      "txid": "1b071a2730cf4b07c1d45801b247b99dfe734f600b6626db1d8326cc3827cf3d"
-    },
-    {
-      "id": "144b60ce71efcf0c8b0e9ed1e55f35d17a8f0c628ca112501822b99c640149ab",
-      "ts": "2026-08-24T07:49:47+00:00",
-      "type": "relay_flow",
-      "amount_dog": 1108864.32,
-      "level": "watch",
-      "from_label": "Bitget Deposit #1",
-      "to_label": "Bitget hot",
-      "from_id": "int1",
-      "to_id": "h3",
-      "community": null,
-      "txid": "144b60ce71efcf0c8b0e9ed1e55f35d17a8f0c628ca112501822b99c640149ab"
     }
   ]
 }
