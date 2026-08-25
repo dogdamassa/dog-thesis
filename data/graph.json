@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-25T09:04:19.871975+00:00",
+  "updated_at": "2026-08-25T09:56:53.003244+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,7 +8,7 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12773608529.4452,
+      "balance_dog": 12773708529.4452,
       "rank": 1,
       "pct": 12.77,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3107873063.39751,
+      "balance_dog": 3107873139.54277,
       "rank": 2,
       "pct": 3.11,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2905012323.76603,
+      "balance_dog": 2890410960.19281,
       "rank": 4,
-      "pct": 2.91,
+      "pct": 2.89,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -53,7 +53,7 @@
       "community": "Bitget deposit, desk reuse",
       "confirmed": true,
       "balance_dog": 4876427.08,
-      "rank": 1746,
+      "rank": 1747,
       "pct": 0.0,
       "addr": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar"
     },
@@ -138,19 +138,19 @@
   "edges": [
     {
       "from": "cofre",
-      "to": "int2",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #2",
-      "dog": 341071818,
-      "count": 49
-    },
-    {
-      "from": "cofre",
       "to": "int1",
       "from_label": "Vault #1",
       "to_label": "Bitget Deposit #1",
-      "dog": 140624371,
-      "count": 28
+      "dog": 209664986,
+      "count": 29
+    },
+    {
+      "from": "cofre",
+      "to": "int2",
+      "from_label": "Vault #1",
+      "to_label": "Bitget Deposit #2",
+      "dog": 330777606,
+      "count": 49
     },
     {
       "from": "cofre",
@@ -213,8 +213,8 @@
       "to": "h3",
       "from_label": "Bitget Deposit #1",
       "to_label": "Bitget hot",
-      "dog": 426147030,
-      "count": 87
+      "dog": 435188287,
+      "count": 88
     },
     {
       "from": "int2",
