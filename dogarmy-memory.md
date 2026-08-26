@@ -54,6 +54,7 @@ ordinals.com, dogdata.xyz, mempool.space and public CEX APIs.
 - `monitor-dog.md`: dated operational read of the watched whale and exchange flow.
 - `public/culture/pics/dogmode1.png`: lossless official DOG Mode desk scene.
 - `public/culture/pics/dogmode1.jpg`: optimized delivery copy used in the home `#luta` block and the DOG News hero.
+- `public/culture/pics/dogmode-fork-github.jpg`: cover of the home `#dogmode` card since 2026-08-26 (GitHub org screenshot Leonidas posted on Aug 25, 2026). The card states DOG Mode is *published* (fork of Bitcoin Core v31.1 at github.com/bitcoindogmode/bitcoin, branch `31.1-dogmode`) and links GitHub + the X announcement. Update it again when v1 ships (release link) — keys `dm.*` in `i18n.js` (pt/es).
 - `public/dog-army-mark-transparent.png`: background-free derivative of the canonical mark used to build browser and app icons; preserve the black areas inside the shield.
 
 ## Live Snapshot From 2026-07-19

@@ -674,23 +674,27 @@
       <article class="dogmode-box">
         <div class="dogmode-top">
           <span class="dogmode-tag" data-i18n="dm.k">DOG News · Story of the week</span>
-          <span class="dogmode-date"><time datetime="2026-07-17">Jul 17, 2026</time></span>
+          <span class="dogmode-date"><span data-i18n="dm.status">Published</span> · <time datetime="2026-08-25" data-i18n="dm.date">Aug 25, 2026</time></span>
         </div>
         <figure class="dogmode-cover">
-          <a href="/noticias#dog-mode"><img src="public/culture/pics/dogmode1.jpg?v=05a98093ef" width="1672" height="941" alt="DOG in an orange Bitcoin hoodie at a desk running a Bitcoin DOG Mode node" loading="lazy"></a>
-          <figcaption data-i18n="dm.cap">Bitcoin DOG Mode — defend permissionless blockspace.</figcaption>
+          <a href="https://github.com/bitcoindogmode/bitcoin" target="_blank" rel="noopener"><img src="public/culture/pics/dogmode-fork-github.jpg" width="1400" height="925" alt="GitHub page of the bitcoindogmode organization: Bitcoin DOG Mode, a Bitcoin client designed for maximum freedom, with the bitcoin repository forked from bitcoin/bitcoin" loading="lazy"></a>
+          <figcaption data-i18n="dm.cap">Bitcoin DOG Mode on GitHub — forked from bitcoin/bitcoin. Screenshot posted by Leonidas on Aug 25, 2026.</figcaption>
         </figure>
-        <h2 id="dogmode-title" data-i18n="dm.h">Leonidas proposed a new Bitcoin client: ‘Bitcoin DOG Mode’.</h2>
-        <p class="dogmode-p" data-i18n="dm.p">On July 17, Leonidas — co-founder of Runestone, the project $DOG was born from — posted the proposal on X: an open-source Bitcoin client, an alternative to Core and Knots, that relays every transaction Bitcoin consensus already accepts. No policy filter deciding what counts as “spam”. It's the direct answer to BIP-110, and CoinDesk, Cointelegraph and Crypto Briefing all covered it within 24 hours.</p>
+        <h2 id="dogmode-title" data-i18n="dm.h">Bitcoin DOG Mode is published: the $DOG Army forked Bitcoin Core and the code is on GitHub.</h2>
+        <p class="dogmode-cmd">github.com/bitcoindogmode/bitcoin · forked from bitcoin/bitcoin · branch 31.1-dogmode · MIT</p>
+        <p class="dogmode-p" data-i18n="dm.p">On July 17, Leonidas — co-founder of Runestone, the project $DOG was born from — proposed it. On August 25, Leonidas announced it had become real: the $DOG Army forked Bitcoin Core's code repository and opened <b>Bitcoin DOG Mode</b> as its own open-source project, “a Bitcoin client designed for maximum freedom”. It runs on top of Bitcoin Core v31.1 and changes relay policy only — not Bitcoin consensus, no hard fork. Developers can already contribute on GitHub; the first version, with the three changes below, is expected in the coming weeks.</p>
+        <p class="dogmode-p" data-i18n="dm.p0">Why now: BIP-110, the Knots-camp soft fork that targeted Ordinals and Runes, activated on August 8 (block 961,632) with about 2.5% of blocks signaling, and its minority chain stalled after two blocks. That fight is over. DOG Mode is the next step: making Bitcoin permanently more open to non-monetary use cases.</p>
         <div class="dogmode-points">
-          <div class="dogmode-point"><b>3.9M WU</b><span data-i18n="dm.p1">Relays consensus-valid transactions up to 3.9 million weight units — the full block, not a policy subset.</span></div>
-          <div class="dogmode-point"><b>1 sat</b><span data-i18n="dm.p2">Drops the dust floor to one satoshi. No minimum-value gatekeeping on what you're allowed to send.</span></div>
-          <div class="dogmode-point"><b>relay ≠ consensus</b><span data-i18n="dm.p3">Changes relay policy only. No hard fork, no consensus change — your node, your rules.</span></div>
+          <div class="dogmode-point"><b>3.9M WU</b><span data-i18n="dm.p1">Max standard transaction size goes from 400,000 to 3,900,000 weight units — nearly the full block, with 100,000 WU left for the coinbase and block overhead.</span></div>
+          <div class="dogmode-point"><b>1 sat</b><span data-i18n="dm.p2">Dust limit drops from 294–546 sats to one satoshi. No more “padding” on inscriptions and Runes UTXOs — an estimated ~$25M in sats freed for the ecosystem.</span></div>
+          <div class="dogmode-point"><b>DOG ↔ DOG</b><span data-i18n="dm.p3">Preferential peering so DOG Mode nodes find and talk to each other, borrowed from Libre Relay. Relay policy only — no consensus change.</span></div>
         </div>
         <div class="dogmode-actions">
-          <a class="btn primary" href="/noticias#dog-mode" data-i18n="dm.cta">Read the full story on DOG News</a>
+          <a class="btn primary" href="https://github.com/bitcoindogmode/bitcoin" target="_blank" rel="noopener" data-i18n="dm.cta">Open Bitcoin DOG Mode on GitHub ↗</a>
+          <a class="btn secondary" href="https://x.com/LeonidasNFT/status/2092354475683983753" target="_blank" rel="noopener" data-i18n="dm.cta2">Read Leonidas' announcement on X ↗</a>
+          <a class="btn secondary" href="/noticias#dog-mode" data-i18n="dm.cta3">DOG News archive</a>
         </div>
-        <p class="dogmode-note" data-i18n="dm.note">Why is CoinDesk calling this “Bitcoin's next governance fight” — and why do the biggest mining pools still refuse to signal for BIP-110? Every report, dated and source-linked, is in the archive.</p>
+        <p class="dogmode-note" data-i18n="dm.note">Support it? Star the repository. Developer? Pull requests are open on GitHub. Want to run a DOG Mode node? The first release is coming and we will post it here. This is protocol advocacy, not financial advice.</p>
       </article>
     </div>
   </section>
