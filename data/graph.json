@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-26T08:04:41.429884+00:00",
+  "updated_at": "2026-08-26T09:07:35.854890+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -80,5 +80,22 @@
       "addr": "bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j"
     }
   ],
-  "edges": []
+  "edges": [
+    {
+      "from": "int3",
+      "to": "h3",
+      "from_label": "Intermediary Wallet #3",
+      "to_label": "Bitget hot",
+      "dog": 36898254,
+      "count": 2
+    },
+    {
+      "from": "h2",
+      "to": "int3",
+      "from_label": "Gate.io hot",
+      "to_label": "Intermediary Wallet #3",
+      "dog": 36599245,
+      "count": 2
+    }
+  ]
 }
