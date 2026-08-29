@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-29T09:12:58.929654+00:00",
+  "updated_at": "2026-08-29T14:34:51.206445+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12965179671.76066,
+      "balance_dog": 12982875296.93351,
       "rank": 1,
-      "pct": 12.97,
+      "pct": 12.98,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3073318702.00838,
+      "balance_dog": 3071847182.23823,
       "rank": 2,
       "pct": 3.07,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2868837003.4656,
+      "balance_dog": 2873669338.93275,
       "rank": 4,
       "pct": 2.87,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1954241319.16203,
+      "balance_dog": 1953676619.29203,
       "rank": 6,
       "pct": 1.95,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -194,6 +194,14 @@
     },
     {
       "from": "h2",
+      "to": "int2",
+      "from_label": "Gate.io hot",
+      "to_label": "Bitget Deposit #2",
+      "dog": 137920187,
+      "count": 23
+    },
+    {
+      "from": "h2",
       "to": "int1",
       "from_label": "Gate.io hot",
       "to_label": "Bitget Deposit #1",
@@ -201,20 +209,12 @@
       "count": 21
     },
     {
-      "from": "h2",
-      "to": "int2",
-      "from_label": "Gate.io hot",
-      "to_label": "Bitget Deposit #2",
-      "dog": 134383276,
-      "count": 22
-    },
-    {
       "from": "int2",
       "to": "h3",
       "from_label": "Bitget Deposit #2",
       "to_label": "Bitget hot",
-      "dog": 1213849222,
-      "count": 232
+      "dog": 1219034208,
+      "count": 233
     },
     {
       "from": "int1",
