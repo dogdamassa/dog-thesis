@@ -1,43 +1,43 @@
 {
-  "updated_at": "2026-08-30T13:01:54.830453+00:00",
+  "updated_at": "2026-08-30T17:38:01.500405+00:00",
   "date": "2026-08-30",
   "source": "dogdata.xyz",
   "cofre": {
     "rank": 1,
-    "pct": 13.03,
-    "total_dog": 13025716236.18558,
-    "delta_dog": -1798589.8502311707,
+    "pct": 13.01,
+    "total_dog": 13012214282.71136,
+    "delta_dog": -13501953.474218369,
     "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
   },
-  "holders_total": 85840,
-  "holders_delta": -2,
+  "holders_total": 85835,
+  "holders_delta": -5,
   "exchanges": [
     {
       "id": "h2",
       "label": "Gate.io hot",
       "community": "Gate",
-      "balance_dog": 3064626890.1558,
+      "balance_dog": 3064628403.4558,
       "rank": 2
     },
     {
       "id": "h3",
       "label": "Bitget hot",
       "community": "Bitget",
-      "balance_dog": 2874355216.54617,
+      "balance_dog": 2889487987.07988,
       "rank": 4
     },
     {
       "id": "mexc",
       "label": "MEXC Wallet",
       "community": "MEXC",
-      "balance_dog": 1950232875.63203,
+      "balance_dog": 1954132288.86002,
       "rank": 6
     }
   ],
   "signals": {
     "cofre_to_exchange": 0,
-    "cofre_big_out": 2,
-    "relay_flows": 2
+    "cofre_big_out": 7,
+    "relay_flows": 4
   },
   "level": "watch"
 }
