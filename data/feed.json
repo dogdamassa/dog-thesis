@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-08-29T21:49:23.627470+00:00",
+  "updated_at": "2026-08-30T00:27:37.791503+00:00",
   "events": [
+    {
+      "id": "cb38f58389afe7203ae6613916f8979f923b4dfb8e8bdc409f03cf06ffa66eeb",
+      "ts": "2026-08-30T00:12:02+00:00",
+      "type": "cofre_in",
+      "amount_dog": 8432028.15,
+      "level": "info",
+      "from_label": "Whale7 shuttle",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "cb38f58389afe7203ae6613916f8979f923b4dfb8e8bdc409f03cf06ffa66eeb"
+    },
     {
       "id": "bal-2026-08-29",
       "ts": "2026-08-29T21:49:23.627470+00:00",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "2ede837061ad1920822159963039ec7ab8109d1c00f3ae1fc6c408d1715b9fa2"
-    },
-    {
-      "id": "d6fc577729bde02f91596bd01f6717bec810fefdf9a9455b627c77126936afc2",
-      "ts": "2026-08-28T10:30:53+00:00",
-      "type": "cofre_in",
-      "amount_dog": 1372940.74,
-      "level": "info",
-      "from_label": "MM2 shuttle",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "d6fc577729bde02f91596bd01f6717bec810fefdf9a9455b627c77126936afc2"
     }
   ]
 }
