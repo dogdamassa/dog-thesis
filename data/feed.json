@@ -1,18 +1,31 @@
 {
-  "updated_at": "2026-08-30T06:50:52.011352+00:00",
+  "updated_at": "2026-08-30T13:01:54.830453+00:00",
   "events": [
     {
       "id": "bal-2026-08-30",
-      "ts": "2026-08-30T06:50:52.011352+00:00",
+      "ts": "2026-08-30T13:01:54.830453+00:00",
       "type": "balance_change",
-      "amount_dog": 6539517.75,
+      "amount_dog": 1798589.8502311707,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "+",
+      "sign": "-",
       "txid": null
+    },
+    {
+      "id": "045add928f83de76bfc06e99281a424af2d50fef1a5609e7b67bf71ea5ccbeda",
+      "ts": "2026-08-30T11:37:04+00:00",
+      "type": "cofre_in",
+      "amount_dog": 4000000,
+      "level": "info",
+      "from_label": "bc1pj5ky...qd4y",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "045add928f83de76bfc06e99281a424af2d50fef1a5609e7b67bf71ea5ccbeda"
     },
     {
       "id": "ef85fbdc3e96f2f94ee106da2aa2780cbcbe3adc66e50f4ae271184217aa4b1c",
@@ -767,19 +780,6 @@
       "to_id": "int2",
       "community": "Bitget deposit, desk reuse",
       "txid": "3ca5eb0e210b2fb30978c65355307f865eabae61e18b5faae4d28b1a7c5c92ec"
-    },
-    {
-      "id": "a9dde3a536db3678170801a90528816f7fccc8e69f271e98759b46fc7941d90f",
-      "ts": "2026-08-28T13:47:38+00:00",
-      "type": "cofre_in",
-      "amount_dog": 2847417.8,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "a9dde3a536db3678170801a90528816f7fccc8e69f271e98759b46fc7941d90f"
     }
   ]
 }
