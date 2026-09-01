@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-01T14:59:52.225663+00:00",
+  "updated_at": "2026-09-01T18:39:26.447151+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12995618159.69111,
+      "balance_dog": 12994507979.17511,
       "rank": 1,
-      "pct": 13.0,
+      "pct": 12.99,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3055141868.69373,
+      "balance_dog": 3055187761.91197,
       "rank": 2,
       "pct": 3.06,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2889861898.83762,
+      "balance_dog": 2880064659.91269,
       "rank": 4,
-      "pct": 2.89,
+      "pct": 2.88,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1954221374.93173,
+      "balance_dog": 1845410323.62554,
       "rank": 6,
-      "pct": 1.95,
+      "pct": 1.85,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -209,20 +209,20 @@
       "count": 21
     },
     {
+      "from": "int1",
+      "to": "h3",
+      "from_label": "Bitget Deposit #1",
+      "to_label": "Bitget hot",
+      "dog": 889920470,
+      "count": 164
+    },
+    {
       "from": "int2",
       "to": "h3",
       "from_label": "Bitget Deposit #2",
       "to_label": "Bitget hot",
       "dog": 1242365125,
       "count": 249
-    },
-    {
-      "from": "int1",
-      "to": "h3",
-      "from_label": "Bitget Deposit #1",
-      "to_label": "Bitget hot",
-      "dog": 885619256,
-      "count": 162
     },
     {
       "from": "h3",
@@ -237,8 +237,8 @@
       "to": "whale23",
       "from_label": "Bitget hot",
       "to_label": "Whale23",
-      "dog": 366116539,
-      "count": 60
+      "dog": 357590118,
+      "count": 59
     },
     {
       "from": "int3",
