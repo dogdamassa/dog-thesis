@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-09-01T21:51:32.869780+00:00",
+  "updated_at": "2026-09-02T00:20:41.768742+00:00",
   "events": [
+    {
+      "id": "960191d16e276f31df9b6197fc99b508a28c30a3343d8e24b20f6c227f1d0e13",
+      "ts": "2026-09-02T00:14:54+00:00",
+      "type": "relay_flow",
+      "amount_dog": 1133197.34,
+      "level": "watch",
+      "from_label": "unmapped wallet",
+      "to_label": "Bitget Deposit #2",
+      "from_id": null,
+      "to_id": "int2",
+      "community": null,
+      "txid": "960191d16e276f31df9b6197fc99b508a28c30a3343d8e24b20f6c227f1d0e13"
+    },
+    {
+      "id": "730a059479faaaba2cc2f78fd01ba8235b376c5c39278088b4142f2fae83e6f3",
+      "ts": "2026-09-02T00:08:36+00:00",
+      "type": "cofre_in",
+      "amount_dog": 1272296106.50811,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "730a059479faaaba2cc2f78fd01ba8235b376c5c39278088b4142f2fae83e6f3"
+    },
     {
       "id": "bal-2026-09-01",
       "ts": "2026-09-01T21:51:32.869780+00:00",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "bac6a225f5611de35ed9f5d530ca5bc1dac47b8fadccba15da1b34f3fb3b23ae"
-    },
-    {
-      "id": "a1f603f8d9feead681e875ce67ece48712442d22d9723386e7cc309eaee7f527",
-      "ts": "2026-08-31T13:11:39+00:00",
-      "type": "cofre_in",
-      "amount_dog": 3231092.9206,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "a1f603f8d9feead681e875ce67ece48712442d22d9723386e7cc309eaee7f527"
-    },
-    {
-      "id": "2429db331226a1d1dcddce7eccfbbd2ea858c10cdac6df7d5f832979b1140327",
-      "ts": "2026-08-31T12:22:57+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 44564708.589999996,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "from_id": "cofre",
-      "to_id": "merlin2",
-      "community": "Merlin",
-      "txid": "2429db331226a1d1dcddce7eccfbbd2ea858c10cdac6df7d5f832979b1140327"
     }
   ]
 }
