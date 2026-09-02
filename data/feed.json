@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-09-02T18:48:32.445384+00:00",
+  "updated_at": "2026-09-02T21:53:36.475401+00:00",
   "events": [
+    {
+      "id": "930f22fda6915b77cf61eb0026a5b57db0441aa5026cd539c6dc2e8eca5e35e8",
+      "ts": "2026-09-02T21:34:46+00:00",
+      "type": "cofre_in",
+      "amount_dog": 129488891.71616,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "930f22fda6915b77cf61eb0026a5b57db0441aa5026cd539c6dc2e8eca5e35e8"
+    },
+    {
+      "id": "bb6c9df3eb42d7579f8e471d54632202942875e5c114f15271046b6fafa2d45c",
+      "ts": "2026-09-02T21:17:38+00:00",
+      "type": "cofre_in",
+      "amount_dog": 17122424.79893,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "bb6c9df3eb42d7579f8e471d54632202942875e5c114f15271046b6fafa2d45c"
+    },
+    {
+      "id": "1605319c85020035d3d4cbaced2b3680e08ec409a0b9d96554ff78290a1142c3",
+      "ts": "2026-09-02T20:43:07+00:00",
+      "type": "cofre_in",
+      "amount_dog": 1200000,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "1605319c85020035d3d4cbaced2b3680e08ec409a0b9d96554ff78290a1142c3"
+    },
+    {
+      "id": "464ca72077b39cef35da3d26db9f0e4990cd793133dfc4e1a195a3818eb7fabd",
+      "ts": "2026-09-02T20:17:56+00:00",
+      "type": "cofre_in",
+      "amount_dog": 13922903.33,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "464ca72077b39cef35da3d26db9f0e4990cd793133dfc4e1a195a3818eb7fabd"
+    },
     {
       "id": "bal-2026-09-02",
       "ts": "2026-09-02T18:48:32.445384+00:00",
@@ -728,58 +780,6 @@
       "to_id": "h3",
       "community": null,
       "txid": "3dc481c0f059cbb4eaadeda3c6ab7d2d07fdab2a1b295c0785591fe3ff75d605"
-    },
-    {
-      "id": "6593d6d284f2fb35b58d9ba3f260b1999d511c55be9592700e6de95ea9b7d492",
-      "ts": "2026-09-01T07:32:43+00:00",
-      "type": "relay_flow",
-      "amount_dog": 1215661.4,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": null,
-      "txid": "6593d6d284f2fb35b58d9ba3f260b1999d511c55be9592700e6de95ea9b7d492"
-    },
-    {
-      "id": "f2bf92242d65701d13833ec3aca268482f711303788aeb59e59d218605e9c982",
-      "ts": "2026-09-01T07:27:01+00:00",
-      "type": "relay_flow",
-      "amount_dog": 1601039.65,
-      "level": "watch",
-      "from_label": "unmapped wallet",
-      "to_label": "Bitget Deposit #1",
-      "from_id": null,
-      "to_id": "int1",
-      "community": null,
-      "txid": "f2bf92242d65701d13833ec3aca268482f711303788aeb59e59d218605e9c982"
-    },
-    {
-      "id": "5a7313a53c878f09ed94b7b9bb11a514613dd0239fb9657d581b30443313bbe6",
-      "ts": "2026-09-01T06:56:36+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 1215661.4,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #2",
-      "from_id": "cofre",
-      "to_id": "int2",
-      "community": "Bitget deposit, desk reuse",
-      "txid": "5a7313a53c878f09ed94b7b9bb11a514613dd0239fb9657d581b30443313bbe6"
-    },
-    {
-      "id": "eb87073c6f8be568497fc368b80dd638757a5f6a93edf6ca9eb276e9a56895c3",
-      "ts": "2026-09-01T04:51:13+00:00",
-      "type": "exchange_out",
-      "amount_dog": 11418154.7747,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1pjqjc...0xuu",
-      "from_id": "h3",
-      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
-      "community": null,
-      "txid": "eb87073c6f8be568497fc368b80dd638757a5f6a93edf6ca9eb276e9a56895c3"
     }
   ]
 }
