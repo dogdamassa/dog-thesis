@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T00:22:32.625351+00:00",
+  "updated_at": "2026-09-03T04:51:34.350297+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12988354432.24994,
+      "balance_dog": 13046907745.85994,
       "rank": 1,
-      "pct": 12.99,
+      "pct": 13.05,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3056358852.49462,
+      "balance_dog": 3056359356.42526,
       "rank": 2,
       "pct": 3.06,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2889188951.45931,
+      "balance_dog": 2892511842.05931,
       "rank": 4,
       "pct": 2.89,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -138,11 +138,19 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "int2",
+      "from_label": "Vault #1",
+      "to_label": "Bitget Deposit #2",
+      "dog": 232766432,
+      "count": 59
+    },
+    {
+      "from": "cofre",
       "to": "whale23",
       "from_label": "Vault #1",
       "to_label": "Whale23",
-      "dog": 256478703,
-      "count": 50
+      "dog": 245346341,
+      "count": 48
     },
     {
       "from": "cofre",
@@ -154,19 +162,11 @@
     },
     {
       "from": "cofre",
-      "to": "int2",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #2",
-      "dog": 229443541,
-      "count": 58
-    },
-    {
-      "from": "cofre",
       "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "from_label": "Vault #1",
       "to_label": "bc1pjqjc...0xuu",
-      "dog": 208928133,
-      "count": 49
+      "dog": 200772159,
+      "count": 47
     },
     {
       "from": "cofre",
@@ -213,16 +213,16 @@
       "to": "h3",
       "from_label": "Bitget Deposit #1",
       "to_label": "Bitget hot",
-      "dog": 896279275,
-      "count": 167
+      "dog": 897613886,
+      "count": 168
     },
     {
       "from": "int2",
       "to": "h3",
       "from_label": "Bitget Deposit #2",
       "to_label": "Bitget hot",
-      "dog": 1245050326,
-      "count": 251
+      "dog": 1248373217,
+      "count": 252
     },
     {
       "from": "h3",
