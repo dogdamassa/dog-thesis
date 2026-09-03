@@ -6,7 +6,7 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ## 2026-09-03
 
-- **Baleia (#1):** 13.02% do supply (Δ -15.2M DOG).
+- **Baleia (#1):** 13.01% do supply (Δ -3.4M DOG).
 - 🚨 **Whale #7 ASSINOU uma tx** (03/09 12:14 UTC, `fc866d5be825f5bc…`) — a carteira MOVEU de verdade. Rastrear destino AGORA.
 - 🔎 **Leitura:** uma carteira fria vigiada **assinou** uma transação — isso sim é movimento dela. Rastrear o destino antes de publicar qualquer leitura: recebimento de CEX não conta como 'a baleia acordou'.
 
