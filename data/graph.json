@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02T21:53:36.475401+00:00",
+  "updated_at": "2026-09-03T00:22:32.625351+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,7 +8,7 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12987075001.94994,
+      "balance_dog": 12988354432.24994,
       "rank": 1,
       "pct": 12.99,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1842777175.00256,
+      "balance_dog": 1839341851.1292,
       "rank": 6,
       "pct": 1.84,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -78,17 +78,6 @@
       "rank": null,
       "pct": 0,
       "addr": "bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j"
-    },
-    {
-      "id": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq",
-      "label": "bc1p8lkq...7fgq",
-      "kind": "fresh",
-      "community": null,
-      "confirmed": false,
-      "balance_dog": 0,
-      "rank": null,
-      "pct": 0,
-      "addr": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq"
     },
     {
       "id": "bc1pa84ga2ae0vve4ulf5deyk2myzpv67de85ag5u8uyq59hy9lm853sfyq3qg",
@@ -133,6 +122,17 @@
       "rank": null,
       "pct": 0,
       "addr": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu"
+    },
+    {
+      "id": "bc1pn85g53njnqg20vpysmsemvw22ld933r0p083jsgg3htclq4mwr7qyjpyz2",
+      "label": "bc1pn85g...pyz2",
+      "kind": "fresh",
+      "community": null,
+      "confirmed": false,
+      "balance_dog": 0,
+      "rank": null,
+      "pct": 0,
+      "addr": "bc1pn85g53njnqg20vpysmsemvw22ld933r0p083jsgg3htclq4mwr7qyjpyz2"
     }
   ],
   "edges": [
@@ -149,8 +149,8 @@
       "to": "merlin2",
       "from_label": "Vault #1",
       "to_label": "Merlin Chain vault (2026)",
-      "dog": 289419693,
-      "count": 15
+      "dog": 282799081,
+      "count": 14
     },
     {
       "from": "cofre",
@@ -186,11 +186,11 @@
     },
     {
       "from": "cofre",
-      "to": "bc1p8lkq60vw6m2y5yumagmghcdq08c35ug4ymvzydnmx36xwef4axeq5h7fgq",
+      "to": "bc1pn85g53njnqg20vpysmsemvw22ld933r0p083jsgg3htclq4mwr7qyjpyz2",
       "from_label": "Vault #1",
-      "to_label": "bc1p8lkq...7fgq",
-      "dog": 393417160,
-      "count": 3
+      "to_label": "bc1pn85g...pyz2",
+      "dog": 159695716,
+      "count": 5
     },
     {
       "from": "h2",
