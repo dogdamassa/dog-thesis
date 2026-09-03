@@ -1,24 +1,28 @@
 {
-  "whale_last_ts": "2026-09-03T08:54:19+00:00",
+  "whale_last_ts": "2026-09-03T12:32:03+00:00",
   "relay_last_ts": {
     "Int#1": "2026-09-03T04:13:26+00:00",
     "Int#2": "2026-09-03T05:42:10+00:00",
     "Int#3": "2026-04-30T07:32:51+00:00"
   },
-  "whale_total_dog": 13031753085.40637,
+  "whale_total_dog": 13016576018.10637,
   "cold_last_block": {
-    "Whale #7": 965144
+    "Whale #7": 965308
   },
   "day": {
     "date": "2026-09-03",
-    "alertas": []
+    "alertas": [
+      "- \ud83d\udea8 **Whale #7 ASSINOU uma tx** (03/09 12:14 UTC, `fc866d5be825f5bc\u2026`) \u2014 a carteira MOVEU de verdade. Rastrear destino AGORA."
+    ]
   },
   "cold_seen_txids": {
     "Whale #7": [
       "1b9f08ef4e63b6ae97336c742374967f0c1db5b7886c58e8cbdcd3afaa1b7471",
       "2664ea6526e4c80065442c2a2f61b5cc38a3a6c10fb428aa029669bf7ea4389c",
       "d50891afb2fa9604a702aa53d0594c7312037e782d2ce5a651ccd6b3ba9f879b",
-      "1a7005f53d71f56d9dd80841f16a41d6e4b01a3171ec3eb3942bed760ceed4fa"
+      "1a7005f53d71f56d9dd80841f16a41d6e4b01a3171ec3eb3942bed760ceed4fa",
+      "fc866d5be825f5bc79170485b3e39eabde85d0ea0c6c8dabbc02c1acacfaab55",
+      "98ed8f4492ec2caf6acaff0066677dda80237e17f078d946687a4745d91174d4"
     ]
   }
 }
