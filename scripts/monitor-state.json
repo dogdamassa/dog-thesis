@@ -1,19 +1,17 @@
 {
-  "whale_last_ts": "2026-09-03T21:39:14+00:00",
+  "whale_last_ts": "2026-09-03T22:30:37+00:00",
   "relay_last_ts": {
     "Int#1": "2026-09-03T04:13:26+00:00",
     "Int#2": "2026-09-03T05:42:10+00:00",
     "Int#3": "2026-04-30T07:32:51+00:00"
   },
-  "whale_total_dog": 13032259595.96248,
+  "whale_total_dog": 13033671015.09188,
   "cold_last_block": {
     "Whale #7": 965308
   },
   "day": {
-    "date": "2026-09-03",
-    "alertas": [
-      "- \ud83d\udea8 **Whale #7 ASSINOU uma tx** (03/09 12:14 UTC, `fc866d5be825f5bc\u2026`) \u2014 a carteira MOVEU de verdade. Rastrear destino AGORA."
-    ]
+    "date": "2026-09-04",
+    "alertas": []
   },
   "cold_seen_txids": {
     "Whale #7": [
