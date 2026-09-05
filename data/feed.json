@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-09-04T21:35:24.791327+00:00",
+  "updated_at": "2026-09-05T00:12:19.493034+00:00",
   "events": [
+    {
+      "id": "bal-2026-09-05",
+      "ts": "2026-09-05T00:12:19.493034+00:00",
+      "type": "balance_change",
+      "amount_dog": 1466597.8000011444,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
     {
       "id": "bal-2026-09-04",
       "ts": "2026-09-04T21:35:24.791327+00:00",
@@ -767,19 +780,6 @@
       "to_id": "h3",
       "community": null,
       "txid": "a048fc7894cd2acabceca1db50fd61da47b98ee90e6b3ea6cbea7414b08f92d2"
-    },
-    {
-      "id": "18dd829ab3b935c3250d5d0f3ad3e6ffe8ed0f46d9b3b656128a47c0cd9a3023",
-      "ts": "2026-09-03T05:14:03+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 1877306.4000000001,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #2",
-      "from_id": "cofre",
-      "to_id": "int2",
-      "community": "Bitget deposit, desk reuse",
-      "txid": "18dd829ab3b935c3250d5d0f3ad3e6ffe8ed0f46d9b3b656128a47c0cd9a3023"
     }
   ]
 }
