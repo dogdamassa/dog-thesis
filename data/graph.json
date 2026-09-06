@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-06T04:51:25.969617+00:00",
+  "updated_at": "2026-09-06T09:32:05.931052+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13099241408.18378,
+      "balance_dog": 13105202495.90705,
       "rank": 1,
-      "pct": 13.1,
+      "pct": 13.11,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3046669098.77439,
+      "balance_dog": 3046655095.59985,
       "rank": 3,
       "pct": 3.05,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2815093973.36161,
+      "balance_dog": 2814012626.82508,
       "rank": 4,
-      "pct": 2.82,
+      "pct": 2.81,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1825087984.83088,
+      "balance_dog": 1825104831.32529,
       "rank": 6,
       "pct": 1.83,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -237,16 +237,8 @@
       "to": "whale23",
       "from_label": "Bitget hot",
       "to_label": "Whale23",
-      "dog": 343493770,
-      "count": 58
-    },
-    {
-      "from": "int3",
-      "to": "h3",
-      "from_label": "Intermediary Wallet #3",
-      "to_label": "Bitget hot",
-      "dog": 36898254,
-      "count": 2
+      "dog": 332375366,
+      "count": 57
     },
     {
       "from": "mexc",
@@ -263,6 +255,14 @@
       "to_label": "bc1pjqjc...0xuu",
       "dog": 87938590,
       "count": 25
+    },
+    {
+      "from": "int3",
+      "to": "h3",
+      "from_label": "Intermediary Wallet #3",
+      "to_label": "Bitget hot",
+      "dog": 36898254,
+      "count": 2
     },
     {
       "from": "h2",
