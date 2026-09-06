@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-06T13:43:50.998925+00:00",
+  "updated_at": "2026-09-06T17:09:50.502991+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2813650890.62693,
+      "balance_dog": 2813152950.95329,
       "rank": 4,
       "pct": 2.81,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1825104831.32529,
+      "balance_dog": 1825642812.635,
       "rank": 6,
       "pct": 1.83,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -237,8 +237,8 @@
       "to": "whale23",
       "from_label": "Bitget hot",
       "to_label": "Whale23",
-      "dog": 332375366,
-      "count": 57
+      "dog": 320736087,
+      "count": 56
     },
     {
       "from": "mexc",

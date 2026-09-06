@@ -1,5 +1,5 @@
 {
-  "whale_last_ts": "2026-09-06T12:55:15+00:00",
+  "whale_last_ts": "2026-09-06T17:06:00+00:00",
   "relay_last_ts": {
     "Int#1": "2026-09-05T12:23:50+00:00",
     "Int#2": "2026-09-05T12:23:50+00:00",
@@ -7,7 +7,7 @@
   },
   "whale_total_dog": 13104963938.62705,
   "cold_last_block": {
-    "Whale #7": 965308
+    "Whale #7": 965804
   },
   "day": {
     "date": "2026-09-06",
@@ -20,7 +20,8 @@
       "d50891afb2fa9604a702aa53d0594c7312037e782d2ce5a651ccd6b3ba9f879b",
       "1a7005f53d71f56d9dd80841f16a41d6e4b01a3171ec3eb3942bed760ceed4fa",
       "fc866d5be825f5bc79170485b3e39eabde85d0ea0c6c8dabbc02c1acacfaab55",
-      "98ed8f4492ec2caf6acaff0066677dda80237e17f078d946687a4745d91174d4"
+      "98ed8f4492ec2caf6acaff0066677dda80237e17f078d946687a4745d91174d4",
+      "6a0359322640131e36e1c88864820c4a938f97b459122d54bafe28fe818bb1ed"
     ]
   }
 }
