@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-09-08T21:55:46.393310+00:00",
+  "updated_at": "2026-09-09T00:22:14.805938+00:00",
   "events": [
+    {
+      "id": "bal-2026-09-09",
+      "ts": "2026-09-09T00:22:14.805938+00:00",
+      "type": "balance_change",
+      "amount_dog": 3242079.799999237,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
+    {
+      "id": "df3411e8092be2fec95b3e2d7a0d7bcf3c3d397161ed36b7e2dbee75600e2f6a",
+      "ts": "2026-09-08T22:06:15+00:00",
+      "type": "relay_flow",
+      "amount_dog": 3811826.7,
+      "level": "watch",
+      "from_label": "Bitget Deposit #2",
+      "to_label": "Bitget hot",
+      "from_id": "int2",
+      "to_id": "h3",
+      "community": null,
+      "txid": "df3411e8092be2fec95b3e2d7a0d7bcf3c3d397161ed36b7e2dbee75600e2f6a"
+    },
     {
       "id": "bal-2026-09-08",
       "ts": "2026-09-08T21:55:46.393310+00:00",
@@ -754,32 +780,6 @@
       "to_id": "whale23",
       "community": null,
       "txid": "823aa01568aacba71f2636b359e4479056933002fbb17c466c8f70ac149274be"
-    },
-    {
-      "id": "ce74e4f37b8a43fd48263b3b4cbfad45cb162ecb6151906bb87ad0486345ed7b",
-      "ts": "2026-09-07T04:57:21+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 1578050.2000000002,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "community": null,
-      "txid": "ce74e4f37b8a43fd48263b3b4cbfad45cb162ecb6151906bb87ad0486345ed7b"
-    },
-    {
-      "id": "fc0ca8de10ce404fbe527f0815582d75e3683bc3186a55c27110d7aac6f089c3",
-      "ts": "2026-09-07T04:07:04+00:00",
-      "type": "cofre_in",
-      "amount_dog": 3898044.73,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "fc0ca8de10ce404fbe527f0815582d75e3683bc3186a55c27110d7aac6f089c3"
     }
   ]
 }
