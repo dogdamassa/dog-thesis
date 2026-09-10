@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T04:59:24.797456+00:00",
+  "updated_at": "2026-09-10T09:52:28.312171+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,7 +8,7 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13027159742.79457,
+      "balance_dog": 13031918348.49593,
       "rank": 1,
       "pct": 13.03,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
@@ -19,9 +19,9 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3039044650.92188,
+      "balance_dog": 3032134294.81942,
       "rank": 3,
-      "pct": 3.04,
+      "pct": 3.03,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
     },
     {
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2826085433.62359,
+      "balance_dog": 2818370131.41771,
       "rank": 4,
-      "pct": 2.83,
+      "pct": 2.82,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1807972024.54049,
+      "balance_dog": 1824925021.02516,
       "rank": 6,
-      "pct": 1.81,
+      "pct": 1.82,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -138,6 +138,14 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "whale23",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "dog": 189840945,
+      "count": 40
+    },
+    {
+      "from": "cofre",
       "to": "int1",
       "from_label": "Vault #1",
       "to_label": "Bitget Deposit #1",
@@ -166,14 +174,6 @@
       "from_label": "Vault #1",
       "to_label": "bc1pjqjc...0xuu",
       "dog": 226641282,
-      "count": 39
-    },
-    {
-      "from": "cofre",
-      "to": "whale23",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "dog": 182013289,
       "count": 39
     },
     {
