@@ -4,26 +4,12 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
-## 2026-09-11 ⚠️ Movimento suspeito · cluster relay ativo · baleia → Int#1 → Bitget (2x, 72h) · 34M DOG despejados
+## 2026-09-11
 
-> Fonte: `data/feed.json` + `data/daily.json` · atualizado às 09:51 UTC · dado fresco (scripts locais; dogdata.xyz bloqueado no proxy remoto).
-
-- **Baleia (Vault #1, rank #1):** **13,0% do supply** (13,002B DOG). Δ líquido: 0,0M DOG (saldo estável). **NÃO depositou diretamente em exchange conhecida** (cofre_to_exchange: 0). MAS alimentou o relay Bitget Deposit #1 (Int#1) 2x nas últimas 48h:
-  - 10/09 23:13 UTC — **Vault#1 → Int#1**: 8,96M DOG → Bitget hot 40 min depois
-  - 09/09 13:44 UTC — **Vault#1 → Int#1**: 6,29M DOG → Bitget hot 30 min depois
-- ⚠️ **Cluster relay ATIVO (72h) — 6 fluxos → Bitget, total: ~34,2M DOG:**
-  - 10/09 23:53 UTC — Int#1 → Bitget hot: 8,96M DOG (fonte: Vault#1 direto)
-  - 09/09 14:17 UTC — Int#2 → Bitget hot: 3,76M DOG (fonte: unmapped)
-  - 09/09 14:11 UTC — Int#1 → Bitget hot: 6,29M DOG (fonte: Vault#1 direto)
-  - 09/09 12:41 UTC — Int#1 → Bitget hot: 5,76M DOG (fonte: unmapped)
-  - 09/09 11:52 UTC — Int#1 → Bitget hot: 5,59M DOG (fonte: unmapped)
-  - 09/09 10:43 UTC — Int#2 → Bitget hot: 3,84M DOG (fonte: unmapped)
-- **Saques novos da Binance → cluster (72h):** nenhum. Binance hot wallet não aparece como counterparty direto dos relays nesta janela. Fontes visíveis: Vault #1 (baleia) + unmapped wallets + Gate.io hot.
-- **Outros movimentos relevantes (72h):**
-  - 10/09 06:22 UTC — Gate.io hot + Bitget hot → Whale7 shuttle: 7,0M + 7,7M DOG (possível reciclagem)
-  - 10/09 03:57 UTC — Bitget hot → bc1qruwj... → MEXC: ~20M DOG (pass-through, 58 min)
-  - 09/09 21:44 UTC — MEXC → MM2 shuttle: 5,4M DOG
-- 🔎 **Leitura:** **movimento suspeito.** A baleia alimentou o relay Int#1 diretamente 2x nas últimas 48h, totalizando ~15,25M DOG chegando na Bitget via pass-through (cofre → relay → exchange). O cluster está ativo: 34,2M DOG despejados na Bitget via Int#1/Int#2 em 72h. A Binance não aparece como counterparty direto dos relays nesta janela, mas **pode estar envolvida** — historicamente alimentou essa estrutura via Int#3 (48 saques documentados) e as wallets não mapeadas que reabastecem os relays seguem sem origem rastreável. Sem acusação de crime: descrevemos o padrão que a chain mostra.
+- **Baleia (#1):** 13.0% do supply (Δ -3.0M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
 
 ## 2026-09-10
 
