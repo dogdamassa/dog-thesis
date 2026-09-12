@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T10:58:33.859920+00:00",
+  "updated_at": "2026-09-12T14:14:15.071529+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,7 +8,7 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12949034067.11617,
+      "balance_dog": 12946898470.29317,
       "rank": 1,
       "pct": 12.95,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2794045827.10864,
+      "balance_dog": 2793802442.30768,
       "rank": 4,
       "pct": 2.79,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -210,6 +210,14 @@
     },
     {
       "from": "h3",
+      "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "from_label": "Bitget hot",
+      "to_label": "bc1pjqjc...0xuu",
+      "dog": 294591944,
+      "count": 58
+    },
+    {
+      "from": "h3",
       "to": "whale23",
       "from_label": "Bitget hot",
       "to_label": "Whale23",
@@ -223,14 +231,6 @@
       "to_label": "Bitget hot",
       "dog": 969035048,
       "count": 182
-    },
-    {
-      "from": "h3",
-      "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
-      "from_label": "Bitget hot",
-      "to_label": "bc1pjqjc...0xuu",
-      "dog": 288412362,
-      "count": 57
     },
     {
       "from": "int2",

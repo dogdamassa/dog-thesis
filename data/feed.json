@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-12T10:58:33.859920+00:00",
+  "updated_at": "2026-09-12T14:14:15.071529+00:00",
   "events": [
     {
       "id": "bal-2026-09-12",
-      "ts": "2026-09-12T10:58:33.859920+00:00",
+      "ts": "2026-09-12T14:14:15.071529+00:00",
       "type": "balance_change",
-      "amount_dog": 35031568.76799965,
+      "amount_dog": 2135596.822999954,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,32 @@
       "to_id": "",
       "sign": "-",
       "txid": null
+    },
+    {
+      "id": "8726b66b67fac195621c39854e50901055aa33d334ea2a27f1a8293f786319af",
+      "ts": "2026-09-12T14:03:03+00:00",
+      "type": "exchange_out",
+      "amount_dog": 6179581.72937,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "bc1pjqjc...0xuu",
+      "from_id": "h3",
+      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "community": null,
+      "txid": "8726b66b67fac195621c39854e50901055aa33d334ea2a27f1a8293f786319af"
+    },
+    {
+      "id": "e95dc8534186d8037ac5e935dedbf16c0954be6d4c26ebe5aea9b76ef757d9bc",
+      "ts": "2026-09-12T12:17:46+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 2135596.8230000003,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1plpd6qextkpmt5k0x0zq93ts5dpfy5l0pl0qnjm7khklsvsfe3y3q6lknpl",
+      "community": null,
+      "txid": "e95dc8534186d8037ac5e935dedbf16c0954be6d4c26ebe5aea9b76ef757d9bc"
     },
     {
       "id": "15e20ecc6b9c49a50b5a3ba7905266a6421c2651fa3d7171f6bbe78bb48ad293",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "a55f4521cccbcfd58892643035089ffcec413c317d1864c9d42989d8b29da1d7"
-    },
-    {
-      "id": "79dde7028436483657fd174fee3310ca96e814aa6349d7763e9b7806d463836a",
-      "ts": "2026-09-10T12:08:20+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 8319476.887999998,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "from_id": "cofre",
-      "to_id": "merlin2",
-      "community": "Merlin",
-      "txid": "79dde7028436483657fd174fee3310ca96e814aa6349d7763e9b7806d463836a"
-    },
-    {
-      "id": "72ddba95fe158b01918ad03e87e3b2532cd927c245790b43e31db9e18bdfdfae",
-      "ts": "2026-09-10T11:58:34+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 5674171,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9",
-      "community": null,
-      "txid": "72ddba95fe158b01918ad03e87e3b2532cd927c245790b43e31db9e18bdfdfae"
     }
   ]
 }
