@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-09-13T19:33:59.038055+00:00",
+  "updated_at": "2026-09-13T22:29:03.786364+00:00",
   "events": [
+    {
+      "id": "bal-2026-09-13",
+      "ts": "2026-09-13T22:29:03.786364+00:00",
+      "type": "balance_change",
+      "amount_dog": 1880499.1884593964,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "6c8f9f1c512c4376171d091bee89299b17344f75ba7129bef57ad363fafcf157",
+      "ts": "2026-09-13T20:38:44+00:00",
+      "type": "cofre_in",
+      "amount_dog": 10777569.38,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "6c8f9f1c512c4376171d091bee89299b17344f75ba7129bef57ad363fafcf157"
+    },
+    {
+      "id": "ad2486b0aafab5b13ff36a3a689cfb93f3a0f7ffe209c1bf686417b272c59b50",
+      "ts": "2026-09-13T19:58:39+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 3000000,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1phtghxwqe7pfu47uaya8hjtnv8lfc3np3w05m97ywvp3mr28mm6cst8umfn",
+      "community": null,
+      "txid": "ad2486b0aafab5b13ff36a3a689cfb93f3a0f7ffe209c1bf686417b272c59b50"
+    },
+    {
+      "id": "18c64540db4cb388a137f8750430677ab82c28f3492dd100ddae8e0d2f976e36",
+      "ts": "2026-09-13T19:51:30+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 3000000,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1phtghxwqe7pfu47uaya8hjtnv8lfc3np3w05m97ywvp3mr28mm6cst8umfn",
+      "community": null,
+      "txid": "18c64540db4cb388a137f8750430677ab82c28f3492dd100ddae8e0d2f976e36"
+    },
     {
       "id": "17d2222e42bb2f0717cee6c606420cddf67cde70689984933eedf056dfa6e161",
       "ts": "2026-09-13T19:20:16+00:00",
@@ -39,19 +91,6 @@
       "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "community": null,
       "txid": "65c9ea7dddf22424c285fd4b3068f70be3603762659dfde164a4b0e49a81e97a"
-    },
-    {
-      "id": "bal-2026-09-13",
-      "ts": "2026-09-13T16:29:19.639222+00:00",
-      "type": "balance_change",
-      "amount_dog": 13924704.452440262,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
     },
     {
       "id": "5a5ac0ab4fc4eec359c88b686b3b411037d237166a2497cc611679207594e7b7",
@@ -741,45 +780,6 @@
       "to_id": "int1",
       "community": null,
       "txid": "d68c9a2a7f60c3afb0d17516d6be9362b0b9e81d5eea459417c9b4eb679ea9cc"
-    },
-    {
-      "id": "121e944783a508c625de0b9627bbb8c02ab45e4809395d7b945761f7842a356d",
-      "ts": "2026-09-11T16:07:16+00:00",
-      "type": "cofre_in",
-      "amount_dog": 1872262.84,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "121e944783a508c625de0b9627bbb8c02ab45e4809395d7b945761f7842a356d"
-    },
-    {
-      "id": "7541a4acda37a8fff0bc21c6e8b528e2681332383d1dfbed9f0a93365aa8c1a0",
-      "ts": "2026-09-11T16:03:00+00:00",
-      "type": "relay_flow",
-      "amount_dog": 1488300.84,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": null,
-      "txid": "7541a4acda37a8fff0bc21c6e8b528e2681332383d1dfbed9f0a93365aa8c1a0"
-    },
-    {
-      "id": "44d735c6f1e1e14f135cbe4d7000ba7fa8efcbfcbd7693a24a60dc516cdc43a0",
-      "ts": "2026-09-11T15:00:50+00:00",
-      "type": "relay_flow",
-      "amount_dog": 1488300.84,
-      "level": "watch",
-      "from_label": "unmapped wallet",
-      "to_label": "Bitget Deposit #2",
-      "from_id": null,
-      "to_id": "int2",
-      "community": null,
-      "txid": "44d735c6f1e1e14f135cbe4d7000ba7fa8efcbfcbd7693a24a60dc516cdc43a0"
     }
   ]
 }
