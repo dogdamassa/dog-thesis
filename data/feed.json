@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-09-14T23:13:48.172338+00:00",
+  "updated_at": "2026-09-15T01:35:38.881118+00:00",
   "events": [
+    {
+      "id": "bal-2026-09-15",
+      "ts": "2026-09-15T01:35:38.881118+00:00",
+      "type": "balance_change",
+      "amount_dog": 1087718.5799999237,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
     {
       "id": "bal-2026-09-14",
       "ts": "2026-09-14T23:13:48.172338+00:00",
@@ -767,19 +780,6 @@
       "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "community": null,
       "txid": "8726b66b67fac195621c39854e50901055aa33d334ea2a27f1a8293f786319af"
-    },
-    {
-      "id": "e95dc8534186d8037ac5e935dedbf16c0954be6d4c26ebe5aea9b76ef757d9bc",
-      "ts": "2026-09-12T12:17:46+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2135596.8230000003,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1plpd6qextkpmt5k0x0zq93ts5dpfy5l0pl0qnjm7khklsvsfe3y3q6lknpl",
-      "community": null,
-      "txid": "e95dc8534186d8037ac5e935dedbf16c0954be6d4c26ebe5aea9b76ef757d9bc"
     }
   ]
 }
