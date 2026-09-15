@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-15T18:17:58.536783+00:00",
+  "updated_at": "2026-09-15T21:32:02.646891+00:00",
   "events": [
     {
       "id": "bal-2026-09-15",
-      "ts": "2026-09-15T18:17:58.536783+00:00",
+      "ts": "2026-09-15T21:32:02.646891+00:00",
       "type": "balance_change",
-      "amount_dog": 10675312.34597969,
+      "amount_dog": 4647503.019029617,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,19 @@
       "to_id": "",
       "sign": "+",
       "txid": null
+    },
+    {
+      "id": "52988e8d2d49d4ef61c9bd88a373399f1e74c4745376ef3611d6005c819cc293",
+      "ts": "2026-09-15T21:29:15+00:00",
+      "type": "cofre_in",
+      "amount_dog": 11503942.85,
+      "level": "info",
+      "from_label": "Whale7 shuttle",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "52988e8d2d49d4ef61c9bd88a373399f1e74c4745376ef3611d6005c819cc293"
     },
     {
       "id": "3c0f71bf03c3013ea7ea077f75ded23cf68f048bde99fe6e43f3e8208471b2c0",
@@ -767,19 +780,6 @@
       "to_id": "bc1pcegxvendvyq0c5qjha0g5rplpq5wqf2mf8jhaauxte6ncn4df32s0e8fxc",
       "community": null,
       "txid": "5a5ac0ab4fc4eec359c88b686b3b411037d237166a2497cc611679207594e7b7"
-    },
-    {
-      "id": "685d4623b56554c7ace65fb10a789a8104e17edd3de13c35ae0eaa78e5af79b1",
-      "ts": "2026-09-13T12:31:05+00:00",
-      "type": "cofre_in",
-      "amount_dog": 1286093.46,
-      "level": "info",
-      "from_label": "MM2 shuttle",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "685d4623b56554c7ace65fb10a789a8104e17edd3de13c35ae0eaa78e5af79b1"
     }
   ]
 }

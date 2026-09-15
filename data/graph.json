@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T18:17:58.536783+00:00",
+  "updated_at": "2026-09-15T21:32:02.646891+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12980720525.49144,
+      "balance_dog": 12985368028.51047,
       "rank": 1,
-      "pct": 12.98,
+      "pct": 12.99,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3026132008.68149,
+      "balance_dog": 3025768228.86528,
       "rank": 3,
       "pct": 3.03,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2761243319.09259,
+      "balance_dog": 2766081618.00931,
       "rank": 4,
-      "pct": 2.76,
+      "pct": 2.77,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1819950622.44912,
+      "balance_dog": 1820214491.18141,
       "rank": 6,
       "pct": 1.82,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -173,8 +173,8 @@
       "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "from_label": "Vault #1",
       "to_label": "bc1pjqjc...0xuu",
-      "dog": 199298710,
-      "count": 28
+      "dog": 198200415,
+      "count": 27
     },
     {
       "from": "cofre",
@@ -194,19 +194,19 @@
     },
     {
       "from": "h2",
+      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
+      "from_label": "Gate.io hot",
+      "to_label": "bc1qkgjl...ct5y",
+      "dog": 37443526,
+      "count": 6
+    },
+    {
+      "from": "h2",
       "to": "int1",
       "from_label": "Gate.io hot",
       "to_label": "Bitget Deposit #1",
       "dog": 76196238,
       "count": 23
-    },
-    {
-      "from": "h2",
-      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "from_label": "Gate.io hot",
-      "to_label": "bc1qkgjl...ct5y",
-      "dog": 36282127,
-      "count": 5
     },
     {
       "from": "h2",
@@ -269,8 +269,8 @@
       "to": "mexc",
       "from_label": "bc1qkgjl...ct5y",
       "to_label": "MEXC Wallet",
-      "dog": 311647390,
-      "count": 58
+      "dog": 312808789,
+      "count": 59
     },
     {
       "from": "mexc",
