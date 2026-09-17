@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T13:36:50.065736+00:00",
+  "updated_at": "2026-09-17T18:21:36.788290+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13070072097.43513,
+      "balance_dog": 13097533918.99413,
       "rank": 1,
-      "pct": 13.07,
+      "pct": 13.1,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,9 +19,9 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3015233608.84498,
+      "balance_dog": 3013843484.36836,
       "rank": 3,
-      "pct": 3.02,
+      "pct": 3.01,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
     },
     {
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2757602350.31475,
+      "balance_dog": 2757178157.22568,
       "rank": 4,
       "pct": 2.76,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1843664002.21386,
+      "balance_dog": 1829290496.99171,
       "rank": 6,
-      "pct": 1.84,
+      "pct": 1.83,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -51,10 +51,10 @@
       "label": "Bitget Deposit #1",
       "kind": "relay",
       "community": "Bitget deposit, desk reuse",
-      "confirmed": true,
-      "balance_dog": 2406951.08,
-      "rank": 3521,
-      "pct": 0.0,
+      "confirmed": false,
+      "balance_dog": 0,
+      "rank": null,
+      "pct": 0,
       "addr": "bc1pt02fw3aty825yaujdnmzml0qny28l9ecc77df2vgc26qfcket3hqc634ar"
     },
     {
@@ -141,8 +141,8 @@
       "to": "merlin2",
       "from_label": "Vault #1",
       "to_label": "Merlin Chain vault (2026)",
-      "dog": 274727577,
-      "count": 15
+      "dog": 248708440,
+      "count": 14
     },
     {
       "from": "cofre",
@@ -237,8 +237,8 @@
       "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "from_label": "Bitget hot",
       "to_label": "bc1pjqjc...0xuu",
-      "dog": 289524157,
-      "count": 58
+      "dog": 281936801,
+      "count": 57
     },
     {
       "from": "h3",
@@ -269,8 +269,8 @@
       "to": "mexc",
       "from_label": "bc1qkgjl...ct5y",
       "to_label": "MEXC Wallet",
-      "dog": 295169918,
-      "count": 59
+      "dog": 293131895,
+      "count": 58
     },
     {
       "from": "mexc",
