@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T06:03:48.082881+00:00",
+  "updated_at": "2026-09-18T11:29:48.940688+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13072675488.47887,
+      "balance_dog": 13044751329.17887,
       "rank": 1,
-      "pct": 13.07,
+      "pct": 13.04,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3013847098.16836,
+      "balance_dog": 3014620071.04216,
       "rank": 3,
       "pct": 3.01,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2759167768.79775,
+      "balance_dog": 2767984672.23058,
       "rank": 4,
-      "pct": 2.76,
+      "pct": 2.77,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1830928162.01496,
+      "balance_dog": 1828225069.30473,
       "rank": 6,
       "pct": 1.83,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -62,10 +62,10 @@
       "label": "Bitget Deposit #2",
       "kind": "relay",
       "community": "Bitget deposit, desk reuse",
-      "confirmed": true,
-      "balance_dog": 1668615.7,
-      "rank": 5730,
-      "pct": 0.0,
+      "confirmed": false,
+      "balance_dog": 0,
+      "rank": null,
+      "pct": 0,
       "addr": "bc1p52673nrtsed5n5nal7cm02u6pg63p0e6u4nm2fhm90xd8r4w3ass090zzy"
     },
     {
@@ -138,11 +138,43 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "whale23",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "dog": 204829208,
+      "count": 41
+    },
+    {
+      "from": "cofre",
+      "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "from_label": "Vault #1",
+      "to_label": "bc1pjqjc...0xuu",
+      "dog": 203551733,
+      "count": 30
+    },
+    {
+      "from": "cofre",
+      "to": "int1",
+      "from_label": "Vault #1",
+      "to_label": "Bitget Deposit #1",
+      "dog": 144116982,
+      "count": 41
+    },
+    {
+      "from": "cofre",
+      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
+      "from_label": "Vault #1",
+      "to_label": "bc1qkgjl...ct5y",
+      "dog": 41972256,
+      "count": 20
+    },
+    {
+      "from": "cofre",
       "to": "int2",
       "from_label": "Vault #1",
       "to_label": "Bitget Deposit #2",
-      "dog": 258649366,
-      "count": 68
+      "dog": 260509493,
+      "count": 69
     },
     {
       "from": "cofre",
@@ -159,38 +191,6 @@
       "to_label": "Merlin Chain vault (2026)",
       "dog": 248708440,
       "count": 14
-    },
-    {
-      "from": "cofre",
-      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "from_label": "Vault #1",
-      "to_label": "bc1qkgjl...ct5y",
-      "dog": 40810692,
-      "count": 19
-    },
-    {
-      "from": "cofre",
-      "to": "whale23",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "dog": 191265085,
-      "count": 37
-    },
-    {
-      "from": "cofre",
-      "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
-      "from_label": "Vault #1",
-      "to_label": "bc1pjqjc...0xuu",
-      "dog": 190353272,
-      "count": 25
-    },
-    {
-      "from": "cofre",
-      "to": "int1",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #1",
-      "dog": 139618491,
-      "count": 40
     },
     {
       "from": "h2",
@@ -217,36 +217,36 @@
       "count": 26
     },
     {
-      "from": "int2",
-      "to": "h3",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "dog": 1291863261,
-      "count": 267
+      "from": "h3",
+      "to": "whale23",
+      "from_label": "Bitget hot",
+      "to_label": "Whale23",
+      "dog": 309010587,
+      "count": 56
     },
     {
       "from": "int1",
       "to": "h3",
       "from_label": "Bitget Deposit #1",
       "to_label": "Bitget hot",
-      "dog": 980982834,
-      "count": 188
+      "dog": 989848468,
+      "count": 190
     },
     {
       "from": "h3",
       "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "from_label": "Bitget hot",
       "to_label": "bc1pjqjc...0xuu",
-      "dog": 281936801,
+      "dog": 279454301,
       "count": 57
     },
     {
-      "from": "h3",
-      "to": "whale23",
-      "from_label": "Bitget hot",
-      "to_label": "Whale23",
-      "dog": 315960210,
-      "count": 56
+      "from": "int2",
+      "to": "h3",
+      "from_label": "Bitget Deposit #2",
+      "to_label": "Bitget hot",
+      "dog": 1293723389,
+      "count": 268
     },
     {
       "from": "h3",
@@ -265,28 +265,28 @@
       "count": 1
     },
     {
-      "from": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "to": "mexc",
-      "from_label": "bc1qkgjl...ct5y",
-      "to_label": "MEXC Wallet",
-      "dog": 293131895,
-      "count": 58
+      "from": "mexc",
+      "to": "whale23",
+      "from_label": "MEXC Wallet",
+      "to_label": "Whale23",
+      "dog": 167286198,
+      "count": 43
     },
     {
       "from": "mexc",
       "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "from_label": "MEXC Wallet",
       "to_label": "bc1pjqjc...0xuu",
-      "dog": 108282172,
-      "count": 31
+      "dog": 110374605,
+      "count": 32
     },
     {
-      "from": "mexc",
-      "to": "whale23",
-      "from_label": "MEXC Wallet",
-      "to_label": "Whale23",
-      "dog": 167603537,
-      "count": 43
+      "from": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
+      "to": "mexc",
+      "from_label": "bc1qkgjl...ct5y",
+      "to_label": "MEXC Wallet",
+      "dog": 292430103,
+      "count": 58
     },
     {
       "from": "bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9",
