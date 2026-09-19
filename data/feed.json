@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-09-19T18:07:27.872067+00:00",
+  "updated_at": "2026-09-19T20:51:04.533568+00:00",
   "events": [
+    {
+      "id": "497b74ddca0cf1a3433bddfd3be1529ea69cd3e232c7f6fd0af2f882a7c847c4",
+      "ts": "2026-09-19T20:31:44+00:00",
+      "type": "cofre_in",
+      "amount_dog": 23727942.05,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "497b74ddca0cf1a3433bddfd3be1529ea69cd3e232c7f6fd0af2f882a7c847c4"
+    },
+    {
+      "id": "386ab06189f0e383afda25ca35c1d54dd3cff3cdae86bc00645afbb64a1f45f6",
+      "ts": "2026-09-19T19:34:35+00:00",
+      "type": "cofre_in",
+      "amount_dog": 7498135.49084,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "386ab06189f0e383afda25ca35c1d54dd3cff3cdae86bc00645afbb64a1f45f6"
+    },
     {
       "id": "9095882100034e7c347bd178b8d59c013a27bd95aa8b01737bcb7ffbba4cf6ed",
       "ts": "2026-09-19T17:38:40+00:00",
@@ -754,32 +780,6 @@
       "to_id": "int1",
       "community": "Bitget deposit, desk reuse",
       "txid": "c063a22ecbd47f97f55a49d4ef0c79e4d21684c51239e71def85f08f9cdafd69"
-    },
-    {
-      "id": "b2dcd0a412406b5620af24ddf619f81bb459c516573ac1167684ff5f2316ebec",
-      "ts": "2026-09-18T09:15:34+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2162156.9,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "b2dcd0a412406b5620af24ddf619f81bb459c516573ac1167684ff5f2316ebec"
-    },
-    {
-      "id": "f62f40b7998c01dc58a2340f7f792a462b7d795e409cea26366b26b7caa27845",
-      "ts": "2026-09-18T09:15:34+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 4275471.100000001,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "f62f40b7998c01dc58a2340f7f792a462b7d795e409cea26366b26b7caa27845"
     }
   ]
 }
