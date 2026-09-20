@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T23:15:30.742011+00:00",
+  "updated_at": "2026-09-20T01:19:03.542252+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -138,6 +138,14 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "int2",
+      "from_label": "Vault #1",
+      "to_label": "Bitget Deposit #2",
+      "dog": 269807326,
+      "count": 71
+    },
+    {
+      "from": "cofre",
       "to": "int1",
       "from_label": "Vault #1",
       "to_label": "Bitget Deposit #1",
@@ -167,14 +175,6 @@
       "to_label": "bc1qkgjl...ct5y",
       "dog": 45327409,
       "count": 21
-    },
-    {
-      "from": "cofre",
-      "to": "int2",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #2",
-      "dog": 265042788,
-      "count": 70
     },
     {
       "from": "cofre",
