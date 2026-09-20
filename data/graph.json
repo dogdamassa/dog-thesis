@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T06:30:49.104928+00:00",
+  "updated_at": "2026-09-20T12:30:26.331284+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -277,16 +277,16 @@
       "to": "mexc",
       "from_label": "bc1qkgjl...ct5y",
       "to_label": "MEXC Wallet",
-      "dog": 288755685,
-      "count": 59
+      "dog": 284447428,
+      "count": 58
     },
     {
       "from": "mexc",
       "to": "whale23",
       "from_label": "MEXC Wallet",
       "to_label": "Whale23",
-      "dog": 165988920,
-      "count": 42
+      "dog": 163461191,
+      "count": 41
     },
     {
       "from": "bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9",
