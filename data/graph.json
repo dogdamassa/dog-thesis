@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T22:33:26.383652+00:00",
+  "updated_at": "2026-09-21T01:16:14.555448+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -269,7 +269,7 @@
       "to": "mexc",
       "from_label": "bc1qkgjl...ct5y",
       "to_label": "MEXC Wallet",
-      "dog": 282317544,
+      "dog": 282237041,
       "count": 58
     },
     {

@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-09-20T22:33:26.383652+00:00",
+  "updated_at": "2026-09-21T01:16:14.555448+00:00",
   "events": [
+    {
+      "id": "7e20a1ddc14e1c9614b25e88c6531ec2210563385008a7ed255edf3ebc4f2e64",
+      "ts": "2026-09-21T01:05:05+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2768454.96,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "7e20a1ddc14e1c9614b25e88c6531ec2210563385008a7ed255edf3ebc4f2e64"
+    },
     {
       "id": "21abd79834683dae8cd7c4a7317b65f952be1af509beebaac3a53be30a1cb1f6",
       "ts": "2026-09-20T22:16:37+00:00",
@@ -767,19 +780,6 @@
       "to_id": "h3",
       "community": "Bitget",
       "txid": "060cf5902e000cf5445a2a28f693bc1ac82e73b1b9e97380fbb83586b36177aa"
-    },
-    {
-      "id": "b2e3a5f77e0dc018b2556855f9251dbb073b80b9bbd9e24e8db62b63e9bad535",
-      "ts": "2026-09-18T15:33:59+00:00",
-      "type": "relay_flow",
-      "amount_dog": 4533294.9,
-      "level": "watch",
-      "from_label": "Bitget Deposit #2",
-      "to_label": "Bitget hot",
-      "from_id": "int2",
-      "to_id": "h3",
-      "community": null,
-      "txid": "b2e3a5f77e0dc018b2556855f9251dbb073b80b9bbd9e24e8db62b63e9bad535"
     }
   ]
 }
