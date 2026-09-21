@@ -4,12 +4,15 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
-## 2026-09-21
+## 2026-09-21 · sinal cofre_big_out: 2
 
-- **Baleia (#1):** 12.99% do supply (Δ +0.0M DOG).
-- Saques novos da Binance → cluster: nenhum hoje.
-- A baleia não depositou em exchange (segue acumulando/parada).
-- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+> Fonte: `data/daily.json` + `data/flows.json` + `data/graph.json` · atualizado às 06:34 UTC + complemento rotina 12h · dado FRESCO (build_data.py local; dogdata.xyz bloqueado no proxy remoto).
+
+- **Baleia (Vault #1, rank #1):** **12,99% do supply** (12,994B DOG). Δ: +0,0M DOG. **NÃO depositou diretamente em exchange conhecida** (cofre_to_exchange: 0).
+- **⚠️ Sinal cofre_big_out: 2** — a baleia realizou 2 saídas grandes hoje para destinos não mapeados como exchange (fresh wallets ou relays); padrão histórico: pass-through → exchange em ~20-30 min. Destinos exatos não verificáveis via proxy remoto.
+- **Saques novos da Binance → cluster (72h):** nenhum confirmado (relay_flows: 0). Última atividade registrada nos relays: Int#1 e Int#2 em 2026-09-20 às 01:56 UTC. Int#3 inativo desde 30/04. Binance hot wallet não aparece como counterparty direto nesta janela.
+- **Contexto de mercado:** DOG a $0,001167 · +7,3% (Gate 24h) · volume Gate: 155,8M DOG · fluxo orderbook Gate net: −3,0M DOG (pressão vendedora leve). Kraken net: −7,0M DOG (janela parcial).
+- 🔎 **Leitura:** estável, mas nível "watch" ativo. A baleia não tocou em exchange diretamente, porém 2 saídas grandes saíram do cofre — sem identificar destino final via proxy. A Binance não aparece como counterparty direto nos relays hoje; seguimos vigiando o rastro até chegar na Binance.
 
 ## 2026-09-20
 
