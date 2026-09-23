@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T17:17:05.317116+00:00",
+  "updated_at": "2026-09-23T20:31:50.123156+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,7 +8,7 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12987098466.24121,
+      "balance_dog": 12989914066.00808,
       "rank": 1,
       "pct": 12.99,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 2772480138.80751,
+      "balance_dog": 2772303476.24753,
       "rank": 4,
       "pct": 2.77,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1914110104.21505,
+      "balance_dog": 1916793995.60084,
       "rank": 6,
-      "pct": 1.91,
+      "pct": 1.92,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -80,17 +80,6 @@
       "addr": "bc1pu03udw507wj58y5lv3dky03lxuj0m74uqdnqllckv3s32sw9ahrscjch8j"
     },
     {
-      "id": "whale23",
-      "label": "Whale23",
-      "kind": "entity",
-      "community": null,
-      "confirmed": false,
-      "balance_dog": 0,
-      "rank": null,
-      "pct": 0,
-      "addr": "bc1prdyzwdg0rcdgf9cg0a4zyx0cq3mdr3n6mcym95f3eg4dexfvnsjq200ly4"
-    },
-    {
       "id": "merlin2",
       "label": "Merlin Chain vault (2026)",
       "kind": "entity",
@@ -100,6 +89,17 @@
       "rank": null,
       "pct": 0,
       "addr": "bc1pzsx4xvghxmc0prv4mys0xdly9dh9js3e88e4m24k5gxzkeskx30s4qzjud"
+    },
+    {
+      "id": "whale23",
+      "label": "Whale23",
+      "kind": "entity",
+      "community": null,
+      "confirmed": false,
+      "balance_dog": 0,
+      "rank": null,
+      "pct": 0,
+      "addr": "bc1prdyzwdg0rcdgf9cg0a4zyx0cq3mdr3n6mcym95f3eg4dexfvnsjq200ly4"
     },
     {
       "id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
@@ -141,8 +141,24 @@
       "to": "whale23",
       "from_label": "Vault #1",
       "to_label": "Whale23",
-      "dog": 184422666,
+      "dog": 181218058,
       "count": 52
+    },
+    {
+      "from": "cofre",
+      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
+      "from_label": "Vault #1",
+      "to_label": "bc1qkgjl...ct5y",
+      "dog": 70471711,
+      "count": 29
+    },
+    {
+      "from": "cofre",
+      "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "from_label": "Vault #1",
+      "to_label": "bc1pjqjc...0xuu",
+      "dog": 158968872,
+      "count": 36
     },
     {
       "from": "cofre",
@@ -151,22 +167,6 @@
       "to_label": "bc1q06c7...w355",
       "dog": 42623706,
       "count": 22
-    },
-    {
-      "from": "cofre",
-      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "from_label": "Vault #1",
-      "to_label": "bc1qkgjl...ct5y",
-      "dog": 65521784,
-      "count": 28
-    },
-    {
-      "from": "cofre",
-      "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
-      "from_label": "Vault #1",
-      "to_label": "bc1pjqjc...0xuu",
-      "dog": 157910859,
-      "count": 35
     },
     {
       "from": "cofre",
@@ -273,11 +273,19 @@
       "count": 3
     },
     {
+      "from": "mexc",
+      "to": "whale23",
+      "from_label": "MEXC Wallet",
+      "to_label": "Whale23",
+      "dog": 160113021,
+      "count": 46
+    },
+    {
       "from": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "to": "mexc",
       "from_label": "bc1qkgjl...ct5y",
       "to_label": "MEXC Wallet",
-      "dog": 349807945,
+      "dog": 349932695,
       "count": 72
     },
     {
@@ -295,14 +303,6 @@
       "to_label": "bc1pjqjc...0xuu",
       "dog": 119603995,
       "count": 37
-    },
-    {
-      "from": "mexc",
-      "to": "whale23",
-      "from_label": "MEXC Wallet",
-      "to_label": "Whale23",
-      "dog": 156670676,
-      "count": 44
     },
     {
       "from": "int3",
