@@ -6,10 +6,10 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ## 2026-09-23
 
-- **Baleia (#1):** ~12.99% do supply (estado cache 11:32 UTC; API dogdata bloqueada na sessão cloud desta run).
-- Saques novos da Binance → cluster (72h): nenhum. Última atividade Int#1/Int#2: 20/09; Int#3: 30/04.
+- **Baleia (#1):** 12.99% do supply (Δ -0.7M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
 - A baleia não depositou em exchange (segue acumulando/parada).
-- 🔎 **Leitura:** estável, seguimos vigiando o rastro até chegar na Binance. _(nota: API bloqueada na sessão cloud — dados da run das 11h32 UTC usados como referência)_
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
 
 ## 2026-09-22
 
