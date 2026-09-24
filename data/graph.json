@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T15:17:16.655691+00:00",
+  "updated_at": "2026-09-24T19:19:53.353834+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12998341442.93808,
+      "balance_dog": 12992361586.13006,
       "rank": 1,
-      "pct": 13.0,
+      "pct": 12.99,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3014269481.11733,
+      "balance_dog": 3013807603.01754,
       "rank": 3,
       "pct": 3.01,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1913036506.75784,
+      "balance_dog": 1915664294.6349,
       "rank": 6,
-      "pct": 1.91,
+      "pct": 1.92,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -141,7 +141,7 @@
       "to": "whale23",
       "from_label": "Vault #1",
       "to_label": "Whale23",
-      "dog": 176645312,
+      "dog": 179290640,
       "count": 52
     },
     {
@@ -149,8 +149,8 @@
       "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "from_label": "Vault #1",
       "to_label": "bc1qkgjl...ct5y",
-      "dog": 72132896,
-      "count": 30
+      "dog": 79203115,
+      "count": 33
     },
     {
       "from": "cofre",
@@ -273,20 +273,20 @@
       "count": 3
     },
     {
-      "from": "mexc",
-      "to": "whale23",
-      "from_label": "MEXC Wallet",
-      "to_label": "Whale23",
-      "dog": 160934592,
-      "count": 46
-    },
-    {
       "from": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "to": "mexc",
       "from_label": "bc1qkgjl...ct5y",
       "to_label": "MEXC Wallet",
-      "dog": 336088130,
-      "count": 70
+      "dog": 341479755,
+      "count": 71
+    },
+    {
+      "from": "mexc",
+      "to": "whale23",
+      "from_label": "MEXC Wallet",
+      "to_label": "Whale23",
+      "dog": 158521690,
+      "count": 45
     },
     {
       "from": "mexc",
@@ -301,8 +301,8 @@
       "to": "mexc",
       "from_label": "bc1q06c7...w355",
       "to_label": "MEXC Wallet",
-      "dog": 213301851,
-      "count": 61
+      "dog": 211476313,
+      "count": 60
     },
     {
       "from": "int3",
