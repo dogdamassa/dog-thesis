@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T13:57:20.549004+00:00",
+  "updated_at": "2026-09-25T18:44:51.227262+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 12985212175.42524,
+      "balance_dog": 12973309149.82444,
       "rank": 1,
-      "pct": 12.99,
+      "pct": 12.97,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,9 +19,9 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3013100494.70392,
+      "balance_dog": 3019053955.81166,
       "rank": 3,
-      "pct": 3.01,
+      "pct": 3.02,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
     },
     {
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1917249232.50325,
+      "balance_dog": 1913043083.57687,
       "rank": 6,
-      "pct": 1.92,
+      "pct": 1.91,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -138,6 +138,22 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
+      "from_label": "Vault #1",
+      "to_label": "bc1qkgjl...ct5y",
+      "dog": 87803427,
+      "count": 38
+    },
+    {
+      "from": "cofre",
+      "to": "whale23",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "dog": 176531213,
+      "count": 52
+    },
+    {
+      "from": "cofre",
       "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "from_label": "Vault #1",
       "to_label": "bc1pjqjc...0xuu",
@@ -146,27 +162,11 @@
     },
     {
       "from": "cofre",
-      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "from_label": "Vault #1",
-      "to_label": "bc1qkgjl...ct5y",
-      "dog": 80822134,
-      "count": 34
-    },
-    {
-      "from": "cofre",
       "to": "bc1p38v5lfejwrmh0s40decn4y8k0pwq54mlgcj0s4ruhxytnh7xrkhqjc9f9p",
       "from_label": "Vault #1",
       "to_label": "bc1p38v5...9f9p",
       "dog": 46975366,
       "count": 7
-    },
-    {
-      "from": "cofre",
-      "to": "whale23",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "dog": 167201954,
-      "count": 49
     },
     {
       "from": "cofre",
@@ -258,27 +258,27 @@
     },
     {
       "from": "mexc",
-      "to": "whale23",
+      "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "from_label": "MEXC Wallet",
-      "to_label": "Whale23",
-      "dog": 157298778,
-      "count": 44
+      "to_label": "bc1pjqjc...0xuu",
+      "dog": 117423926,
+      "count": 37
     },
     {
       "from": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "to": "mexc",
       "from_label": "bc1qkgjl...ct5y",
       "to_label": "MEXC Wallet",
-      "dog": 341481779,
-      "count": 72
+      "dog": 325813178,
+      "count": 73
     },
     {
       "from": "mexc",
-      "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "to": "whale23",
       "from_label": "MEXC Wallet",
-      "to_label": "bc1pjqjc...0xuu",
-      "dog": 120695899,
-      "count": 38
+      "to_label": "Whale23",
+      "dog": 158893957,
+      "count": 45
     },
     {
       "from": "int3",
