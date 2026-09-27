@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-27T01:34:47.577078+00:00",
+  "updated_at": "2026-09-27T08:22:28.869595+00:00",
   "events": [
     {
       "id": "bal-2026-09-27",
-      "ts": "2026-09-27T01:34:47.577078+00:00",
+      "ts": "2026-09-27T08:22:28.869595+00:00",
       "type": "balance_change",
-      "amount_dog": 2579508.8999996185,
+      "amount_dog": 2751076.9710006714,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,32 @@
       "to_id": "",
       "sign": "-",
       "txid": null
+    },
+    {
+      "id": "b88e1619280caddce05477728bd4dd7e6d5fb975717702b8585bd63dddba6be0",
+      "ts": "2026-09-27T03:09:44+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 3002681.801,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p9d3xc2sqlgrjtxzraw7u52zg8gaa4nj4fdtc5enm7exn4g7lw2cqtlcajn",
+      "community": null,
+      "txid": "b88e1619280caddce05477728bd4dd7e6d5fb975717702b8585bd63dddba6be0"
+    },
+    {
+      "id": "a85c2103e39eb6e4cee33d2abffbdf3cbeb4e08c5097eac9f33502777ff328e0",
+      "ts": "2026-09-27T01:37:51+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 3403927.1,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
+      "community": null,
+      "txid": "a85c2103e39eb6e4cee33d2abffbdf3cbeb4e08c5097eac9f33502777ff328e0"
     },
     {
       "id": "2d2be9666af9d522f16f0357f5a25a376463c0f675f89f29b7947a652cc748df",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "c9be47fd2be7723cacca6b0da450a52a41770ca1224014d590d8af09df94fb94"
-    },
-    {
-      "id": "fe42b96ef6712516c229798b484709411fd6c6ddb8efc9acb0bc17cef387d82d",
-      "ts": "2026-09-24T17:11:29+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 6325421.5,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "fe42b96ef6712516c229798b484709411fd6c6ddb8efc9acb0bc17cef387d82d"
-    },
-    {
-      "id": "c74aff5f439a0ec11824f645ecbbdc9d41165fa4cf558d69879743c9e4aade4e",
-      "ts": "2026-09-24T16:32:13+00:00",
-      "type": "cofre_in",
-      "amount_dog": 1500000,
-      "level": "info",
-      "from_label": "bc1p79tm...slrz",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "c74aff5f439a0ec11824f645ecbbdc9d41165fa4cf558d69879743c9e4aade4e"
     }
   ]
 }
