@@ -701,32 +701,32 @@
     </div>
   </section>
 
-  <section id="dogmode" class="dogmode-band" aria-labelledby="dogmode-title">
-    <div class="wrap">
-      <article class="dogmode-box">
-        <div class="dogmode-top">
-          <span class="dogmode-tag" data-i18n="dm.k">DOG News · Story of the week</span>
-          <span class="dogmode-date"><span data-i18n="dm.status">Published</span> · <time datetime="2026-08-25" data-i18n="dm.date">Aug 25, 2026</time></span>
+  <section id=”dogmode” class=”dogmode-band” aria-labelledby=”dogmode-title”>
+    <div class=”wrap”>
+      <article class=”dogmode-box”>
+        <div class=”dogmode-top”>
+          <span class=”dogmode-tag” data-i18n=”dm.k”>DOG News · Story of the week</span>
+          <span class=”dogmode-date”><span data-i18n=”dm.status”>Investigation · receipts</span> · <time datetime=”2026-09-25” data-i18n=”dm.date”>Sep 25, 2026</time></span>
         </div>
-        <figure class="dogmode-cover">
-          <a href="https://github.com/bitcoindogmode/bitcoin" target="_blank" rel="noopener"><img src="public/culture/pics/dogmode-fork-github.jpg" width="1400" height="925" alt="GitHub page of the bitcoindogmode organization: Bitcoin DOG Mode, a Bitcoin client designed for maximum freedom, with the bitcoin repository forked from bitcoin/bitcoin" loading="lazy"></a>
-          <figcaption data-i18n="dm.cap">Bitcoin DOG Mode on GitHub — forked from bitcoin/bitcoin. Screenshot posted by Leonidas on Aug 25, 2026.</figcaption>
+        <figure class=”dogmode-cover”>
+          <a href=”/noticias#bitget-dump” target=”_blank” rel=”noopener”><img src=”public/culture/pics/pic-bitget-01.webp” width=”1400” height=”925” alt=”Investigation: the $DOG dump that only hit Bitget. A graph showing the price movement on Bitget vs other exchanges, and the market-frozen on Sep 25, 2026.” loading=”lazy”></a>
+          <figcaption data-i18n=”dm.cap”>The Bitget incident, Sep 25: a frozen market, a hollow book, 45% of floor loss in 75 minutes — traced, ordered, proven.</figcaption>
         </figure>
-        <h2 id="dogmode-title" data-i18n="dm.h">Bitcoin DOG Mode is published: the $DOG Army forked Bitcoin Core and the code is on GitHub.</h2>
-        <p class="dogmode-cmd">github.com/bitcoindogmode/bitcoin · forked from bitcoin/bitcoin · branch 31.1-dogmode · MIT</p>
-        <p class="dogmode-p" data-i18n="dm.p">On July 17, Leonidas — co-founder of Runestone, the project $DOG was born from — proposed it. On August 25, Leonidas announced it had become real: the $DOG Army forked Bitcoin Core's code repository and opened <b>Bitcoin DOG Mode</b> as its own open-source project, “a Bitcoin client designed for maximum freedom”. It runs on top of Bitcoin Core v31.1 and changes relay policy only — not Bitcoin consensus, no hard fork. Developers can already contribute on GitHub; the first version, with the three changes below, is expected in the coming weeks.</p>
-        <p class="dogmode-p" data-i18n="dm.p0">Why now: BIP-110, the Knots-camp soft fork that targeted Ordinals and Runes, activated on August 8 (block 961,632) with about 2.5% of blocks signaling, and its minority chain stalled after two blocks. That fight is over. DOG Mode is the next step: making Bitcoin permanently more open to non-monetary use cases.</p>
-        <div class="dogmode-points">
-          <div class="dogmode-point"><b>3.9M WU</b><span data-i18n="dm.p1">Max standard transaction size goes from 400,000 to 3,900,000 weight units — nearly the full block, with 100,000 WU left for the coinbase and block overhead.</span></div>
-          <div class="dogmode-point"><b>1 sat</b><span data-i18n="dm.p2">Dust limit drops from 294–546 sats to one satoshi. No more “padding” on inscriptions and Runes UTXOs — an estimated ~$25M in sats freed for the ecosystem.</span></div>
-          <div class="dogmode-point"><b>DOG ↔ DOG</b><span data-i18n="dm.p3">Preferential peering so DOG Mode nodes find and talk to each other, borrowed from Libre Relay. Relay policy only — no consensus change.</span></div>
+        <h2 id=”dogmode-title” data-i18n=”dm.h”>The $DOG dump that only hit Bitget: a hack, a delisting, a hollow book and a study of market microstructure.</h2>
+        <p class=”dogmode-cmd”>Bitget hack (Sep 24) → delisting (Sep 25) → trapped liquidity → 45% floor loss</p>
+        <p class=”dogmode-p” data-i18n=”dm.p”>On Sep 24, 15h31 UTC, Bitget suffered a hack targeting its hot wallets (~$351.6M across all coins). On Sep 25, 10h00 UTC, Bitget announced the delisting of $DOG/USDT alongside three other assets (DRIFT, FHE, RVV). Deposits closed instantly; withdrawals were already frozen by the hack. The result: $DOG holders became trapped inside a frozen exchange — with no way in or out. The floor crashed 45% in 75 minutes. Not a whale. Not the market. ~$45k in sells hitting an empty book while 316 panicked sellers hit the bid.</p>
+        <p class=”dogmode-p” data-i18n=”dm.p0”>The pattern tells a story worth reading: when an exchange locks both doors (hack + delisting), trapped holders can only sell to other trapped holders. No arbitrage from outside. No perps to hedge. Book depth collapses to almost zero. 34% of the sellers were sub-minimum-withdrawal balances — for them, selling inside was the only escape.</p>
+        <div class=”dogmode-points”>
+          <div class=”dogmode-point”><b data-i18n=”dm.pl1”>The hack: Sep 24, 15:31 UTC</b><span data-i18n=”dm.p1”>Bitget's hot wallets breached, $351.6M stolen. Withdrawals halted across all assets. No keys leaked — attackers spoofed transactions on an internal system.</span></div>
+          <div class=”dogmode-point”><b data-i18n=”dm.pl2”>The delisting: Sep 25, 10:00 UTC</b><span data-i18n=”dm.p2”>DOG/USDT marked for removal by Sep 30. Deposits: closed instantly. Trading end: Sep 30, 10:00 UTC. Withdrawal guarantee: until Dec 30, 10:00 UTC (date of re-opening: unannounced).</span></div>
+          <div class=”dogmode-point”><b data-i18n=”dm.pl3”>No perp to hedge</b><span data-i18n=”dm.p3”>Unlike DRIFT and FHE (which have active perps on Binance and Bybit), $DOG has no perpetual contract anywhere. Trapped buyers couldn't short the perp to lock the spread. Bare bets only. The book stayed hollow.</span></div>
         </div>
-        <div class="dogmode-actions">
-          <a class="btn primary" href="https://github.com/bitcoindogmode/bitcoin" target="_blank" rel="noopener" data-i18n="dm.cta">Open Bitcoin DOG Mode on GitHub ↗</a>
-          <a class="btn secondary" href="https://x.com/LeonidasNFT/status/2092354475683983753" target="_blank" rel="noopener" data-i18n="dm.cta2">Read Leonidas' announcement on X ↗</a>
-          <a class="btn secondary" href="/noticias#dog-mode" data-i18n="dm.cta3">DOG News archive</a>
+        <div class=”dogmode-actions”>
+          <a class=”btn primary” href=”/noticias#bitget-dump” target=”_blank” rel=”noopener” data-i18n=”dm.cta”>Read the full investigation →</a>
+          <a class=”btn secondary” href=”/web3” data-i18n=”dm.cta2”>Hold $DOG safely in KRAY ↗</a>
+          <a class=”btn secondary” href=”/noticias” data-i18n=”dm.cta3”>DOG News archive</a>
         </div>
-        <p class="dogmode-note" data-i18n="dm.note">Support it? Star the repository. Developer? Pull requests are open on GitHub. Want to run a DOG Mode node? The first release is coming and we will post it here. This is protocol advocacy, not financial advice.</p>
+        <p class=”dogmode-note” data-i18n=”dm.note”>Every order, every wall, every moment on chain — with receipts. The case study: when markets freeze, read the microstructure. This is education in price discovery, not financial advice. Your $DOG with you, not on an exchange that can lock it.</p>
       </article>
     </div>
   </section>
