@@ -1,22 +1,22 @@
 {
-  "updated_at": "2026-09-29T16:00:08.778873+00:00",
+  "updated_at": "2026-09-29T20:55:05.388537+00:00",
   "date": "2026-09-29",
   "source": "dogdata.xyz",
   "cofre": {
     "rank": 1,
-    "pct": 13.08,
-    "total_dog": 13082266427.39666,
-    "delta_dog": 32013295.672590256,
+    "pct": 13.09,
+    "total_dog": 13092412758.30898,
+    "delta_dog": 10146330.91232109,
     "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
   },
-  "holders_total": 86023,
-  "holders_delta": 15,
+  "holders_total": 86026,
+  "holders_delta": 3,
   "exchanges": [
     {
       "id": "h2",
       "label": "Gate.io hot",
       "community": "Gate",
-      "balance_dog": 3008945528.4588,
+      "balance_dog": 3008957983.4458,
       "rank": 3
     },
     {
@@ -36,7 +36,7 @@
   ],
   "signals": {
     "cofre_to_exchange": 0,
-    "cofre_big_out": 8,
+    "cofre_big_out": 10,
     "relay_flows": 0
   },
   "level": "watch"
