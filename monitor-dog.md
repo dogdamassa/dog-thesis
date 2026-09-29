@@ -4,9 +4,44 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
+## 2026-09-29
+
+- **Baleia:** API indisponível hoje.
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+
+## 2026-09-28
+
+- **Baleia (#1):** 13.0% do supply (Δ -9.3M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+
+## 2026-09-27
+
+- **Baleia (#1):** 12.97% do supply (Δ -0.8M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+
+## 2026-09-26
+
+- **Baleia (#1):** 12.99% do supply (Δ -5.2M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+
+## 2026-09-25
+
+- **Baleia (#1):** 12.96% do supply (Δ -9.0M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+
 ## 2026-09-24
 
-- **Baleia (#1):** 12.99% do supply (Δ -1.1M DOG).
+- **Baleia (#1):** 12.99% do supply (Δ +2.6M DOG).
 - Saques novos da Binance → cluster: nenhum hoje.
 - A baleia não depositou em exchange (segue acumulando/parada).
 - 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
