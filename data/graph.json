@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T06:53:10.535028+00:00",
+  "updated_at": "2026-09-30T13:57:15.225641+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13108423709.37001,
+      "balance_dog": 13146203398.34801,
       "rank": 1,
-      "pct": 13.11,
+      "pct": 13.15,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,9 +19,9 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3010770544.71762,
+      "balance_dog": 3004386459.56865,
       "rank": 3,
-      "pct": 3.01,
+      "pct": 3.0,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
     },
     {
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1914321999.05137,
+      "balance_dog": 1905795069.24177,
       "rank": 6,
       "pct": 1.91,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -141,8 +141,8 @@
       "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "from_label": "Vault #1",
       "to_label": "bc1qkgjl...ct5y",
-      "dog": 111734947,
-      "count": 45
+      "dog": 114695544,
+      "count": 47
     },
     {
       "from": "cofre",
@@ -269,8 +269,8 @@
       "to": "mexc",
       "from_label": "bc1qkgjl...ct5y",
       "to_label": "MEXC Wallet",
-      "dog": 328930519,
-      "count": 78
+      "dog": 333559037,
+      "count": 79
     },
     {
       "from": "mexc",
