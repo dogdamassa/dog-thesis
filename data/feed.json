@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-09-30T19:30:19.225926+00:00",
+  "updated_at": "2026-09-30T23:59:30.045395+00:00",
   "events": [
+    {
+      "id": "abde26530584999ca07de2f048ade80c06cade480ac8afa10d627aa0f37db7e2",
+      "ts": "2026-09-30T21:13:21+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 3187844.441,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pzg6aed026czampasr6lp7q0eugeptmw789z4d0xm605sc0qm2cmqxf5vtk",
+      "community": null,
+      "txid": "abde26530584999ca07de2f048ade80c06cade480ac8afa10d627aa0f37db7e2"
+    },
+    {
+      "id": "8aee01827c37cd8fb3e7ff88578432a3be66866a8e5aa15e6b28954b095e5415",
+      "ts": "2026-09-30T20:08:57+00:00",
+      "type": "cofre_in",
+      "amount_dog": 4668198.45,
+      "level": "info",
+      "from_label": "MM2 shuttle",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "8aee01827c37cd8fb3e7ff88578432a3be66866a8e5aa15e6b28954b095e5415"
+    },
     {
       "id": "bal-2026-09-30",
       "ts": "2026-09-30T19:30:19.225926+00:00",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "4b217c321955acce4a7569978c29cb03a659c32a2fcc67671c335a9eec3796ca"
-    },
-    {
-      "id": "a53db0903a8369fc7000b22a147f83ad17148f58ec41fa906c0890a0aed92d13",
-      "ts": "2026-09-28T23:28:45+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2000000,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1pyh9pggjvzpf0swvpsycu6kjgkc9ef9av0evnruxrd59yp8zkwvzq9c0xga",
-      "community": null,
-      "txid": "a53db0903a8369fc7000b22a147f83ad17148f58ec41fa906c0890a0aed92d13"
-    },
-    {
-      "id": "c311f7902f91a5e4ce98dd8cc81f040bd6d481d76fb3f855472692ec8d9562c2",
-      "ts": "2026-09-28T23:07:09+00:00",
-      "type": "exchange_out",
-      "amount_dog": 8751650.269999996,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "bc1pvprx...7hr8",
-      "from_id": "h2",
-      "to_id": "bc1pvprxxvrm97f2ttjr5z4fzz67x8djkmj6u64wxgxcrk5xe3040n6szl7hr8",
-      "community": null,
-      "txid": "c311f7902f91a5e4ce98dd8cc81f040bd6d481d76fb3f855472692ec8d9562c2"
     }
   ]
 }
