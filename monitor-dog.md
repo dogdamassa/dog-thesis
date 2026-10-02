@@ -6,7 +6,7 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ## 2026-10-02
 
-- **Baleia (#1):** 13.29% do supply (Δ +85.8M DOG).
+- **Baleia (#1):** 13.34% do supply (Δ +56.3M DOG).
 - 📥 Whale #7 **recebeu 104.4M DOG** de Bitget, Bitget (sweeper) (02/10 08:38 UTC) — saque de CEX entrando: acumulacao, nao e movimento da carteira.
 - 🔎 **Leitura:** entrada de saque de CEX numa carteira fria — sinal de acumulação, não de despejo. A carteira não assinou nada.
 
