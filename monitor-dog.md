@@ -6,10 +6,9 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ## 2026-10-02
 
-- **Baleia (#1):** 13.2% do supply (Δ +3.4M DOG).
-- Saques novos da Binance → cluster: nenhum hoje.
-- A baleia não depositou em exchange (segue acumulando/parada).
-- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+- **Baleia (#1):** 13.29% do supply (Δ +85.8M DOG).
+- 📥 Whale #7 **recebeu 104.4M DOG** de Bitget, Bitget (sweeper) (02/10 08:38 UTC) — saque de CEX entrando: acumulacao, nao e movimento da carteira.
+- 🔎 **Leitura:** entrada de saque de CEX numa carteira fria — sinal de acumulação, não de despejo. A carteira não assinou nada.
 
 ## 2026-10-01
 

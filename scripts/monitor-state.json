@@ -1,17 +1,19 @@
 {
-  "whale_last_ts": "2026-10-02T05:53:16+00:00",
+  "whale_last_ts": "2026-10-02T12:38:36+00:00",
   "relay_last_ts": {
     "Int#1": "2026-09-20T01:56:25+00:00",
     "Int#2": "2026-09-20T01:56:25+00:00",
     "Int#3": "2026-04-30T07:32:51+00:00"
   },
-  "whale_total_dog": 13202363758.31612,
+  "whale_total_dog": 13288151661.54862,
   "cold_last_block": {
-    "Whale #7": 966681
+    "Whale #7": 969562
   },
   "day": {
     "date": "2026-10-02",
-    "alertas": []
+    "alertas": [
+      "- \ud83d\udce5 Whale #7 **recebeu 104.4M DOG** de Bitget, Bitget (sweeper) (02/10 08:38 UTC) \u2014 saque de CEX entrando: acumulacao, nao e movimento da carteira."
+    ]
   },
   "cold_seen_txids": {
     "Whale #7": [
@@ -22,7 +24,8 @@
       "fc866d5be825f5bc79170485b3e39eabde85d0ea0c6c8dabbc02c1acacfaab55",
       "98ed8f4492ec2caf6acaff0066677dda80237e17f078d946687a4745d91174d4",
       "6a0359322640131e36e1c88864820c4a938f97b459122d54bafe28fe818bb1ed",
-      "3024076869c4d43399385ce50e5c8279a9648cf33e478144bb482006f236c1d0"
+      "3024076869c4d43399385ce50e5c8279a9648cf33e478144bb482006f236c1d0",
+      "d5b72ba45e225b81c4b61311e8f1a77f5f564b9b294585608e8b3038d61e78bb"
     ]
   }
 }
