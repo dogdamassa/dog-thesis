@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T23:58:20.615258+00:00",
+  "updated_at": "2026-10-02T05:54:28.996513+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,7 +8,7 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13198916555.56112,
+      "balance_dog": 13202363758.31612,
       "rank": 1,
       "pct": 13.2,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1923224150.76687,
+      "balance_dog": 1923368241.63489,
       "rank": 6,
       "pct": 1.92,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -189,8 +189,8 @@
       "to": "merlin2",
       "from_label": "Vault #1",
       "to_label": "Merlin Chain vault (2026)",
-      "dog": 98815666,
-      "count": 6
+      "dog": 90496189,
+      "count": 5
     },
     {
       "from": "h2",
