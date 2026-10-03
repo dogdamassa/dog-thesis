@@ -1,18 +1,44 @@
 {
-  "updated_at": "2026-10-03T13:33:50.751223+00:00",
+  "updated_at": "2026-10-03T18:01:53.969457+00:00",
   "events": [
     {
       "id": "bal-2026-10-03",
-      "ts": "2026-10-03T13:33:50.751223+00:00",
+      "ts": "2026-10-03T18:01:53.969457+00:00",
       "type": "balance_change",
-      "amount_dog": 50064434.06278038,
+      "amount_dog": 4210015.2454509735,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
       "from_id": "cofre",
       "to_id": "",
-      "sign": "+",
+      "sign": "-",
       "txid": null
+    },
+    {
+      "id": "7d214e4889b237250ea162f925fcd8bd4d2f9260a4842ba0d2c2f2d1c490c53b",
+      "ts": "2026-10-03T16:29:10+00:00",
+      "type": "exchange_out",
+      "amount_dog": 8531769.809999999,
+      "level": "info",
+      "from_label": "Gate.io hot",
+      "to_label": "MM2 shuttle",
+      "from_id": "h2",
+      "to_id": "mm2",
+      "community": null,
+      "txid": "7d214e4889b237250ea162f925fcd8bd4d2f9260a4842ba0d2c2f2d1c490c53b"
+    },
+    {
+      "id": "e5dada4363c9d58a255e74b648f8f1c9a1ebf6721a80f8031aaaceb0b2cc53d8",
+      "ts": "2026-10-03T16:19:35+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 4266368.27,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1p2fweh859czcahjzu8a3eawhhfmrtzq4errzfpw0ccug6a5788d4skmpfgn",
+      "community": null,
+      "txid": "e5dada4363c9d58a255e74b648f8f1c9a1ebf6721a80f8031aaaceb0b2cc53d8"
     },
     {
       "id": "0d730301815dc6cf30c64aaba0337a1a8d1342c61f69cc045cdf896743d38ee5",
@@ -754,32 +780,6 @@
       "to_id": "bc1pgc97tj6tgn0l7z267vc2s2h9ryjxfauahuxj6j8p7wsej987c5kqd5z433",
       "community": null,
       "txid": "036749dfa704fc76f979d5fe318fd8b0bbff65a02b5bc15c8a7f40e9f0d0376d"
-    },
-    {
-      "id": "980a9e17d078d8b52e83d7e5ddcb3c88f7f5e76c650c6551cadce594a67ce331",
-      "ts": "2026-10-02T08:33:20+00:00",
-      "type": "exchange_out",
-      "amount_dog": 16778335.95439,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1p8h0f...wax2",
-      "from_id": "h3",
-      "to_id": "bc1p8h0fj68kfcn34hs5aga58fcutylnk37kggzyf0etqhccw4k20waq8jwax2",
-      "community": null,
-      "txid": "980a9e17d078d8b52e83d7e5ddcb3c88f7f5e76c650c6551cadce594a67ce331"
-    },
-    {
-      "id": "7a8152904c53b3a0f71a575d613210de37e652d824845a8672aa56a3ad902bad",
-      "ts": "2026-10-02T08:33:20+00:00",
-      "type": "exchange_out",
-      "amount_dog": 5288555.239149999,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1phy6p...vy6q",
-      "from_id": "h3",
-      "to_id": "bc1phy6p0c65ua2fn2pqmwnm8wp9wp8rqjj6pgtmdrgynmdvgzpahwgqfwvy6q",
-      "community": null,
-      "txid": "7a8152904c53b3a0f71a575d613210de37e652d824845a8672aa56a3ad902bad"
     }
   ]
 }
