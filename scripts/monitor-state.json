@@ -1,19 +1,17 @@
 {
-  "whale_last_ts": "2026-10-02T22:08:26+00:00",
+  "whale_last_ts": "2026-10-03T02:00:54+00:00",
   "relay_last_ts": {
     "Int#1": "2026-09-20T01:56:25+00:00",
     "Int#2": "2026-09-20T01:56:25+00:00",
     "Int#3": "2026-04-30T07:32:51+00:00"
   },
-  "whale_total_dog": 13376703849.17579,
+  "whale_total_dog": 13388472800.44872,
   "cold_last_block": {
     "Whale #7": 969562
   },
   "day": {
-    "date": "2026-10-02",
-    "alertas": [
-      "- \ud83d\udce5 Whale #7 **recebeu 104.4M DOG** de Bitget, Bitget (sweeper) (02/10 08:38 UTC) \u2014 saque de CEX entrando: acumulacao, nao e movimento da carteira."
-    ]
+    "date": "2026-10-03",
+    "alertas": []
   },
   "cold_seen_txids": {
     "Whale #7": [
