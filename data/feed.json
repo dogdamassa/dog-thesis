@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-04T14:52:57.106007+00:00",
+  "updated_at": "2026-10-04T18:41:02.264774+00:00",
   "events": [
     {
       "id": "bal-2026-10-04",
-      "ts": "2026-10-04T14:52:57.106007+00:00",
+      "ts": "2026-10-04T18:41:02.264774+00:00",
       "type": "balance_change",
-      "amount_dog": 3464451.417039871,
+      "amount_dog": 1629415.9588603973,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,32 @@
       "to_id": "",
       "sign": "+",
       "txid": null
+    },
+    {
+      "id": "dd4d2e0e3a60525cd6049f0d201f96cadb56d512c4e47416788d9342f9fa38dd",
+      "ts": "2026-10-04T17:09:19+00:00",
+      "type": "cofre_in",
+      "amount_dog": 5574858.99126,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "dd4d2e0e3a60525cd6049f0d201f96cadb56d512c4e47416788d9342f9fa38dd"
+    },
+    {
+      "id": "4eccd0561082f12809417715f4062c225363fdc7acdce6205f6f386cc9fd902a",
+      "ts": "2026-10-04T15:58:53+00:00",
+      "type": "cofre_in",
+      "amount_dog": 1646415.95886,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "4eccd0561082f12809417715f4062c225363fdc7acdce6205f6f386cc9fd902a"
     },
     {
       "id": "6778bcd2feaaadcc2332d4b9c339d5dad6623c5a7e8942dda212072eecf6d509",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "e08115411dbbbcd085ecf4dfac26cad6bf205d3feff1c6fea238cdb935bbadf1"
-    },
-    {
-      "id": "273f74af5bf2c5d3b3388f7edc49ffe2526b3431f021af652ba7a0016294b565",
-      "ts": "2026-10-02T09:59:30+00:00",
-      "type": "cofre_in",
-      "amount_dog": 50201342.14283,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "273f74af5bf2c5d3b3388f7edc49ffe2526b3431f021af652ba7a0016294b565"
-    },
-    {
-      "id": "6c79bdd3825d25e418e3fc177094098f2f16ba9d90f1d3801a50c68ecb1605e6",
-      "ts": "2026-10-02T09:57:57+00:00",
-      "type": "exchange_out",
-      "amount_dog": 19997348.04285,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1paey7...u55n",
-      "from_id": "h3",
-      "to_id": "bc1paey73z9dm7vcjn4n48tgdu7x3z00rchtvnf88x24hs697uc6wnsqe7u55n",
-      "community": null,
-      "txid": "6c79bdd3825d25e418e3fc177094098f2f16ba9d90f1d3801a50c68ecb1605e6"
     }
   ]
 }
