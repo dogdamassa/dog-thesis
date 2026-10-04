@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-04T01:43:16.514346+00:00",
+  "updated_at": "2026-10-04T08:35:09.342919+00:00",
   "events": [
     {
       "id": "bal-2026-10-04",
-      "ts": "2026-10-04T01:43:16.514346+00:00",
+      "ts": "2026-10-04T08:35:09.342919+00:00",
       "type": "balance_change",
-      "amount_dog": 24049181.22759056,
+      "amount_dog": 2180500.0,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,45 @@
       "to_id": "",
       "sign": "+",
       "txid": null
+    },
+    {
+      "id": "2522e741a47f153a346f7b35471eff881a549bc00249697149bab7c1fc930d36",
+      "ts": "2026-10-04T05:34:22+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2755000,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "2522e741a47f153a346f7b35471eff881a549bc00249697149bab7c1fc930d36"
+    },
+    {
+      "id": "01644f9217a4e5ac0236895e3ee0347aa0ed213d0550d535a6f478bd2b426800",
+      "ts": "2026-10-04T04:59:02+00:00",
+      "type": "exchange_out",
+      "amount_dog": 39997360.64189,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "bc1pneum...ndd5",
+      "from_id": "h3",
+      "to_id": "bc1pneum26aq4jjtw8p72gsf0k34qvjfmlucjpa2kx70s6ppuh0dpkgs78ndd5",
+      "community": null,
+      "txid": "01644f9217a4e5ac0236895e3ee0347aa0ed213d0550d535a6f478bd2b426800"
+    },
+    {
+      "id": "842275830379298219aa5d726e4df890a6bed0b2a45a56a06d579270a013e260",
+      "ts": "2026-10-04T03:42:31+00:00",
+      "type": "exchange_out",
+      "amount_dog": 29997320.758759998,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "bc1pneum...ndd5",
+      "from_id": "h3",
+      "to_id": "bc1pneum26aq4jjtw8p72gsf0k34qvjfmlucjpa2kx70s6ppuh0dpkgs78ndd5",
+      "community": null,
+      "txid": "842275830379298219aa5d726e4df890a6bed0b2a45a56a06d579270a013e260"
     },
     {
       "id": "a483ed082730fffcda5b6fc2056571dfc85b958ca2caf8eba6fd99ae3638923f",
@@ -741,45 +780,6 @@
       "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "community": null,
       "txid": "abc72d62f6dad6537a1f3cac8e7ea4ef570c4b0d03042f82a99386aeb71d1d79"
-    },
-    {
-      "id": "123923c6aac287414684556a46ebba5d0d2990ad7700bb63937d9dbc45d75023",
-      "ts": "2026-10-02T09:08:37+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 1022936.7000000002,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "123923c6aac287414684556a46ebba5d0d2990ad7700bb63937d9dbc45d75023"
-    },
-    {
-      "id": "fe7f0e114fda1e8b6b0dc29df609bc55dd94a6cd8d62727d3a0deb99fbcc7bb7",
-      "ts": "2026-10-02T09:07:37+00:00",
-      "type": "exchange_out",
-      "amount_dog": 31120182.24514,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1py0fu...wnvh",
-      "from_id": "h3",
-      "to_id": "bc1py0fu736cgxugc98yxewhuxxq4pnd4ac8fcpn5kuu6dy0nk0y3lwqk6wnvh",
-      "community": null,
-      "txid": "fe7f0e114fda1e8b6b0dc29df609bc55dd94a6cd8d62727d3a0deb99fbcc7bb7"
-    },
-    {
-      "id": "cc1d1503cc6012b3754b2e3da46cc3463bbcd887aaff32cc2771b24159699f2f",
-      "ts": "2026-10-02T09:07:37+00:00",
-      "type": "exchange_out",
-      "amount_dog": 22993534.25026,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1p4lp0...f96t",
-      "from_id": "h3",
-      "to_id": "bc1p4lp03as0rlsedjm09ux0s3ktj7zwlg3644gxk5xcx2kyrqgcvr2q05f96t",
-      "community": null,
-      "txid": "cc1d1503cc6012b3754b2e3da46cc3463bbcd887aaff32cc2771b24159699f2f"
     }
   ]
 }
