@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T22:23:01.465611+00:00",
+  "updated_at": "2026-10-05T01:07:02.184523+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13469780718.17056,
+      "balance_dog": 13514937059.19603,
       "rank": 1,
-      "pct": 13.47,
+      "pct": 13.51,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -138,19 +138,19 @@
   "edges": [
     {
       "from": "cofre",
-      "to": "whale23",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "dog": 208581336,
-      "count": 68
-    },
-    {
-      "from": "cofre",
       "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "from_label": "Vault #1",
       "to_label": "bc1qkgjl...ct5y",
       "dog": 112773706,
       "count": 46
+    },
+    {
+      "from": "cofre",
+      "to": "whale23",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "dog": 208581336,
+      "count": 68
     },
     {
       "from": "cofre",
