@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T17:18:12.473113+00:00",
+  "updated_at": "2026-10-06T21:44:50.199045+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13412577051.9425,
+      "balance_dog": 13421724927.0545,
       "rank": 1,
-      "pct": 13.41,
+      "pct": 13.42,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -138,11 +138,19 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "bc1pzg6aed026czampasr6lp7q0eugeptmw789z4d0xm605sc0qm2cmqxf5vtk",
+      "from_label": "Vault #1",
+      "to_label": "bc1pzg6a...5vtk",
+      "dog": 72648427,
+      "count": 7
+    },
+    {
+      "from": "cofre",
       "to": "merlin2",
       "from_label": "Vault #1",
       "to_label": "Merlin Chain vault (2026)",
-      "dog": 176306572,
-      "count": 6
+      "dog": 167260430,
+      "count": 5
     },
     {
       "from": "cofre",
@@ -159,14 +167,6 @@
       "to_label": "Whale23",
       "dog": 214580504,
       "count": 67
-    },
-    {
-      "from": "cofre",
-      "to": "bc1pzg6aed026czampasr6lp7q0eugeptmw789z4d0xm605sc0qm2cmqxf5vtk",
-      "from_label": "Vault #1",
-      "to_label": "bc1pzg6a...5vtk",
-      "dog": 71400144,
-      "count": 6
     },
     {
       "from": "cofre",
