@@ -1,53 +1,53 @@
 {
-  "updated_at": "2026-10-08T16:38:52.898251+00:00",
-  "price_usd": 0.0009156,
+  "updated_at": "2026-10-08T22:13:52.072866+00:00",
+  "price_usd": 0.0009383,
   "exchanges": [
     {
       "name": "Kraken",
       "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "price": 0.000915,
-      "vol24h_dog": 91151982.65125,
+      "price": 0.000929,
+      "vol24h_dog": 133459813.13684,
       "change24h": null,
-      "buy_dog": 55712111,
-      "sell_dog": 63644198,
-      "net_dog": -7932087,
-      "window_min": 1643,
+      "buy_dog": 59125947,
+      "sell_dog": 77282802,
+      "net_dog": -18156855,
+      "window_min": 1644,
       "ok": true
     },
     {
       "name": "Gate",
       "link": "https://www.gate.io/trade/DOG_USDT",
-      "price": 0.000915,
-      "vol24h_dog": 103216451.0,
-      "change24h": -4.7,
-      "buy_dog": 15051101,
-      "sell_dog": 18572876,
-      "net_dog": -3521775,
-      "window_min": 196,
+      "price": 0.0009383,
+      "vol24h_dog": 119074906.0,
+      "change24h": -2.76,
+      "buy_dog": 16487916,
+      "sell_dog": 21001223,
+      "net_dog": -4513307,
+      "window_min": 393,
       "ok": true
     },
     {
       "name": "Bitget",
       "link": "https://www.bitget.com/spot/DOGUSDT",
-      "price": 0.00093,
-      "vol24h_dog": 28084392.5,
-      "change24h": -3.7769999999999997,
-      "buy_dog": 1150880,
-      "sell_dog": 2008146,
-      "net_dog": -857266,
-      "window_min": 106,
+      "price": 0.0009455,
+      "vol24h_dog": 32052110.3,
+      "change24h": -2.314,
+      "buy_dog": 3762184,
+      "sell_dog": 3722133,
+      "net_dog": 40051,
+      "window_min": 325,
       "ok": true
     },
     {
       "name": "MEXC",
       "link": "https://www.mexc.com/exchange/DOG_USDT",
-      "price": 0.0009156,
-      "vol24h_dog": 73655340.91,
-      "change24h": -4.89,
-      "buy_dog": 3086061,
-      "sell_dog": 3965036,
-      "net_dog": -878975,
-      "window_min": 59,
+      "price": 0.0009425,
+      "vol24h_dog": 79498167.49,
+      "change24h": -2.07,
+      "buy_dog": 2428475,
+      "sell_dog": 3792532,
+      "net_dog": -1364056,
+      "window_min": 74,
       "ok": true
     },
     {
@@ -65,17 +65,44 @@
     {
       "name": "BigONE",
       "link": "https://big.one/trade/DOG-USDT",
-      "price": 0.000928,
-      "vol24h_dog": 77177923.5,
-      "change24h": 0.10787486515642117,
-      "buy_dog": 3387923,
-      "sell_dog": 3002392,
-      "net_dog": 385530,
-      "window_min": 56,
+      "price": 0.000917,
+      "vol24h_dog": 82106848.3,
+      "change24h": -1.5037593984962423,
+      "buy_dog": 1138750,
+      "sell_dog": 1322820,
+      "net_dog": -184070,
+      "window_min": 60,
       "ok": true
     }
   ],
   "notable": [
+    {
+      "exchange": "Kraken",
+      "link": "https://pro.kraken.com/app/trade/DOG-USD",
+      "side": "sell",
+      "dog": 5543654,
+      "usd": 5210,
+      "price": 0.00093981,
+      "ts": "2026-10-08T22:04:16+00:00"
+    },
+    {
+      "exchange": "Kraken",
+      "link": "https://pro.kraken.com/app/trade/DOG-USD",
+      "side": "sell",
+      "dog": 5600000,
+      "usd": 5046,
+      "price": 0.00090102,
+      "ts": "2026-10-08T18:10:49+00:00"
+    },
+    {
+      "exchange": "Kraken",
+      "link": "https://pro.kraken.com/app/trade/DOG-USD",
+      "side": "sell",
+      "dog": 5700000,
+      "usd": 5130,
+      "price": 0.00090003,
+      "ts": "2026-10-08T17:12:42+00:00"
+    },
     {
       "exchange": "Kraken",
       "link": "https://pro.kraken.com/app/trade/DOG-USD",
@@ -111,15 +138,6 @@
       "usd": 6976,
       "price": 0.00094826,
       "ts": "2026-10-08T03:46:22+00:00"
-    },
-    {
-      "exchange": "Kraken",
-      "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "side": "buy",
-      "dog": 9873621,
-      "usd": 9832,
-      "price": 0.00099576,
-      "ts": "2026-10-07T16:05:41+00:00"
     }
   ],
   "caveat": "Janela de trades recentes (ate ~1000), nao o dia inteiro; volume 24h vem do ticker."
