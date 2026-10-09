@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T09:21:38.662470+00:00",
+  "updated_at": "2026-10-09T16:25:21.293425+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13379214717.95348,
+      "balance_dog": 13368835239.30243,
       "rank": 1,
-      "pct": 13.38,
+      "pct": 13.37,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3012022539.8292,
+      "balance_dog": 3012030126.0592,
       "rank": 3,
       "pct": 3.01,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 1917979303.79549,
+      "balance_dog": 1917174373.56652,
       "rank": 6,
       "pct": 1.92,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1968732429.95851,
+      "balance_dog": 1969823138.62851,
       "rank": 5,
       "pct": 1.97,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -138,6 +138,14 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "merlin2",
+      "from_label": "Vault #1",
+      "to_label": "Merlin Chain vault (2026)",
+      "dog": 178728047,
+      "count": 7
+    },
+    {
+      "from": "cofre",
       "to": "bc1p7jglyf32396kawcnkllzlv04hxn0r9ex5fg0zh3pradzq5vjtjwsamrym3",
       "from_label": "Vault #1",
       "to_label": "bc1p7jgl...rym3",
@@ -159,14 +167,6 @@
       "to_label": "Whale23",
       "dog": 214963173,
       "count": 67
-    },
-    {
-      "from": "cofre",
-      "to": "merlin2",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "dog": 168451492,
-      "count": 6
     },
     {
       "from": "cofre",

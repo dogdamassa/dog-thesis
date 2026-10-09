@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-09T09:21:38.662470+00:00",
+  "updated_at": "2026-10-09T16:25:21.293425+00:00",
   "events": [
     {
       "id": "bal-2026-10-09",
-      "ts": "2026-10-09T09:21:38.662470+00:00",
+      "ts": "2026-10-09T16:25:21.293425+00:00",
       "type": "balance_change",
-      "amount_dog": 22310929.461000443,
+      "amount_dog": 10379478.651050568,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,58 @@
       "to_id": "",
       "sign": "-",
       "txid": null
+    },
+    {
+      "id": "aef24308d1512581419512d560aa78cd3af2d0b18e62027ea9874f81e813d084",
+      "ts": "2026-10-09T12:10:52+00:00",
+      "type": "cofre_in",
+      "amount_dog": 370292453.30138,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "aef24308d1512581419512d560aa78cd3af2d0b18e62027ea9874f81e813d084"
+    },
+    {
+      "id": "0d041c8d81c15d7ea91251ee254950038eb9bbad7fb3271df4fd268bd4ebac94",
+      "ts": "2026-10-09T12:10:52+00:00",
+      "type": "cofre_in",
+      "amount_dog": 215996427.13108,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "0d041c8d81c15d7ea91251ee254950038eb9bbad7fb3271df4fd268bd4ebac94"
+    },
+    {
+      "id": "1f0995a2f2f8f73a90b5a031899199e3cdb748c34dbcb9f359ccfd4b5af7f1e0",
+      "ts": "2026-10-09T12:10:52+00:00",
+      "type": "cofre_in",
+      "amount_dog": 61416777.89993,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "1f0995a2f2f8f73a90b5a031899199e3cdb748c34dbcb9f359ccfd4b5af7f1e0"
+    },
+    {
+      "id": "8668de8de85d6a9304ecd4a6a72d386a8ab5223f9081ade98eb2fb4eba166a66",
+      "ts": "2026-10-09T12:10:52+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 10276554.589,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Merlin Chain vault (2026)",
+      "from_id": "cofre",
+      "to_id": "merlin2",
+      "community": "Merlin",
+      "txid": "8668de8de85d6a9304ecd4a6a72d386a8ab5223f9081ade98eb2fb4eba166a66"
     },
     {
       "id": "31622136183f9cb01b301d5886def42701416964b07904689be68433a4ae371d",
@@ -728,58 +780,6 @@
       "to_id": "whale23",
       "community": null,
       "txid": "54655fdefd30d84a79b753ed90d8d1957a11c6cf232c5749d3449b493c6ba8bd"
-    },
-    {
-      "id": "c5354ff943c3ac578080253ae3b50235c6a80d789accad1bb7b74ddc0bea2ce9",
-      "ts": "2026-10-06T04:14:02+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 1100725,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
-      "community": null,
-      "txid": "c5354ff943c3ac578080253ae3b50235c6a80d789accad1bb7b74ddc0bea2ce9"
-    },
-    {
-      "id": "6bee0eb207885f5cec1cabf4cdaa62569a6a753663b341ec78000588028128ff",
-      "ts": "2026-10-06T04:14:02+00:00",
-      "type": "exchange_out",
-      "amount_dog": 5324736,
-      "level": "info",
-      "from_label": "MEXC Wallet",
-      "to_label": "Whale23",
-      "from_id": "mexc",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "6bee0eb207885f5cec1cabf4cdaa62569a6a753663b341ec78000588028128ff"
-    },
-    {
-      "id": "cc3d07bef32e723c5cf8cc69007c6471ffed1cca1362dea5d05a714f23f28b70",
-      "ts": "2026-10-06T01:56:30+00:00",
-      "type": "exchange_in",
-      "amount_dog": 9198486.05095,
-      "level": "watch",
-      "from_label": "bc1qsunf...4us9",
-      "to_label": "MEXC Wallet",
-      "from_id": "bc1qsunfqay2tgvvhefx6tm82k3ucvysrspxw54us9",
-      "to_id": "mexc",
-      "community": "MEXC",
-      "txid": "cc3d07bef32e723c5cf8cc69007c6471ffed1cca1362dea5d05a714f23f28b70"
-    },
-    {
-      "id": "159d1c51448515f1fdbb2db6d2347a8cd67e17721c2a7ed4559bf4a11905d5ab",
-      "ts": "2026-10-06T00:30:02+00:00",
-      "type": "exchange_out",
-      "amount_dog": 5050610.08999,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "bc1pr4ws...yxt3",
-      "from_id": "h2",
-      "to_id": "bc1pr4wstkjru2rcyfjm0w60py4k7sq8numah9uvqpe3v3cpajeze9fqtcyxt3",
-      "community": null,
-      "txid": "159d1c51448515f1fdbb2db6d2347a8cd67e17721c2a7ed4559bf4a11905d5ab"
     }
   ]
 }
