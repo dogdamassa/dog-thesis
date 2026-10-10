@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-10-09T21:46:57.597952+00:00",
+  "updated_at": "2026-10-10T01:49:06.864074+00:00",
   "events": [
+    {
+      "id": "bal-2026-10-10",
+      "ts": "2026-10-10T01:49:06.864074+00:00",
+      "type": "balance_change",
+      "amount_dog": 2894881.940000534,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "4d1ac918bef22c5f08e700afa0f578fff470d4ff42c0a8577635cc43a59a311f",
+      "ts": "2026-10-09T23:41:32+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2764365.3,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "4d1ac918bef22c5f08e700afa0f578fff470d4ff42c0a8577635cc43a59a311f"
+    },
     {
       "id": "bal-2026-10-09",
       "ts": "2026-10-09T21:46:57.597952+00:00",
@@ -754,32 +780,6 @@
       "to_id": "merlin2",
       "community": "Merlin",
       "txid": "ae36e661f5cea5986744b0491e727c7e110a1f2a0f824f0256782c952e782f30"
-    },
-    {
-      "id": "ef12adb37af6e226a273bc952ced51ecf98bfec5e809fec95d2a8d80082c87cb",
-      "ts": "2026-10-06T12:40:04+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 1420180.072,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1ps48lkwxntjmyg5vluegmasxuhxszhuglwjesuejx7c45zt96ka3ssrsxgh",
-      "community": null,
-      "txid": "ef12adb37af6e226a273bc952ced51ecf98bfec5e809fec95d2a8d80082c87cb"
-    },
-    {
-      "id": "f660f6ec851729d8d2495218e24333cd56bccb2fe3e30a898bb8af9f29c9e31a",
-      "ts": "2026-10-06T12:40:04+00:00",
-      "type": "cofre_in",
-      "amount_dog": 124052876.85799,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "f660f6ec851729d8d2495218e24333cd56bccb2fe3e30a898bb8af9f29c9e31a"
     }
   ]
 }
