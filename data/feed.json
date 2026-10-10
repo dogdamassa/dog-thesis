@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-10-10T08:40:56.663975+00:00",
+  "updated_at": "2026-10-10T15:28:16.716309+00:00",
   "events": [
+    {
+      "id": "d47bea9d54eefc79351848e8082fe49c4799fddd360e27eaeb2cd05dec4cd6cd",
+      "ts": "2026-10-10T14:58:53+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 5049843.589000001,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pjj69r62009xvgdhtru3fjhh76drekldn60xkjgv8a5levq0x5fysv2j7tr",
+      "community": null,
+      "txid": "d47bea9d54eefc79351848e8082fe49c4799fddd360e27eaeb2cd05dec4cd6cd"
+    },
     {
       "id": "bal-2026-10-10",
       "ts": "2026-10-10T08:40:56.663975+00:00",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "c3a445b73cfc9e6583d95f991229b32ff6f60c62723d7f93b0a29f48d3df1b71"
-    },
-    {
-      "id": "1d1d580026d3867ffbdf9f254360830e0c163061f970136a45e1faa6d4aac648",
-      "ts": "2026-10-06T13:37:27+00:00",
-      "type": "cofre_in",
-      "amount_dog": 28662568.82,
-      "level": "info",
-      "from_label": "MM2 shuttle",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "1d1d580026d3867ffbdf9f254360830e0c163061f970136a45e1faa6d4aac648"
     }
   ]
 }
