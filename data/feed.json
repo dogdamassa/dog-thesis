@@ -1,6 +1,45 @@
 {
-  "updated_at": "2026-10-10T15:28:16.716309+00:00",
+  "updated_at": "2026-10-10T20:11:06.085992+00:00",
   "events": [
+    {
+      "id": "bal-2026-10-10",
+      "ts": "2026-10-10T20:11:06.085992+00:00",
+      "type": "balance_change",
+      "amount_dog": 5018519.462381363,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
+    {
+      "id": "25c0530129f89a9933669fb145364283675a9f5021100de88b5b4a67f21d9a5a",
+      "ts": "2026-10-10T19:54:03+00:00",
+      "type": "exchange_out",
+      "amount_dog": 6460329.69,
+      "level": "info",
+      "from_label": "Gate.io hot",
+      "to_label": "MM2 shuttle",
+      "from_id": "h2",
+      "to_id": "mm2",
+      "community": null,
+      "txid": "25c0530129f89a9933669fb145364283675a9f5021100de88b5b4a67f21d9a5a"
+    },
+    {
+      "id": "07c84c1902899918de9d7e9c502e18457fe6955f315625e7164a52dd20da2026",
+      "ts": "2026-10-10T19:54:03+00:00",
+      "type": "exchange_out",
+      "amount_dog": 9372178.67123,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "MM2 shuttle",
+      "from_id": "h3",
+      "to_id": "mm2",
+      "community": null,
+      "txid": "07c84c1902899918de9d7e9c502e18457fe6955f315625e7164a52dd20da2026"
+    },
     {
       "id": "d47bea9d54eefc79351848e8082fe49c4799fddd360e27eaeb2cd05dec4cd6cd",
       "ts": "2026-10-10T14:58:53+00:00",
@@ -13,19 +52,6 @@
       "to_id": "bc1pjj69r62009xvgdhtru3fjhh76drekldn60xkjgv8a5levq0x5fysv2j7tr",
       "community": null,
       "txid": "d47bea9d54eefc79351848e8082fe49c4799fddd360e27eaeb2cd05dec4cd6cd"
-    },
-    {
-      "id": "bal-2026-10-10",
-      "ts": "2026-10-10T08:40:56.663975+00:00",
-      "type": "balance_change",
-      "amount_dog": 101349170.53514099,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
     },
     {
       "id": "0e6b7c06024868967828790441c9562a58640cc3f055679d05f298b591bc0801",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "483ea92e593d7ead2214d167bf07277b6caf402d45ef92a20d047876418fa2c8"
-    },
-    {
-      "id": "6895d4612ff6b352c3ba575e4d95e4bae058063622310abe98a3369d9ce686f9",
-      "ts": "2026-10-06T20:05:44+00:00",
-      "type": "cofre_in",
-      "amount_dog": 5207529.196,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "6895d4612ff6b352c3ba575e4d95e4bae058063622310abe98a3369d9ce686f9"
-    },
-    {
-      "id": "c3a445b73cfc9e6583d95f991229b32ff6f60c62723d7f93b0a29f48d3df1b71",
-      "ts": "2026-10-06T19:12:33+00:00",
-      "type": "cofre_in",
-      "amount_dog": 5338836,
-      "level": "info",
-      "from_label": "bc1p92gm...qxfa",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "c3a445b73cfc9e6583d95f991229b32ff6f60c62723d7f93b0a29f48d3df1b71"
     }
   ]
 }
