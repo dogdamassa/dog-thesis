@@ -6,7 +6,7 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ## 2026-10-10
 
-- **Baleia (#1):** 13.44% do supply (Δ +2.9M DOG).
+- **Baleia (#1):** 13.54% do supply (Δ +101.3M DOG).
 - Saques novos da Binance → cluster: nenhum hoje.
 - A baleia não depositou em exchange (segue acumulando/parada).
 - 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.

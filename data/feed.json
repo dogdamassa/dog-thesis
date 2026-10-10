@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-10T01:49:06.864074+00:00",
+  "updated_at": "2026-10-10T08:40:56.663975+00:00",
   "events": [
     {
       "id": "bal-2026-10-10",
-      "ts": "2026-10-10T01:49:06.864074+00:00",
+      "ts": "2026-10-10T08:40:56.663975+00:00",
       "type": "balance_change",
-      "amount_dog": 2894881.940000534,
+      "amount_dog": 101349170.53514099,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,32 @@
       "to_id": "",
       "sign": "+",
       "txid": null
+    },
+    {
+      "id": "0e6b7c06024868967828790441c9562a58640cc3f055679d05f298b591bc0801",
+      "ts": "2026-10-10T06:11:57+00:00",
+      "type": "cofre_in",
+      "amount_dog": 102253741,
+      "level": "info",
+      "from_label": "bc1pqul7...h6c6",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "0e6b7c06024868967828790441c9562a58640cc3f055679d05f298b591bc0801"
+    },
+    {
+      "id": "8a3df1f0cbc44709c628066bfc1972142e8d784c187b88fcc92d21226870f98e",
+      "ts": "2026-10-10T03:59:21+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 1000000,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pcm7l53ldhpn0puu69vj3taws4xzw3p94rrzhtqpqlt0g5wzdrclsxa34ep",
+      "community": null,
+      "txid": "8a3df1f0cbc44709c628066bfc1972142e8d784c187b88fcc92d21226870f98e"
     },
     {
       "id": "4d1ac918bef22c5f08e700afa0f578fff470d4ff42c0a8577635cc43a59a311f",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "1d1d580026d3867ffbdf9f254360830e0c163061f970136a45e1faa6d4aac648"
-    },
-    {
-      "id": "250abe4eefc83b3236cde41f0ab5fab46c6833a22ad240570ea3cd7a460e334c",
-      "ts": "2026-10-06T12:51:01+00:00",
-      "type": "exchange_in",
-      "amount_dog": 12868692.81876,
-      "level": "watch",
-      "from_label": "unmapped wallet",
-      "to_label": "Gate.io hot",
-      "from_id": "",
-      "to_id": "h2",
-      "community": "Gate",
-      "txid": "250abe4eefc83b3236cde41f0ab5fab46c6833a22ad240570ea3cd7a460e334c"
-    },
-    {
-      "id": "ae36e661f5cea5986744b0491e727c7e110a1f2a0f824f0256782c952e782f30",
-      "ts": "2026-10-06T12:40:04+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 8630484.717,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "from_id": "cofre",
-      "to_id": "merlin2",
-      "community": "Merlin",
-      "txid": "ae36e661f5cea5986744b0491e727c7e110a1f2a0f824f0256782c952e782f30"
     }
   ]
 }
