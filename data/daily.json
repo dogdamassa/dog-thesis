@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-10-14T18:44:31.749014+00:00",
+  "updated_at": "2026-10-14T22:24:34.012426+00:00",
   "date": "2026-10-14",
   "source": "dogdata.xyz",
   "cofre": {
     "rank": 1,
     "pct": 13.57,
-    "total_dog": 13565601017.73245,
-    "delta_dog": -59798.35899925232,
+    "total_dog": 13565522017.73245,
+    "delta_dog": -79000.0,
     "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
   },
-  "holders_total": 86186,
-  "holders_delta": 0,
+  "holders_total": 86187,
+  "holders_delta": 1,
   "exchanges": [
     {
       "id": "h2",
@@ -30,7 +30,7 @@
       "id": "mexc",
       "label": "MEXC Wallet",
       "community": "MEXC",
-      "balance_dog": 1945507763.84338,
+      "balance_dog": 1940751534.84338,
       "rank": 5
     }
   ],
