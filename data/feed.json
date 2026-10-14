@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-10-13T22:56:51.618420+00:00",
+  "updated_at": "2026-10-14T02:00:08.114063+00:00",
   "events": [
+    {
+      "id": "bal-2026-10-14",
+      "ts": "2026-10-14T02:00:08.114063+00:00",
+      "type": "balance_change",
+      "amount_dog": 8878288.338998795,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
     {
       "id": "bal-2026-10-13",
       "ts": "2026-10-13T22:56:51.618420+00:00",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "d6384150daa6428cc9826b5e32e9138841ea9b14984412940b4757bfa341804d"
-    },
-    {
-      "id": "5df39e079ce6b8520b29debb63f2f4c8aa10919fefa57901c6e57cd704f14008",
-      "ts": "2026-10-08T15:14:54+00:00",
-      "type": "exchange_out",
-      "amount_dog": 5050506,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "bc1pr4ws...yxt3",
-      "from_id": "h2",
-      "to_id": "bc1pr4wstkjru2rcyfjm0w60py4k7sq8numah9uvqpe3v3cpajeze9fqtcyxt3",
-      "community": null,
-      "txid": "5df39e079ce6b8520b29debb63f2f4c8aa10919fefa57901c6e57cd704f14008"
     }
   ]
 }
