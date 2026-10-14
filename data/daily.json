@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-10-14T02:00:08.114063+00:00",
+  "updated_at": "2026-10-14T07:48:30.370485+00:00",
   "date": "2026-10-14",
   "source": "dogdata.xyz",
   "cofre": {
     "rank": 1,
     "pct": 13.57,
     "total_dog": 13565607432.68918,
-    "delta_dog": -8878288.338998795,
+    "delta_dog": 0.0,
     "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
   },
-  "holders_total": 86185,
-  "holders_delta": -1,
+  "holders_total": 86186,
+  "holders_delta": 1,
   "exchanges": [
     {
       "id": "h2",
