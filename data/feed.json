@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-10-15T18:24:37.883929+00:00",
+  "updated_at": "2026-10-15T22:29:40.192658+00:00",
   "events": [
+    {
+      "id": "97cc7d8e7d2b23f92707e5d5a82c9b164900f926f9db9d792c8700d88dcab1e6",
+      "ts": "2026-10-15T21:38:07+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2220456.36453,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "97cc7d8e7d2b23f92707e5d5a82c9b164900f926f9db9d792c8700d88dcab1e6"
+    },
+    {
+      "id": "54dda1c2733a37b19bd248addc54c95449c61f6952a2a818ba5d0fd1d5773544",
+      "ts": "2026-10-15T21:13:58+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 1002420.78,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pzg6aed026czampasr6lp7q0eugeptmw789z4d0xm605sc0qm2cmqxf5vtk",
+      "community": null,
+      "txid": "54dda1c2733a37b19bd248addc54c95449c61f6952a2a818ba5d0fd1d5773544"
+    },
     {
       "id": "bal-2026-10-15",
       "ts": "2026-10-15T18:24:37.883929+00:00",
@@ -754,32 +780,6 @@
       "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "community": null,
       "txid": "32e90c40af021047f5024ede01ae4f7a65fb0e2deed855c6a7eaccd2b9b1c1ac"
-    },
-    {
-      "id": "aef24308d1512581419512d560aa78cd3af2d0b18e62027ea9874f81e813d084",
-      "ts": "2026-10-09T12:10:52+00:00",
-      "type": "cofre_in",
-      "amount_dog": 370292453.30138,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "aef24308d1512581419512d560aa78cd3af2d0b18e62027ea9874f81e813d084"
-    },
-    {
-      "id": "0d041c8d81c15d7ea91251ee254950038eb9bbad7fb3271df4fd268bd4ebac94",
-      "ts": "2026-10-09T12:10:52+00:00",
-      "type": "cofre_in",
-      "amount_dog": 215996427.13108,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "0d041c8d81c15d7ea91251ee254950038eb9bbad7fb3271df4fd268bd4ebac94"
     }
   ]
 }
