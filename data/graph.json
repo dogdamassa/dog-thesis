@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T12:36:48.132182+00:00",
+  "updated_at": "2026-10-16T17:32:27.195819+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3018972502.33753,
+      "balance_dog": 3016968328.69981,
       "rank": 3,
       "pct": 3.02,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1943240510.15553,
+      "balance_dog": 1945244683.79325,
       "rank": 5,
-      "pct": 1.94,
+      "pct": 1.95,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -185,14 +185,6 @@
       "count": 71
     },
     {
-      "from": "cofre",
-      "to": "int1",
-      "from_label": "Vault #1",
-      "to_label": "Bitget Deposit #1",
-      "dog": 166788931,
-      "count": 44
-    },
-    {
       "from": "h2",
       "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "from_label": "Gate.io hot",
@@ -263,6 +255,14 @@
       "to_label": "MEXC Wallet",
       "dog": 287716041,
       "count": 76
+    },
+    {
+      "from": "cofre",
+      "to": "int1",
+      "from_label": "Vault #1",
+      "to_label": "Bitget Deposit #1",
+      "dog": 166788931,
+      "count": 44
     },
     {
       "from": "int3",
