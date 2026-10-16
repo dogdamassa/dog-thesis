@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-10-16T17:32:27.195819+00:00",
+  "updated_at": "2026-10-16T21:25:13.973243+00:00",
   "events": [
+    {
+      "id": "2c6ab6ca3307c40f1e3ea778c4ed8ab4255b61c16ea4a38d6b0d08c18e939883",
+      "ts": "2026-10-16T21:15:24+00:00",
+      "type": "cofre_in",
+      "amount_dog": 18987458.01035,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "2c6ab6ca3307c40f1e3ea778c4ed8ab4255b61c16ea4a38d6b0d08c18e939883"
+    },
     {
       "id": "bal-2026-10-16",
       "ts": "2026-10-16T12:36:48.132182+00:00",
@@ -767,19 +780,6 @@
       "to_id": "mm2",
       "community": null,
       "txid": "25c0530129f89a9933669fb145364283675a9f5021100de88b5b4a67f21d9a5a"
-    },
-    {
-      "id": "07c84c1902899918de9d7e9c502e18457fe6955f315625e7164a52dd20da2026",
-      "ts": "2026-10-10T19:54:03+00:00",
-      "type": "exchange_out",
-      "amount_dog": 9372178.67123,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "MM2 shuttle",
-      "from_id": "h3",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "07c84c1902899918de9d7e9c502e18457fe6955f315625e7164a52dd20da2026"
     }
   ]
 }
