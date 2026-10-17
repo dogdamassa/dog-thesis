@@ -1,6 +1,71 @@
 {
-  "updated_at": "2026-10-17T00:36:42.806326+00:00",
+  "updated_at": "2026-10-17T05:43:42.301701+00:00",
   "events": [
+    {
+      "id": "bal-2026-10-17",
+      "ts": "2026-10-17T05:43:42.301701+00:00",
+      "type": "balance_change",
+      "amount_dog": 7038644.095401764,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "a472f7d09f73b877995ba8cc0b29e27f3b722d99ece47ba8bb314c925f66fb4b",
+      "ts": "2026-10-17T05:09:34+00:00",
+      "type": "cofre_in",
+      "amount_dog": 21472014.06033,
+      "level": "info",
+      "from_label": "MM2 shuttle",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "a472f7d09f73b877995ba8cc0b29e27f3b722d99ece47ba8bb314c925f66fb4b"
+    },
+    {
+      "id": "5d98199941f43693cdf6936aa6825313429f18e8703342b5f6707619b5b9dced",
+      "ts": "2026-10-17T04:30:07+00:00",
+      "type": "exchange_out",
+      "amount_dog": 14410065.02011,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "Whale23",
+      "from_id": "h3",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "5d98199941f43693cdf6936aa6825313429f18e8703342b5f6707619b5b9dced"
+    },
+    {
+      "id": "003787a9e49db07c482d50a269781410d7b455b3a986bec0ec407e9e59971b0e",
+      "ts": "2026-10-17T04:30:07+00:00",
+      "type": "exchange_out",
+      "amount_dog": 19902312.02011,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "MM2 shuttle",
+      "from_id": "h3",
+      "to_id": "mm2",
+      "community": null,
+      "txid": "003787a9e49db07c482d50a269781410d7b455b3a986bec0ec407e9e59971b0e"
+    },
+    {
+      "id": "4710f514fff389409f37983546e072a3ab45595b2d83f658d712142be3b239e0",
+      "ts": "2026-10-17T03:30:56+00:00",
+      "type": "cofre_in",
+      "amount_dog": 6681819.24,
+      "level": "info",
+      "from_label": "Whale7 shuttle",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "4710f514fff389409f37983546e072a3ab45595b2d83f658d712142be3b239e0"
+    },
     {
       "id": "2c6ab6ca3307c40f1e3ea778c4ed8ab4255b61c16ea4a38d6b0d08c18e939883",
       "ts": "2026-10-16T21:15:24+00:00",
@@ -715,71 +780,6 @@
       "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "community": null,
       "txid": "a75a4e6ed0b4a6aa7f22a4ebf3ce9579e0590d6eb6244b16a06213a5fcfb43c0"
-    },
-    {
-      "id": "275f95913f27b3ee0eb8a8b4355758e3343d6d45001dd4e51f30a68b705f56a0",
-      "ts": "2026-10-11T14:27:04+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 1102201.8,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1q06c7e6x70asxms4m8j3sn3ze4ddmayv4w4w355",
-      "community": null,
-      "txid": "275f95913f27b3ee0eb8a8b4355758e3343d6d45001dd4e51f30a68b705f56a0"
-    },
-    {
-      "id": "3e572b3185cce78a88f88a1b42cd53c4a5762b47df334e48208f93699f9d8c39",
-      "ts": "2026-10-11T10:13:16+00:00",
-      "type": "cofre_in",
-      "amount_dog": 2307717.16035,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "3e572b3185cce78a88f88a1b42cd53c4a5762b47df334e48208f93699f9d8c39"
-    },
-    {
-      "id": "bal-2026-10-10",
-      "ts": "2026-10-10T23:40:30.759422+00:00",
-      "type": "balance_change",
-      "amount_dog": 38482384.61846161,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
-    },
-    {
-      "id": "a70b0de69ef3ef35056dd1c8b8c3e1ac9ec7e3280f5d2a9a0a779b9919dff6e5",
-      "ts": "2026-10-10T20:31:17+00:00",
-      "type": "cofre_in",
-      "amount_dog": 38593583.41246,
-      "level": "info",
-      "from_label": "MM2 shuttle",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "a70b0de69ef3ef35056dd1c8b8c3e1ac9ec7e3280f5d2a9a0a779b9919dff6e5"
-    },
-    {
-      "id": "25c0530129f89a9933669fb145364283675a9f5021100de88b5b4a67f21d9a5a",
-      "ts": "2026-10-10T19:54:03+00:00",
-      "type": "exchange_out",
-      "amount_dog": 6460329.69,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "MM2 shuttle",
-      "from_id": "h2",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "25c0530129f89a9933669fb145364283675a9f5021100de88b5b4a67f21d9a5a"
     }
   ]
 }
