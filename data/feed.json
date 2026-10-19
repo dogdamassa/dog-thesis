@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-10-18T21:36:50.430250+00:00",
+  "updated_at": "2026-10-19T00:16:06.763169+00:00",
   "events": [
+    {
+      "id": "50037aea1036845df5c0f0485d1c5c6e23a8faba8711dd1438d4f4a96006c17b",
+      "ts": "2026-10-18T22:33:12+00:00",
+      "type": "cofre_in",
+      "amount_dog": 15497161.14,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "50037aea1036845df5c0f0485d1c5c6e23a8faba8711dd1438d4f4a96006c17b"
+    },
     {
       "id": "bal-2026-10-18",
       "ts": "2026-10-18T21:36:50.430250+00:00",
@@ -767,19 +780,6 @@
       "to_id": "h2",
       "community": "Gate",
       "txid": "bb93afe1af230774a77a1ba3678c373f209a0d40426156b20f15e68863e89577"
-    },
-    {
-      "id": "f5050acba0336387e1d7c0adfeae087bc22104cf2ffb95e68ecf88a739f9c6e1",
-      "ts": "2026-10-13T01:17:40+00:00",
-      "type": "exchange_out",
-      "amount_dog": 8466990,
-      "level": "info",
-      "from_label": "MEXC Wallet",
-      "to_label": "MM2 shuttle",
-      "from_id": "mexc",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "f5050acba0336387e1d7c0adfeae087bc22104cf2ffb95e68ecf88a739f9c6e1"
     }
   ]
 }
