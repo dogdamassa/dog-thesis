@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-10-19T17:35:32.784657+00:00",
+  "updated_at": "2026-10-19T22:29:56.865015+00:00",
   "events": [
+    {
+      "id": "bal-2026-10-19",
+      "ts": "2026-10-19T22:29:56.865015+00:00",
+      "type": "balance_change",
+      "amount_dog": 8282955.58024025,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "2ca6588b0232263533be291566c3945fc13b68fe3c491447bd1201f94223c91c",
+      "ts": "2026-10-19T22:03:19+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 2043630.0680000002,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1plvnmxcn266egc6lscknsq7z2tshyv9l8zgfssgyzjkhxn96v82fqkvjdmw",
+      "community": null,
+      "txid": "2ca6588b0232263533be291566c3945fc13b68fe3c491447bd1201f94223c91c"
+    },
+    {
+      "id": "29e57e8ecb9be92d2f78f3c306981b2a37ba5c867b339fdc8c5c37d971b79cd9",
+      "ts": "2026-10-19T22:03:19+00:00",
+      "type": "cofre_in",
+      "amount_dog": 1000000,
+      "level": "info",
+      "from_label": "bc1prh2a...mewk",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "29e57e8ecb9be92d2f78f3c306981b2a37ba5c867b339fdc8c5c37d971b79cd9"
+    },
+    {
+      "id": "b17fcaf0f84008b932ca7e260caa36b50b10da8d37a36d5412f3ad3691d68955",
+      "ts": "2026-10-19T21:00:34+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2577808.46691,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "b17fcaf0f84008b932ca7e260caa36b50b10da8d37a36d5412f3ad3691d68955"
+    },
     {
       "id": "fddfe627c351fb08387eff46e0a6dfe2007a61355c6cf4a98201b06203e19586",
       "ts": "2026-10-19T16:31:16+00:00",
@@ -39,19 +91,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "89a1b7c2d355d82527b0406cf3b3a29400fd3ad3c073f4dbe9ede21d392fd911"
-    },
-    {
-      "id": "bal-2026-10-19",
-      "ts": "2026-10-19T10:58:54.903770+00:00",
-      "type": "balance_change",
-      "amount_dog": 4586947.082820892,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     },
     {
       "id": "1299c6e85e2ce2a87dce0b3e43caaa70d4c7522a4e11dbdbef460f6c68ad96ff",
@@ -741,45 +780,6 @@
       "to_id": "",
       "sign": "-",
       "txid": null
-    },
-    {
-      "id": "2bc1f9c933079857fdadb16659d7742e93f3ec6544a0fdbc4c57f553229528a1",
-      "ts": "2026-10-13T22:06:28+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 8150218.699999999,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "2bc1f9c933079857fdadb16659d7742e93f3ec6544a0fdbc4c57f553229528a1"
-    },
-    {
-      "id": "0984b32335f7cc1381c2e9c648db14894b2b7ba7a2599967c9381e06feea075b",
-      "ts": "2026-10-13T20:41:04+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 1306464.4,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1q06c7e6x70asxms4m8j3sn3ze4ddmayv4w4w355",
-      "community": null,
-      "txid": "0984b32335f7cc1381c2e9c648db14894b2b7ba7a2599967c9381e06feea075b"
-    },
-    {
-      "id": "bc1983ea3b971329fb4140406a539d776a4b976a555d918f3088255bb95ef191",
-      "ts": "2026-10-13T19:16:28+00:00",
-      "type": "cofre_in",
-      "amount_dog": 2000000,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "bc1983ea3b971329fb4140406a539d776a4b976a555d918f3088255bb95ef191"
     }
   ]
 }
