@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T13:41:27.533356+00:00",
+  "updated_at": "2026-10-20T18:32:56.294835+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -138,6 +138,14 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
+      "from_label": "Vault #1",
+      "to_label": "bc1qkgjl...ct5y",
+      "dog": 99558944,
+      "count": 40
+    },
+    {
+      "from": "cofre",
       "to": "merlin2",
       "from_label": "Vault #1",
       "to_label": "Merlin Chain vault (2026)",
@@ -159,14 +167,6 @@
       "to_label": "bc1pzg6a...5vtk",
       "dog": 75038055,
       "count": 9
-    },
-    {
-      "from": "cofre",
-      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "from_label": "Vault #1",
-      "to_label": "bc1qkgjl...ct5y",
-      "dog": 97350763,
-      "count": 39
     },
     {
       "from": "cofre",
@@ -205,8 +205,8 @@
       "to": "whale23",
       "from_label": "Bitget hot",
       "to_label": "Whale23",
-      "dog": 218260042,
-      "count": 40
+      "dog": 200180381,
+      "count": 38
     },
     {
       "from": "h3",
@@ -237,8 +237,8 @@
       "to": "mexc",
       "from_label": "bc1qkgjl...ct5y",
       "to_label": "MEXC Wallet",
-      "dog": 291379495,
-      "count": 79
+      "dog": 293587677,
+      "count": 80
     },
     {
       "from": "mexc",
