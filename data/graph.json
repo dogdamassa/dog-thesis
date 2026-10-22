@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T18:39:28.015652+00:00",
+  "updated_at": "2026-10-22T22:30:27.327605+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -138,19 +138,19 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "whale23",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "dog": 198693854,
+      "count": 61
+    },
+    {
+      "from": "cofre",
       "to": "merlin2",
       "from_label": "Vault #1",
       "to_label": "Merlin Chain vault (2026)",
       "dog": 148912110,
       "count": 8
-    },
-    {
-      "from": "cofre",
-      "to": "whale23",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "dog": 200061573,
-      "count": 60
     },
     {
       "from": "cofre",
@@ -205,8 +205,8 @@
       "to": "whale23",
       "from_label": "Bitget hot",
       "to_label": "Whale23",
-      "dog": 182637801,
-      "count": 37
+      "dog": 187962706,
+      "count": 39
     },
     {
       "from": "h3",
