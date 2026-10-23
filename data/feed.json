@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-10-23T01:40:27.947432+00:00",
+  "updated_at": "2026-10-23T07:44:07.813017+00:00",
   "events": [
+    {
+      "id": "dc027f05d13484fd48e2a829e8976a89d43cd1d366f7dd2c6ab99c09b0dce293",
+      "ts": "2026-10-23T04:46:47+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 3000000,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pccjc8x533dj0hsgxn3w7fxhcemz5ss88u6y9czu7zwgfqtwv3x4q7xcsms",
+      "community": null,
+      "txid": "dc027f05d13484fd48e2a829e8976a89d43cd1d366f7dd2c6ab99c09b0dce293"
+    },
+    {
+      "id": "8b81e62755f0f5bccdf4b75c5229621da116b156f12562c777fdfb740a438226",
+      "ts": "2026-10-23T03:21:32+00:00",
+      "type": "cofre_in",
+      "amount_dog": 164794421.81995,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "8b81e62755f0f5bccdf4b75c5229621da116b156f12562c777fdfb740a438226"
+    },
+    {
+      "id": "0066786eb3f05eb0e3a31e7e178964e6d57fd3f731c8fe18ea63c2261a1b5def",
+      "ts": "2026-10-23T03:05:34+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 11289406.4,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "0066786eb3f05eb0e3a31e7e178964e6d57fd3f731c8fe18ea63c2261a1b5def"
+    },
+    {
+      "id": "bded69fbc2ac172fc6913c06469903acf6b647b4f335c64cee07c656b03322fa",
+      "ts": "2026-10-23T02:15:05+00:00",
+      "type": "exchange_out",
+      "amount_dog": 6930417.367509998,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "bc1ps23x...dhps",
+      "from_id": "h3",
+      "to_id": "bc1ps23x8v4surl8e3rp9hhl6zdtf7823t8a27gs8kkxw8dzdte5pjrqy7dhps",
+      "community": null,
+      "txid": "bded69fbc2ac172fc6913c06469903acf6b647b4f335c64cee07c656b03322fa"
+    },
     {
       "id": "74f7b1cf9e1bd1565771c1096a2bf4c1d8f82a6687b264a16766efb5c966eaa8",
       "ts": "2026-10-22T20:35:22+00:00",
@@ -728,58 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "50037aea1036845df5c0f0485d1c5c6e23a8faba8711dd1438d4f4a96006c17b"
-    },
-    {
-      "id": "bal-2026-10-18",
-      "ts": "2026-10-18T21:36:50.430250+00:00",
-      "type": "balance_change",
-      "amount_dog": 4516080.9802799225,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
-    },
-    {
-      "id": "7c70097ccb833015a189c58fd9a7b67bf76327817acf125e6c9a99cb9ae57ebe",
-      "ts": "2026-10-18T18:35:49+00:00",
-      "type": "cofre_in",
-      "amount_dog": 4806744.88028,
-      "level": "info",
-      "from_label": "bc1pwj80...q70u",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "7c70097ccb833015a189c58fd9a7b67bf76327817acf125e6c9a99cb9ae57ebe"
-    },
-    {
-      "id": "5a9f7ca5b641f5e21f02194036abb27093ebfd07c05810061d290e40f4f070b5",
-      "ts": "2026-10-18T16:52:41+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 1143623.602,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1qhg0hzchp4lr62vlxx95k7sxjstg7ty66g6jm3k",
-      "community": null,
-      "txid": "5a9f7ca5b641f5e21f02194036abb27093ebfd07c05810061d290e40f4f070b5"
-    },
-    {
-      "id": "e32ad483852912e3c187c40e0e419594f08a4f5eb1ac7cab16dd0ed808f7ada3",
-      "ts": "2026-10-18T16:16:18+00:00",
-      "type": "cofre_in",
-      "amount_dog": 4090658.02064,
-      "level": "info",
-      "from_label": "bc1pvvac...c30y",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "e32ad483852912e3c187c40e0e419594f08a4f5eb1ac7cab16dd0ed808f7ada3"
     }
   ]
 }
