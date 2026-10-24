@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T01:43:41.524334+00:00",
+  "updated_at": "2026-10-24T07:26:23.004118+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -205,8 +205,8 @@
       "to": "whale23",
       "from_label": "Bitget hot",
       "to_label": "Whale23",
-      "dog": 182829584,
-      "count": 37
+      "dog": 178208388,
+      "count": 36
     },
     {
       "from": "h3",
