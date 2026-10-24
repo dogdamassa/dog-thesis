@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-10-23T22:24:09.570120+00:00",
+  "updated_at": "2026-10-24T01:43:41.524334+00:00",
   "events": [
+    {
+      "id": "3a3239538ef7eb89ac4d98f80206f76d4562a857e0beda03c495b40ec1270e9b",
+      "ts": "2026-10-24T00:13:13+00:00",
+      "type": "cofre_in",
+      "amount_dog": 9163654.97041,
+      "level": "info",
+      "from_label": "bc1p8vvw...p7ap",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "3a3239538ef7eb89ac4d98f80206f76d4562a857e0beda03c495b40ec1270e9b"
+    },
+    {
+      "id": "5f30a5b2591a0aee98307eb25593659c0ba4adb371427b1174280b4fb4186099",
+      "ts": "2026-10-23T22:34:47+00:00",
+      "type": "cofre_in",
+      "amount_dog": 3814713.55131,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "5f30a5b2591a0aee98307eb25593659c0ba4adb371427b1174280b4fb4186099"
+    },
+    {
+      "id": "244007b74d24490e696815e7cce1f046c91311b8d76db1d37ecf92cb4080dfdf",
+      "ts": "2026-10-23T22:34:47+00:00",
+      "type": "exchange_in",
+      "amount_dog": 8800137.72619,
+      "level": "watch",
+      "from_label": "bc1qrkel...r2tq",
+      "to_label": "MEXC Wallet",
+      "from_id": "bc1qrkellgcpdz4s6z8ycxqdtkda9y2mjmsyyjr2tq",
+      "to_id": "mexc",
+      "community": "MEXC",
+      "txid": "244007b74d24490e696815e7cce1f046c91311b8d76db1d37ecf92cb4080dfdf"
+    },
+    {
+      "id": "680d4273e2baf05ea654c9d0363aa3be87e41270f28ad4851ddd644e6c897243",
+      "ts": "2026-10-23T22:29:04+00:00",
+      "type": "exchange_out",
+      "amount_dog": 9163654.970409997,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "bc1p8vvw...p7ap",
+      "from_id": "h3",
+      "to_id": "bc1p8vvwap3c3352ys2hpaf0kzvc3lzz99wq33hqsapey2ee8mmjrupseup7ap",
+      "community": null,
+      "txid": "680d4273e2baf05ea654c9d0363aa3be87e41270f28ad4851ddd644e6c897243"
+    },
     {
       "id": "460660fc49d533c931efbabc4cd930aa7f822cc7f7f16bedfb4d2931cc57387a",
       "ts": "2026-10-23T22:14:30+00:00",
@@ -728,58 +780,6 @@
       "to_id": "bc1plrk5cukf2nztn6dqspypeq52j6vzd5kyzme2getqv2wqalf7qm7sye3te8",
       "community": null,
       "txid": "b33c78f015897f6745ca60120b674fbdcaf57c52cf9356727b099b8fa98320fb"
-    },
-    {
-      "id": "7a0f455c79b3a443472d690ec999c3b3beb7d6981da9c88cc3ae18d54c5c7333",
-      "ts": "2026-10-20T17:14:14+00:00",
-      "type": "cofre_in",
-      "amount_dog": 3064410.52552,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "7a0f455c79b3a443472d690ec999c3b3beb7d6981da9c88cc3ae18d54c5c7333"
-    },
-    {
-      "id": "17c5837e19aaea24597218202f0b6449f95a9b6db1f44da445e8186e580d8a8f",
-      "ts": "2026-10-20T15:04:54+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2208181.8,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "community": null,
-      "txid": "17c5837e19aaea24597218202f0b6449f95a9b6db1f44da445e8186e580d8a8f"
-    },
-    {
-      "id": "bal-2026-10-20",
-      "ts": "2026-10-20T13:41:27.533356+00:00",
-      "type": "balance_change",
-      "amount_dog": 2940300.4270210266,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "+",
-      "txid": null
-    },
-    {
-      "id": "3e8f7b03be12d6899633f88b268c357502821fb3ae818490c07ca0e33b7b7473",
-      "ts": "2026-10-20T12:13:29+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 4855249.919,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "from_id": "cofre",
-      "to_id": "merlin2",
-      "community": "Merlin",
-      "txid": "3e8f7b03be12d6899633f88b268c357502821fb3ae818490c07ca0e33b7b7473"
     }
   ]
 }
