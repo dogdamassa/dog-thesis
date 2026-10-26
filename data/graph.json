@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T01:22:54.836339+00:00",
+  "updated_at": "2026-10-26T06:43:40.626879+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13684698218.90591,
+      "balance_dog": 13700269563.73588,
       "rank": 1,
-      "pct": 13.68,
+      "pct": 13.7,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3013215663.47326,
+      "balance_dog": 3012803498.41982,
       "rank": 3,
       "pct": 3.01,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,9 +30,9 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 1378611459.20547,
+      "balance_dog": 1374825979.43422,
       "rank": 6,
-      "pct": 1.38,
+      "pct": 1.37,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
     },
     {
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2005451849.01322,
+      "balance_dog": 1995084735.40931,
       "rank": 5,
-      "pct": 2.01,
+      "pct": 2.0,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -205,8 +205,8 @@
       "to": "whale23",
       "from_label": "Bitget hot",
       "to_label": "Whale23",
-      "dog": 166100155,
-      "count": 31
+      "dog": 164727527,
+      "count": 30
     },
     {
       "from": "h3",
@@ -237,16 +237,16 @@
       "to": "mexc",
       "from_label": "bc1qkgjl...ct5y",
       "to_label": "MEXC Wallet",
-      "dog": 278785119,
-      "count": 74
+      "dog": 282373681,
+      "count": 75
     },
     {
       "from": "mexc",
       "to": "whale23",
       "from_label": "MEXC Wallet",
       "to_label": "Whale23",
-      "dog": 118870385,
-      "count": 43
+      "dog": 130233075,
+      "count": 44
     },
     {
       "from": "cofre",
