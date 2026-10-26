@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-10-25T22:40:09.146182+00:00",
+  "updated_at": "2026-10-26T01:22:54.836339+00:00",
   "events": [
+    {
+      "id": "bal-2026-10-26",
+      "ts": "2026-10-26T01:22:54.836339+00:00",
+      "type": "balance_change",
+      "amount_dog": 1374858.5513095856,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "b8e92124d193ede5b4700f83b18541011fee7894a593a60c111fc21f685daa81",
+      "ts": "2026-10-25T23:33:36+00:00",
+      "type": "cofre_in",
+      "amount_dog": 1374858.55131,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "b8e92124d193ede5b4700f83b18541011fee7894a593a60c111fc21f685daa81"
+    },
     {
       "id": "bal-2026-10-25",
       "ts": "2026-10-25T22:40:09.146182+00:00",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "bc0bb7134508f39222abe84e0c5669bba1ef3a47eaf884f963dc82b0916c310a"
-    },
-    {
-      "id": "a3fa60d55ddab7eefce1e44574131a572c32562bfcaae08c9bedbc812ede529c",
-      "ts": "2026-10-22T14:29:48+00:00",
-      "type": "exchange_out",
-      "amount_dog": 5095133.445319999,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "Whale23",
-      "from_id": "h3",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "a3fa60d55ddab7eefce1e44574131a572c32562bfcaae08c9bedbc812ede529c"
-    },
-    {
-      "id": "0a8a25f17feba94995e1f1de7c4df6dbab1edba101337cd6200ffb1495a35af2",
-      "ts": "2026-10-22T12:42:36+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 12672029.16,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "from_id": "cofre",
-      "to_id": "merlin2",
-      "community": "Merlin",
-      "txid": "0a8a25f17feba94995e1f1de7c4df6dbab1edba101337cd6200ffb1495a35af2"
     }
   ]
 }
