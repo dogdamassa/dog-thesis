@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-10-27T00:37:01.640430+00:00",
+  "updated_at": "2026-10-27T06:27:05.654787+00:00",
   "events": [
+    {
+      "id": "bal-2026-10-27",
+      "ts": "2026-10-27T06:27:05.654787+00:00",
+      "type": "balance_change",
+      "amount_dog": 7175002.5,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
+    {
+      "id": "53c09e6c047d0f551058a9c74da9ceef9acdc2e9ddbb8f96e5dec2d85c83bd9a",
+      "ts": "2026-10-27T01:14:39+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 7184614.5,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "53c09e6c047d0f551058a9c74da9ceef9acdc2e9ddbb8f96e5dec2d85c83bd9a"
+    },
     {
       "id": "bal-2026-10-26",
       "ts": "2026-10-26T20:37:56.607308+00:00",
@@ -754,32 +780,6 @@
       "to_id": "whale23",
       "community": null,
       "txid": "f35864f67d40a6a90a9be9480a5f3b3bb676999ab91c75894a6aa49210ce4253"
-    },
-    {
-      "id": "63e1d38a8f4cd9f5ad5512010e2e6e5e23704a3d13319d7e5e622de53aafdd77",
-      "ts": "2026-10-22T19:01:04+00:00",
-      "type": "cofre_in",
-      "amount_dog": 7878999.627,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "63e1d38a8f4cd9f5ad5512010e2e6e5e23704a3d13319d7e5e622de53aafdd77"
-    },
-    {
-      "id": "f91e7a21c7f45cc8aac6d132d6ffc7abe55a90c02fe3595c9bd5d05dbb97015b",
-      "ts": "2026-10-22T19:01:04+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 3184667.3,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "f91e7a21c7f45cc8aac6d132d6ffc7abe55a90c02fe3595c9bd5d05dbb97015b"
     }
   ]
 }
