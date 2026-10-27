@@ -29,6 +29,28 @@
   ],
   "redirects": [
     {
+      "source": "/kraken",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?dogdamassa\\.com"
+        }
+      ],
+      "destination": "https://invite.kraken.com/JDNW/6do5ff0m",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?dogdamassa\\.com"
+        }
+      ],
+      "destination": "https://dogarmy.space/$1",
+      "permanent": false
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
