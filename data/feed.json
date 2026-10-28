@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-10-27T23:51:58.183984+00:00",
+  "updated_at": "2026-10-28T05:57:24.243994+00:00",
   "events": [
+    {
+      "id": "bal-2026-10-28",
+      "ts": "2026-10-28T05:57:24.243994+00:00",
+      "type": "balance_change",
+      "amount_dog": 30835007.95072937,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
     {
       "id": "d29ad1bbb4cccce4be488eadcd898568a7da241d529b8d160a5f78f740b3d55b",
       "ts": "2026-10-27T23:07:42+00:00",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "dc057aefb65a1bf50b85dba5a0a33e99181eddea7aa30de0c9ed48a01ebd72cc"
-    },
-    {
-      "id": "16c46c0c6692b0ec238ba3cc6873dd5486811d5f2d4b54fb7129fc085259ef36",
-      "ts": "2026-10-23T15:39:43+00:00",
-      "type": "exchange_out",
-      "amount_dog": 7888629.40392,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1p89w4...700y",
-      "from_id": "h3",
-      "to_id": "bc1p89w4d8lwraupa4dsa7gxn5e5m8c9zrvrvxeynqpvdvpnfgh76vgqac700y",
-      "community": null,
-      "txid": "16c46c0c6692b0ec238ba3cc6873dd5486811d5f2d4b54fb7129fc085259ef36"
     }
   ]
 }
