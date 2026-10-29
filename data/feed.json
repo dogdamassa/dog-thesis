@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-10-29T16:59:30.513671+00:00",
+  "updated_at": "2026-10-29T21:53:20.540326+00:00",
   "events": [
+    {
+      "id": "bal-2026-10-29",
+      "ts": "2026-10-29T21:53:20.540326+00:00",
+      "type": "balance_change",
+      "amount_dog": 2415821.6485500336,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "-",
+      "txid": null
+    },
+    {
+      "id": "9abd9805b9d809f68f2b30d14b84aa4bb4bb45fa3e6c3c3a2006580e6405351e",
+      "ts": "2026-10-29T21:15:12+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 1366093.6999999997,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "community": null,
+      "txid": "9abd9805b9d809f68f2b30d14b84aa4bb4bb45fa3e6c3c3a2006580e6405351e"
+    },
+    {
+      "id": "578ceb14b25d82119289dcf41972e96010a645dc30bc72773700d9fb9a8a0960",
+      "ts": "2026-10-29T20:52:49+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 2218920.9,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "578ceb14b25d82119289dcf41972e96010a645dc30bc72773700d9fb9a8a0960"
+    },
+    {
+      "id": "62b011916263a0a34475d0e484270a8b65d67a2853e0b4bd542fe23dd4b10fea",
+      "ts": "2026-10-29T20:52:49+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 1302766.4,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "62b011916263a0a34475d0e484270a8b65d67a2853e0b4bd542fe23dd4b10fea"
+    },
     {
       "id": "6eca115a80a488d4f146e5e462d5beb3c77eebd2e37b9b47ccc390db14ab148f",
       "ts": "2026-10-29T14:32:35+00:00",
@@ -65,19 +117,6 @@
       "to_id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "community": null,
       "txid": "b3006642a5533507334fc386ace6733ba5994f5bb31c8637c48e2ddd758798b0"
-    },
-    {
-      "id": "bal-2026-10-29",
-      "ts": "2026-10-29T10:13:49.442247+00:00",
-      "type": "balance_change",
-      "amount_dog": 6765403.048681259,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
     },
     {
       "id": "09cfcee5e4cf9fd64dac7f2385b48dd0e640c001b6b91493c313523d616ab4d5",
@@ -741,45 +780,6 @@
       "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "community": null,
       "txid": "61a4e640ab0853e2c6a2ca6ded181fdb051dc65219ba08fcd4ae2df7aa4232c2"
-    },
-    {
-      "id": "9a241d5d701b75d88e35dc531a965b90b7d8beeb2869c97386c78cd0e904e15b",
-      "ts": "2026-10-27T09:37:13+00:00",
-      "type": "cofre_in",
-      "amount_dog": 4694318.38741,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "9a241d5d701b75d88e35dc531a965b90b7d8beeb2869c97386c78cd0e904e15b"
-    },
-    {
-      "id": "be8b3cdf3f8315659117d11de3c3cba5c12436d595a0658701d30dc833d73fae",
-      "ts": "2026-10-27T06:35:31+00:00",
-      "type": "cofre_in",
-      "amount_dog": 2391001.53444,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "be8b3cdf3f8315659117d11de3c3cba5c12436d595a0658701d30dc833d73fae"
-    },
-    {
-      "id": "53c09e6c047d0f551058a9c74da9ceef9acdc2e9ddbb8f96e5dec2d85c83bd9a",
-      "ts": "2026-10-27T01:14:39+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 7184614.5,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "53c09e6c047d0f551058a9c74da9ceef9acdc2e9ddbb8f96e5dec2d85c83bd9a"
     }
   ]
 }
