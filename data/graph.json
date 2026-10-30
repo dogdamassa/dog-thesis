@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T02:01:35.710319+00:00",
+  "updated_at": "2026-10-30T08:47:03.068852+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13768228061.15122,
+      "balance_dog": 13803101808.27253,
       "rank": 1,
-      "pct": 13.77,
+      "pct": 13.8,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3012380012.87602,
+      "balance_dog": 3012386883.91326,
       "rank": 3,
       "pct": 3.01,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 1289988130.89982,
+      "balance_dog": 1285686834.87442,
       "rank": 6,
       "pct": 1.29,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2017561054.38959,
+      "balance_dog": 2017800984.21955,
       "rank": 5,
       "pct": 2.02,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -141,8 +141,8 @@
       "to": "whale23",
       "from_label": "Vault #1",
       "to_label": "Whale23",
-      "dog": 232742911,
-      "count": 60
+      "dog": 229650877,
+      "count": 59
     },
     {
       "from": "cofre",
@@ -157,8 +157,8 @@
       "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
       "from_label": "Vault #1",
       "to_label": "bc1qkgjl...ct5y",
-      "dog": 76565276,
-      "count": 31
+      "dog": 71390088,
+      "count": 29
     },
     {
       "from": "cofre",
