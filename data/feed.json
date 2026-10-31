@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-10-31T00:53:31.974055+00:00",
+  "updated_at": "2026-10-31T07:07:24.165600+00:00",
   "events": [
+    {
+      "id": "989269b178cc35eed07aaa6fc5602140d6626999fef43b384486acbf1a886137",
+      "ts": "2026-10-31T01:34:03+00:00",
+      "type": "exchange_in",
+      "amount_dog": 250074277.63781,
+      "level": "watch",
+      "from_label": "unmapped wallet",
+      "to_label": "Gate.io hot",
+      "from_id": "",
+      "to_id": "h2",
+      "community": "Gate",
+      "txid": "989269b178cc35eed07aaa6fc5602140d6626999fef43b384486acbf1a886137"
+    },
     {
       "id": "bal-2026-10-31",
       "ts": "2026-10-31T00:53:31.974055+00:00",
@@ -767,19 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "23591ae5a070396701a7ab840bca588d8bf99598125bff98c48a38e0b11e6f91"
-    },
-    {
-      "id": "e569eed5d913a6496ecb6d94abfef2b8e38e97b3f905eb1d6f3884fad0409625",
-      "ts": "2026-10-28T08:01:37+00:00",
-      "type": "exchange_in",
-      "amount_dog": 65885601.13,
-      "level": "watch",
-      "from_label": "unmapped wallet",
-      "to_label": "Gate.io hot",
-      "from_id": "",
-      "to_id": "h2",
-      "community": "Gate",
-      "txid": "e569eed5d913a6496ecb6d94abfef2b8e38e97b3f905eb1d6f3884fad0409625"
     }
   ]
 }
