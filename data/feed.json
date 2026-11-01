@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-01T02:21:46.634821+00:00",
+  "updated_at": "2026-11-01T09:29:37.210550+00:00",
   "events": [
     {
       "id": "bal-2026-11-01",
-      "ts": "2026-11-01T02:21:46.634821+00:00",
+      "ts": "2026-11-01T09:29:37.210550+00:00",
       "type": "balance_change",
-      "amount_dog": 5223303.880489349,
+      "amount_dog": 12762868.824001312,
       "level": "info",
       "from_label": "Vault #1",
       "to_label": "",
@@ -13,6 +13,32 @@
       "to_id": "",
       "sign": "-",
       "txid": null
+    },
+    {
+      "id": "af1d800e62ba95b542249aa38a616bc3770909c9ec8bec8c155d945c0c586c3f",
+      "ts": "2026-11-01T09:20:59+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2293712.94535,
+      "level": "info",
+      "from_label": "bc1pfk2n...0v7z",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "af1d800e62ba95b542249aa38a616bc3770909c9ec8bec8c155d945c0c586c3f"
+    },
+    {
+      "id": "6b632c016e975b16fa3c2ff625076f810165ae80f142dea3f17fbd3b4a24bce3",
+      "ts": "2026-11-01T03:34:07+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 13154404.4,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "6b632c016e975b16fa3c2ff625076f810165ae80f142dea3f17fbd3b4a24bce3"
     },
     {
       "id": "bal-2026-10-31",
@@ -754,32 +780,6 @@
       "to_id": "mexc",
       "community": "MEXC",
       "txid": "3f2d31573cae4cf7b4afe31b52f54b7715d5a6870cb0617108080d252d4b38a5"
-    },
-    {
-      "id": "5ae68248fb2a90d8fefee125e8a81cb24cf8fa246a45ffcf0052396affc65d4f",
-      "ts": "2026-10-28T12:11:32+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 4392116.373000001,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "from_id": "cofre",
-      "to_id": "merlin2",
-      "community": "Merlin",
-      "txid": "5ae68248fb2a90d8fefee125e8a81cb24cf8fa246a45ffcf0052396affc65d4f"
-    },
-    {
-      "id": "c37763f8787bb95a17481736482b720a458e9c02b3c59c9cc49053725a7334ed",
-      "ts": "2026-10-28T12:11:32+00:00",
-      "type": "exchange_out",
-      "amount_dog": 22395639.08315,
-      "level": "info",
-      "from_label": "Gate.io hot",
-      "to_label": "bc1qh3sn...6efy",
-      "from_id": "h2",
-      "to_id": "bc1qh3sn8xtnqerjutdtdnqcqzvetl2tfw2t8c6efy",
-      "community": null,
-      "txid": "c37763f8787bb95a17481736482b720a458e9c02b3c59c9cc49053725a7334ed"
     }
   ]
 }
