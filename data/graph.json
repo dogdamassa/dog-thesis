@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T07:47:46.205156+00:00",
+  "updated_at": "2026-11-02T18:34:36.602987+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13746190239.24942,
+      "balance_dog": 13736409078.42517,
       "rank": 1,
-      "pct": 13.75,
+      "pct": 13.74,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,9 +19,9 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3243392726.50864,
+      "balance_dog": 3251244542.09629,
       "rank": 3,
-      "pct": 3.24,
+      "pct": 3.25,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
     },
     {
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 1220498453.21406,
+      "balance_dog": 1215815703.1126,
       "rank": 6,
       "pct": 1.22,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2013713657.75833,
+      "balance_dog": 2018635409.13817,
       "rank": 5,
-      "pct": 2.01,
+      "pct": 2.02,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -138,6 +138,14 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "merlin2",
+      "from_label": "Vault #1",
+      "to_label": "Merlin Chain vault (2026)",
+      "dog": 178032598,
+      "count": 11
+    },
+    {
+      "from": "cofre",
       "to": "whale23",
       "from_label": "Vault #1",
       "to_label": "Whale23",
@@ -151,14 +159,6 @@
       "to_label": "bc1pc4px...hgug",
       "dog": 66403620,
       "count": 2
-    },
-    {
-      "from": "cofre",
-      "to": "merlin2",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "dog": 159227506,
-      "count": 10
     },
     {
       "from": "cofre",
