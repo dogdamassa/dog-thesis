@@ -1,6 +1,19 @@
 {
-  "updated_at": "2026-11-02T00:54:34.674951+00:00",
+  "updated_at": "2026-11-02T07:47:46.205156+00:00",
   "events": [
+    {
+      "id": "733af6cc69e3abb2eef964ae6bceb60476afde3a575277b594bff719c06ac4bf",
+      "ts": "2026-11-02T06:49:19+00:00",
+      "type": "exchange_out",
+      "amount_dog": 31569030.135089997,
+      "level": "info",
+      "from_label": "Bitget hot",
+      "to_label": "bc1pz0jh...mhzl",
+      "from_id": "h3",
+      "to_id": "bc1pz0jht4zsp53s4ad2wwxh3q994zkwk3rdhkhv9yw56t6mqjc2kg0sqsmhzl",
+      "community": null,
+      "txid": "733af6cc69e3abb2eef964ae6bceb60476afde3a575277b594bff719c06ac4bf"
+    },
     {
       "id": "bal-2026-11-02",
       "ts": "2026-11-02T00:54:34.674951+00:00",
@@ -767,19 +780,6 @@
       "to_id": "whale23",
       "community": null,
       "txid": "25665021f59e092e9eea4909df6f30e194356ee75f75d3fae9f88fc4dd3d2856"
-    },
-    {
-      "id": "93820b3d2c80d4fdccad16fbdb64f918829f8cef48b9fe56821c7041bf9419eb",
-      "ts": "2026-10-28T13:46:46+00:00",
-      "type": "exchange_out",
-      "amount_dog": 5790184.04537,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1p86df...7sk4",
-      "from_id": "h3",
-      "to_id": "bc1p86df6yf4ynvf0syqtrnazvdxuuvhjwkv647xekhhe5w0xfvwxrlq4w7sk4",
-      "community": null,
-      "txid": "93820b3d2c80d4fdccad16fbdb64f918829f8cef48b9fe56821c7041bf9419eb"
     }
   ]
 }
