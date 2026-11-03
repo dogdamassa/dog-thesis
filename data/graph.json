@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T01:40:56.326422+00:00",
+  "updated_at": "2026-11-03T09:44:59.775064+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13704491785.65923,
+      "balance_dog": 13713348127.17461,
       "rank": 1,
-      "pct": 13.7,
+      "pct": 13.71,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3253462538.05684,
+      "balance_dog": 3253387437.26754,
       "rank": 3,
       "pct": 3.25,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2052269736.80183,
+      "balance_dog": 2035019183.28181,
       "rank": 5,
-      "pct": 2.05,
+      "pct": 2.04,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -113,15 +113,15 @@
       "addr": "bc1p7jglyf32396kawcnkllzlv04hxn0r9ex5fg0zh3pradzq5vjtjwsamrym3"
     },
     {
-      "id": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "label": "bc1qkgjl...ct5y",
+      "id": "bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9",
+      "label": "bc1peczz...eae9",
       "kind": "fresh",
       "community": null,
       "confirmed": false,
       "balance_dog": 0,
       "rank": null,
       "pct": 0,
-      "addr": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y"
+      "addr": "bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9"
     },
     {
       "id": "bc1pc4pxu7m3qa9jq4zel69nssksgq75jetyan2nwuguej3pwm50z83qsyhgug",
@@ -138,19 +138,19 @@
   "edges": [
     {
       "from": "cofre",
-      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
+      "to": "bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9",
       "from_label": "Vault #1",
-      "to_label": "bc1qkgjl...ct5y",
-      "dog": 68920606,
-      "count": 24
+      "to_label": "bc1peczz...eae9",
+      "dog": 73588233,
+      "count": 8
     },
     {
       "from": "cofre",
       "to": "whale23",
       "from_label": "Vault #1",
       "to_label": "Whale23",
-      "dog": 255099024,
-      "count": 58
+      "dog": 231084885,
+      "count": 51
     },
     {
       "from": "cofre",
@@ -178,14 +178,6 @@
     },
     {
       "from": "h2",
-      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "from_label": "Gate.io hot",
-      "to_label": "bc1qkgjl...ct5y",
-      "dog": 20831744,
-      "count": 10
-    },
-    {
-      "from": "h2",
       "to": "int1",
       "from_label": "Gate.io hot",
       "to_label": "Bitget Deposit #1",
@@ -209,14 +201,6 @@
       "count": 21
     },
     {
-      "from": "h3",
-      "to": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "from_label": "Bitget hot",
-      "to_label": "bc1qkgjl...ct5y",
-      "dog": 12865893,
-      "count": 5
-    },
-    {
       "from": "int1",
       "to": "h3",
       "from_label": "Bitget Deposit #1",
@@ -233,20 +217,12 @@
       "count": 273
     },
     {
-      "from": "bc1qkgjlxyh9deu0h4hn54p93ks0xqvuxc7lu8ct5y",
-      "to": "mexc",
-      "from_label": "bc1qkgjl...ct5y",
-      "to_label": "MEXC Wallet",
-      "dog": 342362693,
-      "count": 74
-    },
-    {
       "from": "mexc",
       "to": "whale23",
       "from_label": "MEXC Wallet",
       "to_label": "Whale23",
-      "dog": 138278691,
-      "count": 47
+      "dog": 147443093,
+      "count": 48
     },
     {
       "from": "cofre",
@@ -257,12 +233,28 @@
       "count": 44
     },
     {
+      "from": "bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9",
+      "to": "int1",
+      "from_label": "bc1peczz...eae9",
+      "to_label": "Bitget Deposit #1",
+      "dog": 4893017,
+      "count": 2
+    },
+    {
       "from": "cofre",
       "to": "int2",
       "from_label": "Vault #1",
       "to_label": "Bitget Deposit #2",
       "dog": 269807326,
       "count": 71
+    },
+    {
+      "from": "bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9",
+      "to": "int2",
+      "from_label": "bc1peczz...eae9",
+      "to_label": "Bitget Deposit #2",
+      "dog": 1124083,
+      "count": 1
     },
     {
       "from": "int3",
