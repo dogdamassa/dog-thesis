@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T09:44:59.775064+00:00",
+  "updated_at": "2026-11-03T17:56:00.890455+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,9 +8,9 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13713348127.17461,
+      "balance_dog": 13729103382.42923,
       "rank": 1,
-      "pct": 13.71,
+      "pct": 13.73,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
     },
     {
@@ -19,9 +19,9 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3253387437.26754,
+      "balance_dog": 3270441201.66352,
       "rank": 3,
-      "pct": 3.25,
+      "pct": 3.27,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
     },
     {
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 1214826328.71125,
+      "balance_dog": 1213681124.48622,
       "rank": 6,
       "pct": 1.21,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -41,9 +41,9 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 2035019183.28181,
+      "balance_dog": 2033405471.3255,
       "rank": 5,
-      "pct": 2.04,
+      "pct": 2.03,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
     },
     {
@@ -138,6 +138,14 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "merlin2",
+      "from_label": "Vault #1",
+      "to_label": "Merlin Chain vault (2026)",
+      "dog": 183404022,
+      "count": 12
+    },
+    {
+      "from": "cofre",
       "to": "bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9",
       "from_label": "Vault #1",
       "to_label": "bc1peczz...eae9",
@@ -149,16 +157,8 @@
       "to": "whale23",
       "from_label": "Vault #1",
       "to_label": "Whale23",
-      "dog": 231084885,
-      "count": 51
-    },
-    {
-      "from": "cofre",
-      "to": "merlin2",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "dog": 178032598,
-      "count": 11
+      "dog": 226623749,
+      "count": 50
     },
     {
       "from": "cofre",

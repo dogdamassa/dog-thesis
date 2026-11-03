@@ -4,31 +4,12 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
-## 2026-11-03 ⚠️ Movimento suspeito · baleia saiu 14.7M DOG em fresh wallets · bc1qkgjl depositou 26M na MEXC · ciclo MEXC → MM2 → vault ativo
+## 2026-11-03
 
-> Fonte: `data/daily.json` + `data/feed.json` · atualizado às 09:44 UTC · dado fresco.
-
-- **Baleia (Vault #1, rank #1):** **13.71% do supply** (13,713B DOG). Δ líquido: +8.9M DOG. **NÃO depositou diretamente em exchange conhecida** (cofre_to_exchange: 0).
-- **Saídas da baleia hoje (2 cofre_out_new):**
-  - 04:08 UTC — **9,686,685 DOG** → fresh wallet (`bc1peczzt9...ekm9`) (pass-through suspeito)
-  - 05:36 UTC — **5,000,000 DOG** → fresh wallet (`bc1puu490...j2f95`)
-  - Total saído: **~14.7M DOG** para wallets não mapeadas.
-- **Entradas na baleia hoje:**
-  - 00:01 UTC — 9,835,806 DOG de unmapped wallet
-  - 01:21 UTC — 2,590,705 DOG de **MM2 shuttle** (reciclo de volta ao cofre)
-  - 03:15 UTC — 16,488,798 DOG de unmapped wallet
-  - 07:31 UTC — 26,529,479 DOG de unmapped wallet
-- ⚠️ **Intermediário `bc1qkgjl...ct5y` ativo (depositou na MEXC):**
-  - 02/11 22:52 UTC — `bc1qkgjl...ct5y` → **MEXC**: 7,198,695 DOG
-  - 03/11 00:01 UTC — `bc1qkgjl...ct5y` → **MEXC**: **26,168,228 DOG** (total ~33.4M DOG nas últimas 24h)
-  - Esta carteira já foi identificada como pass-through direto do Vault #1 em 17/07 (recebeu 10.2M DOG do cofre → MEXC em 28min).
-- **Ciclo MEXC → MM2 shuttle → vault:**
-  - 02:20 UTC — **MEXC → MM2 shuttle**: 9,081,152 DOG
-  - 01:21 UTC — **MM2 shuttle → Vault #1**: 2,590,705 DOG (reciclagem de DOG de volta ao cofre)
-- **Gate.io hot:** recebeu 20,350,295 DOG de unmapped wallet às 07:02 UTC.
-- **MEXC → Whale23:** 9,164,401 DOG às 03:53 UTC (saída de distribuição).
-- **Saques novos Binance → cluster (72h):** relays Int#1/Int#2/Int#3 sem watermark recente (última atualização: 20/09); **Binance hot wallet não verificável** nesta janela via dados locais.
-- 🔎 **Leitura:** **movimento suspeito.** O intermediário `bc1qkgjl...ct5y` — já identificado em julho como pass-through direto do cofre para MEXC — voltou a depositar ~33.4M DOG na MEXC nas últimas 24h. A baleia enviou 14.7M DOG para fresh wallets hoje (padrão recorrente de pass-through). O ciclo MEXC → MM2 shuttle → Vault #1 continua ativo (DOG sai da MEXC e retorna ao cofre via shuttle). A Binance não aparece como counterparty direto nos relays nesta janela, mas **pode estar envolvida** na camada anterior — o histórico liga essa estrutura à Binance via Int#3 (48 saques documentados). Sem acusação de crime: descrevemos o padrão que a chain mostra.
+- **Baleia (#1):** 13.73% do supply (Δ +15.8M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
 
 ## 2026-11-02
 
