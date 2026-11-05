@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-11-04T21:59:21.127904+00:00",
+  "updated_at": "2026-11-05T02:36:21.643267+00:00",
   "events": [
+    {
+      "id": "67f0d0e02d1ea56ad9920f76353a77ceafdaa9b70ca2c87f80f9d684b7996f9b",
+      "ts": "2026-11-05T02:17:18+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 18385500,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pnn5v8ms38cctfzqwapg7g6uzr9vyrvvaksuqu67eddqev4srjufq2ztkp8",
+      "community": null,
+      "txid": "67f0d0e02d1ea56ad9920f76353a77ceafdaa9b70ca2c87f80f9d684b7996f9b"
+    },
+    {
+      "id": "b3ffa21d07ba6fb0b8226607704d0e8a74c92c6fee0375c2cdda7a6bd5afc56b",
+      "ts": "2026-11-04T22:07:43+00:00",
+      "type": "cofre_in",
+      "amount_dog": 21141337.95034,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "b3ffa21d07ba6fb0b8226607704d0e8a74c92c6fee0375c2cdda7a6bd5afc56b"
+    },
     {
       "id": "bal-2026-11-04",
       "ts": "2026-11-04T21:59:21.127904+00:00",
@@ -754,32 +780,6 @@
       "to_id": "bc1plkjgxu5vhe56xe6keasuaxz367ppdga8uxfkfaj9rvv09rlts5qsj7zel4",
       "community": null,
       "txid": "3a5dd4e67a896789d1966829e8cca6fce9a741835a696595e6c41db149e28332"
-    },
-    {
-      "id": "1fbd15d6f7842da2950122469d446fef6194738033e1de57ba70b3f117d517f0",
-      "ts": "2026-11-02T12:30:27+00:00",
-      "type": "exchange_out",
-      "amount_dog": 8651157,
-      "level": "info",
-      "from_label": "MEXC Wallet",
-      "to_label": "MM2 shuttle",
-      "from_id": "mexc",
-      "to_id": "mm2",
-      "community": null,
-      "txid": "1fbd15d6f7842da2950122469d446fef6194738033e1de57ba70b3f117d517f0"
-    },
-    {
-      "id": "a28013f39771c60a4d17d5f06ecadc81125e55c061d00dc943fa1c92155c6d21",
-      "ts": "2026-11-02T12:10:01+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 18805092.26,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Merlin Chain vault (2026)",
-      "from_id": "cofre",
-      "to_id": "merlin2",
-      "community": "Merlin",
-      "txid": "a28013f39771c60a4d17d5f06ecadc81125e55c061d00dc943fa1c92155c6d21"
     }
   ]
 }
