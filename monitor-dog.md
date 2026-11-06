@@ -6,14 +6,10 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ## 2026-11-06
 
-> Fonte: `data/daily.json` + `data/feed.json` · atualizado às 08:01 UTC · APIs bloqueadas no proxy remoto; dados de monitor-state.json (07:43 UTC) + arquivos locais.
-
-- **Baleia (Vault #1, rank #1):** **13,73% do supply** (~13,73B DOG). Δ +0,0M DOG. **NÃO depositou diretamente em exchange conhecida** (cofre_to_exchange: 0).
-- **Atividade hoje (06/11):** apenas entrada de +1,21M DOG às 04:47 UTC de bc1paca9...57vd. Sem saídas da baleia hoje.
-- **Relays Int#1/Int#2/Int#3 (72h):** sem atividade nova. Dormentes desde 20/09/2026.
-- **Saques Binance → cluster:** Binance hot wallet não aparece como counterparty. Nenhum saque confirmado.
-- **Contexto 04-05/11 (últimas 72h):** ciclo recorrente ativo — `bc1qkgjl...ct5y` recebeu **7,26M DOG da Gate** e depositou **37,8M DOG na MEXC** (19:48 e 21:09 de 04/11); MEXC sacou **18,65M DOG → MM2 shuttle** (14:17 e 20:07 de 04/11); baleia enviou **22,86M DOG ao Merlin Chain vault** (05/11) e **18,22M DOG** (04/11).
-- 🔎 **Leitura:** estável, seguimos vigiando o rastro até chegar na Binance. Relays dormentes desde setembro; baleia não saiu para exchange. O ciclo Gate/bc1qkgjl/MEXC/MM2 segue ativo nos bastidores — padrão já documentado — mas sem ligação direta com a Binance nesta janela.
+- **Baleia (#1):** 13.73% do supply (Δ +0.0M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
 
 ## 2026-11-05
 
