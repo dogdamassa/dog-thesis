@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T13:43:49.852300+00:00",
+  "updated_at": "2026-11-08T18:54:17.011223+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -173,8 +173,8 @@
       "to": "bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9",
       "from_label": "Vault #1",
       "to_label": "bc1peczz...eae9",
-      "dog": 63271401,
-      "count": 7
+      "dog": 52382154,
+      "count": 6
     },
     {
       "from": "h2",

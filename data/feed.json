@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-11-08T13:43:49.852300+00:00",
+  "updated_at": "2026-11-08T18:54:17.011223+00:00",
   "events": [
+    {
+      "id": "035faba071393f699e5192d858d994e40e98db36c61de05f6cdac43197b7a1f9",
+      "ts": "2026-11-08T17:32:47+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2803500,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "035faba071393f699e5192d858d994e40e98db36c61de05f6cdac43197b7a1f9"
+    },
+    {
+      "id": "faf8fdd6a680d43a6210716d1c2efae4cdf83f6a0b1be9e34fbb23542abf6de1",
+      "ts": "2026-11-08T14:08:25+00:00",
+      "type": "cofre_in",
+      "amount_dog": 233646253.16645,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "faf8fdd6a680d43a6210716d1c2efae4cdf83f6a0b1be9e34fbb23542abf6de1"
+    },
     {
       "id": "b7af53d462d3d6df111dc74fd47521796b927746eb5512ea1d996da54380c567",
       "ts": "2026-11-08T12:36:18+00:00",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "ceb010d088371a05e48b2c1b5dab4620a75223bfdf3144dd7d1f6a77b5d3f7f2"
-    },
-    {
-      "id": "f8bd314e31b47f2a387df745bb490801cae1dbbf2e3136d0948ac7c6470a02e9",
-      "ts": "2026-11-04T12:08:50+00:00",
-      "type": "cofre_in",
-      "amount_dog": 50344427.6295,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "f8bd314e31b47f2a387df745bb490801cae1dbbf2e3136d0948ac7c6470a02e9"
-    },
-    {
-      "id": "879272063d2b75fcaf3c344568025c78b3e72188ae3fef25fc898d62a018cd5e",
-      "ts": "2026-11-04T08:29:40+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 8559601.1,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "879272063d2b75fcaf3c344568025c78b3e72188ae3fef25fc898d62a018cd5e"
     }
   ]
 }
