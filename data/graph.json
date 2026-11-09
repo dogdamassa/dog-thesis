@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T22:58:09.818500+00:00",
+  "updated_at": "2026-11-09T02:46:40.926421+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -141,8 +141,8 @@
       "to": "whale23",
       "from_label": "Vault #1",
       "to_label": "Whale23",
-      "dog": 221902054,
-      "count": 38
+      "dog": 219048965,
+      "count": 37
     },
     {
       "from": "cofre",
@@ -173,8 +173,8 @@
       "to": "bc1peczzt9rq30pdaj3v9ne86u6v83mfq29rxxgnqxl96uknddzekm9qfreae9",
       "from_label": "Vault #1",
       "to_label": "bc1peczz...eae9",
-      "dog": 52382154,
-      "count": 6
+      "dog": 46973560,
+      "count": 5
     },
     {
       "from": "h2",
