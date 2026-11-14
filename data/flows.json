@@ -1,29 +1,29 @@
 {
-  "updated_at": "2026-11-14T06:46:51.983118+00:00",
-  "price_usd": 0.000706,
+  "updated_at": "2026-11-14T14:20:46.597907+00:00",
+  "price_usd": 0.0007025,
   "exchanges": [
     {
       "name": "Kraken",
       "link": "https://pro.kraken.com/app/trade/DOG-USD",
       "price": 0.000706,
-      "vol24h_dog": 92292705.89603,
+      "vol24h_dog": 87067119.11177,
       "change24h": null,
-      "buy_dog": 72591305,
-      "sell_dog": 94827132,
-      "net_dog": -22235827,
-      "window_min": 2334,
+      "buy_dog": 70302090,
+      "sell_dog": 96326437,
+      "net_dog": -26024346,
+      "window_min": 2452,
       "ok": true
     },
     {
       "name": "Gate",
       "link": "https://www.gate.io/trade/DOG_USDT",
       "price": 0.0007025,
-      "vol24h_dog": 101024373.0,
-      "change24h": -2.18,
-      "buy_dog": 13495371,
-      "sell_dog": 57395330,
-      "net_dog": -43899959,
-      "window_min": 978,
+      "vol24h_dog": 106362583.0,
+      "change24h": -3.99,
+      "buy_dog": 18483366,
+      "sell_dog": 58551401,
+      "net_dog": -40068035,
+      "window_min": 1123,
       "ok": true
     },
     {
@@ -41,13 +41,13 @@
     {
       "name": "MEXC",
       "link": "https://www.mexc.com/exchange/DOG_USDT",
-      "price": 0.0007213,
-      "vol24h_dog": 90413464.99,
-      "change24h": 0.69,
-      "buy_dog": 2376603,
-      "sell_dog": 2970191,
-      "net_dog": -593588,
-      "window_min": 99,
+      "price": 0.0006852,
+      "vol24h_dog": 89264473.3,
+      "change24h": -6.0,
+      "buy_dog": 3502221,
+      "sell_dog": 2979791,
+      "net_dog": 522430,
+      "window_min": 80,
       "ok": true
     },
     {
@@ -138,15 +138,6 @@
       "usd": 4019,
       "price": 0.00071061,
       "ts": "2026-11-13T07:16:46+00:00"
-    },
-    {
-      "exchange": "Kraken",
-      "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "side": "sell",
-      "dog": 6330073,
-      "usd": 4491,
-      "price": 0.0007095,
-      "ts": "2026-11-12T18:08:38+00:00"
     }
   ],
   "caveat": "Janela de trades recentes (ate ~1000), nao o dia inteiro; volume 24h vem do ticker."
