@@ -6,10 +6,13 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ## 2026-11-15
 
-- **Baleia (#1):** 13.45% do supply (Δ +4.0M DOG).
-- Saques novos da Binance → cluster: nenhum hoje.
-- A baleia não depositou em exchange (segue acumulando/parada).
-- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+> Fonte: `data/daily.json` + `data/feed.json` · atualizado às 11:16 UTC · dado fresco (scripts locais; dogdata.xyz bloqueado no proxy remoto).
+
+- **Baleia (Vault #1, rank #1):** **13.45% do supply** (~13,451M DOG). Δ +4,0M DOG. NÃO depositou em exchange (cofre_to_exchange: 0).
+- **Saídas do cofre hoje:** 6,1M DOG → Whale23 (00:08 UTC); 4,3M DOG → fresh wallet (08:41 UTC); 2,5M DOG → Whale23 (10:24 UTC).
+- **Saques novos da Binance → cluster (72h):** nenhum confirmado. Relays Int#1/Int#2 inativos desde 20/09 (56 dias); Int#3 inativo desde 30/04 (>6 meses).
+- **Padrão de destaque hoje:** pass-through Bitget → MEXC — Bitget hot enviou 14,99M DOG para endereço intermediário (08:41 UTC), que depositou na MEXC o mesmo valor 35 minutos depois (09:16 UTC). Gate hot → MM2 shuttle: 5,2M DOG (01:36 UTC).
+- 🔎 **Leitura:** estável, seguimos vigiando o rastro até chegar na Binance. Baleia não assinou depósito em exchange; cluster inativo. O pass-through Bitget → MEXC (35min, mesmo valor) é padrão recorrente de gestão ativa — a Binance não aparece como counterparty direto nesta janela, mas **pode estar envolvida** na camada anterior (histórico de alimentação via Int#3).
 
 ## 2026-11-14
 
