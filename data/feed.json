@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-11-15T22:59:54.483260+00:00",
+  "updated_at": "2026-11-16T02:53:06.146996+00:00",
   "events": [
+    {
+      "id": "bal-2026-11-16",
+      "ts": "2026-11-16T02:53:06.146996+00:00",
+      "type": "balance_change",
+      "amount_dog": 2809238.667280197,
+      "level": "info",
+      "from_label": "Vault #1",
+      "to_label": "",
+      "from_id": "cofre",
+      "to_id": "",
+      "sign": "+",
+      "txid": null
+    },
+    {
+      "id": "5ea9921461840f50ebca703b346269b6f37368067c09c5b8b93a8ee99cdc4b49",
+      "ts": "2026-11-16T00:32:13+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2863269.50828,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "5ea9921461840f50ebca703b346269b6f37368067c09c5b8b93a8ee99cdc4b49"
+    },
     {
       "id": "bal-2026-11-15",
       "ts": "2026-11-15T22:59:54.483260+00:00",
@@ -754,32 +780,6 @@
       "to_id": "whale23",
       "community": null,
       "txid": "7b967930170efdf538175f1c0f946d4df7f55071705aca5a6b672ac033f67c10"
-    },
-    {
-      "id": "eb9c7815700104404a6ced80bab99a2d054d60212147e330006090bc8a3f40c7",
-      "ts": "2026-11-11T23:53:26+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2260329.6,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "eb9c7815700104404a6ced80bab99a2d054d60212147e330006090bc8a3f40c7"
-    },
-    {
-      "id": "618a091f231cf9d48484db5a6679c9af8254b263a6d103cab81afd5db31d2e07",
-      "ts": "2026-11-11T23:30:57+00:00",
-      "type": "cofre_in",
-      "amount_dog": 459077575.70389,
-      "level": "info",
-      "from_label": "unmapped wallet",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "618a091f231cf9d48484db5a6679c9af8254b263a6d103cab81afd5db31d2e07"
     }
   ]
 }
