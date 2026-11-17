@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T14:42:39.630757+00:00",
+  "updated_at": "2026-11-17T23:00:58.030159+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -8,7 +8,7 @@
       "kind": "cofre",
       "community": null,
       "confirmed": true,
-      "balance_dog": 13374015078.36429,
+      "balance_dog": 13366367795.29729,
       "rank": 1,
       "pct": 13.37,
       "addr": "bc1plzs2lltvv29k603w5m0aqma5e8w0n3pc77dt89l5w9hurmdfgd0swdhspn"
@@ -19,7 +19,7 @@
       "kind": "holder",
       "community": "Gate",
       "confirmed": true,
-      "balance_dog": 3234483211.41047,
+      "balance_dog": 3233034818.85325,
       "rank": 3,
       "pct": 3.23,
       "addr": "bc1pk8g4rztfkxs2q9c40g6keeknjw6aadx3kzu4suzlll0remfw7xxs5x9ctv"
@@ -30,7 +30,7 @@
       "kind": "holder",
       "community": "Bitget",
       "confirmed": true,
-      "balance_dog": 1102580109.50261,
+      "balance_dog": 1102270724.32449,
       "rank": 7,
       "pct": 1.1,
       "addr": "bc1p50n9sksy5gwe6fgrxxsqfcp6ndsfjhykjqef64m8067hfadd9efqrhpp9k"
@@ -41,7 +41,7 @@
       "kind": "holder",
       "community": "MEXC",
       "confirmed": true,
-      "balance_dog": 1859875197.92111,
+      "balance_dog": 1860250146.9262,
       "rank": 5,
       "pct": 1.86,
       "addr": "bc1qj7dam98j6ktjcp320qu77y2vrylv49c2k2hkmu"
@@ -141,16 +141,16 @@
       "to": "whale23",
       "from_label": "Vault #1",
       "to_label": "Whale23",
-      "dog": 289390461,
-      "count": 56
+      "dog": 291649555,
+      "count": 57
     },
     {
       "from": "cofre",
       "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "from_label": "Vault #1",
       "to_label": "bc1pjqjc...0xuu",
-      "dog": 77791600,
-      "count": 27
+      "dog": 81199181,
+      "count": 28
     },
     {
       "from": "cofre",
@@ -229,8 +229,8 @@
       "to": "whale23",
       "from_label": "MEXC Wallet",
       "to_label": "Whale23",
-      "dog": 150747081,
-      "count": 46
+      "dog": 149076922,
+      "count": 45
     },
     {
       "from": "mexc",
