@@ -1,29 +1,29 @@
 {
-  "updated_at": "2026-11-17T04:41:31.832661+00:00",
-  "price_usd": 0.0007154,
+  "updated_at": "2026-11-17T14:42:44.965985+00:00",
+  "price_usd": 0.0007179,
   "exchanges": [
     {
       "name": "Kraken",
       "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "price": 0.00071,
-      "vol24h_dog": 80882274.9076,
+      "price": 0.000713,
+      "vol24h_dog": 88052602.95594,
       "change24h": null,
-      "buy_dog": 66786928,
-      "sell_dog": 88684493,
-      "net_dog": -21897565,
-      "window_min": 2401,
+      "buy_dog": 73449137,
+      "sell_dog": 87084235,
+      "net_dog": -13635098,
+      "window_min": 2743,
       "ok": true
     },
     {
       "name": "Gate",
       "link": "https://www.gate.io/trade/DOG_USDT",
-      "price": 0.0007158,
-      "vol24h_dog": 55830319.0,
-      "change24h": -4.39,
-      "buy_dog": 16259732,
-      "sell_dog": 28633369,
-      "net_dog": -12373637,
-      "window_min": 1075,
+      "price": 0.0007179,
+      "vol24h_dog": 54790658.0,
+      "change24h": -1.5,
+      "buy_dog": 21146945,
+      "sell_dog": 20219745,
+      "net_dog": 927200,
+      "window_min": 1224,
       "ok": true
     },
     {
@@ -41,13 +41,13 @@
     {
       "name": "MEXC",
       "link": "https://www.mexc.com/exchange/DOG_USDT",
-      "price": 0.0007154,
-      "vol24h_dog": 76421625.06,
-      "change24h": -2.71,
-      "buy_dog": 2060803,
-      "sell_dog": 2206330,
-      "net_dog": -145527,
-      "window_min": 92,
+      "price": 0.0007225,
+      "vol24h_dog": 77712675.64,
+      "change24h": -0.33999999999999997,
+      "buy_dog": 2645520,
+      "sell_dog": 2723149,
+      "net_dog": -77629,
+      "window_min": 90,
       "ok": true
     },
     {
@@ -129,15 +129,6 @@
       "usd": 3606,
       "price": 0.00072118,
       "ts": "2026-11-15T23:06:04+00:00"
-    },
-    {
-      "exchange": "Kraken",
-      "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "side": "sell",
-      "dog": 7000000,
-      "usd": 5065,
-      "price": 0.00072364,
-      "ts": "2026-11-15T15:56:52+00:00"
     }
   ],
   "caveat": "Janela de trades recentes (ate ~1000), nao o dia inteiro; volume 24h vem do ticker."
