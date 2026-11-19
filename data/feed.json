@@ -1,6 +1,32 @@
 {
-  "updated_at": "2026-11-18T22:11:53.472629+00:00",
+  "updated_at": "2026-11-19T03:41:48.257520+00:00",
   "events": [
+    {
+      "id": "e5184981bb761ead95033ae32ac294f8af7ad067e57f9aa3f9af6e167093a272",
+      "ts": "2026-11-19T03:35:33+00:00",
+      "type": "cofre_in",
+      "amount_dog": 40088752.66,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "e5184981bb761ead95033ae32ac294f8af7ad067e57f9aa3f9af6e167093a272"
+    },
+    {
+      "id": "a48dbd2a698538046bb3b51be005068e23c1405c788deded442850143db7f71c",
+      "ts": "2026-11-18T23:41:08+00:00",
+      "type": "exchange_out",
+      "amount_dog": 39088752.660000004,
+      "level": "info",
+      "from_label": "MEXC Wallet",
+      "to_label": "bc1pjaec...zyt0",
+      "from_id": "mexc",
+      "to_id": "bc1pjaecglpdpf45nxgeenw8qmme3xng8arx7zm3lu58c64h8vgq0j9qp7zyt0",
+      "community": null,
+      "txid": "a48dbd2a698538046bb3b51be005068e23c1405c788deded442850143db7f71c"
+    },
     {
       "id": "bal-2026-11-18",
       "ts": "2026-11-18T22:11:53.472629+00:00",
@@ -754,32 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "c235b3ae216530077c838e1b2cf0d927a308ed0212a1df8f94dad502224b8265"
-    },
-    {
-      "id": "356d6579c0d99c1a9967314ebaebc5f770b76aab4358328f5a3c04e347a98f62",
-      "ts": "2026-11-14T08:45:47+00:00",
-      "type": "cofre_in",
-      "amount_dog": 1393512.29442,
-      "level": "info",
-      "from_label": "bc1pdeud...ugg9",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "356d6579c0d99c1a9967314ebaebc5f770b76aab4358328f5a3c04e347a98f62"
-    },
-    {
-      "id": "557f82ed418badeea4df8e276f467b51184c825e249e3c561107f5b716ff4b4d",
-      "ts": "2026-11-14T04:38:33+00:00",
-      "type": "exchange_out",
-      "amount_dog": 5085211.57845,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1p7e8t...n232",
-      "from_id": "h3",
-      "to_id": "bc1p7e8tuawg9j0x7pz7zw77rrls5sulsnmctne5gurfzgv5fhzc48jqxfn232",
-      "community": null,
-      "txid": "557f82ed418badeea4df8e276f467b51184c825e249e3c561107f5b716ff4b4d"
     }
   ]
 }
