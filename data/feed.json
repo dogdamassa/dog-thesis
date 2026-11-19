@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-11-19T13:35:45.821468+00:00",
+  "updated_at": "2026-11-19T22:19:00.777617+00:00",
   "events": [
+    {
+      "id": "9fe65ba3eaae0d8f8eba1102a7906a176efdf21625b30f7fc0e7245b4aca0e5f",
+      "ts": "2026-11-19T20:04:41+00:00",
+      "type": "cofre_in",
+      "amount_dog": 5000014.72,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "9fe65ba3eaae0d8f8eba1102a7906a176efdf21625b30f7fc0e7245b4aca0e5f"
+    },
+    {
+      "id": "96489c1bdb9ad07a85728c093b5e0ce412c7822be2e4a01dbe15d1b2a5d10e4b",
+      "ts": "2026-11-19T17:31:29+00:00",
+      "type": "cofre_in",
+      "amount_dog": 2456457.49,
+      "level": "info",
+      "from_label": "Whale7 shuttle",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "96489c1bdb9ad07a85728c093b5e0ce412c7822be2e4a01dbe15d1b2a5d10e4b"
+    },
+    {
+      "id": "bbdfd5f8fed1198985c14d61d9621119532d68082fd0aa8fe9d2f512578c46d4",
+      "ts": "2026-11-19T16:32:42+00:00",
+      "type": "cofre_in",
+      "amount_dog": 4183316.49,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "bbdfd5f8fed1198985c14d61d9621119532d68082fd0aa8fe9d2f512578c46d4"
+    },
+    {
+      "id": "720e3dbbd94594527e6957d38221aeac74626e88346757e85b3753c95c907f71",
+      "ts": "2026-11-19T15:06:42+00:00",
+      "type": "cofre_in",
+      "amount_dog": 4163680.09,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "720e3dbbd94594527e6957d38221aeac74626e88346757e85b3753c95c907f71"
+    },
     {
       "id": "bal-2026-11-19",
       "ts": "2026-11-19T13:35:45.821468+00:00",
@@ -728,58 +780,6 @@
       "to_id": "cofre",
       "community": null,
       "txid": "e8e0251189f96645777ca027312d8fe82eff464a83ad1ba26381c5d13fc60c0d"
-    },
-    {
-      "id": "ef06fbef354624d4b81a455f5ade508fe49f3167840b6babc4fc8d0d78387c22",
-      "ts": "2026-11-15T10:24:52+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2456311.5,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "ef06fbef354624d4b81a455f5ade508fe49f3167840b6babc4fc8d0d78387c22"
-    },
-    {
-      "id": "12ace2ac6529690cc2a07c7a1d489dfa91e1e1854bc10d468e2b5e08c3527391",
-      "ts": "2026-11-15T09:16:41+00:00",
-      "type": "exchange_in",
-      "amount_dog": 14986750.23613,
-      "level": "watch",
-      "from_label": "bc1q3ejf...38tu",
-      "to_label": "MEXC Wallet",
-      "from_id": "bc1q3ejfghgz3qxyphzud9a6e23fuq2xpc380j38tu",
-      "to_id": "mexc",
-      "community": "MEXC",
-      "txid": "12ace2ac6529690cc2a07c7a1d489dfa91e1e1854bc10d468e2b5e08c3527391"
-    },
-    {
-      "id": "6740f755aa7b72035eddec541bf76b8ca457245f6965d2eeba56b9bae15daed8",
-      "ts": "2026-11-15T08:41:49+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 4308383,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1pk5gmdmpln2heet7v4m0u675ukkghs938wakxsflrnfhsn62r9w7qxy00ee",
-      "community": null,
-      "txid": "6740f755aa7b72035eddec541bf76b8ca457245f6965d2eeba56b9bae15daed8"
-    },
-    {
-      "id": "5eccd53e7a7051578a2547f2a65ad62f2ad325bce1a7a8b0a7529ab45d30bffc",
-      "ts": "2026-11-15T08:41:49+00:00",
-      "type": "exchange_out",
-      "amount_dog": 14986750.23613,
-      "level": "info",
-      "from_label": "Bitget hot",
-      "to_label": "bc1q3ejf...38tu",
-      "from_id": "h3",
-      "to_id": "bc1q3ejfghgz3qxyphzud9a6e23fuq2xpc380j38tu",
-      "community": null,
-      "txid": "5eccd53e7a7051578a2547f2a65ad62f2ad325bce1a7a8b0a7529ab45d30bffc"
     }
   ]
 }
