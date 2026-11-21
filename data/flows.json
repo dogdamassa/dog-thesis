@@ -1,29 +1,29 @@
 {
-  "updated_at": "2026-11-21T02:39:15.684206+00:00",
-  "price_usd": 0.000708,
+  "updated_at": "2026-11-21T11:28:25.562950+00:00",
+  "price_usd": 0.00067,
   "exchanges": [
     {
       "name": "Kraken",
       "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "price": 0.000708,
-      "vol24h_dog": 402038640.45042,
+      "price": 0.000666,
+      "vol24h_dog": 485665223.92386,
       "change24h": null,
-      "buy_dog": 151256292,
-      "sell_dog": 147671330,
-      "net_dog": 3584961,
-      "window_min": 629,
+      "buy_dog": 86240118,
+      "sell_dog": 150269184,
+      "net_dog": -64029067,
+      "window_min": 1052,
       "ok": true
     },
     {
       "name": "Gate",
       "link": "https://www.gate.io/trade/DOG_USDT",
-      "price": 0.0007104,
-      "vol24h_dog": 210782423.0,
-      "change24h": 3.1,
-      "buy_dog": 26591096,
-      "sell_dog": 22509631,
-      "net_dog": 4081465,
-      "window_min": 431,
+      "price": 0.0006723,
+      "vol24h_dog": 260563108.0,
+      "change24h": -3.58,
+      "buy_dog": 32670628,
+      "sell_dog": 31983793,
+      "net_dog": 686835,
+      "window_min": 451,
       "ok": true
     },
     {
@@ -41,13 +41,13 @@
     {
       "name": "MEXC",
       "link": "https://www.mexc.com/exchange/DOG_USDT",
-      "price": 0.0007052,
-      "vol24h_dog": 99436975.77,
-      "change24h": 3.6700000000000004,
-      "buy_dog": 2804647,
-      "sell_dog": 2534800,
-      "net_dog": 269847,
-      "window_min": 92,
+      "price": 0.00067,
+      "vol24h_dog": 101263036.64,
+      "change24h": -3.09,
+      "buy_dog": 3813697,
+      "sell_dog": 2747394,
+      "net_dog": 1066303,
+      "window_min": 86,
       "ok": true
     },
     {
@@ -76,6 +76,51 @@
     }
   ],
   "notable": [
+    {
+      "exchange": "Kraken",
+      "link": "https://pro.kraken.com/app/trade/DOG-USD",
+      "side": "sell",
+      "dog": 15000000,
+      "usd": 9775,
+      "price": 0.00065167,
+      "ts": "2026-11-21T07:57:41+00:00"
+    },
+    {
+      "exchange": "Gate",
+      "link": "https://www.gate.io/trade/DOG_USDT",
+      "side": "buy",
+      "dog": 5758721,
+      "usd": 3801,
+      "price": 0.00065996,
+      "ts": "2026-11-21T04:48:21+00:00"
+    },
+    {
+      "exchange": "Kraken",
+      "link": "https://pro.kraken.com/app/trade/DOG-USD",
+      "side": "sell",
+      "dog": 7729651,
+      "usd": 5071,
+      "price": 0.00065601,
+      "ts": "2026-11-21T04:06:04+00:00"
+    },
+    {
+      "exchange": "Kraken",
+      "link": "https://pro.kraken.com/app/trade/DOG-USD",
+      "side": "sell",
+      "dog": 9625188,
+      "usd": 6663,
+      "price": 0.00069224,
+      "ts": "2026-11-21T02:58:21+00:00"
+    },
+    {
+      "exchange": "Kraken",
+      "link": "https://pro.kraken.com/app/trade/DOG-USD",
+      "side": "sell",
+      "dog": 13339685,
+      "usd": 9325,
+      "price": 0.00069905,
+      "ts": "2026-11-21T02:43:40+00:00"
+    },
     {
       "exchange": "Kraken",
       "link": "https://pro.kraken.com/app/trade/DOG-USD",
@@ -116,64 +161,10 @@
       "exchange": "Kraken",
       "link": "https://pro.kraken.com/app/trade/DOG-USD",
       "side": "buy",
-      "dog": 8094508,
-      "usd": 5757,
-      "price": 0.00071128,
+      "dog": 5795641,
+      "usd": 4132,
+      "price": 0.00071287,
       "ts": "2026-11-20T17:45:38+00:00"
-    },
-    {
-      "exchange": "Kraken",
-      "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "side": "buy",
-      "dog": 48714531,
-      "usd": 35053,
-      "price": 0.00071957,
-      "ts": "2026-11-20T16:48:30+00:00"
-    },
-    {
-      "exchange": "Kraken",
-      "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "side": "buy",
-      "dog": 8445988,
-      "usd": 6079,
-      "price": 0.00071979,
-      "ts": "2026-11-20T16:44:14+00:00"
-    },
-    {
-      "exchange": "Kraken",
-      "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "side": "buy",
-      "dog": 16781495,
-      "usd": 11594,
-      "price": 0.00069088,
-      "ts": "2026-11-20T16:42:23+00:00"
-    },
-    {
-      "exchange": "Kraken",
-      "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "side": "sell",
-      "dog": 27610225,
-      "usd": 19327,
-      "price": 0.0007,
-      "ts": "2026-11-20T16:42:23+00:00"
-    },
-    {
-      "exchange": "Kraken",
-      "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "side": "sell",
-      "dog": 8173542,
-      "usd": 5433,
-      "price": 0.00066475,
-      "ts": "2026-11-20T16:29:16+00:00"
-    },
-    {
-      "exchange": "Kraken",
-      "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "side": "sell",
-      "dog": 10857763,
-      "usd": 7130,
-      "price": 0.00065664,
-      "ts": "2026-11-20T16:10:45+00:00"
     }
   ],
   "caveat": "Janela de trades recentes (ate ~1000), nao o dia inteiro; volume 24h vem do ticker."
