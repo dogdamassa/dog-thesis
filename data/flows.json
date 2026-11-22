@@ -1,29 +1,29 @@
 {
-  "updated_at": "2026-11-21T19:32:56.153556+00:00",
-  "price_usd": 0.000671,
+  "updated_at": "2026-11-22T00:30:46.166743+00:00",
+  "price_usd": 0.0006811,
   "exchanges": [
     {
       "name": "Kraken",
       "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "price": 0.000671,
-      "vol24h_dog": 216449298.00887,
+      "price": 0.000677,
+      "vol24h_dog": 219122913.54423,
       "change24h": null,
-      "buy_dog": 75502986,
-      "sell_dog": 135090703,
-      "net_dog": -59587716,
-      "window_min": 1419,
+      "buy_dog": 82400578,
+      "sell_dog": 137160248,
+      "net_dog": -54759670,
+      "window_min": 1433,
       "ok": true
     },
     {
       "name": "Gate",
       "link": "https://www.gate.io/trade/DOG_USDT",
-      "price": 0.0006675,
-      "vol24h_dog": 150027432.0,
-      "change24h": -3.41,
-      "buy_dog": 17082537,
-      "sell_dog": 18252824,
-      "net_dog": -1170287,
-      "window_min": 592,
+      "price": 0.0006811,
+      "vol24h_dog": 134411636.0,
+      "change24h": -2.28,
+      "buy_dog": 17855343,
+      "sell_dog": 22987529,
+      "net_dog": -5132186,
+      "window_min": 680,
       "ok": true
     },
     {
@@ -41,12 +41,12 @@
     {
       "name": "MEXC",
       "link": "https://www.mexc.com/exchange/DOG_USDT",
-      "price": 0.0006859,
-      "vol24h_dog": 88805018.35,
-      "change24h": 2.08,
-      "buy_dog": 2472233,
-      "sell_dog": 2404469,
-      "net_dog": 67764,
+      "price": 0.0006851,
+      "vol24h_dog": 93451249.82,
+      "change24h": 0.01,
+      "buy_dog": 2089150,
+      "sell_dog": 2540780,
+      "net_dog": -451630,
       "window_min": 93,
       "ok": true
     },
@@ -76,6 +76,15 @@
     }
   ],
   "notable": [
+    {
+      "exchange": "Kraken",
+      "link": "https://pro.kraken.com/app/trade/DOG-USD",
+      "side": "sell",
+      "dog": 10000000,
+      "usd": 6722,
+      "price": 0.00067224,
+      "ts": "2026-11-21T23:54:38+00:00"
+    },
     {
       "exchange": "Kraken",
       "link": "https://pro.kraken.com/app/trade/DOG-USD",

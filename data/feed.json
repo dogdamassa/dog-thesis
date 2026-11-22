@@ -1,6 +1,58 @@
 {
-  "updated_at": "2026-11-21T19:32:48.709220+00:00",
+  "updated_at": "2026-11-22T00:30:40.711116+00:00",
   "events": [
+    {
+      "id": "59908976cf930f8fd1ceb5f04423d0e3217d4683276c774d0f3390aa287b8b15",
+      "ts": "2026-11-22T00:10:05+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 2161591.5999999996,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "59908976cf930f8fd1ceb5f04423d0e3217d4683276c774d0f3390aa287b8b15"
+    },
+    {
+      "id": "2a2a0ed081909c1deb9a85e8479338abcf72a05da0569023aabfeba582ab504d",
+      "ts": "2026-11-21T23:55:26+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 2703288.3,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "fresh wallet",
+      "from_id": "cofre",
+      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "community": null,
+      "txid": "2a2a0ed081909c1deb9a85e8479338abcf72a05da0569023aabfeba582ab504d"
+    },
+    {
+      "id": "2db04359afa0aba5cac3df74eaa58d613f3065ebe7c5f52fda426a372e4c9f77",
+      "ts": "2026-11-21T20:42:02+00:00",
+      "type": "cofre_in",
+      "amount_dog": 1200000,
+      "level": "info",
+      "from_label": "unmapped wallet",
+      "to_label": "Vault #1",
+      "from_id": null,
+      "to_id": "cofre",
+      "community": null,
+      "txid": "2db04359afa0aba5cac3df74eaa58d613f3065ebe7c5f52fda426a372e4c9f77"
+    },
+    {
+      "id": "7894e08a100356304e231c49a14106889a42346bcc7eefcbf985f21a1ff4904c",
+      "ts": "2026-11-21T20:12:01+00:00",
+      "type": "cofre_out_new",
+      "amount_dog": 2305331.1,
+      "level": "watch",
+      "from_label": "Vault #1",
+      "to_label": "Whale23",
+      "from_id": "cofre",
+      "to_id": "whale23",
+      "community": null,
+      "txid": "7894e08a100356304e231c49a14106889a42346bcc7eefcbf985f21a1ff4904c"
+    },
     {
       "id": "ba42588815e62e7dc7ead96fcba38b56c52734536624dd25350a563b82cf7b44",
       "ts": "2026-11-21T15:39:21+00:00",
@@ -728,58 +780,6 @@
       "to_id": "bc1pwxs3maq2axw68qs49zar0wnm2t08n4asyh35ql9spyexlvqnh4jq8eg7ef",
       "community": null,
       "txid": "6f34708fa3617287eff6e41e41ebd566071080243da14131e3611fdb6efd0947"
-    },
-    {
-      "id": "5f06815f5e3bd29448ef25f02f81e73f7b8133d3117df9db5f9f32f0f2487d46",
-      "ts": "2026-11-18T00:34:27+00:00",
-      "type": "cofre_in",
-      "amount_dog": 1000123.17114,
-      "level": "info",
-      "from_label": "bc1pyyuz...t5wa",
-      "to_label": "Vault #1",
-      "from_id": null,
-      "to_id": "cofre",
-      "community": null,
-      "txid": "5f06815f5e3bd29448ef25f02f81e73f7b8133d3117df9db5f9f32f0f2487d46"
-    },
-    {
-      "id": "bal-2026-11-17",
-      "ts": "2026-11-17T23:00:58.030159+00:00",
-      "type": "balance_change",
-      "amount_dog": 7647283.066999435,
-      "level": "info",
-      "from_label": "Vault #1",
-      "to_label": "",
-      "from_id": "cofre",
-      "to_id": "",
-      "sign": "-",
-      "txid": null
-    },
-    {
-      "id": "f765ec57eb7d66e0b7dbad738b8344f7089b1588f9dfe9111760a9dca1bafc5d",
-      "ts": "2026-11-17T21:38:45+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 2259094,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "Whale23",
-      "from_id": "cofre",
-      "to_id": "whale23",
-      "community": null,
-      "txid": "f765ec57eb7d66e0b7dbad738b8344f7089b1588f9dfe9111760a9dca1bafc5d"
-    },
-    {
-      "id": "9d20cdd0fe19a01d74ce3eabf0c0c9b78613761deb2e2fe06fb9a14b212e4271",
-      "ts": "2026-11-17T21:18:16+00:00",
-      "type": "cofre_out_new",
-      "amount_dog": 3407580.7,
-      "level": "watch",
-      "from_label": "Vault #1",
-      "to_label": "fresh wallet",
-      "from_id": "cofre",
-      "to_id": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
-      "community": null,
-      "txid": "9d20cdd0fe19a01d74ce3eabf0c0c9b78613761deb2e2fe06fb9a14b212e4271"
     }
   ]
 }
