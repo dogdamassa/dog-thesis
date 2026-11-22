@@ -4,19 +4,12 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
-## 2026-11-22 ⚠️ Entrada de 1,609M DOG de wallet não mapeada · saídas contínuas para Whale23
+## 2026-11-22
 
-> Fonte: `data/feed.json` + `data/daily.json` · atualizado às 08:15 UTC · dado fresco (scripts locais).
-
-- **Baleia (Vault #1, rank #1):** **13.4% do supply** (13,397M DOG). Δ: 0.0M DOG (saldo líquido estável). **NÃO depositou diretamente em exchange** (cofre_to_exchange: 0).
-- **Entradas grandes (últimas 72h):**
-  - 21/11 09:51 UTC — **1,609.79M DOG** de wallet não mapeada → Vault #1 (origem não rastreável)
-  - 21/11 15:39 UTC — 35.69M DOG de wallet não mapeada → Vault #1
-  - 20/11 14:17 UTC — 230.21M DOG de wallet não mapeada → Vault #1
-- **Saídas regulares (48h):** múltiplas saídas pequenas (2–6M DOG) para Whale23 e fresh wallets — padrão de distribuição lenta continuado.
-- **Cluster relay (Int#1/Int#2/Int#3):** **inativos** — última atividade em setembro/2026. relay_flows: 0.
-- **Saques novos da Binance → cluster (72h):** nenhum confirmado.
-- 🔎 **Leitura:** os relays estão parados e a baleia não depositou em exchange — sinal operacional estável. Porém, **1,609M DOG (~1.6% do supply) entraram na baleia de wallet não mapeada em 21/11** — recebimento de origem desconhecida. Esse padrão (entradas de fontes não rastreáveis + distribuição lenta via Whale23/fresh wallets) é consistente com o ciclo histórico documentado. A Binance não aparece como counterparty direto nesta janela. Seguimos vigiando o rastro até chegar na Binance.
+- **Baleia (#1):** 13.4% do supply (Δ +0.0M DOG).
+- Saques novos da Binance → cluster: nenhum hoje.
+- A baleia não depositou em exchange (segue acumulando/parada).
+- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
 
 ## 2026-11-21
 
