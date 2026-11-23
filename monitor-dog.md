@@ -1171,6 +1171,7 @@ Dia de **CEX restringindo DOG**: a Gate tira a alavancagem (perp delistado) e mo
 
 | Data | Status | Dado fresco? |
 |---|---|---|
+| 23/11/2026 (rotina remota) | API dogdata.xyz bloqueada pelo proxy — referência 23/11 do commit anterior (13.4%, estável) | ❌ |
 | 15/07/2026 (rotina remota) | Dado fresco via data/*.json — 456M DOG em fresh wallets · cluster Int→Bitget ativo | ✅ |
 | 14/07/2026 (rotina remota) | API bloqueada — referência 13/07 (pass-through suspeito) | ❌ |
 | 13/07/2026 (rotina remota) | Dado fresco via data/*.json — baleia → Int#2 → Bitget | ✅ |
