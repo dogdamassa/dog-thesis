@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T13:59:41.895726+00:00",
+  "updated_at": "2026-11-24T23:32:43.129063+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -157,8 +157,8 @@
       "to": "whale23",
       "from_label": "Vault #1",
       "to_label": "Whale23",
-      "dog": 276545163,
-      "count": 60
+      "dog": 271663343,
+      "count": 57
     },
     {
       "from": "bc1puwlqdhazhpdw8rqq0ydqafn4t76ltsvc9l80aqnqkqk64h97cupsxqxwmz",
