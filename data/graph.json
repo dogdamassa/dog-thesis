@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T23:32:43.129063+00:00",
+  "updated_at": "2026-11-25T08:54:01.612276+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -138,6 +138,14 @@
   "edges": [
     {
       "from": "cofre",
+      "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
+      "from_label": "Vault #1",
+      "to_label": "bc1pjqjc...0xuu",
+      "dog": 107978234,
+      "count": 34
+    },
+    {
+      "from": "cofre",
       "to": "merlin2",
       "from_label": "Vault #1",
       "to_label": "Merlin Chain vault (2026)",
@@ -146,19 +154,11 @@
     },
     {
       "from": "cofre",
-      "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
-      "from_label": "Vault #1",
-      "to_label": "bc1pjqjc...0xuu",
-      "dog": 104413317,
-      "count": 32
-    },
-    {
-      "from": "cofre",
       "to": "whale23",
       "from_label": "Vault #1",
       "to_label": "Whale23",
-      "dog": 271663343,
-      "count": 57
+      "dog": 269105019,
+      "count": 56
     },
     {
       "from": "bc1puwlqdhazhpdw8rqq0ydqafn4t76ltsvc9l80aqnqkqk64h97cupsxqxwmz",
@@ -229,8 +229,8 @@
       "to": "whale23",
       "from_label": "MEXC Wallet",
       "to_label": "Whale23",
-      "dog": 141515323,
-      "count": 41
+      "dog": 138072978,
+      "count": 39
     },
     {
       "from": "mexc",
