@@ -1,29 +1,29 @@
 {
-  "updated_at": "2026-11-27T15:22:27.115168+00:00",
-  "price_usd": 0.0006937,
+  "updated_at": "2026-11-27T23:37:59.466692+00:00",
+  "price_usd": 0.0006792,
   "exchanges": [
     {
       "name": "Kraken",
       "link": "https://pro.kraken.com/app/trade/DOG-USD",
-      "price": 0.000693,
-      "vol24h_dog": 61934739.09614,
+      "price": 0.000674,
+      "vol24h_dog": 37023775.70457,
       "change24h": null,
-      "buy_dog": 66257089,
-      "sell_dog": 70926482,
-      "net_dog": -4669393,
-      "window_min": 2503,
+      "buy_dog": 64590242,
+      "sell_dog": 69084700,
+      "net_dog": -4494457,
+      "window_min": 2875,
       "ok": true
     },
     {
       "name": "Gate",
       "link": "https://www.gate.io/trade/DOG_USDT",
-      "price": 0.0006937,
-      "vol24h_dog": 36440492.0,
-      "change24h": 1.21,
-      "buy_dog": 12133196,
-      "sell_dog": 16188574,
-      "net_dog": -4055378,
-      "window_min": 909,
+      "price": 0.0006792,
+      "vol24h_dog": 40501664.0,
+      "change24h": -0.68,
+      "buy_dog": 9175802,
+      "sell_dog": 15754759,
+      "net_dog": -6578957,
+      "window_min": 908,
       "ok": true
     },
     {
@@ -41,13 +41,13 @@
     {
       "name": "MEXC",
       "link": "https://www.mexc.com/exchange/DOG_USDT",
-      "price": 0.000716,
-      "vol24h_dog": 82058961.55,
-      "change24h": 2.16,
-      "buy_dog": 4264647,
-      "sell_dog": 2335575,
-      "net_dog": 1929072,
-      "window_min": 91,
+      "price": 0.000687,
+      "vol24h_dog": 87253126.36,
+      "change24h": 0.5700000000000001,
+      "buy_dog": 2912902,
+      "sell_dog": 3067336,
+      "net_dog": -154435,
+      "window_min": 94,
       "ok": true
     },
     {
@@ -134,9 +134,9 @@
       "exchange": "Kraken",
       "link": "https://pro.kraken.com/app/trade/DOG-USD",
       "side": "sell",
-      "dog": 23491066,
-      "usd": 15369,
-      "price": 0.00065423,
+      "dog": 18016679,
+      "usd": 11668,
+      "price": 0.00064762,
       "ts": "2026-11-25T23:08:28+00:00"
     }
   ],

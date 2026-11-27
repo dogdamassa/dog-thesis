@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T15:22:22.402764+00:00",
+  "updated_at": "2026-11-27T23:37:52.626654+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -149,8 +149,8 @@
       "to": "merlin2",
       "from_label": "Vault #1",
       "to_label": "Merlin Chain vault (2026)",
-      "dog": 142933119,
-      "count": 13
+      "dog": 138077869,
+      "count": 12
     },
     {
       "from": "cofre",
