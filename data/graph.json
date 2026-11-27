@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T22:27:35.401025+00:00",
+  "updated_at": "2026-11-27T05:11:11.183400+00:00",
   "center": "cofre",
   "nodes": [
     {
@@ -205,8 +205,8 @@
       "to": "bc1pjqjceqjjchz59ltxgq7wgd2pvq4ck8v3jheqedy5sktfvras45mqsw0xuu",
       "from_label": "Bitget hot",
       "to_label": "bc1pjqjc...0xuu",
-      "dog": 19138027,
-      "count": 5
+      "dog": 13011017,
+      "count": 3
     },
     {
       "from": "int1",
