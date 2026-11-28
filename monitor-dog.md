@@ -4,12 +4,18 @@ Atualizado automaticamente. Padrões suspeitos documentados; sem acusação de c
 
 ---
 
-## 2026-11-28
+## 2026-11-28 ⚠️ Baleia ativa · 13 saídas fresh wallets (35,5M DOG) · Bitget hot moveu 31,6M
 
-- **Baleia (#1):** 13.4% do supply (Δ +0.0M DOG).
-- Saques novos da Binance → cluster: nenhum hoje.
-- A baleia não depositou em exchange (segue acumulando/parada).
-- 🔎 **Leitura:** sem movimento novo relevante hoje; baleia estável. Seguimos vigiando o rastro até chegar na Binance.
+> Fonte: `data/feed.json` + `data/state.json` · dado local fresco (dogdata.xyz bloqueado no proxy; estado atualizado às 08:09 UTC).
+
+- **Baleia (Vault #1, rank #1):** **13,40% do supply** (13.397B DOG). Δ ≈ 0,0M DOG (líquido neutro: altas entradas e saídas se compensaram).
+- **Atividade da baleia (últimas 72h):**
+  - **Entradas:** 10 txs = **574,4M DOG** de carteiras não mapeadas (maiores: 238M em 27/11 12:21 UTC, 164M em 26/11 12:09 UTC, 100M em 27/11 19:06 UTC).
+  - **Saídas para fresh wallets:** 13 txs = **35,5M DOG** (25/11–26/11); padrão de micro-distribuição recorrente.
+  - **Sem depósito direto em exchange conhecida** (Gate/Bitget/MEXC/Binance) detectado.
+- **Saques Binance → cluster (72h):** nenhum confirmado. Dados de relay (Int#1/Int#2/Int#3) desatualizados desde 20/09/2026 — coleta parou.
+- **Bitget ativo:** 26/11 13:22 UTC — Bitget hot → `bc1pjd2l...6ljc`: **31,65M DOG** (endereço não mapeado; não é relay conhecido).
+- 🔎 **Leitura:** baleia em modo de redistribuição de UTXO — 13 saídas pequenas para fresh wallets em 2 dias é o padrão de pass-through histórico. Sem depósito confirmado em exchange, mas o rastro das fresh wallets deve ser monitorado. Bitget ativo com saque de 31,6M para endereço desconhecido. Sem saque Binance → relay confirmado nesta janela (dados de relay estão parados desde setembro — atenção à lacuna de cobertura). Seguimos vigiando.
 
 ## 2026-11-27
 
