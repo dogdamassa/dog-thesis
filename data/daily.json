@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T08:09:13.738638+00:00",
+  "updated_at": "2026-11-28T17:00:46.526204+00:00",
   "date": "2026-11-28",
   "source": "dogdata.xyz",
   "cofre": {
@@ -36,8 +36,8 @@
   ],
   "signals": {
     "cofre_to_exchange": 0,
-    "cofre_big_out": 0,
+    "cofre_big_out": 1,
     "relay_flows": 0
   },
-  "level": "stable"
+  "level": "watch"
 }
